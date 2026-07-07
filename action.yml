@@ -1,0 +1,128 @@
+name: "SPIRA Trust Gate"
+description: "Offline evidence gate for Python wheel artifacts"
+author: "SPIRA Trust"
+
+branding:
+  icon: "shield"
+  color: "blue"
+
+inputs:
+  wheels-dir:
+    description: "Directory or wheel path containing local wheel artifacts"
+    required: true
+    default: "wheels"
+  output-dir:
+    description: "Directory for SPIRA Trust outputs"
+    required: false
+    default: "spira-out"
+  install-command:
+    description: "Command that installs spira-trust before running the gate"
+    required: false
+    default: "python -m pip install spira-trust"
+  sbom:
+    description: "SBOM export mode"
+    required: false
+    default: "cyclonedx-json"
+  policy-pack:
+    description: "Optional SPIRA policy pack path"
+    required: false
+    default: ""
+  policy-sha256:
+    description: "Required when policy-pack is supplied and should be pinned"
+    required: false
+    default: ""
+  attestations:
+    description: "Optional local attestation file"
+    required: false
+    default: ""
+  attestation-trust-root:
+    description: "Optional local attestation trust root"
+    required: false
+    default: ""
+  attestation-trust-root-sha256:
+    description: "Required when attestation-trust-root is supplied"
+    required: false
+    default: ""
+  verify-embedded-sboms:
+    description: "Run narrow PEP 770 embedded SBOM consistency checks"
+    required: false
+    default: "false"
+
+outputs:
+  verdict:
+    description: "Core SPIRA graph verdict"
+    value: ${{ steps.spira.outputs.verdict }}
+  combined-verdict:
+    description: "Combined decision verdict from spira-decision.json"
+    value: ${{ steps.spira.outputs.combined_verdict }}
+  decision-json:
+    description: "Path to spira-decision.json"
+    value: ${{ steps.spira.outputs.decision_json }}
+  evidence-pack:
+    description: "Path to generated evidence pack"
+    value: ${{ steps.spira.outputs.evidence_pack }}
+
+runs:
+  using: "composite"
+  steps:
+    - id: spira
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        ${{ inputs.install-command }}
+
+        OUT="${{ inputs.output-dir }}"
+        mkdir -p "$OUT"
+
+        CMD=(spira-trust graph "${{ inputs.wheels-dir }}"
+          --output-dir "$OUT"
+          --sbom "${{ inputs.sbom }}"
+          --evidence-pack "$OUT/spira-evidence.zip")
+
+        if [[ "${{ inputs.verify-embedded-sboms }}" == "true" ]]; then
+          CMD+=(--verify-embedded-sboms)
+        fi
+        if [[ -n "${{ inputs.policy-pack }}" ]]; then
+          CMD+=(--policy-pack "${{ inputs.policy-pack }}")
+        fi
+        if [[ -n "${{ inputs.policy-sha256 }}" ]]; then
+          CMD+=(--policy-sha256 "${{ inputs.policy-sha256 }}")
+        fi
+        if [[ -n "${{ inputs.attestations }}" ]]; then
+          CMD+=(--attestations "${{ inputs.attestations }}")
+        fi
+        if [[ -n "${{ inputs.attestation-trust-root }}" ]]; then
+          CMD+=(--attestation-trust-root "${{ inputs.attestation-trust-root }}")
+        fi
+        if [[ -n "${{ inputs.attestation-trust-root-sha256 }}" ]]; then
+          CMD+=(--attestation-trust-root-sha256 "${{ inputs.attestation-trust-root-sha256 }}")
+        fi
+
+        set +e
+        "${CMD[@]}"
+        SPIRA_EXIT=$?
+        set -e
+
+        if [[ -f "$OUT/spira-decision.json" ]]; then
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+        import json
+        from pathlib import Path
+        out = Path("${{ inputs.output-dir }}")
+        decision_path = out / "spira-decision.json"
+        data = json.loads(decision_path.read_text(encoding="utf-8"))
+        print(f"verdict={data['decision'].get('verdict', '')}")
+        print(f"combined_verdict={data['decision'].get('combined_verdict', '')}")
+        print(f"decision_json={decision_path}")
+        print(f"evidence_pack={out / 'spira-evidence.zip'}")
+        PY
+        else
+          {
+            echo "verdict="
+            echo "combined_verdict="
+            echo "decision_json="
+            echo "evidence_pack=$OUT/spira-evidence.zip"
+          } >> "$GITHUB_OUTPUT"
+        fi
+
+        exit "$SPIRA_EXIT"

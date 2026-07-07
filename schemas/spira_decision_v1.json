@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.local/schemas/spira_decision_v1.json",
+  "title": "SPIRA Decision V1",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "graphVerdict": {
+      "enum": [
+        "GRAPH_OK",
+        "GRAPH_OK_WITH_NOTES",
+        "GRAPH_OK_WITH_UNVERIFIED",
+        "GRAPH_WARN",
+        "GRAPH_BLOCK"
+      ]
+    },
+    "layerStatus": {
+      "enum": ["OK", "NOTE", "WARN", "BLOCK", "NOT_EVALUATED"]
+    },
+    "pep770Status": {
+      "enum": ["NOT_EVALUATED", "VERIFIED_OK", "UNVERIFIED", "CONTRADICTION"]
+    },
+    "pep740Status": {
+      "enum": [
+        "ATTESTATION_NOT_EVALUATED",
+        "ATTESTATION_VERIFIED",
+        "ATTESTATION_UNVERIFIED",
+        "ATTESTATION_CONTRADICTION",
+        "ATTESTATION_DIGEST_MISMATCH",
+        "ATTESTATION_IDENTITY_NOT_ALLOWED",
+        "ATTESTATION_INDEX_UNVERIFIED",
+        "ATTESTATION_TRUST_ROOT_SHA_MISSING",
+        "ATTESTATION_TRUST_ROOT_UNTRUSTED",
+        "ATTESTATION_TRUST_ROOT_MISSING",
+        "ATTESTATION_INPUT_ERROR"
+      ]
+    },
+    "evidenceFile": {
+      "type": "object",
+      "required": ["label", "path", "sha256", "bytes", "included_in_pack"],
+      "properties": {
+        "label": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "included_in_pack": { "type": "boolean" },
+        "absolute_path": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "layer": {
+      "type": "object",
+      "required": [
+        "layer",
+        "status",
+        "evaluated",
+        "source_verdict",
+        "evidence_ref",
+        "finding_count"
+      ],
+      "properties": {
+        "layer": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/layerStatus" },
+        "evaluated": { "type": "boolean" },
+        "source_verdict": { "type": "string" },
+        "evidence_ref": { "type": "string" },
+        "finding_count": { "type": "integer", "minimum": 0 },
+        "policy_ref": {},
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "created_at_utc",
+    "tool",
+    "command",
+    "decision",
+    "layers",
+    "standards",
+    "evidence",
+    "exit_code_contract",
+    "not_claimed"
+  ],
+  "properties": {
+    "schema": { "const": "SPIRA_DECISION_V1" },
+    "schema_version": { "const": "1.0" },
+    "created_at_utc": { "type": "string" },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "spira-trust" },
+        "version": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "command": { "const": "graph" },
+    "decision": {
+      "type": "object",
+      "required": ["verdict", "combined_verdict", "winning_status", "exit_code", "decided_by"],
+      "properties": {
+        "verdict": { "$ref": "#/$defs/graphVerdict" },
+        "combined_verdict": { "$ref": "#/$defs/graphVerdict" },
+        "winning_status": { "$ref": "#/$defs/layerStatus" },
+        "exit_code": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5, 6] },
+        "decided_by": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "layers": {
+      "type": "object",
+      "required": ["per_layer", "evaluated_layers", "not_evaluated_layers"],
+      "properties": {
+        "per_layer": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/layer" }
+        },
+        "evaluated_layers": { "type": "array", "items": { "type": "string" } },
+        "not_evaluated_layers": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "standards": {
+      "type": "object",
+      "required": ["pep770_sbom_consistency", "pep740_offline_attestations"],
+      "properties": {
+        "pep770_sbom_consistency": {
+          "type": "object",
+          "required": ["evaluated", "status", "result_count"],
+          "properties": {
+            "evaluated": { "type": "boolean" },
+            "status": { "$ref": "#/$defs/pep770Status" },
+            "result_count": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": true
+        },
+        "pep740_offline_attestations": {
+          "type": "object",
+          "required": ["status", "identity_evaluated", "finding_count"],
+          "properties": {
+            "status": { "$ref": "#/$defs/pep740Status" },
+            "attestation_path": { "type": ["string", "null"] },
+            "attestation_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+            "identity_evaluated": { "type": "boolean" },
+            "trust_root": { "type": ["object", "null"] },
+            "finding_count": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "graph_report_path",
+        "graph_summary_path",
+        "bill_of_materials_path",
+        "input_manifest_path",
+        "graph_evidence_manifest_path",
+        "graph_evidence_package_zip",
+        "graph_evidence_package_sha256",
+        "files"
+      ],
+      "properties": {
+        "graph_report_path": { "type": ["string", "null"] },
+        "graph_summary_path": { "type": ["string", "null"] },
+        "bill_of_materials_path": { "type": ["string", "null"] },
+        "input_manifest_path": { "type": ["string", "null"] },
+        "graph_evidence_manifest_path": { "type": ["string", "null"] },
+        "cyclonedx_sbom_path": { "type": ["string", "null"] },
+        "graph_evidence_package_zip": { "type": ["string", "null"] },
+        "graph_evidence_package_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "files": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceFile" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "exit_code_contract": { "type": "object" },
+    "not_claimed": { "type": "array", "items": { "type": "string" } }
+  }
+}

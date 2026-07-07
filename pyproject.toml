@@ -1,0 +1,48 @@
+[build-system]
+requires = []
+build-backend = "manual-public-wheel"
+
+[project]
+name = "spira-trust"
+version = "0.5.2"
+description = "Offline verifier for Python wheel evidence before install."
+readme = "README_SPIRA_REVIEW.md"
+requires-python = ">=3.10"
+license = { text = "UNSIGNED PILOT ARTIFACT - verify SHA256SUMS manually" }
+authors = [{ name = "SPIRA Trust" }]
+dependencies = []
+
+[project.scripts]
+spira-trust = "spira_core.trust_cli:main"
+spira = "spira_core.trust_cli:main"
+
+[tool.spira.public-wheel]
+builder = "tools/build_spira_trust_public.py"
+package_allowlist = [
+  "spira_core.__init__",
+  "spira_core.adapters",
+  "spira_core.attestation_verify",
+  "spira_core.bom",
+  "spira_core.combined_verdict",
+  "spira_core.contracts",
+  "spira_core.core",
+  "spira_core.cyclonedx_export",
+  "spira_core.decision_report",
+  "spira_core.drift",
+  "spira_core.entry_points_policy",
+  "spira_core.governance_engine",
+  "spira_core.ledger",
+  "spira_core.license_policy",
+  "spira_core.lockfile_policy",
+  "spira_core.policy_pack",
+  "spira_core.range_parser",
+  "spira_core.rebaseline",
+  "spira_core.review",
+  "spira_core.sbom_consistency",
+  "spira_core.target_environment",
+  "spira_core.trust",
+  "spira_core.trust_cli",
+  "spira_core.trust_graph",
+  "spira_core.decision015",
+  "spira_core.vendored_stone015",
+]

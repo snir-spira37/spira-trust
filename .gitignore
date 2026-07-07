@@ -1,0 +1,21 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# SPIRA local outputs
+work/
+outputs/
+*.zip
+*.zip.sha256
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

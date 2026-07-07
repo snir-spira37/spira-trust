@@ -1,0 +1,12 @@
+- id: spira-trust-graph
+  name: SPIRA Trust graph
+  entry: spira-trust graph wheels --output-dir spira-precommit-graph
+  language: system
+  pass_filenames: false
+
+- id: spira-trust-drift
+  name: SPIRA Trust drift
+  entry: bash -c 'spira-trust drift wheels --baseline spira-baseline/bill_of_materials.json --baseline-sha256 "$SPIRA_BASELINE_SHA256" --output-dir spira-precommit-drift'
+  language: system
+  pass_filenames: false
+  description: Requires SPIRA_BASELINE_SHA256 to be supplied by the caller or CI wrapper.
