@@ -96,10 +96,12 @@ cat out/graph/spira-decision.md
 ```
 
 Expected result for the current public SPIRA Trust wheel: the command exits 0
-and the graph summary reports a passing verdict. If a future wheel adds
-declared dependencies that you did not download into the wheelhouse, SPIRA may
-surface `GRAPH_OK_WITH_UNVERIFIED`; that means the artifact passed the checks
-SPIRA ran, but the local dependency closure was not complete.
+and the graph summary reports a passing verdict, currently
+`GRAPH_OK_WITH_NOTES`. That means SPIRA found no blocking contradiction, while
+still surfacing human-readable context. If a future wheel adds declared
+dependencies that you did not download into the wheelhouse, SPIRA may surface
+`GRAPH_OK_WITH_UNVERIFIED`; that means the artifact passed the checks SPIRA
+ran, but the local dependency closure was not complete.
 
 Machine-readable and evidence outputs include:
 
