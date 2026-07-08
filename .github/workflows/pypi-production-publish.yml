@@ -2,6 +2,9 @@ name: SPIRA Trust Production PyPI Trusted Publishing
 
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "v*"
 
 permissions:
   contents: read
