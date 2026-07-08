@@ -1,0 +1,140 @@
+# Agent Integration
+
+SPIRA Trust can be used by coding agents as a local command-line tool.
+
+The goal is simple:
+
+```text
+Agents build artifacts.
+SPIRA verifies artifacts.
+Humans approve.
+```
+
+This is artifact trust, not code review. SPIRA does not decide whether an
+agent's patch is good. It gives the agent a deterministic local check for
+Python wheel artifacts before install or release.
+
+## Why Give An Agent A Local Gate?
+
+Without a local tool, an agent may spend tokens reading directories, comparing
+files, summarizing build outputs, and guessing what changed.
+
+SPIRA turns that into a mechanical command:
+
+```bash
+spira-trust graph dist \
+  --output-dir out/spira \
+  --sbom cyclonedx-json \
+  --evidence-pack out/spira-evidence.zip
+```
+
+The agent can then read:
+
+```text
+out/spira/spira-decision.json
+out/spira/spira-decision.md
+out/spira/graph_summary.txt
+```
+
+## Prompt Snippet For `CLAUDE.md` / `AGENTS.md`
+
+Paste this into your project instructions if you want the agent to gate wheel
+artifacts after builds:
+
+````markdown
+## SPIRA Trust Artifact Gate
+
+After building any Python wheel, run SPIRA Trust before installing, releasing,
+or marking the build complete.
+
+Use:
+
+```bash
+spira-trust graph dist \
+  --output-dir out/spira \
+  --sbom cyclonedx-json \
+  --evidence-pack out/spira-evidence.zip
+```
+
+Then read:
+
+- `out/spira/spira-decision.json`
+- `out/spira/spira-decision.md`
+- `out/spira/graph_summary.txt`
+
+Rules:
+
+- If the decision is `GRAPH_BLOCK`, stop and report the evidence to the human.
+- If the decision is `GRAPH_WARN`, stop and ask the human whether to proceed.
+- If the decision contains `NOT_EVALUATED`, report exactly which layer did not run.
+- Never describe an unchecked layer as OK.
+- Never mark a build/release complete without a SPIRA verdict.
+- Do not install or execute the wheel to "test it" unless the human explicitly asks.
+````
+
+## Single-Wheel Check
+
+For one wheel:
+
+```bash
+spira-trust trust dist/example-1.0.0-py3-none-any.whl \
+  --output-dir out/spira-trust \
+  --format json
+```
+
+Read:
+
+```text
+out/spira-trust/artifact_trust_report.json
+out/spira-trust/artifact_trust_summary.txt
+```
+
+Agent rule:
+
+```text
+TRUST_BLOCK means stop.
+TRUST_WARN means ask.
+TRUST_OK_WITH_NOTES means summarize the notes.
+```
+
+## Example Agent Workflow
+
+```text
+1. Agent edits code.
+2. Agent runs tests.
+3. Agent builds wheel into dist/.
+4. Agent runs spira-trust graph dist --output-dir out/spira --evidence-pack out/spira-evidence.zip.
+5. Agent reads out/spira/spira-decision.json.
+6. Agent reports:
+   - verdict
+   - checked layers
+   - NOT_EVALUATED layers
+   - evidence path
+7. Human approves or rejects.
+```
+
+## What The Agent Should Not Claim
+
+The agent must not say:
+
+- "The code is safe."
+- "The package has no malware."
+- "The release is production-ready."
+- "All layers passed" when some layers are `NOT_EVALUATED`.
+
+The agent may say:
+
+```text
+SPIRA verified the local wheel evidence it was configured to check.
+The decision file is at out/spira/spira-decision.json.
+The evidence pack is at out/spira-evidence.zip.
+```
+
+## Install
+
+```bash
+python -m pip install spira-trust
+```
+
+For production CI, pin the version if your team requires a reproducible
+toolchain.
