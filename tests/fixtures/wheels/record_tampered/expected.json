@@ -1,0 +1,15 @@
+{
+  "fixture": "record_tampered",
+  "mutation": "one byte in record_tampered/__init__.py (VALUE = 1 -> VALUE = 2), RECORD not updated",
+  "clean_wheel": {
+    "file": "record_tampered_clean-1.0.0-py3-none-any.whl",
+    "sha256": "15a476e900af3141f78122e55492bdb073f14cdab51459f7df2e0481993e8274",
+    "expected_spira_verdict_prefix": "TRUST_OK"
+  },
+  "tampered_wheel": {
+    "file": "record_tampered-1.0.0-py3-none-any.whl",
+    "sha256": "b260516e8c03077dddf9c37ddef6acd9a82b5963d54274c07bc6eb25622457ed",
+    "expected_spira_verdict": "TRUST_BLOCK",
+    "expected_exit_code": 1
+  }
+}
