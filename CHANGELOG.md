@@ -58,6 +58,11 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.5 - Production PyPI reproducibility correction
+
+- Makes wheel RECORD ordering independent of OS-specific path ordering.
+- No feature changes from 0.5.4.
+
 ## spira-trust 0.5.4 - Production PyPI release candidate
 
 - Adds deterministic wheel ZIP metadata and normalized text payloads for reproducible release candidates.

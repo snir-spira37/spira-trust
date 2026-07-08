@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.4"
+VERSION = "0.5.5"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
@@ -209,7 +209,10 @@ def _embedded_cyclonedx_sbom() -> dict[str, object]:
 
 
 def _write_wheel(stage: Path, wheel_path: Path) -> None:
-    files = sorted(path for path in stage.rglob("*") if path.is_file() and path.name != "RECORD")
+    files = sorted(
+        (path for path in stage.rglob("*") if path.is_file() and path.name != "RECORD"),
+        key=lambda path: path.relative_to(stage).as_posix(),
+    )
     record_lines = []
     with zipfile.ZipFile(wheel_path, "w", compression=zipfile.ZIP_STORED) as zf:
         for path in files:
