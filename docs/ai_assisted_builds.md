@@ -65,14 +65,14 @@ SPIRA gives each wheel a local evidence record before it moves forward.
 Install SPIRA Trust:
 
 ```bash
-python -m pip install spira-trust==0.5.8
+python -m pip install spira-trust
 ```
 
 Download the public SPIRA Trust wheel into a local wheelhouse:
 
 ```bash
 mkdir -p wheels
-python -m pip download spira-trust==0.5.8 \
+python -m pip download spira-trust \
   --only-binary=:all: \
   --no-deps \
   -d wheels
@@ -94,6 +94,12 @@ Review the human-readable outputs:
 cat out/graph/graph_summary.txt
 cat out/graph/spira-decision.md
 ```
+
+Expected result for the current public SPIRA Trust wheel: the command exits 0
+and the graph summary reports a passing verdict. If a future wheel adds
+declared dependencies that you did not download into the wheelhouse, SPIRA may
+surface `GRAPH_OK_WITH_UNVERIFIED`; that means the artifact passed the checks
+SPIRA ran, but the local dependency closure was not complete.
 
 Machine-readable and evidence outputs include:
 
@@ -158,7 +164,7 @@ jobs:
       - name: Install SPIRA Trust
         run: |
           python -m pip install --upgrade pip
-          python -m pip install spira-trust==0.5.8
+          python -m pip install spira-trust
 
       - name: Build or collect wheels
         run: |
@@ -179,6 +185,9 @@ jobs:
           name: spira-trust-evidence
           path: spira-out/**
 ```
+
+For production CI, pin the `spira-trust` version if your team requires a
+reproducible toolchain.
 
 ## Human Review
 
@@ -214,4 +223,3 @@ The same artifact evidence workflow is useful for:
 - regulated CI gates
 - baseline drift review
 - release evidence packs
-
