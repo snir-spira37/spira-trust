@@ -32,9 +32,12 @@ For market positioning and capability boundaries, see
 From production PyPI:
 
 ```bash
-python -m pip install spira-trust==0.5.6
+python -m pip install spira-trust==0.5.7
 spira-trust version
 ```
+
+Every production release is published to PyPI with Trusted Publishing/OIDC.
+PyPI displays release provenance for the wheel artifact.
 
 The production release evidence for `0.5.5` is closed in
 [`docs/030_closure_note.md`](docs/030_closure_note.md).
@@ -76,11 +79,11 @@ The command writes:
 
 - `artifact_trust_summary.txt`
 - `artifact_trust_report.json`
-- `review/.../foreign_artifact_review_report.json`
-- `review/.../SPIRA_FOREIGN_ARTIFACT_REVIEW_CLI_001_<ARTIFACT>_BASELINE.zip`
-- `decision015/logs.jsonl`
-- `decision015/decision_ledger.jsonl`
-- `ledger/spira_core_ledger.jsonl`
+- detailed local evidence files under the selected output directory
+
+By default, the CLI prints the summary and public report path only. Use
+`--full-evidence` when you want the detailed local evidence paths printed in
+the terminal.
 
 ## Local Trust Graph
 
@@ -478,8 +481,8 @@ where the raw format is explicit:
 - wheel `RECORD` hashes against archive contents
 - SPIRA package-lock and `not_claimed` boundaries on the review report
 
-The trust decision is then routed through the vendored Stone 015 decision engine,
-whose Python source is SHA-verified before use.
+The trust decision is then routed through SPIRA's packaged local decision
+adapter, whose bundled Python source is SHA-verified before use.
 
 Graph mode uses PEP 503 package-name normalization only: lowercase plus
 collapsing `-`, `_`, and `.` runs into `-`. It does not perform Unicode
@@ -548,6 +551,5 @@ Did this verdict and evidence help you decide anything about the package you cho
 
 Honest negative feedback is valid output. If the report is confusing, too noisy,
 or not useful, that is exactly what the pilot is meant to discover.
-
 
 

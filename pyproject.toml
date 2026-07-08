@@ -4,11 +4,11 @@ build-backend = "manual-public-wheel"
 
 [project]
 name = "spira-trust"
-version = "0.5.6"
+version = "0.5.7"
 description = "Offline verifier for Python wheel evidence before install."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "UNSIGNED PILOT ARTIFACT - verify SHA256SUMS manually" }
+license = { text = "Apache-2.0" }
 authors = [{ name = "SPIRA Trust" }]
 dependencies = []
 

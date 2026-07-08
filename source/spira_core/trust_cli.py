@@ -36,6 +36,7 @@ def _run_public(argv: list[str]) -> int:
     trust_cmd.add_argument("--output-dir", default="outputs/spira_trust_runs")
     trust_cmd.add_argument("--format", choices=("text", "json"), default="text")
     trust_cmd.add_argument("--no-color", action="store_true")
+    trust_cmd.add_argument("--full-evidence", action="store_true")
 
     graph_cmd = sub.add_parser("graph")
     graph_cmd.add_argument("artifact_inputs", nargs="+")
@@ -111,7 +112,13 @@ def _run_trust(args: argparse.Namespace) -> int:
     if args.format == "json":
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:
-        print(format_trust_summary(result, color=(not args.no_color and sys.stdout.isatty())))
+        print(
+            format_trust_summary(
+                result,
+                color=(not args.no_color and sys.stdout.isatty()),
+                full_evidence=args.full_evidence,
+            )
+        )
     return _trust_exit_code(result)
 
 

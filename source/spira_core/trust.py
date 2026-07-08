@@ -270,7 +270,7 @@ def _human_summary(
     }
 
 
-def format_trust_summary(report: Mapping[str, Any], *, color: bool = False) -> str:
+def format_trust_summary(report: Mapping[str, Any], *, color: bool = False, full_evidence: bool = False) -> str:
     summary = report.get("human_summary", {})
     artifact = summary.get("artifact") or report.get("artifact", {}).get("path") or "unknown artifact"
     trust_status = summary.get("trust_status", report.get("decision", {}).get("trust_status", "TRUST_UNKNOWN"))
@@ -314,11 +314,19 @@ def format_trust_summary(report: Mapping[str, Any], *, color: bool = False) -> s
         [
             "",
             f"JSON report: {report.get('report_path', 'not written yet')}",
-            f"Review report: {report.get('review_report_path', 'not available')}",
-            f"Ledger: {report.get('ledger', {}).get('ledger_path', 'not available')}",
+            f"Summary file: {report.get('summary_path', 'not written yet')}",
             "",
         ]
     )
+    if full_evidence:
+        lines.extend(
+            [
+                "Detailed evidence:",
+                f"- Review report: {report.get('review_report_path', 'not available')}",
+                f"- Ledger: {report.get('ledger', {}).get('ledger_path', 'not available')}",
+                "",
+            ]
+        )
     return "\n".join(lines)
 
 

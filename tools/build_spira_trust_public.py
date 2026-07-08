@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.6"
+VERSION = "0.5.7"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
@@ -144,7 +144,8 @@ def _write_dist_info(stage: Path) -> None:
     msg["Version"] = VERSION
     msg["Summary"] = "Offline verifier for Python wheel evidence before install."
     msg["Requires-Python"] = ">=3.10"
-    msg["License"] = "UNSIGNED PILOT ARTIFACT - verify SHA256SUMS manually"
+    msg["License"] = "Apache-2.0"
+    msg["License-File"] = "LICENSE"
     msg["Description-Content-Type"] = "text/markdown"
     msg["Project-URL"] = "Homepage, https://github.com/snir-spira37/spira-trust"
     msg["Project-URL"] = "Repository, https://github.com/snir-spira37/spira-trust"
@@ -152,6 +153,10 @@ def _write_dist_info(stage: Path) -> None:
     msg["Project-URL"] = "Documentation, https://github.com/snir-spira37/spira-trust/tree/main/docs"
     readme = (repo / "README.md").read_text(encoding="utf-8")
     (dist / "METADATA").write_text(msg.as_string() + "\n" + readme, encoding="utf-8", newline="\n")
+    license_path = repo / "LICENSE"
+    if not license_path.is_file():
+        raise FileNotFoundError(license_path)
+    (dist / "LICENSE").write_text(license_path.read_text(encoding="utf-8"), encoding="utf-8", newline="\n")
     (dist / "WHEEL").write_text(
         "Wheel-Version: 1.0\n"
         "Generator: spira-public-wheel-builder\n"

@@ -58,6 +58,16 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.7 - Public metadata correction
+
+- Replaces the old pilot metadata license string with `Apache-2.0`.
+- Adds a repository `LICENSE` file and includes it in the wheel metadata.
+- Updates public onboarding docs to install `spira-trust==0.5.7`.
+- Keeps PyPI/Trusted Publishing provenance messaging in README instead of the
+  package license field.
+- Reduces default `trust` terminal output to public-facing summary/report paths;
+  detailed local evidence paths are available with `--full-evidence`.
+
 ## spira-trust 0.5.6 - Public surface polish
 
 - Adds README long description and project URLs to PyPI metadata.
