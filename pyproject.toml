@@ -4,13 +4,19 @@ build-backend = "manual-public-wheel"
 
 [project]
 name = "spira-trust"
-version = "0.5.5"
+version = "0.5.6"
 description = "Offline verifier for Python wheel evidence before install."
-readme = "README_SPIRA_REVIEW.md"
+readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "UNSIGNED PILOT ARTIFACT - verify SHA256SUMS manually" }
 authors = [{ name = "SPIRA Trust" }]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/snir-spira37/spira-trust"
+Repository = "https://github.com/snir-spira37/spira-trust"
+Issues = "https://github.com/snir-spira37/spira-trust/issues"
+Documentation = "https://github.com/snir-spira37/spira-trust/tree/main/docs"
 
 [project.scripts]
 spira-trust = "spira_core.trust_cli:main"

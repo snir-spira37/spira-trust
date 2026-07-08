@@ -58,6 +58,11 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.6 - Public surface polish
+
+- Adds README long description and project URLs to PyPI metadata.
+- No trust-engine capability changes from 0.5.5.
+
 ## spira-trust 0.5.5 - Production PyPI reproducibility correction
 
 - Makes wheel RECORD ordering independent of OS-specific path ordering.

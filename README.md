@@ -32,7 +32,7 @@ For market positioning and capability boundaries, see
 From production PyPI:
 
 ```bash
-python -m pip install spira-trust==0.5.5
+python -m pip install spira-trust==0.5.6
 spira-trust version
 ```
 
@@ -540,5 +540,6 @@ Did this verdict and evidence help you decide anything about the package you cho
 
 Honest negative feedback is valid output. If the report is confusing, too noisy,
 or not useful, that is exactly what the pilot is meant to discover.
+
 
 

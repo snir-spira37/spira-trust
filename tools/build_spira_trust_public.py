@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.5"
+VERSION = "0.5.6"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
@@ -135,6 +135,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _write_dist_info(stage: Path) -> None:
+    repo = Path.cwd()
     dist = stage / DIST_INFO
     dist.mkdir(parents=True, exist_ok=True)
     msg = Message()
@@ -144,7 +145,13 @@ def _write_dist_info(stage: Path) -> None:
     msg["Summary"] = "Offline verifier for Python wheel evidence before install."
     msg["Requires-Python"] = ">=3.10"
     msg["License"] = "UNSIGNED PILOT ARTIFACT - verify SHA256SUMS manually"
-    (dist / "METADATA").write_text(msg.as_string(), encoding="utf-8", newline="\n")
+    msg["Description-Content-Type"] = "text/markdown"
+    msg["Project-URL"] = "Homepage, https://github.com/snir-spira37/spira-trust"
+    msg["Project-URL"] = "Repository, https://github.com/snir-spira37/spira-trust"
+    msg["Project-URL"] = "Issues, https://github.com/snir-spira37/spira-trust/issues"
+    msg["Project-URL"] = "Documentation, https://github.com/snir-spira37/spira-trust/tree/main/docs"
+    readme = (repo / "README.md").read_text(encoding="utf-8")
+    (dist / "METADATA").write_text(msg.as_string() + "\n" + readme, encoding="utf-8", newline="\n")
     (dist / "WHEEL").write_text(
         "Wheel-Version: 1.0\n"
         "Generator: spira-public-wheel-builder\n"
