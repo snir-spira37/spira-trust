@@ -58,6 +58,11 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.3 - TestPyPI Trusted Publishing candidate
+
+- Version bump for the first TestPyPI Trusted Publishing/OIDC live run.
+- No feature changes from 0.5.2.
+
 ## spira-trust 0.5.2 - Bundle 030_003
 
 - Embedded a narrow CycloneDX SBOM under `.dist-info/sboms/` in the public wheel.

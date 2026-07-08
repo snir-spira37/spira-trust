@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.2"
+VERSION = "0.5.3"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 
