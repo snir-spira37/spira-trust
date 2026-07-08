@@ -11,7 +11,7 @@ Create a fresh environment and install from production PyPI:
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install spira-trust==0.5.7
+python -m pip install spira-trust==0.5.8
 spira-trust version
 ```
 
@@ -21,7 +21,7 @@ On Windows PowerShell:
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install spira-trust==0.5.7
+python -m pip install spira-trust==0.5.8
 spira-trust version
 ```
 

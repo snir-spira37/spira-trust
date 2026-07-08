@@ -25,35 +25,35 @@ enough evidence to return TRUST_OK_WITH_NOTES, TRUST_WARN, or TRUST_BLOCK?
 ```
 
 For market positioning and capability boundaries, see
-[`docs/capability_matrix.md`](docs/capability_matrix.md).
+[`docs/capability_matrix.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/capability_matrix.md).
 
 ## Install
 
 From production PyPI:
 
 ```bash
-python -m pip install spira-trust==0.5.7
+python -m pip install spira-trust==0.5.8
 spira-trust version
 ```
 
 Every production release is published to PyPI with Trusted Publishing/OIDC.
 PyPI displays release provenance for the wheel artifact.
 
-The production release evidence for `0.5.5` is closed in
-[`docs/030_closure_note.md`](docs/030_closure_note.md).
+For release closure notes, see
+[`docs/030_closure_note.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/030_closure_note.md).
 
 For pilot onboarding, start with
-[`docs/pilot_readiness_pack.md`](docs/pilot_readiness_pack.md).
+[`docs/pilot_readiness_pack.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/pilot_readiness_pack.md).
 
-For CI, see [`docs/ci_quickstart.md`](docs/ci_quickstart.md).
+For CI, see [`docs/ci_quickstart.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/ci_quickstart.md).
 
 For external pilot handoff, see:
 
-- [`docs/pilot_outreach_email.md`](docs/pilot_outreach_email.md)
-- [`docs/why_spira_trust.md`](docs/why_spira_trust.md)
-- [`docs/demo_10_minutes.md`](docs/demo_10_minutes.md)
-- [`docs/ci_pilot_15_minutes.md`](docs/ci_pilot_15_minutes.md)
-- [`docs/pilot_feedback_questions.md`](docs/pilot_feedback_questions.md)
+- [`docs/pilot_outreach_email.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/pilot_outreach_email.md)
+- [`docs/why_spira_trust.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/why_spira_trust.md)
+- [`docs/demo_10_minutes.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/demo_10_minutes.md)
+- [`docs/ci_pilot_15_minutes.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/ci_pilot_15_minutes.md)
+- [`docs/pilot_feedback_questions.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/pilot_feedback_questions.md)
 
 From this repository:
 
@@ -237,8 +237,7 @@ Graph mode writes:
   file count, and uncompressed byte count
 - `graph_evidence_manifest.json` with schema version, tool identity,
   environment capture, and evidence file hashes
-- `governance/SPIRA_GRAPH_EVIDENCE_PACKAGE_001_BASELINE/...`, a package-lock
-  of the graph evidence using SPIRA's existing governance engine
+- governance package-lock evidence for the graph outputs
 - `graph_evidence_package_result.json` with the governance package paths and
   post-lock verification result
 
@@ -466,8 +465,9 @@ GRAPH_BLOCK
   declared/runtime relationship.
 ```
 
-See `docs/verdicts.md` for the local explanation of verdicts, contradictions,
-and common fixes.
+See
+[`docs/verdicts.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/verdicts.md)
+for the local explanation of verdicts, contradictions, and common fixes.
 
 ## What It Checks Automatically
 
@@ -539,7 +539,6 @@ Graph mode does not claim to be a complete PEP 440 or PEP 508 validator.
 - It does not detect typosquatting when the package is internally consistent.
 - It does not auto-interpret README or long free-text prose.
 - It does not prove that a package is good, safe, or production-ready.
-- It does not close SPIRA Question E.
 
 ## Pilot Question
 
@@ -551,5 +550,4 @@ Did this verdict and evidence help you decide anything about the package you cho
 
 Honest negative feedback is valid output. If the report is confusing, too noisy,
 or not useful, that is exactly what the pilot is meant to discover.
-
 

@@ -58,6 +58,15 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.8 - PyPI README link polish
+
+- Converts public README documentation links to absolute GitHub URLs so they
+  work from PyPI's rendered long description.
+- Updates pilot install snippets to `spira-trust==0.5.8`.
+- Removes an internal `Question E` reference from the public not-claimed list.
+- Replaces an internal governance package name in README with a public-facing
+  description of graph evidence package-lock output.
+
 ## spira-trust 0.5.7 - Public metadata correction
 
 - Replaces the old pilot metadata license string with `Apache-2.0`.
