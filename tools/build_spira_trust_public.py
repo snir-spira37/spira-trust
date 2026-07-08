@@ -19,9 +19,21 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.3"
+VERSION = "0.5.4"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
+DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
+TEXT_SUFFIXES = {
+    ".cfg",
+    ".ini",
+    ".json",
+    ".md",
+    ".py",
+    ".toml",
+    ".txt",
+    ".yaml",
+    ".yml",
+}
 
 PUBLIC_FILES = [
     "spira_core/__init__.py",
@@ -199,15 +211,31 @@ def _embedded_cyclonedx_sbom() -> dict[str, object]:
 def _write_wheel(stage: Path, wheel_path: Path) -> None:
     files = sorted(path for path in stage.rglob("*") if path.is_file() and path.name != "RECORD")
     record_lines = []
-    with zipfile.ZipFile(wheel_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+    with zipfile.ZipFile(wheel_path, "w", compression=zipfile.ZIP_STORED) as zf:
         for path in files:
             rel = path.relative_to(stage).as_posix()
-            data = path.read_bytes()
-            zf.writestr(rel, data)
+            data = _read_deterministic_payload(path)
+            _write_zip_member(zf, rel, data)
             record_lines.append(f"{rel},{_record_hash(data)},{len(data)}")
         record_name = f"{DIST_INFO}/RECORD"
         record_lines.append(f"{record_name},,")
-        zf.writestr(record_name, "\n".join(record_lines) + "\n")
+        _write_zip_member(zf, record_name, ("\n".join(record_lines) + "\n").encode("utf-8"))
+
+
+def _read_deterministic_payload(path: Path) -> bytes:
+    data = path.read_bytes()
+    if path.suffix.lower() not in TEXT_SUFFIXES:
+        return data
+    text = data.decode("utf-8")
+    return text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+
+
+def _write_zip_member(zf: zipfile.ZipFile, rel: str, data: bytes) -> None:
+    info = zipfile.ZipInfo(rel, date_time=DETERMINISTIC_ZIP_TIMESTAMP)
+    info.compress_type = zipfile.ZIP_STORED
+    info.create_system = 3
+    info.external_attr = 0o644 << 16
+    zf.writestr(info, data)
 
 
 def _record_hash(data: bytes) -> str:

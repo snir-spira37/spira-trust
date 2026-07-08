@@ -4,7 +4,7 @@ build-backend = "manual-public-wheel"
 
 [project]
 name = "spira-trust"
-version = "0.5.3"
+version = "0.5.4"
 description = "Offline verifier for Python wheel evidence before install."
 readme = "README_SPIRA_REVIEW.md"
 requires-python = ">=3.10"

@@ -58,6 +58,12 @@
 - Keep the evidence-pack manifest and decision evidence hashes aligned over the same final bytes.
 - Report top-level PEP 740 digest failures as `ATTESTATION_DIGEST_MISMATCH` when applicable.
 
+## spira-trust 0.5.4 - Production PyPI release candidate
+
+- Adds deterministic wheel ZIP metadata and normalized text payloads for reproducible release candidates.
+- Adds a Production PyPI Trusted Publishing workflow candidate.
+- No feature changes from 0.5.3.
+
 ## spira-trust 0.5.3 - TestPyPI Trusted Publishing candidate
 
 - Version bump for the first TestPyPI Trusted Publishing/OIDC live run.

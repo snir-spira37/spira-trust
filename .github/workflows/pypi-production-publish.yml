@@ -1,0 +1,52 @@
+name: SPIRA Trust Production PyPI Trusted Publishing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-self-evidence-and-publish-pypi:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build public wheel
+        run: |
+          python tools/build_spira_trust_public.py dist/_wheel_build_pypi
+          mkdir -p dist/publish dist/release-evidence
+          cp dist/_wheel_build_pypi/wheelhouse/spira_trust-*.whl dist/publish/
+
+      - name: Install built wheel
+        run: |
+          python -m pip install --no-index dist/publish/spira_trust-*.whl
+          spira-trust version
+
+      - name: Generate SPIRA self-evidence
+        run: |
+          WHEEL="$(ls dist/publish/spira_trust-*.whl | head -n 1)"
+          python tools/build_spira_release_evidence.py \
+            --wheel "$WHEEL" \
+            --output-dir dist/release-evidence \
+            --spira-command spira-trust \
+            --verify-embedded-sboms
+
+      - name: Upload release evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: spira-production-release-evidence
+          path: |
+            dist/release-evidence/**
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/publish
