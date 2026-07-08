@@ -44,6 +44,14 @@ For pilot onboarding, start with
 
 For CI, see [`docs/ci_quickstart.md`](docs/ci_quickstart.md).
 
+For external pilot handoff, see:
+
+- [`docs/pilot_outreach_email.md`](docs/pilot_outreach_email.md)
+- [`docs/why_spira_trust.md`](docs/why_spira_trust.md)
+- [`docs/demo_10_minutes.md`](docs/demo_10_minutes.md)
+- [`docs/ci_pilot_15_minutes.md`](docs/ci_pilot_15_minutes.md)
+- [`docs/pilot_feedback_questions.md`](docs/pilot_feedback_questions.md)
+
 From this repository:
 
 ```bash
