@@ -29,17 +29,24 @@ For market positioning and capability boundaries, see
 
 ## Install
 
+From production PyPI:
+
+```bash
+python -m pip install spira-trust==0.5.5
+spira-trust version
+```
+
+The production release evidence for `0.5.5` is closed in
+[`docs/030_closure_note.md`](docs/030_closure_note.md).
+
+For pilot onboarding, start with
+[`docs/pilot_readiness_pack.md`](docs/pilot_readiness_pack.md).
+
+For CI, see [`docs/ci_quickstart.md`](docs/ci_quickstart.md).
+
 From this repository:
 
 ```bash
-python -m pip install .
-```
-
-If you are installing into a fresh virtual environment, make sure the build
-tools are present first:
-
-```bash
-python -m pip install setuptools wheel
 python -m pip install .
 ```
 
