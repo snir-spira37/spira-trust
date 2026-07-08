@@ -55,6 +55,10 @@ For external pilot handoff, see:
 - [`docs/ci_pilot_15_minutes.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/ci_pilot_15_minutes.md)
 - [`docs/pilot_feedback_questions.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/pilot_feedback_questions.md)
 
+Use case:
+
+- [`docs/ai_assisted_builds.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/ai_assisted_builds.md) - use SPIRA Trust to gate Python wheel artifacts produced by coding agents before install or release.
+
 From this repository:
 
 ```bash
@@ -550,4 +554,3 @@ Did this verdict and evidence help you decide anything about the package you cho
 
 Honest negative feedback is valid output. If the report is confusing, too noisy,
 or not useful, that is exactly what the pilot is meant to discover.
-
