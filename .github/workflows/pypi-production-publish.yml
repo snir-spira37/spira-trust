@@ -94,6 +94,32 @@ jobs:
             --spira-command spira-trust \
             --verify-embedded-sboms
 
+      - name: Guard release agent summary size
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+
+          limit = 3 * 1024
+          candidates = list(Path("dist/release-evidence").rglob("agent_summary.json"))
+
+          if not candidates:
+              print("ERROR: agent_summary.json not found in release evidence", file=sys.stderr)
+              sys.exit(1)
+
+          for path in candidates:
+              size = path.stat().st_size
+              print(f"{path}: {size} bytes")
+              if size > limit:
+                  print(
+                      f"ERROR: {path} is {size} bytes; release self-check agent_summary limit is {limit} bytes",
+                      file=sys.stderr,
+                  )
+                  sys.exit(1)
+
+          print(f"agent_summary size guard passed: <= {limit} bytes")
+          PY
+
       - name: Run previous public version gate
         run: |
           WHEEL="$(ls dist/publish/spira_trust-*.whl | head -n 1)"

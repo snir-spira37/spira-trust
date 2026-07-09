@@ -62,6 +62,18 @@ The strongest conservative result is Q1 minimal:
 That compares `agent_summary.json` against only `spira-decision.json`, the
 smallest fair baseline for the verdict/stop question.
 
+SPIRA now treats this size property as a release-quality invariant for its own
+release self-check:
+
+```text
+release self-check agent_summary.json <= 3KB
+```
+
+This is a dogfood guard, not a universal claim that every future summary for
+every artifact will stay below 3KB. If SPIRA's own release summary grows past
+that limit, the summary is probably starting to become a second report instead
+of a small decision surface.
+
 The broader Q1 result is:
 
 ```text
@@ -97,6 +109,10 @@ That is still positive, but it is not the main result. The likely advantage of
 `status` is over a multi-artifact workspace, where one status response can cover
 many checked artifacts. That has not been measured here and should remain a
 hypothesis until measured.
+
+The `0.6.1` result is preserved as the baseline. If a smaller agent-oriented
+status output is added later, it should be measured as a before/after improvement
+rather than replacing the original 6.9% result.
 
 ## Stage B
 
