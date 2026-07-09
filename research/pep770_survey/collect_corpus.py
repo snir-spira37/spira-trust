@@ -18,6 +18,7 @@ from typing import Any
 
 DEFAULT_BASE_URL = "https://pypi.sbomify.com"
 USER_AGENT = "spira-trust-pep770-survey/0.1 (+https://github.com/snir-spira37/spira-trust)"
+METHODOLOGY_PATH = "research/pep770_survey/methodology.v2.json"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -28,6 +29,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-pages", type=int, help="Limit pypi-tea package-list pages for smoke runs.")
     parser.add_argument("--limit-packages", type=int, help="Limit selected packages after grouping for pilot runs.")
     parser.add_argument("--sleep", type=float, default=0.15, help="Delay between HTTP requests.")
+    parser.add_argument("--methodology", default=METHODOLOGY_PATH)
     args = parser.parse_args(argv)
 
     output = Path(args.output)
@@ -50,11 +52,12 @@ def main(argv: list[str] | None = None) -> int:
         selected.append(entry)
 
     manifest = {
-        "schema": "SPIRA_PEP770_SURVEY_CORPUS_MANIFEST_V1",
+        "schema": "SPIRA_PEP770_SURVEY_CORPUS_MANIFEST_V2",
         "created_at": started_at,
-        "methodology": "research/pep770_survey/methodology.v1.json",
+        "methodology": args.methodology,
         "source": {
             "base_url": args.base_url,
+            "live_stats": fetch_live_stats(args.base_url),
             "package_listing_pages_seen": pages_seen,
             "package_listing_total_pages_reported": total_pages,
             "package_versions_seen": len(package_versions),
@@ -62,7 +65,7 @@ def main(argv: list[str] | None = None) -> int:
             "limit_packages": args.limit_packages,
             "max_pages": args.max_pages,
         },
-        "selection_rule": "For each package, use pypi-tea package pages to identify wheel filenames with embedded SBOMs, then select the newest x86_64/amd64 wheel by PyPI upload time, falling back to newest py3-none-any wheel.",
+        "selection_rule": "For each PyPI project, use pypi-tea package pages to identify wheel filenames with embedded SBOMs, then select the newest x86_64/amd64 wheel by PyPI upload time, falling back to newest py3-none-any wheel.",
         "packages": selected,
     }
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -198,17 +201,121 @@ def download_selected_wheel(entry: dict[str, Any], download_dir: Path) -> None:
     selected["downloaded_sha256"] = digest
     selected["download_sha256_matches_pypi"] = digest == selected.get("sha256")
     target.write_bytes(data)
-    selected["embedded_sbom_paths"] = embedded_sbom_paths(target)
-    selected["embedded_sbom_count"] = len(selected["embedded_sbom_paths"])
+    selected["embedded_sboms"] = embedded_sbom_records(target)
+    selected["embedded_sbom_paths"] = [item["path"] for item in selected["embedded_sboms"]]
+    selected["embedded_sbom_count"] = len(selected["embedded_sboms"])
+    selected["sbom_generator"] = summarize_generators(selected["embedded_sboms"])
 
 
-def embedded_sbom_paths(path: Path) -> list[str]:
+def embedded_sbom_records(path: Path) -> list[dict[str, Any]]:
     with zipfile.ZipFile(path) as archive:
-        return sorted(
-            name
-            for name in archive.namelist()
-            if ".dist-info/sboms/" in name and not name.endswith("/")
-        )
+        records = []
+        for name in sorted(archive.namelist()):
+            if ".dist-info/sboms/" not in name or name.endswith("/"):
+                continue
+            data = archive.read(name)
+            records.append(
+                {
+                    "path": name,
+                    "bytes": len(data),
+                    "sha256": hashlib.sha256(data).hexdigest(),
+                    "format_hint": sbom_format_hint(name),
+                    "generator_tools_raw": extract_generator_tools(data, name),
+                }
+            )
+        for record in records:
+            record["generator_family"] = generator_family(record.get("generator_tools_raw") or [])
+        return records
+
+
+def sbom_format_hint(path: str) -> str:
+    lowered = path.lower()
+    if lowered.endswith(".json"):
+        return "json"
+    if lowered.endswith(".spdx"):
+        return "spdx"
+    if lowered.endswith(".xml"):
+        return "xml"
+    return "unknown"
+
+
+def extract_generator_tools(data: bytes, path: str) -> list[dict[str, Any]]:
+    if sbom_format_hint(path) != "json":
+        return []
+    try:
+        payload = json.loads(data.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return [{"family": "UNPARSEABLE"}]
+    if not isinstance(payload, dict) or payload.get("bomFormat") != "CycloneDX":
+        return []
+    metadata = payload.get("metadata")
+    if not isinstance(metadata, dict):
+        return []
+    tools = metadata.get("tools")
+    return normalize_tools(tools)
+
+
+def normalize_tools(tools: Any) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    if isinstance(tools, list):
+        for item in tools:
+            if isinstance(item, dict):
+                records.append({key: item.get(key) for key in ("vendor", "name", "version") if item.get(key)})
+        return records
+    if isinstance(tools, dict):
+        nested = []
+        for key in ("components", "services", "tools"):
+            value = tools.get(key)
+            if isinstance(value, list):
+                nested.extend(value)
+        if nested:
+            return normalize_tools(nested)
+        if any(tools.get(key) for key in ("vendor", "name", "version")):
+            records.append({key: tools.get(key) for key in ("vendor", "name", "version") if tools.get(key)})
+    return records
+
+
+def generator_family(tools: list[dict[str, Any]]) -> str:
+    if any(tool.get("family") == "UNPARSEABLE" for tool in tools):
+        return "UNPARSEABLE"
+    names = " ".join(
+        str(tool.get("name") or "") + " " + str(tool.get("vendor") or "")
+        for tool in tools
+    ).lower()
+    if not names.strip():
+        return "UNKNOWN"
+    if "auditwheel" in names:
+        return "AUDITWHEEL"
+    if "cargo-cyclonedx" in names or "cyclonedx-rust-cargo" in names:
+        return "CARGO_CYCLONEDX"
+    if "sbomify" in names:
+        return "SBOMIFY"
+    if "syft" in names:
+        return "SYFT"
+    if "cyclonedx-py" in names or "cyclonedx-python" in names:
+        return "CYCLONEDX_PYTHON"
+    return "OTHER"
+
+
+def summarize_generators(sboms: list[dict[str, Any]]) -> dict[str, Any]:
+    families = sorted({str(item.get("generator_family") or "UNKNOWN") for item in sboms})
+    if not families:
+        primary = "UNKNOWN"
+    elif len(families) == 1:
+        primary = families[0]
+    else:
+        primary = "MIXED"
+    return {
+        "primary_family": primary,
+        "families": families,
+    }
+
+
+def fetch_live_stats(base_url: str) -> dict[str, Any] | None:
+    try:
+        return http_get_json(f"{base_url.rstrip('/')}/stats")
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
+        return None
 
 
 def http_get_json(url: str) -> dict[str, Any]:
