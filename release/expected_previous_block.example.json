@@ -1,0 +1,18 @@
+{
+  "schema": "SPIRA_EXPECTED_PREVIOUS_BLOCK_V1",
+  "candidate_version": "0.6.1",
+  "previous_version": "0.6.0",
+  "expected_previous_verdict": "GRAPH_BLOCK",
+  "expected_finding_codes": [
+    "ATTESTATION_DIGEST_MISMATCH"
+  ],
+  "release_notes_path": "CHANGELOG.md",
+  "release_notes_required_terms": [
+    "previous version blocked",
+    "0.6.0",
+    "0.6.1",
+    "ATTESTATION_DIGEST_MISMATCH",
+    "DOCUMENTED_PREVIOUS_BLOCK"
+  ],
+  "why_expected": "Explain the intentional semantics change or known candidate condition that makes this previous-version block expected."
+}
