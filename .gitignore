@@ -12,6 +12,7 @@ dist/
 work/
 outputs/
 .spira/
+tmp/
 *.zip
 *.zip.sha256
 
