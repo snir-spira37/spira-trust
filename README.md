@@ -42,6 +42,9 @@ PyPI displays release provenance for the wheel artifact.
 For release closure notes, see
 [`docs/030_closure_note.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/030_closure_note.md).
 
+For the release self-check and previous-version gate contract, see
+[`docs/release_self_check.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/release_self_check.md).
+
 For pilot onboarding, start with
 [`docs/pilot_readiness_pack.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/pilot_readiness_pack.md).
 
