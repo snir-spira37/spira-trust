@@ -58,6 +58,19 @@ If the candidate version blocks itself, the release does not publish.
 A candidate self-block means the new version could not satisfy its own release
 evidence contract for the artifact being released.
 
+There is no documented-exception path for candidate self-check.
+
+The documented previous-block path applies only to the previous-version gate.
+It exists because a previously published SPIRA version may block a candidate due
+to an intentional release-semantics change.
+
+A candidate version blocking its own release artifact is different. It means the
+candidate could not satisfy its own current release evidence contract.
+
+If candidate self-check blocks, the release does not publish. That result cannot
+be converted into `DOCUMENTED_PREVIOUS_BLOCK`, and there is no
+`DOCUMENTED_CANDIDATE_BLOCK` status.
+
 ## Previous Public Version Gate
 
 The previous-version gate runs the previous public `spira-trust` release from
@@ -117,6 +130,8 @@ PREVIOUS_VERSION_RUN_ERROR
 PREVIOUS_VERSION_RESOLUTION_ERROR
 PREVIOUS_VERSION_INSTALL_ERROR
 PREVIOUS_VERSION_SCHEMA_UNREADABLE
+EXPECTED_PREVIOUS_BLOCK_INVALID
+EXPECTED_PREVIOUS_BLOCK_NOT_OBSERVED
 ```
 
 `PASS` means the previous public version did not block the candidate artifact.
@@ -140,8 +155,29 @@ installed with the pinned hash selected from PyPI metadata.
 `PREVIOUS_VERSION_SCHEMA_UNREADABLE` means the helper could not extract a
 verdict or useful decision state from the previous version outputs.
 
+`EXPECTED_PREVIOUS_BLOCK_INVALID` means an active expected previous-block
+declaration exists, but it is stale or invalid for the current candidate,
+previous version, finding codes, or release notes.
+
+`EXPECTED_PREVIOUS_BLOCK_NOT_OBSERVED` means an active expected previous-block
+declaration exists, but the previous public version did not block the candidate
+artifact.
+
 A SPIRA verdict block and a CLI/runtime failure are different failure modes.
 They must not be collapsed into the same status.
+
+An expected previous-block declaration only covers an observed SPIRA verdict
+block from the previous public version.
+
+It does not cover release infrastructure failures.
+
+If the previous version crashes, exits without a parseable verdict, fails to
+produce readable evidence, or cannot be run cleanly, the release fails with the
+corresponding infrastructure status even when an expected previous-block
+declaration is present.
+
+A declaration expecting `GRAPH_BLOCK` must never convert a CLI crash or
+unreadable schema into `DOCUMENTED_PREVIOUS_BLOCK`.
 
 ## If the Previous Version Blocks
 
@@ -185,6 +221,30 @@ publish workflow. A runtime input is not a durable release record.
 
 If the declaration file is present, it must match the candidate version. A stale
 or mismatched declaration is a release hygiene failure.
+
+An active expected previous-block declaration is itself part of the release
+contract.
+
+If `release/expected_previous_block.json` exists and the previous version does
+not block, the release fails with:
+
+```text
+EXPECTED_PREVIOUS_BLOCK_NOT_OBSERVED
+```
+
+A stale exception file must not remain in the repository after the release it
+was written for.
+
+If `release/expected_previous_block.json` exists but does not match the current
+candidate version, previous version, required finding codes, or release notes,
+the release fails with:
+
+```text
+EXPECTED_PREVIOUS_BLOCK_INVALID
+```
+
+A declaration file is allowed to explain an observed previous-version `BLOCK`.
+It is not allowed to explain the absence of a block.
 
 The declaration must identify structured finding codes rather than free-text
 message fragments wherever possible. Human-readable messages may change between
@@ -242,6 +302,24 @@ The release notes must include:
 - why the block is expected or intentionally changed
 - where the evidence artifact is attached
 
+Release notes referenced by `release/expected_previous_block.json` must mention
+the current candidate version.
+
+If the notes file exists but does not contain the candidate version, the helper
+treats it as stale release-note residue and fails the release.
+
+The expected-block declaration must not point to release notes from a previous
+release.
+
+The mechanical requirement is:
+
+```text
+notes file must contain candidate_version
+notes file must contain previous_version
+notes file must contain DOCUMENTED_PREVIOUS_BLOCK
+notes file must contain every expected_finding_code
+```
+
 Suggested wording:
 
 ```text
@@ -273,6 +351,7 @@ A successful production release must attach at least:
 spira-release-evidence.zip
 release_self_evidence_manifest.json
 previous_version_gate.json
+previous-version-gate.zip
 agent_summary.json, when emitted
 ```
 
@@ -356,3 +435,34 @@ release stops unless the block is explicitly declared in the repository,
 documented in the release notes, and preserved in the public release evidence.
 A documented previous block is recorded as DOCUMENTED_PREVIOUS_BLOCK, not PASS.
 ```
+
+Decision matrix:
+
+```text
+no declaration + previous PASS
+  => PASS
+  => publish_allowed: true
+
+no declaration + previous GRAPH_BLOCK
+  => PREVIOUS_VERSION_BLOCK
+  => publish_allowed: false
+
+valid declaration + previous GRAPH_BLOCK + finding code matches + notes match
+  => DOCUMENTED_PREVIOUS_BLOCK
+  => publish_allowed: true
+
+valid declaration + previous PASS
+  => EXPECTED_PREVIOUS_BLOCK_NOT_OBSERVED
+  => publish_allowed: false
+
+declaration exists but candidate_version / previous_version / notes / codes invalid
+  => EXPECTED_PREVIOUS_BLOCK_INVALID
+  => publish_allowed: false
+
+valid declaration + previous CLI crash / nonzero without verdict / unreadable schema
+  => PREVIOUS_VERSION_RUN_ERROR or PREVIOUS_VERSION_SCHEMA_UNREADABLE
+  => publish_allowed: false
+```
+
+A documented previous block documents a previous SPIRA verdict. It does not
+document a crash, a missing conclusion, stale notes, or a stale exception file.
