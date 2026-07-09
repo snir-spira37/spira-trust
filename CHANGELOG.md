@@ -1,5 +1,21 @@
 # Changelog
 
+## spira-trust 0.6.1 - Release self-check ritual
+
+- Added the release self-check contract: every production release candidate is
+  checked by the candidate version and by the previous public version before
+  publication.
+- Added the previous-version gate, including documented failure semantics for
+  `DOCUMENTED_PREVIOUS_BLOCK`, stale expected-block declarations,
+  schema-unreadable previous outputs, and runtime failures.
+- Added the first generated conformance corpus case: a wheel with an
+  intentional `RECORD_MISMATCH`, built from source by `corpus/build_corpus.py`
+  rather than committed as a binary fixture.
+- Hardened the production publish workflow to attach release evidence assets,
+  compare tag version to wheel version, bundle previous-version gate evidence,
+  and publish only after release evidence is attached.
+- No verdict semantics changed in this release.
+
 ## spira-trust 0.6.0 - Agent evidence memory and attestation verdict hardening
 
 - Added `SPIRA_AGENT_SUMMARY_V1` and `agent_summary.json` for small

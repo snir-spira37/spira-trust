@@ -32,7 +32,7 @@ For market positioning and capability boundaries, see
 From production PyPI:
 
 ```bash
-python -m pip install spira-trust==0.6.0
+python -m pip install spira-trust==0.6.1
 spira-trust version
 ```
 
