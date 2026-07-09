@@ -22,11 +22,63 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install release workflow tooling
+        run: python -m pip install packaging
+
       - name: Build public wheel
         run: |
           python tools/build_spira_trust_public.py dist/_wheel_build_pypi
           mkdir -p dist/publish dist/release-evidence
           cp dist/_wheel_build_pypi/wheelhouse/spira_trust-*.whl dist/publish/
+
+      - name: Verify tag version matches wheel version
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import sys
+          from pathlib import Path
+          from packaging.version import InvalidVersion, Version
+
+          wheels = sorted(Path("dist/publish").glob("spira_trust-*.whl"))
+          if len(wheels) != 1:
+              print(f"expected exactly one spira_trust wheel, found {len(wheels)}", file=sys.stderr)
+              for wheel in wheels:
+                  print(f"  {wheel}", file=sys.stderr)
+              sys.exit(1)
+
+          wheel = wheels[0]
+          match = re.match(r"^spira_trust-(?P<version>[^-]+)-", wheel.name)
+          if not match:
+              print(f"could not parse version from wheel filename: {wheel.name}", file=sys.stderr)
+              sys.exit(1)
+
+          ref_name = os.environ.get("GITHUB_REF_NAME", "")
+          if not ref_name.startswith("v"):
+              print(f"tag does not start with v: {ref_name}", file=sys.stderr)
+              sys.exit(1)
+
+          raw_tag_version = ref_name[1:]
+          raw_wheel_version = match.group("version")
+
+          try:
+              tag_version = Version(raw_tag_version)
+              wheel_version = Version(raw_wheel_version)
+          except InvalidVersion as error:
+              print(f"invalid PEP 440 version: {error}", file=sys.stderr)
+              sys.exit(1)
+
+          if tag_version != wheel_version:
+              print(
+                  f"tag version {tag_version} does not match wheel version {wheel_version} "
+                  f"from {wheel.name}",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+
+          print(f"tag version matches wheel version: {tag_version}")
+          PY
 
       - name: Install built wheel
         run: |
@@ -63,12 +115,19 @@ jobs:
             cp dist/release-evidence/graph/agent_summary.json dist/release-evidence/agent_summary.json
           fi
           (
+            cd dist/release-evidence
+            zip -r previous-version-gate.zip previous-version-gate
+          )
+          (
             cd dist/publish
             sha256sum spira_trust-*.whl
           ) > dist/release-evidence/SHA256SUMS.txt
           (
             cd dist/release-evidence
-            sha256sum spira-release-evidence.zip
+            sha256sum spira-release-evidence.zip \
+              previous-version-gate.zip \
+              release_self_evidence_manifest.json \
+              previous_version_gate.json
           ) >> dist/release-evidence/SHA256SUMS.txt
           {
             echo "SPIRA Trust ${GITHUB_REF_NAME#v}"
@@ -100,6 +159,7 @@ jobs:
             "dist/release-evidence/spira-release-evidence.zip"
             "dist/release-evidence/release_self_evidence_manifest.json"
             "dist/release-evidence/previous_version_gate.json"
+            "dist/release-evidence/previous-version-gate.zip"
             "dist/release-evidence/SHA256SUMS.txt"
           )
           if [ -f dist/release-evidence/agent_summary.json ]; then
