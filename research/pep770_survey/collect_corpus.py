@@ -167,7 +167,17 @@ def group_versions(package_versions: set[tuple[str, str]]) -> dict[str, set[str]
 
 
 def select_package_wheel(base_url: str, name: str, versions: set[str], *, sleep: float) -> dict[str, Any]:
-    pypi = http_get_json(f"https://pypi.org/pypi/{urllib.parse.quote(name)}/json")
+    try:
+        pypi = http_get_json(f"https://pypi.org/pypi/{urllib.parse.quote(name)}/json")
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+        return {
+            "package": name,
+            "versions_with_sbom_seen": sorted(versions),
+            "candidate_wheel_count": 0,
+            "selection_errors": [{"scope": "pypi_json", "error": str(exc)}],
+            "selection_status": "PYPI_JSON_ERROR",
+            "selected_wheel": None,
+        }
     candidates: list[dict[str, Any]] = []
     errors = []
     for version in sorted(versions):
