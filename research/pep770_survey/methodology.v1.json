@@ -1,0 +1,105 @@
+{
+  "schema": "SPIRA_PEP770_SURVEY_METHODOLOGY_V1",
+  "locked_at_date": "2026-07-09",
+  "frozen": "This file is committed before the PEP 770 survey corpus is downloaded. Categories, measurements, and falsification criteria may not change after results are observed. Amendments require a new versioned file with rationale; V1 results stand as reported under V1.",
+  "code_scope": {
+    "spira_checker_schema": "SPIRA_PEP770_SBOM_CONSISTENCY_V1",
+    "checker_scope": [
+      "embedded SBOM files under .dist-info/sboms/",
+      "JSON parseability for JSON SBOM files",
+      "JSON root is an object",
+      "CycloneDX top-level bomFormat recognition",
+      "CycloneDX metadata.component.name compared with wheel metadata name when present",
+      "CycloneDX metadata.component.version compared with wheel metadata version when present"
+    ],
+    "not_claimed": [
+      "does not validate full CycloneDX or SPDX schemas",
+      "does not compare every SBOM component to every wheel file",
+      "does not trust, merge, or replace SPIRA evidence with embedded SBOM contents",
+      "does not perform vulnerability, license, malware, provenance, or legal analysis"
+    ]
+  },
+  "corpus": {
+    "source": "PyPI packages shipping .dist-info/sboms/ per PEP 770, using public adoption data and/or a reproducible PyPI code index query recorded with the survey",
+    "selection": "one wheel per package: latest x86_64 wheel when available, otherwise latest py3-none-any wheel when available",
+    "recording": [
+      "package name",
+      "version",
+      "wheel filename",
+      "wheel sha256",
+      "download URL",
+      "download date"
+    ],
+    "out_of_scope": [
+      "other platforms for the same package",
+      "older versions for the same package",
+      "sdists"
+    ]
+  },
+  "verdict_categories": {
+    "SBOM_CONSISTENT": "SPIRA's V1 PEP 770 subset evaluated the embedded SBOM and found no contradiction in the checked fields.",
+    "SBOM_INCONSISTENT": "SPIRA's V1 PEP 770 subset found a positive contradiction in the checked fields, such as CycloneDX metadata.component.name or metadata.component.version disagreeing with wheel metadata.",
+    "SBOM_INVALID": "An embedded JSON SBOM file could not be decoded as UTF-8 JSON or its JSON root was not an object. This is parseability invalidity only, not full schema invalidity.",
+    "NOT_EVALUATED": "An embedded SBOM is present but the relevant format or layer is outside SPIRA's V1 checker scope, such as non-JSON SBOM files or non-CycloneDX JSON. Explicitly reported; never counted as consistent.",
+    "TOOL_ERROR": "SPIRA crashed or produced unreadable output. This is a SPIRA bug or harness bug, never a finding about the package."
+  },
+  "category_rules": [
+    "Every wheel receives exactly one survey category.",
+    "TOOL_ERROR wheels are excluded from consistency statistics and reported separately with count and failure mode.",
+    "A wheel is SBOM_INCONSISTENT only on a positive contradiction in the fields SPIRA V1 checks.",
+    "Absence of checked data is never treated as inconsistency. Missing or unsupported evidence is NOT_EVALUATED, not SBOM_INCONSISTENT.",
+    "If a wheel contains multiple embedded SBOM files, the most severe supported result determines the wheel category: TOOL_ERROR, SBOM_INVALID, SBOM_INCONSISTENT, NOT_EVALUATED, SBOM_CONSISTENT.",
+    "SPIRA raw statuses are preserved in raw results; survey categories are a reporting layer over those raw statuses."
+  ],
+  "status_mapping": {
+    "VERIFIED_OK": "SBOM_CONSISTENT",
+    "CONTRADICTION_with_metadata_component_name_or_version_mismatch": "SBOM_INCONSISTENT",
+    "CONTRADICTION_with_json_decode_error_or_non_object_root": "SBOM_INVALID",
+    "UNVERIFIED": "NOT_EVALUATED",
+    "NOT_EVALUATED": "NOT_EVALUATED",
+    "unreadable_or_missing_spira_output": "TOOL_ERROR"
+  },
+  "context_tax_measurements": {
+    "per_wheel": [
+      "sbom_total_bytes: sum of embedded SBOM file sizes under .dist-info/sboms/",
+      "agent_summary_bytes: size of SPIRA agent_summary.json for this wheel",
+      "ratio: sbom_total_bytes / agent_summary_bytes when agent_summary_bytes > 0"
+    ],
+    "reported": [
+      "median",
+      "p90",
+      "max",
+      "full distribution in JSON"
+    ],
+    "baseline_definition": "SBOM bytes only. Extended baselines, such as SBOM plus RECORD, may be reported separately only when clearly labeled.",
+    "not_claimed": [
+      "static context ingestion only",
+      "no live-agent token claim",
+      "no latency claim",
+      "no energy or CO2 claim",
+      "one wheel per package; other platforms and versions are not measured"
+    ]
+  },
+  "external_validation": {
+    "known_external_observation": "Prior public analysis reported 37 invalid embedded SBOMs in the surveyed ecosystem, attributed to one cargo-cyclonedx issue.",
+    "rule": "This observation is used as a comparison target, not as an automatic pass/fail gate, because SPIRA V1 does not validate full CycloneDX schemas. If SPIRA's SBOM_INVALID count differs materially, publication pauses until the discrepancy is explained as one of: outside V1 scope, survey corpus mismatch, SPIRA bug, harness bug, or external-analysis difference."
+  },
+  "pilot": {
+    "size": 10,
+    "rule": "Run a 10-wheel pilot before the full corpus. Any SPIRA crash or unreadable output is recorded as TOOL_ERROR and investigated before the full run.",
+    "reporting": "Pilot results and any SPIRA bugs fixed during pilot are disclosed in the final report."
+  },
+  "falsification_declared_in_advance": [
+    "If most SBOMs are consistent under SPIRA's V1 subset, report that as an ecosystem-health finding.",
+    "If most SBOMs are small, for example below 3KB, and the median ratio is near 1, report that the PEP 770 context-tax claim is weak for today's measured corpus.",
+    "Any forward-looking claim that SBOM context cost may grow with automated auditwheel generation is labeled as expectation, not measurement.",
+    "If SPIRA cannot evaluate a large fraction of the corpus, report that prominently as a tool-coverage limitation.",
+    "If TOOL_ERROR is non-zero after pilot fixes, report it prominently as a SPIRA reliability limitation."
+  ],
+  "reporting_rules": [
+    "Aggregate statistics are public.",
+    "Named packages with SBOM_INCONSISTENT or SBOM_INVALID findings are not published before contacting maintainers.",
+    "The final report must include not_claimed language for security, malware, vulnerability, legal, energy, and full schema validation claims.",
+    "All scripts, this file, raw results JSON, and generated aggregate tables are committed under research/pep770_survey/."
+  ]
+}
