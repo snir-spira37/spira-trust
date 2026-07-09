@@ -61,6 +61,7 @@ For external pilot handoff, see:
 Use case:
 
 - [`docs/ai_assisted_builds.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/ai_assisted_builds.md) - use SPIRA Trust to gate Python wheel artifacts produced by coding agents before install or release.
+- [`docs/agent_context_tax.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/agent_context_tax.md) - static benchmark of how much release evidence context an agent must ingest to answer narrow gate questions.
 
 From this repository:
 

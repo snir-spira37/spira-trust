@@ -1,0 +1,86 @@
+{
+  "schema": "SPIRA_AGENT_SAVINGS_BENCH_V2",
+  "inputs": {
+    "graph_report.json": 13301,
+    "spira-decision.json": 6376,
+    "agent_summary.json": 2097,
+    "bill_of_materials.json": 22563,
+    "graph_summary.txt": 668,
+    "status.json (real captured)": 5934
+  },
+  "baseline_assumptions": {
+    "token_estimate_method": "bytes / 4 (modeled average; real tokenizer counts vary)",
+    "q1_realistic_report_skim_fraction": 0.25,
+    "q1_realistic": "decision file + modeled fraction of graph_report.json (MODELED baseline)",
+    "q1_minimal": "decision file only (measured)",
+    "q1_pessimistic": "full report + decision + BOM (measured)",
+    "q2_requires_status_json": "Q2 SPIRA flow is reported only when real captured status JSON is provided",
+    "status_json_source": "local captured output from spira-trust status; not included in release assets"
+  },
+  "repeat_factor": 10,
+  "results": [
+    {
+      "flow": "Q1 verdict/stop - baseline pessimistic (full report+decision+BOM)",
+      "baseline_bytes": 42240,
+      "spira_bytes": 2097,
+      "saved_bytes": 40143,
+      "saved_pct": 95.0,
+      "baseline_tokens_est": 10560,
+      "spira_tokens_est": 524,
+      "saved_tokens_est": 10036,
+      "saved_tokens_est_x_repeat": 100360
+    },
+    {
+      "flow": "Q1 verdict/stop - baseline realistic (decision + MODELED 25% report skim)",
+      "baseline_bytes": 9701,
+      "spira_bytes": 2097,
+      "saved_bytes": 7604,
+      "saved_pct": 78.4,
+      "baseline_tokens_est": 2425,
+      "spira_tokens_est": 524,
+      "saved_tokens_est": 1901,
+      "saved_tokens_est_x_repeat": 19010
+    },
+    {
+      "flow": "Q1 verdict/stop - baseline minimal (decision only)",
+      "baseline_bytes": 6376,
+      "spira_bytes": 2097,
+      "saved_bytes": 4279,
+      "saved_pct": 67.1,
+      "baseline_tokens_est": 1594,
+      "spira_tokens_est": 524,
+      "saved_tokens_est": 1070,
+      "saved_tokens_est_x_repeat": 10700
+    },
+    {
+      "flow": "Q2 already-checked - baseline realistic (MODELED skim)",
+      "baseline_bytes": 9701,
+      "spira_bytes": 5934,
+      "saved_bytes": 3767,
+      "saved_pct": 38.8,
+      "baseline_tokens_est": 2425,
+      "spira_tokens_est": 1484,
+      "saved_tokens_est": 942,
+      "saved_tokens_est_x_repeat": 9420
+    },
+    {
+      "flow": "Q2 already-checked - baseline minimal (decision only)",
+      "baseline_bytes": 6376,
+      "spira_bytes": 5934,
+      "saved_bytes": 442,
+      "saved_pct": 6.9,
+      "baseline_tokens_est": 1594,
+      "spira_tokens_est": 1484,
+      "saved_tokens_est": 110,
+      "saved_tokens_est_x_repeat": 1100
+    }
+  ],
+  "not_claimed": [
+    "This measures context-ingestion cost only, not correctness or safety.",
+    "Token estimates are approximations; real tokenizer counts vary.",
+    "No energy or CO2 claim is made.",
+    "Baseline assumes the agent already knows where evidence files are; discovery cost is excluded, which favors the baseline.",
+    "The 'realistic' baselines depend on a modeled skim fraction and are labeled as such.",
+    "Savings depend on how often the question is asked; single-run savings may be small."
+  ]
+}
