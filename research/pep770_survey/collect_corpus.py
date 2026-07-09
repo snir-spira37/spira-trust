@@ -18,7 +18,7 @@ from typing import Any
 
 DEFAULT_BASE_URL = "https://pypi.sbomify.com"
 USER_AGENT = "spira-trust-pep770-survey/0.1 (+https://github.com/snir-spira37/spira-trust)"
-METHODOLOGY_PATH = "research/pep770_survey/methodology.v2.json"
+METHODOLOGY_PATH = "research/pep770_survey/methodology.v3.json"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -30,6 +30,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit-packages", type=int, help="Limit selected packages after grouping for pilot runs.")
     parser.add_argument("--sleep", type=float, default=0.15, help="Delay between HTTP requests.")
     parser.add_argument("--methodology", default=METHODOLOGY_PATH)
+    parser.add_argument("--resume", action="store_true", help="Resume from an existing output manifest.")
+    parser.add_argument("--checkpoint-every", type=int, default=1, help="Write manifest every N selected packages.")
     args = parser.parse_args(argv)
 
     output = Path(args.output)
@@ -42,36 +44,82 @@ def main(argv: list[str] | None = None) -> int:
         args.base_url, max_pages=args.max_pages, sleep=args.sleep
     )
     grouped = group_versions(package_versions)
-    selected = []
+    manifest = build_manifest(
+        created_at=started_at,
+        methodology=args.methodology,
+        base_url=args.base_url,
+        pages_seen=pages_seen,
+        total_pages=total_pages,
+        package_versions=package_versions,
+        grouped=grouped,
+        limit_packages=args.limit_packages,
+        max_pages=args.max_pages,
+        packages=[],
+    )
+    if args.resume and output.exists():
+        existing = json.loads(output.read_text(encoding="utf-8"))
+        existing_packages = existing.get("packages", [])
+        if not isinstance(existing_packages, list):
+            raise SystemExit(f"cannot resume: {output} has no package list")
+        manifest["created_at"] = existing.get("created_at", manifest["created_at"])
+        manifest["resumed_at"] = started_at
+        manifest["packages"] = existing_packages
+    selected = manifest["packages"]
+    completed = {str(item.get("package")) for item in selected if isinstance(item, dict)}
     for index, (name, versions) in enumerate(sorted(grouped.items()), start=1):
         if args.limit_packages and index > args.limit_packages:
             break
+        if name in completed:
+            continue
         entry = select_package_wheel(args.base_url, name, versions, sleep=args.sleep)
         if download_dir and entry.get("selected_wheel"):
             download_selected_wheel(entry, download_dir)
         selected.append(entry)
+        if args.checkpoint_every > 0 and len(selected) % args.checkpoint_every == 0:
+            write_manifest(output, manifest)
+    manifest["completed_at"] = datetime.now(UTC).isoformat(timespec="seconds").replace("+00:00", "Z")
+    write_manifest(output, manifest)
+    print(f"wrote {output} with {len(selected)} selected package entries")
+    return 0
 
-    manifest = {
-        "schema": "SPIRA_PEP770_SURVEY_CORPUS_MANIFEST_V2",
-        "created_at": started_at,
-        "methodology": args.methodology,
+
+def build_manifest(
+    *,
+    created_at: str,
+    methodology: str,
+    base_url: str,
+    pages_seen: int,
+    total_pages: int | None,
+    package_versions: set[tuple[str, str]],
+    grouped: dict[str, set[str]],
+    limit_packages: int | None,
+    max_pages: int | None,
+    packages: list[dict[str, Any]],
+) -> dict[str, Any]:
+    return {
+        "schema": "SPIRA_PEP770_SURVEY_CORPUS_MANIFEST_V3",
+        "created_at": created_at,
+        "methodology": methodology,
         "source": {
-            "base_url": args.base_url,
-            "live_stats": fetch_live_stats(args.base_url),
+            "base_url": base_url,
+            "live_stats": fetch_live_stats(base_url),
             "package_listing_pages_seen": pages_seen,
             "package_listing_total_pages_reported": total_pages,
             "package_versions_seen": len(package_versions),
             "packages_grouped": len(grouped),
-            "limit_packages": args.limit_packages,
-            "max_pages": args.max_pages,
+            "limit_packages": limit_packages,
+            "max_pages": max_pages,
         },
         "selection_rule": "For each PyPI project, use pypi-tea package pages to identify wheel filenames with embedded SBOMs, then select the newest x86_64/amd64 wheel by PyPI upload time, falling back to newest py3-none-any wheel.",
-        "packages": selected,
+        "packages": packages,
     }
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    print(f"wrote {output} with {len(selected)} selected package entries")
-    return 0
+
+
+def write_manifest(path: Path, manifest: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    tmp.replace(path)
 
 
 def collect_package_versions(base_url: str, *, max_pages: int | None, sleep: float) -> tuple[set[tuple[str, str]], int, int | None]:
@@ -204,7 +252,7 @@ def download_selected_wheel(entry: dict[str, Any], download_dir: Path) -> None:
     selected["embedded_sboms"] = embedded_sbom_records(target)
     selected["embedded_sbom_paths"] = [item["path"] for item in selected["embedded_sboms"]]
     selected["embedded_sbom_count"] = len(selected["embedded_sboms"])
-    selected["sbom_generator"] = summarize_generators(selected["embedded_sboms"])
+    selected["sbom_generators"] = summarize_generators(selected["embedded_sboms"])
 
 
 def embedded_sbom_records(path: Path) -> list[dict[str, Any]]:
@@ -224,7 +272,7 @@ def embedded_sbom_records(path: Path) -> list[dict[str, Any]]:
                 }
             )
         for record in records:
-            record["generator_family"] = generator_family(record.get("generator_tools_raw") or [])
+            record["generator_families"] = generator_families(record.get("generator_tools_raw") or [])
         return records
 
 
@@ -275,30 +323,46 @@ def normalize_tools(tools: Any) -> list[dict[str, Any]]:
     return records
 
 
-def generator_family(tools: list[dict[str, Any]]) -> str:
+def generator_families(tools: list[dict[str, Any]]) -> list[str]:
     if any(tool.get("family") == "UNPARSEABLE" for tool in tools):
-        return "UNPARSEABLE"
+        return ["UNPARSEABLE"]
     names = " ".join(
         str(tool.get("name") or "") + " " + str(tool.get("vendor") or "")
         for tool in tools
     ).lower()
     if not names.strip():
-        return "UNKNOWN"
+        return ["UNKNOWN"]
+    families = []
     if "auditwheel" in names:
-        return "AUDITWHEEL"
+        families.append("AUDITWHEEL")
+    if "maturin" in names:
+        families.append("MATURIN")
     if "cargo-cyclonedx" in names or "cyclonedx-rust-cargo" in names:
-        return "CARGO_CYCLONEDX"
+        families.append("CARGO_CYCLONEDX")
     if "sbomify" in names:
-        return "SBOMIFY"
+        families.append("SBOMIFY")
     if "syft" in names:
-        return "SYFT"
+        families.append("SYFT")
     if "cyclonedx-py" in names or "cyclonedx-python" in names:
-        return "CYCLONEDX_PYTHON"
-    return "OTHER"
+        families.append("CYCLONEDX_PYTHON")
+    return sorted(set(families or ["OTHER"]))
 
 
 def summarize_generators(sboms: list[dict[str, Any]]) -> dict[str, Any]:
-    families = sorted({str(item.get("generator_family") or "UNKNOWN") for item in sboms})
+    generators: list[dict[str, Any]] = []
+    families_set = set()
+    for item in sboms:
+        for family in item.get("generator_families") or ["UNKNOWN"]:
+            families_set.add(str(family))
+        for tool in item.get("generator_tools_raw") or []:
+            generators.append(
+                {
+                    "sbom_path": item.get("path"),
+                    "family": item.get("generator_families") or ["UNKNOWN"],
+                    "tool": tool,
+                }
+            )
+    families = sorted(families_set or {"UNKNOWN"})
     if not families:
         primary = "UNKNOWN"
     elif len(families) == 1:
@@ -306,8 +370,9 @@ def summarize_generators(sboms: list[dict[str, Any]]) -> dict[str, Any]:
     else:
         primary = "MIXED"
     return {
-        "primary_family": primary,
+        "summary": primary,
         "families": families,
+        "tools": generators,
     }
 
 

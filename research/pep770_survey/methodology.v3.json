@@ -1,0 +1,161 @@
+{
+  "schema": "SPIRA_PEP770_SURVEY_METHODOLOGY_V3",
+  "supersedes": "research/pep770_survey/methodology.v2.json",
+  "locked_at_date": "2026-07-10",
+  "rationale": "V3 is committed before the full V2/V3 snapshot is collected or evaluated. The V2 smoke run showed that an SBOM filename can suggest one build step while CycloneDX metadata.tools identifies another, for example an auditwheel.cdx.json file declaring maturin. V3 therefore makes generator reporting explicitly metadata-based, multi-label, and records the full generator list instead of relying on a single primary generator. V3 also adds a predeclared diverse pilot-selection rule and keeps full-corpus evaluation unsampled unless a future version says otherwise.",
+  "frozen": "This file is committed before the V3 PEP 770 survey snapshot is collected. Categories, measurements, generator classification, pilot selection, sampling policy, and falsification criteria may not change after results are observed. Amendments require a new versioned file with rationale; V1, V2, and V3 remain in the repository as process evidence.",
+  "code_scope": {
+    "spira_checker_schema": "SPIRA_PEP770_SBOM_CONSISTENCY_V1",
+    "checker_scope": [
+      "embedded SBOM files under .dist-info/sboms/",
+      "JSON parseability for JSON SBOM files",
+      "JSON root is an object",
+      "CycloneDX top-level bomFormat recognition",
+      "CycloneDX metadata.component.name compared with wheel metadata name when present",
+      "CycloneDX metadata.component.version compared with wheel metadata version when present"
+    ],
+    "not_claimed": [
+      "does not validate full CycloneDX or SPDX schemas",
+      "does not compare every SBOM component to every wheel file",
+      "does not trust, merge, or replace SPIRA evidence with embedded SBOM contents",
+      "does not perform vulnerability, license, malware, provenance, or legal analysis"
+    ]
+  },
+  "corpus": {
+    "source": "Live pypi-tea package listing at collection time. The March 2026 sbomify top-15k analysis is a historical comparison point, not the V3 corpus.",
+    "source_scope_note": "pypi-tea stats and listings track package@version entries with SBOMs. The survey groups those entries by PyPI project name and records both package@version entries seen and unique projects selected.",
+    "selection": "one wheel per PyPI project: among pypi-tea package@version entries with SBOMs, identify wheel filenames shown by pypi-tea, cross-check those filenames against PyPI JSON metadata, select the newest x86_64/amd64 wheel by PyPI upload time when available, otherwise select the newest py3-none-any wheel.",
+    "recording": [
+      "package name",
+      "versions with SBOM entries seen",
+      "selected version",
+      "wheel filename",
+      "wheel sha256 from PyPI",
+      "download URL",
+      "upload time",
+      "download date if downloaded",
+      "downloaded wheel sha256 if downloaded",
+      "embedded SBOM paths if downloaded",
+      "full SBOM generator list from CycloneDX metadata.tools when parseable"
+    ],
+    "out_of_scope": [
+      "other platform wheels for the same project",
+      "older versions not selected by the rule",
+      "sdists",
+      "package versions that have SBOMs but no matching x86_64/amd64 or py3-none-any wheel"
+    ]
+  },
+  "verdict_categories": {
+    "SBOM_CONSISTENT": "SPIRA's V1 PEP 770 subset evaluated the embedded SBOM and found no contradiction in the checked fields.",
+    "SBOM_INCONSISTENT": "SPIRA's V1 PEP 770 subset found a positive contradiction in the checked fields, such as CycloneDX metadata.component.name or metadata.component.version disagreeing with wheel metadata.",
+    "SBOM_INVALID": "An embedded JSON SBOM file could not be decoded as UTF-8 JSON or its JSON root was not an object. This is parseability invalidity only, not full schema invalidity.",
+    "NOT_EVALUATED": "An embedded SBOM is present but the relevant format or layer is outside SPIRA's V1 checker scope, such as non-JSON SBOM files or non-CycloneDX JSON. Explicitly reported; never counted as consistent.",
+    "TOOL_ERROR": "SPIRA crashed or produced unreadable output. This is a SPIRA bug or harness bug, never a finding about the package."
+  },
+  "category_rules": [
+    "Every selected wheel receives exactly one survey category.",
+    "TOOL_ERROR wheels are excluded from consistency statistics and reported separately with count and failure mode.",
+    "A wheel is SBOM_INCONSISTENT only on a positive contradiction in the fields SPIRA V1 checks.",
+    "Absence of checked data is never treated as inconsistency. Missing or unsupported evidence is NOT_EVALUATED, not SBOM_INCONSISTENT.",
+    "If a wheel contains multiple embedded SBOM files, the most severe supported result determines the wheel category: TOOL_ERROR, SBOM_INVALID, SBOM_INCONSISTENT, NOT_EVALUATED, SBOM_CONSISTENT.",
+    "SPIRA raw statuses are preserved in raw results; survey categories are a reporting layer over those raw statuses."
+  ],
+  "status_mapping": {
+    "VERIFIED_OK": "SBOM_CONSISTENT",
+    "CONTRADICTION_with_metadata_component_name_or_version_mismatch": "SBOM_INCONSISTENT",
+    "CONTRADICTION_with_json_decode_error_or_non_object_root": "SBOM_INVALID",
+    "UNVERIFIED": "NOT_EVALUATED",
+    "NOT_EVALUATED": "NOT_EVALUATED",
+    "unreadable_or_missing_spira_output": "TOOL_ERROR"
+  },
+  "sbom_generator": {
+    "recording_rule": "When a selected wheel is downloaded, parse embedded JSON SBOM files and record generator evidence from CycloneDX metadata.tools when present. Generator evidence is descriptive metadata, not proof of correctness. Filenames are not used as generator evidence.",
+    "multi_tool_rule": "All generator tools are preserved. Generator-family reporting is multi-label per SBOM and per wheel. A wheel with multiple generator families is not collapsed into a single family for aggregate generator counts; it may be labeled MIXED only for display summaries.",
+    "per_sbom_fields": [
+      "path",
+      "bytes",
+      "sha256",
+      "generator_tools_raw",
+      "generator_families"
+    ],
+    "per_wheel_fields": [
+      "sbom_generators",
+      "sbom_generator_families",
+      "sbom_generator_summary"
+    ],
+    "generator_families": {
+      "AUDITWHEEL": "tool name contains auditwheel",
+      "MATURIN": "tool name contains maturin",
+      "CARGO_CYCLONEDX": "tool name contains cargo-cyclonedx or cyclonedx-rust-cargo",
+      "SBOMIFY": "tool name contains sbomify",
+      "SYFT": "tool name contains syft",
+      "CYCLONEDX_PYTHON": "tool name contains cyclonedx-py or cyclonedx-python",
+      "OTHER": "parseable generator tool is present but does not match known families",
+      "UNKNOWN": "no parseable generator evidence is present",
+      "UNPARSEABLE": "SBOM could not be parsed as JSON for generator extraction"
+    },
+    "reported": [
+      "multi-label generator_family counts",
+      "MIXED wheel count",
+      "context-tax distribution by generator_family",
+      "SBOM consistency distribution by generator_family"
+    ]
+  },
+  "context_tax_measurements": {
+    "per_wheel": [
+      "sbom_total_bytes: sum of embedded SBOM file sizes under .dist-info/sboms/",
+      "agent_summary_bytes: size of SPIRA agent_summary.json for this wheel",
+      "ratio: sbom_total_bytes / agent_summary_bytes when agent_summary_bytes > 0",
+      "generator families when parseable"
+    ],
+    "reported": [
+      "median",
+      "p90",
+      "max",
+      "full distribution in JSON",
+      "distribution by generator_family"
+    ],
+    "baseline_definition": "SBOM bytes only. Extended baselines, such as SBOM plus RECORD, may be reported separately only when clearly labeled.",
+    "not_claimed": [
+      "static context ingestion only",
+      "no live-agent token claim",
+      "no latency claim",
+      "no energy or CO2 claim",
+      "one wheel per project under the selection rule; other platforms and versions are not measured"
+    ]
+  },
+  "external_validation": {
+    "historical_observation": "The March 2026 sbomify top-15k analysis reported 37 invalid embedded SBOMs in that corpus, attributed to one cargo-cyclonedx issue.",
+    "intersection_rule": "The absolute number 37 is not a V3 full-corpus expectation because V3 uses a live all-PyPI snapshot. If the original list of 37 affected package/version/wheel records is available, compare only the intersection between those records and the V3 selected corpus. Publication pauses only for unexplained discrepancies inside that intersection.",
+    "full_corpus_rule": "Invalidity rates on the V3 live corpus are reported as new measurements, not as reproduction of the March 2026 top-15k result.",
+    "discrepancy_explanations": [
+      "outside SPIRA V1 scope because SPIRA does not validate full CycloneDX schemas",
+      "historical record no longer selected by the V3 wheel selection rule",
+      "survey corpus mismatch",
+      "SPIRA bug",
+      "harness bug",
+      "external-analysis difference"
+    ]
+  },
+  "sampling": {
+    "snapshot_manifest": "No sampling. The V3 snapshot manifest records all package@version entries discoverable through the pypi-tea listing and all unique projects selected by the V3 rule.",
+    "full_evaluation": "Target is all selected wheels. If runtime, storage, or rate-limit constraints require sampling before full evaluation, a methodology.v4.json must be committed before evaluating sampled results.",
+    "pilot": "Run a 10-wheel pilot before the full evaluation. The pilot is edge-case discovery, not a statistical sample. Its selected list must be generated and committed after the snapshot manifest and before running SPIRA evaluation. The pilot selection should be diverse across available pre-evaluation metadata: generator families if already extracted, platform class, wheel size buckets, selected SBOM count, and package/version shape. Pilot findings are reported separately and never used as full-corpus statistics."
+  },
+  "falsification_declared_in_advance": [
+    "If most SBOMs are consistent under SPIRA's V1 subset, report that as an ecosystem-health finding.",
+    "If most SBOMs are small, for example below 3KB, and the median ratio is near 1, report that the PEP 770 context-tax claim is weak for today's measured corpus.",
+    "If auditwheel-generated SBOMs dominate the corpus, report that as a measured generator distribution, not as proof that auditwheel is correct or incorrect.",
+    "If generator metadata is frequently missing or mixed, report that as a build-pipeline observability finding rather than forcing a single-generator story.",
+    "Any forward-looking claim that SBOM context cost may grow with automated auditwheel generation is labeled as expectation, not measurement.",
+    "If SPIRA cannot evaluate a large fraction of the corpus, report that prominently as a tool-coverage limitation.",
+    "If TOOL_ERROR is non-zero after pilot fixes, report it prominently as a SPIRA reliability limitation."
+  ],
+  "reporting_rules": [
+    "Aggregate statistics are public.",
+    "Named packages with SBOM_INCONSISTENT or SBOM_INVALID findings are not published before contacting maintainers.",
+    "The final report must include not_claimed language for security, malware, vulnerability, legal, energy, and full schema validation claims.",
+    "The report must distinguish March 2026 top-15k adoption numbers from the V3 live all-PyPI snapshot.",
+    "All scripts, methodology files, raw results JSON, snapshot manifest, and generated aggregate tables are committed under research/pep770_survey/."
+  ]
+}
