@@ -331,6 +331,20 @@ def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[st
         }
     trust_verdict = trust.get("verdict")
     graph_verdict = graph.get("verdict")
+    trust_runtime_error = trust_verdict not in BLOCKING_TRUST_VERDICTS and trust.get("exit_code") not in {0, 2}
+    graph_runtime_error = graph_verdict not in BLOCKING_GRAPH_VERDICTS and graph.get("exit_code") not in {0, 2}
+    if trust_runtime_error:
+        return {
+            "status": "PREVIOUS_VERSION_RUN_ERROR",
+            "publish_allowed": False,
+            "reason": f"previous trust command returned non-verdict exit code {trust.get('exit_code')}",
+        }
+    if graph_runtime_error:
+        return {
+            "status": "PREVIOUS_VERSION_RUN_ERROR",
+            "publish_allowed": False,
+            "reason": f"previous graph command returned non-verdict exit code {graph.get('exit_code')}",
+        }
     trust_blocked = trust_verdict in BLOCKING_TRUST_VERDICTS
     graph_blocked = graph_verdict in BLOCKING_GRAPH_VERDICTS
     previous_blocked = trust_blocked or graph_blocked
@@ -359,18 +373,6 @@ def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[st
             "status": "PREVIOUS_VERSION_BLOCK",
             "publish_allowed": False,
             "reason": "previous public version blocked the candidate and no valid matching expected previous-block declaration was present",
-        }
-    if trust.get("exit_code") not in {0, 2}:
-        return {
-            "status": "PREVIOUS_VERSION_RUN_ERROR",
-            "publish_allowed": False,
-            "reason": f"previous trust command returned non-verdict exit code {trust.get('exit_code')}",
-        }
-    if graph.get("exit_code") not in {0, 2}:
-        return {
-            "status": "PREVIOUS_VERSION_RUN_ERROR",
-            "publish_allowed": False,
-            "reason": f"previous graph command returned non-verdict exit code {graph.get('exit_code')}",
         }
     if active_declaration and not declaration_valid:
         return {

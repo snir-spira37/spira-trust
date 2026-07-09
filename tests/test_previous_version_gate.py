@@ -130,6 +130,17 @@ def test_nonblocking_verdict_with_abnormal_runtime_is_run_error() -> None:
     assert result["publish_allowed"] is False
 
 
+def test_declaration_cannot_launder_abnormal_nonblocking_command_when_other_command_blocks() -> None:
+    result = gate._decide_gate(
+        _trust("TRUST_OK_WITH_NOTES", 5),
+        _graph("GRAPH_BLOCK", 1, ["RECORD_MISMATCH"]),
+        _valid_declaration(),
+    )
+
+    assert result["status"] == "PREVIOUS_VERSION_RUN_ERROR"
+    assert result["publish_allowed"] is False
+
+
 def test_expected_block_notes_must_contain_mechanical_terms(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.chdir(tmp_path)
     Path("release").mkdir()
