@@ -18,6 +18,14 @@ from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
+try:
+    from packaging.version import InvalidVersion, Version
+except ImportError as error:  # pragma: no cover - exercised in release CI environment.
+    raise SystemExit(
+        "tools/run_previous_version_gate.py requires packaging. "
+        "Install release workflow tooling with: python -m pip install packaging"
+    ) from error
+
 
 PYPI_JSON_URL = "https://pypi.org/pypi/spira-trust/json"
 SCHEMA = "SPIRA_PREVIOUS_VERSION_GATE_V1"
@@ -306,17 +314,20 @@ def _run_and_parse(cmd: list[str], output_dir: Path, name: str, report_filename:
 
 
 def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[str, Any]) -> dict[str, Any]:
-    if not trust.get("schema_readable") and trust.get("exit_code") != 0:
+    active_declaration = expected.get("declaration_path") is not None
+    declaration_valid = bool(expected.get("declaration_valid"))
+
+    if not trust.get("verdict"):
         return {
             "status": "PREVIOUS_VERSION_SCHEMA_UNREADABLE",
             "publish_allowed": False,
-            "reason": "previous trust output was not parseable",
+            "reason": "previous trust output did not contain a parseable verdict",
         }
-    if not graph.get("schema_readable") and graph.get("exit_code") != 0:
+    if not graph.get("verdict"):
         return {
             "status": "PREVIOUS_VERSION_SCHEMA_UNREADABLE",
             "publish_allowed": False,
-            "reason": "previous graph output was not parseable",
+            "reason": "previous graph output did not contain a parseable verdict",
         }
     trust_verdict = trust.get("verdict")
     graph_verdict = graph.get("verdict")
@@ -324,6 +335,12 @@ def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[st
     graph_blocked = graph_verdict in BLOCKING_GRAPH_VERDICTS
     previous_blocked = trust_blocked or graph_blocked
     if previous_blocked:
+        if active_declaration and not declaration_valid:
+            return {
+                "status": "EXPECTED_PREVIOUS_BLOCK_INVALID",
+                "publish_allowed": False,
+                "reason": "release/expected_previous_block.json exists but is invalid for this candidate, previous version, finding codes, or release notes",
+            }
         expected_matches = _expected_block_matches_observed(expected, trust, graph)
         expected["matched"] = expected_matches
         if expected_matches:
@@ -332,10 +349,16 @@ def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[st
                 "publish_allowed": True,
                 "reason": "previous public version blocked the candidate, and the block matched release/expected_previous_block.json and release notes",
             }
+        if active_declaration:
+            return {
+                "status": "EXPECTED_PREVIOUS_BLOCK_INVALID",
+                "publish_allowed": False,
+                "reason": "release/expected_previous_block.json exists but did not match the observed previous-version block",
+            }
         return {
             "status": "PREVIOUS_VERSION_BLOCK",
             "publish_allowed": False,
-            "reason": "previous public version blocked the candidate and no valid expected previous-block declaration was present",
+            "reason": "previous public version blocked the candidate and no valid matching expected previous-block declaration was present",
         }
     if trust.get("exit_code") not in {0, 2}:
         return {
@@ -348,6 +371,18 @@ def _decide_gate(trust: dict[str, Any], graph: dict[str, Any], expected: dict[st
             "status": "PREVIOUS_VERSION_RUN_ERROR",
             "publish_allowed": False,
             "reason": f"previous graph command returned non-verdict exit code {graph.get('exit_code')}",
+        }
+    if active_declaration and not declaration_valid:
+        return {
+            "status": "EXPECTED_PREVIOUS_BLOCK_INVALID",
+            "publish_allowed": False,
+            "reason": "release/expected_previous_block.json exists but is invalid for this candidate, previous version, finding codes, or release notes",
+        }
+    if active_declaration and declaration_valid:
+        return {
+            "status": "EXPECTED_PREVIOUS_BLOCK_NOT_OBSERVED",
+            "publish_allowed": False,
+            "reason": "release/expected_previous_block.json exists, but the previous public version did not block the candidate",
         }
     return {
         "status": "PASS",
@@ -404,10 +439,20 @@ def _read_expected_block_state(path: Path, candidate_version: str, previous_vers
         state["validation_errors"].append("previous_version does not match selected previous release")
     notes_path = Path(str(declaration.get("release_notes_path", "")))
     required_terms = declaration.get("release_notes_required_terms") or []
+    mechanical_terms = [
+        candidate_version,
+        "DOCUMENTED_PREVIOUS_BLOCK",
+        *(str(code) for code in declaration.get("expected_finding_codes", []) or []),
+    ]
+    if previous_version:
+        mechanical_terms.append(previous_version)
     if not notes_path.is_file():
         state["validation_errors"].append("release notes path is missing")
     else:
         text = notes_path.read_text(encoding="utf-8")
+        for term in mechanical_terms:
+            if str(term) not in text:
+                state["validation_errors"].append(f"release notes missing mechanical term: {term}")
         for term in required_terms:
             if str(term) not in text:
                 state["validation_errors"].append(f"release notes missing required term: {term}")
@@ -514,15 +559,11 @@ def _parse_candidate_version(wheel: Path) -> str:
     return match.group("version")
 
 
-def _version_key(version: str) -> tuple[Any, ...]:
-    parts = re.split(r"[.\-+_]", version)
-    key: list[Any] = []
-    for part in parts:
-        if part.isdigit():
-            key.append((0, int(part)))
-        else:
-            key.append((1, part))
-    return tuple(key)
+def _version_key(version: str) -> Version:
+    try:
+        return Version(version)
+    except InvalidVersion as error:
+        raise GateError(f"invalid PyPI version {version!r}: {error}") from error
 
 
 def _venv_python(venv_dir: Path) -> str:
