@@ -8,7 +8,7 @@ This demo shows SPIRA Trust as a local evidence gate before installing a wheel.
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install spira-trust==0.5.8
+python -m pip install spira-trust==0.6.0
 spira-trust version
 ```
 
@@ -18,7 +18,7 @@ Windows PowerShell:
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-python -m pip install spira-trust==0.5.8
+python -m pip install spira-trust==0.6.0
 spira-trust version
 ```
 

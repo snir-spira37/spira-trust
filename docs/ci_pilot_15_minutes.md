@@ -26,7 +26,7 @@ jobs:
       - name: Install SPIRA Trust
         run: |
           python -m pip install --upgrade pip
-          python -m pip install spira-trust==0.5.8
+          python -m pip install spira-trust==0.6.0
           spira-trust version
 
       - name: Build local wheelhouse

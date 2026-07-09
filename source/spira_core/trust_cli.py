@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 
-PUBLIC_COMMANDS = {"trust", "graph", "drift", "rebaseline", "version"}
+PUBLIC_COMMANDS = {"trust", "graph", "status", "drift", "rebaseline", "version"}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -57,8 +57,14 @@ def _run_public(argv: list[str]) -> int:
     graph_cmd.add_argument("--sbom-output", default=None)
     graph_cmd.add_argument("--evidence-pack", default=None)
     graph_cmd.add_argument("--include-local-paths", action="store_true")
+    graph_cmd.add_argument("--agent-state-dir", default=None)
     graph_cmd.add_argument("--no-package-evidence", action="store_true")
     graph_cmd.add_argument("--format", choices=("text", "json"), default="text")
+
+    status_cmd = sub.add_parser("status")
+    status_cmd.add_argument("artifact_inputs", nargs="+")
+    status_cmd.add_argument("--agent-state-dir", default=None)
+    status_cmd.add_argument("--format", choices=("text", "json"), default="text")
 
     drift_cmd = sub.add_parser("drift")
     drift_cmd.add_argument("artifact_inputs", nargs="+")
@@ -98,6 +104,8 @@ def _run_public(argv: list[str]) -> int:
         return _run_trust(parsed)
     if parsed.command == "graph":
         return _run_graph(parsed)
+    if parsed.command == "status":
+        return _run_status(parsed)
     if parsed.command == "drift":
         return _run_drift(parsed)
     if parsed.command == "rebaseline":
@@ -171,6 +179,17 @@ def _run_graph(args: argparse.Namespace) -> int:
                 output_dir=args.output_dir,
                 include_local_paths=args.include_local_paths,
             )
+            from .agent_summary import write_agent_summary
+
+            agent_summary = write_agent_summary(
+                result,
+                decision,
+                output_dir=args.output_dir,
+                evidence_pack_path=args.evidence_pack,
+                include_local_paths=args.include_local_paths,
+                state_dir=args.agent_state_dir,
+            )
+            result["agent_summary_path"] = agent_summary.get("agent_summary_path")
             if args.evidence_pack:
                 pack = write_evidence_pack(result, decision, args.evidence_pack)
                 result["decision_evidence_pack"] = pack
@@ -187,6 +206,20 @@ def _run_graph(args: argparse.Namespace) -> int:
             return 1
         print(format_graph_summary(result))
     return graph_exit_code(result)
+
+
+def _run_status(args: argparse.Namespace) -> int:
+    from .agent_status import build_agent_status, format_agent_status
+
+    result = build_agent_status(args.artifact_inputs, state_dir=args.agent_state_dir)
+    if args.format == "json":
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        print(format_agent_status(result))
+    counts = result.get("counts", {}) or {}
+    if counts.get("changed_since_check", 0) or counts.get("unchecked", 0):
+        return 2
+    return 0
 
 
 def _run_drift(args: argparse.Namespace) -> int:
@@ -261,6 +294,7 @@ def _print_help() -> None:
 Usage:
   spira-trust trust <package.whl> [--output-dir DIR]
   spira-trust graph <wheel-folder|wheel...> [--output-dir DIR] [policy options] [--sbom cyclonedx-json]
+  spira-trust status <wheel-folder|wheel...> [--format json]
   spira-trust drift <wheel-folder|wheel...> --baseline BOM --baseline-sha256 SHA256
   spira-trust rebaseline <wheel-folder|wheel...> --from-baseline BOM --baseline-sha256 SHA256 --output-dir DIR [--yes]
   spira-trust version
@@ -268,6 +302,7 @@ Usage:
 Public commands:
   trust       Review one artifact and emit a trust verdict.
   graph       Build a local evidence graph over provided wheels only.
+  status      Re-hash local wheels and index prior agent_summary.json outputs.
   drift       Compare current wheels against a pinned BOM baseline.
   rebaseline  Create a new baseline after explicit human confirmation.
   version     Print the installed SPIRA Trust version.

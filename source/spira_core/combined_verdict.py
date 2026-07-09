@@ -11,6 +11,36 @@ SEVERITY_RANK = {
     "BLOCK": 3,
 }
 
+AGENT_ACTIONS = {
+    "PROCEED",
+    "ASK_HUMAN",
+    "STOP_BLOCKED",
+    "REPORT_NOT_EVALUATED",
+    "RERUN_REQUIRED",
+}
+
+
+def agent_default_decision(
+    verdict: str | None,
+    *,
+    not_evaluated_layers: list[str] | None = None,
+) -> dict[str, Any]:
+    not_evaluated = list(not_evaluated_layers or [])
+    if verdict == "GRAPH_BLOCK":
+        return {"stop": True, "stop_source": "default", "recommended_agent_action": "STOP_BLOCKED"}
+    if verdict == "GRAPH_WARN":
+        return {"stop": True, "stop_source": "default", "recommended_agent_action": "ASK_HUMAN"}
+    if verdict == "GRAPH_OK_WITH_UNVERIFIED":
+        return {"stop": True, "stop_source": "default", "recommended_agent_action": "REPORT_NOT_EVALUATED"}
+    if verdict == "GRAPH_OK_WITH_NOTES":
+        action = "REPORT_NOT_EVALUATED" if not_evaluated else "ASK_HUMAN"
+        return {"stop": bool(not_evaluated), "stop_source": "default", "recommended_agent_action": action}
+    if verdict == "GRAPH_OK" and not_evaluated:
+        return {"stop": True, "stop_source": "default", "recommended_agent_action": "REPORT_NOT_EVALUATED"}
+    if verdict == "GRAPH_OK":
+        return {"stop": False, "stop_source": "default", "recommended_agent_action": "PROCEED"}
+    return {"stop": True, "stop_source": "default", "recommended_agent_action": "RERUN_REQUIRED"}
+
 
 def build_combined_policy_verdict(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str, Any]:
     per_layer = [
@@ -132,6 +162,8 @@ def _pep740_layer(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str
     status = {
         "ATTESTATION_VERIFIED": "OK",
         "ATTESTATION_UNVERIFIED": "NOTE",
+        "ATTESTATION_DIGEST_MISMATCH": "BLOCK",
+        "ATTESTATION_IDENTITY_NOT_ALLOWED": "BLOCK",
         "ATTESTATION_CONTRADICTION": "BLOCK",
         "ATTESTATION_TRUST_ROOT_UNTRUSTED": "BLOCK",
         "ATTESTATION_TRUST_ROOT_SHA_MISSING": "BLOCK",

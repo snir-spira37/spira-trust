@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.5.8"
+VERSION = "0.6.0"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
@@ -38,6 +38,8 @@ TEXT_SUFFIXES = {
 PUBLIC_FILES = [
     "spira_core/__init__.py",
     "spira_core/adapters.py",
+    "spira_core/agent_status.py",
+    "spira_core/agent_summary.py",
     "spira_core/attestation_verify.py",
     "spira_core/bom.py",
     "spira_core/combined_verdict.py",
@@ -72,6 +74,7 @@ PUBLIC_DIRS = [
 
 PUBLIC_DATA_FILES = [
     ("schemas/spira_decision_v1.json", "schemas/spira_decision_v1.json"),
+    ("schemas/spira_agent_summary_v1.json", "schemas/spira_agent_summary_v1.json"),
 ]
 
 BANNED_FRAGMENTS = (

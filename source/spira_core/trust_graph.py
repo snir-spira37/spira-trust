@@ -96,6 +96,20 @@ def run_trust_graph(
     lockfile_path = policy_inputs["lockfile_path"]
     effective_policy_path = policy_inputs["effective_policy_path"]
     artifacts = _discover_wheels(artifact_inputs_list)
+    command_fingerprint = _command_fingerprint(
+        artifacts,
+        strict_closure=strict_closure,
+        license_policy_path=license_policy_path,
+        entry_point_policy_path=entry_point_policy_path,
+        target_environment_path=target_environment_path,
+        lockfile_path=lockfile_path,
+        effective_policy_path=effective_policy_path,
+        verify_embedded_sboms=verify_embedded_sboms,
+        attestation_path=attestation_path,
+        attestation_trust_root_path=attestation_trust_root_path,
+        attestation_trust_root_sha256=attestation_trust_root_sha256,
+        tool_version=tool_version,
+    )
     if len(artifacts) > MAX_GRAPH_ARTIFACTS:
         return _scale_limit_report(
             output,
@@ -342,6 +356,7 @@ def run_trust_graph(
         "schema_version": "2.0",
         "verdict": root_verdict,
         "strict_closure": strict_closure,
+        "command_fingerprint": command_fingerprint,
         "inputs": [str(path.resolve()) for path in artifacts],
         "counts": _counts(nodes, edges),
         "root_nodes": root_node_ids,
@@ -643,9 +658,12 @@ def _file_ref(path: Path) -> dict[str, Any]:
 
 def _tool_version() -> str:
     try:
-        return importlib_metadata.version("spira-review")
+        return importlib_metadata.version("spira-trust")
     except importlib_metadata.PackageNotFoundError:
-        return "source-tree"
+        try:
+            return importlib_metadata.version("spira-review")
+        except importlib_metadata.PackageNotFoundError:
+            return "source-tree"
 
 
 def _environment_capture() -> dict[str, Any]:
@@ -1653,6 +1671,58 @@ def _node_id(normalized_name: str, version: str | None, artifact_sha256: str) ->
 
 def _hash_file(path: Path) -> str:
     return sha256(path.read_bytes()).hexdigest()
+
+
+def _command_fingerprint(
+    artifacts: list[Path],
+    *,
+    strict_closure: bool,
+    license_policy_path: str | Path | None,
+    entry_point_policy_path: str | Path | None,
+    target_environment_path: str | Path | None,
+    lockfile_path: str | Path | None,
+    effective_policy_path: str | Path | None,
+    verify_embedded_sboms: bool,
+    attestation_path: str | Path | None,
+    attestation_trust_root_path: str | Path | None,
+    attestation_trust_root_sha256: str | None,
+    tool_version: str | None,
+) -> str:
+    payload = {
+        "schema": "SPIRA_GRAPH_COMMAND_FINGERPRINT_V1",
+        "command": "graph",
+        "strict_closure": strict_closure,
+        "artifact_sha256_values": sorted(_hash_file(path) for path in artifacts),
+        "policies": {
+            "license_policy_sha256": _optional_file_sha(license_policy_path),
+            "entry_point_policy_sha256": _optional_file_sha(entry_point_policy_path),
+            "target_environment_sha256": _optional_file_sha(target_environment_path),
+            "lockfile_sha256": _optional_file_sha(lockfile_path),
+            "effective_policy_sha256": _optional_file_sha(effective_policy_path),
+        },
+        "pep770_verify_embedded_sboms": verify_embedded_sboms,
+        "pep740": {
+            "attestation_sha256": _optional_file_sha(attestation_path),
+            "trust_root_sha256": _optional_file_sha(attestation_trust_root_path),
+            "trust_root_pin": attestation_trust_root_sha256,
+        },
+        "tool_version": tool_version or _tool_version(),
+    }
+    return _stable_digest(payload)
+
+
+def _optional_file_sha(path_value: str | Path | None) -> str | None:
+    if not path_value:
+        return None
+    path = Path(path_value)
+    if not path.is_file():
+        return None
+    return _hash_file(path)
+
+
+def _stable_digest(payload: Mapping[str, Any]) -> str:
+    encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return sha256(encoded).hexdigest()
 
 
 def _safe_dir_name(value: str) -> str:

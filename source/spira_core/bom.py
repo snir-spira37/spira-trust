@@ -666,9 +666,12 @@ def _stable_digest(payload: Mapping[str, Any]) -> str:
 
 def _tool_version() -> str:
     try:
-        return importlib_metadata.version("spira-review")
+        return importlib_metadata.version("spira-trust")
     except importlib_metadata.PackageNotFoundError:
-        return "source-tree"
+        try:
+            return importlib_metadata.version("spira-review")
+        except importlib_metadata.PackageNotFoundError:
+            return "source-tree"
 
 
 def _utc() -> str:

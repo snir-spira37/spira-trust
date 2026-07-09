@@ -1,5 +1,27 @@
 # Changelog
 
+## spira-trust 0.6.0 - Agent evidence memory and attestation verdict hardening
+
+- Added `SPIRA_AGENT_SUMMARY_V1` and `agent_summary.json` for small
+  agent-facing verdicts with `created_at`, `stop`, `stop_source`, a closed
+  `recommended_agent_action` enum, `not_evaluated`, evidence paths, artifact
+  hashes, `command_fingerprint`, and unverified approval metadata.
+- Added `spira-trust status` to re-hash local wheels and index prior
+  `agent_summary.json` outputs without replacing per-run evidence.
+- Added `.spira/agent_summaries/` as the default local summary index location.
+- Hardened combined verdict mapping so PEP 740 digest mismatches and disallowed
+  identities are `BLOCK`, including when no trust root is supplied.
+- Added regression coverage for contradiction classes across strict/lenient
+  graph modes and trust-root/no-trust-root modes, while preserving
+  `ATTESTATION_NOT_EVALUATED` for missing attestations.
+- Included `agent_summary.json` in decision evidence packs.
+- This release may change verdicts for artifacts whose PEP 740 attestation
+  metadata contradicts local artifact bytes. That is intentional: a detected
+  contradiction is not the same as an unevaluated layer.
+- PEP 740 rule of thumb for pilots: digest mismatch is always `BLOCK`;
+  attestation absence remains `ATTESTATION_NOT_EVALUATED`; a digest match
+  without a trust root remains identity-not-evaluated rather than trusted.
+
 ## spira-trust 0.2.0 - Bundle 027
 
 - Added a slim public `spira-trust` wheel target with only the public trust CLI surface.

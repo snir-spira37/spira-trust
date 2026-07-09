@@ -31,6 +31,7 @@ spira-trust graph dist \
 The agent can then read:
 
 ```text
+out/spira/agent_summary.json
 out/spira/spira-decision.json
 out/spira/spira-decision.md
 out/spira/graph_summary.txt
@@ -70,6 +71,7 @@ spira-trust graph dist \
 
 Then read:
 
+- `out/spira/agent_summary.json`
 - `out/spira/spira-decision.json`
 - `out/spira/spira-decision.md`
 - `out/spira/graph_summary.txt`
@@ -78,6 +80,8 @@ Rules:
 
 - If the decision is `GRAPH_BLOCK`, stop and report the evidence to the human.
 - If the decision is `GRAPH_WARN`, stop and ask the human whether to proceed.
+- If `agent_summary.json` says `stop: true`, follow its closed
+  `recommended_agent_action` value.
 - If the decision contains `NOT_EVALUATED`, report exactly which layer did not run.
 - Never describe an unchecked layer as OK.
 - Never mark a build/release complete without a SPIRA verdict.
@@ -116,7 +120,7 @@ TRUST_OK_WITH_NOTES means summarize the notes.
 2. Agent runs tests.
 3. Agent builds wheel into dist/.
 4. Agent runs spira-trust graph dist --output-dir out/spira --evidence-pack out/spira-evidence.zip.
-5. Agent reads out/spira/spira-decision.json.
+5. Agent reads out/spira/agent_summary.json, then opens decision/report files if needed.
 6. Agent reports:
    - verdict
    - checked layers
@@ -124,6 +128,18 @@ TRUST_OK_WITH_NOTES means summarize the notes.
    - evidence path
 7. Human approves or rejects.
 ```
+
+## Local Status Index
+
+After at least one graph run, an agent can ask SPIRA what local wheel artifacts
+already have a summary:
+
+```bash
+spira-trust status dist --format json
+```
+
+`status` re-hashes current wheels before matching local state. It is an index,
+not a replacement for `agent_summary.json` or the full evidence pack.
 
 ## What The Agent Should Not Claim
 

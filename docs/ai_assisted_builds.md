@@ -44,6 +44,7 @@ AI-assisted development can produce many small release candidates:
 0.5.6
 0.5.7
 0.5.8
+0.6.0
 ```
 
 The operational risk is not only that the code may be wrong.

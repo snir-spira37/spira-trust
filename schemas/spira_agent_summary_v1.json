@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.local/schemas/spira_agent_summary_v1.json",
+  "title": "SPIRA Agent Summary V1",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "graphVerdict": {
+      "enum": [
+        "GRAPH_OK",
+        "GRAPH_OK_WITH_NOTES",
+        "GRAPH_OK_WITH_UNVERIFIED",
+        "GRAPH_WARN",
+        "GRAPH_BLOCK"
+      ]
+    },
+    "agentAction": {
+      "enum": [
+        "PROCEED",
+        "ASK_HUMAN",
+        "STOP_BLOCKED",
+        "REPORT_NOT_EVALUATED",
+        "RERUN_REQUIRED"
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "created_at",
+    "tool",
+    "verdict",
+    "stop",
+    "stop_source",
+    "recommended_agent_action",
+    "not_evaluated",
+    "evidence",
+    "summary_of",
+    "approval",
+    "not_claimed"
+  ],
+  "properties": {
+    "schema": { "const": "SPIRA_AGENT_SUMMARY_V1" },
+    "schema_version": { "const": "1.0" },
+    "created_at": { "type": "string" },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "const": "spira-trust" },
+        "version": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "verdict": { "$ref": "#/$defs/graphVerdict" },
+    "combined_verdict": { "$ref": "#/$defs/graphVerdict" },
+    "winning_status": { "enum": ["OK", "NOTE", "WARN", "BLOCK", "NOT_EVALUATED"] },
+    "exit_code": { "type": "integer", "enum": [0, 1, 2, 3, 4, 5, 6] },
+    "stop": { "type": "boolean" },
+    "stop_source": { "enum": ["default", "policy"] },
+    "recommended_agent_action": { "$ref": "#/$defs/agentAction" },
+    "not_evaluated": { "type": "array", "items": { "type": "string" } },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "evidence": {
+      "type": "object",
+      "required": ["decision", "graph_summary", "graph_report", "bill_of_materials", "evidence_pack"],
+      "properties": {
+        "decision": { "type": ["string", "null"] },
+        "decision_markdown": { "type": ["string", "null"] },
+        "graph_summary": { "type": ["string", "null"] },
+        "graph_report": { "type": ["string", "null"] },
+        "bill_of_materials": { "type": ["string", "null"] },
+        "evidence_pack": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "summary_of": {
+      "type": "object",
+      "required": ["artifact_count", "artifact_sha256_values", "artifact_set_sha256", "command_fingerprint", "tool_version"],
+      "properties": {
+        "artifact_count": { "type": "integer", "minimum": 0 },
+        "artifact_sha256_values": { "type": "array", "items": { "$ref": "#/$defs/sha256" } },
+        "artifact_set_sha256": { "$ref": "#/$defs/sha256" },
+        "command_fingerprint": { "$ref": "#/$defs/sha256" },
+        "tool_version": { "type": "string", "minLength": 1 },
+        "decision_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "graph_report_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": true
+    },
+    "artifacts": { "type": "array", "items": { "type": "object" } },
+    "approval": {
+      "type": "object",
+      "required": ["approved", "approval_source"],
+      "properties": {
+        "approved": { "type": "boolean" },
+        "approval_source": { "enum": ["interactive", "signed", "unverified"] },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "not_claimed": { "type": "array", "items": { "type": "string" } }
+  }
+}

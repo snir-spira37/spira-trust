@@ -4,7 +4,7 @@ build-backend = "manual-public-wheel"
 
 [project]
 name = "spira-trust"
-version = "0.5.8"
+version = "0.6.0"
 description = "Offline verifier for Python wheel evidence before install."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -27,6 +27,8 @@ builder = "tools/build_spira_trust_public.py"
 package_allowlist = [
   "spira_core.__init__",
   "spira_core.adapters",
+  "spira_core.agent_status",
+  "spira_core.agent_summary",
   "spira_core.attestation_verify",
   "spira_core.bom",
   "spira_core.combined_verdict",

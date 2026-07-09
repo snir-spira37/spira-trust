@@ -10,7 +10,7 @@ wheel evidence before installation.
 Install:
 
 ```bash
-python -m pip install spira-trust==0.5.8
+python -m pip install spira-trust==0.6.0
 ```
 
 The tool does not try to be a malware scanner or CVE database. It asks a
@@ -52,7 +52,7 @@ Pilot questions:
 
 Links:
 
-- PyPI: https://pypi.org/project/spira-trust/0.5.8/
+- PyPI: https://pypi.org/project/spira-trust/0.6.0/
 - GitHub: https://github.com/snir-spira37/spira-trust
 
 Thanks,

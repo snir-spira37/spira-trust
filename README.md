@@ -32,7 +32,7 @@ For market positioning and capability boundaries, see
 From production PyPI:
 
 ```bash
-python -m pip install spira-trust==0.5.8
+python -m pip install spira-trust==0.6.0
 spira-trust version
 ```
 
@@ -78,6 +78,20 @@ Machine-readable output:
 ```bash
 spira-trust trust path/to/package.whl --output-dir spira_trust_out --format json
 ```
+
+Agent-facing local memory:
+
+```bash
+spira-trust graph dist \
+  --output-dir spira_graph_out \
+  --evidence-pack spira-evidence.zip
+
+spira-trust status dist --format json
+```
+
+`graph` writes `agent_summary.json` alongside the decision report and stores a
+local summary index under `.spira/agent_summaries/` by default. `status`
+re-hashes current wheels before matching that local state.
 
 The command writes:
 
