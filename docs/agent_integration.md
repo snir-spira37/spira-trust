@@ -36,6 +36,18 @@ out/spira/spira-decision.md
 out/spira/graph_summary.txt
 ```
 
+A typical agent-facing funnel looks like:
+
+```text
+MB of local artifacts -> KB of evidence -> a small decision/summary the agent reads
+```
+
+In one local pytest wheelhouse check, SPIRA reduced about 1.77 MB of wheel
+artifacts to a 62 KB graph report, an 85 KB BOM, a 6.3 KB
+`spira-decision.json`, and a 1.5 KB human summary. The agent still has access
+to the full evidence, but it does not need to infer the verdict by reading the
+wheelhouse by hand.
+
 ## Prompt Snippet For `CLAUDE.md` / `AGENTS.md`
 
 Paste this into your project instructions if you want the agent to gate wheel

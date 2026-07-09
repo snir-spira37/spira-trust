@@ -118,6 +118,10 @@ If you want Claude, Codex, or another coding agent to run SPIRA as part of its
 local workflow, see
 [`agent_integration.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/agent_integration.md).
 
+For a small real wheelhouse example with `pytest` and its local companion
+wheels, see
+[`real_wheelhouse_example.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/real_wheelhouse_example.md).
+
 This demo uses `spira-trust` itself because the public wheel includes an
 embedded SBOM under `.dist-info/sboms/`, so `--verify-embedded-sboms` can check
 local embedded SBOM consistency.
