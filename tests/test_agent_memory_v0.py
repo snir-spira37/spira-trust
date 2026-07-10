@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from spira_core.agent_status import build_agent_status
+from spira_core.agent_status import build_agent_artifact_status, build_agent_status
 from spira_core.combined_verdict import agent_default_decision
 from spira_core.trust_graph import run_trust_graph
 
@@ -101,7 +101,7 @@ def test_contradiction_matrix_blocks_for_trust_root_and_strict_modes(
     assert result["combined_policy_verdict"]["winning_status"] == "BLOCK"
 
 
-def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monkeypatch):
+def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monkeypatch, capsys):
     monkeypatch.chdir(tmp_path)
     wheelhouse = tmp_path / "dist"
     wheelhouse.mkdir()
@@ -139,10 +139,44 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert status["counts"]["checked"] == 1
     assert status["counts"]["unchecked"] == 0
 
+    artifact_status = build_agent_artifact_status(wheel)
+    assert artifact_status["schema"] == "SPIRA_AGENT_ARTIFACT_STATUS_V1"
+    assert artifact_status["checked"] is True
+    assert artifact_status["stale"] is False
+    assert artifact_status["changed_since_check"] is False
+    assert artifact_status["artifact_sha256"] == sha256(wheel.read_bytes()).hexdigest()
+    assert artifact_status["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V2"
+    assert artifact_status["stop"] is True
+    assert artifact_status["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
+    assert artifact_status["reason_codes"] == ["REPORT_NOT_EVALUATED"]
+    assert artifact_status["summary_path"]
+    assert len(json.dumps(artifact_status, separators=(",", ":"))) < 1024
+
+    from spira_core.trust_cli import main
+
+    assert main(["status", "--agent", "--artifact", str(wheel), "--format", "json"]) == 0
+    cli_status = json.loads(capsys.readouterr().out)
+    assert cli_status["schema"] == "SPIRA_AGENT_ARTIFACT_STATUS_V1"
+    assert cli_status["checked"] is True
+    assert cli_status["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
+    assert len(json.dumps(cli_status, separators=(",", ":"))) < 1024
+
     _replace_wheel_payload(wheel, "summary_pkg", "1.0.0", b"changed")
     changed_status = build_agent_status([wheelhouse])
     assert changed_status["counts"]["checked"] == 0
     assert changed_status["counts"]["changed_since_check"] == 1
+
+    changed_artifact_status = build_agent_artifact_status(wheel)
+    assert changed_artifact_status["checked"] is False
+    assert changed_artifact_status["stale"] is True
+    assert changed_artifact_status["changed_since_check"] is True
+    assert changed_artifact_status["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert changed_artifact_status["reason_codes"] == ["ARTIFACT_CHANGED_SINCE_CHECK"]
+
+    assert main(["status", "--agent", "--artifact", str(wheel), "--format", "json"]) == 2
+    changed_cli_status = json.loads(capsys.readouterr().out)
+    assert changed_cli_status["changed_since_check"] is True
+    assert changed_cli_status["recommended_agent_action"] == "RERUN_REQUIRED"
 
 
 def test_agent_action_uses_combined_verdict_not_raw_graph_verdict(tmp_path):

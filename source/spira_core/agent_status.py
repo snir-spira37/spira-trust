@@ -9,6 +9,8 @@ from typing import Any, Iterable, Mapping
 
 STATUS_SCHEMA = "SPIRA_AGENT_STATUS_V1"
 STATUS_SCHEMA_VERSION = "1.0"
+AGENT_ARTIFACT_STATUS_SCHEMA = "SPIRA_AGENT_ARTIFACT_STATUS_V1"
+AGENT_ARTIFACT_STATUS_SCHEMA_VERSION = "1.0"
 
 
 def build_agent_status(
@@ -83,6 +85,51 @@ def build_agent_status(
     }
 
 
+def build_agent_artifact_status(
+    artifact_path: str | Path,
+    *,
+    state_dir: str | Path | None = None,
+) -> dict[str, Any]:
+    path = Path(artifact_path)
+    if not path.is_file() or path.suffix != ".whl":
+        return _agent_status_miss(
+            artifact={"path": str(path), "filename": path.name, "sha256": None},
+            reason_code="ARTIFACT_NOT_FOUND",
+            checked=False,
+            stale=False,
+            changed_since_check=False,
+            summary_path=None,
+            summary_count=0,
+        )
+    artifact = _artifact_ref(path)
+    summaries = _load_summaries(Path(state_dir) if state_dir else Path.cwd() / ".spira" / "agent_summaries")
+    sha_matches = _summaries_for_sha(summaries, str(artifact["sha256"]))
+    if sha_matches:
+        return _agent_status_hit(artifact, _latest_summary(sha_matches), summary_count=len(sha_matches))
+    filename_matches = _summaries_for_filename(summaries, str(artifact["filename"]))
+    if filename_matches:
+        latest = _latest_summary(filename_matches)
+        return _agent_status_miss(
+            artifact=artifact,
+            reason_code="ARTIFACT_CHANGED_SINCE_CHECK",
+            checked=False,
+            stale=True,
+            changed_since_check=True,
+            summary_path=latest.get("_loaded_from"),
+            summary_count=len(filename_matches),
+            previous_artifact_sha256=_first_artifact_sha(latest),
+        )
+    return _agent_status_miss(
+        artifact=artifact,
+        reason_code="ARTIFACT_NOT_CHECKED",
+        checked=False,
+        stale=False,
+        changed_since_check=False,
+        summary_path=None,
+        summary_count=0,
+    )
+
+
 def format_agent_status(status: Mapping[str, Any]) -> str:
     counts = status.get("counts", {}) or {}
     lines = [
@@ -105,6 +152,23 @@ def format_agent_status(status: Mapping[str, Any]) -> str:
         lines.append("Changed since check:")
         for artifact in status.get("changed_since_check", [])[:8]:
             lines.append(f"- {artifact.get('artifact', {}).get('filename')}")
+    return "\n".join(lines) + "\n"
+
+
+def format_agent_artifact_status(status: Mapping[str, Any]) -> str:
+    lines = [
+        "SPIRA Agent Artifact Status",
+        "===========================",
+        f"Artifact: {status.get('filename')}",
+        f"Checked: {status.get('checked')}",
+        f"Changed since check: {status.get('changed_since_check')}",
+        f"Stop: {status.get('stop')}",
+        f"Action: {status.get('recommended_agent_action')}",
+    ]
+    if status.get("reason_codes"):
+        lines.append(f"Reason codes: {', '.join(status.get('reason_codes') or [])}")
+    if status.get("summary_path"):
+        lines.append(f"Summary: {status.get('summary_path')}")
     return "\n".join(lines) + "\n"
 
 
@@ -145,6 +209,99 @@ def _unique_summaries(items: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]
         seen.add(key)
         result.append(item)
     return result
+
+
+def _agent_status_hit(artifact: Mapping[str, Any], summary: Mapping[str, Any], *, summary_count: int) -> dict[str, Any]:
+    contract = summary.get("agent_action_contract") if isinstance(summary.get("agent_action_contract"), Mapping) else summary
+    approval = summary.get("approval") if isinstance(summary.get("approval"), Mapping) else {}
+    return {
+        "schema": AGENT_ARTIFACT_STATUS_SCHEMA,
+        "schema_version": AGENT_ARTIFACT_STATUS_SCHEMA_VERSION,
+        "created_at": _utc(),
+        "filename": artifact.get("filename"),
+        "artifact_sha256": artifact.get("sha256"),
+        "checked": True,
+        "stale": False,
+        "changed_since_check": False,
+        "approved": bool(approval.get("approved", False)),
+        "approval_source": approval.get("approval_source", "unverified"),
+        "decision_semantics_version": contract.get("decision_semantics_version") or summary.get("decision_semantics_version"),
+        "action_verdict": contract.get("action_verdict") or summary.get("action_verdict"),
+        "stop": contract.get("stop"),
+        "recommended_agent_action": contract.get("recommended_agent_action"),
+        "reason_codes": list(contract.get("reason_codes") or summary.get("reason_codes") or []),
+        "summary_path": summary.get("_loaded_from"),
+        "summary_count": summary_count,
+        "evidence": contract.get("evidence"),
+        "not_evaluated_count": len(contract.get("not_evaluated") or summary.get("not_evaluated") or []),
+        "scope": "index_only",
+    }
+
+
+def _agent_status_miss(
+    *,
+    artifact: Mapping[str, Any],
+    reason_code: str,
+    checked: bool,
+    stale: bool,
+    changed_since_check: bool,
+    summary_path: Any,
+    summary_count: int,
+    previous_artifact_sha256: str | None = None,
+) -> dict[str, Any]:
+    result = {
+        "schema": AGENT_ARTIFACT_STATUS_SCHEMA,
+        "schema_version": AGENT_ARTIFACT_STATUS_SCHEMA_VERSION,
+        "created_at": _utc(),
+        "filename": artifact.get("filename"),
+        "artifact_sha256": artifact.get("sha256"),
+        "checked": checked,
+        "stale": stale,
+        "changed_since_check": changed_since_check,
+        "approved": False,
+        "approval_source": "unverified",
+        "decision_semantics_version": None,
+        "action_verdict": None,
+        "stop": True,
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "reason_codes": [reason_code],
+        "summary_path": summary_path,
+        "summary_count": summary_count,
+        "evidence": None,
+        "not_evaluated_count": 0,
+        "scope": "index_only",
+    }
+    if previous_artifact_sha256:
+        result["previous_artifact_sha256"] = previous_artifact_sha256
+    return result
+
+def _summaries_for_sha(summaries: list[dict[str, Any]], sha_value: str) -> list[dict[str, Any]]:
+    return [
+        summary
+        for summary in summaries
+        for artifact in summary.get("artifacts", []) or []
+        if str(artifact.get("sha256")) == sha_value
+    ]
+
+
+def _summaries_for_filename(summaries: list[dict[str, Any]], filename: str) -> list[dict[str, Any]]:
+    return [
+        summary
+        for summary in summaries
+        for artifact in summary.get("artifacts", []) or []
+        if str(artifact.get("filename")) == filename
+    ]
+
+
+def _latest_summary(summaries: list[dict[str, Any]]) -> dict[str, Any]:
+    return sorted(summaries, key=lambda item: (str(item.get("created_at") or ""), str(item.get("_loaded_from") or "")))[-1]
+
+
+def _first_artifact_sha(summary: Mapping[str, Any]) -> str | None:
+    for artifact in summary.get("artifacts", []) or []:
+        if artifact.get("sha256"):
+            return str(artifact["sha256"])
+    return None
 
 
 def _load_summaries(state_dir: Path) -> list[dict[str, Any]]:

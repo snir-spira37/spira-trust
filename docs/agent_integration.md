@@ -163,6 +163,18 @@ spira-trust status dist --format json
 `status` re-hashes current wheels before matching local state. It is an index,
 not a replacement for `agent_summary.json` or the full evidence pack.
 
+For a single artifact, agents can request a compact action status:
+
+```bash
+spira-trust status --agent --artifact dist/example-1.0.0-py3-none-any.whl --format json
+```
+
+This returns a small `SPIRA_AGENT_ARTIFACT_STATUS_V1` object with `checked`,
+`changed_since_check`, `decision_semantics_version`, `stop`,
+`recommended_agent_action`, `reason_codes`, and `summary_path`. If the current
+artifact bytes do not match the indexed summary, the action is
+`RERUN_REQUIRED`.
+
 ## What The Agent Should Not Claim
 
 The agent must not say:

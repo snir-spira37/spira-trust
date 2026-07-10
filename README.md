@@ -91,6 +91,7 @@ spira-trust graph dist \
   --evidence-pack spira-evidence.zip
 
 spira-trust status dist --format json
+spira-trust status --agent --artifact dist/example.whl --format json
 ```
 
 `graph` writes `agent_summary.json` alongside the decision report and stores a

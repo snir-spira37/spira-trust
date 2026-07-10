@@ -98,21 +98,24 @@ The pessimistic upper bound is 95.0%, but it assumes the baseline agent reads
 the full report, decision, and BOM. Treat it as an upper bound, not the headline
 claim.
 
-Q2 is weaker in the single-artifact measurement:
+The original full `status.json` Q2 measurement was weaker for a single artifact:
 
 ```text
 6,376 bytes -> 5,934 bytes
 6.9% less context
 ```
 
-That is still positive, but it is not the main result. The likely advantage of
-`status` is over a multi-artifact workspace, where one status response can cover
-many checked artifacts. That has not been measured here and should remain a
-hypothesis until measured.
+That result is preserved as the baseline. A smaller single-artifact status
+surface was later added:
 
-The `0.6.1` result is preserved as the baseline. If a smaller agent-oriented
-status output is added later, it should be measured as a before/after improvement
-rather than replacing the original 6.9% result.
+```bash
+spira-trust status --agent --artifact <wheel> --format json
+```
+
+The first smoke measurement produced a 901-byte `SPIRA_AGENT_ARTIFACT_STATUS_V1`
+object for the median live benchmark wheel, below the 1KB target. This is a
+before/after improvement over the original full `status.json`, not a replacement
+for the original 6.9% measurement.
 
 ## Stage B
 

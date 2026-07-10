@@ -62,8 +62,10 @@ def _run_public(argv: list[str]) -> int:
     graph_cmd.add_argument("--format", choices=("text", "json"), default="text")
 
     status_cmd = sub.add_parser("status")
-    status_cmd.add_argument("artifact_inputs", nargs="+")
+    status_cmd.add_argument("artifact_inputs", nargs="*")
     status_cmd.add_argument("--agent-state-dir", default=None)
+    status_cmd.add_argument("--agent", action="store_true")
+    status_cmd.add_argument("--artifact", default=None)
     status_cmd.add_argument("--format", choices=("text", "json"), default="text")
 
     drift_cmd = sub.add_parser("drift")
@@ -209,8 +211,26 @@ def _run_graph(args: argparse.Namespace) -> int:
 
 
 def _run_status(args: argparse.Namespace) -> int:
-    from .agent_status import build_agent_status, format_agent_status
+    from .agent_status import build_agent_artifact_status, build_agent_status, format_agent_artifact_status, format_agent_status
 
+    if args.agent:
+        artifact = args.artifact
+        if artifact is None and len(args.artifact_inputs) == 1:
+            artifact = args.artifact_inputs[0]
+        if artifact is None:
+            print("spira-trust status --agent requires --artifact <wheel> or one positional wheel", file=sys.stderr)
+            return 2
+        result = build_agent_artifact_status(artifact, state_dir=args.agent_state_dir)
+        if args.format == "json":
+            print(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
+        else:
+            print(format_agent_artifact_status(result))
+        if result.get("checked") and not result.get("changed_since_check") and not result.get("stale"):
+            return 0
+        return 2
+    if not args.artifact_inputs:
+        print("spira-trust status requires at least one wheel or folder", file=sys.stderr)
+        return 2
     result = build_agent_status(args.artifact_inputs, state_dir=args.agent_state_dir)
     if args.format == "json":
         print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -295,6 +315,7 @@ Usage:
   spira-trust trust <package.whl> [--output-dir DIR]
   spira-trust graph <wheel-folder|wheel...> [--output-dir DIR] [policy options] [--sbom cyclonedx-json]
   spira-trust status <wheel-folder|wheel...> [--format json]
+  spira-trust status --agent --artifact <package.whl> [--format json]
   spira-trust drift <wheel-folder|wheel...> --baseline BOM --baseline-sha256 SHA256
   spira-trust rebaseline <wheel-folder|wheel...> --from-baseline BOM --baseline-sha256 SHA256 --output-dir DIR [--yes]
   spira-trust version
