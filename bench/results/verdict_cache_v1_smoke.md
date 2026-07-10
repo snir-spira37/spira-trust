@@ -56,6 +56,9 @@ The second case fails closed because it indicates non-determinism, corrupted
 local state, manual summary edits, or an input capable of changing action that
 was not included in the context fingerprint.
 
+For conflict detection, `reason_codes` and `not_evaluated` are compared as
+sorted unique string sets. Order alone is not a semantic difference.
+
 Not claimed:
 
 ```text

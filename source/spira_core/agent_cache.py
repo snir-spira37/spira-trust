@@ -220,10 +220,16 @@ def _action_result_key(summary: Mapping[str, Any]) -> str:
         "stop": contract.get("stop") if "stop" in contract else summary.get("stop"),
         "stop_source": contract.get("stop_source") or summary.get("stop_source"),
         "recommended_agent_action": contract.get("recommended_agent_action") or summary.get("recommended_agent_action"),
-        "reason_codes": list(contract.get("reason_codes") or summary.get("reason_codes") or []),
-        "not_evaluated": list(contract.get("not_evaluated") or summary.get("not_evaluated") or []),
+        "reason_codes": _canonical_list(contract.get("reason_codes") or summary.get("reason_codes") or []),
+        "not_evaluated": _canonical_list(contract.get("not_evaluated") or summary.get("not_evaluated") or []),
     }
     return json.dumps(payload, sort_keys=True, separators=(",", ":"))
+
+
+def _canonical_list(values: Any) -> list[str]:
+    if not isinstance(values, list):
+        return []
+    return sorted({str(value) for value in values})
 
 
 def _summaries_for_sha(summaries: list[dict[str, Any]], sha_value: str) -> list[dict[str, Any]]:

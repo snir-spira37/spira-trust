@@ -227,6 +227,8 @@ action result, the cache also fails closed:
 
 This indicates non-determinism, corrupted local state, a manually edited
 summary, or a missing input in the context fingerprint.
+`reason_codes` and `not_evaluated` are canonicalized as sorted unique string
+sets for this comparison; their order is not part of the action semantics.
 
 The graph command fingerprint is part of the cache key. Its invariant is:
 

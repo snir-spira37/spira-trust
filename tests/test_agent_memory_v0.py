@@ -202,6 +202,31 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert cli_cache["cache_hit"] is True
     assert cli_cache["match_scope"] == "full_evidence_context"
 
+    reordered_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
+    reordered_summary["created_at"] = "2999-06-01T00:00:00Z"
+    reordered_summary["reason_codes"] = ["REPORT_NOT_EVALUATED", "NOTES_PRESENT", "REPORT_NOT_EVALUATED"]
+    reordered_summary["not_evaluated"] = ["pep740_offline_attestations", "license_policy"]
+    reordered_summary["agent_action_contract"]["reason_codes"] = ["NOTES_PRESENT", "REPORT_NOT_EVALUATED"]
+    reordered_summary["agent_action_contract"]["not_evaluated"] = ["license_policy", "pep740_offline_attestations"]
+    original_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
+    original_summary["reason_codes"] = ["NOTES_PRESENT", "REPORT_NOT_EVALUATED"]
+    original_summary["not_evaluated"] = ["license_policy", "pep740_offline_attestations"]
+    original_summary["agent_action_contract"]["reason_codes"] = ["REPORT_NOT_EVALUATED", "NOTES_PRESENT"]
+    original_summary["agent_action_contract"]["not_evaluated"] = ["pep740_offline_attestations", "license_policy"]
+    state_summary_path.write_text(
+        json.dumps(original_summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    (state_summary_path.parent / "reordered-result.agent_summary.json").write_text(
+        json.dumps(reordered_summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    reordered_cache = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
+    assert reordered_cache["cache_hit"] is True
+    assert reordered_cache["result_conflict"] is False
+
     conflicting_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
     conflicting_summary["created_at"] = "3000-01-01T00:00:00Z"
     conflicting_summary["stop"] = False
