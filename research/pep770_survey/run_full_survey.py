@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import statistics
 import time
 from datetime import UTC, datetime
@@ -26,6 +27,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--keep-wheels", action="store_true", help="Keep downloaded wheels under work-dir/wheels.")
+    parser.add_argument("--keep-spira-outputs", action="store_true", help="Keep per-wheel SPIRA evidence directories.")
     args = parser.parse_args(argv)
 
     manifest_path = Path(args.manifest)
@@ -57,10 +59,15 @@ def main(argv: list[str] | None = None) -> int:
             result["survey_category"] = "TOOL_ERROR"
             result["tool_error"] = "downloaded wheel sha256 did not match PyPI digest"
         result["wheel_retained"] = bool(args.keep_wheels)
+        result["spira_output_retained"] = bool(args.keep_spira_outputs)
         if not args.keep_wheels:
             wheel_path = wheels_dir / str(pick["filename"])
             if wheel_path.exists():
                 wheel_path.unlink()
+        if not args.keep_spira_outputs:
+            output_dir = outputs_dir / run_pilot.safe_dir_name(index, str(pick["package"]))
+            if output_dir.exists():
+                shutil.rmtree(output_dir)
         report["results"].append(result)
         report["completed_at"] = now()
         report["summary"] = summarize_public(report["results"])
