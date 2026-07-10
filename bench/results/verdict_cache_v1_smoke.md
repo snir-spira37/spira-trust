@@ -42,6 +42,20 @@ The cache re-hashes the current wheel before matching state. It fails closed wit
 or when the requested command/policy/tool/decision-semantics context does not
 match prior summaries.
 
+Additional guards added after the initial smoke:
+
+```text
+CONTEXT_AMBIGUOUS:
+same artifact bytes, multiple available contexts, no exact requested match
+
+EXACT_CONTEXT_RESULT_CONFLICT:
+same artifact bytes, same requested context, conflicting action results
+```
+
+The second case fails closed because it indicates non-determinism, corrupted
+local state, manual summary edits, or an input capable of changing action that
+was not included in the context fingerprint.
+
 Not claimed:
 
 ```text

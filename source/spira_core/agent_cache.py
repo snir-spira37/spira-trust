@@ -78,6 +78,18 @@ def build_agent_verdict_cache(
             available_context_count=len(available_contexts),
         )
 
+    result_keys = {_action_result_key(summary) for summary in matching}
+    if len(result_keys) > 1:
+        return _miss(
+            artifact=artifact,
+            reason_code="EXACT_CONTEXT_RESULT_CONFLICT",
+            expected=expected,
+            summary_count=len(matching),
+            context_match=True,
+            result_conflict=True,
+            available_result_count=len(result_keys),
+        )
+
     selected = _latest_summary(matching)
     contract = selected.get("agent_action_contract") if isinstance(selected.get("agent_action_contract"), Mapping) else selected
     approval = selected.get("approval") if isinstance(selected.get("approval"), Mapping) else {}
@@ -89,6 +101,7 @@ def build_agent_verdict_cache(
         "match_scope": "full_evidence_context",
         "context_match": True,
         "context_ambiguous": False,
+        "result_conflict": False,
         "filename": artifact["filename"],
         "artifact_sha256": artifact["sha256"],
         "policy_sha256": expected["policy_sha256"],
@@ -132,7 +145,9 @@ def _miss(
     summary_count: int,
     context_match: bool | None = None,
     context_ambiguous: bool = False,
+    result_conflict: bool = False,
     available_context_count: int | None = None,
+    available_result_count: int | None = None,
 ) -> dict[str, Any]:
     result = {
         "schema": CACHE_SCHEMA,
@@ -142,6 +157,7 @@ def _miss(
         "match_scope": "full_evidence_context",
         "context_match": context_match,
         "context_ambiguous": context_ambiguous,
+        "result_conflict": result_conflict,
         "filename": artifact.get("filename"),
         "artifact_sha256": artifact.get("sha256"),
         "policy_sha256": expected["policy_sha256"],
@@ -160,6 +176,8 @@ def _miss(
     }
     if available_context_count is not None:
         result["available_context_count"] = available_context_count
+    if available_result_count is not None:
+        result["available_result_count"] = available_result_count
     return result
 
 
@@ -191,6 +209,21 @@ def _summary_context(summary: Mapping[str, Any]) -> dict[str, Any]:
 
 def _context_key(context: Mapping[str, Any]) -> str:
     return json.dumps(context, sort_keys=True, separators=(",", ":"))
+
+
+def _action_result_key(summary: Mapping[str, Any]) -> str:
+    contract = summary.get("agent_action_contract") if isinstance(summary.get("agent_action_contract"), Mapping) else summary
+    payload = {
+        "graph_verdict": contract.get("graph_verdict") or summary.get("verdict"),
+        "combined_verdict": contract.get("combined_verdict") or summary.get("combined_verdict"),
+        "action_verdict": contract.get("action_verdict") or summary.get("action_verdict"),
+        "stop": contract.get("stop") if "stop" in contract else summary.get("stop"),
+        "stop_source": contract.get("stop_source") or summary.get("stop_source"),
+        "recommended_agent_action": contract.get("recommended_agent_action") or summary.get("recommended_agent_action"),
+        "reason_codes": list(contract.get("reason_codes") or summary.get("reason_codes") or []),
+        "not_evaluated": list(contract.get("not_evaluated") or summary.get("not_evaluated") or []),
+    }
+    return json.dumps(payload, sort_keys=True, separators=(",", ":"))
 
 
 def _summaries_for_sha(summaries: list[dict[str, Any]], sha_value: str) -> list[dict[str, Any]]:

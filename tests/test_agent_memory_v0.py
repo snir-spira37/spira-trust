@@ -11,7 +11,7 @@ import pytest
 from spira_core.agent_status import build_agent_artifact_status, build_agent_status
 from spira_core.agent_cache import build_agent_verdict_cache
 from spira_core.combined_verdict import agent_default_decision
-from spira_core.trust_graph import run_trust_graph
+from spira_core.trust_graph import _command_fingerprint, run_trust_graph
 
 
 @pytest.mark.parametrize(
@@ -202,6 +202,27 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert cli_cache["cache_hit"] is True
     assert cli_cache["match_scope"] == "full_evidence_context"
 
+    conflicting_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
+    conflicting_summary["created_at"] = "3000-01-01T00:00:00Z"
+    conflicting_summary["stop"] = False
+    conflicting_summary["recommended_agent_action"] = "PROCEED"
+    conflicting_summary["reason_codes"] = []
+    conflicting_summary["agent_action_contract"]["stop"] = False
+    conflicting_summary["agent_action_contract"]["recommended_agent_action"] = "PROCEED"
+    conflicting_summary["agent_action_contract"]["reason_codes"] = []
+    (state_summary_path.parent / "conflicting-result.agent_summary.json").write_text(
+        json.dumps(conflicting_summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    conflict_cache = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
+    assert conflict_cache["cache_hit"] is False
+    assert conflict_cache["context_match"] is True
+    assert conflict_cache["result_conflict"] is True
+    assert conflict_cache["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert conflict_cache["reason_codes"] == ["EXACT_CONTEXT_RESULT_CONFLICT"]
+    assert conflict_cache["available_result_count"] == 2
+
     _replace_wheel_payload(wheel, "summary_pkg", "1.0.0", b"changed")
     changed_status = build_agent_status([wheelhouse])
     assert changed_status["counts"]["checked"] == 0
@@ -223,6 +244,65 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     changed_cli_status = json.loads(capsys.readouterr().out)
     assert changed_cli_status["changed_since_check"] is True
     assert changed_cli_status["recommended_agent_action"] == "RERUN_REQUIRED"
+
+
+def test_graph_command_fingerprint_changes_for_verdict_inputs(tmp_path):
+    wheel = _build_wheel(tmp_path, "fingerprint_pkg", "1.0.0")
+    license_policy = tmp_path / "license_policy.json"
+    entry_policy = tmp_path / "entry_policy.json"
+    target_environment = tmp_path / "target.json"
+    lockfile = tmp_path / "requirements.txt"
+    effective_policy = tmp_path / "effective_policy.json"
+    attestations = tmp_path / "attestations.json"
+    trust_root = tmp_path / "trust_root.json"
+    for path, text in [
+        (license_policy, "{}\n"),
+        (entry_policy, "{}\n"),
+        (target_environment, "{}\n"),
+        (lockfile, "fingerprint-pkg==1.0.0\n"),
+        (effective_policy, "{}\n"),
+        (attestations, "[]\n"),
+        (trust_root, "{}\n"),
+    ]:
+        path.write_text(text, encoding="utf-8")
+
+    def fp(**overrides):
+        kwargs = {
+            "strict_closure": False,
+            "license_policy_path": None,
+            "entry_point_policy_path": None,
+            "target_environment_path": None,
+            "lockfile_path": None,
+            "effective_policy_path": None,
+            "verify_embedded_sboms": False,
+            "attestation_path": None,
+            "attestation_trust_root_path": None,
+            "attestation_trust_root_sha256": None,
+            "tool_version": "test-version",
+        }
+        kwargs.update(overrides)
+        return _command_fingerprint([wheel], **kwargs)
+
+    base = fp()
+    assert fp(strict_closure=True) != base
+    assert fp(license_policy_path=license_policy) != base
+    assert fp(entry_point_policy_path=entry_policy) != base
+    assert fp(target_environment_path=target_environment) != base
+    assert fp(lockfile_path=lockfile) != base
+    assert fp(effective_policy_path=effective_policy) != base
+    assert fp(verify_embedded_sboms=True) != base
+    assert fp(attestation_path=attestations) != base
+    assert fp(attestation_trust_root_path=trust_root) != base
+    assert fp(attestation_trust_root_sha256="a" * 64) != base
+    assert fp(tool_version="other-version") != base
+
+    with_license = fp(license_policy_path=license_policy)
+    license_policy.write_text('{"allow":["MIT"]}\n', encoding="utf-8")
+    assert fp(license_policy_path=license_policy) != with_license
+
+    before_artifact_change = fp()
+    _replace_wheel_payload(wheel, "fingerprint_pkg", "1.0.0", b"changed")
+    assert fp() != before_artifact_change
 
 
 def test_agent_action_uses_combined_verdict_not_raw_graph_verdict(tmp_path):

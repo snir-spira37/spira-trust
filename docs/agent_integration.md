@@ -212,6 +212,33 @@ cache fails closed with `RERUN_REQUIRED`. If multiple prior summaries exist for
 the same artifact bytes but none match the requested context, the result marks
 `context_ambiguous: true`.
 
+If multiple summaries match the exact requested context but disagree on the
+action result, the cache also fails closed:
+
+```json
+{
+  "cache_hit": false,
+  "context_match": true,
+  "result_conflict": true,
+  "recommended_agent_action": "RERUN_REQUIRED",
+  "reason_codes": ["EXACT_CONTEXT_RESULT_CONFLICT"]
+}
+```
+
+This indicates non-determinism, corrupted local state, a manually edited
+summary, or a missing input in the context fingerprint.
+
+The graph command fingerprint is part of the cache key. Its invariant is:
+
+```text
+Any graph input capable of changing verdict/action must change one of:
+command_fingerprint, policy_sha256, decision_semantics_version, tool_version.
+```
+
+For `graph`, the fingerprint covers artifact bytes, strict-closure mode,
+policy files, lockfile, target environment, embedded SBOM verification mode,
+attestation inputs, attestation trust root inputs, and tool version.
+
 This preserves the distinction:
 
 ```text
