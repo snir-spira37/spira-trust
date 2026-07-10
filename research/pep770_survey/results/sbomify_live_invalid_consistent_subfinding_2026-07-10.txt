@@ -1,0 +1,20 @@
+SPIRA PEP 770 Survey - live-invalid / SPIRA-consistent subfinding
+====================================================================
+
+Checked: 2026-07-10
+Source: https://pypi.sbomify.com/stats/invalid-sboms
+
+Result:
+- Exact selected-wheel cases that were live-invalid in pypi-tea and SBOM_CONSISTENT in SPIRA V5: 4
+- Same SBOM file: schema-invalid by pypi-tea, checked fields consistent by SPIRA V5: 1
+- Different SBOM files: live-invalid non-wheel-scoped file plus separate wheel-scoped consistent file: 3
+
+Interpretation:
+- In one exact-wheel intersection case, the same SBOM file reported invalid by pypi-tea was wheel-scoped and SPIRA V5 marked the checked name/version/purl fields consistent. This does not mean the SBOM is schema-valid; it means the narrow fields SPIRA checks agree with wheel metadata.
+- In three exact-wheel intersection cases, pypi-tea invalid pointed to a non-wheel-scoped SBOM file, while SPIRA V5 marked the wheel consistent based on a separate wheel-scoped SBOM file in the same wheel.
+- The report must disclose that SPIRA consistency can pass a file that fails full schema validation, because SPIRA V5 is not a full CycloneDX/SPDX validator.
+
+Not claimed:
+- does not publish package names for the reviewed overlap cases
+- does not claim schema validity for SBOM_CONSISTENT results
+- does not claim statistical significance from four overlap cases
