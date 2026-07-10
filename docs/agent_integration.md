@@ -175,6 +175,50 @@ This returns a small `SPIRA_AGENT_ARTIFACT_STATUS_V1` object with `checked`,
 artifact bytes do not match the indexed summary, the action is
 `RERUN_REQUIRED`.
 
+## Context-Aware Verdict Cache
+
+`status --agent` answers a narrow index question:
+
+```text
+Have these exact artifact bytes been seen in local SPIRA summaries?
+```
+
+When the agent needs to reuse a prior decision, use the context-aware cache:
+
+```bash
+spira-trust cache \
+  --artifact dist/example-1.0.0-py3-none-any.whl \
+  --command-fingerprint <command-fingerprint-from-agent-summary> \
+  --format json
+```
+
+The cache re-hashes the current wheel and returns a hit only when the previous
+summary matches the requested evidence context:
+
+```json
+{
+  "schema": "SPIRA_AGENT_VERDICT_CACHE_V1",
+  "cache_hit": true,
+  "match_scope": "full_evidence_context",
+  "context_match": true,
+  "stop": true,
+  "recommended_agent_action": "REPORT_NOT_EVALUATED"
+}
+```
+
+If the artifact changed, was not checked, or the same bytes were checked under
+a different command, policy, tool version, or decision semantics version, the
+cache fails closed with `RERUN_REQUIRED`. If multiple prior summaries exist for
+the same artifact bytes but none match the requested context, the result marks
+`context_ambiguous: true`.
+
+This preserves the distinction:
+
+```text
+status says: "SPIRA has seen these bytes before."
+cache says: "SPIRA checked these bytes under this exact evidence context."
+```
+
 ## What The Agent Should Not Claim
 
 The agent must not say:

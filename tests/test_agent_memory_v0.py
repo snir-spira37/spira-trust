@@ -9,6 +9,7 @@ from pathlib import Path
 import pytest
 
 from spira_core.agent_status import build_agent_artifact_status, build_agent_status
+from spira_core.agent_cache import build_agent_verdict_cache
 from spira_core.combined_verdict import agent_default_decision
 from spira_core.trust_graph import run_trust_graph
 
@@ -161,6 +162,46 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert cli_status["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
     assert len(json.dumps(cli_status, separators=(",", ":"))) < 1024
 
+    cache_hit = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
+    assert cache_hit["schema"] == "SPIRA_AGENT_VERDICT_CACHE_V1"
+    assert cache_hit["cache_hit"] is True
+    assert cache_hit["match_scope"] == "full_evidence_context"
+    assert cache_hit["context_match"] is True
+    assert cache_hit["command_fingerprint"] == result["command_fingerprint"]
+    assert cache_hit["policy_sha256"] is None
+    assert cache_hit["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V2"
+    assert cache_hit["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
+
+    cache_miss = build_agent_verdict_cache(wheel, command_fingerprint="0" * 64)
+    assert cache_miss["cache_hit"] is False
+    assert cache_miss["context_match"] is False
+    assert cache_miss["context_ambiguous"] is False
+    assert cache_miss["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert cache_miss["reason_codes"] == ["CONTEXT_MISMATCH"]
+
+    state_summary_path = next((tmp_path / ".spira" / "agent_summaries").glob("*.agent_summary.json"))
+    second_context_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
+    second_context_summary["created_at"] = "2999-01-01T00:00:00Z"
+    second_context_summary["summary_of"]["command_fingerprint"] = "1" * 64
+    second_context_summary["agent_action_contract"]["command_fingerprint"] = "1" * 64
+    (state_summary_path.parent / "second-context.agent_summary.json").write_text(
+        json.dumps(second_context_summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    ambiguous_cache = build_agent_verdict_cache(wheel, command_fingerprint="2" * 64)
+    assert ambiguous_cache["cache_hit"] is False
+    assert ambiguous_cache["context_match"] is False
+    assert ambiguous_cache["context_ambiguous"] is True
+    assert ambiguous_cache["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert ambiguous_cache["reason_codes"] == ["CONTEXT_AMBIGUOUS"]
+    assert ambiguous_cache["available_context_count"] == 2
+
+    assert main(["cache", "--artifact", str(wheel), "--command-fingerprint", result["command_fingerprint"], "--format", "json"]) == 0
+    cli_cache = json.loads(capsys.readouterr().out)
+    assert cli_cache["cache_hit"] is True
+    assert cli_cache["match_scope"] == "full_evidence_context"
+
     _replace_wheel_payload(wheel, "summary_pkg", "1.0.0", b"changed")
     changed_status = build_agent_status([wheelhouse])
     assert changed_status["counts"]["checked"] == 0
@@ -172,6 +213,11 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert changed_artifact_status["changed_since_check"] is True
     assert changed_artifact_status["recommended_agent_action"] == "RERUN_REQUIRED"
     assert changed_artifact_status["reason_codes"] == ["ARTIFACT_CHANGED_SINCE_CHECK"]
+
+    changed_cache = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
+    assert changed_cache["cache_hit"] is False
+    assert changed_cache["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert changed_cache["reason_codes"] == ["ARTIFACT_CHANGED_SINCE_CHECK"]
 
     assert main(["status", "--agent", "--artifact", str(wheel), "--format", "json"]) == 2
     changed_cli_status = json.loads(capsys.readouterr().out)

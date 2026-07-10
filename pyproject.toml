@@ -32,6 +32,7 @@ builder = "tools/build_spira_trust_public.py"
 package_allowlist = [
   "spira_core.__init__",
   "spira_core.adapters",
+  "spira_core.agent_cache",
   "spira_core.agent_status",
   "spira_core.agent_summary",
   "spira_core.attestation_verify",

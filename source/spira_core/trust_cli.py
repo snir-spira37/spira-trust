@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 
-PUBLIC_COMMANDS = {"trust", "graph", "status", "drift", "rebaseline", "version"}
+PUBLIC_COMMANDS = {"trust", "graph", "status", "cache", "drift", "rebaseline", "version"}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -68,6 +68,15 @@ def _run_public(argv: list[str]) -> int:
     status_cmd.add_argument("--artifact", default=None)
     status_cmd.add_argument("--format", choices=("text", "json"), default="text")
 
+    cache_cmd = sub.add_parser("cache")
+    cache_cmd.add_argument("--artifact", required=True)
+    cache_cmd.add_argument("--command-fingerprint", required=True)
+    cache_cmd.add_argument("--policy-sha256", default=None)
+    cache_cmd.add_argument("--decision-semantics-version", default=None)
+    cache_cmd.add_argument("--tool-version", default=None)
+    cache_cmd.add_argument("--agent-state-dir", default=None)
+    cache_cmd.add_argument("--format", choices=("text", "json"), default="text")
+
     drift_cmd = sub.add_parser("drift")
     drift_cmd.add_argument("artifact_inputs", nargs="+")
     drift_cmd.add_argument("--baseline", required=True)
@@ -108,6 +117,8 @@ def _run_public(argv: list[str]) -> int:
         return _run_graph(parsed)
     if parsed.command == "status":
         return _run_status(parsed)
+    if parsed.command == "cache":
+        return _run_cache(parsed)
     if parsed.command == "drift":
         return _run_drift(parsed)
     if parsed.command == "rebaseline":
@@ -242,6 +253,24 @@ def _run_status(args: argparse.Namespace) -> int:
     return 0
 
 
+def _run_cache(args: argparse.Namespace) -> int:
+    from .agent_cache import build_agent_verdict_cache, format_agent_verdict_cache
+
+    result = build_agent_verdict_cache(
+        args.artifact,
+        command_fingerprint=args.command_fingerprint,
+        policy_sha256=args.policy_sha256,
+        decision_semantics_version=args.decision_semantics_version,
+        tool_version=args.tool_version,
+        state_dir=args.agent_state_dir,
+    )
+    if args.format == "json":
+        print(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
+    else:
+        print(format_agent_verdict_cache(result))
+    return 0 if result.get("cache_hit") else 2
+
+
 def _run_drift(args: argparse.Namespace) -> int:
     from .drift import drift_exit_code, format_drift_summary, run_baseline_drift
 
@@ -316,6 +345,7 @@ Usage:
   spira-trust graph <wheel-folder|wheel...> [--output-dir DIR] [policy options] [--sbom cyclonedx-json]
   spira-trust status <wheel-folder|wheel...> [--format json]
   spira-trust status --agent --artifact <package.whl> [--format json]
+  spira-trust cache --artifact <package.whl> --command-fingerprint SHA256 [--format json]
   spira-trust drift <wheel-folder|wheel...> --baseline BOM --baseline-sha256 SHA256
   spira-trust rebaseline <wheel-folder|wheel...> --from-baseline BOM --baseline-sha256 SHA256 --output-dir DIR [--yes]
   spira-trust version
@@ -324,6 +354,7 @@ Public commands:
   trust       Review one artifact and emit a trust verdict.
   graph       Build a local evidence graph over provided wheels only.
   status      Re-hash local wheels and index prior agent_summary.json outputs.
+  cache       Return a prior action only for an exact evidence-context match.
   drift       Compare current wheels against a pinned BOM baseline.
   rebaseline  Create a new baseline after explicit human confirmation.
   version     Print the installed SPIRA Trust version.
