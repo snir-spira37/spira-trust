@@ -1,0 +1,35 @@
+SPIRA PEP 770 Pilot V4 Public Results
+
+schema: SPIRA_PEP770_SURVEY_PILOT_V4_PUBLIC_RESULTS_V1
+methodology: research/pep770_survey/methodology.v4.json
+source_selection: research/pep770_survey/pilot_selection_v1.json
+started_at: 2026-07-10T06:24:55Z
+completed_at: 2026-07-10T06:29:15Z
+
+Pilot scope:
+- Same 10 predeclared wheels from pilot_selection_v1.json.
+- Pilot is edge-case discovery, not a statistical sample.
+- Named package details are not included here.
+
+V4 correction:
+- File-level non-PyPI component SBOMs are no longer treated as wheel-level contradictions.
+- The V1 pilot aggregate 2 SBOM_INCONSISTENT became 0 SBOM_INCONSISTENT under V4.
+- V4 pilot categories: 9 SBOM_CONSISTENT, 1 NO_WHEEL_SCOPED_SBOM, 0 TOOL_ERROR.
+
+Aggregate survey categories:
+- NO_WHEEL_SCOPED_SBOM: 1
+- SBOM_CONSISTENT: 9
+
+Aggregate generator family multi-label counts:
+- AUDITWHEEL: 5
+- CARGO_CYCLONEDX: 2
+- CYCLONEDX_PYTHON: 1
+- MATURIN: 1
+- OTHER: 2
+
+Context-tax pilot measurements:
+- ratio median: 4.23
+- ratio max: 225.51
+
+Notes:
+- GRAPH_BLOCK can be caused by non-PEP-770 layers; aggregate survey categories here refer only to the PEP 770 V1/V4 consistency subset.

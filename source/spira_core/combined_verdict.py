@@ -132,6 +132,7 @@ def _pep770_layer(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str
     status = {
         "CONTRADICTION": "BLOCK",
         "UNVERIFIED": "NOTE",
+        "NO_WHEEL_SCOPED_SBOM": "NOTE",
         "VERIFIED_OK": "OK",
         "NOT_EVALUATED": "NOT_EVALUATED",
     }.get(source_status, "NOTE")

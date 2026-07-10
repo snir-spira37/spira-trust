@@ -1,0 +1,28 @@
+{
+  "completed_at": "2026-07-10T06:29:15Z",
+  "methodology": "research/pep770_survey/methodology.v4.json",
+  "not_claimed": [
+    "pilot is edge-case discovery, not a statistical sample",
+    "pilot results are not full-corpus statistics",
+    "SPIRA PEP 770 V1 is a narrow consistency check, not full SBOM validation"
+  ],
+  "public_scope": "aggregate V4 pilot results only",
+  "schema": "SPIRA_PEP770_SURVEY_PILOT_V4_PUBLIC_RESULTS_V1",
+  "source_selection": "research/pep770_survey/pilot_selection_v1.json",
+  "started_at": "2026-07-10T06:24:55Z",
+  "summary": {
+    "category_counts": {
+      "NO_WHEEL_SCOPED_SBOM": 1,
+      "SBOM_CONSISTENT": 9
+    },
+    "generator_family_multilabel_counts": {
+      "AUDITWHEEL": 5,
+      "CARGO_CYCLONEDX": 2,
+      "CYCLONEDX_PYTHON": 1,
+      "MATURIN": 1,
+      "OTHER": 2
+    },
+    "tool_error_count": 0
+  },
+  "v4_correction_note": "V4 separates non-PyPI component-scoped SBOMs from wheel-scoped SBOM consistency. The V1 pilot inconsistencies became one SBOM_CONSISTENT and one NO_WHEEL_SCOPED_SBOM after manual review and V4 scope rules."
+}

@@ -201,6 +201,8 @@ def survey_category(spira: dict[str, Any]) -> str:
         return "SBOM_CONSISTENT"
     if status == "CONTRADICTION":
         return "SBOM_INCONSISTENT"
+    if status == "NO_WHEEL_SCOPED_SBOM":
+        return "NO_WHEEL_SCOPED_SBOM"
     if status in {"UNVERIFIED", "NOT_EVALUATED", None}:
         return "NOT_EVALUATED"
     return "NOT_EVALUATED"

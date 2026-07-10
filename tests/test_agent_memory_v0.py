@@ -179,7 +179,7 @@ def _build_wheel(base: Path, name: str, version: str, *, sbom_name: str | None =
         files[f"{dist_info}/sboms/{name}.cdx.json"] = json.dumps(
             {
                 "bomFormat": "CycloneDX",
-                "metadata": {"component": {"name": sbom_name, "version": version}},
+                "metadata": {"component": {"name": sbom_name, "version": version, "purl": f"pkg:pypi/{sbom_name}@{version}"}},
             }
         ).encode("utf-8")
     record_path = f"{dist_info}/RECORD"

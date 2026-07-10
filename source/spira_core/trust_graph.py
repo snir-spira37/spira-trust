@@ -1193,8 +1193,11 @@ def _apply_sbom_consistency_findings(nodes: dict[str, dict[str, Any]]) -> list[d
             if reason not in node["reasons"]:
                 node["reasons"].insert(0, reason)
             events.append({"from": node_id, "to": node_id, "effect": "BLOCK", "reason": reason})
-        elif result.get("status") == "UNVERIFIED":
-            reason = "PEP 770 embedded SBOM present but not fully verified by V1 parser"
+        elif result.get("status") in {"UNVERIFIED", "NO_WHEEL_SCOPED_SBOM"}:
+            if result.get("status") == "NO_WHEEL_SCOPED_SBOM":
+                reason = "PEP 770 embedded SBOM present but no wheel-scoped SBOM was identified by V1 parser"
+            else:
+                reason = "PEP 770 embedded SBOM present but not fully verified by V1 parser"
             if reason not in node["propagated_notes"]:
                 node["propagated_notes"].append(reason)
             events.append({"from": node_id, "to": node_id, "effect": "NOTE", "reason": reason})
@@ -1264,6 +1267,8 @@ def _sbom_consistency_summary(nodes: Mapping[str, dict[str, Any]], evaluated: bo
         status = "CONTRADICTION"
     elif any(status == "UNVERIFIED" for status in statuses):
         status = "UNVERIFIED"
+    elif any(status == "NO_WHEEL_SCOPED_SBOM" for status in statuses):
+        status = "NO_WHEEL_SCOPED_SBOM"
     elif any(status == "VERIFIED_OK" for status in statuses):
         status = "VERIFIED_OK"
     else:

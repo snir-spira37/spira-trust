@@ -1,0 +1,76 @@
+{
+  "schema": "SPIRA_PEP770_SURVEY_METHODOLOGY_V4",
+  "supersedes": "research/pep770_survey/methodology.v3.json",
+  "locked_at_date": "2026-07-10",
+  "rationale": "V4 is committed after the 10-wheel pilot and before any full-corpus evaluation. Manual review of the two pilot findings initially classified as SBOM_INCONSISTENT showed both were legitimate multi-ecosystem SBOM patterns rather than package contradictions: cargo-cyclonedx SBOMs described Cargo components while the wheel metadata described the PyPI wheel. PEP 770 treats embedded SBOM data as opaque and allows multiple SBOM documents. V4 therefore separates file-level SBOM component scope from wheel-level verdicts.",
+  "frozen": "This file is committed before the V4 full-corpus evaluation. Categories, file-level classifications, wheel-level verdict rules, sampling policy, and falsification criteria may not change after V4 full-corpus results are observed. Amendments require a new versioned file with rationale; V1 through V4 remain in the repository as process evidence.",
+  "code_scope": {
+    "spira_checker_schema": "SPIRA_PEP770_SBOM_CONSISTENCY_V1",
+    "checker_scope": [
+      "embedded SBOM files under .dist-info/sboms/",
+      "JSON parseability for JSON SBOM files",
+      "JSON root is an object",
+      "CycloneDX top-level bomFormat recognition",
+      "file-level component scope classification from CycloneDX metadata.component.purl when present",
+      "fallback wheel-scope inference from CycloneDX metadata.component.name when purl is absent",
+      "wheel-scoped metadata.component.name compared with wheel metadata name",
+      "wheel-scoped metadata.component.version compared with wheel metadata version"
+    ],
+    "not_claimed": [
+      "does not validate full CycloneDX or SPDX schemas",
+      "does not compare every SBOM component to every wheel file",
+      "does not treat non-PyPI component SBOMs as contradictions against wheel metadata",
+      "does not trust, merge, or replace SPIRA evidence with embedded SBOM contents",
+      "does not perform vulnerability, license, malware, provenance, or legal analysis"
+    ]
+  },
+  "file_level_classification": {
+    "PYPI_WHEEL_SCOPED": "metadata.component.purl starts with pkg:pypi/ and the purl package name is compared with the wheel package name",
+    "PYPI_WHEEL_SCOPED_INFERRED": "metadata.component.purl is absent and metadata.component.name matches the wheel package name after PEP 503 normalization",
+    "COMPONENT_SCOPE_NOT_WHEEL": "metadata.component.purl exists but is not pkg:pypi/, for example pkg:cargo/ or pkg:deb/",
+    "UNKNOWN_COMPONENT_SCOPE": "metadata.component.purl is absent and metadata.component.name does not match the wheel package name, or the component is missing",
+    "UNSUPPORTED_FORMAT": "SBOM format or standard is outside the V1 checker subset",
+    "SBOM_PARSE_INVALID": "embedded JSON SBOM cannot be parsed as UTF-8 JSON or the JSON root is not an object"
+  },
+  "wheel_level_categories": {
+    "SBOM_CONSISTENT": "At least one wheel-scoped SBOM exists and every wheel-scoped SBOM checked by SPIRA V1 is consistent with wheel metadata.",
+    "SBOM_INCONSISTENT": "At least one wheel-scoped SBOM has a positive name or version contradiction against wheel metadata.",
+    "NO_WHEEL_SCOPED_SBOM": "Embedded SBOM files exist, but none are classified as wheel-scoped under V4 rules.",
+    "SBOM_INVALID": "An embedded JSON SBOM file could not be decoded as UTF-8 JSON or its JSON root was not an object. This is parseability invalidity only, not full schema invalidity.",
+    "NOT_EVALUATED": "Embedded SBOM evidence is present but outside SPIRA's V1 checker scope and no wheel-scoped consistency decision was made.",
+    "TOOL_ERROR": "SPIRA crashed or produced unreadable output. This is a SPIRA bug or harness bug, never a finding about the package."
+  },
+  "category_rules": [
+    "Every selected wheel receives exactly one wheel-level survey category.",
+    "File-level COMPONENT_SCOPE_NOT_WHEEL is never a wheel-level contradiction.",
+    "A wheel is SBOM_INCONSISTENT only on a positive contradiction in a wheel-scoped SBOM.",
+    "Absence of wheel-scoped SBOM data is NO_WHEEL_SCOPED_SBOM, not SBOM_INCONSISTENT.",
+    "If a wheel contains multiple embedded SBOM files, non-wheel-scoped SBOMs are recorded as file-level evidence while wheel-level consistency is decided only from wheel-scoped SBOMs.",
+    "If a wheel has one consistent wheel-scoped SBOM and one non-wheel-scoped Cargo SBOM, the wheel-level PEP 770 V1 category is SBOM_CONSISTENT.",
+    "SPIRA raw statuses are preserved in raw results; survey categories are a reporting layer over those raw statuses."
+  ],
+  "status_mapping": {
+    "VERIFIED_OK": "SBOM_CONSISTENT",
+    "CONTRADICTION": "SBOM_INCONSISTENT",
+    "NO_WHEEL_SCOPED_SBOM": "NO_WHEEL_SCOPED_SBOM",
+    "UNVERIFIED": "NOT_EVALUATED",
+    "NOT_EVALUATED": "NOT_EVALUATED",
+    "unreadable_or_missing_spira_output": "TOOL_ERROR"
+  },
+  "external_validation": {
+    "historical_observation": "The March 2026 sbomify top-15k analysis reported invalid embedded SBOMs in that corpus, attributed to a cargo-cyclonedx issue.",
+    "v4_note": "Cargo-scoped SBOMs are not contradictions merely because their component name or version differs from the PyPI wheel. V4 only treats wheel-scoped SBOM contradictions as SBOM_INCONSISTENT."
+  },
+  "sampling": {
+    "snapshot_manifest": "Use research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json as the V4 full-evaluation corpus source.",
+    "full_evaluation": "Target is all SELECTED wheels from the snapshot manifest. If runtime, storage, or rate-limit constraints require sampling before full evaluation, a methodology.v5.json must be committed before evaluating sampled results."
+  },
+  "reporting_rules": [
+    "Aggregate statistics are public.",
+    "Named packages with wheel-level SBOM_INCONSISTENT or SBOM_INVALID findings are not published before contacting maintainers.",
+    "NO_WHEEL_SCOPED_SBOM aggregate counts are public because they are scope/coverage findings, not package accusations.",
+    "The final report must include not_claimed language for security, malware, vulnerability, legal, energy, and full schema validation claims.",
+    "The report must include a methodology note that the pilot found false positives caused by treating Cargo-scoped SBOMs as if they described the PyPI wheel.",
+    "All scripts, methodology files, raw aggregate results JSON, snapshot manifest, and generated aggregate tables are committed under research/pep770_survey/."
+  ]
+}
