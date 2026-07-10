@@ -6,7 +6,7 @@ Recommendation: `ACCEPT_WITH_NOTES`
 ## Scope
 
 Starting commit: `8e7ea82d35c19907eadfd3d8946f006033bbc3e5`
-Ending commit: `642d123a1f77f40023221be70d5828d9c3ad9da7`
+Ending implementation commit: `d84d2b270d1789d10e4b609ee8429e31ed41fa39`
 Branch: `codex/agent-efficiency-program-completion`
 Pushed: `false`
 Published/tagged/released: `false`
@@ -18,6 +18,8 @@ Published/tagged/released: `false`
 - `664034a Add agent memory flow regression`
 - `6dba0c2 Document completed agent evidence memory flow`
 - `642d123 Fix agent memory flow benchmark reproducibility`
+- `be5aa66 Add final agent efficiency program audit`
+- `d84d2b2 Fail closed on corrupted rerun contexts`
 
 ## Features Completed
 
@@ -28,17 +30,18 @@ Published/tagged/released: `false`
 - end-to-end agent evidence memory flow regression
 - documentation and machine-readable schema synchronization
 - final audit package
+- review fix: corrupted rerun context files fail closed instead of throwing
 
 ## Tests And Audit
 
 - `python -m py_compile source\spira_core\agent_cache.py source\spira_core\rerun_planner.py source\spira_core\trust_cli.py bench\bench_cache_performance.py bench\bench_agent_memory_flow.py`: passed
-- `python -m pytest -q`: 65 passed
-- `python -m pytest tests\test_agent_memory_v0.py tests\test_rerun_planner.py -q`: 44 passed
+- `python -m pytest -q`: 66 passed
+- `python -m pytest tests\test_agent_memory_v0.py tests\test_rerun_planner.py -q`: 45 passed
 - `JSON parse validation for schemas and benchmark result JSON`: passed
-- `benchmark reproducibility check to work/audit_repro`: passed after fixing benchmark wheel mutation isolation
-- `secret scan`: passed; only existing OPENAI_API_KEY=false status lines matched
+- `benchmark reproducibility check to work/audit_repro_review`: passed
+- `secret scan`: passed; no secrets detected
 - `personal absolute-path scan`: passed
-- `git diff --check`: passed
+- `git diff --check`: passed before report update; final report files generated with LF
 
 ## Cache Performance Benchmark
 
@@ -94,12 +97,14 @@ Cases:
 - attestation_sha256/trust root changed -> ATTESTATION_CONTEXT_CHANGED
 - decision_semantics_version changed -> DECISION_SEMANTICS_CHANGED
 - tool_version changed -> TOOL_VERSION_CHANGED
-- missing/unknown/unsupported context -> fail closed
+- missing/unknown/unsupported/corrupted context -> fail closed
 - context ambiguity/result conflict -> fail closed
 
 ## Files Changed
 
 - `README.md`
+- `SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.json`
+- `SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.md`
 - `bench/bench_agent_memory_flow.py`
 - `bench/bench_cache_performance.py`
 - `bench/results/agent_memory_flow_v1.json`
@@ -119,6 +124,7 @@ Cases:
 ## Regressions Found During Audit
 
 - Initial agent_memory_flow benchmark rebuild mutated the baseline wheel bytes during audit repro; fixed by isolating artifact mutation in a separate wheel directory and reran results.
+- Independent review found corrupted rerun context JSON could throw instead of returning a fail-closed plan; fixed in d84d2b2 and covered by CLI regression.
 
 ## Unresolved Blockers
 
@@ -137,25 +143,28 @@ None.
 - Benchmarks are synthetic representative regressions, not ecosystem-wide performance data.
 - files_opened_proxy is deterministic proxy data, not OS-level syscall tracing.
 - No push, tag, PyPI publish, or GitHub Release was performed.
+- This report records the ending implementation commit; a later report-update commit may contain only refreshed report metadata.
 
 ## Diff Stat
 
 ```text
-README.md                                     |   3 +
- bench/bench_agent_memory_flow.py              | 348 +++++++++++++
- bench/bench_cache_performance.py              | 317 ++++++++++++
- bench/results/agent_memory_flow_v1.json       | 171 +++++++
- bench/results/agent_memory_flow_v1_summary.md |  28 ++
- bench/results/cache_performance_v1.json       | 673 ++++++++++++++++++++++++++
- bench/results/cache_performance_v1_runs.csv   |  21 +
- bench/results/cache_performance_v1_summary.md |  20 +
- docs/agent_context_tax.md                     |  38 ++
- docs/agent_integration.md                     |  51 ++
- pyproject.toml                                |   1 +
- schemas/spira_agent_rerun_plan_v1.json        |  83 ++++
- schemas/spira_agent_summary_v1.json           |   1 +
- source/spira_core/rerun_planner.py            | 181 +++++++
- source/spira_core/trust_cli.py                |  25 +-
- tests/test_rerun_planner.py                   | 115 +++++
- 16 files changed, 2075 insertions(+), 1 deletion(-)
+README.md                                        |   3 +
+ SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.json | 356 ++++++++++++
+ SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.md   | 161 ++++++
+ bench/bench_agent_memory_flow.py                 | 348 ++++++++++++
+ bench/bench_cache_performance.py                 | 317 +++++++++++
+ bench/results/agent_memory_flow_v1.json          | 171 ++++++
+ bench/results/agent_memory_flow_v1_summary.md    |  28 +
+ bench/results/cache_performance_v1.json          | 673 +++++++++++++++++++++++
+ bench/results/cache_performance_v1_runs.csv      |  21 +
+ bench/results/cache_performance_v1_summary.md    |  20 +
+ docs/agent_context_tax.md                        |  38 ++
+ docs/agent_integration.md                        |  51 ++
+ pyproject.toml                                   |   1 +
+ schemas/spira_agent_rerun_plan_v1.json           |  83 +++
+ schemas/spira_agent_summary_v1.json              |   1 +
+ source/spira_core/rerun_planner.py               | 184 +++++++
+ source/spira_core/trust_cli.py                   |  25 +-
+ tests/test_rerun_planner.py                      | 128 +++++
+ 18 files changed, 2608 insertions(+), 1 deletion(-)
 ```
