@@ -97,6 +97,11 @@ spira-trust status dist --format json
 local summary index under `.spira/agent_summaries/` by default. `status`
 re-hashes current wheels before matching that local state.
 
+`agent_summary.json` includes an
+[Agent Action Contract](docs/agent_action_contract.md): a small deterministic
+surface with `stop`, `recommended_agent_action`, `reason_codes`, and evidence
+pointers so agents do not have to infer gate policy from broad reports.
+
 The command writes:
 
 - `artifact_trust_summary.txt`

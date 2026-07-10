@@ -116,10 +116,24 @@ rather than replacing the original 6.9% result.
 
 ## Stage B
 
-The live two-arm agent benchmark was not run.
+A live API file-ingestion benchmark was later run with the DeepSeek Chat API.
+Evidence was injected into the prompt; this is not a full autonomous agent
+tool-use benchmark.
 
-No live model API credentials were available in the measurement environment, so
-no live token, latency, cost, or correctness-equivalence claim is made.
+Results are recorded in:
+
+```text
+bench/results/live_v1/
+```
+
+In that benchmark, `agent_summary.json` used 2.1x fewer prompt tokens than the
+minimal `spira-decision.json` baseline and 15x-41x fewer than broad evidence
+injection.
+
+The main finding was correctness, not just cost: the `agent_summary.json` path
+returned the intended `STOP / REPORT_NOT_EVALUATED` decision in 6/6 runs, while
+the broad-evidence path converted `GRAPH_OK_WITH_NOTES` into `PROCEED` in 6/6
+runs unless the prompt manually encoded the missing stop rule.
 
 Correctness must come before savings:
 
@@ -128,7 +142,10 @@ Arm A and Arm B must reach the same gate decision and materially equivalent
 reasons before any live savings number is reported.
 ```
 
-The absence of Stage B is part of the evidence, not something to hide.
+The live benchmark therefore supports a narrower claim than "agents always save
+tokens": serving a deterministic `stop` and `recommended_agent_action` surface
+can be both cheaper and less ambiguous than asking a model to infer gate policy
+from broad evidence.
 
 ## Reproduce
 

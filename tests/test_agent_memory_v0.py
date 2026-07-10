@@ -99,8 +99,19 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert summary["schema"] == "SPIRA_AGENT_SUMMARY_V1"
     assert summary["created_at"]
     assert "not_evaluated" in summary
+    assert summary["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V1"
+    assert summary["agent_action_contract"]["schema"] == "SPIRA_AGENT_ACTION_V1"
+    assert summary["agent_action_contract"]["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V1"
+    assert summary["agent_action_contract"]["artifact_sha256"] == sha256(wheel.read_bytes()).hexdigest()
+    assert summary["agent_action_contract"]["artifact_set_sha256"] == summary["summary_of"]["artifact_set_sha256"]
+    assert summary["agent_action_contract"]["policy_sha256"] is None
+    assert summary["agent_action_contract"]["recommended_agent_action"] == summary["recommended_agent_action"]
+    assert summary["agent_action_contract"]["stop"] == summary["stop"]
+    assert summary["reason_codes"] == ["REPORT_NOT_EVALUATED"]
+    assert summary["agent_action_contract"]["reason_codes"] == ["REPORT_NOT_EVALUATED"]
     assert summary["approval"]["approval_source"] == "unverified"
     assert summary["summary_of"]["command_fingerprint"] == result["command_fingerprint"]
+    assert summary_path.stat().st_size < 3 * 1024
 
     status = build_agent_status([wheelhouse])
     assert status["counts"]["checked"] == 1

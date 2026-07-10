@@ -49,6 +49,27 @@ artifacts to a 62 KB graph report, an 85 KB BOM, a 6.3 KB
 to the full evidence, but it does not need to infer the verdict by reading the
 wheelhouse by hand.
 
+## Agent Action Contract
+
+`agent_summary.json` is the agent action contract. It carries the deterministic
+gate action that the agent should follow:
+
+```json
+{
+  "agent_action_contract": {
+    "schema": "SPIRA_AGENT_ACTION_V1",
+    "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V1",
+    "stop": true,
+    "recommended_agent_action": "REPORT_NOT_EVALUATED",
+    "reason_codes": ["REPORT_NOT_EVALUATED"]
+  }
+}
+```
+
+The agent may explain the decision, but should not reinvent the gate decision
+from `GRAPH_OK_WITH_NOTES`, exit code, blockers, notes, or prose. See
+[`agent_action_contract.md`](agent_action_contract.md).
+
 ## Prompt Snippet For `CLAUDE.md` / `AGENTS.md`
 
 Paste this into your project instructions if you want the agent to gate wheel
@@ -78,6 +99,7 @@ Then read:
 
 Rules:
 
+- Treat `agent_summary.json` as the action contract.
 - If the decision is `GRAPH_BLOCK`, stop and report the evidence to the human.
 - If the decision is `GRAPH_WARN`, stop and ask the human whether to proceed.
 - If `agent_summary.json` says `stop: true`, follow its closed

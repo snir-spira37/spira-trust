@@ -19,6 +19,8 @@ AGENT_ACTIONS = {
     "RERUN_REQUIRED",
 }
 
+DECISION_SEMANTICS_VERSION = "SPIRA_DECISION_SEMANTICS_V1"
+
 
 def agent_default_decision(
     verdict: str | None,
@@ -40,6 +42,32 @@ def agent_default_decision(
     if verdict == "GRAPH_OK":
         return {"stop": False, "stop_source": "default", "recommended_agent_action": "PROCEED"}
     return {"stop": True, "stop_source": "default", "recommended_agent_action": "RERUN_REQUIRED"}
+
+
+def agent_reason_codes(
+    agent_decision: Mapping[str, Any],
+    *,
+    verdict: str | None,
+    not_evaluated_layers: list[str] | None = None,
+    blockers: list[str] | None = None,
+    warnings: list[str] | None = None,
+) -> list[str]:
+    action = str(agent_decision.get("recommended_agent_action") or "")
+    not_evaluated = list(not_evaluated_layers or [])
+    codes: list[str] = []
+    if action == "STOP_BLOCKED" or blockers:
+        codes.append("BLOCKING_FINDINGS")
+    if action == "ASK_HUMAN" or warnings:
+        codes.append("HUMAN_REVIEW_REQUIRED")
+    if action == "REPORT_NOT_EVALUATED" or not_evaluated:
+        codes.append("REPORT_NOT_EVALUATED")
+    if action == "RERUN_REQUIRED":
+        codes.append("RERUN_REQUIRED")
+    if action == "PROCEED" and not codes:
+        codes.append("NO_STOP_CONDITION")
+    if verdict and str(verdict).endswith("_WITH_NOTES"):
+        codes.append("NOTES_PRESENT")
+    return sorted(dict.fromkeys(codes))
 
 
 def build_combined_policy_verdict(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str, Any]:

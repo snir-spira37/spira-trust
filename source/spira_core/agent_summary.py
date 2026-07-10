@@ -7,11 +7,13 @@ from importlib import metadata as importlib_metadata
 from pathlib import Path
 from typing import Any, Mapping
 
-from .combined_verdict import agent_default_decision
+from .combined_verdict import DECISION_SEMANTICS_VERSION, agent_default_decision, agent_reason_codes
 
 
 AGENT_SUMMARY_SCHEMA = "SPIRA_AGENT_SUMMARY_V1"
 AGENT_SUMMARY_SCHEMA_VERSION = "1.0"
+AGENT_ACTION_SCHEMA = "SPIRA_AGENT_ACTION_V1"
+AGENT_ACTION_SCHEMA_VERSION = "1.0"
 
 
 def write_agent_summary(
@@ -32,7 +34,7 @@ def write_agent_summary(
         include_local_paths=include_local_paths,
     )
     summary_path = output / "agent_summary.json"
-    summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    summary_path.write_text(_agent_json(summary) + "\n", encoding="utf-8", newline="\n")
     summary["agent_summary_path"] = str(summary_path.resolve())
     _write_state_copy(summary, state_dir=state_dir)
     return summary
@@ -56,6 +58,17 @@ def build_agent_summary(
     artifact_sha_values = [item["sha256"] for item in artifacts if item.get("sha256")]
     artifact_set_sha = _stable_digest({"artifact_sha256_values": sorted(artifact_sha_values)})
     command_fingerprint = str(graph_result.get("command_fingerprint") or _stable_digest(_command_payload(graph_result)))
+    blockers = _findings(graph_result, effect="BLOCK")
+    warnings = _findings(graph_result, effect="WARN")
+    notes = _findings(graph_result, effect="NOTE")
+    policy_sha = _effective_policy_sha(graph_result)
+    reason_codes = agent_reason_codes(
+        agent_decision,
+        verdict=verdict,
+        not_evaluated_layers=not_evaluated,
+        blockers=blockers,
+        warnings=warnings,
+    )
     evidence = {
         "decision": _path_ref(decision.get("decision_json_path"), output, include_local_paths=include_local_paths),
         "decision_markdown": _path_ref(decision.get("decision_markdown_path"), output, include_local_paths=include_local_paths),
@@ -64,11 +77,30 @@ def build_agent_summary(
         "bill_of_materials": _path_ref(graph_result.get("bill_of_materials_path"), output, include_local_paths=include_local_paths),
         "evidence_pack": _path_ref(evidence_pack_path, output, include_local_paths=include_local_paths),
     }
+    action_contract = {
+        "schema": AGENT_ACTION_SCHEMA,
+        "schema_version": AGENT_ACTION_SCHEMA_VERSION,
+        "decision_semantics_version": DECISION_SEMANTICS_VERSION,
+        "artifact_sha256": artifact_sha_values[0] if len(artifact_sha_values) == 1 else None,
+        "artifact_set_sha256": artifact_set_sha,
+        "policy_sha256": policy_sha,
+        "command_fingerprint": command_fingerprint,
+        "verdict": verdict,
+        "combined_verdict": decision_block.get("combined_verdict"),
+        "stop": agent_decision["stop"],
+        "stop_source": agent_decision["stop_source"],
+        "recommended_agent_action": agent_decision["recommended_agent_action"],
+        "reason_codes": reason_codes,
+        "not_evaluated": not_evaluated,
+        "evidence": evidence.get("decision") or evidence.get("graph_report"),
+    }
     return {
         "schema": AGENT_SUMMARY_SCHEMA,
         "schema_version": AGENT_SUMMARY_SCHEMA_VERSION,
         "created_at": _utc(),
         "tool": {"name": "spira-trust", "version": _tool_version()},
+        "decision_semantics_version": DECISION_SEMANTICS_VERSION,
+        "agent_action_contract": action_contract,
         "verdict": verdict,
         "combined_verdict": decision_block.get("combined_verdict"),
         "winning_status": decision_block.get("winning_status"),
@@ -76,10 +108,11 @@ def build_agent_summary(
         "stop": agent_decision["stop"],
         "stop_source": agent_decision["stop_source"],
         "recommended_agent_action": agent_decision["recommended_agent_action"],
+        "reason_codes": reason_codes,
         "not_evaluated": not_evaluated,
-        "blockers": _findings(graph_result, effect="BLOCK"),
-        "warnings": _findings(graph_result, effect="WARN"),
-        "notes": _findings(graph_result, effect="NOTE"),
+        "blockers": blockers,
+        "warnings": warnings,
+        "notes": notes,
         "evidence": evidence,
         "summary_of": {
             "artifact_count": len(artifacts),
@@ -87,6 +120,8 @@ def build_agent_summary(
             "artifact_set_sha256": artifact_set_sha,
             "command_fingerprint": command_fingerprint,
             "tool_version": _tool_version(),
+            "decision_semantics_version": DECISION_SEMANTICS_VERSION,
+            "policy_sha256": policy_sha,
             "decision_sha256": _file_sha(decision.get("decision_json_path")),
             "graph_report_sha256": _file_sha(graph_result.get("report_path")),
         },
@@ -100,6 +135,7 @@ def build_agent_summary(
             "agent summary is an index over existing SPIRA evidence",
             "does not create new trust evidence",
             "does not turn NOT_EVALUATED into OK",
+            "does not ask the agent to infer gate policy from prose",
             "approval metadata does not alter graph or combined verdicts",
         ],
     }
@@ -117,7 +153,7 @@ def _write_state_copy(summary: Mapping[str, Any], *, state_dir: str | Path | Non
         }
     )
     path = state_root / f"{key}.agent_summary.json"
-    path.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    path.write_text(_agent_json(summary) + "\n", encoding="utf-8", newline="\n")
 
 
 def _artifact_refs(graph_result: Mapping[str, Any], *, include_local_paths: bool) -> list[dict[str, Any]]:
@@ -181,9 +217,29 @@ def _file_sha(value: Any) -> str | None:
     return sha256(path.read_bytes()).hexdigest()
 
 
+def _effective_policy_sha(graph_result: Mapping[str, Any]) -> str | None:
+    bom_path = graph_result.get("bill_of_materials_path")
+    if not bom_path:
+        return None
+    try:
+        bom = json.loads(Path(str(bom_path)).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    governance = bom.get("governance_evidence") if isinstance(bom, dict) else None
+    if isinstance(governance, Mapping):
+        value = governance.get("effective_policy_sha256")
+        return str(value) if value else None
+    value = bom.get("effective_policy_sha256") if isinstance(bom, dict) else None
+    return str(value) if value else None
+
+
 def _stable_digest(payload: Mapping[str, Any]) -> str:
     encoded = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return sha256(encoded).hexdigest()
+
+
+def _agent_json(payload: Mapping[str, Any]) -> str:
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
 def _tool_version() -> str:

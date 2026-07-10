@@ -1,0 +1,79 @@
+# Agent Action Contract
+
+`agent_summary.json` is an agent action contract, not a second report.
+
+The full evidence surface is for humans and auditors:
+
+- `graph_report.json`
+- `bill_of_materials.json`
+- `spira-decision.json`
+- evidence packs
+
+The agent action surface is smaller and deterministic:
+
+- `stop`
+- `recommended_agent_action`
+- `reason_codes`
+- `not_evaluated`
+- evidence pointers
+
+The agent may explain the decision. It should not reinvent the artifact gate.
+
+## Why This Exists
+
+In the live API benchmark, a model that read broad evidence saw true facts such
+as `GRAPH_OK_WITH_NOTES`, `exit_code: 0`, no blockers, and non-empty
+`not_evaluated`, then inferred `PROCEED`.
+
+When the same decision was served through `agent_summary.json`, the model kept
+the intended `STOP / REPORT_NOT_EVALUATED` action in 6/6 runs.
+
+The point is not only fewer tokens. The point is that SPIRA decides the gate
+locally and serves a small, explicit action contract.
+
+## Contract Fields
+
+`agent_summary.json` keeps the existing `SPIRA_AGENT_SUMMARY_V1` schema and
+includes an embedded action contract:
+
+```json
+{
+  "schema": "SPIRA_AGENT_ACTION_V1",
+  "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V1",
+  "artifact_sha256": "...",
+  "artifact_set_sha256": "...",
+  "policy_sha256": null,
+  "command_fingerprint": "...",
+  "verdict": "GRAPH_OK",
+  "combined_verdict": "GRAPH_OK_WITH_NOTES",
+  "stop": true,
+  "stop_source": "default",
+  "recommended_agent_action": "REPORT_NOT_EVALUATED",
+  "reason_codes": ["REPORT_NOT_EVALUATED"],
+  "not_evaluated": ["pep740_offline_attestations"],
+  "evidence": "spira-decision.json"
+}
+```
+
+`policy_sha256` is `null` when no pinned policy context was supplied. A missing
+policy hash is reported as missing context, not silently treated as OK.
+
+## Closed Actions
+
+The action value is closed and policy-neutral:
+
+- `PROCEED`
+- `ASK_HUMAN`
+- `STOP_BLOCKED`
+- `REPORT_NOT_EVALUATED`
+- `RERUN_REQUIRED`
+
+Agents should dispatch on this value instead of inferring gate policy from
+prose, exit codes, or report shape.
+
+## Not Claimed
+
+- This does not make the artifact safe.
+- This does not create new evidence.
+- This does not turn `NOT_EVALUATED` into OK.
+- This does not replace the full evidence pack for audit.
