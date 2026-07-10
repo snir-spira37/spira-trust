@@ -1,0 +1,20 @@
+SPIRA PEP 770 Survey PyPI JSON Retry
+
+source_manifest: research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json
+started_at: 2026-07-10T05:52:51Z
+completed_at: 2026-07-10T05:52:57Z
+retried_count: 11
+retry_status.PYPI_JSON_ERROR: 11
+
+Packages:
+- agenticraft-proxy: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- dtcc-core: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- ebbiforge: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- edfarray: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- ferrox: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- lancell: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- navpipe: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- offidized: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- polars-robust-se: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- rustoracer: PYPI_JSON_ERROR -> PYPI_JSON_ERROR
+- spice-crypt: PYPI_JSON_ERROR -> PYPI_JSON_ERROR

@@ -22,6 +22,13 @@ selection_status.NO_MATCHING_X86_64_OR_PY3_NONE_ANY_WHEEL: 120
 selection_status.PYPI_JSON_ERROR: 11
 selection_status.SELECTED: 1954
 
+Funnel explanation:
+- 4,487 is the live pypi-tea package@version count with SBOMs captured at snapshot time.
+- 2,085 is the grouped PyPI project count after selecting at most one version/wheel per project.
+- 1,954 is the selected wheel count under the V3 x86_64/amd64-or-py3-none-any selection rule.
+- The 120 NO_MATCHING_X86_64_OR_PY3_NONE_ANY_WHEEL entries are outside this survey's selected wheel scope.
+- The 11 PYPI_JSON_ERROR entries are lookup failures and are reported separately.
+
 Notes:
 - This is a corpus manifest only; selected wheels were not downloaded in this full snapshot.
 - Generator distribution is not measured by this manifest. It requires wheel/SBOM extraction in the pilot or full evaluation stage.

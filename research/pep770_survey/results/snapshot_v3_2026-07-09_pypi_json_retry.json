@@ -1,0 +1,257 @@
+{
+  "completed_at": "2026-07-10T05:52:57Z",
+  "results": [
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "agenticraft-proxy",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.1.2",
+        "0.1.3",
+        "0.1.5"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "dtcc-core",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.9.6"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "ebbiforge",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "4.0.1"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "edfarray",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.2.1"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "ferrox",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.0.8"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "lancell",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.1.1"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "navpipe",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.2.0",
+        "0.3.0"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "offidized",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.1.1"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "polars-robust-se",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.1.2"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "rustoracer",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "0.1.0"
+      ]
+    },
+    {
+      "original_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "original_status": "PYPI_JSON_ERROR",
+      "package": "spice-crypt",
+      "retry_candidate_wheel_count": 0,
+      "retry_errors": [
+        {
+          "error": "HTTP Error 404: Not Found",
+          "scope": "pypi_json"
+        }
+      ],
+      "retry_selected_wheel": null,
+      "retry_status": "PYPI_JSON_ERROR",
+      "versions_with_sbom_seen": [
+        "2.0.0",
+        "2.0.0rc2",
+        "2.0.1",
+        "2.0.2"
+      ]
+    }
+  ],
+  "retried_count": 11,
+  "schema": "SPIRA_PEP770_SURVEY_PYPI_JSON_RETRY_V1",
+  "source_manifest": "research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json",
+  "started_at": "2026-07-10T05:52:51Z"
+}
