@@ -140,6 +140,24 @@ def test_missing_purl_and_nonmatching_name_is_unverified_not_contradiction(tmp_p
     assert result["results"][0]["status"] == "UNVERIFIED"
 
 
+def test_unparseable_json_sbom_is_invalid_not_inconsistent(tmp_path: Path) -> None:
+    wheel = _build_wheel(
+        tmp_path,
+        "demo-pkg",
+        "1.0.0",
+        sboms={"broken.cdx.json": b"{not json"},
+    )
+
+    result = evaluate_embedded_sbom_consistency(str(wheel), package_name="demo-pkg", version="1.0.0")
+
+    assert result["status"] == "INVALID"
+    assert result["results"][0]["status"] == "INVALID"
+
+    graph = run_trust_graph([str(wheel)], verify_embedded_sboms=True, output_dir=str(tmp_path / "out"))
+    assert graph["pep770_sbom_consistency"]["status"] == "INVALID"
+    assert graph["verdict"] == "GRAPH_BLOCK"
+
+
 def _build_wheel(base: Path, name: str, version: str, *, sboms: dict[str, dict]) -> Path:
     package_dir = name.replace("-", "_")
     dist_info = f"{package_dir}-{version}.dist-info"
@@ -149,7 +167,10 @@ def _build_wheel(base: Path, name: str, version: str, *, sboms: dict[str, dict])
         f"{dist_info}/WHEEL": b"Wheel-Version: 1.0\nGenerator: test\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
     }
     for filename, payload in sboms.items():
-        files[f"{dist_info}/sboms/{filename}"] = json.dumps(payload).encode("utf-8")
+        if isinstance(payload, bytes):
+            files[f"{dist_info}/sboms/{filename}"] = payload
+        else:
+            files[f"{dist_info}/sboms/{filename}"] = json.dumps(payload).encode("utf-8")
     record_path = f"{dist_info}/RECORD"
     record_lines = []
     for path, data in sorted(files.items()):

@@ -131,6 +131,7 @@ def _pep770_layer(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str
     source_status = str(screening.get("status", "UNVERIFIED"))
     status = {
         "CONTRADICTION": "BLOCK",
+        "INVALID": "BLOCK",
         "UNVERIFIED": "NOTE",
         "NO_WHEEL_SCOPED_SBOM": "NOTE",
         "VERIFIED_OK": "OK",

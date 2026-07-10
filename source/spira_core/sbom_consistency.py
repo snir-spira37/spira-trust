@@ -109,11 +109,11 @@ def _evaluate_one(path: str, data: bytes, *, package_name: str, version: str | N
     try:
         payload = json.loads(data.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-        record["status"] = "CONTRADICTION"
+        record["status"] = "INVALID"
         record["findings"].append(f"embedded SBOM JSON is not parseable: {exc}")
         return record
     if not isinstance(payload, dict):
-        record["status"] = "CONTRADICTION"
+        record["status"] = "INVALID"
         record["findings"].append("embedded SBOM JSON root is not an object")
         return record
     if payload.get("bomFormat") != "CycloneDX":
@@ -181,6 +181,8 @@ def _summary(results: list[dict[str, Any]], *, error: str | None = None) -> dict
     wheel_scoped = [item for item in results if item.get("component_scope") in {"PYPI_WHEEL_SCOPED", "PYPI_WHEEL_SCOPED_INFERRED"}]
     if error:
         status = "UNVERIFIED"
+    elif any(status == "INVALID" for status in statuses):
+        status = "INVALID"
     elif any(status == "CONTRADICTION" for status in statuses):
         status = "CONTRADICTION"
     elif wheel_scoped and all(item.get("status") == "VERIFIED_OK" for item in wheel_scoped):

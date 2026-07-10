@@ -1181,11 +1181,15 @@ def _apply_sbom_consistency_findings(nodes: dict[str, dict[str, Any]]) -> list[d
             version=node.get("version"),
         )
         node["pep770_sbom_consistency"] = result
-        if result.get("status") == "CONTRADICTION":
-            reason = "PEP 770 embedded SBOM contradiction"
+        if result.get("status") in {"CONTRADICTION", "INVALID"}:
+            reason = (
+                "PEP 770 embedded SBOM parseability invalidity"
+                if result.get("status") == "INVALID"
+                else "PEP 770 embedded SBOM contradiction"
+            )
             for item in result.get("results", []) or []:
                 findings = item.get("findings") or []
-                if item.get("status") == "CONTRADICTION" and findings:
+                if item.get("status") in {"CONTRADICTION", "INVALID"} and findings:
                     reason = f"{reason}: {findings[0]}"
                     break
             if _state_rank("BLOCK") > _state_rank(node["graph_status"]):
@@ -1263,7 +1267,9 @@ def _sbom_consistency_summary(nodes: Mapping[str, dict[str, Any]], evaluated: bo
         if node.get("node_type") == "provided_artifact" and node.get("pep770_sbom_consistency")
     ]
     statuses = [result.get("status") for result in results if isinstance(result, Mapping)]
-    if any(status == "CONTRADICTION" for status in statuses):
+    if any(status == "INVALID" for status in statuses):
+        status = "INVALID"
+    elif any(status == "CONTRADICTION" for status in statuses):
         status = "CONTRADICTION"
     elif any(status == "UNVERIFIED" for status in statuses):
         status = "UNVERIFIED"

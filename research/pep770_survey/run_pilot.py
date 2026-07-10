@@ -199,6 +199,8 @@ def survey_category(spira: dict[str, Any]) -> str:
     status = spira.get("pep770_status")
     if status == "VERIFIED_OK":
         return "SBOM_CONSISTENT"
+    if status == "INVALID":
+        return "SBOM_INVALID"
     if status == "CONTRADICTION":
         return "SBOM_INCONSISTENT"
     if status == "NO_WHEEL_SCOPED_SBOM":
