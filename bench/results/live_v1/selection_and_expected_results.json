@@ -1,0 +1,181 @@
+{
+  "completed_at": "2026-07-10T13:20:08Z",
+  "not_claimed": [
+    "pilot is edge-case discovery, not a statistical sample",
+    "pilot results are not full-corpus statistics",
+    "SPIRA PEP 770 V1 is a narrow consistency check, not full SBOM validation"
+  ],
+  "results": [
+    {
+      "agent_summary_bytes": 2184,
+      "context_tax_ratio": 34.76144688644688,
+      "download": {
+        "bytes": 1081123,
+        "path": "work/live_agent_benchmark_evidence/wheels/minijinja-2.18.0-cp38-abi3-win_amd64.whl",
+        "sha256": "f6e9ac8256fc5453e2c5ab91a44201447ea4975c341535a7aa623447b88b7c4e",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 75919,
+          "format_hint": "json",
+          "generator_families": [
+            "CARGO_CYCLONEDX"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          ],
+          "path": "minijinja-2.18.0.dist-info/sboms/minijinja-py.cyclonedx.json",
+          "sha256": "3553560fa8b27e894e68d269bf146958091b1299d120458de76f1351211b1ff4"
+        }
+      ],
+      "expected_sha256": "f6e9ac8256fc5453e2c5ab91a44201447ea4975c341535a7aa623447b88b7c4e",
+      "filename": "minijinja-2.18.0-cp38-abi3-win_amd64.whl",
+      "index": 1,
+      "package": "minijinja",
+      "sbom_generators": {
+        "families": [
+          "CARGO_CYCLONEDX"
+        ],
+        "summary": "CARGO_CYCLONEDX",
+        "tools": [
+          {
+            "family": [
+              "CARGO_CYCLONEDX"
+            ],
+            "sbom_path": "minijinja-2.18.0.dist-info/sboms/minijinja-py.cyclonedx.json",
+            "tool": {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 75919,
+      "selection_reason": "live_agent_benchmark_static_context_representative",
+      "size": 1081123,
+      "spira": {
+        "agent_summary_path": "work/live_agent_benchmark_evidence/spira_outputs/01_minijinja/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/live_agent_benchmark_evidence/wheels/minijinja-2.18.0-cp38-abi3-win_amd64.whl",
+          "--output-dir",
+          "work/live_agent_benchmark_evidence/spira_outputs/01_minijinja",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/live_agent_benchmark_evidence/spira_outputs/01_minijinja/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/live_agent_benchmark_evidence/spira_outputs/01_minijinja/graph_report.json",
+        "graph_verdict": "GRAPH_OK",
+        "pep770_status": "NO_WHEEL_SCOPED_SBOM",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK] No blocking contradictions or unverified declared artifacts found.\n\nArtifacts provided: 1\nDeclared relationships: 0\nDeclared artifacts not provided: 0\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- minijinja 2.18.0 [VERIFIED_OK]\n\nPropagation:\n- NOTE from minijinja to minijinja: PEP 770 embedded SBOM present but no wheel-scoped SBOM was identified by V1 parser\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK_WITH_NOTES (winning_status=NOTE, decided_by=pep770_sbom_consistency)\n\n"
+      },
+      "survey_category": "NO_WHEEL_SCOPED_SBOM",
+      "version": "2.18.0"
+    },
+    {
+      "agent_summary_bytes": 2196,
+      "context_tax_ratio": 196.81284153005464,
+      "download": {
+        "bytes": 9114095,
+        "path": "work/live_agent_benchmark_evidence/wheels/nutpie-0.16.8-cp314-cp314-win_amd64.whl",
+        "sha256": "80c067162053510d41ab4635a14bf38328b6d531d0d68e896ca95e9024b31823",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 432201,
+          "format_hint": "json",
+          "generator_families": [
+            "CARGO_CYCLONEDX"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          ],
+          "path": "nutpie-0.16.8.dist-info/sboms/nutpie.cyclonedx.json",
+          "sha256": "af42fc582449d9210ac5319e6ddc8eba1f43d96c3ceda278d940a8fca4fe898a"
+        }
+      ],
+      "expected_sha256": "80c067162053510d41ab4635a14bf38328b6d531d0d68e896ca95e9024b31823",
+      "filename": "nutpie-0.16.8-cp314-cp314-win_amd64.whl",
+      "index": 2,
+      "package": "nutpie",
+      "sbom_generators": {
+        "families": [
+          "CARGO_CYCLONEDX"
+        ],
+        "summary": "CARGO_CYCLONEDX",
+        "tools": [
+          {
+            "family": [
+              "CARGO_CYCLONEDX"
+            ],
+            "sbom_path": "nutpie-0.16.8.dist-info/sboms/nutpie.cyclonedx.json",
+            "tool": {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 432201,
+      "selection_reason": "live_agent_benchmark_static_context_representative",
+      "size": 9114095,
+      "spira": {
+        "agent_summary_path": "work/live_agent_benchmark_evidence/spira_outputs/02_nutpie/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/live_agent_benchmark_evidence/wheels/nutpie-0.16.8-cp314-cp314-win_amd64.whl",
+          "--output-dir",
+          "work/live_agent_benchmark_evidence/spira_outputs/02_nutpie",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/live_agent_benchmark_evidence/spira_outputs/02_nutpie/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/live_agent_benchmark_evidence/spira_outputs/02_nutpie/graph_report.json",
+        "graph_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "pep770_status": "NO_WHEEL_SCOPED_SBOM",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK_WITH_UNVERIFIED] No blocking contradictions found, but graph is incomplete.\n\nArtifacts provided: 1\nDeclared relationships: 31\nDeclared artifacts not provided: 17\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 1\nStrict closure: False\n\nRoot nodes:\n- nutpie 0.16.8 [NEEDS_HUMAN]\n\nPropagation:\n- NOTE from nutpie to nutpie: PEP 770 embedded SBOM present but no wheel-scoped SBOM was identified by V1 parser\n\nUnverified declared artifacts:\n- pyarrow was declared but no matching local wheel was provided\n- arro3-core was declared but no matching local wheel was provided\n- pandas was declared but no matching local wheel was provided\n- xarray was declared but no matching local wheel was provided\n- arviz was declared but no matching local wheel was provided\n- obstore was declared but no matching local wheel was provided\n- zarr was declared but no matching local wheel was provided\n- bridgestan was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK_WITH_NOTES (winning_status=NOTE, decided_by=graph_core, pep770_sbom_consistency)\n\n"
+      },
+      "survey_category": "NO_WHEEL_SCOPED_SBOM",
+      "version": "0.16.8"
+    }
+  ],
+  "schema": "SPIRA_PEP770_SURVEY_PILOT_RESULTS_V1",
+  "selection": "work/live_agent_benchmark_selection.json",
+  "started_at": "2026-07-10T13:20:00Z",
+  "summary": {
+    "category_counts": {
+      "NO_WHEEL_SCOPED_SBOM": 2
+    },
+    "generator_family_multilabel_counts": {
+      "CARGO_CYCLONEDX": 2
+    },
+    "tool_error_count": 0
+  },
+  "work_dir": "work/live_agent_benchmark_evidence"
+}

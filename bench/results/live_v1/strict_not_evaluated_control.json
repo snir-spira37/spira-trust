@@ -1,0 +1,53 @@
+{
+  "schema": "SPIRA_DEEPSEEK_STRICT_NOT_EVALUATED_CONTROL_V1",
+  "rows": [
+    {
+      "case": "median_minijinja",
+      "arm": "a_full_evidence_strict_not_evaluated_control",
+      "input_bytes": 50571,
+      "usage": {
+        "prompt_tokens": 15124,
+        "completion_tokens": 194,
+        "total_tokens": 15318,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 15124
+      },
+      "finish_reason": "stop",
+      "flags": {
+        "parsed_json": true,
+        "gate_correct_stop": true,
+        "action_exact_report_not_evaluated": false,
+        "has_not_evaluated": true,
+        "mentions_stop": true,
+        "mentions_report_not_evaluated": false,
+        "mentions_graph_ok_with_notes": true,
+        "claims_safe": false
+      },
+      "text": "{\n  \"proceed_or_stop\": \"STOP\",\n  \"verdict\": \"GRAPH_OK\",\n  \"combined_verdict\": \"GRAPH_OK_WITH_NOTES\",\n  \"recommended_agent_action\": \"STOP\",\n  \"blockers\": [],\n  \"warnings\": [],\n  \"not_evaluated\": [\n    \"pep740_offline_attestations\",\n    \"license_policy\",\n    \"entry_point_policy\",\n    \"target_environment\",\n    \"lockfile_cross_check\"\n  ],\n  \"evidence_paths_used\": [\n    \"spira-decision.json\",\n    \"graph_report.json\",\n    \"bill_of_materials.json\",\n    \"graph_summary.txt\",\n    \"input_manifest.json\",\n    \"graph_evidence_manifest.json\"\n  ],\n  \"short_reason\": \"not_evaluated list is non-empty (5 layers not evaluated), per rules answer STOP.\"\n}"
+    },
+    {
+      "case": "p90_nutpie",
+      "arm": "a_full_evidence_strict_not_evaluated_control",
+      "input_bytes": 145665,
+      "usage": {
+        "prompt_tokens": 40353,
+        "completion_tokens": 205,
+        "total_tokens": 40558,
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 40353
+      },
+      "finish_reason": "stop",
+      "flags": {
+        "parsed_json": true,
+        "gate_correct_stop": true,
+        "action_exact_report_not_evaluated": false,
+        "has_not_evaluated": true,
+        "mentions_stop": true,
+        "mentions_report_not_evaluated": false,
+        "mentions_graph_ok_with_notes": true,
+        "claims_safe": false
+      },
+      "text": "{\n  \"proceed_or_stop\": \"STOP\",\n  \"verdict\": \"GRAPH_OK_WITH_UNVERIFIED\",\n  \"combined_verdict\": \"GRAPH_OK_WITH_NOTES\",\n  \"recommended_agent_action\": \"Do not proceed; not_evaluated layers present.\",\n  \"blockers\": [],\n  \"warnings\": [],\n  \"not_evaluated\": [\n    \"pep740_offline_attestations\",\n    \"license_policy\",\n    \"entry_point_policy\",\n    \"target_environment\",\n    \"lockfile_cross_check\"\n  ],\n  \"evidence_paths_used\": [\n    \"spira-decision.json\",\n    \"graph_report.json\",\n    \"bill_of_materials.json\",\n    \"graph_summary.txt\",\n    \"input_manifest.json\",\n    \"graph_evidence_manifest.json\"\n  ],\n  \"short_reason\": \"not_evaluated list is non-empty (5 layers), per rules answer STOP.\"\n}"
+    }
+  ]
+}
