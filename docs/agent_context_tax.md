@@ -117,6 +117,44 @@ object for the median live benchmark wheel, below the 1KB target. This is a
 before/after improvement over the original full `status.json`, not a replacement
 for the original 6.9% measurement.
 
+An exact-context cache was later added:
+
+```bash
+spira-trust cache --artifact <wheel> --command-fingerprint <sha256> --format json
+```
+
+The cache benchmark compares a cold path (graph verification, combined verdict,
+agent action contract, and state persistence) against a warm path (artifact
+re-hash and exact-context cache query). On a synthetic representative wheel:
+
+```text
+cold median: 0.378364 seconds
+warm median: 0.013166 seconds
+median speedup: 28.94x
+cold output: 3,131 bytes
+warm output: 990 bytes
+```
+
+This measures repeated local verification work avoided for that benchmark case.
+It does not measure CPU cycles, energy, CO2, or live-agent token usage.
+
+The completed agent memory flow regression then measured:
+
+```text
+cold wall: 0.563539 seconds
+warm cache: 0.015909 seconds
+speedup: 35.42x
+clean cache response: 993 bytes
+clean rerun plan response: 1,854 bytes
+all fail-closed cases passed
+```
+
+The flow covered clean cache hit, artifact mutation, policy mutation, lockfile
+mutation, semantics mutation, tool-version mutation, context ambiguity,
+exact-context result conflict, missing summary, corrupted summary, and
+unsupported schema. This is a synthetic regression, not ecosystem-wide
+performance data.
+
 ## Stage B
 
 A live API file-ingestion benchmark was later run with the DeepSeek Chat API.
