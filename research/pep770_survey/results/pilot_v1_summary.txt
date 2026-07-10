@@ -1,20 +1,21 @@
-SPIRA PEP 770 Pilot V1 Results
+SPIRA PEP 770 Pilot V1 Public Results
 
-schema: SPIRA_PEP770_SURVEY_PILOT_RESULTS_V1
-selection: research/pep770_survey/pilot_selection_v1.json
+schema: SPIRA_PEP770_SURVEY_PILOT_PUBLIC_RESULTS_V1
+source_selection: research/pep770_survey/pilot_selection_v1.json
 started_at: 2026-07-10T05:55:19Z
 completed_at: 2026-07-10T05:59:43Z
 
 Pilot scope:
 - 10 predeclared wheels from pilot_selection_v1.json.
 - Pilot is edge-case discovery, not a statistical sample.
-- Wheels are not committed; only result JSON and this summary are committed.
+- Wheels are not committed.
+- Named inconsistent findings are withheld pending maintainer contact.
 
-Survey categories:
+Aggregate survey categories:
 - SBOM_CONSISTENT: 8
 - SBOM_INCONSISTENT: 2
 
-Generator family multi-label counts:
+Aggregate generator family multi-label counts:
 - AUDITWHEEL: 5
 - CARGO_CYCLONEDX: 2
 - CYCLONEDX_PYTHON: 1
@@ -22,28 +23,12 @@ Generator family multi-label counts:
 - OTHER: 2
 
 Context-tax pilot measurements:
-- sbom_total_bytes median: 8955
-- agent_summary_bytes median: 2154
 - ratio median: 4.23
 - ratio max: 206.86
 
-Observed V1 consistency contradictions:
-- a3s-box 2.0.0 (a3s_box-2.0.0-cp39-abi3-manylinux_2_39_x86_64.whl):
-  - a3s_box-2.0.0.dist-info/sboms/a3s-box-python.cyclonedx.json: metadata.component.name 'a3s-box-python' does not match wheel name 'a3s-box'; metadata.component.version '0.6.0' does not match wheel version '2.0.0'
-- omni-mdx 0.1.9 (omni_mdx-0.1.9-cp313-cp313-win_amd64.whl):
-  - omni_mdx-0.1.9.dist-info/sboms/omni-mdx.cyclonedx.json: metadata.component.version '0.2.0' does not match wheel version '0.1.9'
-
-Per-wheel table:
-- known_multi_sbom_from_v3_smoke | a3s-box | SBOM_INCONSISTENT | pep770=CONTRADICTION | graph=GRAPH_BLOCK | sbom_bytes=470182 | summary_bytes=2273 | ratio=206.86 | generators=CARGO_CYCLONEDX,MATURIN
-- large_wheel | libcuml-cu12 | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_BLOCK | sbom_bytes=1424 | summary_bytes=2159 | ratio=0.66 | generators=AUDITWHEEL
-- large_wheel | libcuml-cu13 | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_BLOCK | sbom_bytes=1436 | summary_bytes=2161 | ratio=0.66 | generators=AUDITWHEEL
-- large_wheel | root | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_BLOCK | sbom_bytes=9808 | summary_bytes=2122 | ratio=4.62 | generators=AUDITWHEEL
-- small_wheel | readable-reprs | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_OK_WITH_NOTES | sbom_bytes=4546 | summary_bytes=2091 | ratio=2.17 | generators=CYCLONEDX_PYTHON
-- small_wheel | vsview-audio-convert | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_OK_WITH_UNVERIFIED | sbom_bytes=8526 | summary_bytes=2121 | ratio=4.02 | generators=OTHER
-- small_wheel | vsview-fftspectrum | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_OK_WITH_UNVERIFIED | sbom_bytes=9384 | summary_bytes=2117 | ratio=4.43 | generators=OTHER
-- seeded_random | omni-mdx | SBOM_INCONSISTENT | pep770=CONTRADICTION | graph=GRAPH_BLOCK | sbom_bytes=42883 | summary_bytes=2254 | ratio=19.03 | generators=CARGO_CYCLONEDX
-- seeded_random | feature-3dgs | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_OK_WITH_UNVERIFIED | sbom_bytes=1470 | summary_bytes=2151 | ratio=0.68 | generators=AUDITWHEEL
-- seeded_random | cadquery-ocp-novtk | SBOM_CONSISTENT | pep770=VERIFIED_OK | graph=GRAPH_BLOCK | sbom_bytes=9784 | summary_bytes=2158 | ratio=4.53 | generators=AUDITWHEEL
+Withheld detail:
+- Per-package contradiction details are intentionally not public yet.
+- The next step is maintainer contact for the named inconsistent findings before publishing names.
 
 Notes:
-- GRAPH_BLOCK can be caused by non-PEP-770 layers; the survey_category here refers only to the PEP 770 V1 consistency subset.
+- GRAPH_BLOCK can be caused by non-PEP-770 layers; the aggregate survey categories here refer only to the PEP 770 V1 consistency subset.
