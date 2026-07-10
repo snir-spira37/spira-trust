@@ -1,0 +1,363 @@
+{
+  "schema": "SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT_V1",
+  "status": "PROGRAM_COMPLETE_ACCEPT_WITH_NOTES",
+  "recommendation": "ACCEPT_WITH_NOTES",
+  "starting_commit": "8e7ea82d35c19907eadfd3d8946f006033bbc3e5",
+  "ending_implementation_commit": "d84d2b270d1789d10e4b609ee8429e31ed41fa39",
+  "branch": "codex/agent-efficiency-program-completion",
+  "pushed": false,
+  "tags_created": false,
+  "pypi_published": false,
+  "github_release_created": false,
+  "local_commits_created": [
+    "597b931 Add cache performance benchmark",
+    "69ebfb5 Add deterministic rerun planner",
+    "664034a Add agent memory flow regression",
+    "6dba0c2 Document completed agent evidence memory flow",
+    "642d123 Fix agent memory flow benchmark reproducibility",
+    "be5aa66 Add final agent efficiency program audit",
+    "d84d2b2 Fail closed on corrupted rerun contexts"
+  ],
+  "files_changed": [
+    "README.md",
+    "SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.json",
+    "SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.md",
+    "bench/bench_agent_memory_flow.py",
+    "bench/bench_cache_performance.py",
+    "bench/results/agent_memory_flow_v1.json",
+    "bench/results/agent_memory_flow_v1_summary.md",
+    "bench/results/cache_performance_v1.json",
+    "bench/results/cache_performance_v1_runs.csv",
+    "bench/results/cache_performance_v1_summary.md",
+    "docs/agent_context_tax.md",
+    "docs/agent_integration.md",
+    "pyproject.toml",
+    "schemas/spira_agent_rerun_plan_v1.json",
+    "schemas/spira_agent_summary_v1.json",
+    "source/spira_core/rerun_planner.py",
+    "source/spira_core/trust_cli.py",
+    "tests/test_rerun_planner.py"
+  ],
+  "features_completed": [
+    "cache performance benchmark",
+    "deterministic rerun planner",
+    "planner fail-closed mutation matrix",
+    "compact agent rerun plan surface under 2KB for frozen representative case",
+    "end-to-end agent evidence memory flow regression",
+    "documentation and machine-readable schema synchronization",
+    "final audit package",
+    "review fix: corrupted rerun context files fail closed instead of throwing"
+  ],
+  "tests_run": [
+    {
+      "command": "python -m py_compile source\\spira_core\\agent_cache.py source\\spira_core\\rerun_planner.py source\\spira_core\\trust_cli.py bench\\bench_cache_performance.py bench\\bench_agent_memory_flow.py",
+      "result": "passed"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "66 passed"
+    },
+    {
+      "command": "python -m pytest tests\\test_agent_memory_v0.py tests\\test_rerun_planner.py -q",
+      "result": "45 passed"
+    },
+    {
+      "command": "JSON parse validation for schemas and benchmark result JSON",
+      "result": "passed"
+    },
+    {
+      "command": "benchmark reproducibility check to work/audit_repro_review",
+      "result": "passed"
+    },
+    {
+      "command": "secret scan",
+      "result": "passed; no secrets detected"
+    },
+    {
+      "command": "personal absolute-path scan",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed before report update; final report files generated with LF"
+    }
+  ],
+  "benchmark_results": {
+    "cache_performance_v1": {
+      "runs": 20,
+      "cold_wall_seconds": {
+        "min": 0.3672034000046551,
+        "median": 0.378364150019479,
+        "p90": 0.449751699983608,
+        "max": 0.559936799982097
+      },
+      "warm_wall_seconds": {
+        "min": 0.011823400011053309,
+        "median": 0.01316560001578182,
+        "p90": 0.01512120000552386,
+        "max": 0.01752019999548793
+      },
+      "speedup_ratio": {
+        "min": 21.437671949846408,
+        "median": 28.9398907695739,
+        "p90": 35.23264031932665,
+        "max": 38.93114174586473
+      },
+      "cold_output_bytes": {
+        "min": 3131,
+        "median": 3131.0,
+        "p90": 3131,
+        "max": 3131
+      },
+      "warm_output_bytes": {
+        "min": 990,
+        "median": 990.0,
+        "p90": 990,
+        "max": 990
+      },
+      "all_cache_hits": true,
+      "all_context_matches": true,
+      "all_actions_equivalent": true,
+      "all_miss_cases_fail_closed": true
+    },
+    "agent_memory_flow_v1": {
+      "cold_wall_seconds": 0.85541329998523,
+      "warm_cache_wall_seconds": 0.01735280000139028,
+      "warm_cache_speedup_ratio": 49.29540477137382,
+      "clean_cache_response_bytes": 993,
+      "clean_plan_response_bytes": 1854,
+      "all_cases_passed": true
+    }
+  },
+  "cache_hit_miss_matrix": {
+    "cache_performance_miss_matrix": {
+      "policy_changed": {
+        "cache_hit": false,
+        "context_match": false,
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "passed": true
+      },
+      "semantics_changed": {
+        "cache_hit": false,
+        "context_match": false,
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "passed": true
+      },
+      "tool_version_changed": {
+        "cache_hit": false,
+        "context_match": false,
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "passed": true
+      },
+      "artifact_changed": {
+        "cache_hit": false,
+        "context_match": false,
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "reason_codes": [
+          "ARTIFACT_CHANGED_SINCE_CHECK"
+        ],
+        "passed": true
+      }
+    },
+    "agent_memory_flow_cases": [
+      {
+        "name": "clean_cache_hit",
+        "cache_hit": true,
+        "planner_rerun_required": false,
+        "cache_reason_codes": [
+          "BLOCKING_FINDINGS",
+          "REPORT_NOT_EVALUATED"
+        ],
+        "planner_reason_codes": [],
+        "cache_response_bytes": 993,
+        "planner_response_bytes": 1854,
+        "passed": true
+      },
+      {
+        "name": "artifact_mutation",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "ARTIFACT_CHANGED_SINCE_CHECK"
+        ],
+        "planner_reason_codes": [
+          "ARTIFACT_CHANGED"
+        ],
+        "cache_response_bytes": 807,
+        "planner_response_bytes": 1895,
+        "passed": true
+      },
+      {
+        "name": "policy_mutation",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "planner_reason_codes": [
+          "POLICY_CHANGED"
+        ],
+        "cache_response_bytes": 885,
+        "planner_response_bytes": 1956,
+        "passed": true
+      },
+      {
+        "name": "lockfile_mutation",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "planner_reason_codes": [
+          "LOCKFILE_CHANGED"
+        ],
+        "cache_response_bytes": 779,
+        "planner_response_bytes": 1949,
+        "passed": true
+      },
+      {
+        "name": "semantics_mutation",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "planner_reason_codes": [
+          "DECISION_SEMANTICS_CHANGED"
+        ],
+        "cache_response_bytes": 825,
+        "planner_response_bytes": 1880,
+        "passed": true
+      },
+      {
+        "name": "tool_version_mutation",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "CONTEXT_MISMATCH"
+        ],
+        "planner_reason_codes": [
+          "TOOL_VERSION_CHANGED"
+        ],
+        "cache_response_bytes": 834,
+        "planner_response_bytes": 1898,
+        "passed": true
+      },
+      {
+        "name": "context_ambiguity",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "CONTEXT_AMBIGUOUS"
+        ],
+        "planner_reason_codes": [
+          "CONTEXT_AMBIGUOUS"
+        ],
+        "cache_response_bytes": 823,
+        "planner_response_bytes": 1865,
+        "passed": true
+      },
+      {
+        "name": "exact_context_result_conflict",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "EXACT_CONTEXT_RESULT_CONFLICT"
+        ],
+        "planner_reason_codes": [
+          "EXACT_CONTEXT_RESULT_CONFLICT"
+        ],
+        "cache_response_bytes": 833,
+        "planner_response_bytes": 1870,
+        "passed": true
+      },
+      {
+        "name": "missing_summary_or_context",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "ARTIFACT_NOT_CHECKED"
+        ],
+        "planner_reason_codes": [
+          "CURRENT_MISSING_CONTEXT_FIELDS"
+        ],
+        "cache_response_bytes": 799,
+        "planner_response_bytes": 1868,
+        "passed": true
+      },
+      {
+        "name": "corrupted_summary",
+        "cache_hit": false,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [
+          "ARTIFACT_NOT_CHECKED"
+        ],
+        "planner_reason_codes": [
+          "CURRENT_UNSUPPORTED_CONTEXT"
+        ],
+        "cache_response_bytes": 799,
+        "planner_response_bytes": 1847,
+        "passed": true
+      },
+      {
+        "name": "unsupported_schema",
+        "cache_hit": null,
+        "planner_rerun_required": true,
+        "cache_reason_codes": [],
+        "planner_reason_codes": [
+          "CURRENT_UNSUPPORTED_CONTEXT"
+        ],
+        "cache_response_bytes": null,
+        "planner_response_bytes": 1847,
+        "passed": true
+      }
+    ]
+  },
+  "planner_matrix": {
+    "unit_matrix": [
+      "unchanged exact context -> reuse prior action",
+      "artifact_sha256 changed -> ARTIFACT_CHANGED",
+      "command_fingerprint changed -> COMMAND_CONTEXT_CHANGED",
+      "policy_sha256 changed -> POLICY_CHANGED",
+      "strict_closure changed -> STRICT_CLOSURE_CHANGED",
+      "lockfile_sha256 changed -> LOCKFILE_CHANGED",
+      "baseline_sha256 changed -> BASELINE_CHANGED",
+      "wheelhouse_sha256 changed -> WHEELHOUSE_CHANGED",
+      "target_environment_sha256 changed -> TARGET_ENVIRONMENT_CHANGED",
+      "verify_embedded_sboms changed -> SBOM_VERIFICATION_MODE_CHANGED",
+      "attestation_sha256/trust root changed -> ATTESTATION_CONTEXT_CHANGED",
+      "decision_semantics_version changed -> DECISION_SEMANTICS_CHANGED",
+      "tool_version changed -> TOOL_VERSION_CHANGED",
+      "missing/unknown/unsupported/corrupted context -> fail closed",
+      "context ambiguity/result conflict -> fail closed"
+    ]
+  },
+  "unresolved_blockers": [],
+  "regressions": [
+    "Initial agent_memory_flow benchmark rebuild mutated the baseline wheel bytes during audit repro; fixed by isolating artifact mutation in a separate wheel directory and reran results.",
+    "Independent review found corrupted rerun context JSON could throw instead of returning a fail-closed plan; fixed in d84d2b2 and covered by CLI regression."
+  ],
+  "notes": [
+    "Benchmarks are synthetic representative regressions, not ecosystem-wide performance data.",
+    "files_opened_proxy is deterministic proxy data, not OS-level syscall tracing.",
+    "No push, tag, PyPI publish, or GitHub Release was performed.",
+    "This report records the ending implementation commit; a later report-update commit may contain only refreshed report metadata."
+  ],
+  "not_claimed": [
+    "no malware or safety claim",
+    "no human approval claim",
+    "no CPU cycle, energy, CO2, or live-agent token savings claim",
+    "planner does not execute verification",
+    "cache hit is exact context reuse, not proof of artifact safety"
+  ],
+  "diff_stat": "README.md                                        |   3 +\n SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.json | 356 ++++++++++++\n SPIRA_AGENT_EFFICIENCY_PROGRAM_FINAL_REPORT.md   | 161 ++++++\n bench/bench_agent_memory_flow.py                 | 348 ++++++++++++\n bench/bench_cache_performance.py                 | 317 +++++++++++\n bench/results/agent_memory_flow_v1.json          | 171 ++++++\n bench/results/agent_memory_flow_v1_summary.md    |  28 +\n bench/results/cache_performance_v1.json          | 673 +++++++++++++++++++++++\n bench/results/cache_performance_v1_runs.csv      |  21 +\n bench/results/cache_performance_v1_summary.md    |  20 +\n docs/agent_context_tax.md                        |  38 ++\n docs/agent_integration.md                        |  51 ++\n pyproject.toml                                   |   1 +\n schemas/spira_agent_rerun_plan_v1.json           |  83 +++\n schemas/spira_agent_summary_v1.json              |   1 +\n source/spira_core/rerun_planner.py               | 184 +++++++\n source/spira_core/trust_cli.py                   |  25 +-\n tests/test_rerun_planner.py                      | 128 +++++\n 18 files changed, 2608 insertions(+), 1 deletion(-)"
+}

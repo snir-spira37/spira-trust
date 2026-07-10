@@ -248,6 +248,57 @@ status says: "SPIRA has seen these bytes before."
 cache says: "SPIRA checked these bytes under this exact evidence context."
 ```
 
+## Rerun Planner
+
+The rerun planner answers a different question:
+
+```text
+Given explicit current and previous evidence contexts, what must be rerun?
+```
+
+It does not execute verification, does not approve an artifact, and does not
+replace `graph`, `agent_summary.json`, or the cache. It only returns a plan:
+
+```bash
+spira-trust plan-rerun \
+  --current-context current-context.json \
+  --previous-context previous-context.json \
+  --format json
+```
+
+Compact success case:
+
+```json
+{
+  "schema": "SPIRA_AGENT_RERUN_PLAN_V1",
+  "rerun_required": false,
+  "stop": false,
+  "recommended_agent_action": "REUSE_PRIOR_ACTION",
+  "rerun": [],
+  "reuse": ["prior_agent_action_contract"],
+  "reason_codes": []
+}
+```
+
+Fail-closed case:
+
+```json
+{
+  "schema": "SPIRA_AGENT_RERUN_PLAN_V1",
+  "rerun_required": true,
+  "stop": true,
+  "recommended_agent_action": "RERUN_REQUIRED",
+  "rerun": ["verification", "combined_decision", "agent_summary", "cache"],
+  "reason_codes": ["ARTIFACT_CHANGED"]
+}
+```
+
+The planner compares artifact bytes, command fingerprint, policy SHA, decision
+semantics version, tool version, strict closure, lockfile digest, baseline
+digest, wheelhouse digest, target environment, embedded SBOM verification mode,
+attestation inputs, and trust root inputs. Missing or unsupported context,
+context ambiguity, or exact-context result conflict fails closed.
+
 ## What The Agent Should Not Claim
 
 The agent must not say:

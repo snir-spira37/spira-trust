@@ -51,6 +51,7 @@ package_allowlist = [
   "spira_core.policy_pack",
   "spira_core.range_parser",
   "spira_core.rebaseline",
+  "spira_core.rerun_planner",
   "spira_core.review",
   "spira_core.sbom_consistency",
   "spira_core.target_environment",

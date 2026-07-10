@@ -20,6 +20,7 @@
         "ASK_HUMAN",
         "STOP_BLOCKED",
         "REPORT_NOT_EVALUATED",
+        "REPORT_WITH_NOTES",
         "RERUN_REQUIRED"
       ]
     },

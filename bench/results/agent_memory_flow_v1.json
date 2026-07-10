@@ -1,0 +1,171 @@
+{
+  "schema": "SPIRA_AGENT_MEMORY_FLOW_REGRESSION_V1",
+  "created_at": "2026-07-10T16:05:53.321438Z",
+  "summary": {
+    "cold_wall_seconds": 0.85541329998523,
+    "warm_cache_wall_seconds": 0.01735280000139028,
+    "warm_cache_speedup_ratio": 49.29540477137382,
+    "clean_cache_response_bytes": 993,
+    "clean_plan_response_bytes": 1854,
+    "all_cases_passed": true
+  },
+  "cases": [
+    {
+      "name": "clean_cache_hit",
+      "cache_hit": true,
+      "planner_rerun_required": false,
+      "cache_reason_codes": [
+        "BLOCKING_FINDINGS",
+        "REPORT_NOT_EVALUATED"
+      ],
+      "planner_reason_codes": [],
+      "cache_response_bytes": 993,
+      "planner_response_bytes": 1854,
+      "passed": true
+    },
+    {
+      "name": "artifact_mutation",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "ARTIFACT_CHANGED_SINCE_CHECK"
+      ],
+      "planner_reason_codes": [
+        "ARTIFACT_CHANGED"
+      ],
+      "cache_response_bytes": 807,
+      "planner_response_bytes": 1895,
+      "passed": true
+    },
+    {
+      "name": "policy_mutation",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "CONTEXT_MISMATCH"
+      ],
+      "planner_reason_codes": [
+        "POLICY_CHANGED"
+      ],
+      "cache_response_bytes": 885,
+      "planner_response_bytes": 1956,
+      "passed": true
+    },
+    {
+      "name": "lockfile_mutation",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "CONTEXT_MISMATCH"
+      ],
+      "planner_reason_codes": [
+        "LOCKFILE_CHANGED"
+      ],
+      "cache_response_bytes": 779,
+      "planner_response_bytes": 1949,
+      "passed": true
+    },
+    {
+      "name": "semantics_mutation",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "CONTEXT_MISMATCH"
+      ],
+      "planner_reason_codes": [
+        "DECISION_SEMANTICS_CHANGED"
+      ],
+      "cache_response_bytes": 825,
+      "planner_response_bytes": 1880,
+      "passed": true
+    },
+    {
+      "name": "tool_version_mutation",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "CONTEXT_MISMATCH"
+      ],
+      "planner_reason_codes": [
+        "TOOL_VERSION_CHANGED"
+      ],
+      "cache_response_bytes": 834,
+      "planner_response_bytes": 1898,
+      "passed": true
+    },
+    {
+      "name": "context_ambiguity",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "CONTEXT_AMBIGUOUS"
+      ],
+      "planner_reason_codes": [
+        "CONTEXT_AMBIGUOUS"
+      ],
+      "cache_response_bytes": 823,
+      "planner_response_bytes": 1865,
+      "passed": true
+    },
+    {
+      "name": "exact_context_result_conflict",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "EXACT_CONTEXT_RESULT_CONFLICT"
+      ],
+      "planner_reason_codes": [
+        "EXACT_CONTEXT_RESULT_CONFLICT"
+      ],
+      "cache_response_bytes": 833,
+      "planner_response_bytes": 1870,
+      "passed": true
+    },
+    {
+      "name": "missing_summary_or_context",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "ARTIFACT_NOT_CHECKED"
+      ],
+      "planner_reason_codes": [
+        "CURRENT_MISSING_CONTEXT_FIELDS"
+      ],
+      "cache_response_bytes": 799,
+      "planner_response_bytes": 1868,
+      "passed": true
+    },
+    {
+      "name": "corrupted_summary",
+      "cache_hit": false,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [
+        "ARTIFACT_NOT_CHECKED"
+      ],
+      "planner_reason_codes": [
+        "CURRENT_UNSUPPORTED_CONTEXT"
+      ],
+      "cache_response_bytes": 799,
+      "planner_response_bytes": 1847,
+      "passed": true
+    },
+    {
+      "name": "unsupported_schema",
+      "cache_hit": null,
+      "planner_rerun_required": true,
+      "cache_reason_codes": [],
+      "planner_reason_codes": [
+        "CURRENT_UNSUPPORTED_CONTEXT"
+      ],
+      "cache_response_bytes": null,
+      "planner_response_bytes": 1847,
+      "passed": true
+    }
+  ],
+  "not_claimed": [
+    "does not execute planner-requested reruns",
+    "does not measure CPU cycles, energy, or CO2",
+    "does not measure live-agent token usage",
+    "synthetic wheel regression, not ecosystem-wide performance data"
+  ]
+}

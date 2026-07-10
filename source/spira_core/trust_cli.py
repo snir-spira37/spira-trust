@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 
-PUBLIC_COMMANDS = {"trust", "graph", "status", "cache", "drift", "rebaseline", "version"}
+PUBLIC_COMMANDS = {"trust", "graph", "status", "cache", "plan-rerun", "drift", "rebaseline", "version"}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -77,6 +77,11 @@ def _run_public(argv: list[str]) -> int:
     cache_cmd.add_argument("--agent-state-dir", default=None)
     cache_cmd.add_argument("--format", choices=("text", "json"), default="text")
 
+    plan_cmd = sub.add_parser("plan-rerun")
+    plan_cmd.add_argument("--current-context", required=True)
+    plan_cmd.add_argument("--previous-context", required=True)
+    plan_cmd.add_argument("--format", choices=("text", "json"), default="text")
+
     drift_cmd = sub.add_parser("drift")
     drift_cmd.add_argument("artifact_inputs", nargs="+")
     drift_cmd.add_argument("--baseline", required=True)
@@ -119,6 +124,8 @@ def _run_public(argv: list[str]) -> int:
         return _run_status(parsed)
     if parsed.command == "cache":
         return _run_cache(parsed)
+    if parsed.command == "plan-rerun":
+        return _run_plan_rerun(parsed)
     if parsed.command == "drift":
         return _run_drift(parsed)
     if parsed.command == "rebaseline":
@@ -271,6 +278,20 @@ def _run_cache(args: argparse.Namespace) -> int:
     return 0 if result.get("cache_hit") else 2
 
 
+def _run_plan_rerun(args: argparse.Namespace) -> int:
+    from .rerun_planner import build_rerun_plan, format_rerun_plan, load_context
+
+    result = build_rerun_plan(
+        load_context(args.current_context),
+        load_context(args.previous_context),
+    )
+    if args.format == "json":
+        print(json.dumps(result, ensure_ascii=False, separators=(",", ":")))
+    else:
+        print(format_rerun_plan(result))
+    return 2 if result.get("rerun_required") else 0
+
+
 def _run_drift(args: argparse.Namespace) -> int:
     from .drift import drift_exit_code, format_drift_summary, run_baseline_drift
 
@@ -346,6 +367,7 @@ Usage:
   spira-trust status <wheel-folder|wheel...> [--format json]
   spira-trust status --agent --artifact <package.whl> [--format json]
   spira-trust cache --artifact <package.whl> --command-fingerprint SHA256 [--format json]
+  spira-trust plan-rerun --current-context current.json --previous-context previous.json [--format json]
   spira-trust drift <wheel-folder|wheel...> --baseline BOM --baseline-sha256 SHA256
   spira-trust rebaseline <wheel-folder|wheel...> --from-baseline BOM --baseline-sha256 SHA256 --output-dir DIR [--yes]
   spira-trust version
@@ -355,6 +377,7 @@ Public commands:
   graph       Build a local evidence graph over provided wheels only.
   status      Re-hash local wheels and index prior agent_summary.json outputs.
   cache       Return a prior action only for an exact evidence-context match.
+  plan-rerun  Compare explicit evidence contexts and report required reruns.
   drift       Compare current wheels against a pinned BOM baseline.
   rebaseline  Create a new baseline after explicit human confirmation.
   version     Print the installed SPIRA Trust version.

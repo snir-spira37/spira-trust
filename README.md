@@ -93,6 +93,7 @@ spira-trust graph dist \
 spira-trust status dist --format json
 spira-trust status --agent --artifact dist/example.whl --format json
 spira-trust cache --artifact dist/example.whl --command-fingerprint <sha256> --format json
+spira-trust plan-rerun --current-context current.json --previous-context previous.json --format json
 ```
 
 `graph` writes `agent_summary.json` alongside the decision report and stores a
@@ -100,6 +101,8 @@ local summary index under `.spira/agent_summaries/` by default. `status`
 re-hashes current wheels before matching that local state.
 `cache` reuses a prior agent action only when the artifact bytes and requested
 evidence context match.
+`plan-rerun` compares explicit current and previous evidence contexts and says
+what must be rerun; it does not execute verification.
 
 `agent_summary.json` includes an
 [Agent Action Contract](docs/agent_action_contract.md): a small deterministic

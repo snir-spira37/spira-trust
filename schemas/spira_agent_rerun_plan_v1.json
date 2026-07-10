@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.local/schemas/spira_agent_rerun_plan_v1.json",
+  "title": "SPIRA Agent Rerun Plan V1",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "nullableSha256": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "artifact_sha256",
+        "command_fingerprint",
+        "policy_sha256",
+        "decision_semantics_version",
+        "tool_version",
+        "strict_closure",
+        "lockfile_sha256",
+        "baseline_sha256",
+        "wheelhouse_sha256",
+        "target_environment_sha256",
+        "verify_embedded_sboms",
+        "attestation_sha256",
+        "attestation_trust_root_sha256",
+        "context_ambiguous",
+        "result_conflict"
+      ],
+      "properties": {
+        "artifact_sha256": { "type": ["string", "null"] },
+        "command_fingerprint": { "type": ["string", "null"] },
+        "policy_sha256": { "type": ["string", "null"] },
+        "decision_semantics_version": { "type": ["string", "null"] },
+        "tool_version": { "type": ["string", "null"] },
+        "strict_closure": { "type": ["boolean", "null"] },
+        "lockfile_sha256": { "type": ["string", "null"] },
+        "baseline_sha256": { "type": ["string", "null"] },
+        "wheelhouse_sha256": { "type": ["string", "null"] },
+        "target_environment_sha256": { "type": ["string", "null"] },
+        "verify_embedded_sboms": { "type": ["boolean", "null"] },
+        "attestation_sha256": { "type": ["string", "null"] },
+        "attestation_trust_root_sha256": { "type": ["string", "null"] },
+        "missing_context_fields": { "type": "array", "items": { "type": "string" } },
+        "context_ambiguous": { "type": "boolean" },
+        "result_conflict": { "type": "boolean" },
+        "unsupported_context": { "type": "boolean" }
+      }
+    }
+  },
+  "required": [
+    "schema",
+    "schema_version",
+    "created_at",
+    "rerun_required",
+    "stop",
+    "recommended_agent_action",
+    "rerun",
+    "reuse",
+    "reason_codes",
+    "current_context",
+    "previous_context",
+    "not_claimed"
+  ],
+  "properties": {
+    "schema": { "const": "SPIRA_AGENT_RERUN_PLAN_V1" },
+    "schema_version": { "const": "1.0" },
+    "created_at": { "type": "string" },
+    "rerun_required": { "type": "boolean" },
+    "stop": { "type": "boolean" },
+    "recommended_agent_action": {
+      "enum": ["RERUN_REQUIRED", "REUSE_PRIOR_ACTION"]
+    },
+    "rerun": { "type": "array", "items": { "type": "string" } },
+    "reuse": { "type": "array", "items": { "type": "string" } },
+    "reason_codes": { "type": "array", "items": { "type": "string" } },
+    "current_context": { "$ref": "#/$defs/context" },
+    "previous_context": { "$ref": "#/$defs/context" },
+    "not_claimed": { "type": "array", "items": { "type": "string" } }
+  }
+}
