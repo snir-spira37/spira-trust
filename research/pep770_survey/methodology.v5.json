@@ -35,7 +35,7 @@
   "wheel_level_categories": {
     "SBOM_CONSISTENT": "At least one wheel-scoped SBOM exists and every wheel-scoped SBOM checked by SPIRA V1 is consistent with wheel metadata.",
     "SBOM_INCONSISTENT": "At least one wheel-scoped SBOM has a positive name or version contradiction against wheel metadata.",
-    "NO_WHEEL_SCOPED_SBOM": "Embedded SBOM files exist, but none are classified as wheel-scoped under V4 rules.",
+    "NO_WHEEL_SCOPED_SBOM": "Embedded SBOM files exist, but none are classified as wheel-scoped under V5 rules.",
     "SBOM_INVALID": "An embedded JSON SBOM file could not be decoded as UTF-8 JSON or its JSON root was not an object. This is parseability invalidity only, not full schema invalidity.",
     "NOT_EVALUATED": "Embedded SBOM evidence is present but outside SPIRA's V1 checker scope and no wheel-scoped consistency decision was made.",
     "TOOL_ERROR": "SPIRA crashed or produced unreadable output. This is a SPIRA bug or harness bug, never a finding about the package."
@@ -64,8 +64,8 @@
     "v4_note": "Cargo-scoped SBOMs are not contradictions merely because their component name or version differs from the PyPI wheel. V4 only treats wheel-scoped SBOM contradictions as SBOM_INCONSISTENT."
   },
   "sampling": {
-    "snapshot_manifest": "Use research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json as the V4 full-evaluation corpus source.",
-    "full_evaluation": "Target is all SELECTED wheels from the snapshot manifest. If runtime, storage, or rate-limit constraints require sampling before full evaluation, a methodology.v5.json must be committed before evaluating sampled results."
+    "snapshot_manifest": "Use research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json as the V5 full-evaluation corpus source.",
+    "full_evaluation": "Target is all SELECTED wheels from the snapshot manifest. If runtime, storage, or rate-limit constraints require sampling before full evaluation, a methodology.v6.json must be committed before evaluating sampled results."
   },
   "reporting_rules": [
     "Aggregate statistics are public.",
