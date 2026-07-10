@@ -64,8 +64,9 @@ def run_regression() -> dict[str, Any]:
             )
         ]
 
-        changed_wheel = wheel_dir / wheel.name
-        build_wheel(wheel_dir, payload=b"changed\n")
+        changed_dir = root / "changed-dist"
+        changed_dir.mkdir()
+        changed_wheel = build_wheel(changed_dir, payload=b"changed\n")
         artifact_cache = cache(changed_wheel, cold, state)
         artifact_context = {**previous_context, "artifact_sha256": sha256(changed_wheel.read_bytes()).hexdigest()}
         cases.append(
@@ -79,7 +80,6 @@ def run_regression() -> dict[str, Any]:
                 expected_plan_reason="ARTIFACT_CHANGED",
             )
         )
-        build_wheel(wheel_dir, payload=b"__version__ = '1.0.0'\n")
 
         cases.extend(
             [

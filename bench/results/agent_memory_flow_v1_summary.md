@@ -1,11 +1,11 @@
 # Agent Evidence Memory Flow Regression v1
 
-Created: 2026-07-10T16:01:10.765340Z
+Created: 2026-07-10T16:05:53.321438Z
 
 ```text
-cold wall seconds: 0.563539
-warm cache wall seconds: 0.015909
-warm cache speedup ratio: 35.42x
+cold wall seconds: 0.855413
+warm cache wall seconds: 0.017353
+warm cache speedup ratio: 49.30x
 clean cache response bytes: 993
 clean plan response bytes: 1854
 all cases passed: True
