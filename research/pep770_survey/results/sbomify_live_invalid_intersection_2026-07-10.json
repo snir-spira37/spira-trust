@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-07-10",
+  "filename_intersection_format_counts": {
+    "CycloneDX/1.5": 22,
+    "CycloneDX/1.6": 1,
+    "SPDX/2.3": 1
+  },
+  "filename_intersection_spira_category_counts": {
+    "NOT_EVALUATED": 1,
+    "NO_WHEEL_SCOPED_SBOM": 19,
+    "SBOM_CONSISTENT": 4
+  },
+  "live_invalid_records": 840,
+  "methodology": "research/pep770_survey/methodology.v5.json",
+  "not_claimed": [
+    "does not reproduce sbomify historical top-15k 37-invalid list because that named list was not found in public sources during this check",
+    "does not perform full CycloneDX/SPDX schema validation; SPIRA V5 checks a narrow wheel metadata/component consistency subset",
+    "live pypi-tea invalid means schema-validation invalid, which is a different predicate from SPIRA SBOM_INCONSISTENT/SBOM_INVALID in this survey"
+  ],
+  "project_intersection_spira_category_counts": {
+    "NOT_EVALUATED": 1,
+    "NO_WHEEL_SCOPED_SBOM": 30,
+    "SBOM_CONSISTENT": 5
+  },
+  "schema": "SPIRA_PEP770_SBOMIFY_LIVE_INVALID_INTERSECTION_V1",
+  "selected_project_intersection_count": 36,
+  "selected_wheel_filename_intersection_count": 24,
+  "selected_wheels_processed": 1954,
+  "source": "https://pypi.sbomify.com/stats/invalid-sboms",
+  "source_note": "Live pypi-tea invalid-SBOM endpoint; not the historical March 2026 top-15k list of 37 invalid SBOMs.",
+  "survey_results": "research/pep770_survey/results/full_v5_public_results.json"
+}

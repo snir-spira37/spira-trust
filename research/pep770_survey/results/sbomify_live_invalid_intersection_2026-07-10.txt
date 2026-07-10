@@ -1,0 +1,33 @@
+SPIRA PEP 770 Survey - sbomify Invalid-SBOM Intersection Note
+================================================================
+
+Checked: 2026-07-10
+Source: https://pypi.sbomify.com/stats/invalid-sboms
+
+Result:
+- Live invalid-SBOM records from pypi-tea: 840
+- SPIRA selected wheels processed: 1954
+- Exact selected-wheel filename intersection: 24
+- Selected-project intersection: 36
+
+SPIRA V5 categories for exact selected-wheel filename intersection:
+- NOT_EVALUATED: 1
+- NO_WHEEL_SCOPED_SBOM: 19
+- SBOM_CONSISTENT: 4
+
+Formats for exact selected-wheel filename intersection:
+- CycloneDX/1.5: 22
+- CycloneDX/1.6: 1
+- SPDX/2.3: 1
+
+Interpretation:
+- The historical March 2026 37 invalid SBOMs list was not found as a named public dataset during this check; the sbomify blog reports the count, not the package list.
+- The live pypi-tea endpoint now reports 840 invalid SBOM records, so it is not the same object as the historical 37-item top-15k observation.
+- pypi-tea invalid means CycloneDX/SPDX schema-validation invalid. SPIRA V5 does not perform full schema validation; it performs a narrow wheel metadata/component consistency check. Therefore the absence of SPIRA SBOM_INVALID does not contradict pypi-tea invalid records.
+- In the exact wheel intersection, most live-invalid SBOMs are NO_WHEEL_SCOPED_SBOM under SPIRA V5, meaning they are not evaluated as top-level wheel component claims.
+
+Not claimed:
+- does not reproduce sbomify historical top-15k 37-invalid list because that named list was not found in public sources during this check
+- does not perform full CycloneDX/SPDX schema validation; SPIRA V5 checks a narrow wheel metadata/component consistency subset
+- live pypi-tea invalid means schema-validation invalid, which is a different predicate from SPIRA SBOM_INCONSISTENT/SBOM_INVALID in this survey
+
