@@ -1,0 +1,39 @@
+SPIRA PEP 770 Survey - Full V5 Public Summary
+================================================
+
+Completed: 2026-07-10T12:17:12Z
+Methodology: research/pep770_survey/methodology.v5.json
+Manifest: research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json
+Selected wheels processed: 1954
+
+Wheel-level categories:
+- SBOM_CONSISTENT: 572 (29.27%)
+- NO_WHEEL_SCOPED_SBOM: 1380 (70.62%)
+- NOT_EVALUATED: 2 (0.10%)
+- SBOM_INCONSISTENT: 0 (0.00%)
+- SBOM_INVALID: 0 (0.00%)
+- TOOL_ERROR: 0 (0.00%)
+
+Context-tax static byte measurements:
+- SBOM bytes median/p90/max: 75925 / 432201 / 1703082
+- agent_summary bytes median/p90/max: 2180 / 2226 / 2405
+- SBOM-to-summary ratio median/p90/max: 34.6954x / 196.5863x / 765.4301x
+
+Generator family counts (multi-label; counts can exceed processed wheels):
+- CARGO_CYCLONEDX: 1412
+- AUDITWHEEL: 531
+- MATURIN: 29
+- OTHER: 8
+- UNKNOWN: 3
+- SBOMIFY: 2
+- CYCLONEDX_PYTHON: 1
+
+Methodology note:
+- V4 produced one apparent SBOM_INCONSISTENT result. Manual review found it was a leading-v version-prefix equivalence case, not a package contradiction. V5 records that correction and re-ran the full corpus.
+- V5 found zero SBOM_INCONSISTENT, zero SBOM_INVALID, and zero TOOL_ERROR outcomes.
+
+Not claimed:
+- aggregate static consistency survey, not a security audit
+- SPIRA PEP 770 V1 is a narrow wheel metadata/component consistency check, not full SBOM validation
+- context-tax measurements are static byte counts only; no live-agent token, latency, energy, or CO2 claim
+- one selected x86_64/amd64 or py3-none-any wheel per PyPI project

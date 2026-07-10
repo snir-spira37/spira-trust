@@ -126,7 +126,7 @@ def public_report(report: dict[str, Any], *, public_output: bool) -> dict[str, A
         "completed_at": report.get("completed_at"),
         "methodology": report.get("methodology"),
         "manifest": report.get("manifest"),
-        "public_scope": "aggregate full-corpus V4 results only",
+        "public_scope": "aggregate full-corpus results only",
         "summary": summarize_public(report.get("results") or []),
         "redaction": [
             "Named packages with SBOM_INCONSISTENT, SBOM_INVALID, or TOOL_ERROR outcomes are withheld from public results pending maintainer review.",

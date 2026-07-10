@@ -1,0 +1,57 @@
+{
+  "completed_at": "2026-07-10T12:17:12Z",
+  "manifest": "research/pep770_survey/results/snapshot_v3_2026-07-09_manifest.json",
+  "methodology": "research/pep770_survey/methodology.v5.json",
+  "not_claimed": [
+    "aggregate static consistency survey, not a security audit",
+    "SPIRA PEP 770 V1 is a narrow wheel metadata/component consistency check, not full SBOM validation",
+    "context-tax measurements are static byte counts only; no live-agent token, latency, energy, or CO2 claim",
+    "one selected x86_64/amd64 or py3-none-any wheel per PyPI project"
+  ],
+  "public_scope": "aggregate full-corpus results only",
+  "redaction": [
+    "Named packages with SBOM_INCONSISTENT, SBOM_INVALID, or TOOL_ERROR outcomes are withheld from public results pending maintainer review.",
+    "Raw per-package results are kept locally under work/ and are not committed."
+  ],
+  "schema": "SPIRA_PEP770_SURVEY_FULL_PUBLIC_RESULTS_V1",
+  "started_at": "2026-07-10T09:49:57Z",
+  "summary": {
+    "category_counts": {
+      "NOT_EVALUATED": 2,
+      "NO_WHEEL_SCOPED_SBOM": 1380,
+      "SBOM_CONSISTENT": 572
+    },
+    "context_tax": {
+      "agent_summary_bytes": {
+        "count": 1954,
+        "max": 2405,
+        "median": 2180,
+        "p90": 2226
+      },
+      "ratio_sbom_bytes_to_agent_summary_bytes": {
+        "count": 1954,
+        "max": 765.4301,
+        "median": 34.6954,
+        "p90": 196.5863
+      },
+      "sbom_total_bytes": {
+        "count": 1954,
+        "max": 1703082,
+        "median": 75925,
+        "p90": 432201
+      }
+    },
+    "generator_family_multilabel_counts": {
+      "AUDITWHEEL": 531,
+      "CARGO_CYCLONEDX": 1412,
+      "CYCLONEDX_PYTHON": 1,
+      "MATURIN": 29,
+      "OTHER": 8,
+      "SBOMIFY": 2,
+      "UNKNOWN": 3
+    },
+    "processed": 1954,
+    "tool_error_count": 0,
+    "withheld_named_findings_count": 0
+  }
+}
