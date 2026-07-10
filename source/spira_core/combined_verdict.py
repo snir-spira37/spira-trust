@@ -16,10 +16,11 @@ AGENT_ACTIONS = {
     "ASK_HUMAN",
     "STOP_BLOCKED",
     "REPORT_NOT_EVALUATED",
+    "REPORT_WITH_NOTES",
     "RERUN_REQUIRED",
 }
 
-DECISION_SEMANTICS_VERSION = "SPIRA_DECISION_SEMANTICS_V1"
+DECISION_SEMANTICS_VERSION = "SPIRA_DECISION_SEMANTICS_V2"
 
 
 def agent_default_decision(
@@ -35,7 +36,7 @@ def agent_default_decision(
     if verdict == "GRAPH_OK_WITH_UNVERIFIED":
         return {"stop": True, "stop_source": "default", "recommended_agent_action": "REPORT_NOT_EVALUATED"}
     if verdict == "GRAPH_OK_WITH_NOTES":
-        action = "REPORT_NOT_EVALUATED" if not_evaluated else "ASK_HUMAN"
+        action = "REPORT_NOT_EVALUATED" if not_evaluated else "REPORT_WITH_NOTES"
         return {"stop": bool(not_evaluated), "stop_source": "default", "recommended_agent_action": action}
     if verdict == "GRAPH_OK" and not_evaluated:
         return {"stop": True, "stop_source": "default", "recommended_agent_action": "REPORT_NOT_EVALUATED"}
@@ -61,6 +62,8 @@ def agent_reason_codes(
         codes.append("HUMAN_REVIEW_REQUIRED")
     if action == "REPORT_NOT_EVALUATED" or not_evaluated:
         codes.append("REPORT_NOT_EVALUATED")
+    if action == "REPORT_WITH_NOTES":
+        codes.append("REPORT_WITH_NOTES")
     if action == "RERUN_REQUIRED":
         codes.append("RERUN_REQUIRED")
     if action == "PROCEED" and not codes:

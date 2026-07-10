@@ -58,7 +58,7 @@ gate action that the agent should follow:
 {
   "agent_action_contract": {
     "schema": "SPIRA_AGENT_ACTION_V1",
-    "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V1",
+    "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
     "stop": true,
     "recommended_agent_action": "REPORT_NOT_EVALUATED",
     "reason_codes": ["REPORT_NOT_EVALUATED"]

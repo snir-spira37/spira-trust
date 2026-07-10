@@ -120,17 +120,24 @@ A live API file-ingestion benchmark was later run with the DeepSeek Chat API.
 Evidence was injected into the prompt; this is not a full autonomous agent
 tool-use benchmark.
 
-Results are recorded in:
+The original live v1 run is recorded in:
 
 ```text
 bench/results/live_v1/
 ```
 
-In that benchmark, `agent_summary.json` used 2.1x fewer prompt tokens than the
-minimal `spira-decision.json` baseline and 15x-41x fewer than broad evidence
+After adding `SPIRA_DECISION_SEMANTICS_V2`, the benchmark was rerun and recorded
+in:
+
+```text
+bench/results/live_v2/
+```
+
+In the v2 run, `agent_summary.json` used 1.71x fewer prompt tokens than the
+minimal `spira-decision.json` baseline and 12x-33x fewer than broad evidence
 injection.
 
-The main finding was correctness, not just cost: the `agent_summary.json` path
+The main finding remained correctness, not just cost: the `agent_summary.json` path
 returned the intended `STOP / REPORT_NOT_EVALUATED` decision in 6/6 runs, while
 the broad-evidence path converted `GRAPH_OK_WITH_NOTES` into `PROCEED` in 6/6
 runs unless the prompt manually encoded the missing stop rule.

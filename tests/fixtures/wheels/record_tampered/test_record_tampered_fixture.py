@@ -6,18 +6,27 @@ dependency on installer availability.
 """
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 FIXTURES = Path(__file__).parent
+REPO_ROOT = FIXTURES.parents[3]
+SOURCE_ROOT = REPO_ROOT / "source"
 TAMPERED = FIXTURES / "record_tampered-1.0.0-py3-none-any.whl"
 CLEAN = FIXTURES / "record_tampered_clean-1.0.0-py3-none-any.whl"
 
 
 def run_spira_trust(*args):
+    env = dict(os.environ)
+    existing = env.get("PYTHONPATH")
+    env["PYTHONPATH"] = str(SOURCE_ROOT) if not existing else str(SOURCE_ROOT) + os.pathsep + existing
     return subprocess.run(
-        ["spira-trust", *args], capture_output=True, text=True
+        [sys.executable, "-m", "spira_core.trust_cli", *args],
+        capture_output=True,
+        text=True,
+        env=env,
     )
 
 

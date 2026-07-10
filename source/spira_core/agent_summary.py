@@ -53,7 +53,9 @@ def build_agent_summary(
     layers = decision.get("layers", {}) or {}
     not_evaluated = list(layers.get("not_evaluated_layers") or [])
     verdict = str(decision_block.get("verdict") or graph_result.get("verdict") or "GRAPH_UNKNOWN")
-    agent_decision = agent_default_decision(verdict, not_evaluated_layers=not_evaluated)
+    combined_verdict = decision_block.get("combined_verdict")
+    action_verdict = str(combined_verdict or verdict)
+    agent_decision = agent_default_decision(action_verdict, not_evaluated_layers=not_evaluated)
     artifacts = _artifact_refs(graph_result, include_local_paths=include_local_paths)
     artifact_sha_values = [item["sha256"] for item in artifacts if item.get("sha256")]
     artifact_set_sha = _stable_digest({"artifact_sha256_values": sorted(artifact_sha_values)})
@@ -64,7 +66,7 @@ def build_agent_summary(
     policy_sha = _effective_policy_sha(graph_result)
     reason_codes = agent_reason_codes(
         agent_decision,
-        verdict=verdict,
+        verdict=action_verdict,
         not_evaluated_layers=not_evaluated,
         blockers=blockers,
         warnings=warnings,
@@ -85,8 +87,9 @@ def build_agent_summary(
         "artifact_set_sha256": artifact_set_sha,
         "policy_sha256": policy_sha,
         "command_fingerprint": command_fingerprint,
-        "verdict": verdict,
-        "combined_verdict": decision_block.get("combined_verdict"),
+        "graph_verdict": verdict,
+        "combined_verdict": combined_verdict,
+        "action_verdict": action_verdict,
         "stop": agent_decision["stop"],
         "stop_source": agent_decision["stop_source"],
         "recommended_agent_action": agent_decision["recommended_agent_action"],
@@ -102,7 +105,8 @@ def build_agent_summary(
         "decision_semantics_version": DECISION_SEMANTICS_VERSION,
         "agent_action_contract": action_contract,
         "verdict": verdict,
-        "combined_verdict": decision_block.get("combined_verdict"),
+        "combined_verdict": combined_verdict,
+        "action_verdict": action_verdict,
         "winning_status": decision_block.get("winning_status"),
         "exit_code": decision_block.get("exit_code"),
         "stop": agent_decision["stop"],

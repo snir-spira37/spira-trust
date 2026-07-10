@@ -9,7 +9,29 @@ from pathlib import Path
 import pytest
 
 from spira_core.agent_status import build_agent_status
+from spira_core.combined_verdict import agent_default_decision
 from spira_core.trust_graph import run_trust_graph
+
+
+@pytest.mark.parametrize(
+    ("verdict", "not_evaluated", "expected_stop", "expected_action"),
+    [
+        ("GRAPH_BLOCK", [], True, "STOP_BLOCKED"),
+        ("GRAPH_WARN", [], True, "ASK_HUMAN"),
+        ("GRAPH_OK_WITH_UNVERIFIED", [], True, "REPORT_NOT_EVALUATED"),
+        ("GRAPH_OK", ["license_policy"], True, "REPORT_NOT_EVALUATED"),
+        ("GRAPH_OK", [], False, "PROCEED"),
+        ("GRAPH_OK_WITH_NOTES", [], False, "REPORT_WITH_NOTES"),
+        ("GRAPH_UNKNOWN", [], True, "RERUN_REQUIRED"),
+    ],
+)
+def test_agent_action_matrix_is_closed_and_stop_consistent(verdict, not_evaluated, expected_stop, expected_action):
+    decision = agent_default_decision(verdict, not_evaluated_layers=not_evaluated)
+
+    assert decision["stop"] is expected_stop
+    assert decision["recommended_agent_action"] == expected_action
+    if decision["stop"] is False:
+        assert decision["recommended_agent_action"] in {"PROCEED", "REPORT_WITH_NOTES"}
 
 
 @pytest.mark.parametrize("strict_closure", [False, True], ids=["lenient", "strict"])
@@ -99,9 +121,9 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert summary["schema"] == "SPIRA_AGENT_SUMMARY_V1"
     assert summary["created_at"]
     assert "not_evaluated" in summary
-    assert summary["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V1"
+    assert summary["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V2"
     assert summary["agent_action_contract"]["schema"] == "SPIRA_AGENT_ACTION_V1"
-    assert summary["agent_action_contract"]["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V1"
+    assert summary["agent_action_contract"]["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V2"
     assert summary["agent_action_contract"]["artifact_sha256"] == sha256(wheel.read_bytes()).hexdigest()
     assert summary["agent_action_contract"]["artifact_set_sha256"] == summary["summary_of"]["artifact_set_sha256"]
     assert summary["agent_action_contract"]["policy_sha256"] is None
@@ -121,6 +143,49 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     changed_status = build_agent_status([wheelhouse])
     assert changed_status["counts"]["checked"] == 0
     assert changed_status["counts"]["changed_since_check"] == 1
+
+
+def test_agent_action_uses_combined_verdict_not_raw_graph_verdict(tmp_path):
+    out = tmp_path / "out"
+    out.mkdir()
+    decision_path = out / "spira-decision.json"
+    report_path = out / "graph_report.json"
+    bom_path = out / "bill_of_materials.json"
+    decision_path.write_text("{}\n", encoding="utf-8")
+    report_path.write_text("{}\n", encoding="utf-8")
+    bom_path.write_text("{}\n", encoding="utf-8")
+
+    graph_result = {
+        "verdict": "GRAPH_OK",
+        "report_path": str(report_path),
+        "bill_of_materials_path": str(bom_path),
+        "nodes": [],
+        "propagation_events": [],
+    }
+    decision = {
+        "decision_json_path": str(decision_path),
+        "decision": {
+            "verdict": "GRAPH_OK",
+            "combined_verdict": "GRAPH_OK_WITH_NOTES",
+            "winning_status": "NOTE",
+            "exit_code": 0,
+        },
+        "layers": {
+            "not_evaluated_layers": [],
+        },
+    }
+
+    from spira_core.agent_summary import build_agent_summary
+
+    summary = build_agent_summary(graph_result, decision, output_dir=out)
+
+    assert summary["verdict"] == "GRAPH_OK"
+    assert summary["combined_verdict"] == "GRAPH_OK_WITH_NOTES"
+    assert summary["action_verdict"] == "GRAPH_OK_WITH_NOTES"
+    assert summary["stop"] is False
+    assert summary["recommended_agent_action"] == "REPORT_WITH_NOTES"
+    assert summary["reason_codes"] == ["NOTES_PRESENT", "REPORT_WITH_NOTES"]
+    assert summary["agent_action_contract"]["action_verdict"] == "GRAPH_OK_WITH_NOTES"
 
 
 def _layer(result: dict, name: str) -> dict:

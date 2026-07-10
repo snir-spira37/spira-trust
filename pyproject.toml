@@ -22,6 +22,11 @@ Documentation = "https://github.com/snir-spira37/spira-trust/tree/main/docs"
 spira-trust = "spira_core.trust_cli:main"
 spira = "spira_core.trust_cli:main"
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["work", ".venv", "dist", "build", "*.egg-info"]
+pythonpath = ["source"]
+
 [tool.spira.public-wheel]
 builder = "tools/build_spira_trust_public.py"
 package_allowlist = [

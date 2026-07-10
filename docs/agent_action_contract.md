@@ -39,13 +39,14 @@ includes an embedded action contract:
 ```json
 {
   "schema": "SPIRA_AGENT_ACTION_V1",
-  "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V1",
+  "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
   "artifact_sha256": "...",
   "artifact_set_sha256": "...",
   "policy_sha256": null,
   "command_fingerprint": "...",
-  "verdict": "GRAPH_OK",
+  "graph_verdict": "GRAPH_OK",
   "combined_verdict": "GRAPH_OK_WITH_NOTES",
+  "action_verdict": "GRAPH_OK_WITH_NOTES",
   "stop": true,
   "stop_source": "default",
   "recommended_agent_action": "REPORT_NOT_EVALUATED",
@@ -66,10 +67,17 @@ The action value is closed and policy-neutral:
 - `ASK_HUMAN`
 - `STOP_BLOCKED`
 - `REPORT_NOT_EVALUATED`
+- `REPORT_WITH_NOTES`
 - `RERUN_REQUIRED`
 
 Agents should dispatch on this value instead of inferring gate policy from
 prose, exit codes, or report shape.
+
+`SPIRA_DECISION_SEMANTICS_V2` derives the action from the combined policy
+verdict when present, falling back to the raw graph verdict only when no
+combined verdict is available. A `GRAPH_OK_WITH_NOTES` decision with no
+`NOT_EVALUATED` layers becomes `REPORT_WITH_NOTES` with `stop: false`, not
+`ASK_HUMAN`.
 
 ## Not Claimed
 
