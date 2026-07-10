@@ -125,7 +125,10 @@ def context_from_agent_summary(summary: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def load_context(path: str | Path) -> dict[str, Any]:
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {"schema": "UNSUPPORTED", "unsupported_context": True}
     if not isinstance(data, dict):
         return {"schema": "UNSUPPORTED", "unsupported_context": True}
     if data.get("schema") == "SPIRA_AGENT_SUMMARY_V1":

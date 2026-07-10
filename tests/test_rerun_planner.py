@@ -95,6 +95,19 @@ def test_rerun_planner_unknown_missing_and_unsupported_contexts_fail_closed():
         assert reason in plan["reason_codes"]
 
 
+def test_rerun_planner_cli_corrupted_context_fails_closed(tmp_path, capsys):
+    current = tmp_path / "current.json"
+    previous = tmp_path / "previous.json"
+    current.write_text("{not-json", encoding="utf-8")
+    previous.write_text(json.dumps(_context()), encoding="utf-8")
+
+    assert main(["plan-rerun", "--current-context", str(current), "--previous-context", str(previous), "--format", "json"]) == 2
+    plan = json.loads(capsys.readouterr().out)
+    assert plan["rerun_required"] is True
+    assert plan["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert "CURRENT_UNSUPPORTED_CONTEXT" in plan["reason_codes"]
+
+
 def _context():
     return {
         "artifact_sha256": "a" * 64,
