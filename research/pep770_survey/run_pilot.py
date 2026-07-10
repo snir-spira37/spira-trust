@@ -45,8 +45,8 @@ def main(argv: list[str] | None = None) -> int:
         "schema": "SPIRA_PEP770_SURVEY_PILOT_RESULTS_V1",
         "started_at": started_at,
         "completed_at": now(),
-        "selection": str(selection_path).replace("\\", "/"),
-        "work_dir": str(work_dir).replace("\\", "/"),
+        "selection": portable_path(selection_path),
+        "work_dir": portable_path(work_dir),
         "results": results,
         "summary": summarize(results),
         "not_claimed": [
@@ -82,7 +82,7 @@ def run_one(index: int, pick: dict[str, Any], *, wheels_dir: Path, outputs_dir: 
         wheel_path.write_bytes(data)
         digest = hashlib.sha256(data).hexdigest()
         result["download"] = {
-            "path": str(wheel_path).replace("\\", "/"),
+            "path": portable_path(wheel_path),
             "bytes": len(data),
             "sha256": digest,
             "sha256_matches_pypi": digest == pick.get("sha256"),
@@ -128,7 +128,7 @@ def run_spira(wheel_path: Path, output_dir: Path) -> dict[str, Any]:
     completed = subprocess.run(command, cwd=repo, env=env, text=True, capture_output=True, timeout=600)
     paths = find_output_paths(output_dir)
     payload: dict[str, Any] = {
-        "command": command,
+        "command": portable_command(command),
         "returncode": completed.returncode,
         "stdout": completed.stdout,
         "stderr": completed.stderr,
@@ -157,17 +157,40 @@ def find_output_paths(output_dir: Path) -> dict[str, str | None]:
 
 def first_path(root: Path, name: str) -> str | None:
     matches = list(root.rglob(name))
-    return str(matches[0]).replace("\\", "/") if matches else None
+    return portable_path(matches[0]) if matches else None
 
 
 def read_json(path: str | None) -> dict[str, Any] | None:
     if not path:
         return None
-    return json.loads(Path(path).read_text(encoding="utf-8"))
+    return json.loads(resolve_portable_path(path).read_text(encoding="utf-8"))
 
 
 def file_size_or_none(path: str | None) -> int | None:
-    return Path(path).stat().st_size if path else None
+    return resolve_portable_path(path).stat().st_size if path else None
+
+
+def portable_command(command: list[str]) -> list[str]:
+    portable = command[:]
+    if portable:
+        portable[0] = Path(portable[0]).name
+    return [portable_path(item) if "\\" in item or "/" in item else item for item in portable]
+
+
+def portable_path(path: str | Path) -> str:
+    raw = Path(path)
+    repo = Path(__file__).resolve().parents[2]
+    try:
+        return str(raw.resolve().relative_to(repo)).replace("\\", "/")
+    except ValueError:
+        return str(raw).replace("\\", "/")
+
+
+def resolve_portable_path(path: str) -> Path:
+    raw = Path(path)
+    if raw.is_absolute():
+        return raw
+    return Path(__file__).resolve().parents[2] / raw
 
 
 def survey_category(spira: dict[str, Any]) -> str:

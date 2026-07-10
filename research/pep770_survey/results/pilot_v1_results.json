@@ -1,0 +1,846 @@
+{
+  "completed_at": "2026-07-10T05:59:43Z",
+  "not_claimed": [
+    "pilot is edge-case discovery, not a statistical sample",
+    "pilot results are not full-corpus statistics",
+    "SPIRA PEP 770 V1 is a narrow consistency check, not full SBOM validation"
+  ],
+  "results": [
+    {
+      "agent_summary_bytes": 2273,
+      "context_tax_ratio": 206.85525736911572,
+      "download": {
+        "bytes": 5425951,
+        "path": "work/pep770_survey_pilot_v1/wheels/a3s_box-2.0.0-cp39-abi3-manylinux_2_39_x86_64.whl",
+        "sha256": "880202ce5fa9b2f06189a10519b10137e7856bcc6ef62c8fae1630ecea0ef5a3",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 468418,
+          "format_hint": "json",
+          "generator_families": [
+            "CARGO_CYCLONEDX"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.9"
+            }
+          ],
+          "path": "a3s_box-2.0.0.dist-info/sboms/a3s-box-python.cyclonedx.json",
+          "sha256": "6f5336109716cfcfe8047db768f294415177600eadc026be75712c14c80def76"
+        },
+        {
+          "bytes": 1764,
+          "format_hint": "json",
+          "generator_families": [
+            "MATURIN"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "maturin",
+              "version": "1.13.1"
+            }
+          ],
+          "path": "a3s_box-2.0.0.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "ddc03b4826d2e9aaf7d81583aa0e7ec334f62c907ce123e1d77ba88a0e710418"
+        }
+      ],
+      "expected_sha256": "880202ce5fa9b2f06189a10519b10137e7856bcc6ef62c8fae1630ecea0ef5a3",
+      "filename": "a3s_box-2.0.0-cp39-abi3-manylinux_2_39_x86_64.whl",
+      "index": 1,
+      "package": "a3s-box",
+      "sbom_generators": {
+        "families": [
+          "CARGO_CYCLONEDX",
+          "MATURIN"
+        ],
+        "summary": "MIXED",
+        "tools": [
+          {
+            "family": [
+              "CARGO_CYCLONEDX"
+            ],
+            "sbom_path": "a3s_box-2.0.0.dist-info/sboms/a3s-box-python.cyclonedx.json",
+            "tool": {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.9"
+            }
+          },
+          {
+            "family": [
+              "MATURIN"
+            ],
+            "sbom_path": "a3s_box-2.0.0.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "maturin",
+              "version": "1.13.1"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 470182,
+      "selection_reason": "known_multi_sbom_from_v3_smoke",
+      "size": 5425951,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/01_a3s-box/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/a3s_box-2.0.0-cp39-abi3-manylinux_2_39_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/01_a3s-box",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/01_a3s-box/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/01_a3s-box/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "CONTRADICTION",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 0\nDeclared artifacts not provided: 0\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- a3s-box 2.0.0 [BLOCK]\n\nPropagation:\n- BLOCK from a3s-box to a3s-box: PEP 770 embedded SBOM contradiction: metadata.component.name 'a3s-box-python' does not match wheel name 'a3s-box'\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core, pep770_sbom_consistency)\n\n"
+      },
+      "survey_category": "SBOM_INCONSISTENT",
+      "version": "2.0.0"
+    },
+    {
+      "agent_summary_bytes": 2159,
+      "context_tax_ratio": 0.6595646132468735,
+      "download": {
+        "bytes": 464937381,
+        "path": "work/pep770_survey_pilot_v1/wheels/libcuml_cu12-26.2.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "1da7d5f0a5d48280b722873f2aee4bcf91c9b1d14c1ae731d0df6ad922299c12",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 1424,
+          "format_hint": "json",
+          "generator_families": [
+            "AUDITWHEEL"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "auditwheel",
+              "version": "6.6.0"
+            }
+          ],
+          "path": "libcuml_cu12-26.2.0.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "1f08ff8c240c2b8744179cd25d5db8a78a75d5af4b9e5f1e8eebb0e4c5cec505"
+        }
+      ],
+      "expected_sha256": "1da7d5f0a5d48280b722873f2aee4bcf91c9b1d14c1ae731d0df6ad922299c12",
+      "filename": "libcuml_cu12-26.2.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "index": 2,
+      "package": "libcuml-cu12",
+      "sbom_generators": {
+        "families": [
+          "AUDITWHEEL"
+        ],
+        "summary": "AUDITWHEEL",
+        "tools": [
+          {
+            "family": [
+              "AUDITWHEEL"
+            ],
+            "sbom_path": "libcuml_cu12-26.2.0.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "auditwheel",
+              "version": "6.6.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 1424,
+      "selection_reason": "large_wheel",
+      "size": 464937381,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/02_libcuml-cu12/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/libcuml_cu12-26.2.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/02_libcuml-cu12",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/02_libcuml-cu12/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/02_libcuml-cu12/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 3\nDeclared artifacts not provided: 3\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- libcuml-cu12 26.2.0 [BLOCK]\n\nUnverified declared artifacts:\n- cuda-toolkit was declared but no matching local wheel was provided\n- libraft-cu12 was declared but no matching local wheel was provided\n- rapids-logger was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "26.2.0"
+    },
+    {
+      "agent_summary_bytes": 2161,
+      "context_tax_ratio": 0.6645071726052754,
+      "download": {
+        "bytes": 248698539,
+        "path": "work/pep770_survey_pilot_v1/wheels/libcuml_cu13-25.12.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "9fb3c8644d751c49bb113ad15d72f2a24cefa4e411fe7c62daf826034fa41464",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 1436,
+          "format_hint": "json",
+          "generator_families": [
+            "AUDITWHEEL"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "auditwheel",
+              "version": "6.5.0"
+            }
+          ],
+          "path": "libcuml_cu13-25.12.0.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "7f0e5fcb0c07cbeacde18d9d1bb137538877f8ab855835126fcfd08452588443"
+        }
+      ],
+      "expected_sha256": "9fb3c8644d751c49bb113ad15d72f2a24cefa4e411fe7c62daf826034fa41464",
+      "filename": "libcuml_cu13-25.12.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "index": 3,
+      "package": "libcuml-cu13",
+      "sbom_generators": {
+        "families": [
+          "AUDITWHEEL"
+        ],
+        "summary": "AUDITWHEEL",
+        "tools": [
+          {
+            "family": [
+              "AUDITWHEEL"
+            ],
+            "sbom_path": "libcuml_cu13-25.12.0.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "auditwheel",
+              "version": "6.5.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 1436,
+      "selection_reason": "large_wheel",
+      "size": 248698539,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/03_libcuml-cu13/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/libcuml_cu13-25.12.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/03_libcuml-cu13",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/03_libcuml-cu13/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/03_libcuml-cu13/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 3\nDeclared artifacts not provided: 3\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- libcuml-cu13 25.12.0 [BLOCK]\n\nUnverified declared artifacts:\n- cuda-toolkit was declared but no matching local wheel was provided\n- libraft-cu13 was declared but no matching local wheel was provided\n- rapids-logger was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "25.12.0"
+    },
+    {
+      "agent_summary_bytes": 2122,
+      "context_tax_ratio": 4.6220546654099905,
+      "download": {
+        "bytes": 243223795,
+        "path": "work/pep770_survey_pilot_v1/wheels/root-0.1a10-cp39-cp39-manylinux_2_28_x86_64.whl",
+        "sha256": "f4ae80c9abc8cfc1010cd59235cb0e43a5e30a77f5063431a452d38ca3b72c74",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 9808,
+          "format_hint": "json",
+          "generator_families": [
+            "AUDITWHEEL"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "auditwheel",
+              "version": "6.5.0"
+            }
+          ],
+          "path": "root-0.1a10.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "fb2dd2432a856e03b3b5a6772f6531a1299ac76e6115c9e42a26872440eb3ef2"
+        }
+      ],
+      "expected_sha256": "f4ae80c9abc8cfc1010cd59235cb0e43a5e30a77f5063431a452d38ca3b72c74",
+      "filename": "root-0.1a10-cp39-cp39-manylinux_2_28_x86_64.whl",
+      "index": 4,
+      "package": "root",
+      "sbom_generators": {
+        "families": [
+          "AUDITWHEEL"
+        ],
+        "summary": "AUDITWHEEL",
+        "tools": [
+          {
+            "family": [
+              "AUDITWHEEL"
+            ],
+            "sbom_path": "root-0.1a10.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "auditwheel",
+              "version": "6.5.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 9808,
+      "selection_reason": "large_wheel",
+      "size": 243223795,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/04_root/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/root-0.1a10-cp39-cp39-manylinux_2_28_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/04_root",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/04_root/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/04_root/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 1\nDeclared artifacts not provided: 1\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- root 0.1a10 [BLOCK]\n\nUnverified declared artifacts:\n- numpy was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "0.1a10"
+    },
+    {
+      "agent_summary_bytes": 2091,
+      "context_tax_ratio": 2.1740793878527023,
+      "download": {
+        "bytes": 4177,
+        "path": "work/pep770_survey_pilot_v1/wheels/readable_reprs-0.1.2-py3-none-any.whl",
+        "sha256": "4d5a348ddd3c8eda37b26919631f5806707d693ddb8c9e8b552b3e074b5864c8",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 4546,
+          "format_hint": "json",
+          "generator_families": [
+            "CYCLONEDX_PYTHON"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "cyclonedx-py",
+              "version": "7.2.1"
+            },
+            {
+              "name": "cyclonedx-python-lib",
+              "version": "11.6.0"
+            }
+          ],
+          "path": "readable_reprs-0.1.2.dist-info/sboms/bom.json",
+          "sha256": "92d000a3b3d8d9e38c58848784b3b4a461b33de4a4149792e692a5f0a3f280ce"
+        }
+      ],
+      "expected_sha256": "4d5a348ddd3c8eda37b26919631f5806707d693ddb8c9e8b552b3e074b5864c8",
+      "filename": "readable_reprs-0.1.2-py3-none-any.whl",
+      "index": 5,
+      "package": "readable-reprs",
+      "sbom_generators": {
+        "families": [
+          "CYCLONEDX_PYTHON"
+        ],
+        "summary": "CYCLONEDX_PYTHON",
+        "tools": [
+          {
+            "family": [
+              "CYCLONEDX_PYTHON"
+            ],
+            "sbom_path": "readable_reprs-0.1.2.dist-info/sboms/bom.json",
+            "tool": {
+              "name": "cyclonedx-py",
+              "version": "7.2.1"
+            }
+          },
+          {
+            "family": [
+              "CYCLONEDX_PYTHON"
+            ],
+            "sbom_path": "readable_reprs-0.1.2.dist-info/sboms/bom.json",
+            "tool": {
+              "name": "cyclonedx-python-lib",
+              "version": "11.6.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 4546,
+      "selection_reason": "small_wheel",
+      "size": 4177,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/05_readable-reprs/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK_WITH_NOTES",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/readable_reprs-0.1.2-py3-none-any.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/05_readable-reprs",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/05_readable-reprs/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/05_readable-reprs/graph_report.json",
+        "graph_verdict": "GRAPH_OK_WITH_NOTES",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK_WITH_NOTES] No blocking contradictions found, but human notes are present.\n\nArtifacts provided: 1\nDeclared relationships: 0\nDeclared artifacts not provided: 0\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 1\nStrict closure: False\n\nRoot nodes:\n- readable-reprs 0.1.2 [NEEDS_HUMAN]\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK (winning_status=OK, decided_by=graph_core, pep770_sbom_consistency)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "0.1.2"
+    },
+    {
+      "agent_summary_bytes": 2121,
+      "context_tax_ratio": 4.01980198019802,
+      "download": {
+        "bytes": 6108,
+        "path": "work/pep770_survey_pilot_v1/wheels/vsview_audio_convert-0.1.3-py3-none-any.whl",
+        "sha256": "01a84e29715c5d6450c0c809bed0d7a91604db6ec75a6733066ecc2f05be8a37",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 8526,
+          "format_hint": "json",
+          "generator_families": [
+            "OTHER"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "uv",
+              "vendor": "Astral Software Inc.",
+              "version": "0.10.10"
+            }
+          ],
+          "path": "vsview_audio_convert-0.1.3.dist-info/sboms/sboms.json",
+          "sha256": "555e32e37db57548e33944d21f9ca2ef4df95999fcd37b04e000d1a7c3f09d81"
+        }
+      ],
+      "expected_sha256": "01a84e29715c5d6450c0c809bed0d7a91604db6ec75a6733066ecc2f05be8a37",
+      "filename": "vsview_audio_convert-0.1.3-py3-none-any.whl",
+      "index": 6,
+      "package": "vsview-audio-convert",
+      "sbom_generators": {
+        "families": [
+          "OTHER"
+        ],
+        "summary": "OTHER",
+        "tools": [
+          {
+            "family": [
+              "OTHER"
+            ],
+            "sbom_path": "vsview_audio_convert-0.1.3.dist-info/sboms/sboms.json",
+            "tool": {
+              "name": "uv",
+              "vendor": "Astral Software Inc.",
+              "version": "0.10.10"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 8526,
+      "selection_reason": "small_wheel",
+      "size": 6108,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/06_vsview-audio-convert/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/vsview_audio_convert-0.1.3-py3-none-any.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/06_vsview-audio-convert",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/06_vsview-audio-convert/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/06_vsview-audio-convert/graph_report.json",
+        "graph_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK_WITH_UNVERIFIED] No blocking contradictions found, but graph is incomplete.\n\nArtifacts provided: 1\nDeclared relationships: 1\nDeclared artifacts not provided: 1\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 1\nStrict closure: False\n\nRoot nodes:\n- vsview-audio-convert 0.1.3 [NEEDS_HUMAN]\n\nUnverified declared artifacts:\n- vsview was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK_WITH_NOTES (winning_status=NOTE, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "0.1.3"
+    },
+    {
+      "agent_summary_bytes": 2117,
+      "context_tax_ratio": 4.432687765706188,
+      "download": {
+        "bytes": 6555,
+        "path": "work/pep770_survey_pilot_v1/wheels/vsview_fftspectrum-0.1.3-py3-none-any.whl",
+        "sha256": "55433738b9e3e36a7cc14ce961d199fa7f540beb43ab04b88c39aeaf60d86022",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 9384,
+          "format_hint": "json",
+          "generator_families": [
+            "OTHER"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "uv",
+              "vendor": "Astral Software Inc.",
+              "version": "0.10.10"
+            }
+          ],
+          "path": "vsview_fftspectrum-0.1.3.dist-info/sboms/sboms.json",
+          "sha256": "52ed1f12215aca0bd615be0bdb9d57580923d51f358be1aa9b2f8a3c7a7a5b40"
+        }
+      ],
+      "expected_sha256": "55433738b9e3e36a7cc14ce961d199fa7f540beb43ab04b88c39aeaf60d86022",
+      "filename": "vsview_fftspectrum-0.1.3-py3-none-any.whl",
+      "index": 7,
+      "package": "vsview-fftspectrum",
+      "sbom_generators": {
+        "families": [
+          "OTHER"
+        ],
+        "summary": "OTHER",
+        "tools": [
+          {
+            "family": [
+              "OTHER"
+            ],
+            "sbom_path": "vsview_fftspectrum-0.1.3.dist-info/sboms/sboms.json",
+            "tool": {
+              "name": "uv",
+              "vendor": "Astral Software Inc.",
+              "version": "0.10.10"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 9384,
+      "selection_reason": "small_wheel",
+      "size": 6555,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/07_vsview-fftspectrum/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/vsview_fftspectrum-0.1.3-py3-none-any.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/07_vsview-fftspectrum",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/07_vsview-fftspectrum/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/07_vsview-fftspectrum/graph_report.json",
+        "graph_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK_WITH_UNVERIFIED] No blocking contradictions found, but graph is incomplete.\n\nArtifacts provided: 1\nDeclared relationships: 2\nDeclared artifacts not provided: 2\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 1\nStrict closure: False\n\nRoot nodes:\n- vsview-fftspectrum 0.1.3 [NEEDS_HUMAN]\n\nUnverified declared artifacts:\n- vsjetpack was declared but no matching local wheel was provided\n- vsview was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK_WITH_NOTES (winning_status=NOTE, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "0.1.3"
+    },
+    {
+      "agent_summary_bytes": 2254,
+      "context_tax_ratio": 19.025288376220054,
+      "download": {
+        "bytes": 607401,
+        "path": "work/pep770_survey_pilot_v1/wheels/omni_mdx-0.1.9-cp313-cp313-win_amd64.whl",
+        "sha256": "587fcdd6ece045bcd49921d139867949211f6a7ca1765a665f7f121dee02459e",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 42883,
+          "format_hint": "json",
+          "generator_families": [
+            "CARGO_CYCLONEDX"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          ],
+          "path": "omni_mdx-0.1.9.dist-info/sboms/omni-mdx.cyclonedx.json",
+          "sha256": "ec9b36169a8bd6564866098b6de65f15027118e4411d350a8919e6fde27cab9f"
+        }
+      ],
+      "expected_sha256": "587fcdd6ece045bcd49921d139867949211f6a7ca1765a665f7f121dee02459e",
+      "filename": "omni_mdx-0.1.9-cp313-cp313-win_amd64.whl",
+      "index": 8,
+      "package": "omni-mdx",
+      "sbom_generators": {
+        "families": [
+          "CARGO_CYCLONEDX"
+        ],
+        "summary": "CARGO_CYCLONEDX",
+        "tools": [
+          {
+            "family": [
+              "CARGO_CYCLONEDX"
+            ],
+            "sbom_path": "omni_mdx-0.1.9.dist-info/sboms/omni-mdx.cyclonedx.json",
+            "tool": {
+              "name": "cargo-cyclonedx",
+              "vendor": "CycloneDX",
+              "version": "0.5.7"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 42883,
+      "selection_reason": "seeded_random",
+      "size": 607401,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/08_omni-mdx/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/omni_mdx-0.1.9-cp313-cp313-win_amd64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/08_omni-mdx",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/08_omni-mdx/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/08_omni-mdx/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "CONTRADICTION",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 0\nDeclared artifacts not provided: 0\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- omni-mdx 0.1.9 [BLOCK]\n\nPropagation:\n- BLOCK from omni-mdx to omni-mdx: PEP 770 embedded SBOM contradiction: metadata.component.version '0.2.0' does not match wheel version '0.1.9'\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core, pep770_sbom_consistency)\n\n"
+      },
+      "survey_category": "SBOM_INCONSISTENT",
+      "version": "0.1.9"
+    },
+    {
+      "agent_summary_bytes": 2151,
+      "context_tax_ratio": 0.6834030683403068,
+      "download": {
+        "bytes": 11304831,
+        "path": "work/pep770_survey_pilot_v1/wheels/feature_3dgs-1.9.4.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "01a2e6aa017eda9647ff51fc98bae3de3ce79402ef8d784d9ba1f9d1a7e88919",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 1470,
+          "format_hint": "json",
+          "generator_families": [
+            "AUDITWHEEL"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "auditwheel",
+              "version": "6.6.0"
+            }
+          ],
+          "path": "feature_3dgs-1.9.4.2.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "d7959b526a3387886676da371f50bcdff7cad9a3f8d6aeb164f53223e380af1e"
+        }
+      ],
+      "expected_sha256": "01a2e6aa017eda9647ff51fc98bae3de3ce79402ef8d784d9ba1f9d1a7e88919",
+      "filename": "feature_3dgs-1.9.4.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "index": 9,
+      "package": "feature-3dgs",
+      "sbom_generators": {
+        "families": [
+          "AUDITWHEEL"
+        ],
+        "summary": "AUDITWHEEL",
+        "tools": [
+          {
+            "family": [
+              "AUDITWHEEL"
+            ],
+            "sbom_path": "feature_3dgs-1.9.4.2.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "auditwheel",
+              "version": "6.6.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 1470,
+      "selection_reason": "seeded_random",
+      "size": 11304831,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/09_feature-3dgs/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/feature_3dgs-1.9.4.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/09_feature-3dgs",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/09_feature-3dgs/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/09_feature-3dgs/graph_report.json",
+        "graph_verdict": "GRAPH_OK_WITH_UNVERIFIED",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_OK_WITH_UNVERIFIED] No blocking contradictions found, but graph is incomplete.\n\nArtifacts provided: 1\nDeclared relationships: 2\nDeclared artifacts not provided: 2\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 0\nWarning nodes: 0\nHuman-note nodes: 1\nStrict closure: False\n\nRoot nodes:\n- feature_3dgs 1.9.4.2 [NEEDS_HUMAN]\n\nUnverified declared artifacts:\n- gaussian-splatting was declared but no matching local wheel was provided\n- scikit-learn was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_OK_WITH_NOTES (winning_status=NOTE, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "1.9.4.2"
+    },
+    {
+      "agent_summary_bytes": 2158,
+      "context_tax_ratio": 4.533827618164968,
+      "download": {
+        "bytes": 67554702,
+        "path": "work/pep770_survey_pilot_v1/wheels/cadquery_ocp_novtk-7.9.3.1.1-cp314-cp314-manylinux_2_31_x86_64.whl",
+        "sha256": "156dd9233d90b520103d9dc7c8854ba0b9e891b4f6e604546cde20a795122247",
+        "sha256_matches_pypi": true
+      },
+      "embedded_sboms": [
+        {
+          "bytes": 9784,
+          "format_hint": "json",
+          "generator_families": [
+            "AUDITWHEEL"
+          ],
+          "generator_tools_raw": [
+            {
+              "name": "auditwheel",
+              "version": "6.7.0"
+            }
+          ],
+          "path": "cadquery_ocp_novtk-7.9.3.1.1.dist-info/sboms/auditwheel.cdx.json",
+          "sha256": "123dbde4665ec167880ce9bd9c744e7d08cc8f423a5eaba061f571c4e1255cc2"
+        }
+      ],
+      "expected_sha256": "156dd9233d90b520103d9dc7c8854ba0b9e891b4f6e604546cde20a795122247",
+      "filename": "cadquery_ocp_novtk-7.9.3.1.1-cp314-cp314-manylinux_2_31_x86_64.whl",
+      "index": 10,
+      "package": "cadquery-ocp-novtk",
+      "sbom_generators": {
+        "families": [
+          "AUDITWHEEL"
+        ],
+        "summary": "AUDITWHEEL",
+        "tools": [
+          {
+            "family": [
+              "AUDITWHEEL"
+            ],
+            "sbom_path": "cadquery_ocp_novtk-7.9.3.1.1.dist-info/sboms/auditwheel.cdx.json",
+            "tool": {
+              "name": "auditwheel",
+              "version": "6.7.0"
+            }
+          }
+        ]
+      },
+      "sbom_total_bytes": 9784,
+      "selection_reason": "seeded_random",
+      "size": 67554702,
+      "spira": {
+        "agent_summary_path": "work/pep770_survey_pilot_v1/spira_outputs/10_cadquery-ocp-novtk/agent_summary.json",
+        "agent_summary_stop": true,
+        "agent_summary_verdict": "GRAPH_BLOCK",
+        "command": [
+          "python.exe",
+          "-m",
+          "spira_core.trust_cli",
+          "graph",
+          "work/pep770_survey_pilot_v1/wheels/cadquery_ocp_novtk-7.9.3.1.1-cp314-cp314-manylinux_2_31_x86_64.whl",
+          "--output-dir",
+          "work/pep770_survey_pilot_v1/spira_outputs/10_cadquery-ocp-novtk",
+          "--verify-embedded-sboms"
+        ],
+        "decision_path": "work/pep770_survey_pilot_v1/spira_outputs/10_cadquery-ocp-novtk/spira-decision.json",
+        "decision_verdict": null,
+        "graph_report_path": "work/pep770_survey_pilot_v1/spira_outputs/10_cadquery-ocp-novtk/graph_report.json",
+        "graph_verdict": "GRAPH_BLOCK",
+        "pep770_status": "VERIFIED_OK",
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "SPIRA Trust Graph Summary\n=========================\n[GRAPH_BLOCK] 1 blocking node(s) affected the graph\n\nArtifacts provided: 1\nDeclared relationships: 1\nDeclared artifacts not provided: 1\nDeclared artifacts ambiguous: 0\nMalformed declared relationships: 0\nBlocked nodes: 1\nWarning nodes: 0\nHuman-note nodes: 0\nStrict closure: False\n\nRoot nodes:\n- cadquery-ocp-novtk 7.9.3.1.1 [BLOCK]\n\nUnverified declared artifacts:\n- cadquery-ocp-proxy was declared but no matching local wheel was provided\nUse --strict-closure to elevate missing declared artifacts to GRAPH_WARN.\n\nBoundaries:\n- no resolver\n- no network/PyPI\n- no install or code execution\n- PEP 503-style name normalization only; no Unicode confusable folding\n\nDecision:\n- Combined decision: GRAPH_BLOCK (winning_status=BLOCK, decided_by=graph_core)\n\n"
+      },
+      "survey_category": "SBOM_CONSISTENT",
+      "version": "7.9.3.1.1"
+    }
+  ],
+  "schema": "SPIRA_PEP770_SURVEY_PILOT_RESULTS_V1",
+  "selection": "research/pep770_survey/pilot_selection_v1.json",
+  "started_at": "2026-07-10T05:55:19Z",
+  "summary": {
+    "category_counts": {
+      "SBOM_CONSISTENT": 8,
+      "SBOM_INCONSISTENT": 2
+    },
+    "generator_family_multilabel_counts": {
+      "AUDITWHEEL": 5,
+      "CARGO_CYCLONEDX": 2,
+      "CYCLONEDX_PYTHON": 1,
+      "MATURIN": 1,
+      "OTHER": 2
+    },
+    "tool_error_count": 0
+  },
+  "work_dir": "work/pep770_survey_pilot_v1"
+}
