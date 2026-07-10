@@ -120,6 +120,30 @@ def test_missing_purl_falls_back_to_matching_name(tmp_path: Path) -> None:
     assert result["results"][0]["component_scope"] == "PYPI_WHEEL_SCOPED_INFERRED"
 
 
+def test_leading_v_version_prefix_is_equivalent_for_wheel_scoped_component(tmp_path: Path) -> None:
+    wheel = _build_wheel(
+        tmp_path,
+        "demo-pkg",
+        "0.3.1",
+        sboms={
+            "demo.cdx.json": {
+                "bomFormat": "CycloneDX",
+                "metadata": {
+                    "component": {
+                        "name": "demo-pkg",
+                        "version": "v0.3.1",
+                        "purl": "pkg:pypi/demo-pkg@v0.3.1",
+                    }
+                },
+            }
+        },
+    )
+
+    result = evaluate_embedded_sbom_consistency(str(wheel), package_name="demo-pkg", version="0.3.1")
+
+    assert result["status"] == "VERIFIED_OK"
+
+
 def test_missing_purl_and_nonmatching_name_is_unverified_not_contradiction(tmp_path: Path) -> None:
     wheel = _build_wheel(
         tmp_path,

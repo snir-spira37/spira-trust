@@ -13,7 +13,7 @@ from typing import Any
 import run_pilot
 
 
-DEFAULT_METHODOLOGY = "research/pep770_survey/methodology.v4.json"
+DEFAULT_METHODOLOGY = "research/pep770_survey/methodology.v5.json"
 
 
 def main(argv: list[str] | None = None) -> int:

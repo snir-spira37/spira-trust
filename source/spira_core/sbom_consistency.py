@@ -43,13 +43,22 @@ def urllib_unquote(value: str) -> str:
 
 
 def _versions_equivalent(left: Any, right: Any) -> bool:
-    if str(left) == str(right):
+    left_normalized = _normalize_version_subset(str(left))
+    right_normalized = _normalize_version_subset(str(right))
+    if left_normalized == right_normalized:
         return True
-    left_parts = _numeric_release_parts(str(left))
-    right_parts = _numeric_release_parts(str(right))
+    left_parts = _numeric_release_parts(left_normalized)
+    right_parts = _numeric_release_parts(right_normalized)
     if left_parts is None or right_parts is None:
         return False
     return _trim_trailing_zeroes(left_parts) == _trim_trailing_zeroes(right_parts)
+
+
+def _normalize_version_subset(version: str) -> str:
+    normalized = version.strip()
+    if len(normalized) > 1 and normalized[0] in {"v", "V"}:
+        normalized = normalized[1:]
+    return normalized
 
 
 def _numeric_release_parts(version: str) -> list[int] | None:
