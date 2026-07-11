@@ -143,7 +143,7 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     proof = json.loads(proof_path.read_text(encoding="utf-8"))
     assert proof["schema"] == "SPIRA_UNIFICATION_PROOF_V1"
     assert proof["unification_id"] == summary["unification"]["id"]
-    assert proof["roots"]["evidence_merkle_root"] == summary["unification"]["root"]
+    assert proof["roots"]["claims_merkle_root"] == summary["unification"]["root"]
     assert proof["decision"]["recommended_agent_action"] == summary["recommended_agent_action"]
     assert proof["coverage"]["claim_count"] >= 1
     from spira_core.decision_report import write_evidence_pack

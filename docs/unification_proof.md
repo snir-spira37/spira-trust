@@ -9,7 +9,7 @@ It is a binding proof:
 
 ```text
 typed claims
-+ evidence Merkle root
++ claims Merkle root
 + policy/context hashes
 + decision semantics version
 + action contract
@@ -120,7 +120,7 @@ The `unification_id` changes when any of these change:
 
 ```text
 subject artifact hash
-claim Merkle root
+claims Merkle root
 policy hash
 context hash
 decision semantics version
@@ -153,4 +153,3 @@ not_evaluated
 - This does not perform zero-knowledge proof generation.
 - This does not turn missing evidence into OK.
 - This does not replace the full evidence pack for audit.
-

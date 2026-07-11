@@ -24,13 +24,19 @@ STATUS_RANK = {
 }
 
 
+class UnificationProofError(ValueError):
+    """Raised when a proof-carrying action contract would be ambiguous or unbound."""
+
+
 def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, Any]) -> dict[str, Any]:
     contract = summary.get("agent_action_contract", {}) or {}
     summary_of = summary.get("summary_of", {}) or {}
     claims = build_claims(summary, decision)
-    evidence_root = merkle_root(claims)
+    validate_claim_set(claims)
+    claims_root = merkle_root(claims)
     policy_sha = str(contract.get("policy_sha256") or "")
     subject_sha = str(contract.get("artifact_sha256") or contract.get("artifact_set_sha256") or "")
+    validate_sha256(subject_sha, field="subject_sha256")
     context_sha = sha256_hex(
         {
             "subject_sha256": subject_sha,
@@ -56,7 +62,7 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
     unification_id = tagged_hash(
         "SPIRA:UNIFICATION:V1",
         subject_sha,
-        evidence_root,
+        claims_root,
         policy_sha,
         context_sha,
         str(decision_obj["semantics_version"]),
@@ -81,7 +87,7 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
             "artifact_set_sha256": contract.get("artifact_set_sha256"),
         },
         "roots": {
-            "evidence_merkle_root": evidence_root,
+            "claims_merkle_root": claims_root,
             "policy_sha256": contract.get("policy_sha256"),
             "context_sha256": context_sha,
         },
@@ -112,7 +118,7 @@ def build_unification_reference(proof: Mapping[str, Any], *, proof_path: str | N
     roots = proof.get("roots", {}) or {}
     return {
         "id": proof.get("unification_id"),
-        "root": roots.get("evidence_merkle_root"),
+        "root": roots.get("claims_merkle_root"),
         "p": proof_path,
     }
 
@@ -178,7 +184,25 @@ def normalize_claim_status(status: str) -> str:
     status = status.upper()
     if status in STATUS_RANK:
         return status
-    return "NOTE"
+    raise UnificationProofError(f"unknown claim status: {status}")
+
+
+def validate_claim_set(claims: list[Mapping[str, Any]]) -> None:
+    seen: set[str] = set()
+    for claim in claims:
+        claim_id = str(claim.get("claim_id") or "")
+        if not claim_id:
+            raise UnificationProofError("claim_id is required")
+        if claim_id in seen:
+            raise UnificationProofError(f"duplicate claim_id: {claim_id}")
+        seen.add(claim_id)
+        validate_sha256(str(claim.get("subject_sha256") or ""), field=f"{claim_id}.subject_sha256")
+        normalize_claim_status(str(claim.get("status") or ""))
+
+
+def validate_sha256(value: str, *, field: str) -> None:
+    if len(value) != 64 or any(ch not in "0123456789abcdef" for ch in value):
+        raise UnificationProofError(f"{field} must be a lowercase 64-character SHA-256 hex value")
 
 
 def reason_codes_for_claim(layer_name: str, status: str, layer: Mapping[str, Any]) -> list[str]:

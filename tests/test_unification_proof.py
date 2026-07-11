@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 
 from spira_core.unification_proof import (
+    UnificationProofError,
     build_unification_proof,
     inclusion_proof,
     merkle_root,
@@ -67,7 +68,7 @@ def test_unification_id_changes_for_artifact_policy_or_claim_change():
     claim_changed = copy.deepcopy(decision)
     claim_changed["layers"]["per_layer"][0]["status"] = "BLOCK"
     claim_changed["layers"]["per_layer"][0]["source_verdict"] = "GRAPH_BLOCK"
-    assert build_unification_proof(summary, claim_changed)["roots"]["evidence_merkle_root"] != proof["roots"]["evidence_merkle_root"]
+    assert build_unification_proof(summary, claim_changed)["roots"]["claims_merkle_root"] != proof["roots"]["claims_merkle_root"]
 
 
 def test_unification_decision_matches_agent_action_contract():
@@ -81,6 +82,47 @@ def test_unification_decision_matches_agent_action_contract():
     assert proof["decision"]["reason_codes"] == summary["agent_action_contract"]["reason_codes"]
     assert proof["coverage"]["not_evaluated"] == ["spira.layer.pep740_offline_attestations"]
     assert proof["not_claimed"]
+
+
+def test_unification_rejects_unknown_claim_status():
+    summary = _summary()
+    decision = _decision()
+    decision["layers"]["per_layer"][0]["status"] = "TYPO_OK"
+
+    try:
+        build_unification_proof(summary, decision)
+    except UnificationProofError as error:
+        assert "unknown claim status" in str(error)
+    else:
+        raise AssertionError("expected UnificationProofError")
+
+
+def test_unification_rejects_missing_or_invalid_subject_hash():
+    summary = _summary()
+    decision = _decision()
+    summary["agent_action_contract"]["artifact_sha256"] = None
+    summary["agent_action_contract"]["artifact_set_sha256"] = None
+
+    try:
+        build_unification_proof(summary, decision)
+    except UnificationProofError as error:
+        assert "subject_sha256" in str(error)
+    else:
+        raise AssertionError("expected UnificationProofError")
+
+
+def test_unification_rejects_duplicate_claim_ids():
+    summary = _summary()
+    decision = _decision()
+    duplicate = copy.deepcopy(decision["layers"]["per_layer"][0])
+    decision["layers"]["per_layer"].append(duplicate)
+
+    try:
+        build_unification_proof(summary, decision)
+    except UnificationProofError as error:
+        assert "duplicate claim_id" in str(error)
+    else:
+        raise AssertionError("expected UnificationProofError")
 
 
 def _claim(claim_id: str, status: str) -> dict:

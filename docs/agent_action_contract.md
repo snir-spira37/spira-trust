@@ -69,7 +69,7 @@ includes an embedded action contract:
 }
 ```
 
-The full `unification_proof.json` binds typed claims, the evidence Merkle root,
+The full `unification_proof.json` binds typed claims, the claims Merkle root,
 policy/context hashes, decision semantics, and the action decision. It proves
 that this action came from this claim set and context. It does not prove that
 the artifact is safe. See [`unification_proof.md`](unification_proof.md).
