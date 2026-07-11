@@ -58,6 +58,7 @@ package_allowlist = [
   "spira_core.trust",
   "spira_core.trust_cli",
   "spira_core.trust_graph",
+  "spira_core.unification_proof",
   "spira_core.decision015",
   "spira_core.vendored_stone015",
 ]

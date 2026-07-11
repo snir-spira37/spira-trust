@@ -64,6 +64,7 @@ Use case:
 - [`docs/agent_context_tax.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/agent_context_tax.md) - static benchmark of how much release evidence context an agent must ingest to answer narrow gate questions.
 - [`docs/session_token_target_decision.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/session_token_target_decision.md) - decision retiring the 50% session-wide token target for SPIRA's current product scope.
 - [`docs/python_wheel_sbom_survey.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/python_wheel_sbom_survey.md) - PEP 770 embedded SBOM survey: scope, consistency, and static agent context cost.
+- [`docs/unification_proof.md`](https://github.com/snir-spira37/spira-trust/blob/main/docs/unification_proof.md) - proof-carrying action contract: typed claims, Merkle root, and unification ID without claiming the artifact is safe.
 
 From this repository:
 
@@ -110,6 +111,9 @@ what must be rerun; it does not execute verification.
 [Agent Action Contract](docs/agent_action_contract.md): a small deterministic
 surface with `stop`, `recommended_agent_action`, `reason_codes`, and evidence
 pointers so agents do not have to infer gate policy from broad reports.
+It also references `unification_proof.json`, which binds typed claims and the
+decision context to a reproducible `unification_id` for audit drill-down. This
+is a binding proof, not a safety proof.
 
 The command writes:
 

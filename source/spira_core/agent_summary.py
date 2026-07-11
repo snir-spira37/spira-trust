@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .combined_verdict import DECISION_SEMANTICS_VERSION, agent_default_decision, agent_reason_codes
+from .unification_proof import build_unification_proof, build_unification_reference
 
 
 AGENT_SUMMARY_SCHEMA = "SPIRA_AGENT_SUMMARY_V1"
@@ -33,6 +34,15 @@ def write_agent_summary(
         evidence_pack_path=evidence_pack_path,
         include_local_paths=include_local_paths,
     )
+    proof = build_unification_proof(summary, decision)
+    proof_path = output / "unification_proof.json"
+    proof_path.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+    summary["unification"] = build_unification_reference(
+        proof,
+        proof_path=_path_ref(proof_path, output, include_local_paths=include_local_paths),
+    )
+    if isinstance(graph_result, dict):
+        graph_result["unification_proof_path"] = str(proof_path.resolve())
     summary_path = output / "agent_summary.json"
     summary_path.write_text(_agent_json(summary) + "\n", encoding="utf-8", newline="\n")
     summary["agent_summary_path"] = str(summary_path.resolve())
@@ -97,7 +107,7 @@ def build_agent_summary(
         "not_evaluated": not_evaluated,
         "evidence": evidence.get("decision") or evidence.get("graph_report"),
     }
-    return {
+    summary = {
         "schema": AGENT_SUMMARY_SCHEMA,
         "schema_version": AGENT_SUMMARY_SCHEMA_VERSION,
         "created_at": _utc(),
@@ -143,6 +153,9 @@ def build_agent_summary(
             "approval metadata does not alter graph or combined verdicts",
         ],
     }
+    proof = build_unification_proof(summary, decision)
+    summary["unification"] = build_unification_reference(proof)
+    return summary
 
 
 def _write_state_copy(summary: Mapping[str, Any], *, state_dir: str | Path | None) -> None:

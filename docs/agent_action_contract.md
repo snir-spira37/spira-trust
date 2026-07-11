@@ -16,6 +16,7 @@ The agent action surface is smaller and deterministic:
 - `reason_codes`
 - `not_evaluated`
 - evidence pointers
+- compact unification proof reference
 
 The agent may explain the decision. It should not reinvent the artifact gate.
 
@@ -56,6 +57,23 @@ includes an embedded action contract:
 }
 ```
 
+`agent_summary.json` also includes a compact unification reference:
+
+```json
+{
+  "unification": {
+    "id": "...",
+    "root": "...",
+    "p": "unification_proof.json"
+  }
+}
+```
+
+The full `unification_proof.json` binds typed claims, the evidence Merkle root,
+policy/context hashes, decision semantics, and the action decision. It proves
+that this action came from this claim set and context. It does not prove that
+the artifact is safe. See [`unification_proof.md`](unification_proof.md).
+
 `policy_sha256` is `null` when no pinned policy context was supplied. A missing
 policy hash is reported as missing context, not silently treated as OK.
 
@@ -83,5 +101,6 @@ combined verdict is available. A `GRAPH_OK_WITH_NOTES` decision with no
 
 - This does not make the artifact safe.
 - This does not create new evidence.
+- This does not make a hash a safety claim.
 - This does not turn `NOT_EVALUATED` into OK.
 - This does not replace the full evidence pack for audit.

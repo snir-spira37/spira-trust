@@ -134,7 +134,24 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert summary["agent_action_contract"]["reason_codes"] == ["REPORT_NOT_EVALUATED"]
     assert summary["approval"]["approval_source"] == "unverified"
     assert summary["summary_of"]["command_fingerprint"] == result["command_fingerprint"]
+    assert summary["unification"]["id"]
+    assert summary["unification"]["root"]
+    assert summary["unification"]["p"] == "unification_proof.json"
     assert summary_path.stat().st_size < 3 * 1024
+    proof_path = out / "unification_proof.json"
+    assert proof_path.exists()
+    proof = json.loads(proof_path.read_text(encoding="utf-8"))
+    assert proof["schema"] == "SPIRA_UNIFICATION_PROOF_V1"
+    assert proof["unification_id"] == summary["unification"]["id"]
+    assert proof["roots"]["evidence_merkle_root"] == summary["unification"]["root"]
+    assert proof["decision"]["recommended_agent_action"] == summary["recommended_agent_action"]
+    assert proof["coverage"]["claim_count"] >= 1
+    from spira_core.decision_report import write_evidence_pack
+
+    pack = write_evidence_pack(result, decision, out / "pack.zip")
+    assert pack["entry_count"] >= 1
+    with zipfile.ZipFile(out / "pack.zip") as archive:
+        assert "unification_proof.json" in archive.namelist()
 
     status = build_agent_status([wheelhouse])
     assert status["counts"]["checked"] == 1

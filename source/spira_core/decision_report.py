@@ -239,6 +239,7 @@ def write_evidence_pack(
         ("spira-decision.json", decision.get("decision_json_path")),
         ("spira-decision.md", decision.get("decision_markdown_path")),
         ("agent_summary.json", graph_result.get("agent_summary_path")),
+        ("unification_proof.json", graph_result.get("unification_proof_path")),
     ]
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for arcname, source in candidates:
