@@ -1,0 +1,4846 @@
+{
+  "schema": "SPIRA_COUNTERFACTUAL_REPLAY_V1",
+  "created_at": "2026-07-11T21:33:27.514823Z",
+  "summary": {
+    "schema": "SPIRA_COUNTERFACTUAL_REPLAY_V1",
+    "session_id": "program_completion_stable_codex",
+    "project_class": "SPIRA_EVIDENCE_TOOLING",
+    "session_sha256": "bf650b5457c5be96e8ed2657f4c8d3c266076cdba3a4373c40d2efada1f4fb7c",
+    "source_bytes": 353081379,
+    "final_status": "NO_JUSTIFICATION_FOR_BROAD_ORCHESTRATOR_PILOT",
+    "replay_valid": true,
+    "invalid_reasons": [],
+    "actual_total_input_tokens": 2677208850,
+    "actual_fresh_input_tokens": 110755602,
+    "actual_cached_input_tokens": 2566453248,
+    "actual_output_tokens": 17573141,
+    "fresh_share_pct": 4.137,
+    "cached_share_pct": 95.863,
+    "event_count": 95496,
+    "usage_record_count": 21616,
+    "duplicate_usage_records_collapsed": 102,
+    "parse_error_count": 0,
+    "compaction_boundary_count": 676,
+    "allocation_method": "PROPORTIONAL_TO_MODEL_VISIBLE_UTF8_BYTES",
+    "allocated_fresh_tokens": 110755602.0,
+    "allocation_coverage_pct": 100.0,
+    "tool_answerability_classification_coverage_pct": 100.0,
+    "replacement_measurement_count": 0,
+    "lower_bound": {
+      "scenario": "lower_bound",
+      "included_event_count": 0,
+      "immediate_fresh_saving_tokens": 0.0,
+      "propagated_cached_prefix_saving_tokens": 0.0,
+      "total_token_volume_saving_tokens": 0.0,
+      "counterfactual_total_input_reduction_pct": 0.0,
+      "counterfactual_fresh_input_reduction_pct": 0.0,
+      "counterfactual_cached_prefix_reduction_pct": 0.0,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    },
+    "realistic_bound": {
+      "scenario": "realistic_bound",
+      "included_event_count": 0,
+      "immediate_fresh_saving_tokens": 0.0,
+      "propagated_cached_prefix_saving_tokens": 0.0,
+      "total_token_volume_saving_tokens": 0.0,
+      "counterfactual_total_input_reduction_pct": 0.0,
+      "counterfactual_fresh_input_reduction_pct": 0.0,
+      "counterfactual_cached_prefix_reduction_pct": 0.0,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    },
+    "upper_research_bound": {
+      "scenario": "upper_research_bound",
+      "included_event_count": 0,
+      "immediate_fresh_saving_tokens": 0.0,
+      "propagated_cached_prefix_saving_tokens": 0.0,
+      "total_token_volume_saving_tokens": 0.0,
+      "counterfactual_total_input_reduction_pct": 0.0,
+      "counterfactual_fresh_input_reduction_pct": 0.0,
+      "counterfactual_cached_prefix_reduction_pct": 0.0,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    }
+  },
+  "counters": {
+    "category_counts": {
+      "REASONING_OR_INSTRUCTIONS": 31820,
+      "USER_INSTRUCTION": 1763,
+      "TOOL_INVOCATION": 29152,
+      "STATE_DISCOVERY": 5821,
+      "GIT_OUTPUT": 171,
+      "OTHER": 21637,
+      "CODE_WRITE": 2936,
+      "CONTEXT_COMPACTION": 676,
+      "TEST_OUTPUT": 1520
+    },
+    "tool_answerability_counts": {
+      "NOT_TOOL_ANSWERABLE": 93805,
+      "BOUNDED_SUMMARY": 1691
+    },
+    "payload_type_counts": {
+      "message": 16868,
+      "user_message": 1763,
+      "agent_message": 14952,
+      "function_call": 26124,
+      "function_call_output": 26121,
+      "custom_tool_call": 3028,
+      "patch_apply_end": 2936,
+      "custom_tool_call_output": 3028,
+      "compacted": 338,
+      "context_compacted": 338
+    },
+    "safe_command_class_counts": {
+      "none": 71842,
+      "state_discovery": 5821,
+      "git": 171,
+      "other_command": 16142,
+      "test": 1520
+    },
+    "safe_path_class_counts": {
+      "none": 73788,
+      "other_path": 21708
+    }
+  },
+  "replacement_measurements": [],
+  "compactions": [
+    {
+      "boundary_id": "compaction-1280",
+      "sequence_index": 128020,
+      "record_index": 1280,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-1282",
+      "sequence_index": 128220,
+      "record_index": 1282,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-2080",
+      "sequence_index": 208020,
+      "record_index": 2080,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-2083",
+      "sequence_index": 208320,
+      "record_index": 2083,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-2322",
+      "sequence_index": 232220,
+      "record_index": 2322,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-2325",
+      "sequence_index": 232520,
+      "record_index": 2325,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-3123",
+      "sequence_index": 312320,
+      "record_index": 3123,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-3126",
+      "sequence_index": 312620,
+      "record_index": 3126,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-3979",
+      "sequence_index": 397920,
+      "record_index": 3979,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-3982",
+      "sequence_index": 398220,
+      "record_index": 3982,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-4728",
+      "sequence_index": 472820,
+      "record_index": 4728,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-4731",
+      "sequence_index": 473120,
+      "record_index": 4731,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-5336",
+      "sequence_index": 533620,
+      "record_index": 5336,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-5338",
+      "sequence_index": 533820,
+      "record_index": 5338,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-5865",
+      "sequence_index": 586520,
+      "record_index": 5865,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-5868",
+      "sequence_index": 586820,
+      "record_index": 5868,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-6296",
+      "sequence_index": 629620,
+      "record_index": 6296,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-6299",
+      "sequence_index": 629920,
+      "record_index": 6299,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-6681",
+      "sequence_index": 668120,
+      "record_index": 6681,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-6684",
+      "sequence_index": 668420,
+      "record_index": 6684,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-7427",
+      "sequence_index": 742720,
+      "record_index": 7427,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-7430",
+      "sequence_index": 743020,
+      "record_index": 7430,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-8052",
+      "sequence_index": 805220,
+      "record_index": 8052,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-8055",
+      "sequence_index": 805520,
+      "record_index": 8055,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-8634",
+      "sequence_index": 863420,
+      "record_index": 8634,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-8637",
+      "sequence_index": 863720,
+      "record_index": 8637,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-9266",
+      "sequence_index": 926620,
+      "record_index": 9266,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-9269",
+      "sequence_index": 926920,
+      "record_index": 9269,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-9820",
+      "sequence_index": 982020,
+      "record_index": 9820,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-9823",
+      "sequence_index": 982320,
+      "record_index": 9823,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-10400",
+      "sequence_index": 1040020,
+      "record_index": 10400,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-10403",
+      "sequence_index": 1040320,
+      "record_index": 10403,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-11660",
+      "sequence_index": 1166020,
+      "record_index": 11660,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-11663",
+      "sequence_index": 1166320,
+      "record_index": 11663,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-12475",
+      "sequence_index": 1247520,
+      "record_index": 12475,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-12478",
+      "sequence_index": 1247820,
+      "record_index": 12478,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-13337",
+      "sequence_index": 1333720,
+      "record_index": 13337,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-13340",
+      "sequence_index": 1334020,
+      "record_index": 13340,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-14476",
+      "sequence_index": 1447620,
+      "record_index": 14476,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-14479",
+      "sequence_index": 1447920,
+      "record_index": 14479,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-15375",
+      "sequence_index": 1537520,
+      "record_index": 15375,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-15378",
+      "sequence_index": 1537820,
+      "record_index": 15378,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-16139",
+      "sequence_index": 1613920,
+      "record_index": 16139,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-16142",
+      "sequence_index": 1614220,
+      "record_index": 16142,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-16937",
+      "sequence_index": 1693720,
+      "record_index": 16937,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-16940",
+      "sequence_index": 1694020,
+      "record_index": 16940,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-17731",
+      "sequence_index": 1773120,
+      "record_index": 17731,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-17733",
+      "sequence_index": 1773320,
+      "record_index": 17733,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-18515",
+      "sequence_index": 1851520,
+      "record_index": 18515,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-18518",
+      "sequence_index": 1851820,
+      "record_index": 18518,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-19154",
+      "sequence_index": 1915420,
+      "record_index": 19154,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-19157",
+      "sequence_index": 1915720,
+      "record_index": 19157,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-19918",
+      "sequence_index": 1991820,
+      "record_index": 19918,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-19921",
+      "sequence_index": 1992120,
+      "record_index": 19921,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-20420",
+      "sequence_index": 2042020,
+      "record_index": 20420,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-20423",
+      "sequence_index": 2042320,
+      "record_index": 20423,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-21259",
+      "sequence_index": 2125920,
+      "record_index": 21259,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-21262",
+      "sequence_index": 2126220,
+      "record_index": 21262,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-21823",
+      "sequence_index": 2182320,
+      "record_index": 21823,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-21826",
+      "sequence_index": 2182620,
+      "record_index": 21826,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-22748",
+      "sequence_index": 2274820,
+      "record_index": 22748,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-22751",
+      "sequence_index": 2275120,
+      "record_index": 22751,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-23532",
+      "sequence_index": 2353220,
+      "record_index": 23532,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-23535",
+      "sequence_index": 2353520,
+      "record_index": 23535,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-23991",
+      "sequence_index": 2399120,
+      "record_index": 23991,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-23994",
+      "sequence_index": 2399420,
+      "record_index": 23994,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-24601",
+      "sequence_index": 2460120,
+      "record_index": 24601,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-24604",
+      "sequence_index": 2460420,
+      "record_index": 24604,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-25737",
+      "sequence_index": 2573720,
+      "record_index": 25737,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-25740",
+      "sequence_index": 2574020,
+      "record_index": 25740,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26603",
+      "sequence_index": 2660320,
+      "record_index": 26603,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26605",
+      "sequence_index": 2660520,
+      "record_index": 26605,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26757",
+      "sequence_index": 2675720,
+      "record_index": 26757,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26760",
+      "sequence_index": 2676020,
+      "record_index": 26760,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26935",
+      "sequence_index": 2693520,
+      "record_index": 26935,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-26938",
+      "sequence_index": 2693820,
+      "record_index": 26938,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27191",
+      "sequence_index": 2719120,
+      "record_index": 27191,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27193",
+      "sequence_index": 2719320,
+      "record_index": 27193,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27469",
+      "sequence_index": 2746920,
+      "record_index": 27469,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27472",
+      "sequence_index": 2747220,
+      "record_index": 27472,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27669",
+      "sequence_index": 2766920,
+      "record_index": 27669,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27672",
+      "sequence_index": 2767220,
+      "record_index": 27672,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27929",
+      "sequence_index": 2792920,
+      "record_index": 27929,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-27932",
+      "sequence_index": 2793220,
+      "record_index": 27932,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28141",
+      "sequence_index": 2814120,
+      "record_index": 28141,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28144",
+      "sequence_index": 2814420,
+      "record_index": 28144,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28378",
+      "sequence_index": 2837820,
+      "record_index": 28378,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28381",
+      "sequence_index": 2838120,
+      "record_index": 28381,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28580",
+      "sequence_index": 2858020,
+      "record_index": 28580,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28583",
+      "sequence_index": 2858320,
+      "record_index": 28583,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28836",
+      "sequence_index": 2883620,
+      "record_index": 28836,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-28839",
+      "sequence_index": 2883920,
+      "record_index": 28839,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29174",
+      "sequence_index": 2917420,
+      "record_index": 29174,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29177",
+      "sequence_index": 2917720,
+      "record_index": 29177,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29443",
+      "sequence_index": 2944320,
+      "record_index": 29443,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29446",
+      "sequence_index": 2944620,
+      "record_index": 29446,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29874",
+      "sequence_index": 2987420,
+      "record_index": 29874,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-29877",
+      "sequence_index": 2987720,
+      "record_index": 29877,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30289",
+      "sequence_index": 3028920,
+      "record_index": 30289,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30292",
+      "sequence_index": 3029220,
+      "record_index": 30292,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30521",
+      "sequence_index": 3052120,
+      "record_index": 30521,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30524",
+      "sequence_index": 3052420,
+      "record_index": 30524,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30857",
+      "sequence_index": 3085720,
+      "record_index": 30857,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-30860",
+      "sequence_index": 3086020,
+      "record_index": 30860,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-31243",
+      "sequence_index": 3124320,
+      "record_index": 31243,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-31246",
+      "sequence_index": 3124620,
+      "record_index": 31246,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-31631",
+      "sequence_index": 3163120,
+      "record_index": 31631,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-31634",
+      "sequence_index": 3163420,
+      "record_index": 31634,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-32137",
+      "sequence_index": 3213720,
+      "record_index": 32137,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-32140",
+      "sequence_index": 3214020,
+      "record_index": 32140,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-32778",
+      "sequence_index": 3277820,
+      "record_index": 32778,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-32781",
+      "sequence_index": 3278120,
+      "record_index": 32781,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-33596",
+      "sequence_index": 3359620,
+      "record_index": 33596,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-33599",
+      "sequence_index": 3359920,
+      "record_index": 33599,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-34476",
+      "sequence_index": 3447620,
+      "record_index": 34476,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-34479",
+      "sequence_index": 3447920,
+      "record_index": 34479,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-35203",
+      "sequence_index": 3520320,
+      "record_index": 35203,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-35206",
+      "sequence_index": 3520620,
+      "record_index": 35206,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-35817",
+      "sequence_index": 3581720,
+      "record_index": 35817,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-35820",
+      "sequence_index": 3582020,
+      "record_index": 35820,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-36546",
+      "sequence_index": 3654620,
+      "record_index": 36546,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-36549",
+      "sequence_index": 3654920,
+      "record_index": 36549,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37103",
+      "sequence_index": 3710320,
+      "record_index": 37103,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37106",
+      "sequence_index": 3710620,
+      "record_index": 37106,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37228",
+      "sequence_index": 3722820,
+      "record_index": 37228,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37231",
+      "sequence_index": 3723120,
+      "record_index": 37231,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37375",
+      "sequence_index": 3737520,
+      "record_index": 37375,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37378",
+      "sequence_index": 3737820,
+      "record_index": 37378,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37573",
+      "sequence_index": 3757320,
+      "record_index": 37573,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37576",
+      "sequence_index": 3757620,
+      "record_index": 37576,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37774",
+      "sequence_index": 3777420,
+      "record_index": 37774,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37777",
+      "sequence_index": 3777720,
+      "record_index": 37777,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37965",
+      "sequence_index": 3796520,
+      "record_index": 37965,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-37968",
+      "sequence_index": 3796820,
+      "record_index": 37968,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38191",
+      "sequence_index": 3819120,
+      "record_index": 38191,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38194",
+      "sequence_index": 3819420,
+      "record_index": 38194,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38353",
+      "sequence_index": 3835320,
+      "record_index": 38353,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38356",
+      "sequence_index": 3835620,
+      "record_index": 38356,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38467",
+      "sequence_index": 3846720,
+      "record_index": 38467,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38470",
+      "sequence_index": 3847020,
+      "record_index": 38470,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38795",
+      "sequence_index": 3879520,
+      "record_index": 38795,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-38798",
+      "sequence_index": 3879820,
+      "record_index": 38798,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39056",
+      "sequence_index": 3905620,
+      "record_index": 39056,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39058",
+      "sequence_index": 3905820,
+      "record_index": 39058,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39335",
+      "sequence_index": 3933520,
+      "record_index": 39335,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39338",
+      "sequence_index": 3933820,
+      "record_index": 39338,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39647",
+      "sequence_index": 3964720,
+      "record_index": 39647,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39650",
+      "sequence_index": 3965020,
+      "record_index": 39650,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39859",
+      "sequence_index": 3985920,
+      "record_index": 39859,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-39862",
+      "sequence_index": 3986220,
+      "record_index": 39862,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40119",
+      "sequence_index": 4011920,
+      "record_index": 40119,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40122",
+      "sequence_index": 4012220,
+      "record_index": 40122,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40387",
+      "sequence_index": 4038720,
+      "record_index": 40387,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40390",
+      "sequence_index": 4039020,
+      "record_index": 40390,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40630",
+      "sequence_index": 4063020,
+      "record_index": 40630,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40633",
+      "sequence_index": 4063320,
+      "record_index": 40633,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40814",
+      "sequence_index": 4081420,
+      "record_index": 40814,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-40817",
+      "sequence_index": 4081720,
+      "record_index": 40817,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41024",
+      "sequence_index": 4102420,
+      "record_index": 41024,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41027",
+      "sequence_index": 4102720,
+      "record_index": 41027,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41415",
+      "sequence_index": 4141520,
+      "record_index": 41415,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41418",
+      "sequence_index": 4141820,
+      "record_index": 41418,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41672",
+      "sequence_index": 4167220,
+      "record_index": 41672,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41675",
+      "sequence_index": 4167520,
+      "record_index": 41675,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41959",
+      "sequence_index": 4195920,
+      "record_index": 41959,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-41962",
+      "sequence_index": 4196220,
+      "record_index": 41962,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42177",
+      "sequence_index": 4217720,
+      "record_index": 42177,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42180",
+      "sequence_index": 4218020,
+      "record_index": 42180,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42474",
+      "sequence_index": 4247420,
+      "record_index": 42474,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42477",
+      "sequence_index": 4247720,
+      "record_index": 42477,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42651",
+      "sequence_index": 4265120,
+      "record_index": 42651,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42654",
+      "sequence_index": 4265420,
+      "record_index": 42654,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42773",
+      "sequence_index": 4277320,
+      "record_index": 42773,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-42776",
+      "sequence_index": 4277620,
+      "record_index": 42776,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43013",
+      "sequence_index": 4301320,
+      "record_index": 43013,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43016",
+      "sequence_index": 4301620,
+      "record_index": 43016,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43243",
+      "sequence_index": 4324320,
+      "record_index": 43243,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43246",
+      "sequence_index": 4324620,
+      "record_index": 43246,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43532",
+      "sequence_index": 4353220,
+      "record_index": 43532,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43535",
+      "sequence_index": 4353520,
+      "record_index": 43535,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43698",
+      "sequence_index": 4369820,
+      "record_index": 43698,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43701",
+      "sequence_index": 4370120,
+      "record_index": 43701,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43896",
+      "sequence_index": 4389620,
+      "record_index": 43896,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-43899",
+      "sequence_index": 4389920,
+      "record_index": 43899,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44237",
+      "sequence_index": 4423720,
+      "record_index": 44237,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44240",
+      "sequence_index": 4424020,
+      "record_index": 44240,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44436",
+      "sequence_index": 4443620,
+      "record_index": 44436,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44439",
+      "sequence_index": 4443920,
+      "record_index": 44439,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44594",
+      "sequence_index": 4459420,
+      "record_index": 44594,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-44597",
+      "sequence_index": 4459720,
+      "record_index": 44597,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45090",
+      "sequence_index": 4509020,
+      "record_index": 45090,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45093",
+      "sequence_index": 4509320,
+      "record_index": 45093,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45232",
+      "sequence_index": 4523220,
+      "record_index": 45232,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45235",
+      "sequence_index": 4523520,
+      "record_index": 45235,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45441",
+      "sequence_index": 4544120,
+      "record_index": 45441,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45444",
+      "sequence_index": 4544420,
+      "record_index": 45444,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45660",
+      "sequence_index": 4566020,
+      "record_index": 45660,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-45663",
+      "sequence_index": 4566320,
+      "record_index": 45663,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46054",
+      "sequence_index": 4605420,
+      "record_index": 46054,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46057",
+      "sequence_index": 4605720,
+      "record_index": 46057,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46299",
+      "sequence_index": 4629920,
+      "record_index": 46299,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46302",
+      "sequence_index": 4630220,
+      "record_index": 46302,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46610",
+      "sequence_index": 4661020,
+      "record_index": 46610,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-46613",
+      "sequence_index": 4661320,
+      "record_index": 46613,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47009",
+      "sequence_index": 4700920,
+      "record_index": 47009,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47012",
+      "sequence_index": 4701220,
+      "record_index": 47012,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47324",
+      "sequence_index": 4732420,
+      "record_index": 47324,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47327",
+      "sequence_index": 4732720,
+      "record_index": 47327,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47550",
+      "sequence_index": 4755020,
+      "record_index": 47550,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47553",
+      "sequence_index": 4755320,
+      "record_index": 47553,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47797",
+      "sequence_index": 4779720,
+      "record_index": 47797,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-47800",
+      "sequence_index": 4780020,
+      "record_index": 47800,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48047",
+      "sequence_index": 4804720,
+      "record_index": 48047,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48050",
+      "sequence_index": 4805020,
+      "record_index": 48050,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48460",
+      "sequence_index": 4846020,
+      "record_index": 48460,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48463",
+      "sequence_index": 4846320,
+      "record_index": 48463,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48661",
+      "sequence_index": 4866120,
+      "record_index": 48661,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48664",
+      "sequence_index": 4866420,
+      "record_index": 48664,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48977",
+      "sequence_index": 4897720,
+      "record_index": 48977,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-48980",
+      "sequence_index": 4898020,
+      "record_index": 48980,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-49481",
+      "sequence_index": 4948120,
+      "record_index": 49481,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-49484",
+      "sequence_index": 4948420,
+      "record_index": 49484,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-49683",
+      "sequence_index": 4968320,
+      "record_index": 49683,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-49686",
+      "sequence_index": 4968620,
+      "record_index": 49686,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50224",
+      "sequence_index": 5022420,
+      "record_index": 50224,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50226",
+      "sequence_index": 5022620,
+      "record_index": 50226,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50461",
+      "sequence_index": 5046120,
+      "record_index": 50461,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50464",
+      "sequence_index": 5046420,
+      "record_index": 50464,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50630",
+      "sequence_index": 5063020,
+      "record_index": 50630,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50633",
+      "sequence_index": 5063320,
+      "record_index": 50633,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50916",
+      "sequence_index": 5091620,
+      "record_index": 50916,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-50919",
+      "sequence_index": 5091920,
+      "record_index": 50919,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-51487",
+      "sequence_index": 5148720,
+      "record_index": 51487,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-51490",
+      "sequence_index": 5149020,
+      "record_index": 51490,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-52361",
+      "sequence_index": 5236120,
+      "record_index": 52361,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-52364",
+      "sequence_index": 5236420,
+      "record_index": 52364,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-52964",
+      "sequence_index": 5296420,
+      "record_index": 52964,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-52967",
+      "sequence_index": 5296720,
+      "record_index": 52967,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-53588",
+      "sequence_index": 5358820,
+      "record_index": 53588,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-53591",
+      "sequence_index": 5359120,
+      "record_index": 53591,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-54053",
+      "sequence_index": 5405320,
+      "record_index": 54053,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-54056",
+      "sequence_index": 5405620,
+      "record_index": 54056,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-54873",
+      "sequence_index": 5487320,
+      "record_index": 54873,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-54876",
+      "sequence_index": 5487620,
+      "record_index": 54876,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-55711",
+      "sequence_index": 5571120,
+      "record_index": 55711,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-55714",
+      "sequence_index": 5571420,
+      "record_index": 55714,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-56503",
+      "sequence_index": 5650320,
+      "record_index": 56503,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-56506",
+      "sequence_index": 5650620,
+      "record_index": 56506,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-56991",
+      "sequence_index": 5699120,
+      "record_index": 56991,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-56994",
+      "sequence_index": 5699420,
+      "record_index": 56994,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-57790",
+      "sequence_index": 5779020,
+      "record_index": 57790,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-57793",
+      "sequence_index": 5779320,
+      "record_index": 57793,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-58837",
+      "sequence_index": 5883720,
+      "record_index": 58837,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-58840",
+      "sequence_index": 5884020,
+      "record_index": 58840,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-59774",
+      "sequence_index": 5977420,
+      "record_index": 59774,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-59777",
+      "sequence_index": 5977720,
+      "record_index": 59777,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-60915",
+      "sequence_index": 6091520,
+      "record_index": 60915,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-60918",
+      "sequence_index": 6091820,
+      "record_index": 60918,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-62010",
+      "sequence_index": 6201020,
+      "record_index": 62010,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-62013",
+      "sequence_index": 6201320,
+      "record_index": 62013,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-63366",
+      "sequence_index": 6336620,
+      "record_index": 63366,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-63369",
+      "sequence_index": 6336920,
+      "record_index": 63369,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-64379",
+      "sequence_index": 6437920,
+      "record_index": 64379,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-64382",
+      "sequence_index": 6438220,
+      "record_index": 64382,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-65424",
+      "sequence_index": 6542420,
+      "record_index": 65424,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-65427",
+      "sequence_index": 6542720,
+      "record_index": 65427,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-66217",
+      "sequence_index": 6621720,
+      "record_index": 66217,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-66220",
+      "sequence_index": 6622020,
+      "record_index": 66220,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-66836",
+      "sequence_index": 6683620,
+      "record_index": 66836,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-66839",
+      "sequence_index": 6683920,
+      "record_index": 66839,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-67334",
+      "sequence_index": 6733420,
+      "record_index": 67334,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-67337",
+      "sequence_index": 6733720,
+      "record_index": 67337,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-67962",
+      "sequence_index": 6796220,
+      "record_index": 67962,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-67965",
+      "sequence_index": 6796520,
+      "record_index": 67965,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-68442",
+      "sequence_index": 6844220,
+      "record_index": 68442,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-68445",
+      "sequence_index": 6844520,
+      "record_index": 68445,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-68926",
+      "sequence_index": 6892620,
+      "record_index": 68926,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-68929",
+      "sequence_index": 6892920,
+      "record_index": 68929,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-69414",
+      "sequence_index": 6941420,
+      "record_index": 69414,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-69417",
+      "sequence_index": 6941720,
+      "record_index": 69417,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-70174",
+      "sequence_index": 7017420,
+      "record_index": 70174,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-70177",
+      "sequence_index": 7017720,
+      "record_index": 70177,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-70771",
+      "sequence_index": 7077120,
+      "record_index": 70771,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-70774",
+      "sequence_index": 7077420,
+      "record_index": 70774,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-71506",
+      "sequence_index": 7150620,
+      "record_index": 71506,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-71509",
+      "sequence_index": 7150920,
+      "record_index": 71509,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-72088",
+      "sequence_index": 7208820,
+      "record_index": 72088,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-72091",
+      "sequence_index": 7209120,
+      "record_index": 72091,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-72651",
+      "sequence_index": 7265120,
+      "record_index": 72651,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-72654",
+      "sequence_index": 7265420,
+      "record_index": 72654,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-73386",
+      "sequence_index": 7338620,
+      "record_index": 73386,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-73389",
+      "sequence_index": 7338920,
+      "record_index": 73389,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-74089",
+      "sequence_index": 7408920,
+      "record_index": 74089,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-74092",
+      "sequence_index": 7409220,
+      "record_index": 74092,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-75159",
+      "sequence_index": 7515920,
+      "record_index": 75159,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-75162",
+      "sequence_index": 7516220,
+      "record_index": 75162,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-75838",
+      "sequence_index": 7583820,
+      "record_index": 75838,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-75841",
+      "sequence_index": 7584120,
+      "record_index": 75841,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-76407",
+      "sequence_index": 7640720,
+      "record_index": 76407,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-76410",
+      "sequence_index": 7641020,
+      "record_index": 76410,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-77214",
+      "sequence_index": 7721420,
+      "record_index": 77214,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-77217",
+      "sequence_index": 7721720,
+      "record_index": 77217,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-77799",
+      "sequence_index": 7779920,
+      "record_index": 77799,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-77802",
+      "sequence_index": 7780220,
+      "record_index": 77802,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-78665",
+      "sequence_index": 7866520,
+      "record_index": 78665,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-78668",
+      "sequence_index": 7866820,
+      "record_index": 78668,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79371",
+      "sequence_index": 7937120,
+      "record_index": 79371,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79374",
+      "sequence_index": 7937420,
+      "record_index": 79374,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79609",
+      "sequence_index": 7960920,
+      "record_index": 79609,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79612",
+      "sequence_index": 7961220,
+      "record_index": 79612,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79842",
+      "sequence_index": 7984220,
+      "record_index": 79842,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79845",
+      "sequence_index": 7984520,
+      "record_index": 79845,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79985",
+      "sequence_index": 7998520,
+      "record_index": 79985,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-79988",
+      "sequence_index": 7998820,
+      "record_index": 79988,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80229",
+      "sequence_index": 8022920,
+      "record_index": 80229,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80231",
+      "sequence_index": 8023120,
+      "record_index": 80231,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80486",
+      "sequence_index": 8048620,
+      "record_index": 80486,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80489",
+      "sequence_index": 8048920,
+      "record_index": 80489,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80612",
+      "sequence_index": 8061220,
+      "record_index": 80612,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80615",
+      "sequence_index": 8061520,
+      "record_index": 80615,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80866",
+      "sequence_index": 8086620,
+      "record_index": 80866,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-80869",
+      "sequence_index": 8086920,
+      "record_index": 80869,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81079",
+      "sequence_index": 8107920,
+      "record_index": 81079,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81082",
+      "sequence_index": 8108220,
+      "record_index": 81082,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81254",
+      "sequence_index": 8125420,
+      "record_index": 81254,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81257",
+      "sequence_index": 8125720,
+      "record_index": 81257,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81374",
+      "sequence_index": 8137420,
+      "record_index": 81374,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81377",
+      "sequence_index": 8137720,
+      "record_index": 81377,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81517",
+      "sequence_index": 8151720,
+      "record_index": 81517,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81520",
+      "sequence_index": 8152020,
+      "record_index": 81520,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81659",
+      "sequence_index": 8165920,
+      "record_index": 81659,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81662",
+      "sequence_index": 8166220,
+      "record_index": 81662,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81800",
+      "sequence_index": 8180020,
+      "record_index": 81800,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81803",
+      "sequence_index": 8180320,
+      "record_index": 81803,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81904",
+      "sequence_index": 8190420,
+      "record_index": 81904,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81907",
+      "sequence_index": 8190720,
+      "record_index": 81907,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81966",
+      "sequence_index": 8196620,
+      "record_index": 81966,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-81969",
+      "sequence_index": 8196920,
+      "record_index": 81969,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82107",
+      "sequence_index": 8210720,
+      "record_index": 82107,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82110",
+      "sequence_index": 8211020,
+      "record_index": 82110,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82211",
+      "sequence_index": 8221120,
+      "record_index": 82211,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82214",
+      "sequence_index": 8221420,
+      "record_index": 82214,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82271",
+      "sequence_index": 8227120,
+      "record_index": 82271,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82274",
+      "sequence_index": 8227420,
+      "record_index": 82274,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82398",
+      "sequence_index": 8239820,
+      "record_index": 82398,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82401",
+      "sequence_index": 8240120,
+      "record_index": 82401,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82480",
+      "sequence_index": 8248020,
+      "record_index": 82480,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82483",
+      "sequence_index": 8248320,
+      "record_index": 82483,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82584",
+      "sequence_index": 8258420,
+      "record_index": 82584,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82587",
+      "sequence_index": 8258720,
+      "record_index": 82587,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82674",
+      "sequence_index": 8267420,
+      "record_index": 82674,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82677",
+      "sequence_index": 8267720,
+      "record_index": 82677,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82763",
+      "sequence_index": 8276320,
+      "record_index": 82763,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82766",
+      "sequence_index": 8276620,
+      "record_index": 82766,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82865",
+      "sequence_index": 8286520,
+      "record_index": 82865,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82868",
+      "sequence_index": 8286820,
+      "record_index": 82868,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82957",
+      "sequence_index": 8295720,
+      "record_index": 82957,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-82960",
+      "sequence_index": 8296020,
+      "record_index": 82960,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83020",
+      "sequence_index": 8302020,
+      "record_index": 83020,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83023",
+      "sequence_index": 8302320,
+      "record_index": 83023,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83104",
+      "sequence_index": 8310420,
+      "record_index": 83104,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83107",
+      "sequence_index": 8310720,
+      "record_index": 83107,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83211",
+      "sequence_index": 8321120,
+      "record_index": 83211,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83214",
+      "sequence_index": 8321420,
+      "record_index": 83214,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83289",
+      "sequence_index": 8328920,
+      "record_index": 83289,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83292",
+      "sequence_index": 8329220,
+      "record_index": 83292,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83373",
+      "sequence_index": 8337320,
+      "record_index": 83373,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83376",
+      "sequence_index": 8337620,
+      "record_index": 83376,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83443",
+      "sequence_index": 8344320,
+      "record_index": 83443,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83446",
+      "sequence_index": 8344620,
+      "record_index": 83446,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83569",
+      "sequence_index": 8356920,
+      "record_index": 83569,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83572",
+      "sequence_index": 8357220,
+      "record_index": 83572,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83665",
+      "sequence_index": 8366520,
+      "record_index": 83665,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83668",
+      "sequence_index": 8366820,
+      "record_index": 83668,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83718",
+      "sequence_index": 8371820,
+      "record_index": 83718,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83721",
+      "sequence_index": 8372120,
+      "record_index": 83721,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83803",
+      "sequence_index": 8380320,
+      "record_index": 83803,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83806",
+      "sequence_index": 8380620,
+      "record_index": 83806,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83873",
+      "sequence_index": 8387320,
+      "record_index": 83873,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83876",
+      "sequence_index": 8387620,
+      "record_index": 83876,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83931",
+      "sequence_index": 8393120,
+      "record_index": 83931,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-83934",
+      "sequence_index": 8393420,
+      "record_index": 83934,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84008",
+      "sequence_index": 8400820,
+      "record_index": 84008,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84011",
+      "sequence_index": 8401120,
+      "record_index": 84011,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84066",
+      "sequence_index": 8406620,
+      "record_index": 84066,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84069",
+      "sequence_index": 8406920,
+      "record_index": 84069,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84135",
+      "sequence_index": 8413520,
+      "record_index": 84135,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84138",
+      "sequence_index": 8413820,
+      "record_index": 84138,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84208",
+      "sequence_index": 8420820,
+      "record_index": 84208,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84211",
+      "sequence_index": 8421120,
+      "record_index": 84211,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84266",
+      "sequence_index": 8426620,
+      "record_index": 84266,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84269",
+      "sequence_index": 8426920,
+      "record_index": 84269,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84346",
+      "sequence_index": 8434620,
+      "record_index": 84346,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84349",
+      "sequence_index": 8434920,
+      "record_index": 84349,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84453",
+      "sequence_index": 8445320,
+      "record_index": 84453,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84456",
+      "sequence_index": 8445620,
+      "record_index": 84456,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84551",
+      "sequence_index": 8455120,
+      "record_index": 84551,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84554",
+      "sequence_index": 8455420,
+      "record_index": 84554,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84646",
+      "sequence_index": 8464620,
+      "record_index": 84646,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84649",
+      "sequence_index": 8464920,
+      "record_index": 84649,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84710",
+      "sequence_index": 8471020,
+      "record_index": 84710,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84713",
+      "sequence_index": 8471320,
+      "record_index": 84713,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84770",
+      "sequence_index": 8477020,
+      "record_index": 84770,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84773",
+      "sequence_index": 8477320,
+      "record_index": 84773,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84836",
+      "sequence_index": 8483620,
+      "record_index": 84836,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84839",
+      "sequence_index": 8483920,
+      "record_index": 84839,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84912",
+      "sequence_index": 8491220,
+      "record_index": 84912,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84915",
+      "sequence_index": 8491520,
+      "record_index": 84915,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84966",
+      "sequence_index": 8496620,
+      "record_index": 84966,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-84969",
+      "sequence_index": 8496920,
+      "record_index": 84969,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85074",
+      "sequence_index": 8507420,
+      "record_index": 85074,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85077",
+      "sequence_index": 8507720,
+      "record_index": 85077,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85208",
+      "sequence_index": 8520820,
+      "record_index": 85208,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85211",
+      "sequence_index": 8521120,
+      "record_index": 85211,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85246",
+      "sequence_index": 8524620,
+      "record_index": 85246,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85249",
+      "sequence_index": 8524920,
+      "record_index": 85249,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85337",
+      "sequence_index": 8533720,
+      "record_index": 85337,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85340",
+      "sequence_index": 8534020,
+      "record_index": 85340,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85437",
+      "sequence_index": 8543720,
+      "record_index": 85437,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85440",
+      "sequence_index": 8544020,
+      "record_index": 85440,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85515",
+      "sequence_index": 8551520,
+      "record_index": 85515,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85518",
+      "sequence_index": 8551820,
+      "record_index": 85518,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85603",
+      "sequence_index": 8560320,
+      "record_index": 85603,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85606",
+      "sequence_index": 8560620,
+      "record_index": 85606,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85692",
+      "sequence_index": 8569220,
+      "record_index": 85692,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85695",
+      "sequence_index": 8569520,
+      "record_index": 85695,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85754",
+      "sequence_index": 8575420,
+      "record_index": 85754,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85757",
+      "sequence_index": 8575720,
+      "record_index": 85757,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85867",
+      "sequence_index": 8586720,
+      "record_index": 85867,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85870",
+      "sequence_index": 8587020,
+      "record_index": 85870,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85928",
+      "sequence_index": 8592820,
+      "record_index": 85928,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-85931",
+      "sequence_index": 8593120,
+      "record_index": 85931,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86083",
+      "sequence_index": 8608320,
+      "record_index": 86083,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86086",
+      "sequence_index": 8608620,
+      "record_index": 86086,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86197",
+      "sequence_index": 8619720,
+      "record_index": 86197,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86200",
+      "sequence_index": 8620020,
+      "record_index": 86200,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86308",
+      "sequence_index": 8630820,
+      "record_index": 86308,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86311",
+      "sequence_index": 8631120,
+      "record_index": 86311,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86481",
+      "sequence_index": 8648120,
+      "record_index": 86481,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86484",
+      "sequence_index": 8648420,
+      "record_index": 86484,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86591",
+      "sequence_index": 8659120,
+      "record_index": 86591,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86594",
+      "sequence_index": 8659420,
+      "record_index": 86594,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86751",
+      "sequence_index": 8675120,
+      "record_index": 86751,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86754",
+      "sequence_index": 8675420,
+      "record_index": 86754,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86892",
+      "sequence_index": 8689220,
+      "record_index": 86892,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86895",
+      "sequence_index": 8689520,
+      "record_index": 86895,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86964",
+      "sequence_index": 8696420,
+      "record_index": 86964,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-86967",
+      "sequence_index": 8696720,
+      "record_index": 86967,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87019",
+      "sequence_index": 8701920,
+      "record_index": 87019,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87022",
+      "sequence_index": 8702220,
+      "record_index": 87022,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87152",
+      "sequence_index": 8715220,
+      "record_index": 87152,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87155",
+      "sequence_index": 8715520,
+      "record_index": 87155,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87279",
+      "sequence_index": 8727920,
+      "record_index": 87279,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87282",
+      "sequence_index": 8728220,
+      "record_index": 87282,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87371",
+      "sequence_index": 8737120,
+      "record_index": 87371,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87374",
+      "sequence_index": 8737420,
+      "record_index": 87374,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87474",
+      "sequence_index": 8747420,
+      "record_index": 87474,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87477",
+      "sequence_index": 8747720,
+      "record_index": 87477,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87546",
+      "sequence_index": 8754620,
+      "record_index": 87546,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87549",
+      "sequence_index": 8754920,
+      "record_index": 87549,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87620",
+      "sequence_index": 8762020,
+      "record_index": 87620,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87623",
+      "sequence_index": 8762320,
+      "record_index": 87623,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87739",
+      "sequence_index": 8773920,
+      "record_index": 87739,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87742",
+      "sequence_index": 8774220,
+      "record_index": 87742,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87819",
+      "sequence_index": 8781920,
+      "record_index": 87819,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87822",
+      "sequence_index": 8782220,
+      "record_index": 87822,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87944",
+      "sequence_index": 8794420,
+      "record_index": 87944,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-87947",
+      "sequence_index": 8794720,
+      "record_index": 87947,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88016",
+      "sequence_index": 8801620,
+      "record_index": 88016,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88019",
+      "sequence_index": 8801920,
+      "record_index": 88019,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88099",
+      "sequence_index": 8809920,
+      "record_index": 88099,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88102",
+      "sequence_index": 8810220,
+      "record_index": 88102,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88183",
+      "sequence_index": 8818320,
+      "record_index": 88183,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88186",
+      "sequence_index": 8818620,
+      "record_index": 88186,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88246",
+      "sequence_index": 8824620,
+      "record_index": 88246,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88249",
+      "sequence_index": 8824920,
+      "record_index": 88249,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88318",
+      "sequence_index": 8831820,
+      "record_index": 88318,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88321",
+      "sequence_index": 8832120,
+      "record_index": 88321,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88403",
+      "sequence_index": 8840320,
+      "record_index": 88403,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88406",
+      "sequence_index": 8840620,
+      "record_index": 88406,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88491",
+      "sequence_index": 8849120,
+      "record_index": 88491,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88494",
+      "sequence_index": 8849420,
+      "record_index": 88494,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88571",
+      "sequence_index": 8857120,
+      "record_index": 88571,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88574",
+      "sequence_index": 8857420,
+      "record_index": 88574,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88676",
+      "sequence_index": 8867620,
+      "record_index": 88676,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88679",
+      "sequence_index": 8867920,
+      "record_index": 88679,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88780",
+      "sequence_index": 8878020,
+      "record_index": 88780,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88783",
+      "sequence_index": 8878320,
+      "record_index": 88783,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88886",
+      "sequence_index": 8888620,
+      "record_index": 88886,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88889",
+      "sequence_index": 8888920,
+      "record_index": 88889,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88991",
+      "sequence_index": 8899120,
+      "record_index": 88991,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-88994",
+      "sequence_index": 8899420,
+      "record_index": 88994,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89106",
+      "sequence_index": 8910620,
+      "record_index": 89106,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89109",
+      "sequence_index": 8910920,
+      "record_index": 89109,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89225",
+      "sequence_index": 8922520,
+      "record_index": 89225,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89228",
+      "sequence_index": 8922820,
+      "record_index": 89228,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89371",
+      "sequence_index": 8937120,
+      "record_index": 89371,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89374",
+      "sequence_index": 8937420,
+      "record_index": 89374,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89437",
+      "sequence_index": 8943720,
+      "record_index": 89437,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89440",
+      "sequence_index": 8944020,
+      "record_index": 89440,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89507",
+      "sequence_index": 8950720,
+      "record_index": 89507,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89510",
+      "sequence_index": 8951020,
+      "record_index": 89510,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89579",
+      "sequence_index": 8957920,
+      "record_index": 89579,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89582",
+      "sequence_index": 8958220,
+      "record_index": 89582,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89709",
+      "sequence_index": 8970920,
+      "record_index": 89709,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89712",
+      "sequence_index": 8971220,
+      "record_index": 89712,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89848",
+      "sequence_index": 8984820,
+      "record_index": 89848,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89851",
+      "sequence_index": 8985120,
+      "record_index": 89851,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89948",
+      "sequence_index": 8994820,
+      "record_index": 89948,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-89951",
+      "sequence_index": 8995120,
+      "record_index": 89951,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90033",
+      "sequence_index": 9003320,
+      "record_index": 90033,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90036",
+      "sequence_index": 9003620,
+      "record_index": 90036,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90097",
+      "sequence_index": 9009720,
+      "record_index": 90097,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90100",
+      "sequence_index": 9010020,
+      "record_index": 90100,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90776",
+      "sequence_index": 9077620,
+      "record_index": 90776,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-90779",
+      "sequence_index": 9077920,
+      "record_index": 90779,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-91040",
+      "sequence_index": 9104020,
+      "record_index": 91040,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-91043",
+      "sequence_index": 9104320,
+      "record_index": 91043,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-91633",
+      "sequence_index": 9163320,
+      "record_index": 91633,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-91636",
+      "sequence_index": 9163620,
+      "record_index": 91636,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-92259",
+      "sequence_index": 9225920,
+      "record_index": 92259,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-92262",
+      "sequence_index": 9226220,
+      "record_index": 92262,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-92757",
+      "sequence_index": 9275720,
+      "record_index": 92757,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-92760",
+      "sequence_index": 9276020,
+      "record_index": 92760,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-93869",
+      "sequence_index": 9386920,
+      "record_index": 93869,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-93872",
+      "sequence_index": 9387220,
+      "record_index": 93872,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-94713",
+      "sequence_index": 9471320,
+      "record_index": 94713,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-94716",
+      "sequence_index": 9471620,
+      "record_index": 94716,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-94901",
+      "sequence_index": 9490120,
+      "record_index": 94901,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-94903",
+      "sequence_index": 9490320,
+      "record_index": 94903,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-95755",
+      "sequence_index": 9575520,
+      "record_index": 95755,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-95758",
+      "sequence_index": 9575820,
+      "record_index": 95758,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-96336",
+      "sequence_index": 9633620,
+      "record_index": 96336,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-96339",
+      "sequence_index": 9633920,
+      "record_index": 96339,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-96900",
+      "sequence_index": 9690020,
+      "record_index": 96900,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-96903",
+      "sequence_index": 9690320,
+      "record_index": 96903,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-97323",
+      "sequence_index": 9732320,
+      "record_index": 97323,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-97326",
+      "sequence_index": 9732620,
+      "record_index": 97326,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-97880",
+      "sequence_index": 9788020,
+      "record_index": 97880,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-97883",
+      "sequence_index": 9788320,
+      "record_index": 97883,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-98370",
+      "sequence_index": 9837020,
+      "record_index": 98370,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-98373",
+      "sequence_index": 9837320,
+      "record_index": 98373,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-98894",
+      "sequence_index": 9889420,
+      "record_index": 98894,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-98897",
+      "sequence_index": 9889720,
+      "record_index": 98897,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-99465",
+      "sequence_index": 9946520,
+      "record_index": 99465,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-99468",
+      "sequence_index": 9946820,
+      "record_index": 99468,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-99949",
+      "sequence_index": 9994920,
+      "record_index": 99949,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-99952",
+      "sequence_index": 9995220,
+      "record_index": 99952,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-100241",
+      "sequence_index": 10024120,
+      "record_index": 100241,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-100244",
+      "sequence_index": 10024420,
+      "record_index": 100244,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-100581",
+      "sequence_index": 10058120,
+      "record_index": 100581,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-100584",
+      "sequence_index": 10058420,
+      "record_index": 100584,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-101195",
+      "sequence_index": 10119520,
+      "record_index": 101195,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-101198",
+      "sequence_index": 10119820,
+      "record_index": 101198,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-101759",
+      "sequence_index": 10175920,
+      "record_index": 101759,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-101762",
+      "sequence_index": 10176220,
+      "record_index": 101762,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-102426",
+      "sequence_index": 10242620,
+      "record_index": 102426,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-102429",
+      "sequence_index": 10242920,
+      "record_index": 102429,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-103041",
+      "sequence_index": 10304120,
+      "record_index": 103041,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-103044",
+      "sequence_index": 10304420,
+      "record_index": 103044,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-103902",
+      "sequence_index": 10390220,
+      "record_index": 103902,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-103905",
+      "sequence_index": 10390520,
+      "record_index": 103905,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-104367",
+      "sequence_index": 10436720,
+      "record_index": 104367,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-104370",
+      "sequence_index": 10437020,
+      "record_index": 104370,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-104998",
+      "sequence_index": 10499820,
+      "record_index": 104998,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-105001",
+      "sequence_index": 10500120,
+      "record_index": 105001,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-105455",
+      "sequence_index": 10545520,
+      "record_index": 105455,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-105458",
+      "sequence_index": 10545820,
+      "record_index": 105458,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-105846",
+      "sequence_index": 10584620,
+      "record_index": 105846,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-105849",
+      "sequence_index": 10584920,
+      "record_index": 105849,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-106565",
+      "sequence_index": 10656520,
+      "record_index": 106565,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-106568",
+      "sequence_index": 10656820,
+      "record_index": 106568,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-107139",
+      "sequence_index": 10713920,
+      "record_index": 107139,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-107142",
+      "sequence_index": 10714220,
+      "record_index": 107142,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-107775",
+      "sequence_index": 10777520,
+      "record_index": 107775,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-107778",
+      "sequence_index": 10777820,
+      "record_index": 107778,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-108386",
+      "sequence_index": 10838620,
+      "record_index": 108386,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-108389",
+      "sequence_index": 10838920,
+      "record_index": 108389,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-108845",
+      "sequence_index": 10884520,
+      "record_index": 108845,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-108848",
+      "sequence_index": 10884820,
+      "record_index": 108848,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-109142",
+      "sequence_index": 10914220,
+      "record_index": 109142,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-109145",
+      "sequence_index": 10914520,
+      "record_index": 109145,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-109623",
+      "sequence_index": 10962320,
+      "record_index": 109623,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-109626",
+      "sequence_index": 10962620,
+      "record_index": 109626,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-110060",
+      "sequence_index": 11006020,
+      "record_index": 110060,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-110063",
+      "sequence_index": 11006320,
+      "record_index": 110063,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-110701",
+      "sequence_index": 11070120,
+      "record_index": 110701,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-110704",
+      "sequence_index": 11070420,
+      "record_index": 110704,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-111108",
+      "sequence_index": 11110820,
+      "record_index": 111108,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-111111",
+      "sequence_index": 11111120,
+      "record_index": 111111,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-111513",
+      "sequence_index": 11151320,
+      "record_index": 111513,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-111516",
+      "sequence_index": 11151620,
+      "record_index": 111516,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112203",
+      "sequence_index": 11220320,
+      "record_index": 112203,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112206",
+      "sequence_index": 11220620,
+      "record_index": 112206,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112562",
+      "sequence_index": 11256220,
+      "record_index": 112562,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112565",
+      "sequence_index": 11256520,
+      "record_index": 112565,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112849",
+      "sequence_index": 11284920,
+      "record_index": 112849,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-112852",
+      "sequence_index": 11285220,
+      "record_index": 112852,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-113223",
+      "sequence_index": 11322320,
+      "record_index": 113223,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-113226",
+      "sequence_index": 11322620,
+      "record_index": 113226,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-113972",
+      "sequence_index": 11397220,
+      "record_index": 113972,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-113975",
+      "sequence_index": 11397520,
+      "record_index": 113975,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114259",
+      "sequence_index": 11425920,
+      "record_index": 114259,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114262",
+      "sequence_index": 11426220,
+      "record_index": 114262,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114467",
+      "sequence_index": 11446720,
+      "record_index": 114467,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114470",
+      "sequence_index": 11447020,
+      "record_index": 114470,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114934",
+      "sequence_index": 11493420,
+      "record_index": 114934,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-114937",
+      "sequence_index": 11493720,
+      "record_index": 114937,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-115507",
+      "sequence_index": 11550720,
+      "record_index": 115507,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-115510",
+      "sequence_index": 11551020,
+      "record_index": 115510,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-115982",
+      "sequence_index": 11598220,
+      "record_index": 115982,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-115985",
+      "sequence_index": 11598520,
+      "record_index": 115985,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-116507",
+      "sequence_index": 11650720,
+      "record_index": 116507,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-116510",
+      "sequence_index": 11651020,
+      "record_index": 116510,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-116896",
+      "sequence_index": 11689620,
+      "record_index": 116896,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-116899",
+      "sequence_index": 11689920,
+      "record_index": 116899,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-117518",
+      "sequence_index": 11751820,
+      "record_index": 117518,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-117521",
+      "sequence_index": 11752120,
+      "record_index": 117521,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-117962",
+      "sequence_index": 11796220,
+      "record_index": 117962,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-117965",
+      "sequence_index": 11796520,
+      "record_index": 117965,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-118483",
+      "sequence_index": 11848320,
+      "record_index": 118483,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-118486",
+      "sequence_index": 11848620,
+      "record_index": 118486,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-118825",
+      "sequence_index": 11882520,
+      "record_index": 118825,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-118828",
+      "sequence_index": 11882820,
+      "record_index": 118828,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-119237",
+      "sequence_index": 11923720,
+      "record_index": 119237,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-119240",
+      "sequence_index": 11924020,
+      "record_index": 119240,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-119854",
+      "sequence_index": 11985420,
+      "record_index": 119854,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-119857",
+      "sequence_index": 11985720,
+      "record_index": 119857,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-120410",
+      "sequence_index": 12041020,
+      "record_index": 120410,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-120413",
+      "sequence_index": 12041320,
+      "record_index": 120413,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-120947",
+      "sequence_index": 12094720,
+      "record_index": 120947,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-120950",
+      "sequence_index": 12095020,
+      "record_index": 120950,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-121420",
+      "sequence_index": 12142020,
+      "record_index": 121420,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-121423",
+      "sequence_index": 12142320,
+      "record_index": 121423,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-122207",
+      "sequence_index": 12220720,
+      "record_index": 122207,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-122210",
+      "sequence_index": 12221020,
+      "record_index": 122210,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-122882",
+      "sequence_index": 12288220,
+      "record_index": 122882,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-122885",
+      "sequence_index": 12288520,
+      "record_index": 122885,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-123630",
+      "sequence_index": 12363020,
+      "record_index": 123630,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-123633",
+      "sequence_index": 12363320,
+      "record_index": 123633,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-124466",
+      "sequence_index": 12446620,
+      "record_index": 124466,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-124469",
+      "sequence_index": 12446920,
+      "record_index": 124469,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-125116",
+      "sequence_index": 12511620,
+      "record_index": 125116,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-125119",
+      "sequence_index": 12511920,
+      "record_index": 125119,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-125715",
+      "sequence_index": 12571520,
+      "record_index": 125715,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-125717",
+      "sequence_index": 12571720,
+      "record_index": 125717,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-126504",
+      "sequence_index": 12650420,
+      "record_index": 126504,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-126507",
+      "sequence_index": 12650720,
+      "record_index": 126507,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-127424",
+      "sequence_index": 12742420,
+      "record_index": 127424,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-127427",
+      "sequence_index": 12742720,
+      "record_index": 127427,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-128277",
+      "sequence_index": 12827720,
+      "record_index": 128277,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-128280",
+      "sequence_index": 12828020,
+      "record_index": 128280,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-128968",
+      "sequence_index": 12896820,
+      "record_index": 128968,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-128971",
+      "sequence_index": 12897120,
+      "record_index": 128971,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-129743",
+      "sequence_index": 12974320,
+      "record_index": 129743,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-129746",
+      "sequence_index": 12974620,
+      "record_index": 129746,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-130533",
+      "sequence_index": 13053320,
+      "record_index": 130533,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-130536",
+      "sequence_index": 13053620,
+      "record_index": 130536,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-131220",
+      "sequence_index": 13122020,
+      "record_index": 131220,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-131223",
+      "sequence_index": 13122320,
+      "record_index": 131223,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-131987",
+      "sequence_index": 13198720,
+      "record_index": 131987,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-131990",
+      "sequence_index": 13199020,
+      "record_index": 131990,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-132519",
+      "sequence_index": 13251920,
+      "record_index": 132519,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-132522",
+      "sequence_index": 13252220,
+      "record_index": 132522,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-133271",
+      "sequence_index": 13327120,
+      "record_index": 133271,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-133274",
+      "sequence_index": 13327420,
+      "record_index": 133274,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-133974",
+      "sequence_index": 13397420,
+      "record_index": 133974,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-133977",
+      "sequence_index": 13397720,
+      "record_index": 133977,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-134563",
+      "sequence_index": 13456320,
+      "record_index": 134563,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-134566",
+      "sequence_index": 13456620,
+      "record_index": 134566,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-135189",
+      "sequence_index": 13518920,
+      "record_index": 135189,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-135192",
+      "sequence_index": 13519220,
+      "record_index": 135192,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-136167",
+      "sequence_index": 13616720,
+      "record_index": 136167,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-136169",
+      "sequence_index": 13616920,
+      "record_index": 136169,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-136831",
+      "sequence_index": 13683120,
+      "record_index": 136831,
+      "payload_type": "compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    },
+    {
+      "boundary_id": "compaction-136834",
+      "sequence_index": 13683420,
+      "record_index": 136834,
+      "payload_type": "context_compacted",
+      "termination_reason": "EXPLICIT_COMPACTION"
+    }
+  ],
+  "not_claimed": [
+    "This is a counterfactual replay, not a live A/B experiment.",
+    "No orchestrator build is authorized by this replay unless thresholds justify it.",
+    "Provider usage is actual; event attribution is modeled.",
+    "No raw transcript content, source code, tool output, raw commands, or raw paths are persisted.",
+    "Cost-weighted savings are NOT_EVALUATED.",
+    "Class C modeled summaries are not counted in lower or realistic bounds."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "SPIRA_COUNTERFACTUAL_TOOL_ANSWERABILITY_RULES_V1",
+  "locked_for_run": true,
+  "classes": {
+    "EXACT_EXISTING_TOOL": "only existing deterministic tools with measured compact output",
+    "EXACT_EXISTING_ADAPTER": "only existing deterministic adapters with measured compact output",
+    "BOUNDED_SUMMARY": "modeled only; excluded from lower and realistic bounds",
+    "NOT_TOOL_ANSWERABLE": "not counted as replaceable"
+  },
+  "v1_conservative_policy": [
+    "No new adapter is implemented for this replay.",
+    "No compact size is invented for lower or realistic bounds.",
+    "No event is counted without measured replacement output and sufficiency."
+  ]
+}
