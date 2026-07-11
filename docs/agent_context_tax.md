@@ -141,9 +141,9 @@ It does not measure CPU cycles, energy, CO2, or live-agent token usage.
 The completed agent memory flow regression then measured:
 
 ```text
-cold wall: 0.563539 seconds
-warm cache: 0.015909 seconds
-speedup: 35.42x
+cold wall: 0.855413 seconds
+warm cache: 0.017353 seconds
+speedup: 49.30x
 clean cache response: 993 bytes
 clean rerun plan response: 1,854 bytes
 all fail-closed cases passed
