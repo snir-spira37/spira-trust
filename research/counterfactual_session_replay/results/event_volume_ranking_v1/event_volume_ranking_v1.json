@@ -1,0 +1,1029 @@
+{
+  "schema": "SPIRA_EVENT_VOLUME_RANKING_V1",
+  "created_at": "2026-07-11T22:02:41.039580Z",
+  "source_replay": {
+    "session_id": "program_completion_stable_codex",
+    "session_sha256": "bf650b5457c5be96e8ed2657f4c8d3c266076cdba3a4373c40d2efada1f4fb7c",
+    "replay_final_status": "NO_JUSTIFICATION_FOR_BROAD_ORCHESTRATOR_PILOT",
+    "replay_valid": true,
+    "event_count": 95496,
+    "actual_fresh_input_tokens": 110755602,
+    "actual_total_input_tokens": 2677208850
+  },
+  "measurement_rules": {
+    "raw_visible_bytes": "measured UTF-8 byte size already persisted by the replay; raw content is not read from the transcript",
+    "allocated_fresh_tokens": "modeled attribution from provider token usage using the locked replay allocation method",
+    "context_exposure_byte_calls": "derived as raw_visible_bytes * (reuse_count + 1); this is not provider token usage",
+    "bounded_summary": "candidate class only; no lower/realistic savings are counted without a measured producer output and sufficiency audit"
+  },
+  "rankings": {
+    "by_category": [
+      {
+        "group": {
+          "category": "FILE_READ_OUTPUT"
+        },
+        "event_count": 7481,
+        "raw_visible_bytes_total": 47349054,
+        "allocated_fresh_tokens_total": 19403503.777,
+        "median_event_bytes": 4025,
+        "p90_event_bytes": 13893,
+        "median_reuse_count": 31,
+        "p90_reuse_count": 89,
+        "context_exposure_byte_calls_total": 1746413246,
+        "context_exposure_fresh_token_calls_total": 784341710.056,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 7481
+        }
+      },
+      {
+        "group": {
+          "category": "CODE_WRITE"
+        },
+        "event_count": 2936,
+        "raw_visible_bytes_total": 27147523,
+        "allocated_fresh_tokens_total": 9418358.685,
+        "median_event_bytes": 5805,
+        "p90_event_bytes": 23637,
+        "median_reuse_count": 44,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 1378950439,
+        "context_exposure_fresh_token_calls_total": 418075186.821,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 2936
+        }
+      },
+      {
+        "group": {
+          "category": "REASONING_OR_INSTRUCTIONS"
+        },
+        "event_count": 31820,
+        "raw_visible_bytes_total": 15105969,
+        "allocated_fresh_tokens_total": 42640769.531,
+        "median_event_bytes": 256,
+        "p90_event_bytes": 1239,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 700619087,
+        "context_exposure_fresh_token_calls_total": 2018586031.09,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 31820
+        }
+      },
+      {
+        "group": {
+          "category": "SEARCH_OUTPUT"
+        },
+        "event_count": 2203,
+        "raw_visible_bytes_total": 20269880,
+        "allocated_fresh_tokens_total": 5820090.348,
+        "median_event_bytes": 1476,
+        "p90_event_bytes": 40095,
+        "median_reuse_count": 27,
+        "p90_reuse_count": 88,
+        "context_exposure_byte_calls_total": 668631181,
+        "context_exposure_fresh_token_calls_total": 247009484.703,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 2203
+        }
+      },
+      {
+        "group": {
+          "category": "STATE_DISCOVERY"
+        },
+        "event_count": 3790,
+        "raw_visible_bytes_total": 15876852,
+        "allocated_fresh_tokens_total": 7398093.902,
+        "median_event_bytes": 776,
+        "p90_event_bytes": 9974,
+        "median_reuse_count": 38,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 561616739,
+        "context_exposure_fresh_token_calls_total": 292750864.603,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 3790
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER"
+        },
+        "event_count": 10108,
+        "raw_visible_bytes_total": 12218546,
+        "allocated_fresh_tokens_total": 7910420.335,
+        "median_event_bytes": 154,
+        "p90_event_bytes": 1874,
+        "median_reuse_count": 45,
+        "p90_reuse_count": 104,
+        "context_exposure_byte_calls_total": 553710861,
+        "context_exposure_fresh_token_calls_total": 379999748.768,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 10108
+        }
+      },
+      {
+        "group": {
+          "category": "PYTHON_OUTPUT"
+        },
+        "event_count": 2633,
+        "raw_visible_bytes_total": 5014929,
+        "allocated_fresh_tokens_total": 5215140.308,
+        "median_event_bytes": 756,
+        "p90_event_bytes": 3332,
+        "median_reuse_count": 39,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 219543072,
+        "context_exposure_fresh_token_calls_total": 255460310.549,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 2633
+        }
+      },
+      {
+        "group": {
+          "category": "TOOL_INVOCATION"
+        },
+        "event_count": 29152,
+        "raw_visible_bytes_total": 3590557,
+        "allocated_fresh_tokens_total": 9506241.311,
+        "median_event_bytes": 125,
+        "p90_event_bytes": 131,
+        "median_reuse_count": 38,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 168430100,
+        "context_exposure_fresh_token_calls_total": 462707519.24,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 29152
+        }
+      },
+      {
+        "group": {
+          "category": "TEST_OUTPUT"
+        },
+        "event_count": 1520,
+        "raw_visible_bytes_total": 2020209,
+        "allocated_fresh_tokens_total": 1343632.946,
+        "median_event_bytes": 174,
+        "p90_event_bytes": 1249,
+        "median_reuse_count": 40,
+        "p90_reuse_count": 102,
+        "context_exposure_byte_calls_total": 70655702,
+        "context_exposure_fresh_token_calls_total": 58677593.5,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 1520
+        }
+      },
+      {
+        "group": {
+          "category": "BUILD_OUTPUT"
+        },
+        "event_count": 766,
+        "raw_visible_bytes_total": 1176213,
+        "allocated_fresh_tokens_total": 972964.818,
+        "median_event_bytes": 633,
+        "p90_event_bytes": 2341,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 89,
+        "context_exposure_byte_calls_total": 52792256,
+        "context_exposure_fresh_token_calls_total": 43809457.486,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 766
+        }
+      },
+      {
+        "group": {
+          "category": "NETWORK_FETCH_OUTPUT"
+        },
+        "event_count": 477,
+        "raw_visible_bytes_total": 1227627,
+        "allocated_fresh_tokens_total": 842723.221,
+        "median_event_bytes": 496,
+        "p90_event_bytes": 3794,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 104,
+        "context_exposure_byte_calls_total": 43901470,
+        "context_exposure_fresh_token_calls_total": 37921768.544,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 477
+        }
+      },
+      {
+        "group": {
+          "category": "GIT_OUTPUT"
+        },
+        "event_count": 171,
+        "raw_visible_bytes_total": 291785,
+        "allocated_fresh_tokens_total": 163356.192,
+        "median_event_bytes": 456,
+        "p90_event_bytes": 5156,
+        "median_reuse_count": 55,
+        "p90_reuse_count": 119,
+        "context_exposure_byte_calls_total": 17221622,
+        "context_exposure_fresh_token_calls_total": 9688328.952,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 171
+        }
+      },
+      {
+        "group": {
+          "category": "CONTEXT_COMPACTION"
+        },
+        "event_count": 676,
+        "raw_visible_bytes_total": 31197,
+        "allocated_fresh_tokens_total": 78024.907,
+        "median_event_bytes": 29,
+        "p90_event_bytes": 75,
+        "median_reuse_count": 3,
+        "p90_reuse_count": 100,
+        "context_exposure_byte_calls_total": 633962,
+        "context_exposure_fresh_token_calls_total": 7696569.519,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 676
+        }
+      },
+      {
+        "group": {
+          "category": "USER_INSTRUCTION"
+        },
+        "event_count": 1763,
+        "raw_visible_bytes_total": 3526,
+        "allocated_fresh_tokens_total": 42281.701,
+        "median_event_bytes": 2,
+        "p90_event_bytes": 2,
+        "median_reuse_count": 37,
+        "p90_reuse_count": 95,
+        "context_exposure_byte_calls_total": 162374,
+        "context_exposure_fresh_token_calls_total": 1935640.325,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 1763
+        }
+      }
+    ],
+    "by_category_and_command": [
+      {
+        "group": {
+          "category": "FILE_READ_OUTPUT",
+          "safe_command_class": "file_read"
+        },
+        "event_count": 7481,
+        "raw_visible_bytes_total": 47349054,
+        "allocated_fresh_tokens_total": 19403503.777,
+        "median_event_bytes": 4025,
+        "p90_event_bytes": 13893,
+        "median_reuse_count": 31,
+        "p90_reuse_count": 89,
+        "context_exposure_byte_calls_total": 1746413246,
+        "context_exposure_fresh_token_calls_total": 784341710.056,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 7481
+        }
+      },
+      {
+        "group": {
+          "category": "CODE_WRITE",
+          "safe_command_class": "none"
+        },
+        "event_count": 2936,
+        "raw_visible_bytes_total": 27147523,
+        "allocated_fresh_tokens_total": 9418358.685,
+        "median_event_bytes": 5805,
+        "p90_event_bytes": 23637,
+        "median_reuse_count": 44,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 1378950439,
+        "context_exposure_fresh_token_calls_total": 418075186.821,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 2936
+        }
+      },
+      {
+        "group": {
+          "category": "REASONING_OR_INSTRUCTIONS",
+          "safe_command_class": "none"
+        },
+        "event_count": 31820,
+        "raw_visible_bytes_total": 15105969,
+        "allocated_fresh_tokens_total": 42640769.531,
+        "median_event_bytes": 256,
+        "p90_event_bytes": 1239,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 700619087,
+        "context_exposure_fresh_token_calls_total": 2018586031.09,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 31820
+        }
+      },
+      {
+        "group": {
+          "category": "SEARCH_OUTPUT",
+          "safe_command_class": "search"
+        },
+        "event_count": 2203,
+        "raw_visible_bytes_total": 20269880,
+        "allocated_fresh_tokens_total": 5820090.348,
+        "median_event_bytes": 1476,
+        "p90_event_bytes": 40095,
+        "median_reuse_count": 27,
+        "p90_reuse_count": 88,
+        "context_exposure_byte_calls_total": 668631181,
+        "context_exposure_fresh_token_calls_total": 247009484.703,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 2203
+        }
+      },
+      {
+        "group": {
+          "category": "STATE_DISCOVERY",
+          "safe_command_class": "state_discovery"
+        },
+        "event_count": 3790,
+        "raw_visible_bytes_total": 15876852,
+        "allocated_fresh_tokens_total": 7398093.902,
+        "median_event_bytes": 776,
+        "p90_event_bytes": 9974,
+        "median_reuse_count": 38,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 561616739,
+        "context_exposure_fresh_token_calls_total": 292750864.603,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 3790
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER",
+          "safe_command_class": "other_command"
+        },
+        "event_count": 4613,
+        "raw_visible_bytes_total": 10230006,
+        "allocated_fresh_tokens_total": 6788642.891,
+        "median_event_bytes": 532,
+        "p90_event_bytes": 5184,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 98,
+        "context_exposure_byte_calls_total": 464236503,
+        "context_exposure_fresh_token_calls_total": 323362551.632,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 4613
+        }
+      },
+      {
+        "group": {
+          "category": "PYTHON_OUTPUT",
+          "safe_command_class": "python"
+        },
+        "event_count": 2633,
+        "raw_visible_bytes_total": 5014929,
+        "allocated_fresh_tokens_total": 5215140.308,
+        "median_event_bytes": 756,
+        "p90_event_bytes": 3332,
+        "median_reuse_count": 39,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 219543072,
+        "context_exposure_fresh_token_calls_total": 255460310.549,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 2633
+        }
+      },
+      {
+        "group": {
+          "category": "TOOL_INVOCATION",
+          "safe_command_class": "none"
+        },
+        "event_count": 29152,
+        "raw_visible_bytes_total": 3590557,
+        "allocated_fresh_tokens_total": 9506241.311,
+        "median_event_bytes": 125,
+        "p90_event_bytes": 131,
+        "median_reuse_count": 38,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 168430100,
+        "context_exposure_fresh_token_calls_total": 462707519.24,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 29152
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER",
+          "safe_command_class": "none"
+        },
+        "event_count": 5495,
+        "raw_visible_bytes_total": 1988540,
+        "allocated_fresh_tokens_total": 1121777.444,
+        "median_event_bytes": 105,
+        "p90_event_bytes": 266,
+        "median_reuse_count": 47,
+        "p90_reuse_count": 108,
+        "context_exposure_byte_calls_total": 89474358,
+        "context_exposure_fresh_token_calls_total": 56637197.136,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 5495
+        }
+      },
+      {
+        "group": {
+          "category": "TEST_OUTPUT",
+          "safe_command_class": "test"
+        },
+        "event_count": 1520,
+        "raw_visible_bytes_total": 2020209,
+        "allocated_fresh_tokens_total": 1343632.946,
+        "median_event_bytes": 174,
+        "p90_event_bytes": 1249,
+        "median_reuse_count": 40,
+        "p90_reuse_count": 102,
+        "context_exposure_byte_calls_total": 70655702,
+        "context_exposure_fresh_token_calls_total": 58677593.5,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 1520
+        }
+      },
+      {
+        "group": {
+          "category": "BUILD_OUTPUT",
+          "safe_command_class": "package_build"
+        },
+        "event_count": 766,
+        "raw_visible_bytes_total": 1176213,
+        "allocated_fresh_tokens_total": 972964.818,
+        "median_event_bytes": 633,
+        "p90_event_bytes": 2341,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 89,
+        "context_exposure_byte_calls_total": 52792256,
+        "context_exposure_fresh_token_calls_total": 43809457.486,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 766
+        }
+      },
+      {
+        "group": {
+          "category": "NETWORK_FETCH_OUTPUT",
+          "safe_command_class": "network_fetch"
+        },
+        "event_count": 477,
+        "raw_visible_bytes_total": 1227627,
+        "allocated_fresh_tokens_total": 842723.221,
+        "median_event_bytes": 496,
+        "p90_event_bytes": 3794,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 104,
+        "context_exposure_byte_calls_total": 43901470,
+        "context_exposure_fresh_token_calls_total": 37921768.544,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 477
+        }
+      },
+      {
+        "group": {
+          "category": "GIT_OUTPUT",
+          "safe_command_class": "git"
+        },
+        "event_count": 171,
+        "raw_visible_bytes_total": 291785,
+        "allocated_fresh_tokens_total": 163356.192,
+        "median_event_bytes": 456,
+        "p90_event_bytes": 5156,
+        "median_reuse_count": 55,
+        "p90_reuse_count": 119,
+        "context_exposure_byte_calls_total": 17221622,
+        "context_exposure_fresh_token_calls_total": 9688328.952,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 171
+        }
+      },
+      {
+        "group": {
+          "category": "CONTEXT_COMPACTION",
+          "safe_command_class": "none"
+        },
+        "event_count": 676,
+        "raw_visible_bytes_total": 31197,
+        "allocated_fresh_tokens_total": 78024.907,
+        "median_event_bytes": 29,
+        "p90_event_bytes": 75,
+        "median_reuse_count": 3,
+        "p90_reuse_count": 100,
+        "context_exposure_byte_calls_total": 633962,
+        "context_exposure_fresh_token_calls_total": 7696569.519,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 676
+        }
+      },
+      {
+        "group": {
+          "category": "USER_INSTRUCTION",
+          "safe_command_class": "none"
+        },
+        "event_count": 1763,
+        "raw_visible_bytes_total": 3526,
+        "allocated_fresh_tokens_total": 42281.701,
+        "median_event_bytes": 2,
+        "p90_event_bytes": 2,
+        "median_reuse_count": 37,
+        "p90_reuse_count": 95,
+        "context_exposure_byte_calls_total": 162374,
+        "context_exposure_fresh_token_calls_total": 1935640.325,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 1763
+        }
+      }
+    ],
+    "by_category_command_path": [
+      {
+        "group": {
+          "category": "FILE_READ_OUTPUT",
+          "safe_command_class": "file_read",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 6708,
+        "raw_visible_bytes_total": 41312710,
+        "allocated_fresh_tokens_total": 18293364.65,
+        "median_event_bytes": 3947,
+        "p90_event_bytes": 13538,
+        "median_reuse_count": 35,
+        "p90_reuse_count": 92,
+        "context_exposure_byte_calls_total": 1652134926,
+        "context_exposure_fresh_token_calls_total": 764875341.265,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 6708
+        }
+      },
+      {
+        "group": {
+          "category": "CODE_WRITE",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 2936,
+        "raw_visible_bytes_total": 27147523,
+        "allocated_fresh_tokens_total": 9418358.685,
+        "median_event_bytes": 5805,
+        "p90_event_bytes": 23637,
+        "median_reuse_count": 44,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 1378950439,
+        "context_exposure_fresh_token_calls_total": 418075186.821,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 2936
+        }
+      },
+      {
+        "group": {
+          "category": "REASONING_OR_INSTRUCTIONS",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 31820,
+        "raw_visible_bytes_total": 15105969,
+        "allocated_fresh_tokens_total": 42640769.531,
+        "median_event_bytes": 256,
+        "p90_event_bytes": 1239,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 700619087,
+        "context_exposure_fresh_token_calls_total": 2018586031.09,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 31820
+        }
+      },
+      {
+        "group": {
+          "category": "SEARCH_OUTPUT",
+          "safe_command_class": "search",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 1970,
+        "raw_visible_bytes_total": 17147878,
+        "allocated_fresh_tokens_total": 5305332.905,
+        "median_event_bytes": 1428,
+        "p90_event_bytes": 40095,
+        "median_reuse_count": 30,
+        "p90_reuse_count": 90,
+        "context_exposure_byte_calls_total": 608283347,
+        "context_exposure_fresh_token_calls_total": 239239915.411,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 1970
+        }
+      },
+      {
+        "group": {
+          "category": "STATE_DISCOVERY",
+          "safe_command_class": "state_discovery",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 3359,
+        "raw_visible_bytes_total": 13218729,
+        "allocated_fresh_tokens_total": 6600154.385,
+        "median_event_bytes": 732,
+        "p90_event_bytes": 9398,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 100,
+        "context_exposure_byte_calls_total": 498254692,
+        "context_exposure_fresh_token_calls_total": 274617828.17,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 3359
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER",
+          "safe_command_class": "other_command",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 4293,
+        "raw_visible_bytes_total": 9141856,
+        "allocated_fresh_tokens_total": 6382376.643,
+        "median_event_bytes": 533,
+        "p90_event_bytes": 4767,
+        "median_reuse_count": 44,
+        "p90_reuse_count": 99,
+        "context_exposure_byte_calls_total": 445025125,
+        "context_exposure_fresh_token_calls_total": 314241100.275,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 4293
+        }
+      },
+      {
+        "group": {
+          "category": "PYTHON_OUTPUT",
+          "safe_command_class": "python",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 2592,
+        "raw_visible_bytes_total": 4932579,
+        "allocated_fresh_tokens_total": 5184033.114,
+        "median_event_bytes": 760,
+        "p90_event_bytes": 3361,
+        "median_reuse_count": 40,
+        "p90_reuse_count": 98,
+        "context_exposure_byte_calls_total": 218566151,
+        "context_exposure_fresh_token_calls_total": 255042458.189,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 2592
+        }
+      },
+      {
+        "group": {
+          "category": "TOOL_INVOCATION",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 29152,
+        "raw_visible_bytes_total": 3590557,
+        "allocated_fresh_tokens_total": 9506241.311,
+        "median_event_bytes": 125,
+        "p90_event_bytes": 131,
+        "median_reuse_count": 38,
+        "p90_reuse_count": 97,
+        "context_exposure_byte_calls_total": 168430100,
+        "context_exposure_fresh_token_calls_total": 462707519.24,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 29152
+        }
+      },
+      {
+        "group": {
+          "category": "FILE_READ_OUTPUT",
+          "safe_command_class": "file_read",
+          "safe_path_class": "none"
+        },
+        "event_count": 773,
+        "raw_visible_bytes_total": 6036344,
+        "allocated_fresh_tokens_total": 1110139.127,
+        "median_event_bytes": 4834,
+        "p90_event_bytes": 18624,
+        "median_reuse_count": 12,
+        "p90_reuse_count": 42,
+        "context_exposure_byte_calls_total": 94278320,
+        "context_exposure_fresh_token_calls_total": 19466368.791,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 773
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 5495,
+        "raw_visible_bytes_total": 1988540,
+        "allocated_fresh_tokens_total": 1121777.444,
+        "median_event_bytes": 105,
+        "p90_event_bytes": 266,
+        "median_reuse_count": 47,
+        "p90_reuse_count": 108,
+        "context_exposure_byte_calls_total": 89474358,
+        "context_exposure_fresh_token_calls_total": 56637197.136,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 5495
+        }
+      },
+      {
+        "group": {
+          "category": "TEST_OUTPUT",
+          "safe_command_class": "test",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 1474,
+        "raw_visible_bytes_total": 2009448,
+        "allocated_fresh_tokens_total": 1329970.526,
+        "median_event_bytes": 183,
+        "p90_event_bytes": 1267,
+        "median_reuse_count": 42,
+        "p90_reuse_count": 103,
+        "context_exposure_byte_calls_total": 70439796,
+        "context_exposure_fresh_token_calls_total": 58361232.257,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 1474
+        }
+      },
+      {
+        "group": {
+          "category": "STATE_DISCOVERY",
+          "safe_command_class": "state_discovery",
+          "safe_path_class": "none"
+        },
+        "event_count": 431,
+        "raw_visible_bytes_total": 2658123,
+        "allocated_fresh_tokens_total": 797939.517,
+        "median_event_bytes": 1109,
+        "p90_event_bytes": 24702,
+        "median_reuse_count": 20,
+        "p90_reuse_count": 58,
+        "context_exposure_byte_calls_total": 63362047,
+        "context_exposure_fresh_token_calls_total": 18133036.433,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 431
+        }
+      },
+      {
+        "group": {
+          "category": "SEARCH_OUTPUT",
+          "safe_command_class": "search",
+          "safe_path_class": "none"
+        },
+        "event_count": 233,
+        "raw_visible_bytes_total": 3122002,
+        "allocated_fresh_tokens_total": 514757.443,
+        "median_event_bytes": 2233,
+        "p90_event_bytes": 40097,
+        "median_reuse_count": 12,
+        "p90_reuse_count": 51,
+        "context_exposure_byte_calls_total": 60347834,
+        "context_exposure_fresh_token_calls_total": 7769569.292,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 233
+        }
+      },
+      {
+        "group": {
+          "category": "BUILD_OUTPUT",
+          "safe_command_class": "package_build",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 703,
+        "raw_visible_bytes_total": 1000794,
+        "allocated_fresh_tokens_total": 915650.842,
+        "median_event_bytes": 633,
+        "p90_event_bytes": 2216,
+        "median_reuse_count": 45,
+        "p90_reuse_count": 90,
+        "context_exposure_byte_calls_total": 49059653,
+        "context_exposure_fresh_token_calls_total": 42363345.525,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 703
+        }
+      },
+      {
+        "group": {
+          "category": "NETWORK_FETCH_OUTPUT",
+          "safe_command_class": "network_fetch",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 445,
+        "raw_visible_bytes_total": 1068195,
+        "allocated_fresh_tokens_total": 794759.482,
+        "median_event_bytes": 443,
+        "p90_event_bytes": 3640,
+        "median_reuse_count": 45,
+        "p90_reuse_count": 105,
+        "context_exposure_byte_calls_total": 42873977,
+        "context_exposure_fresh_token_calls_total": 37432013.619,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 445
+        }
+      },
+      {
+        "group": {
+          "category": "OTHER",
+          "safe_command_class": "other_command",
+          "safe_path_class": "none"
+        },
+        "event_count": 320,
+        "raw_visible_bytes_total": 1088150,
+        "allocated_fresh_tokens_total": 406266.248,
+        "median_event_bytes": 515,
+        "p90_event_bytes": 9355,
+        "median_reuse_count": 23,
+        "p90_reuse_count": 70,
+        "context_exposure_byte_calls_total": 19211378,
+        "context_exposure_fresh_token_calls_total": 9121451.357,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 320
+        }
+      },
+      {
+        "group": {
+          "category": "GIT_OUTPUT",
+          "safe_command_class": "git",
+          "safe_path_class": "other_path"
+        },
+        "event_count": 164,
+        "raw_visible_bytes_total": 288538,
+        "allocated_fresh_tokens_total": 147922.709,
+        "median_event_bytes": 456,
+        "p90_event_bytes": 7481,
+        "median_reuse_count": 57,
+        "p90_reuse_count": 121,
+        "context_exposure_byte_calls_total": 17161721,
+        "context_exposure_fresh_token_calls_total": 9132854.437,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 164
+        }
+      },
+      {
+        "group": {
+          "category": "BUILD_OUTPUT",
+          "safe_command_class": "package_build",
+          "safe_path_class": "none"
+        },
+        "event_count": 63,
+        "raw_visible_bytes_total": 175419,
+        "allocated_fresh_tokens_total": 57313.976,
+        "median_event_bytes": 532,
+        "p90_event_bytes": 6945,
+        "median_reuse_count": 16,
+        "p90_reuse_count": 44,
+        "context_exposure_byte_calls_total": 3732603,
+        "context_exposure_fresh_token_calls_total": 1446111.961,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 63
+        }
+      },
+      {
+        "group": {
+          "category": "NETWORK_FETCH_OUTPUT",
+          "safe_command_class": "network_fetch",
+          "safe_path_class": "none"
+        },
+        "event_count": 32,
+        "raw_visible_bytes_total": 159432,
+        "allocated_fresh_tokens_total": 47963.739,
+        "median_event_bytes": 846,
+        "p90_event_bytes": 11286,
+        "median_reuse_count": 7,
+        "p90_reuse_count": 27,
+        "context_exposure_byte_calls_total": 1027493,
+        "context_exposure_fresh_token_calls_total": 489754.925,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 32
+        }
+      },
+      {
+        "group": {
+          "category": "PYTHON_OUTPUT",
+          "safe_command_class": "python",
+          "safe_path_class": "none"
+        },
+        "event_count": 41,
+        "raw_visible_bytes_total": 82350,
+        "allocated_fresh_tokens_total": 31107.194,
+        "median_event_bytes": 476,
+        "p90_event_bytes": 2265,
+        "median_reuse_count": 8,
+        "p90_reuse_count": 25,
+        "context_exposure_byte_calls_total": 976921,
+        "context_exposure_fresh_token_calls_total": 417852.36,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 41
+        }
+      },
+      {
+        "group": {
+          "category": "CONTEXT_COMPACTION",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 676,
+        "raw_visible_bytes_total": 31197,
+        "allocated_fresh_tokens_total": 78024.907,
+        "median_event_bytes": 29,
+        "p90_event_bytes": 75,
+        "median_reuse_count": 3,
+        "p90_reuse_count": 100,
+        "context_exposure_byte_calls_total": 633962,
+        "context_exposure_fresh_token_calls_total": 7696569.519,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 676
+        }
+      },
+      {
+        "group": {
+          "category": "TEST_OUTPUT",
+          "safe_command_class": "test",
+          "safe_path_class": "none"
+        },
+        "event_count": 46,
+        "raw_visible_bytes_total": 10761,
+        "allocated_fresh_tokens_total": 13662.42,
+        "median_event_bytes": 144,
+        "p90_event_bytes": 341,
+        "median_reuse_count": 14,
+        "p90_reuse_count": 24,
+        "context_exposure_byte_calls_total": 215906,
+        "context_exposure_fresh_token_calls_total": 316361.243,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 46
+        }
+      },
+      {
+        "group": {
+          "category": "USER_INSTRUCTION",
+          "safe_command_class": "none",
+          "safe_path_class": "none"
+        },
+        "event_count": 1763,
+        "raw_visible_bytes_total": 3526,
+        "allocated_fresh_tokens_total": 42281.701,
+        "median_event_bytes": 2,
+        "p90_event_bytes": 2,
+        "median_reuse_count": 37,
+        "p90_reuse_count": 95,
+        "context_exposure_byte_calls_total": 162374,
+        "context_exposure_fresh_token_calls_total": 1935640.325,
+        "tool_answerability_counts": {
+          "NOT_TOOL_ANSWERABLE": 1763
+        }
+      },
+      {
+        "group": {
+          "category": "GIT_OUTPUT",
+          "safe_command_class": "git",
+          "safe_path_class": "none"
+        },
+        "event_count": 7,
+        "raw_visible_bytes_total": 3247,
+        "allocated_fresh_tokens_total": 15433.483,
+        "median_event_bytes": 456,
+        "p90_event_bytes": 456,
+        "median_reuse_count": 15,
+        "p90_reuse_count": 23,
+        "context_exposure_byte_calls_total": 59901,
+        "context_exposure_fresh_token_calls_total": 555474.515,
+        "tool_answerability_counts": {
+          "BOUNDED_SUMMARY": 7
+        }
+      }
+    ]
+  },
+  "first_producer_candidate": {
+    "producer_candidate": "Workspace/State-Manifest",
+    "selected_category": "STATE_DISCOVERY",
+    "selection_reason": "highest weighted candidate among BOUNDED_SUMMARY classes using measured context exposure and a deterministic-semantics preference; this authorizes one producer measurement only",
+    "measured_row": {
+      "group": {
+        "category": "STATE_DISCOVERY"
+      },
+      "event_count": 3790,
+      "raw_visible_bytes_total": 15876852,
+      "allocated_fresh_tokens_total": 7398093.902,
+      "median_event_bytes": 776,
+      "p90_event_bytes": 9974,
+      "median_reuse_count": 38,
+      "p90_reuse_count": 97,
+      "context_exposure_byte_calls_total": 561616739,
+      "context_exposure_fresh_token_calls_total": 292750864.603,
+      "tool_answerability_counts": {
+        "BOUNDED_SUMMARY": 3790
+      }
+    }
+  },
+  "decision": {
+    "status": "ONE_PRODUCER_MEASUREMENT_AUTHORIZED",
+    "authorized_scope": "Workspace/State-Manifest",
+    "not_authorized": [
+      "broad orchestrator",
+      "multiple producers in parallel",
+      "product claim",
+      "lower/realistic savings claim before measured producer output"
+    ]
+  },
+  "not_claimed": [
+    "This ranking does not change the prior replay result.",
+    "No new savings are claimed.",
+    "Context exposure byte-calls are a derived ranking signal, not provider token billing.",
+    "Producer selection is authorization for one measurement experiment only, not product build authorization."
+  ]
+}

@@ -227,7 +227,7 @@ def make_event(session_id: str, record_index: int, payload_type: str, payload: d
 def answerability_for(category: str, safe_path: str, safe_command: str) -> tuple[str, str]:
     if category == "EVIDENCE_READ" or safe_path == "evidence":
         return "EXACT_EXISTING_TOOL", "SPIRA evidence query could be answered by existing SPIRA commands if frozen state is available"
-    if category in {"GIT_OUTPUT", "TEST_OUTPUT"}:
+    if category in {"GIT_OUTPUT", "TEST_OUTPUT", "STATE_DISCOVERY", "FILE_READ_OUTPUT", "SEARCH_OUTPUT", "PYTHON_OUTPUT", "BUILD_OUTPUT"}:
         return "BOUNDED_SUMMARY", "compact deterministic contract appears possible, but no measured adapter was run in this replay"
     return "NOT_TOOL_ANSWERABLE", "outside currently measured deterministic artifact-evidence replacements"
 
@@ -638,6 +638,16 @@ def category_from_command_and_path(command_class: str, path_class: str) -> str:
         return "GIT_OUTPUT"
     if command_class == "test":
         return "TEST_OUTPUT"
+    if command_class == "file_read":
+        return "FILE_READ_OUTPUT"
+    if command_class == "search":
+        return "SEARCH_OUTPUT"
+    if command_class == "python":
+        return "PYTHON_OUTPUT"
+    if command_class == "package_build":
+        return "BUILD_OUTPUT"
+    if command_class == "network_fetch":
+        return "NETWORK_FETCH_OUTPUT"
     if command_class == "state_discovery":
         return "STATE_DISCOVERY"
     return "OTHER"
@@ -658,7 +668,17 @@ def classify_command(command: str) -> str:
         return "git"
     if any(token in lowered for token in ["pytest", "py_compile", "unittest", "tox", "nox"]):
         return "test"
-    if any(token in lowered for token in ["get-childitem", " rg ", "rg ", " dir ", " ls "]):
+    if lowered.startswith("python ") or lowered.startswith("py ") or "| python" in lowered:
+        return "python"
+    if lowered.startswith("get-content") or lowered.startswith("type ") or lowered.startswith("gc "):
+        return "file_read"
+    if lowered.startswith("rg ") or " rg " in lowered or "select-string" in lowered:
+        return "search"
+    if any(token in lowered for token in ["pip ", "build", "twine"]):
+        return "package_build"
+    if any(token in lowered for token in ["invoke-webrequest", "invoke-restmethod", "curl "]):
+        return "network_fetch"
+    if any(token in lowered for token in ["get-childitem", " dir ", " ls "]):
         return "state_discovery"
     return "other_command" if command else "none"
 

@@ -1,6 +1,6 @@
 {
   "schema": "SPIRA_COUNTERFACTUAL_REPLAY_V1",
-  "created_at": "2026-07-11T21:33:27.514823Z",
+  "created_at": "2026-07-11T22:01:03.058502Z",
   "summary": {
     "schema": "SPIRA_COUNTERFACTUAL_REPLAY_V1",
     "session_id": "program_completion_stable_codex",
@@ -65,16 +65,21 @@
       "REASONING_OR_INSTRUCTIONS": 31820,
       "USER_INSTRUCTION": 1763,
       "TOOL_INVOCATION": 29152,
-      "STATE_DISCOVERY": 5821,
+      "STATE_DISCOVERY": 3790,
+      "SEARCH_OUTPUT": 2203,
       "GIT_OUTPUT": 171,
-      "OTHER": 21637,
+      "OTHER": 10108,
       "CODE_WRITE": 2936,
+      "FILE_READ_OUTPUT": 7481,
+      "BUILD_OUTPUT": 766,
       "CONTEXT_COMPACTION": 676,
-      "TEST_OUTPUT": 1520
+      "TEST_OUTPUT": 1520,
+      "PYTHON_OUTPUT": 2633,
+      "NETWORK_FETCH_OUTPUT": 477
     },
     "tool_answerability_counts": {
-      "NOT_TOOL_ANSWERABLE": 93805,
-      "BOUNDED_SUMMARY": 1691
+      "NOT_TOOL_ANSWERABLE": 76932,
+      "BOUNDED_SUMMARY": 18564
     },
     "payload_type_counts": {
       "message": 16868,
@@ -90,10 +95,15 @@
     },
     "safe_command_class_counts": {
       "none": 71842,
-      "state_discovery": 5821,
+      "state_discovery": 3790,
+      "search": 2203,
       "git": 171,
-      "other_command": 16142,
-      "test": 1520
+      "file_read": 7481,
+      "other_command": 4613,
+      "package_build": 766,
+      "test": 1520,
+      "python": 2633,
+      "network_fetch": 477
     },
     "safe_path_class_counts": {
       "none": 73788,
