@@ -1,0 +1,83 @@
+{
+  "schema": "SPIRA_WORKSPACE_STATE_MANIFEST_EXPERIMENT_V1",
+  "created_at": "2026-07-11T22:17:53.068553Z",
+  "source": {
+    "session_sha256": "bf650b5457c5be96e8ed2657f4c8d3c266076cdba3a4373c40d2efada1f4fb7c",
+    "replay_status_before_producer": "NO_JUSTIFICATION_FOR_BROAD_ORCHESTRATOR_PILOT",
+    "source_replay_event_count": 95496
+  },
+  "summary": {
+    "schema": "SPIRA_WORKSPACE_STATE_MANIFEST_EXPERIMENT_V1",
+    "producer": "spira-workspace-state-producer 0.1-research",
+    "final_status": "NO_JUSTIFICATION_TO_CONTINUE",
+    "candidate_event_count": 3790,
+    "measured_replacement_count": 3784,
+    "beneficial_replacement_count": 187,
+    "sufficiency_pass_count": 3784,
+    "included_event_count": 187,
+    "replacement_status_counts": {
+      "MEASURED_NOT_BENEFICIAL": 3597,
+      "MEASURED_BENEFICIAL": 187,
+      "NOT_MEASURED": 6
+    },
+    "sufficiency_status_counts": {
+      "SUFFICIENT": 3784,
+      "INDETERMINATE": 6
+    },
+    "state_reconstruction_status_counts": {
+      "EXACT": 3784,
+      "NOT_AVAILABLE": 6
+    },
+    "actual_total_input_tokens": 2677208850,
+    "actual_fresh_input_tokens": 110755602,
+    "actual_cached_input_tokens": 2566453248,
+    "lower_bound": {
+      "scenario": "lower_bound",
+      "included_event_count": 187,
+      "immediate_fresh_saving_tokens": 175301.54763,
+      "propagated_cached_prefix_saving_tokens": 6549304.98667,
+      "total_token_volume_saving_tokens": 6724606.5343,
+      "counterfactual_total_input_reduction_pct": 0.25118,
+      "counterfactual_fresh_input_reduction_pct": 0.158278,
+      "counterfactual_cached_prefix_reduction_pct": 0.255189,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    },
+    "realistic_bound": {
+      "scenario": "realistic_bound",
+      "included_event_count": 187,
+      "immediate_fresh_saving_tokens": 175301.54763,
+      "propagated_cached_prefix_saving_tokens": 6549304.98667,
+      "total_token_volume_saving_tokens": 6724606.5343,
+      "counterfactual_total_input_reduction_pct": 0.25118,
+      "counterfactual_fresh_input_reduction_pct": 0.158278,
+      "counterfactual_cached_prefix_reduction_pct": 0.255189,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    },
+    "upper_research_bound": {
+      "scenario": "upper_research_bound",
+      "included_event_count": 187,
+      "immediate_fresh_saving_tokens": 175301.54763,
+      "propagated_cached_prefix_saving_tokens": 6549304.98667,
+      "total_token_volume_saving_tokens": 6724606.5343,
+      "counterfactual_total_input_reduction_pct": 0.25118,
+      "counterfactual_fresh_input_reduction_pct": 0.158278,
+      "counterfactual_cached_prefix_reduction_pct": 0.255189,
+      "cost_weighted_reduction_pct": "NOT_EVALUATED"
+    }
+  },
+  "methodology": "research/workspace_state_manifest_methodology.md",
+  "measurement_policy": {
+    "event_scope": "STATE_DISCOVERY / state_discovery only",
+    "compact_answer": "measured SPIRA_WORKSPACE_STATE_ANSWER_V1 JSON generated from recorded model-visible state output",
+    "state_reconstruction_basis": "RECORDED_MODEL_VISIBLE_OUTPUT",
+    "counting_rule": "only EXACT + SUFFICIENT + MEASURED_BENEFICIAL events enter lower/realistic bounds",
+    "token_estimate": "compact_output_bytes / raw_output_bytes applied to event allocated fresh tokens"
+  },
+  "not_claimed": [
+    "This is a research producer measurement, not a SPIRA Trust product feature.",
+    "No broad orchestrator is authorized by this result.",
+    "Recorded output is used as the historical reconstruction basis; current workspace scans are not attributed to old events.",
+    "The compact answers are not persisted in the repository; only sizes and hashes are persisted.",
+    "No CPU, energy, or CO2 claim is made."
+  ]
+}
