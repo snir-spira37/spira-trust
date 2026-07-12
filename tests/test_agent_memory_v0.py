@@ -132,6 +132,9 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert summary["agent_action_contract"]["stop"] == summary["stop"]
     assert summary["reason_codes"] == ["REPORT_NOT_EVALUATED"]
     assert summary["agent_action_contract"]["reason_codes"] == ["REPORT_NOT_EVALUATED"]
+    expected_not_evaluated = sorted(summary["not_evaluated"])
+    assert expected_not_evaluated
+    assert summary["agent_action_contract"]["not_evaluated"] == summary["not_evaluated"]
     assert summary["approval"]["approval_source"] == "unverified"
     assert summary["summary_of"]["command_fingerprint"] == result["command_fingerprint"]
     assert summary["unification"]["id"]
@@ -159,6 +162,7 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
 
     artifact_status = build_agent_artifact_status(wheel)
     assert artifact_status["schema"] == "SPIRA_AGENT_ARTIFACT_STATUS_V1"
+    assert artifact_status["schema_version"] == "1.1"
     assert artifact_status["checked"] is True
     assert artifact_status["stale"] is False
     assert artifact_status["changed_since_check"] is False
@@ -167,20 +171,26 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert artifact_status["stop"] is True
     assert artifact_status["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
     assert artifact_status["reason_codes"] == ["REPORT_NOT_EVALUATED"]
+    assert artifact_status["not_evaluated"] == expected_not_evaluated
+    assert artifact_status["not_evaluated_count"] == len(expected_not_evaluated)
     assert artifact_status["summary_path"]
-    assert len(json.dumps(artifact_status, separators=(",", ":"))) < 1024
+    assert len(json.dumps(artifact_status, separators=(",", ":"))) < 1200
 
     from spira_core.trust_cli import main
 
     assert main(["status", "--agent", "--artifact", str(wheel), "--format", "json"]) == 0
     cli_status = json.loads(capsys.readouterr().out)
     assert cli_status["schema"] == "SPIRA_AGENT_ARTIFACT_STATUS_V1"
+    assert cli_status["schema_version"] == "1.1"
     assert cli_status["checked"] is True
     assert cli_status["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
-    assert len(json.dumps(cli_status, separators=(",", ":"))) < 1024
+    assert cli_status["not_evaluated"] == expected_not_evaluated
+    assert cli_status["not_evaluated_count"] == len(expected_not_evaluated)
+    assert len(json.dumps(cli_status, separators=(",", ":"))) < 1200
 
     cache_hit = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
     assert cache_hit["schema"] == "SPIRA_AGENT_VERDICT_CACHE_V1"
+    assert cache_hit["schema_version"] == "1.1"
     assert cache_hit["cache_hit"] is True
     assert cache_hit["match_scope"] == "full_evidence_context"
     assert cache_hit["context_match"] is True
@@ -188,6 +198,8 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert cache_hit["policy_sha256"] is None
     assert cache_hit["decision_semantics_version"] == "SPIRA_DECISION_SEMANTICS_V2"
     assert cache_hit["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
+    assert cache_hit["not_evaluated"] == expected_not_evaluated
+    assert cache_hit["not_evaluated_count"] == len(expected_not_evaluated)
 
     cache_miss = build_agent_verdict_cache(wheel, command_fingerprint="0" * 64)
     assert cache_miss["cache_hit"] is False
@@ -195,6 +207,8 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert cache_miss["context_ambiguous"] is False
     assert cache_miss["recommended_agent_action"] == "RERUN_REQUIRED"
     assert cache_miss["reason_codes"] == ["CONTEXT_MISMATCH"]
+    assert cache_miss["not_evaluated"] == []
+    assert cache_miss["not_evaluated_count"] == 0
 
     state_summary_path = next((tmp_path / ".spira" / "agent_summaries").glob("*.agent_summary.json"))
     second_context_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
@@ -218,6 +232,8 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     cli_cache = json.loads(capsys.readouterr().out)
     assert cli_cache["cache_hit"] is True
     assert cli_cache["match_scope"] == "full_evidence_context"
+    assert cli_cache["not_evaluated"] == expected_not_evaluated
+    assert cli_cache["not_evaluated_count"] == len(expected_not_evaluated)
 
     reordered_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
     reordered_summary["created_at"] = "2999-06-01T00:00:00Z"
@@ -276,16 +292,66 @@ def test_graph_writes_agent_summary_and_status_rehashes_artifact(tmp_path, monke
     assert changed_artifact_status["changed_since_check"] is True
     assert changed_artifact_status["recommended_agent_action"] == "RERUN_REQUIRED"
     assert changed_artifact_status["reason_codes"] == ["ARTIFACT_CHANGED_SINCE_CHECK"]
+    assert changed_artifact_status["not_evaluated"] == []
+    assert changed_artifact_status["not_evaluated_count"] == 0
 
     changed_cache = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
     assert changed_cache["cache_hit"] is False
     assert changed_cache["recommended_agent_action"] == "RERUN_REQUIRED"
     assert changed_cache["reason_codes"] == ["ARTIFACT_CHANGED_SINCE_CHECK"]
+    assert changed_cache["not_evaluated"] == []
+    assert changed_cache["not_evaluated_count"] == 0
 
     assert main(["status", "--agent", "--artifact", str(wheel), "--format", "json"]) == 2
     changed_cli_status = json.loads(capsys.readouterr().out)
     assert changed_cli_status["changed_since_check"] is True
     assert changed_cli_status["recommended_agent_action"] == "RERUN_REQUIRED"
+
+
+def test_compact_agent_state_fails_closed_when_not_evaluated_details_missing(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    wheelhouse = tmp_path / "dist"
+    wheelhouse.mkdir()
+    wheel = _build_wheel(wheelhouse, "missing_details_pkg", "1.0.0")
+    out = tmp_path / "out"
+
+    result = run_trust_graph([wheelhouse], out)
+    from spira_core.decision_report import finalize_graph_outputs_for_decision, write_decision_report
+    from spira_core.agent_summary import write_agent_summary
+
+    finalize_graph_outputs_for_decision(result, output_dir=out)
+    decision = write_decision_report(result, exit_code=0, output_dir=out)
+    summary = write_agent_summary(result, decision, output_dir=out)
+    assert summary["recommended_agent_action"] == "REPORT_NOT_EVALUATED"
+    assert summary["not_evaluated"]
+
+    state_summary_path = next((tmp_path / ".spira" / "agent_summaries").glob("*.agent_summary.json"))
+    broken_summary = json.loads(state_summary_path.read_text(encoding="utf-8"))
+    broken_summary["not_evaluated"] = []
+    broken_summary["agent_action_contract"]["not_evaluated"] = []
+    state_summary_path.write_text(
+        json.dumps(broken_summary, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+    artifact_status = build_agent_artifact_status(wheel)
+    assert artifact_status["checked"] is False
+    assert artifact_status["stale"] is True
+    assert artifact_status["stop"] is True
+    assert artifact_status["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert artifact_status["reason_codes"] == ["NOT_EVALUATED_DETAILS_MISSING"]
+    assert artifact_status["not_evaluated"] == []
+    assert artifact_status["not_evaluated_count"] == 0
+
+    cache_hit = build_agent_verdict_cache(wheel, command_fingerprint=result["command_fingerprint"])
+    assert cache_hit["cache_hit"] is False
+    assert cache_hit["context_match"] is True
+    assert cache_hit["stop"] is True
+    assert cache_hit["recommended_agent_action"] == "RERUN_REQUIRED"
+    assert cache_hit["reason_codes"] == ["NOT_EVALUATED_DETAILS_MISSING"]
+    assert cache_hit["not_evaluated"] == []
+    assert cache_hit["not_evaluated_count"] == 0
 
 
 def test_graph_command_fingerprint_changes_for_verdict_inputs(tmp_path):

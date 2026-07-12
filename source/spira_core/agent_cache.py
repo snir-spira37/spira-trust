@@ -11,7 +11,7 @@ from .combined_verdict import DECISION_SEMANTICS_VERSION
 
 
 CACHE_SCHEMA = "SPIRA_AGENT_VERDICT_CACHE_V1"
-CACHE_SCHEMA_VERSION = "1.0"
+CACHE_SCHEMA_VERSION = "1.1"
 
 
 def build_agent_verdict_cache(
@@ -93,6 +93,16 @@ def build_agent_verdict_cache(
     selected = _latest_summary(matching)
     contract = selected.get("agent_action_contract") if isinstance(selected.get("agent_action_contract"), Mapping) else selected
     approval = selected.get("approval") if isinstance(selected.get("approval"), Mapping) else {}
+    not_evaluated = _canonical_list(contract.get("not_evaluated") or selected.get("not_evaluated") or [])
+    action = contract.get("recommended_agent_action")
+    if action == "REPORT_NOT_EVALUATED" and not not_evaluated:
+        return _miss(
+            artifact=artifact,
+            reason_code="NOT_EVALUATED_DETAILS_MISSING",
+            expected=expected,
+            summary_count=len(matching),
+            context_match=True,
+        )
     return {
         "schema": CACHE_SCHEMA,
         "schema_version": CACHE_SCHEMA_VERSION,
@@ -109,11 +119,13 @@ def build_agent_verdict_cache(
         "decision_semantics_version": expected["decision_semantics_version"],
         "tool_version": expected["tool_version"],
         "stop": contract.get("stop"),
-        "recommended_agent_action": contract.get("recommended_agent_action"),
+        "recommended_agent_action": action,
         "reason_codes": list(contract.get("reason_codes") or selected.get("reason_codes") or []),
         "summary_path": selected.get("_loaded_from"),
         "summary_count": len(matching),
         "evidence": contract.get("evidence"),
+        "not_evaluated": not_evaluated,
+        "not_evaluated_count": len(not_evaluated),
         "approved": bool(approval.get("approved", False)),
         "approval_source": approval.get("approval_source", "unverified"),
         "scope": "cache_exact_context",
@@ -170,6 +182,8 @@ def _miss(
         "summary_path": None,
         "summary_count": summary_count,
         "evidence": None,
+        "not_evaluated": [],
+        "not_evaluated_count": 0,
         "approved": False,
         "approval_source": "unverified",
         "scope": "cache_exact_context",

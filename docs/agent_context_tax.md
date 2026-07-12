@@ -113,9 +113,12 @@ spira-trust status --agent --artifact <wheel> --format json
 ```
 
 The first smoke measurement produced a 901-byte `SPIRA_AGENT_ARTIFACT_STATUS_V1`
-object for the median live benchmark wheel, below the 1KB target. This is a
-before/after improvement over the original full `status.json`, not a replacement
-for the original 6.9% measurement.
+object for the median live benchmark wheel, below the 1KB target. That was the
+schema `1.0` measurement. Schema `1.1` intentionally adds the explicit
+`not_evaluated` layer list to compact status/cache hits, so later byte sizes are
+not compared against the original 901-byte smoke as a compression target. This
+is a before/after improvement over the original full `status.json`, not a
+replacement for the original 6.9% measurement.
 
 An exact-context cache was later added:
 

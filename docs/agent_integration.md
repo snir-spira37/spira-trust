@@ -171,9 +171,15 @@ spira-trust status --agent --artifact dist/example-1.0.0-py3-none-any.whl --form
 
 This returns a small `SPIRA_AGENT_ARTIFACT_STATUS_V1` object with `checked`,
 `changed_since_check`, `decision_semantics_version`, `stop`,
-`recommended_agent_action`, `reason_codes`, and `summary_path`. If the current
-artifact bytes do not match the indexed summary, the action is
-`RERUN_REQUIRED`.
+`recommended_agent_action`, `reason_codes`, `not_evaluated`,
+`not_evaluated_count`, and `summary_path`. If the current artifact bytes do not
+match the indexed summary, the action is `RERUN_REQUIRED`.
+
+Starting with schema version `1.1`, compact status hits preserve the explicit
+`not_evaluated` layer list from the agent action contract. The count is derived
+from that list. If a stored summary says `REPORT_NOT_EVALUATED` but does not
+contain the layer list, status fails closed with `RERUN_REQUIRED` and
+`NOT_EVALUATED_DETAILS_MISSING`.
 
 ## Context-Aware Verdict Cache
 
@@ -198,11 +204,14 @@ summary matches the requested evidence context:
 ```json
 {
   "schema": "SPIRA_AGENT_VERDICT_CACHE_V1",
+  "schema_version": "1.1",
   "cache_hit": true,
   "match_scope": "full_evidence_context",
   "context_match": true,
   "stop": true,
-  "recommended_agent_action": "REPORT_NOT_EVALUATED"
+  "recommended_agent_action": "REPORT_NOT_EVALUATED",
+  "not_evaluated": ["pep740_offline_attestations"],
+  "not_evaluated_count": 1
 }
 ```
 
@@ -229,6 +238,11 @@ This indicates non-determinism, corrupted local state, a manually edited
 summary, or a missing input in the context fingerprint.
 `reason_codes` and `not_evaluated` are canonicalized as sorted unique string
 sets for this comparison; their order is not part of the action semantics.
+
+Like compact status, cache schema version `1.1` preserves the explicit
+`not_evaluated` layer list on hits and fails closed with
+`NOT_EVALUATED_DETAILS_MISSING` when a `REPORT_NOT_EVALUATED` action lacks the
+details required for an agent to report what was not evaluated.
 
 The graph command fingerprint is part of the cache key. Its invariant is:
 

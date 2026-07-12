@@ -10,7 +10,7 @@ from typing import Any, Iterable, Mapping
 STATUS_SCHEMA = "SPIRA_AGENT_STATUS_V1"
 STATUS_SCHEMA_VERSION = "1.0"
 AGENT_ARTIFACT_STATUS_SCHEMA = "SPIRA_AGENT_ARTIFACT_STATUS_V1"
-AGENT_ARTIFACT_STATUS_SCHEMA_VERSION = "1.0"
+AGENT_ARTIFACT_STATUS_SCHEMA_VERSION = "1.1"
 
 
 def build_agent_status(
@@ -214,6 +214,18 @@ def _unique_summaries(items: list[Mapping[str, Any]]) -> list[Mapping[str, Any]]
 def _agent_status_hit(artifact: Mapping[str, Any], summary: Mapping[str, Any], *, summary_count: int) -> dict[str, Any]:
     contract = summary.get("agent_action_contract") if isinstance(summary.get("agent_action_contract"), Mapping) else summary
     approval = summary.get("approval") if isinstance(summary.get("approval"), Mapping) else {}
+    not_evaluated = _canonical_list(contract.get("not_evaluated") or summary.get("not_evaluated") or [])
+    action = contract.get("recommended_agent_action")
+    if action == "REPORT_NOT_EVALUATED" and not not_evaluated:
+        return _agent_status_miss(
+            artifact=artifact,
+            reason_code="NOT_EVALUATED_DETAILS_MISSING",
+            checked=False,
+            stale=True,
+            changed_since_check=False,
+            summary_path=summary.get("_loaded_from"),
+            summary_count=summary_count,
+        )
     return {
         "schema": AGENT_ARTIFACT_STATUS_SCHEMA,
         "schema_version": AGENT_ARTIFACT_STATUS_SCHEMA_VERSION,
@@ -228,12 +240,13 @@ def _agent_status_hit(artifact: Mapping[str, Any], summary: Mapping[str, Any], *
         "decision_semantics_version": contract.get("decision_semantics_version") or summary.get("decision_semantics_version"),
         "action_verdict": contract.get("action_verdict") or summary.get("action_verdict"),
         "stop": contract.get("stop"),
-        "recommended_agent_action": contract.get("recommended_agent_action"),
+        "recommended_agent_action": action,
         "reason_codes": list(contract.get("reason_codes") or summary.get("reason_codes") or []),
         "summary_path": summary.get("_loaded_from"),
         "summary_count": summary_count,
         "evidence": contract.get("evidence"),
-        "not_evaluated_count": len(contract.get("not_evaluated") or summary.get("not_evaluated") or []),
+        "not_evaluated": not_evaluated,
+        "not_evaluated_count": len(not_evaluated),
         "scope": "index_only",
     }
 
@@ -268,6 +281,7 @@ def _agent_status_miss(
         "summary_path": summary_path,
         "summary_count": summary_count,
         "evidence": None,
+        "not_evaluated": [],
         "not_evaluated_count": 0,
         "scope": "index_only",
     }
@@ -302,6 +316,12 @@ def _first_artifact_sha(summary: Mapping[str, Any]) -> str | None:
         if artifact.get("sha256"):
             return str(artifact["sha256"])
     return None
+
+
+def _canonical_list(values: Any) -> list[str]:
+    if not isinstance(values, list):
+        return []
+    return sorted({str(value) for value in values})
 
 
 def _load_summaries(state_dir: Path) -> list[dict[str, Any]]:
