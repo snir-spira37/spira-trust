@@ -1,5 +1,14 @@
 # Codex Arm D Resume Measurement
 
+## Historical Note
+
+The original Arm D result was invalidated by a protocol implementation mismatch.
+The first true-resume interpretation was then corrected because Codex usage
+counters were cumulative.
+
+Canonical Arm D interpretation: see [`../ERRATA.md`](../ERRATA.md) and the
+turn-delta results in this directory.
+
 Created: 2026-07-12T06:58:30.301837Z
 Codex: `codex-cli 0.142.5`
 

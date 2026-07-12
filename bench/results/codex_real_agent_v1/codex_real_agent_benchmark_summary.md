@@ -1,5 +1,14 @@
 # Codex Real-Agent Benchmark V1
 
+## Historical Note
+
+The original Arm D result in this file was invalidated by a protocol
+implementation mismatch. The first true-resume interpretation was then
+corrected because Codex usage counters were cumulative.
+
+Canonical Arm D interpretation: see [`ERRATA.md`](ERRATA.md) and the
+turn-delta results under [`arm_d_resume/`](arm_d_resume/).
+
 Created: 2026-07-12T06:42:20.610287Z
 Codex: `codex-cli 0.142.5`
 
