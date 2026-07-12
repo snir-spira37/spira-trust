@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-PROTOCOL_LOCKED_PENDING_CODEX_CLI_SMOKE
+PROTOCOL_LOCKED_CODEX_CLI_SMOKE_PASS
 ```
 
 ## Boundary
@@ -53,6 +53,17 @@ CODEX_REAL_AGENT_RUN_NOT_AUTHORIZED
 ```
 
 No fallback run may be reported as Codex.
+
+The 2026-07-12 smoke passed using the local Codex CLI binary:
+
+```text
+%LOCALAPPDATA%\OpenAI\Codex\bin\ea1c60319a1dcb19\codex.exe
+codex-cli 0.142.5
+```
+
+The WindowsApps alias was present but returned `Access is denied` from the
+current PowerShell environment. Benchmark runs must therefore use the explicit
+local Codex binary path unless PATH resolution is fixed and re-smoked.
 
 ## Cases
 
@@ -274,9 +285,9 @@ energy or CO2 savings
 The only next authorized action is:
 
 ```text
-complete a Codex CLI operational smoke
+run the 18 clean Codex sessions and 6 repeated-query measurements exactly as specified here
 ```
 
-Only if that smoke passes may the 18 clean sessions and 6 repeated-query
-measurements be run.
-
+The benchmark must use the smoke-passed local Codex binary path or a newly
+smoked equivalent. If Codex CLI execution fails again, stop and record the
+operational failure instead of falling back silently.
