@@ -1,0 +1,82 @@
+{
+  "completed_at": "2026-07-12T04:24:02Z",
+  "fixture_checks": {
+    "checks": {
+      "all_passed": true,
+      "duplicate_claim_id_fail_closed": true,
+      "missing_subject_hash_fail_closed": true,
+      "unknown_claim_status_fail_closed": true
+    },
+    "schema": "SPIRA_UNIFICATION_CORPUS_FIXTURE_CHECKS_V1"
+  },
+  "interpretation": {
+    "generated_proofs": "Correctness gates passed for all generated proofs.",
+    "release_claim": "No safety, SBOM correctness, Context Firewall, token, energy, or CO2 claim is made from this run.",
+    "tool_errors": "TOOL_ERROR entries are SPIRA/tooling failures and are excluded from proof correctness statistics; they are not package findings."
+  },
+  "materialized_manifest": "research/unification_proof_corpus/results/materialized_v1_2026-07-12.json",
+  "methodology": "research/unification_proof_corpus_methodology.md",
+  "not_claimed": [
+    "unification proof binds typed claims, policy/context roots, and action; it is not a safety proof",
+    "this experiment does not prove SBOM correctness or package safety",
+    "size metrics are byte counts, not live-agent token, latency, energy, or CO2 claims",
+    "the experiment covers one existing Python wheel evidence domain, not a universal Context Firewall"
+  ],
+  "public_scope": "aggregate unification proof corpus results only",
+  "raw_results": "work/unification_proof_corpus_full/raw_results.json (local, not committed)",
+  "redaction": [
+    "Raw per-package results are kept under work/ and are not committed by default.",
+    "Named package findings are not public package defects without manual review."
+  ],
+  "result_status": "UNIFICATION_CORPUS_ACCEPT_WITH_TOOL_ERRORS",
+  "schema": "SPIRA_UNIFICATION_CORPUS_PUBLIC_RESULTS_V1",
+  "started_at": "2026-07-12T01:19:24Z",
+  "summary": {
+    "agent_summary_bytes": {
+      "count": 1940,
+      "max": 3413,
+      "median": 3184,
+      "p90": 3249
+    },
+    "compact_reference_bytes": {
+      "count": 1940,
+      "max": 176,
+      "median": 176,
+      "p90": 176
+    },
+    "correctness_failures": {
+      "action_equivalence": 0,
+      "block_preserved": 0,
+      "disk_matches_rebuilt": 0,
+      "inclusion_rejects_mutation": 0,
+      "inclusion_verifies": 0,
+      "mutation_changes_identity": 0,
+      "not_evaluated_preserved": 0,
+      "reproducibility": 0
+    },
+    "evaluated_count": 1940,
+    "evidence_pack_bytes": {
+      "count": 1940,
+      "max": 159284,
+      "median": 31276,
+      "p90": 37897
+    },
+    "full_proof_bytes": {
+      "count": 1940,
+      "max": 7139,
+      "median": 7079,
+      "p90": 7139
+    },
+    "generation_time_ms": {
+      "count": 1940,
+      "max": 42.257,
+      "median": 5.47,
+      "p90": 8.888
+    },
+    "processed": 1954,
+    "status_counts": {
+      "PASS": 1940,
+      "TOOL_ERROR": 14
+    }
+  }
+}
