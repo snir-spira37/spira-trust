@@ -1,11 +1,6 @@
 {
+  "capture_complete": true,
   "case_id": "public_click_param",
-  "case_kind": "parameterized_test_case",
-  "command": [
-    "pytest",
-    "-q",
-    "tests/test_testing.py"
-  ],
   "commit": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
   "dependency_environment": {
     "environment_variable_policy": {
@@ -69,7 +64,57 @@
     "tests/test_testing.py",
     "--junitxml=spira_public_click_param_junit.xml"
   ],
+  "exit_code": 0,
+  "normalized_selection_command": [
+    "pytest",
+    "-q",
+    "tests/test_testing.py"
+  ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "producer_output_seen": false,
+  "pytest_version": {
+    "package": "pytest",
+    "version": "8.3.2"
+  },
+  "python_version_contract": {
+    "abi_tag": "cp312",
+    "implementation": "cpython",
+    "version": "3.12.10"
+  },
   "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
-  "repository_url": "https://github.com/pallets/click.git"
+  "relevant_plugin_contract": [],
+  "repository_url": "https://github.com/pallets/click.git",
+  "schema": "SPIRA_DOMAIN2_PUBLIC_RUN_MATERIALIZATION",
+  "schema_version": 1,
+  "source_revision_verification": "PASS",
+  "status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "withheld_run_outputs": [
+    {
+      "byte_length": 326,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "b07a1b0dd700c62557e879d555599c27eef8d103220ed98d9c9143fc9d001106",
+      "source_id": "console",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 7222,
+      "capture_complete": true,
+      "media_type": "application/xml",
+      "path": null,
+      "sha256": "1d41a6e8f5a16de1b7aa880390d35ff5c3ef4f235b0ddcec087c0390167735f6",
+      "source_id": "junit",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 1,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "source_id": "exit_code",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    }
+  ]
 }

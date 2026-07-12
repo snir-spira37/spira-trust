@@ -1,11 +1,6 @@
 {
-  "case_id": "public_requests_assertion",
-  "case_kind": "assertion_failure_instruction",
-  "command": [
-    "pytest",
-    "-q",
-    "tests/test_requests.py::RequestsTestCase::test_basic_building"
-  ],
+  "capture_complete": true,
+  "case_id": "public_requests_long_traceback",
   "commit": "f361ead047be5cb873174218582f7d8b9fcd9f49",
   "dependency_environment": {
     "environment_variable_policy": {
@@ -167,10 +162,62 @@
     "-m",
     "pytest",
     "-q",
-    "tests/test_requests.py::RequestsTestCase::test_basic_building",
-    "--junitxml=spira_public_requests_assertion_junit.xml"
+    "tests/test_requests.py",
+    "-x",
+    "--junitxml=spira_public_requests_long_traceback_junit.xml"
+  ],
+  "exit_code": 1,
+  "normalized_selection_command": [
+    "pytest",
+    "-q",
+    "tests/test_requests.py",
+    "-x"
   ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "producer_output_seen": false,
+  "pytest_version": {
+    "package": "pytest",
+    "version": "8.3.2"
+  },
+  "python_version_contract": {
+    "abi_tag": "cp312",
+    "implementation": "cpython",
+    "version": "3.12.10"
+  },
   "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
-  "repository_url": "https://github.com/psf/requests.git"
+  "relevant_plugin_contract": [],
+  "repository_url": "https://github.com/psf/requests.git",
+  "schema": "SPIRA_DOMAIN2_PUBLIC_RUN_MATERIALIZATION",
+  "schema_version": 1,
+  "source_revision_verification": "PASS",
+  "status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "withheld_run_outputs": [
+    {
+      "byte_length": 1837,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "6f4cd29c975b95668bef6717d59b3c22d18d74f08f74ac36a1aa0db0f729bea5",
+      "source_id": "console",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 3889,
+      "capture_complete": true,
+      "media_type": "application/xml",
+      "path": null,
+      "sha256": "a2d155374b0572b3dee6bd2829978ad978968c4655ee21d72a1fe377ce7e8607",
+      "source_id": "junit",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 1,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "source_id": "exit_code",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    }
+  ]
 }

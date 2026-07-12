@@ -1,11 +1,6 @@
 {
+  "capture_complete": true,
   "case_id": "public_flask_clean",
-  "case_kind": "clean_pass",
-  "command": [
-    "pytest",
-    "-q",
-    "tests/test_basic.py"
-  ],
   "commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
   "dependency_environment": {
     "environment_variable_policy": {
@@ -93,7 +88,57 @@
     "tests/test_basic.py",
     "--junitxml=spira_public_flask_clean_junit.xml"
   ],
+  "exit_code": 0,
+  "normalized_selection_command": [
+    "pytest",
+    "-q",
+    "tests/test_basic.py"
+  ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "producer_output_seen": false,
+  "pytest_version": {
+    "package": "pytest",
+    "version": "8.3.2"
+  },
+  "python_version_contract": {
+    "abi_tag": "cp312",
+    "implementation": "cpython",
+    "version": "3.12.10"
+  },
   "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
-  "repository_url": "https://github.com/pallets/flask.git"
+  "relevant_plugin_contract": [],
+  "repository_url": "https://github.com/pallets/flask.git",
+  "schema": "SPIRA_DOMAIN2_PUBLIC_RUN_MATERIALIZATION",
+  "schema_version": 1,
+  "source_revision_verification": "PASS",
+  "status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "withheld_run_outputs": [
+    {
+      "byte_length": 396,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "68156c12c0d70db4a36cf62c9fe014c3e61289c3c7996842147251f6f277a21b",
+      "source_id": "console",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 13217,
+      "capture_complete": true,
+      "media_type": "application/xml",
+      "path": null,
+      "sha256": "c57799bb376a890780aab3d3fe43befd71075fc63f1751c1d9467fda5cc96e2b",
+      "source_id": "junit",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 1,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "source_id": "exit_code",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    }
+  ]
 }

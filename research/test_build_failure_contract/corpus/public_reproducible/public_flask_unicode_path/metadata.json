@@ -7,6 +7,93 @@
     "tests/test_helpers.py"
   ],
   "commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+  "dependency_environment": {
+    "environment_variable_policy": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "PYTHONIOENCODING": "utf-8",
+      "network_access": "not intentionally required by selected commands; local loopback may be used by upstream tests"
+    },
+    "install_commands": [
+      [
+        "python",
+        "-m",
+        "pip",
+        "install",
+        "-e",
+        ".",
+        "pytest==8.3.2"
+      ]
+    ],
+    "installed_packages": [
+      {
+        "name": "blinker",
+        "version": "1.9.0"
+      },
+      {
+        "name": "click",
+        "version": "8.4.2"
+      },
+      {
+        "name": "colorama",
+        "version": "0.4.6"
+      },
+      {
+        "name": "flask",
+        "version": "3.2.0.dev0"
+      },
+      {
+        "name": "iniconfig",
+        "version": "2.3.0"
+      },
+      {
+        "name": "itsdangerous",
+        "version": "2.2.0"
+      },
+      {
+        "name": "jinja2",
+        "version": "3.1.6"
+      },
+      {
+        "name": "markupsafe",
+        "version": "3.0.3"
+      },
+      {
+        "name": "packaging",
+        "version": "26.2"
+      },
+      {
+        "name": "pip",
+        "version": "25.0.1"
+      },
+      {
+        "name": "pluggy",
+        "version": "1.6.0"
+      },
+      {
+        "name": "pytest",
+        "version": "8.3.2"
+      },
+      {
+        "name": "werkzeug",
+        "version": "3.1.8"
+      }
+    ],
+    "installed_packages_sha256": "905654e9ba6a3d7aea07c3306038da5738ba996cf743d5589dc7260e9b27dde8",
+    "package_manager": "pip",
+    "pinned_commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+    "plugin_discovery_policy": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1",
+    "repository_url": "https://github.com/pallets/flask.git",
+    "working_directory_policy": "repository root"
+  },
+  "execution_argv": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_helpers.py",
+    "--junitxml=spira_public_flask_unicode_path_junit.xml"
+  ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
   "repository_url": "https://github.com/pallets/flask.git"
 }

@@ -1,11 +1,6 @@
 {
+  "capture_complete": true,
   "case_id": "public_requests_assertion",
-  "case_kind": "assertion_failure_instruction",
-  "command": [
-    "pytest",
-    "-q",
-    "tests/test_requests.py::RequestsTestCase::test_basic_building"
-  ],
   "commit": "f361ead047be5cb873174218582f7d8b9fcd9f49",
   "dependency_environment": {
     "environment_variable_policy": {
@@ -170,7 +165,57 @@
     "tests/test_requests.py::RequestsTestCase::test_basic_building",
     "--junitxml=spira_public_requests_assertion_junit.xml"
   ],
+  "exit_code": 4,
+  "normalized_selection_command": [
+    "pytest",
+    "-q",
+    "tests/test_requests.py::RequestsTestCase::test_basic_building"
+  ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "producer_output_seen": false,
+  "pytest_version": {
+    "package": "pytest",
+    "version": "8.3.2"
+  },
+  "python_version_contract": {
+    "abi_tag": "cp312",
+    "implementation": "cpython",
+    "version": "3.12.10"
+  },
   "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
-  "repository_url": "https://github.com/psf/requests.git"
+  "relevant_plugin_contract": [],
+  "repository_url": "https://github.com/psf/requests.git",
+  "schema": "SPIRA_DOMAIN2_PUBLIC_RUN_MATERIALIZATION",
+  "schema_version": 1,
+  "source_revision_verification": "PASS",
+  "status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "withheld_run_outputs": [
+    {
+      "byte_length": 571,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "8bc56dfe78d482efc82fdfa995804d9b134fc98c185b7b280c04793a4d05adc0",
+      "source_id": "console",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 221,
+      "capture_complete": true,
+      "media_type": "application/xml",
+      "path": null,
+      "sha256": "8e838508f16c62da710819b05b22f64612f21cfdff13082c47eca0358ea7eb47",
+      "source_id": "junit",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 1,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "source_id": "exit_code",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    }
+  ]
 }

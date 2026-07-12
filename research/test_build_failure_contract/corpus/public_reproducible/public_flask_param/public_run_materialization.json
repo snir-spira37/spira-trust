@@ -1,11 +1,6 @@
 {
-  "case_id": "public_flask_clean",
-  "case_kind": "clean_pass",
-  "command": [
-    "pytest",
-    "-q",
-    "tests/test_basic.py"
-  ],
+  "capture_complete": true,
+  "case_id": "public_flask_param",
   "commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
   "dependency_environment": {
     "environment_variable_policy": {
@@ -90,10 +85,60 @@
     "-m",
     "pytest",
     "-q",
-    "tests/test_basic.py",
-    "--junitxml=spira_public_flask_clean_junit.xml"
+    "tests/test_templating.py",
+    "--junitxml=spira_public_flask_param_junit.xml"
+  ],
+  "exit_code": 0,
+  "normalized_selection_command": [
+    "pytest",
+    "-q",
+    "tests/test_templating.py"
   ],
   "oracle_expected_answers": "NOT_POPULATED",
+  "producer_output_seen": false,
+  "pytest_version": {
+    "package": "pytest",
+    "version": "8.3.2"
+  },
+  "python_version_contract": {
+    "abi_tag": "cp312",
+    "implementation": "cpython",
+    "version": "3.12.10"
+  },
   "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
-  "repository_url": "https://github.com/pallets/flask.git"
+  "relevant_plugin_contract": [],
+  "repository_url": "https://github.com/pallets/flask.git",
+  "schema": "SPIRA_DOMAIN2_PUBLIC_RUN_MATERIALIZATION",
+  "schema_version": 1,
+  "source_revision_verification": "PASS",
+  "status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "withheld_run_outputs": [
+    {
+      "byte_length": 314,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "c0aacbf1793f1246584ffc4a862d7cb08c0e164ebde7bf930cd686ceb5819cf0",
+      "source_id": "console",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 3269,
+      "capture_complete": true,
+      "media_type": "application/xml",
+      "path": null,
+      "sha256": "bae86402fd1d23a998dfcf916fb88da80eaaa5fc6a37b81d664859a643741720",
+      "source_id": "junit",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    },
+    {
+      "byte_length": 1,
+      "capture_complete": true,
+      "media_type": "text/plain",
+      "path": null,
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+      "source_id": "exit_code",
+      "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+    }
+  ]
 }

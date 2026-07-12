@@ -1,6 +1,7 @@
 repository: https://github.com/psf/requests.git
 commit: f361ead047be5cb873174218582f7d8b9fcd9f49
-python: cpython 3.12.4
+python: cpython 3.12.10
 pytest: 8.3.2
 command: ["pytest","-q","tests/test_requests.py"]
-raw_logs: not committed; regenerate from public source before oracle population
+raw_outputs: withheld after privacy/path review; hashes recorded in public_run_materialization.json
+oracle_expected_answers: not populated

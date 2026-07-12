@@ -45,25 +45,62 @@
     {
       "case_id": "public_click_import",
       "case_kind": "collection_or_import_failure_instruction",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 0,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 270,
+          "byte_length": 331,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_import/generation_instructions.txt",
-          "sha256": "d4c0cce88d877564c3642314427c00b2313c76dc86f7d171956d8c5ba1a11483",
+          "sha256": "b407dee30d60a6e29dd3acdff315900a9217d613caa721e5c6f6b7336f46b65b",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 344,
+          "byte_length": 2000,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_import/metadata.json",
-          "sha256": "3d9aff664ab60cd0d09b236e261001679a2ee89174c0315665b7626d8aff49ae",
+          "sha256": "e85902987ab77bfc74d7d89b8eed53a21d460a4a809982c406b7e1c0bb3661f5",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3429,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_import/public_run_materialization.json",
+          "sha256": "d2b95ca7f64ee1115acf5d3516b994cc28c17ef2b8b29a399acb17dea8866176",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 314,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "a44e7add829fd4c18cfeb6d4ad08d0853a6f07726b4b7763f9e3eca579908443",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 313,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "8e27a211543b4207438fc4b127cbdbf41ff80139450f4c9a0fca240435abb164",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -78,6 +115,7 @@
         "value": "https://github.com/pallets/click.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -85,37 +123,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_click_param",
       "case_kind": "parameterized_test_case",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 0,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 270,
+          "byte_length": 331,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/generation_instructions.txt",
-          "sha256": "0055745967b869d604ac85b81c76816b5b1ede6bceffcf8733fd5abc23d49aab",
+          "sha256": "10baca42388308bc464f812112f7167444d34591dd02e8a184abb8371932e4f6",
           "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 1981,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/metadata.json",
+          "sha256": "4b648acdec1ff2b4d97e1e072d295db32703295a2b1b64e4bfbffd02acbfe33d",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3428,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/public_run_materialization.json",
+          "sha256": "d8d5f58b34f12d5b49e43e893aef70151a8fbaac00e0a46f946950eb8d992b7b",
+          "source_id": "public_run_materialization",
           "source_state": "PRESENT_COMPLETE"
         },
         {
           "byte_length": 326,
           "capture_complete": true,
-          "media_type": "application/json",
-          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/metadata.json",
-          "sha256": "afd0c4b7b735eaa6a068d62dff88c1910e1d9af1d43a64cda6b28d979a6f46ec",
-          "source_id": "metadata",
-          "source_state": "PRESENT_COMPLETE"
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "b07a1b0dd700c62557e879d555599c27eef8d103220ed98d9c9143fc9d001106",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 7222,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "1d41a6e8f5a16de1b7aa880390d35ff5c3ef4f235b0ddcec087c0390167735f6",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -130,6 +206,7 @@
         "value": "https://github.com/pallets/click.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -137,37 +214,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_flask_clean",
       "case_kind": "clean_pass",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 0,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 268,
+          "byte_length": 329,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_clean/generation_instructions.txt",
-          "sha256": "6e126c9630f1bfb337dfdac9ca600b4150db69e0f90297724254fd091726313a",
+          "sha256": "255dbfd40cda36bb7d954a35e0f4d2efb1cf1d8f91450c7e144f49e56019716b",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 311,
+          "byte_length": 2420,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_clean/metadata.json",
-          "sha256": "22e07f1e701e2a9034b88aab79cba188aa4624d46e85fe29cba5011b73b0e522",
+          "sha256": "3f549683cb78de722cb5a9bd213ed24e79882545f41f56f87214d7b0ccf28f92",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3881,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_clean/public_run_materialization.json",
+          "sha256": "47355770766a32b30429e7bc547492b1cdc1e5dfda3b5e930ca24baf95bcf264",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 396,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "68156c12c0d70db4a36cf62c9fe014c3e61289c3c7996842147251f6f277a21b",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 13217,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "c57799bb376a890780aab3d3fe43befd71075fc63f1751c1d9467fda5cc96e2b",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -182,6 +297,7 @@
         "value": "https://github.com/pallets/flask.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -189,37 +305,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_flask_param",
       "case_kind": "parameterized_test_case",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 0,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 273,
+          "byte_length": 334,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_param/generation_instructions.txt",
-          "sha256": "5fbee51d6f54b0e20fc3bb9901a0371a0a5f4acbec5d6b0b3fa4196be6fd7ce6",
+          "sha256": "e7ab1bb4fbb0333081a0d1a9621b537c6ad39e02a9dca5b262fd1ae8db701187",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 329,
+          "byte_length": 2443,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_param/metadata.json",
-          "sha256": "b3d7f9d2873b066b5267a31d793f3484b62f179377fd0479938cd165c7c47fc6",
+          "sha256": "80fa2e70404c6ebea25f95978c2123043dfcb1961b3df92a69dbbcc31e4e1145",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3890,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_param/public_run_materialization.json",
+          "sha256": "26120f4a5c082921e697c17bc8a3177731ea0377257741c2bde8b748d782d105",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 314,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "c0aacbf1793f1246584ffc4a862d7cb08c0e164ebde7bf930cd686ceb5819cf0",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 3269,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "bae86402fd1d23a998dfcf916fb88da80eaaa5fc6a37b81d664859a643741720",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -234,6 +388,7 @@
         "value": "https://github.com/pallets/flask.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -241,37 +396,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_flask_unicode_path",
       "case_kind": "unicode_or_path_normalization",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 1,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 270,
+          "byte_length": 331,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_unicode_path/generation_instructions.txt",
-          "sha256": "e7d32ddd70e499fd09f8e67273ec7d9e16065e267e816382e373ccc9bd29b489",
+          "sha256": "8288a7ccd4ee97d04f2139bee6690121e38844812adf9c72db105f9e582fc350",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 339,
+          "byte_length": 2457,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_unicode_path/metadata.json",
-          "sha256": "5593e4f740515114debd0f5256e40399e53f07187647a9919740db4c6d36d21a",
+          "sha256": "619de41d7fdea7985e23eb0a06dbb6efcb91a22ab5845aac30fd3b8a03d23a07",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3899,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_unicode_path/public_run_materialization.json",
+          "sha256": "d75e841b9727ddf6ae395e0f2733709360ea3359574178b1bcdfc133d16df30d",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 3572,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "5230b63b512bd08cb632f896719381cdfd7d637f3f2ee0dfab632c67031c6327",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 6750,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "879b1805cb7f007e0f80853a61a56af0d651bd8e6f177583d49a985fccab6966",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -286,6 +479,7 @@
         "value": "https://github.com/pallets/flask.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -293,37 +487,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_requests_assertion",
       "case_kind": "assertion_failure_instruction",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 4,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 309,
+          "byte_length": 370,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_assertion/generation_instructions.txt",
-          "sha256": "22bdeb8d2f644b905bd16d47ca5c03a22d4fa92e605d51ee33fb0538a90143c3",
+          "sha256": "eb323f87ed84bf3aaac059ad272e5b42a2295b5bfbda81b4c1415cb245355dbe",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 378,
+          "byte_length": 4160,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_assertion/metadata.json",
-          "sha256": "b0a3d3ed02e6636d4ec204f2e5d248de39dbc1663c78c1eb4512ea45eff90f4a",
+          "sha256": "78d3fe350a4cd0fb0c42892068dfcaf694a4b0606bb5205c1ffe6a7b9ff1d3e4",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 5600,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_assertion/public_run_materialization.json",
+          "sha256": "690c4bab9825692a625e40f94861977dd1d38380e915e153ad0afe3fdcd42ad4",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 571,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "8bc56dfe78d482efc82fdfa995804d9b134fc98c185b7b280c04793a4d05adc0",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 221,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "8e838508f16c62da710819b05b22f64612f21cfdff13082c47eca0358ea7eb47",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -338,6 +570,7 @@
         "value": "https://github.com/psf/requests.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -345,37 +578,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_requests_clean",
       "case_kind": "clean_pass",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 1,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 270,
+          "byte_length": 331,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_clean/generation_instructions.txt",
-          "sha256": "2a3d6fc66053ba185d402d8c9562e3fd135a2a95475fbc9d27d9ad383dadf356",
+          "sha256": "2e58056f85f768a48c15c36078641998f7c1a5352ae97eaf6070e83b8791d8a6",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 316,
+          "byte_length": 4055,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_clean/metadata.json",
-          "sha256": "ee2614161e2ad435ba7de3bbc0954b7fa31fadb2e51cd7a1004bbde7fad1ca58",
+          "sha256": "f032cb3d2c03479e230a47e1baf4dfde11277f45a2dd743c38d5b097f865ce6a",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 5520,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_clean/public_run_materialization.json",
+          "sha256": "f9d53fec6d05c5ac53797e21489317122665955119ed9605932cc8749d09def6",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 283544,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "54946cb3440e94a2b7a657cf543dcf94d42dcc648a13dace05bbcf85c1233976",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 567974,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "0bb9e2fb5feb9b9aac7c08b88838499fe77d72d6485e8f8118a23e335a77d25c",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -390,6 +661,7 @@
         "value": "https://github.com/psf/requests.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -397,37 +669,75 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "public_requests_long_traceback",
       "case_kind": "noisy_or_long_traceback",
-      "expected_publication_mode": "instructions_and_hashes_only",
+      "exit_code": 1,
+      "expected_publication_mode": "withheld_raw_outputs_with_hashes",
       "input_sources": [
         {
-          "byte_length": 275,
+          "byte_length": 336,
           "capture_complete": true,
           "media_type": "text/plain",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_long_traceback/generation_instructions.txt",
-          "sha256": "54a68568247955e7f7299beadf7ed8c010bbfde4d50b3a700ee9989eef32c9ea",
+          "sha256": "d2270dedc468d348c436e9b7957f6158b0d49e28e16a186141b5daa8e499c363",
           "source_id": "generation_instructions",
           "source_state": "PRESENT_COMPLETE"
         },
         {
-          "byte_length": 349,
+          "byte_length": 4108,
           "capture_complete": true,
           "media_type": "application/json",
           "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_long_traceback/metadata.json",
-          "sha256": "fe60610ed8bb19239f16f27356fbe5e985520a05b18e9c970ca2c4a810ca2702",
+          "sha256": "ba2a0801ffc377783062cfd353e16f766de47bc07f059761a0758ff0683f1616",
           "source_id": "metadata",
           "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 5556,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_long_traceback/public_run_materialization.json",
+          "sha256": "48ec5073adf894262ad75d4eef706e91b68d70c023298d26adbf86465790f6be",
+          "source_id": "public_run_materialization",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 1837,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "6f4cd29c975b95668bef6717d59b3c22d18d74f08f74ac36a1aa0db0f729bea5",
+          "source_id": "console",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 3889,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": null,
+          "sha256": "a2d155374b0572b3dee6bd2829978ad978968c4655ee21d72a1fe377ce7e8607",
+          "source_id": "junit",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+        },
+        {
+          "byte_length": 1,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": null,
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "source_id": "exit_code",
+          "source_state": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
         }
       ],
       "normalized_selection_command": [
@@ -443,6 +753,7 @@
         "value": "https://github.com/psf/requests.git"
       },
       "public_or_private": "public",
+      "public_run_materialization_status": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
       "pytest_version": {
         "package": "pytest",
         "version": "8.3.2"
@@ -450,14 +761,15 @@
       "python_version_contract": {
         "abi_tag": "cp312",
         "implementation": "cpython",
-        "version": "3.12.4"
+        "version": "3.12.10"
       },
+      "raw_run_output_publication_status": "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW",
       "relevant_plugin_contract": [],
       "source_revision": {
         "kind": "git_commit",
         "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
       },
-      "stratum": "public_reproducible_instruction"
+      "stratum": "public_reproducible_run"
     },
     {
       "case_id": "synthetic_clean_success",
@@ -2290,7 +2602,7 @@
       "stratum": "synthetic"
     }
   ],
-  "materialization_commit": "b6b0c4a8d58895a226cfb0219f0385a04e05cc83",
+  "materialization_commit": "042c389b2b6d4cd4cdf1d5b355bc4a0765c7f804",
   "materialization_date": "2026-07-13",
   "materialization_tool": "tools/materialize_test_build_failure_corpus.py",
   "methodology_document": "research/test_build_failure_contract_methodology.md",
@@ -2350,13 +2662,15 @@
   "path_scan_status": "PASS",
   "privacy_review_status": "PASS",
   "producer_implementation": "NOT_AUTHORIZED",
-  "raw_evidence_publication_status": "synthetic raw evidence committed; public real-world logs represented by generation instructions and hashes only",
+  "public_run_materialization": "DOMAIN_2_PUBLIC_RUN_MATERIALIZED",
+  "public_run_materialization_authorization": "research/test_build_failure_contract_public_run_materialization_authorization.md",
+  "raw_evidence_publication_status": "synthetic raw evidence committed; public real-world raw outputs withheld with hashes recorded",
   "schema": "SPIRA_DOMAIN2_TEST_BUILD_FAILURE_CORPUS_MANIFEST",
   "schema_version": 1,
   "secret_scan_status": "PASS",
   "status": "DOMAIN_2_CORPUS_MATERIALIZED",
   "strata_counts": {
-    "public_reproducible_instruction": 8,
+    "public_reproducible_run": 8,
     "synthetic": 30
   },
   "validator_implementation_commit": "a4dcafebfb3956728ef940cb9f7d81a8793b451b"
