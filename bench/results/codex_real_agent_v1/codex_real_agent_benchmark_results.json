@@ -1,6 +1,6 @@
 {
   "schema": "SPIRA_CODEX_REAL_AGENT_BENCHMARK_V1",
-  "created_at": "2026-07-12T06:33:27.750225Z",
+  "created_at": "2026-07-12T06:42:20.610287Z",
   "protocol": "bench/codex_real_agent_protocol.md",
   "codex_version": "codex-cli 0.142.5",
   "cases": {
@@ -19,41 +19,35 @@
   },
   "prepared": {
     "median_minijinja": {
-      "artifact_filename": "minijinja-2.18.0-cp38-abi3-win_amd64.whl",
+      "artifact_filename": "",
       "evidence_dir": "work/codex_real_agent_v1/prepared_cases/median_minijinja/evidence",
       "state_dir": "work/codex_real_agent_v1/prepared_cases/median_minijinja/state/agent_summaries",
       "command_fingerprint": "a1d08b521bab96ec9bab0564499a283c93050378a76cf45b81e6af9ed65776b8",
       "summary_contract": {
-        "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
-        "combined_verdict": "GRAPH_OK_WITH_NOTES",
-        "action_verdict": "GRAPH_OK_WITH_NOTES",
-        "stop": true,
-        "recommended_agent_action": "REPORT_NOT_EVALUATED",
-        "reason_codes": [
-          "NOTES_PRESENT",
-          "REPORT_NOT_EVALUATED"
-        ],
-        "not_evaluated_count": 5,
-        "unification_id": "ffa0b47e79daba2751bc7a8eaabfe53d1b698459d02fc43d6b23a5917ca21d27"
+        "decision_semantics_version": null,
+        "combined_verdict": null,
+        "action_verdict": null,
+        "stop": null,
+        "recommended_agent_action": null,
+        "reason_codes": null,
+        "not_evaluated_count": 0,
+        "unification_id": null
       }
     },
     "p90_nutpie": {
-      "artifact_filename": "nutpie-0.16.8-cp314-cp314-win_amd64.whl",
+      "artifact_filename": "",
       "evidence_dir": "work/codex_real_agent_v1/prepared_cases/p90_nutpie/evidence",
       "state_dir": "work/codex_real_agent_v1/prepared_cases/p90_nutpie/state/agent_summaries",
       "command_fingerprint": "31c9857fff3ba82cacfcc8e0811f372d93256ad89518d9c67d5d095975dc3d6c",
       "summary_contract": {
-        "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
-        "combined_verdict": "GRAPH_OK_WITH_NOTES",
-        "action_verdict": "GRAPH_OK_WITH_NOTES",
-        "stop": true,
-        "recommended_agent_action": "REPORT_NOT_EVALUATED",
-        "reason_codes": [
-          "NOTES_PRESENT",
-          "REPORT_NOT_EVALUATED"
-        ],
-        "not_evaluated_count": 5,
-        "unification_id": "2ddae2085cd326fcaf08f6c8634996b38792299ad689fea75da504f29f20edf6"
+        "decision_semantics_version": null,
+        "combined_verdict": null,
+        "action_verdict": null,
+        "stop": null,
+        "recommended_agent_action": null,
+        "reason_codes": null,
+        "not_evaluated_count": 0,
+        "unification_id": null
       }
     }
   },
@@ -827,6 +821,14 @@
       "p90_nutpie/D_reduction_vs_C_first_pct": -25.875
     }
   },
+  "errata": [
+    {
+      "scope": "Arm D repeated exact-context query",
+      "status": "NOT_EVALUATED_PROTOCOL_IMPLEMENTATION_MISMATCH",
+      "reason": "The original Arm D implementation asked for first_query and second_query in one Codex turn. The locked protocol requires a true second turn in the same session and separate usage measurement.",
+      "replacement_measurement": "bench/results/codex_real_agent_v1/arm_d_resume/codex_arm_d_resume_summary.md"
+    }
+  ],
   "not_claimed": [
     "This is a Codex CLI real-agent tool-use benchmark, not a universal agent benchmark.",
     "It reports provider/tool usage counters from Codex transcripts.",

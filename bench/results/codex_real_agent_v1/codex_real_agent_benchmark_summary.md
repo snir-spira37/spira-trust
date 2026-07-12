@@ -1,6 +1,6 @@
 # Codex Real-Agent Benchmark V1
 
-Created: 2026-07-12T06:33:27.750225Z
+Created: 2026-07-12T06:42:20.610287Z
 Codex: `codex-cli 0.142.5`
 
 This is a Codex CLI real-agent tool-use benchmark. It is not the DeepSeek file-ingestion benchmark.
@@ -35,9 +35,19 @@ This is a Codex CLI real-agent tool-use benchmark. It is not the DeepSeek file-i
 
 - Arm B improved over Arm A on input tokens in both frozen cases.
 - Arm C did not improve over Arm B on first-query input tokens in either case; it was larger in this run.
-- Arm D repeated-query sessions did not improve over first Arm C sessions in this prompt shape.
+- Arm D in this original file is not a valid repeated-query measurement because it used one prompt/turn for both first_query and second_query.
 - Therefore this run does not support an additional live token-efficiency claim for status/cache beyond agent_summary.
 - Status/cache/unification remain binding, audit, exact-context reuse, and fail-closed features under this benchmark result.
+
+## Arm D Erratum
+
+`D_repeated_exact_context` rows in this file are retained for audit history but are classified as:
+
+```text
+NOT_EVALUATED_PROTOCOL_IMPLEMENTATION_MISMATCH
+```
+
+They were produced by one Codex turn that returned `first_query` and `second_query` in the same JSON object. The locked protocol requires a true resumed second turn and separate usage measurement. The corrected Arm D measurement is stored under `bench/results/codex_real_agent_v1/arm_d_resume/`.
 
 ## Validity Notes
 

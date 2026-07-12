@@ -1,0 +1,13 @@
+created_at,case,arm,repeat,turn,exit_code,elapsed_seconds,input_tokens,cached_input_tokens,output_tokens,reasoning_output_tokens,tool_call_count,files_read_estimate,gate_action_valid,compact_presence_valid,valid,run_dir
+2026-07-12T06:44:09.515469Z,median_minijinja,D_resume_true_second_turn,1,first,0,44.124,59529,49152,1699,421,6,10,True,True,True,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r1
+2026-07-12T06:44:09.515469Z,median_minijinja,D_resume_true_second_turn,1,second,0,43.963,116483,100992,3573,1039,6,10,True,True,True,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r1
+2026-07-12T06:45:23.435300Z,median_minijinja,D_resume_true_second_turn,2,first,0,35.614,42822,39552,1373,364,4,8,True,True,False,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r2
+2026-07-12T06:45:23.435300Z,median_minijinja,D_resume_true_second_turn,2,second,0,38.293,92853,85760,2859,823,4,8,True,True,False,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r2
+2026-07-12T06:46:36.709306Z,median_minijinja,D_resume_true_second_turn,3,first,0,45.256,59463,53248,1814,501,6,10,True,True,True,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r3
+2026-07-12T06:46:36.709306Z,median_minijinja,D_resume_true_second_turn,3,second,0,28.005,95126,86784,2879,929,2,4,True,True,True,work/codex_real_agent_v1/runs/median_minijinja_D_resume_r3
+2026-07-12T06:47:58.099070Z,p90_nutpie,D_resume_true_second_turn,1,first,0,47.535,59280,54272,1564,387,6,10,True,True,True,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r1
+2026-07-12T06:47:58.099070Z,p90_nutpie,D_resume_true_second_turn,1,second,0,33.84,112663,104576,2831,693,4,8,True,True,True,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r1
+2026-07-12T06:49:11.473015Z,p90_nutpie,D_resume_true_second_turn,2,first,0,44.697,59457,50176,1770,552,6,10,True,True,True,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r2
+2026-07-12T06:49:11.473015Z,p90_nutpie,D_resume_true_second_turn,2,second,0,28.662,95021,83200,2896,970,2,4,True,True,True,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r2
+2026-07-12T06:50:28.687918Z,p90_nutpie,D_resume_true_second_turn,3,first,0,36.603,42837,39552,1261,268,4,8,True,True,False,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r3
+2026-07-12T06:50:28.687918Z,p90_nutpie,D_resume_true_second_turn,3,second,0,40.6,92806,85760,2760,776,4,8,True,True,False,work/codex_real_agent_v1/runs/p90_nutpie_D_resume_r3
