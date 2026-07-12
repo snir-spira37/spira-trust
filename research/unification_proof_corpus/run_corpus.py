@@ -312,9 +312,9 @@ def evaluate_one(
         result["tool_error"] = repr(exc)
     finally:
         if not keep_wheel and wheel_path.exists():
-            wheel_path.unlink()
+            safe_unlink(wheel_path)
         if not keep_spira_outputs and output_dir.exists():
-            shutil.rmtree(output_dir)
+            safe_rmtree(output_dir)
     return result
 
 
@@ -615,6 +615,20 @@ def zip_entry_sizes(path: Path | None, name: str) -> dict[str, int] | None:
         except KeyError:
             return None
         return {"file_size": info.file_size, "compress_size": info.compress_size}
+
+
+def safe_unlink(path: Path) -> None:
+    try:
+        path.unlink()
+    except OSError:
+        pass
+
+
+def safe_rmtree(path: Path) -> None:
+    try:
+        shutil.rmtree(path)
+    except OSError:
+        pass
 
 
 def summarize_materialized(entries: list[Mapping[str, Any]]) -> dict[str, Any]:
