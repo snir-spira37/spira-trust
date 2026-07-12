@@ -1,0 +1,123 @@
+{
+  "schema": "SPIRA_DOMAIN2_ORACLE_VALIDATOR_FIXTURE_MANIFEST",
+  "schema_version": 1,
+  "status": "VALIDATOR_FIXTURE_MANIFEST_ONLY",
+  "oracle_population": "NOT_AUTHORIZED",
+  "fixture_strategy": "Focused tests generate oracle documents from a canonical positive fixture factory and apply one mutation per negative fixture.",
+  "positive_fixtures": [
+    "minimal_passing_oracle_document",
+    "machine_readable_bytes_input",
+    "multiple_cases_with_symmetric_relationships",
+    "not_evaluated_scope_implies_not_evaluated_result",
+    "report_with_notes_stop_false"
+  ],
+  "negative_fixtures": [
+    {
+      "name": "hash_only_scope_projection",
+      "expected_error_code": "PROJECTION_BYTES_NOT_AVAILABLE"
+    },
+    {
+      "name": "hash_only_result_projection",
+      "expected_error_code": "PROJECTION_BYTES_NOT_AVAILABLE"
+    },
+    {
+      "name": "scope_hash_mismatch",
+      "expected_error_code": "SCOPE_IDENTITY_HASH_MISMATCH"
+    },
+    {
+      "name": "result_hash_mismatch",
+      "expected_error_code": "RESULT_IDENTITY_HASH_MISMATCH"
+    },
+    {
+      "name": "collection_manifest_mismatch",
+      "expected_error_code": "COLLECTION_MANIFEST_HASH_MISMATCH"
+    },
+    {
+      "name": "duplicate_case_id",
+      "expected_error_code": "DUPLICATE_CASE_ID"
+    },
+    {
+      "name": "missing_related_case",
+      "expected_error_code": "RELATED_CASE_MISSING"
+    },
+    {
+      "name": "asymmetric_relationship",
+      "expected_error_code": "RELATIONSHIP_NOT_SYMMETRIC"
+    },
+    {
+      "name": "unsorted_canonical_array",
+      "expected_error_code": "ARRAY_NOT_CANONICALLY_SORTED"
+    },
+    {
+      "name": "duplicate_set_member",
+      "expected_error_code": "DUPLICATE_SET_MEMBER"
+    },
+    {
+      "name": "strict_list_mismatch",
+      "expected_error_code": "BLOCKING_LIST_MISMATCH"
+    },
+    {
+      "name": "invalid_declared_delta",
+      "expected_error_code": "DECLARED_DELTA_INVALID_FIELD"
+    },
+    {
+      "name": "stop_false_with_stop_blocked",
+      "expected_error_code": "ACTION_STOP_INCONSISTENT"
+    },
+    {
+      "name": "stop_true_with_proceed",
+      "expected_error_code": "ACTION_STOP_INCONSISTENT"
+    },
+    {
+      "name": "passed_result_with_blocking",
+      "expected_error_code": "PASSED_RESULT_HAS_BLOCKING_CASES"
+    },
+    {
+      "name": "timeout_without_run_failure",
+      "expected_error_code": "TIMEOUT_PROCESS_MISSING_TIMEOUT_FAILURE"
+    },
+    {
+      "name": "failure_classes_not_derived",
+      "expected_error_code": "FAILURE_CLASSES_NOT_DERIVED"
+    },
+    {
+      "name": "ambiguous_repository_url",
+      "expected_error_code": "REPOSITORY_URL_NOT_CANONICAL"
+    },
+    {
+      "name": "shell_command_string",
+      "expected_error_code": "SHELL_COMMAND_STRING_NOT_ALLOWED"
+    },
+    {
+      "name": "dirty_revision_as_git_commit",
+      "expected_error_code": "SOURCE_REVISION_NOT_CANONICAL"
+    },
+    {
+      "name": "unknown_plugin",
+      "expected_error_code": "UNKNOWN_ACTIVE_PLUGIN"
+    },
+    {
+      "name": "duplicate_plugin",
+      "expected_error_code": "PLUGIN_DUPLICATE"
+    },
+    {
+      "name": "not_evaluated_identity_with_hash",
+      "expected_error_code": "NOT_EVALUATED_IDENTITY_HAS_HASH"
+    },
+    {
+      "name": "not_evaluated_identity_with_projection",
+      "expected_error_code": "NOT_EVALUATED_IDENTITY_HAS_PROJECTION"
+    },
+    {
+      "name": "emitted_identity_incomplete_evidence",
+      "expected_error_code": "EMITTED_IDENTITY_WITH_INCOMPLETE_EVIDENCE"
+    }
+  ],
+  "not_authorized": [
+    "ORACLE_POPULATION",
+    "CORPUS_MATERIALIZATION",
+    "PRODUCER_IMPLEMENTATION",
+    "GATE_B",
+    "DOMAIN_3"
+  ]
+}

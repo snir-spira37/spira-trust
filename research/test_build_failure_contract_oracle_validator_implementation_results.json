@@ -1,0 +1,51 @@
+{
+  "schema": "SPIRA_DOMAIN2_ORACLE_VALIDATOR_IMPLEMENTATION_RESULTS",
+  "schema_version": 1,
+  "status": "DOMAIN_2_ORACLE_VALIDATOR_IMPLEMENTATION_PASS",
+  "accepted_schema": "SPIRA_TEST_BUILD_FAILURE_ORACLE_V7",
+  "accepted_validator_spec_commit": "cec74d1",
+  "implementation_authorization_commit": "9e73d30",
+  "implemented_files": [
+    "source/spira_core/test_build_failure_oracle_validator.py",
+    "tests/test_test_build_failure_oracle_validator.py",
+    "tests/fixtures/test_build_failure_oracle_validator/fixture_manifest.json"
+  ],
+  "focused_validator_tests": {
+    "command": "python -m pytest tests/test_test_build_failure_oracle_validator.py -q",
+    "status": "PASS",
+    "summary": "8 passed"
+  },
+  "full_pytest": {
+    "command": "python -m pytest -q",
+    "status": "PASS",
+    "summary": "86 passed"
+  },
+  "fixture_coverage": {
+    "positive_fixture_count": 5,
+    "negative_fixture_count": 25,
+    "hash_only_scope_projection": "FAIL_CLOSED",
+    "hash_only_result_projection": "FAIL_CLOSED"
+  },
+  "machine_readable_report": {
+    "schema": "SPIRA_DOMAIN2_ORACLE_VALIDATOR_RESULT",
+    "verdicts": [
+      "PASS",
+      "FAIL",
+      "TOOL_ERROR"
+    ],
+    "hash_only_failure_status": "ORACLE_VALIDATION_FAILED",
+    "hash_only_failure_error_code": "PROJECTION_BYTES_NOT_AVAILABLE"
+  },
+  "privacy_path_secret_scan": {
+    "status": "PASS",
+    "notes": "No secrets or absolute private paths are intentionally emitted by validator reports; output paths are redacted to relative or basename form."
+  },
+  "not_authorized": [
+    "ORACLE_POPULATION",
+    "CORPUS_MATERIALIZATION",
+    "PRODUCER_IMPLEMENTATION",
+    "GATE_B",
+    "DOMAIN_3",
+    "RELEASE_VERSION_TAG_PYPI"
+  ]
+}
