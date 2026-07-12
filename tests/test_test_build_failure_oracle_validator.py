@@ -28,11 +28,11 @@ def test_validator_accepts_machine_readable_bytes_input():
     assert len(report["input"]["sha256"]) == 64
 
 
-def test_json_parse_failure_is_tool_error_not_oracle_finding():
+def test_json_parse_failure_is_validation_failure_not_tool_error():
     report = validator.validate_oracle_bytes(b"{")
 
-    assert report["verdict"] == "TOOL_ERROR"
-    assert report["status"] == "ORACLE_VALIDATOR_TOOL_ERROR"
+    assert report["verdict"] == "FAIL"
+    assert report["status"] == "ORACLE_VALIDATION_FAILED"
     assert report["checks"][0]["error_code"] == "JSON_PARSE_FAILED"
 
 
@@ -103,6 +103,10 @@ def test_report_with_notes_stop_false_passes():
 
 def test_negative_validator_fixtures_fail_with_expected_error_codes():
     cases = {
+        "malformed_nested_schema": (_malformed_nested_schema, "JSON_SCHEMA_V7_VALIDATION_FAILED"),
+        "forbidden_additional_property": (_forbidden_additional_property, "JSON_SCHEMA_V7_VALIDATION_FAILED"),
+        "invalid_enum": (_invalid_enum, "JSON_SCHEMA_V7_VALIDATION_FAILED"),
+        "missing_nested_required_field": (_missing_nested_required_field, "JSON_SCHEMA_V7_VALIDATION_FAILED"),
         "hash_only_scope_projection": (_hash_only_scope_projection, "PROJECTION_BYTES_NOT_AVAILABLE"),
         "hash_only_result_projection": (_hash_only_result_projection, "PROJECTION_BYTES_NOT_AVAILABLE"),
         "scope_hash_mismatch": (_scope_hash_mismatch, "SCOPE_IDENTITY_HASH_MISMATCH"),
@@ -175,24 +179,82 @@ def _oracle():
             "policy": "FROZEN_AGENT_ACTION_SUBSET_FOR_DOMAIN_2_ORACLE_V7",
             "included_actions": ["PROCEED", "STOP_BLOCKED", "RERUN_REQUIRED", "REPORT_NOT_EVALUATED", "REPORT_WITH_NOTES"],
             "excluded_actions": ["ASK_HUMAN"],
-            "rationale": "Domain 2 oracle V7 uses the frozen deterministic gate actions.",
+            "rationale": "Domain 2 oracle V7 uses only the frozen agent actions currently emitted by the accepted SPIRA action contract for deterministic gate answers; ASK_HUMAN is not introduced as a Domain 2 action.",
         },
         "scope_canonicalization_contract": {
             "schema": "SPIRA_PYTEST_SCOPE_CANONICALIZATION_V1",
             "schema_version": 1,
             "encoding": "UTF-8",
             "json_canonicalization": "sorted object keys, no insignificant whitespace, arrays in schema-defined canonical order",
-            "project_identity": {},
-            "source_revision": {},
-            "normalized_selection_command": {},
-            "python_version_contract": {},
-            "pytest_version": {},
-            "relevant_plugin_contract": {},
-            "scope_projection_hash": "scope_identity_sha256 is SHA256(tag + canonical_json(scope_identity_projection))",
+            "project_identity": {
+                "accepted_forms": "repository_url, package_name, or project_hash",
+                "normalization": "repository_url accepts only absolute https URLs with lowercase scheme and host, no user-info, no query, no fragment, no default port, no percent-encoded ambiguity, normalized single-slash path, and preserved explicit .git suffix; package_name uses PEP 503 normalization; project_hash is lowercase 64-character SHA-256",
+                "fail_closed": "ambiguous, relative, unauthenticated, SSH shorthand, user-info, query string, fragment, default port, percent-encoded ambiguity, repeated path slash, or unnormalized project identity is invalid",
+            },
+            "source_revision": {
+                "accepted_forms": "git_commit, source_archive_sha256, or working_tree_sha256",
+                "normalization": "git_commit is lowercase hexadecimal 40 or 64 characters; source_archive_sha256 and working_tree_sha256 are lowercase 64-character SHA-256; dirty worktrees must use working_tree_sha256, not git_commit alone",
+                "fail_closed": "branch names, tags without resolved digest, dirty git_commit-only scopes, or non-hex revisions are invalid",
+            },
+            "normalized_selection_command": {
+                "accepted_form": "structured canonical argv array",
+                "normalization": "shell strings are forbidden; argv is represented as an array of strings; path separators normalize to forward slash for project-relative paths; absolute private paths are forbidden; argument order is preserved except for explicitly order-insensitive option groups defined by the validator contract",
+                "fail_closed": "unparsed shell command, private absolute path, unknown order-insensitive flag, or unresolved environment expansion is invalid",
+            },
+            "python_version_contract": {
+                "accepted_form": "structured implementation, version, and abi_tag",
+                "normalization": "implementation is lowercase; version is exact normalized version string; abi_tag is an explicit string or null",
+                "fail_closed": "major.minor-only, missing implementation, or unparsable version is invalid",
+            },
+            "pytest_version": {
+                "accepted_form": "structured exact installed pytest distribution version",
+                "normalization": "package name is pytest; version is exact normalized distribution version",
+                "fail_closed": "version ranges, missing version, or non-PEP440 version strings are invalid",
+            },
+            "relevant_plugin_contract": {
+                "accepted_form": "explicit list of pytest-affecting plugins with normalized_name, version, and distribution_identity",
+                "normalization": "normalized_name and distribution_identity use PEP 503 normalization; versions are exact distribution versions; list is sorted by normalized_name, distribution_identity, then version; duplicate normalized_name/distribution_identity pairs are invalid",
+                "fail_closed": "unknown active plugin, missing version, duplicate plugin, or unsorted list is invalid",
+            },
+            "scope_projection_hash": 'scope_identity_sha256 is SHA256("SPIRA_PYTEST_SCOPE_IDENTITY_PROJECTION_V1\\0" + UTF8(canonical_json(scope_identity_projection)))',
         },
         "validator_requirements": {
-            "schema_enforced": [],
-            "validator_enforced_before_oracle_population": [],
+            "schema_enforced": [
+                "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_HASH",
+                "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_PROJECTION",
+                "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTION_HASH",
+                "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTED_TEST_IDS",
+                "SCOPE_NOT_EVALUATED_IMPLIES_RESULT_NOT_EVALUATED",
+                "POLICY_ACTION_REQUIRES_DECISION_SEMANTICS_VERSION",
+                "RESULT_IDENTITY_EXCLUDES_POLICY_ACTION_FIELDS",
+                "EMITTED_RESULT_IDENTITY_REQUIRES_COMPLETE_EVIDENCE",
+                "EMITTED_RESULT_IDENTITY_REJECTS_NOT_EVALUATED_PROCESS_STATE",
+                "EMITTED_RESULT_IDENTITY_REJECTS_INVALID_RESULT_STATES",
+                "SCOPE_IDENTITY_HAS_OWN_DIGEST_OR_PROJECTION_CONTRACT",
+                "ACTION_STOP_CONSISTENCY",
+            ],
+            "validator_enforced_before_oracle_population": [
+                "RELATED_CASE_ID_EXISTS",
+                "IDENTITY_RELATIONSHIP_SYMMETRY",
+                "CANONICAL_ARRAY_SORTING",
+                "CASE_ID_UNIQUENESS",
+                "DECLARED_DELTA_SEMANTIC_FIELD_VALIDITY",
+                "RESULT_SCOPE_IDENTITY_HASH_MATCHES_EXPECTED_SCOPE",
+                "SCOPE_IDENTITY_HASH_MATCHES_SCOPE_PROJECTION",
+                "RESULT_IDENTITY_HASH_MATCHES_RESULT_PROJECTION",
+                "COLLECTION_MANIFEST_HASH_MATCHES_CANONICAL_MANIFEST",
+                "RESULT_PROJECTION_EXPLICIT_LISTS_MATCH_EXPECTED_LISTS",
+                "PASSED_RESULT_HAS_NO_BLOCKING_CASES",
+                "TIMEOUT_PROCESS_HAS_TIMEOUT_RUN_LEVEL_FAILURE",
+                "FAILURE_CLASSES_DERIVE_FROM_CASES_AND_RUN_LEVEL_FAILURES",
+                "PROJECT_IDENTITY_CANONICALIZED",
+                "SOURCE_REVISION_CANONICALIZED",
+                "SELECTION_COMMAND_CANONICALIZED",
+                "PYTHON_VERSION_CONTRACT_CANONICALIZED",
+                "PYTEST_VERSION_CANONICALIZED",
+                "PLUGIN_CONTRACT_CANONICALIZED",
+                "SCOPE_PROJECTION_CANONICAL_BYTES_RECOMPUTE",
+            ],
             "not_required": [],
         },
         "not_authorized": [
@@ -384,6 +446,22 @@ def _result_projection(document):
 def _hash_only_scope_projection(document):
     scope = _scope(document)
     del scope["scope_projection"]
+
+
+def _malformed_nested_schema(document):
+    _first_case(document)["expected_scope_identity"]["collection_deterministic"] = "yes"
+
+
+def _forbidden_additional_property(document):
+    _scope_projection(document)["extra"] = True
+
+
+def _invalid_enum(document):
+    _first_case(document)["expected_policy_action"]["recommended_agent_action"] = "INSTALL_ANYWAY"
+
+
+def _missing_nested_required_field(document):
+    del _scope_projection(document)["python_version_contract"]["implementation"]
 
 
 def _hash_only_result_projection(document):

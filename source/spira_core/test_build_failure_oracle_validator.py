@@ -92,8 +92,7 @@ def validate_oracle_bytes(data: bytes, *, input_path: str | Path | None = None) 
         return _report(
             input_path=input_path,
             input_sha256=sha256(data).hexdigest(),
-            errors=[_check("JSON_PARSE", "TOOL_ERROR", "JSON_PARSE_FAILED", details={"error": str(exc)})],
-            tool_error=True,
+            errors=[_check("JSON_PARSE", "FAIL", "JSON_PARSE_FAILED", details={"error": str(exc)})],
         )
     return validate_oracle_document(document, input_path=input_path, input_bytes=data)
 
@@ -114,12 +113,11 @@ def validate_oracle_document(
     ).hexdigest()
     errors: list[dict[str, Any]] = []
     try:
-        errors.extend(_validate_schema_shape(document))
+        errors.extend(_validate_schema_v7(document))
         cases = list(document.get("cases") or []) if isinstance(document.get("cases"), list) else []
-        if not errors:
-            errors.extend(_validate_case_ids(cases))
-            errors.extend(_validate_cases(cases))
-            errors.extend(_validate_relationships(cases))
+        errors.extend(_validate_case_ids(cases))
+        errors.extend(_validate_cases(cases))
+        errors.extend(_validate_relationships(cases))
     except Exception as exc:
         return _report(
             input_path=input_path,
@@ -150,35 +148,127 @@ def collection_manifest_hash(test_ids: list[str]) -> str:
     return sha256_hex(test_ids, tag=COLLECTION_TAG)
 
 
-def _validate_schema_shape(document: Mapping[str, Any]) -> list[dict[str, Any]]:
-    errors: list[dict[str, Any]] = []
-    required = [
-        "schema",
-        "schema_version",
-        "status",
-        "methodology",
-        "identity_model",
-        "action_enum_policy",
-        "scope_canonicalization_contract",
-        "validator_requirements",
-        "not_authorized",
-        "cases",
+def _validate_schema_v7(document: Mapping[str, Any]) -> list[dict[str, Any]]:
+    schema = _load_v7_schema()
+    validation_errors = _schema_errors(document, schema, schema, path="$")
+    if not validation_errors:
+        return []
+    return [
+        _check(
+            "JSON_SCHEMA_V7_VALIDATION",
+            "FAIL",
+            "JSON_SCHEMA_V7_VALIDATION_FAILED",
+            details={"violations": validation_errors[:20], "violation_count": len(validation_errors)},
+        )
     ]
-    for field in required:
-        if field not in document:
-            errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_REQUIRED_FIELD_MISSING", details={"field": field}))
-    if document.get("schema") != ORACLE_SCHEMA:
-        errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_ID_INVALID"))
-    if document.get("schema_version") != ORACLE_SCHEMA_VERSION:
-        errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_VERSION_INVALID"))
-    if document.get("status") != ORACLE_STATUS:
-        errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_STATUS_INVALID"))
-    if not isinstance(document.get("cases"), list):
-        errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_CASES_NOT_ARRAY"))
-    for blocked in ["ORACLE_POPULATION", "CORPUS_MATERIALIZATION", "PRODUCER_IMPLEMENTATION", "GATE_B", "DOMAIN_3"]:
-        if blocked not in (document.get("not_authorized") or []):
-            errors.append(_check("JSON_SCHEMA_V7_VALIDATION", "FAIL", "SCHEMA_NOT_AUTHORIZED_BOUNDARY_MISSING", details={"item": blocked}))
+
+
+def _load_v7_schema() -> dict[str, Any]:
+    root = Path(__file__).resolve().parents[2]
+    path = root / "research" / "test_build_failure_contract_oracle_schema_v7.schema.json"
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _schema_errors(value: Any, schema: Any, root_schema: Mapping[str, Any], *, path: str) -> list[str]:
+    if schema is True:
+        return []
+    if schema is False:
+        return [f"{path}: false schema"]
+    if not isinstance(schema, Mapping):
+        return []
+    if "$ref" in schema:
+        return _schema_errors(value, _resolve_ref(str(schema["$ref"]), root_schema), root_schema, path=path)
+    errors: list[str] = []
+
+    if "type" in schema and not _schema_type_matches(value, schema["type"]):
+        errors.append(f"{path}: expected type {schema['type']}")
+        return errors
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{path}: expected const {schema['const']!r}")
+    if "enum" in schema and value not in schema["enum"]:
+        errors.append(f"{path}: expected one of {schema['enum']!r}")
+    if isinstance(value, str):
+        if "minLength" in schema and len(value) < int(schema["minLength"]):
+            errors.append(f"{path}: string shorter than minLength")
+        if "pattern" in schema and not re.fullmatch(str(schema["pattern"]), value):
+            errors.append(f"{path}: pattern mismatch")
+    if isinstance(value, int) and not isinstance(value, bool):
+        if "minimum" in schema and value < int(schema["minimum"]):
+            errors.append(f"{path}: below minimum")
+    if isinstance(value, list):
+        if "minItems" in schema and len(value) < int(schema["minItems"]):
+            errors.append(f"{path}: fewer than minItems")
+        if "maxItems" in schema and len(value) > int(schema["maxItems"]):
+            errors.append(f"{path}: more than maxItems")
+        if schema.get("uniqueItems") is True and len({_json_key(item) for item in value}) != len(value):
+            errors.append(f"{path}: duplicate array items")
+        for index, item_schema in enumerate(schema.get("prefixItems") or []):
+            if index < len(value):
+                errors.extend(_schema_errors(value[index], item_schema, root_schema, path=f"{path}[{index}]"))
+        if schema.get("items") is False and len(value) > len(schema.get("prefixItems") or []):
+            errors.append(f"{path}: additional array items are not allowed")
+        elif isinstance(schema.get("items"), Mapping):
+            start = len(schema.get("prefixItems") or [])
+            for index, item in enumerate(value[start:], start=start):
+                errors.extend(_schema_errors(item, schema["items"], root_schema, path=f"{path}[{index}]"))
+        if "contains" in schema and not any(not _schema_errors(item, schema["contains"], root_schema, path=f"{path}[*]") for item in value):
+            errors.append(f"{path}: contains constraint not satisfied")
+    if isinstance(value, Mapping):
+        for field in schema.get("required") or []:
+            if field not in value:
+                errors.append(f"{path}: missing required field {field}")
+        properties = schema.get("properties") or {}
+        for field, item in value.items():
+            if field in properties:
+                errors.extend(_schema_errors(item, properties[field], root_schema, path=f"{path}.{field}"))
+            elif schema.get("additionalProperties") is False:
+                errors.append(f"{path}: additional property {field}")
+            elif isinstance(schema.get("additionalProperties"), Mapping):
+                errors.extend(
+                    _schema_errors(item, schema["additionalProperties"], root_schema, path=f"{path}.{field}")
+                )
+
+    for sub_schema in schema.get("allOf") or []:
+        errors.extend(_schema_errors(value, sub_schema, root_schema, path=path))
+    if "anyOf" in schema and not any(not _schema_errors(value, sub, root_schema, path=path) for sub in schema["anyOf"]):
+        errors.append(f"{path}: anyOf constraint not satisfied")
+    if "oneOf" in schema:
+        matches = sum(1 for sub in schema["oneOf"] if not _schema_errors(value, sub, root_schema, path=path))
+        if matches != 1:
+            errors.append(f"{path}: oneOf matched {matches} schemas")
+    if "not" in schema and not _schema_errors(value, schema["not"], root_schema, path=path):
+        errors.append(f"{path}: not constraint matched")
+    if "if" in schema and not _schema_errors(value, schema["if"], root_schema, path=path):
+        if "then" in schema:
+            errors.extend(_schema_errors(value, schema["then"], root_schema, path=path))
     return errors
+
+
+def _resolve_ref(ref: str, root_schema: Mapping[str, Any]) -> Any:
+    if not ref.startswith("#/"):
+        raise OracleValidatorToolError(f"unsupported schema ref: {ref}")
+    target: Any = root_schema
+    for part in ref[2:].split("/"):
+        target = target[part]
+    return target
+
+
+def _schema_type_matches(value: Any, expected: Any) -> bool:
+    if isinstance(expected, list):
+        return any(_schema_type_matches(value, item) for item in expected)
+    return {
+        "object": isinstance(value, Mapping),
+        "array": isinstance(value, list),
+        "string": isinstance(value, str),
+        "integer": isinstance(value, int) and not isinstance(value, bool),
+        "number": isinstance(value, (int, float)) and not isinstance(value, bool),
+        "boolean": isinstance(value, bool),
+        "null": value is None,
+    }.get(str(expected), True)
+
+
+def _json_key(value: Any) -> bytes:
+    return canonical_json_bytes(value)
 
 
 def _validate_case_ids(cases: list[Mapping[str, Any]]) -> list[dict[str, Any]]:

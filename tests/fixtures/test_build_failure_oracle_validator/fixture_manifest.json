@@ -13,6 +13,26 @@
   ],
   "negative_fixtures": [
     {
+      "name": "malformed_json",
+      "expected_error_code": "JSON_PARSE_FAILED"
+    },
+    {
+      "name": "malformed_nested_schema",
+      "expected_error_code": "JSON_SCHEMA_V7_VALIDATION_FAILED"
+    },
+    {
+      "name": "forbidden_additional_property",
+      "expected_error_code": "JSON_SCHEMA_V7_VALIDATION_FAILED"
+    },
+    {
+      "name": "invalid_enum",
+      "expected_error_code": "JSON_SCHEMA_V7_VALIDATION_FAILED"
+    },
+    {
+      "name": "missing_nested_required_field",
+      "expected_error_code": "JSON_SCHEMA_V7_VALIDATION_FAILED"
+    },
+    {
       "name": "hash_only_scope_projection",
       "expected_error_code": "PROJECTION_BYTES_NOT_AVAILABLE"
     },

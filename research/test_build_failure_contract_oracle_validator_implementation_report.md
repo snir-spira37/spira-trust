@@ -5,6 +5,7 @@ Status:
 ```text
 DOMAIN_2_ORACLE_VALIDATOR_IMPLEMENTATION_PASS
 VALIDATOR_IMPLEMENTATION_COMPLETE
+SCHEMA_V7_VALIDATION_AND_JSON_PARSE_CLASSIFICATION_FIXED
 ORACLE_POPULATION_NOT_AUTHORIZED
 CORPUS_MATERIALIZATION_NOT_AUTHORIZED
 PRODUCER_IMPLEMENTATION_NOT_AUTHORIZED
@@ -50,7 +51,7 @@ SPIRA_DOMAIN2_ORACLE_VALIDATOR_RESULT
 It implements:
 
 ```text
-JSON Schema V7 shape checks
+full Oracle Schema V7 validation with an internal V7 schema evaluator
 scope/result/collection hash recomputation
 scope canonicalization checks
 case-id uniqueness
@@ -89,6 +90,11 @@ REPORT_WITH_NOTES with stop:false
 Negative fixture coverage includes:
 
 ```text
+malformed JSON
+nested Schema V7 violation
+forbidden additional property
+invalid enum
+missing nested required field
 hash-only scope projection
 hash-only result projection
 scope hash mismatch
@@ -114,6 +120,22 @@ NOT_EVALUATED identity carrying hash
 NOT_EVALUATED identity carrying projection
 EMITTED identity with incomplete evidence
 validator internal exception
+```
+
+The implementation review at `15ed353` found two gaps in the first
+implementation:
+
+```text
+Schema V7 validation was incomplete.
+Malformed JSON was classified as TOOL_ERROR.
+```
+
+This revision closes both:
+
+```text
+Oracle Schema V7 is validated before validator-enforced invariants.
+Malformed JSON returns FAIL / ORACLE_VALIDATION_FAILED.
+Validator internal exceptions remain TOOL_ERROR / ORACLE_VALIDATOR_TOOL_ERROR.
 ```
 
 ## Hash-Only Gate

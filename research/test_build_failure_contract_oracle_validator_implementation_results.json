@@ -5,6 +5,8 @@
   "accepted_schema": "SPIRA_TEST_BUILD_FAILURE_ORACLE_V7",
   "accepted_validator_spec_commit": "cec74d1",
   "implementation_authorization_commit": "9e73d30",
+  "implementation_review_commit": "15ed353",
+  "review_revision_status": "SCHEMA_V7_VALIDATION_AND_JSON_PARSE_CLASSIFICATION_FIXED",
   "implemented_files": [
     "source/spira_core/test_build_failure_oracle_validator.py",
     "tests/test_test_build_failure_oracle_validator.py",
@@ -22,9 +24,11 @@
   },
   "fixture_coverage": {
     "positive_fixture_count": 5,
-    "negative_fixture_count": 25,
+    "negative_fixture_count": 29,
+    "schema_v7_negative_fixture_count": 4,
     "hash_only_scope_projection": "FAIL_CLOSED",
-    "hash_only_result_projection": "FAIL_CLOSED"
+    "hash_only_result_projection": "FAIL_CLOSED",
+    "malformed_json": "ORACLE_VALIDATION_FAILED"
   },
   "machine_readable_report": {
     "schema": "SPIRA_DOMAIN2_ORACLE_VALIDATOR_RESULT",
@@ -33,6 +37,7 @@
       "FAIL",
       "TOOL_ERROR"
     ],
+    "json_parse_failure_status": "ORACLE_VALIDATION_FAILED",
     "hash_only_failure_status": "ORACLE_VALIDATION_FAILED",
     "hash_only_failure_error_code": "PROJECTION_BYTES_NOT_AVAILABLE"
   },
