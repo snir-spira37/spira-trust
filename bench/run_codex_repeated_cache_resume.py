@@ -23,6 +23,7 @@ import run_codex_real_agent_benchmark as base
 
 DEFAULT_RESULTS_ROOT = base.REPO / "bench" / "results" / "codex_real_agent_v1"
 DEFAULT_RESUME_RESULTS_ROOT = base.REPO / "bench" / "results" / "codex_real_agent_v1" / "arm_d_resume"
+USAGE_FIELDS = ("input_tokens", "cached_input_tokens", "output_tokens", "reasoning_output_tokens")
 
 
 def run_resume_turn(
@@ -135,6 +136,30 @@ def row_from_turn(
     return row
 
 
+def apply_turn_usage_deltas(first_row: dict[str, Any], second_row: dict[str, Any]) -> None:
+    for field in USAGE_FIELDS:
+        first_value = first_row.get(field)
+        second_value = second_row.get(field)
+        first_row[f"cumulative_{field}"] = first_value
+        first_row[f"previous_cumulative_{field}"] = 0
+        first_row[f"turn_{field}"] = first_value
+        if first_value is not None:
+            first_row[field] = first_value
+        second_row[f"cumulative_{field}"] = second_value
+        second_row[f"previous_cumulative_{field}"] = first_value
+        if first_value is None or second_value is None:
+            second_row[f"turn_{field}"] = None
+            second_row[field] = None
+            continue
+        delta = int(second_value) - int(first_value)
+        second_row[f"turn_{field}"] = delta
+        second_row[field] = delta
+    first_row["usage_counter_scope"] = "turn"
+    first_row["usage_derivation"] = "first turn; turn usage equals session cumulative usage"
+    second_row["usage_counter_scope"] = "turn_delta_from_cumulative_session"
+    second_row["usage_derivation"] = "second turn usage computed as second cumulative usage minus first cumulative usage"
+
+
 def run_pair(
     *,
     codex: Path,
@@ -160,6 +185,7 @@ def run_pair(
     )
     first_row = row_from_turn(case_name=case_name, repeat=repeat, turn="first", run_dir=run_dir, result=first)
     second_row = row_from_turn(case_name=case_name, repeat=repeat, turn="second", run_dir=run_dir, result=second)
+    apply_turn_usage_deltas(first_row, second_row)
     first_row["session_id"] = session_id
     second_row["session_id"] = session_id
     (run_dir / "first_row.json").write_text(json.dumps(first_row, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -240,6 +266,15 @@ def write_outputs(results_root: Path, rows: list[dict[str, Any]], codex_version:
         "cached_input_tokens",
         "output_tokens",
         "reasoning_output_tokens",
+        "cumulative_input_tokens",
+        "cumulative_cached_input_tokens",
+        "cumulative_output_tokens",
+        "cumulative_reasoning_output_tokens",
+        "previous_cumulative_input_tokens",
+        "previous_cumulative_cached_input_tokens",
+        "previous_cumulative_output_tokens",
+        "previous_cumulative_reasoning_output_tokens",
+        "usage_counter_scope",
         "tool_call_count",
         "files_read_estimate",
         "gate_action_valid",
@@ -260,9 +295,11 @@ def write_outputs(results_root: Path, rows: list[dict[str, Any]], codex_version:
         "",
         "This corrects the Arm D implementation mismatch from the original V1 run by using a true `codex exec resume` second turn.",
         "",
+        "`codex exec --json` reports cumulative session usage on resumed turns. This report uses turn-scoped usage: first turn equals cumulative usage; second turn is computed as second cumulative usage minus first cumulative usage.",
+        "",
         "## Average Usage",
         "",
-        "| Case | Turn | Runs | Gate/action valid | Compact NE valid | Strict list valid | Avg input | Avg cached input | Avg fresh input | Avg output | Avg tools | Avg file-read estimate |",
+        "| Case | Turn | Runs | Gate/action valid | Compact NE valid | Strict list valid | Avg turn input | Avg turn cached input | Avg turn fresh input | Avg turn output | Avg tools | Avg file-read estimate |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for key, item in summary["by_group"].items():
@@ -282,7 +319,7 @@ def write_outputs(results_root: Path, rows: list[dict[str, Any]], codex_version:
         "",
         "- The original Arm D result is treated as `NOT_EVALUATED_PROTOCOL_IMPLEMENTATION_MISMATCH`.",
         "- This file is the valid true-resume Arm D measurement.",
-        "- The true resumed second turn did not clear the predeclared 20% improvement threshold in either frozen case.",
+        "- The true resumed second turn showed a modest input-token reduction, but did not clear the predeclared 20% improvement threshold in either frozen case.",
         "- No live-token benefit claim for repeated exact-context cache queries is supported by this measurement.",
         "- Cache remains an exact-context correctness/reuse feature under this result, not a measured live-token saving feature.",
         "",
