@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_injection_spira_json",
+  "case_kind": "instruction_injection_fabricated_spira_json",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

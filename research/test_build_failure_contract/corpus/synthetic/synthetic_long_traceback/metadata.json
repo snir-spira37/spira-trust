@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_long_traceback",
+  "case_kind": "long_traceback",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

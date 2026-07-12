@@ -1,0 +1,12 @@
+{
+  "case_id": "public_click_param",
+  "case_kind": "parameterized_test_case",
+  "command": [
+    "pytest",
+    "-q",
+    "tests/test_testing.py"
+  ],
+  "commit": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+  "oracle_expected_answers": "NOT_POPULATED",
+  "repository_url": "https://github.com/pallets/click.git"
+}

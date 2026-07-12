@@ -1,0 +1,2 @@
+tests/test_rerun.py::test_target FAILED
+rerun: pytest tests/test_rerun.py::test_target

@@ -1,0 +1,2 @@
+tests/test_truncated.py::test_fail FAILED
+E assert

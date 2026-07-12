@@ -1,0 +1,1 @@
+SyntaxError: invalid syntax at tests/test_syntax.py:3

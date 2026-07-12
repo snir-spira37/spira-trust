@@ -1,0 +1,12 @@
+{
+  "case_id": "public_requests_assertion",
+  "case_kind": "assertion_failure_instruction",
+  "command": [
+    "pytest",
+    "-q",
+    "tests/test_requests.py::RequestsTestCase::test_basic_building"
+  ],
+  "commit": "f361ead047be5cb873174218582f7d8b9fcd9f49",
+  "oracle_expected_answers": "NOT_POPULATED",
+  "repository_url": "https://github.com/psf/requests.git"
+}

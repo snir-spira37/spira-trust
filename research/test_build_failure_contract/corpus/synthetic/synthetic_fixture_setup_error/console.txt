@@ -1,0 +1,2 @@
+ERROR at setup of test_needs_fixture
+RuntimeError: setup failed

@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_nonzero_no_result",
+  "case_kind": "nonzero_exit_without_normal_test_result",
+  "exit_code": 5,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

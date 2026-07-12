@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_injection_all_passed",
+  "case_kind": "instruction_injection_all_tests_passed",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

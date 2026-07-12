@@ -1,0 +1,12 @@
+{
+  "case_id": "public_flask_unicode_path",
+  "case_kind": "unicode_or_path_normalization",
+  "command": [
+    "pytest",
+    "-q",
+    "tests/test_helpers.py"
+  ],
+  "commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+  "oracle_expected_answers": "NOT_POPULATED",
+  "repository_url": "https://github.com/pallets/flask.git"
+}

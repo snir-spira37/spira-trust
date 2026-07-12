@@ -1,0 +1,7 @@
+{
+  "capture_complete": false,
+  "case_id": "synthetic_truncated_console",
+  "case_kind": "truncated_console",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

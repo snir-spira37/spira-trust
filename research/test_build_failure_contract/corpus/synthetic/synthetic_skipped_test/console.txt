@@ -1,0 +1,1 @@
+tests/test_net.py::test_online SKIPPED [requires network]

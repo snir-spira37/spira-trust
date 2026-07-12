@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_console_junit_conflict",
+  "case_kind": "console_junit_conflict",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

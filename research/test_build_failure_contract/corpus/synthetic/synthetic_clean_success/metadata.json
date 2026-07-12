@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_clean_success",
+  "case_kind": "clean_successful_run",
+  "exit_code": 0,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

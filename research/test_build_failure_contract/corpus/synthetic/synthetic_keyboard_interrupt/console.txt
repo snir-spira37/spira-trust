@@ -1,0 +1,1 @@
+KeyboardInterrupt during tests/test_interrupt.py::test_interrupt

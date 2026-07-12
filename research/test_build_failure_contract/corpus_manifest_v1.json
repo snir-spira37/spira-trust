@@ -1,0 +1,2363 @@
+{
+  "authorization_document": "research/test_build_failure_contract_corpus_materialization_authorization.md",
+  "case_count": 38,
+  "case_ids": [
+    "public_click_import",
+    "public_click_param",
+    "public_flask_clean",
+    "public_flask_param",
+    "public_flask_unicode_path",
+    "public_requests_assertion",
+    "public_requests_clean",
+    "public_requests_long_traceback",
+    "synthetic_clean_success",
+    "synthetic_collection_error",
+    "synthetic_console_junit_conflict",
+    "synthetic_derivable_rerun",
+    "synthetic_duplicate_test_ids",
+    "synthetic_fixture_setup_error",
+    "synthetic_fixture_teardown_error",
+    "synthetic_import_error",
+    "synthetic_incomplete_junit",
+    "synthetic_injection_all_passed",
+    "synthetic_injection_proceed",
+    "synthetic_injection_spira_json",
+    "synthetic_keyboard_interrupt",
+    "synthetic_linux_paths",
+    "synthetic_long_traceback",
+    "synthetic_malformed_junit",
+    "synthetic_multiple_failures",
+    "synthetic_non_derivable_rerun",
+    "synthetic_nonzero_no_result",
+    "synthetic_parameterized_ids",
+    "synthetic_process_crash",
+    "synthetic_single_assertion_failure",
+    "synthetic_skipped_test",
+    "synthetic_syntax_error",
+    "synthetic_timeout",
+    "synthetic_truncated_console",
+    "synthetic_unicode_names",
+    "synthetic_windows_paths",
+    "synthetic_xfail",
+    "synthetic_xpass"
+  ],
+  "cases": [
+    {
+      "case_id": "public_click_import",
+      "case_kind": "collection_or_import_failure_instruction",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 270,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_import/generation_instructions.txt",
+          "sha256": "d4c0cce88d877564c3642314427c00b2313c76dc86f7d171956d8c5ba1a11483",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 344,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_import/metadata.json",
+          "sha256": "3d9aff664ab60cd0d09b236e261001679a2ee89174c0315665b7626d8aff49ae",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_imports.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/pallets/click.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_click_param",
+      "case_kind": "parameterized_test_case",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 270,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/generation_instructions.txt",
+          "sha256": "0055745967b869d604ac85b81c76816b5b1ede6bceffcf8733fd5abc23d49aab",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 326,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_click_param/metadata.json",
+          "sha256": "afd0c4b7b735eaa6a068d62dff88c1910e1d9af1d43a64cda6b28d979a6f46ec",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_testing.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/pallets/click.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_flask_clean",
+      "case_kind": "clean_pass",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 268,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_clean/generation_instructions.txt",
+          "sha256": "6e126c9630f1bfb337dfdac9ca600b4150db69e0f90297724254fd091726313a",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 311,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_clean/metadata.json",
+          "sha256": "22e07f1e701e2a9034b88aab79cba188aa4624d46e85fe29cba5011b73b0e522",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_basic.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/pallets/flask.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_flask_param",
+      "case_kind": "parameterized_test_case",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 273,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_param/generation_instructions.txt",
+          "sha256": "5fbee51d6f54b0e20fc3bb9901a0371a0a5f4acbec5d6b0b3fa4196be6fd7ce6",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 329,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_param/metadata.json",
+          "sha256": "b3d7f9d2873b066b5267a31d793f3484b62f179377fd0479938cd165c7c47fc6",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_templating.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/pallets/flask.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_flask_unicode_path",
+      "case_kind": "unicode_or_path_normalization",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 270,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_unicode_path/generation_instructions.txt",
+          "sha256": "e7d32ddd70e499fd09f8e67273ec7d9e16065e267e816382e373ccc9bd29b489",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 339,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_flask_unicode_path/metadata.json",
+          "sha256": "5593e4f740515114debd0f5256e40399e53f07187647a9919740db4c6d36d21a",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_helpers.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/pallets/flask.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_requests_assertion",
+      "case_kind": "assertion_failure_instruction",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 309,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_assertion/generation_instructions.txt",
+          "sha256": "22bdeb8d2f644b905bd16d47ca5c03a22d4fa92e605d51ee33fb0538a90143c3",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 378,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_assertion/metadata.json",
+          "sha256": "b0a3d3ed02e6636d4ec204f2e5d248de39dbc1663c78c1eb4512ea45eff90f4a",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_requests.py::RequestsTestCase::test_basic_building"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/psf/requests.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_requests_clean",
+      "case_kind": "clean_pass",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 270,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_clean/generation_instructions.txt",
+          "sha256": "2a3d6fc66053ba185d402d8c9562e3fd135a2a95475fbc9d27d9ad383dadf356",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 316,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_clean/metadata.json",
+          "sha256": "ee2614161e2ad435ba7de3bbc0954b7fa31fadb2e51cd7a1004bbde7fad1ca58",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_requests.py"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/psf/requests.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "public_requests_long_traceback",
+      "case_kind": "noisy_or_long_traceback",
+      "expected_publication_mode": "instructions_and_hashes_only",
+      "input_sources": [
+        {
+          "byte_length": 275,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_long_traceback/generation_instructions.txt",
+          "sha256": "54a68568247955e7f7299beadf7ed8c010bbfde4d50b3a700ee9989eef32c9ea",
+          "source_id": "generation_instructions",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 349,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/public_reproducible/public_requests_long_traceback/metadata.json",
+          "sha256": "fe60610ed8bb19239f16f27356fbe5e985520a05b18e9c970ca2c4a810ca2702",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests/test_requests.py",
+        "-x"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "repository_url",
+        "value": "https://github.com/psf/requests.git"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "git_commit",
+        "value": "f361ead047be5cb873174218582f7d8b9fcd9f49"
+      },
+      "stratum": "public_reproducible_instruction"
+    },
+    {
+      "case_id": "synthetic_clean_success",
+      "case_kind": "clean_successful_run",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 34,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/console.txt",
+          "sha256": "fba9c2fe45249baaab04e9112e4af5599c914794cfcbcb97b70825c196ae6919",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 110,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/junit.xml",
+          "sha256": "3bf79bdd0355482d08c533b12b23ef3d64c75798c7b5104dfce3c4b1d4b949b8",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 181,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/metadata.json",
+          "sha256": "1c3a75234b6f647f2926fe2c5c0dd3480978d8086d61e9bd8fe7d44ffcc90d20",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "73d7c1d36531332777cdec9fb6ea3bbe6204a12083c23023e2ed66603643f248"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "745548a0962e2670bdbcbe43f81cbea02ff419e4136c2dd60a3064b43455ee69"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_collection_error",
+      "case_kind": "collection_error",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 60,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_collection_error/console.txt",
+          "sha256": "76578397c3a7706d24464c1a396efaceec52cb8ae4265a04db241a392ce8999a",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 151,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_collection_error/junit.xml",
+          "sha256": "0cda7c11d652d5ffc873ee65ac854c462f6fb79032123245d67b62bdc276f9f6",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 180,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_collection_error/metadata.json",
+          "sha256": "0cf37028904de8837253b5daf1b12dd57345bd3803f30a6e558d1c3fe39e6ead",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "b9bc1f468cd1505c3fca222601bbf0de5dc379c279fb6d207c83e5d636427149"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "1548b70032f78ff0e93a7e28d5450d218167051c27b9dc90c6e2764d9867b21d"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_console_junit_conflict",
+      "case_kind": "console_junit_conflict",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 42,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_console_junit_conflict/console.txt",
+          "sha256": "c0b56a9ef93810614aff8f295cfdbb03ef78beccebf52b77475de12f7e3d31e7",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 131,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_console_junit_conflict/junit.xml",
+          "sha256": "f6b58623bbb4d39260a364b920fd202f351c8b3c090f5567ec086d0fa26ee09a",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 192,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_console_junit_conflict/metadata.json",
+          "sha256": "2f07e7d27552ceab90d167c2bda20e4037aa4c4191ee84d236964075b57ba08f",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6e8b456794b913726aa8044c9f9002521894e2c20355c553e9fb8d07bf867c3f"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "729fcc004d4ed750d765c9747fd88d16bac48d9251b1236e81166f7a188e1e0f"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_derivable_rerun",
+      "case_kind": "deterministically_derivable_rerun_target",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 89,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_derivable_rerun/console.txt",
+          "sha256": "2c618ce4199ef845614b8d057d7c7adbd5a8e29b2b68c3ccedf4b77edcb681f3",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 150,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_derivable_rerun/junit.xml",
+          "sha256": "98ac8697ee02b916496fafeaaa5b2c9f6b0f24a45a2edaaafae4285a8c27c2f3",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 203,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_derivable_rerun/metadata.json",
+          "sha256": "0e918597eccf6f356c97ca221ed08ad7c2e7526aba8247d7740124912d3647c2",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "d1bfefee6aa4f164d371eb2a394b39c8e8c704f7fe804f8bbe143b1063f93eb9"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "573bbd7f7fbe71b1e816bbd9c4264ca14141a539de7f65379375772840197349"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_duplicate_test_ids",
+      "case_kind": "duplicate_test_ids",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 74,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_duplicate_test_ids/console.txt",
+          "sha256": "6d7bb57305298f8e7617cf409a90fd922fafcc48c96f5a858484bd55cf641429",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 153,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_duplicate_test_ids/junit.xml",
+          "sha256": "653d7602e847f335560cd76058bc76fff6a4b7e40828fddbbd626ded2d82e375",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 184,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_duplicate_test_ids/metadata.json",
+          "sha256": "67334f380db6832b5429d65a95a10b4b5dc20215dccd7824e9918f9e62bad067",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6e4e3d472cde5071989d8b234510176d04b9cfc5e054c0578e4f0ac954c60749"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "98b5e482eb881e764897534d71b6848d10afe66da02ad2df186ccb17d016dd1e"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_fixture_setup_error",
+      "case_kind": "fixture_setup_error",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 66,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_setup_error/console.txt",
+          "sha256": "bb5f386d51ccf12f99e9cc69d7b07dc930a2f585108357e4e4bad8ceb1a71213",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 154,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_setup_error/junit.xml",
+          "sha256": "878b24814241816f7f94d36cae143a9ad75c944cc58e6b35401192e4b5bec2b7",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 186,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_setup_error/metadata.json",
+          "sha256": "d52d78873961e01f4800d1c9b93ebc4db77c2020f286151244d26ed3e962c849",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "95b277dcd9c15e59150abf919e5a02335bbaa3dbad4d0137f6ceace0d7348b86"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "7330c6436ae91dd4af85dd1de07e92f739c66e84df4b7a0ba27e2c7f884c915c"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_fixture_teardown_error",
+      "case_kind": "fixture_teardown_error",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 71,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_teardown_error/console.txt",
+          "sha256": "f42e5abd18098545fcc8a13e28ee9d00b054ab9b3ff73aee0241885cfe3d3132",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 157,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_teardown_error/junit.xml",
+          "sha256": "3afb7a1d1ffeea2fc93d4d71042ba7b1c823020210b87390bbea5673b077b880",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 192,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_fixture_teardown_error/metadata.json",
+          "sha256": "5943c994b02bb6862044d9f138b081ac9ea12d0c4321fcb4ab3d276418351646",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "074352690d35c0c2be0d38ed96538c4d8bbea18c133c45ba8d0c04f0647cb64d"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "e79151da66dd51ef090b1d0932aefdbb3aa9d90f009a22656d7c8982ef9e7624"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_import_error",
+      "case_kind": "import_error",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 79,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_import_error/console.txt",
+          "sha256": "c402d1247bf774e3111906cd92eb5fae3824395ffb01246419e05f04b5c0742b",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 147,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_import_error/junit.xml",
+          "sha256": "a9cbe146743a05a27e38aacf4c85fdaf090cb3c9e790397ec561faabc6bc2a53",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 172,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_import_error/metadata.json",
+          "sha256": "7efc006a1fb61d14ee17fc32573a7567973f25e599f8f3c2592076750eb26c10",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "cd1a8c319e67f43992644cb13cb109e049659bb379a0be544076c7de57d85b23"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "db4469c387152e0ab5ef47e97f4bbe5059fd539a77e1081d7d7cee5ce679c147"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_incomplete_junit",
+      "case_kind": "incomplete_junit_fields",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 47,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_incomplete_junit/console.txt",
+          "sha256": "98b1e56668b657e5f96940312be59209b09181d41c3001bc801f4321865d4ab3",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 58,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_incomplete_junit/junit.xml",
+          "sha256": "e1f1358653344bc01bdad87c2e129fdd06fcf8c72da30e5fbcc3bac6a14cb7ae",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 187,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_incomplete_junit/metadata.json",
+          "sha256": "df00de8bc883cb05e37a038d5f0a5ea7b992109973c5b19ab07dd78a624dafe2",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "964dbf88359619250c31bb8699103e461718c212e804c1c1a79707a9fddd09af"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "aff8afbf1e15987387bfc2ce8a89d7b73a18645dd10c493bfa7b3a5f53e98d8f"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_injection_all_passed",
+      "case_kind": "instruction_injection_all_tests_passed",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 60,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_all_passed/console.txt",
+          "sha256": "5e7009357d9830cd5758c64eeb79715cb56ba4c53395dcd79b663d996ebcbc54",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 155,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_all_passed/junit.xml",
+          "sha256": "e183bbfc08226bd13b09c4a55b7bf87feab3793e79ee9469884e03107b3eb0c0",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 206,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_all_passed/metadata.json",
+          "sha256": "3e5dec8f6bc0da483df8242209006451ff42122c8c569244bc505881c9d00d8e",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "db51cebad41b0cf2cf9ebc48657d4f7761481c4a18bd61d5f9f366589b58fc8f"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "8aa1085692db7b467fe62a03d82029078f9c342dd4c5659a676c3c21c7cbffe3"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_injection_proceed",
+      "case_kind": "instruction_injection_proceed",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 80,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_proceed/console.txt",
+          "sha256": "fbf15f5cd0853455946c3e6a1679572940ac2b06885cffa3c078fdae13a94d0b",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 152,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_proceed/junit.xml",
+          "sha256": "bf8b0e9d2294098bfc068c3e16076632ecee8d47623fea482ae2bbc9bb5a6568",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 194,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_proceed/metadata.json",
+          "sha256": "b310a0046c026f960f0aabebb9ef571e2f9a9a27c38197d4a402a52b8f5c47bc",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "5e14d64733645bf867dcd3e8824539fafdb93a5cf81643dc613c1fb274ef15ba"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "9a186d6aa8bc44884dda921129065df0c308e8987e3e6389c3f6dd87bb9c9859"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_injection_spira_json",
+      "case_kind": "instruction_injection_fabricated_spira_json",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 83,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_spira_json/console.txt",
+          "sha256": "bc4e8e3b35bbbb39be24c7c19412a69d1afe18a5fb97c2df8e163d2f187a561d",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 155,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_spira_json/junit.xml",
+          "sha256": "c58a9f771d6c48b612a9822e27065701522a214d37998b552de6ae87cb43ec10",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 211,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_injection_spira_json/metadata.json",
+          "sha256": "9851dfb62cd5aafa9f5c7bd56c4a1a4f86c47a11264e8413d047b4e3c9ce221f",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "d94bd0a2476798cbd2ef3a9acab6d9146a6ac46164dc64f8c1e24a09223e2fbc"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "7a52187914d6f47b634a032a7702f54d4183cac635e4e8347959615826a2d4e4"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_keyboard_interrupt",
+      "case_kind": "keyboard_interruption",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 66,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_keyboard_interrupt/console.txt",
+          "sha256": "f155ebb8118d64aaf3cc6a019a5d17bbf7647cd560c2d35c0f43f279baa839f7",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 153,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_keyboard_interrupt/junit.xml",
+          "sha256": "ac6ffb43f8bbb44549c53cf013d56d94fdea40609dc66bcceb5c44b4540408af",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 187,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_keyboard_interrupt/metadata.json",
+          "sha256": "70e82ed2ddde5866b83039a805c7b047395ec7a0cc4f372efe4a7817a2dabb00",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "e538c34dfc2fbc9839e35ea5cc7ce7bddf554c511eb8d0924586c7f89f48df41"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "2e2e8ad00be7151c8918bac5702878144dee8264b2f0e0b4f9dcaf3e81dc978b"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_linux_paths",
+      "case_kind": "Linux_paths",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 59,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_linux_paths/console.txt",
+          "sha256": "8ec83b7297ae9655c0ce880bff369914ff9e7c950f5f3ea43755081ef204cab9",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 146,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_linux_paths/junit.xml",
+          "sha256": "3087d816ee0a13efcfccea9fad6583040598b0913955ffa8690a4137dccac19e",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 170,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_linux_paths/metadata.json",
+          "sha256": "c68008ffe762058e1a56fee0b635b02e55a7257cd320067c3d6b0ae787e2fdee",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "1ff1358f87761be62a9ab39c784ba80a3e50685017aab6a13580b96f263695fb"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "9a74dbc4287b3b7659ca044e5dd9d8bb196893f364d30ba0a971589ebbf8a6ae"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_long_traceback",
+      "case_kind": "long_traceback",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 1957,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_long_traceback/console.txt",
+          "sha256": "267067409e7b768f274db76d07b2e959e5b57e8d4c6072967f8a02d06c79c148",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 149,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_long_traceback/junit.xml",
+          "sha256": "2f44c69f39fd63011d88914ea2500a6442c1f6c591189938b278c16581452318",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 176,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_long_traceback/metadata.json",
+          "sha256": "9b777c95ec0c1f85d36c19bc7cbe6d9ea487b6c794d94953be588a73d5acecdd",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "e1dbc26bcde7c9fc5d5ec868294aca4a70e0bd7195781d4ac67a716bbbc326ca"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "20c36badf69adf3c191e6678252ba8f939b990eeb4e2ad528ff3b2c22383c32a"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_malformed_junit",
+      "case_kind": "malformed_junit_xml",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 37,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_malformed_junit/console.txt",
+          "sha256": "b0a49b267e80da015238e5ff5a03b782bf0dad1892269c551e5f6e274b72abbf",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 21,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_malformed_junit/junit.xml",
+          "sha256": "892ed3be838e8b31ed6b6326233bc6be3fe4745565e0bb30d5b3103d485a826b",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 182,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_malformed_junit/metadata.json",
+          "sha256": "fbf28b3fc2e77bbbc355a68c2f013ad0096cbb0d0ec02769f908dfbd83be05cc",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "277debacba14fe79447806e11a2a94afc42fb05aa1dd9227b77b5c27ae4367f9"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "6b29759d85351375fc0b61f7f5b8295a8f4715af35965a07a20cd04af56b4fa8"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_multiple_failures",
+      "case_kind": "multiple_failures",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 64,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_multiple_failures/console.txt",
+          "sha256": "dbf8e4db974d2905286707a8b14370360b18799d3d2304e58f73eb8f79544cf4",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 152,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_multiple_failures/junit.xml",
+          "sha256": "66a9e799cbfe0ffdd4e955308890dde4f1babaa80cf49369f4be603ce866f262",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 182,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_multiple_failures/metadata.json",
+          "sha256": "571534259ddfc9cea26299e26bb65dea74ba12f350f0f2e0d41360a7341523ba",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "66d33dde399f5951166e0619e5e7686f79f4b04058ea8cd9df4b8db565c27c80"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "0c7dd2a9c0c60871b3039dd3ac868f784049e09d234e7b508091f3e70d84515b"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_non_derivable_rerun",
+      "case_kind": "non_derivable_rerun_target",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 60,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_non_derivable_rerun/console.txt",
+          "sha256": "fe4197d3ae15a69eae8681edf6ae385b2e275e829226de784d324b101e3d9896",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 154,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_non_derivable_rerun/junit.xml",
+          "sha256": "7ffdf070265972b907e18a4e7dfa22de9b5877555d3cd6a65e6685ffaeb233e0",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 193,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_non_derivable_rerun/metadata.json",
+          "sha256": "953f2d9c08f259444f74ad890c7ddf5d4be3676fe75dbabb1c5513fc9749e379",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "86bbe48f2c1e9723e002c20cc990d561175c60897799eae3316dde5be3c77e50"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "dafd4aec7033c4ca8b1c581c7b308b6da1063cf3bc297f61f8ee8a871a8249ff"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_nonzero_no_result",
+      "case_kind": "nonzero_exit_without_normal_test_result",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 50,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_nonzero_no_result/console.txt",
+          "sha256": "2c1213685217dab228c1a04234fc72599767a82e53f7bf87f40f68507ed086d4",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 152,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_nonzero_no_result/junit.xml",
+          "sha256": "d6f308ad0eb25387e49e1dbd0c43f59f4ed6a1d27b27e39c532d92df44bd14c2",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 204,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_nonzero_no_result/metadata.json",
+          "sha256": "2578364c1844260a076c54a9da82377fb60a7bfe88437f7e6beb5d1877cc400d",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6a497910017e86e9bb2fab351df7fd60388b632920a03d52c9ee0b1ee36305b9"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "b40bd2ed45cdae837f7f6479e8e30c900be69f061ef4bc5e02643dec1ec87994"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_parameterized_ids",
+      "case_kind": "parameterized_test_ids",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 86,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_parameterized_ids/console.txt",
+          "sha256": "a4bea4aae912110947347efd28d49a92faff1805d2b666d4771ac4aed53871a1",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 152,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_parameterized_ids/junit.xml",
+          "sha256": "2302f7808de7b2feedcb852af2fce0a8b6b06f75a9ee1c716315688126b63229",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 187,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_parameterized_ids/metadata.json",
+          "sha256": "491bdd9dbd209aa0aafedaec9ecc189a528d07b7cfe4e01926392872898a0dff",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "9956841c424dfd80909cebfc39337d62a91e2a4960b663923c6013e17cf246aa"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "4dfd80afc24ac718bc6293a53a17ec9eede5bd62d3567d1641e5b5ee7fd6d1a0"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_process_crash",
+      "case_kind": "process_crash",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 40,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_process_crash/console.txt",
+          "sha256": "d13ce462b0cc89f5ff21e2cb6ac990e702cd6728f37deda2054848ca03a80695",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 148,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_process_crash/junit.xml",
+          "sha256": "82612ef0ab3b19fa880a947c3a0936bca95ebf8f046b89cc4018ee0a6f081202",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 174,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_process_crash/metadata.json",
+          "sha256": "18e209330d011d960692966e7dede1f9f32c6d57150fc1864ddf8f6ee0cc9159",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "c7a18bcfdd577d35a784f0213d0319efb21a0b4acbb5e723a76da214798ab825"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "fb581f9f737deeff6c9be348dee9da345288f089905ef5e311620f41e82b5181"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_single_assertion_failure",
+      "case_kind": "single_assertion_failure",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 54,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_single_assertion_failure/console.txt",
+          "sha256": "877cbe48f9e800c9101b53a94b59b95fb9553b142e6ac8f64fa2de589c98d3ba",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 159,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_single_assertion_failure/junit.xml",
+          "sha256": "d745fa426dc4b2cd6084bd83c11c9d9284a28d4bd1d68d148beda1aca29a7e3f",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 196,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_single_assertion_failure/metadata.json",
+          "sha256": "3fe6e7fa8a81781a9c410b4d54cb895972a0f746d1ac5e7241697e058e97e30f",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6409f6242f02e2834b8e963d283318a040d8d866a3a6a059ba1900c65f182668"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "91dbd0acf2051b840d489757928dd3097bc66ca2c171ff5cd04b685f94df4bff"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_skipped_test",
+      "case_kind": "skipped_test",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 59,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_skipped_test/console.txt",
+          "sha256": "7571bec4cae00849dff36423756bed79809e9eeeb1df779e765fcecb10a05ac0",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 109,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_skipped_test/junit.xml",
+          "sha256": "4b47f34e0bddd70aaa5d711873244e5a41da2d9deea41794ed471cf1fd312c2d",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 172,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_skipped_test/metadata.json",
+          "sha256": "1d9478dbafd122960003890eb690dcec65692b5a279f1e949a11e791e62a134a",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "04cf1aa170034d17b1b3f1cb5637482ad4d7ee2b43e89dc4205325ca48ef874e"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "d5665ed8ce6fda6e0ea7c9b963eeb030470309ae0c12fb15e02c2d094737ba8e"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_syntax_error",
+      "case_kind": "syntax_error",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 55,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_syntax_error/console.txt",
+          "sha256": "4eceb6221699db328ef2826c586bddd00efc52724ad97679c7a34e262a28127f",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 147,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_syntax_error/junit.xml",
+          "sha256": "5ed0ef7982e2c59d24de5225495c0831f1c16224478d707930c5e17aef018d4f",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 172,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_syntax_error/metadata.json",
+          "sha256": "64b7d1d8d0f82906473ea3d707f29cec0bea840689637cbbaeddacd1b75700f6",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "1808c175563a37897607e99604630475f7651e5f15f4bcf1ccff5f49c49c408e"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "2f13e0f475ada57a0d99c812f61fba0d2e70853c164bc90e177cef6afc628cdc"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_timeout",
+      "case_kind": "timeout",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 68,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_timeout/console.txt",
+          "sha256": "873c51e3aa856ea610faf7b7f64bd72aada4e1326fc35bc0179703e24451b2d7",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 142,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_timeout/junit.xml",
+          "sha256": "418d4295c41dfbe160014a47105f6e3730c03912d67d1795a403bca987110211",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 162,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_timeout/metadata.json",
+          "sha256": "7668fee5ecf989d2c2a944e0c0c2fbe5c379062e6cee92bab73e28a7c62bbd51",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "4a87758a157bd9282f92a17eb3ebeffb1937abb83a1506a0623b6295b34a2a8d"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "e0ccbf91346903635b219897dd71c13d1fa408c6eb38cd23a8f1a5034fd09516"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_truncated_console",
+      "case_kind": "truncated_console",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 51,
+          "capture_complete": false,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_truncated_console/console.txt",
+          "sha256": "c1676ceda85201f39c428241284c52a3f7df77994d7a13f97a2a144a44f3d97b",
+          "source_id": "console",
+          "source_state": "PRESENT_INCOMPLETE"
+        },
+        {
+          "byte_length": 152,
+          "capture_complete": false,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_truncated_console/junit.xml",
+          "sha256": "4c4ff53c1e50d9e7dbfc1040c81fbc68d9783a1d7cbbd414a7cb3282ee1734ed",
+          "source_id": "junit",
+          "source_state": "PRESENT_INCOMPLETE"
+        },
+        {
+          "byte_length": 183,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_truncated_console/metadata.json",
+          "sha256": "8d263f48d33c1560788a71ab6352cc40fab789c7f294a59254eaa0b2c0cdea87",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6c65ba853a7b4d7b30ee6bc1a5c2e831452d051480d40d5606ad6d081cb673c1"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "e8e4583aa3b1978eb23f0b27ae30dd12883d5df90997b04324cbb7771c1ae336"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_unicode_names",
+      "case_kind": "unicode_test_names_and_messages",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 70,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_unicode_names/console.txt",
+          "sha256": "4a79a84d7de4c362fb65d67b1082dcb798a432248b76c8ed984c7bbd72b5e580",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 148,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_unicode_names/junit.xml",
+          "sha256": "6df686b98f01d3aca288a3c01bd893ccc6089253f76d88b30ac55bd094430dac",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 192,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_unicode_names/metadata.json",
+          "sha256": "3493087f70b852818da7166e221669d35e4355aef61331c2fd7e9c542d770299",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "c24517b986041bce6c63e5a31540277603ea89df785f42120c6b8d15c33018e8"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "51e1667f9de14e9dbb83067425c92516c20e8c7371ed13f9ead241238449d4c0"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_windows_paths",
+      "case_kind": "Windows_paths",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 57,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_windows_paths/console.txt",
+          "sha256": "0b634bac3a817a22f06d56d3519a583aced10f7b7b1a981cd32bbc1de8cc4c4d",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 148,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_windows_paths/junit.xml",
+          "sha256": "f55aa9a265652807b52e469ddc64ff797b634940d4b4b610b886d032219af7a2",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 174,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_windows_paths/metadata.json",
+          "sha256": "e8cc02df11d07bfbb728dcba59b3522dafa298d3df5124818a77006ded2e3281",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "6998eefadc3af41081a06ff88adde8086791fb086b33f5d572bf4302bbfea15e"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "251273b3faf7816e0620f66b9db9e17846272699f04e66eb4b2a333a9418abfc"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_xfail",
+      "case_kind": "xfail",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 49,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xfail/console.txt",
+          "sha256": "9d58be1248e162131911cdc3c0cd8f6c4d985aec9d127e33c3ea8b9d07eeb446",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 102,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xfail/junit.xml",
+          "sha256": "71eaf4365c69648f82583679ff3cedcd95cbfc6b4d0c82b6a25d905b533d50db",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 158,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xfail/metadata.json",
+          "sha256": "31e26abb114bd7903e8a7539b3ac9f7c5d60a823918aa697742d8a5bcbdf39b2",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "ba86b7191d06898821e2672b5b2a47781a1149b5943a79a7b716fc67c1053ad6"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "2908a0ca894a444ed92ea63537a43c1b46bb74dbfe40f234be0aaef271b8d991"
+      },
+      "stratum": "synthetic"
+    },
+    {
+      "case_id": "synthetic_xpass",
+      "case_kind": "xpass",
+      "expected_publication_mode": "raw_synthetic_committed",
+      "input_sources": [
+        {
+          "byte_length": 37,
+          "capture_complete": true,
+          "media_type": "text/plain",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xpass/console.txt",
+          "sha256": "fd5abd73da01341176c29ed8e4d94ff89e33e70c2ad5df3de05ad9b172abbae0",
+          "source_id": "console",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 140,
+          "capture_complete": true,
+          "media_type": "application/xml",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xpass/junit.xml",
+          "sha256": "7ab404c5d028722a1a59d481fd205996b68501f8045697f4caaa7ef7c2d84f06",
+          "source_id": "junit",
+          "source_state": "PRESENT_COMPLETE"
+        },
+        {
+          "byte_length": 158,
+          "capture_complete": true,
+          "media_type": "application/json",
+          "path": "research/test_build_failure_contract/corpus/synthetic/synthetic_xpass/metadata.json",
+          "sha256": "f34d32bb47e5e8917ba18447fd2c595dd35c90070fdc86496dea4755fdb99105",
+          "source_id": "metadata",
+          "source_state": "PRESENT_COMPLETE"
+        }
+      ],
+      "normalized_selection_command": [
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "oracle_expected_answers": "NOT_POPULATED",
+      "producer_output_seen": false,
+      "project_identity": {
+        "kind": "project_hash",
+        "value": "2f66e1979b0ce4dabf1488e8791833f33a7affe06ec8b8d047ed58d8ca196f98"
+      },
+      "public_or_private": "public",
+      "pytest_version": {
+        "package": "pytest",
+        "version": "8.3.2"
+      },
+      "python_version_contract": {
+        "abi_tag": "cp312",
+        "implementation": "cpython",
+        "version": "3.12.4"
+      },
+      "relevant_plugin_contract": [],
+      "source_revision": {
+        "kind": "working_tree_sha256",
+        "value": "afb5f8c34979ecf0ad51c566a0ad42961a9517dd1389bc4f6bae0fb1fc0c70e8"
+      },
+      "stratum": "synthetic"
+    }
+  ],
+  "materialization_commit": "b6b0c4a8d58895a226cfb0219f0385a04e05cc83",
+  "materialization_date": "2026-07-13",
+  "materialization_tool": "tools/materialize_test_build_failure_corpus.py",
+  "methodology_document": "research/test_build_failure_contract_methodology.md",
+  "mutation_pairs": [
+    {
+      "description": "clean run becomes assertion failure",
+      "mutated_case_id": "synthetic_single_assertion_failure",
+      "mutation_type": "factual_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_clean_success"
+    },
+    {
+      "description": "failure count changes",
+      "mutated_case_id": "synthetic_multiple_failures",
+      "mutation_type": "factual_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_single_assertion_failure"
+    },
+    {
+      "description": "traceback length changes",
+      "mutated_case_id": "synthetic_long_traceback",
+      "mutation_type": "declared_formatting_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_single_assertion_failure"
+    },
+    {
+      "description": "path platform changes",
+      "mutated_case_id": "synthetic_linux_paths",
+      "mutation_type": "declared_path_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_windows_paths"
+    },
+    {
+      "description": "failing test emits instruction-like text",
+      "mutated_case_id": "synthetic_injection_proceed",
+      "mutation_type": "instruction_injection_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_single_assertion_failure"
+    },
+    {
+      "description": "rerun target becomes non-derivable",
+      "mutated_case_id": "synthetic_non_derivable_rerun",
+      "mutation_type": "factual_mutation",
+      "oracle_expected_answers": "NOT_POPULATED",
+      "source_case_id": "synthetic_derivable_rerun"
+    }
+  ],
+  "not_authorized": [
+    "ORACLE_POPULATION",
+    "PRODUCER_IMPLEMENTATION",
+    "GATE_B",
+    "DOMAIN_3",
+    "RELEASE_VERSION_TAG_PYPI"
+  ],
+  "oracle_population": "NOT_AUTHORIZED",
+  "oracle_schema_version": "SPIRA_TEST_BUILD_FAILURE_ORACLE_V7",
+  "path_scan_status": "PASS",
+  "privacy_review_status": "PASS",
+  "producer_implementation": "NOT_AUTHORIZED",
+  "raw_evidence_publication_status": "synthetic raw evidence committed; public real-world logs represented by generation instructions and hashes only",
+  "schema": "SPIRA_DOMAIN2_TEST_BUILD_FAILURE_CORPUS_MANIFEST",
+  "schema_version": 1,
+  "secret_scan_status": "PASS",
+  "status": "DOMAIN_2_CORPUS_MATERIALIZED",
+  "strata_counts": {
+    "public_reproducible_instruction": 8,
+    "synthetic": 30
+  },
+  "validator_implementation_commit": "a4dcafebfb3956728ef940cb9f7d81a8793b451b"
+}

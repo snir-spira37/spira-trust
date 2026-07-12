@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_derivable_rerun",
+  "case_kind": "deterministically_derivable_rerun_target",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

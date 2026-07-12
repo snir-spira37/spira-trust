@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_fixture_setup_error",
+  "case_kind": "fixture_setup_error",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

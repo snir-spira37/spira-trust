@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_import_error",
+  "case_kind": "import_error",
+  "exit_code": 2,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

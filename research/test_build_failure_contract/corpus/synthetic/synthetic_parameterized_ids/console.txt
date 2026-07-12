@@ -1,0 +1,2 @@
+tests/test_param.py::test_value[1] PASSED
+tests/test_param.py::test_value[2] FAILED

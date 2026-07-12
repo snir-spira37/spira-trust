@@ -1,0 +1,2 @@
+tests/test_dup.py::test_same FAILED
+tests/test_dup.py::test_same PASSED

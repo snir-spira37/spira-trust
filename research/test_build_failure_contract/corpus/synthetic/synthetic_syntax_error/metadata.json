@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_syntax_error",
+  "case_kind": "syntax_error",
+  "exit_code": 2,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

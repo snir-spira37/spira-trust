@@ -1,0 +1,13 @@
+{
+  "case_id": "public_requests_long_traceback",
+  "case_kind": "noisy_or_long_traceback",
+  "command": [
+    "pytest",
+    "-q",
+    "tests/test_requests.py",
+    "-x"
+  ],
+  "commit": "f361ead047be5cb873174218582f7d8b9fcd9f49",
+  "oracle_expected_answers": "NOT_POPULATED",
+  "repository_url": "https://github.com/psf/requests.git"
+}

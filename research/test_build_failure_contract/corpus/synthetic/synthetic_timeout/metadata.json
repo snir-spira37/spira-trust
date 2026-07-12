@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_timeout",
+  "case_kind": "timeout",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

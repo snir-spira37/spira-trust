@@ -1,0 +1,2 @@
+tests/test_unicode.py::test_שלום FAILED
+E AssertionError: café

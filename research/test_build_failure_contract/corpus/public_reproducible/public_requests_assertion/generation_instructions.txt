@@ -1,0 +1,6 @@
+repository: https://github.com/psf/requests.git
+commit: f361ead047be5cb873174218582f7d8b9fcd9f49
+python: cpython 3.12.4
+pytest: 8.3.2
+command: ["pytest","-q","tests/test_requests.py::RequestsTestCase::test_basic_building"]
+raw_logs: not committed; regenerate from public source before oracle population

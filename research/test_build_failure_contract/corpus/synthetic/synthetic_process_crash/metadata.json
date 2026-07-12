@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_process_crash",
+  "case_kind": "process_crash",
+  "exit_code": 3,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

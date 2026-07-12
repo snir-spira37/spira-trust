@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_malformed_junit",
+  "case_kind": "malformed_junit_xml",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

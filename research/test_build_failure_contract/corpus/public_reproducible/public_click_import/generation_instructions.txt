@@ -1,0 +1,6 @@
+repository: https://github.com/pallets/click.git
+commit: b67832c2167e5b0ff6764a8c04a0a9087e697b5a
+python: cpython 3.12.4
+pytest: 8.3.2
+command: ["pytest","-q","tests/test_imports.py"]
+raw_logs: not committed; regenerate from public source before oracle population

@@ -1,0 +1,6 @@
+repository: https://github.com/pallets/flask.git
+commit: 36e4a824f340fdee7ed50937ba8e7f6bc7d17f81
+python: cpython 3.12.4
+pytest: 8.3.2
+command: ["pytest","-q","tests/test_basic.py"]
+raw_logs: not committed; regenerate from public source before oracle population

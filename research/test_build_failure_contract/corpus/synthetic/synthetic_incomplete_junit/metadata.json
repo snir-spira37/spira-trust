@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_incomplete_junit",
+  "case_kind": "incomplete_junit_fields",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

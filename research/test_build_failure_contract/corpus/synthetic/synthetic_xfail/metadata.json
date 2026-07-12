@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_xfail",
+  "case_kind": "xfail",
+  "exit_code": 0,
+  "oracle_expected_answers": "NOT_POPULATED"
+}

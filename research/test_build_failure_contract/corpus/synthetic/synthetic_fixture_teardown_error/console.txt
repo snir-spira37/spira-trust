@@ -1,0 +1,2 @@
+ERROR at teardown of test_uses_fixture
+RuntimeError: teardown failed

@@ -1,0 +1,1 @@
+tests/test_xml.py::test_fail FAILED

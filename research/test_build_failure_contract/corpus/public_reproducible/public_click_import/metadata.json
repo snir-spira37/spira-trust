@@ -1,0 +1,12 @@
+{
+  "case_id": "public_click_import",
+  "case_kind": "collection_or_import_failure_instruction",
+  "command": [
+    "pytest",
+    "-q",
+    "tests/test_imports.py"
+  ],
+  "commit": "b67832c2167e5b0ff6764a8c04a0a9087e697b5a",
+  "oracle_expected_answers": "NOT_POPULATED",
+  "repository_url": "https://github.com/pallets/click.git"
+}

@@ -1,0 +1,18 @@
+{
+  "case_count": 38,
+  "json_validation": "PASS",
+  "mutation_pair_count": 6,
+  "oracle_population": "NOT_AUTHORIZED",
+  "path_scan": "PASS",
+  "privacy_scan": "PASS",
+  "producer_implementation": "NOT_AUTHORIZED",
+  "raw_evidence_exclusion_check": "PASS",
+  "schema": "SPIRA_DOMAIN2_CORPUS_MATERIALIZATION_RESULTS",
+  "schema_version": 1,
+  "secret_scan": "PASS",
+  "status": "DOMAIN_2_CORPUS_MATERIALIZED",
+  "strata_counts": {
+    "public_reproducible_instruction": 8,
+    "synthetic": 30
+  }
+}

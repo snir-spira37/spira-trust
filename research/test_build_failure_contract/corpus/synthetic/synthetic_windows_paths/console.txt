@@ -1,0 +1,1 @@
+C:/ci/work/project/tests/test_paths.py::test_win FAILED

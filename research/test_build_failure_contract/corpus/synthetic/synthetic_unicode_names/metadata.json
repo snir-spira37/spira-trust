@@ -1,0 +1,7 @@
+{
+  "capture_complete": true,
+  "case_id": "synthetic_unicode_names",
+  "case_kind": "unicode_test_names_and_messages",
+  "exit_code": 1,
+  "oracle_expected_answers": "NOT_POPULATED"
+}
