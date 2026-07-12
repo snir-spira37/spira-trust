@@ -12,6 +12,12 @@ from .combined_verdict import DECISION_SEMANTICS_VERSION
 UNIFICATION_PROOF_SCHEMA = "SPIRA_UNIFICATION_PROOF_V1"
 UNIFICATION_REFERENCE_SCHEMA = "SPIRA_UNIFICATION_REFERENCE_V1"
 CLAIM_SCHEMA = "SPIRA_CLAIM_V1"
+SUBJECT_TYPES = {
+    "python_wheel",
+    "python_wheel_set",
+    "pytest_test_run",
+    "pytest_test_evidence_set",
+}
 
 
 STATUS_RANK = {
@@ -32,9 +38,6 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
     contract = summary.get("agent_action_contract", {}) or {}
     summary_of = summary.get("summary_of", {}) or {}
     claims = build_claims(summary, decision)
-    validate_claim_set(claims)
-    claims_root = merkle_root(claims)
-    policy_sha = str(contract.get("policy_sha256") or "")
     subject_sha = str(contract.get("artifact_sha256") or contract.get("artifact_set_sha256") or "")
     validate_sha256(subject_sha, field="subject_sha256")
     context_sha = sha256_hex(
@@ -49,21 +52,39 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
             "graph_report_sha256": summary_of.get("graph_report_sha256"),
         }
     )
-    decision_obj = {
-        "semantics_version": contract.get("decision_semantics_version") or DECISION_SEMANTICS_VERSION,
-        "verdict": contract.get("action_verdict") or summary.get("action_verdict"),
-        "graph_verdict": contract.get("graph_verdict") or summary.get("verdict"),
-        "combined_verdict": contract.get("combined_verdict") or summary.get("combined_verdict"),
-        "stop": bool(contract.get("stop")),
-        "recommended_agent_action": contract.get("recommended_agent_action"),
-        "reason_codes": sorted(dict.fromkeys(contract.get("reason_codes") or [])),
-        "not_evaluated": sorted(dict.fromkeys(contract.get("not_evaluated") or [])),
+    subject = {
+        "type": "python_wheel" if contract.get("artifact_sha256") else "python_wheel_set",
+        "sha256": subject_sha,
+        "artifact_set_sha256": contract.get("artifact_set_sha256"),
     }
+    context = {
+        "policy_sha256": contract.get("policy_sha256"),
+        "context_sha256": context_sha,
+    }
+    decision_obj = domain1_decision_from_contract(summary, contract)
+    return assemble_unification_proof(subject=subject, claims=claims, context=context, decision=decision_obj)
+
+
+def assemble_unification_proof(
+    *,
+    subject: Mapping[str, Any],
+    claims: list[Mapping[str, Any]],
+    context: Mapping[str, Any],
+    decision: Mapping[str, Any],
+) -> dict[str, Any]:
+    """Assemble a proof from domain-neutral, precomputed evidence inputs."""
+
+    subject_obj = validate_subject(subject)
+    claims = [dict(claim) for claim in claims]
+    validate_claim_set(claims)
+    claims_root = merkle_root(claims)
+    context_sha = validate_sha256_value(context.get("context_sha256"), field="context_sha256")
+    decision_obj = validate_decision(decision)
     unification_id = tagged_hash(
         "SPIRA:UNIFICATION:V1",
-        subject_sha,
+        subject_obj["sha256"],
         claims_root,
-        policy_sha,
+        str(context.get("policy_sha256") or ""),
         context_sha,
         str(decision_obj["semantics_version"]),
         sha256_hex(decision_obj),
@@ -81,14 +102,10 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
         "schema": UNIFICATION_PROOF_SCHEMA,
         "schema_version": "1.0",
         "created_at": utc_now(),
-        "subject": {
-            "type": "python_wheel" if contract.get("artifact_sha256") else "python_wheel_set",
-            "sha256": subject_sha,
-            "artifact_set_sha256": contract.get("artifact_set_sha256"),
-        },
+        "subject": subject_obj,
         "roots": {
             "claims_merkle_root": claims_root,
-            "policy_sha256": contract.get("policy_sha256"),
+            "policy_sha256": context.get("policy_sha256"),
             "context_sha256": context_sha,
         },
         "decision": decision_obj,
@@ -111,6 +128,46 @@ def build_unification_proof(summary: Mapping[str, Any], decision: Mapping[str, A
             "signatures or attestations are separate identity layers",
             "not-evaluated claims remain explicit and are not treated as OK",
         ],
+    }
+
+
+def domain1_decision_from_contract(summary: Mapping[str, Any], contract: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "semantics_version": contract.get("decision_semantics_version") or DECISION_SEMANTICS_VERSION,
+        "verdict": contract.get("action_verdict") or summary.get("action_verdict"),
+        "graph_verdict": contract.get("graph_verdict") or summary.get("verdict"),
+        "combined_verdict": contract.get("combined_verdict") or summary.get("combined_verdict"),
+        "stop": bool(contract.get("stop")),
+        "recommended_agent_action": contract.get("recommended_agent_action"),
+        "reason_codes": sorted(dict.fromkeys(contract.get("reason_codes") or [])),
+        "not_evaluated": sorted(dict.fromkeys(contract.get("not_evaluated") or [])),
+    }
+
+
+def validate_subject(subject: Mapping[str, Any]) -> dict[str, Any]:
+    subject_type = str(subject.get("type") or "")
+    if subject_type not in SUBJECT_TYPES:
+        raise UnificationProofError(f"unknown subject type: {subject_type}")
+    subject_sha = validate_sha256_value(subject.get("sha256"), field="subject.sha256")
+    subject_obj = {
+        "type": subject_type,
+        "sha256": subject_sha,
+    }
+    if "artifact_set_sha256" in subject:
+        subject_obj["artifact_set_sha256"] = subject.get("artifact_set_sha256")
+    return subject_obj
+
+
+def validate_decision(decision: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "semantics_version": decision.get("semantics_version") or DECISION_SEMANTICS_VERSION,
+        "verdict": decision.get("verdict"),
+        "graph_verdict": decision.get("graph_verdict"),
+        "combined_verdict": decision.get("combined_verdict"),
+        "stop": bool(decision.get("stop")),
+        "recommended_agent_action": decision.get("recommended_agent_action"),
+        "reason_codes": sorted(dict.fromkeys(decision.get("reason_codes") or [])),
+        "not_evaluated": sorted(dict.fromkeys(decision.get("not_evaluated") or [])),
     }
 
 
@@ -203,6 +260,12 @@ def validate_claim_set(claims: list[Mapping[str, Any]]) -> None:
 def validate_sha256(value: str, *, field: str) -> None:
     if len(value) != 64 or any(ch not in "0123456789abcdef" for ch in value):
         raise UnificationProofError(f"{field} must be a lowercase 64-character SHA-256 hex value")
+
+
+def validate_sha256_value(value: Any, *, field: str) -> str:
+    text = str(value or "")
+    validate_sha256(text, field=field)
+    return text
 
 
 def reason_codes_for_claim(layer_name: str, status: str, layer: Mapping[str, Any]) -> list[str]:

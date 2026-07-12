@@ -4,6 +4,7 @@ import copy
 
 from spira_core.unification_proof import (
     UnificationProofError,
+    assemble_unification_proof,
     build_unification_proof,
     inclusion_proof,
     merkle_root,
@@ -82,6 +83,71 @@ def test_unification_decision_matches_agent_action_contract():
     assert proof["decision"]["reason_codes"] == summary["agent_action_contract"]["reason_codes"]
     assert proof["coverage"]["not_evaluated"] == ["spira.layer.pep740_offline_attestations"]
     assert proof["not_claimed"]
+
+
+def test_generic_assembler_preserves_legacy_domain1_identity():
+    summary = _summary()
+    decision = _decision()
+    proof = build_unification_proof(summary, decision)
+
+    assembled = assemble_unification_proof(
+        subject=proof["subject"],
+        claims=proof["claims"],
+        context={
+            "policy_sha256": proof["roots"]["policy_sha256"],
+            "context_sha256": proof["roots"]["context_sha256"],
+        },
+        decision=proof["decision"],
+    )
+
+    assert _stable_identity(assembled) == _stable_identity(proof)
+
+
+def test_generic_assembler_accepts_closed_non_wheel_subject_type():
+    claims = [_claim("spira.layer.pytest_result", "BLOCK")]
+
+    proof = assemble_unification_proof(
+        subject={"type": "pytest_test_run", "sha256": "a" * 64},
+        claims=claims,
+        context={"policy_sha256": None, "context_sha256": "b" * 64},
+        decision={
+            "semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+            "verdict": "TEST_BLOCK",
+            "graph_verdict": None,
+            "combined_verdict": "TEST_BLOCK",
+            "stop": True,
+            "recommended_agent_action": "STOP_BLOCKED",
+            "reason_codes": ["TEST_FAILURE"],
+            "not_evaluated": [],
+        },
+    )
+
+    assert proof["subject"]["type"] == "pytest_test_run"
+    assert proof["decision"]["recommended_agent_action"] == "STOP_BLOCKED"
+    assert proof["coverage"]["worst_claim_status"] == "BLOCK"
+
+
+def test_generic_assembler_rejects_unknown_subject_type():
+    try:
+        assemble_unification_proof(
+            subject={"type": "custom_free_text", "sha256": "a" * 64},
+            claims=[_claim("spira.layer.graph_core", "OK")],
+            context={"policy_sha256": None, "context_sha256": "b" * 64},
+            decision={
+                "semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+                "verdict": "GRAPH_OK",
+                "graph_verdict": "GRAPH_OK",
+                "combined_verdict": "GRAPH_OK",
+                "stop": False,
+                "recommended_agent_action": "PROCEED",
+                "reason_codes": [],
+                "not_evaluated": [],
+            },
+        )
+    except UnificationProofError as error:
+        assert "unknown subject type" in str(error)
+    else:
+        raise AssertionError("expected UnificationProofError")
 
 
 def test_unification_rejects_unknown_claim_status():
@@ -198,4 +264,17 @@ def _decision() -> dict:
                 },
             ]
         }
+    }
+
+
+def _stable_identity(proof: dict) -> dict:
+    return {
+        "subject": proof["subject"],
+        "roots": proof["roots"],
+        "decision": proof["decision"],
+        "coverage": proof["coverage"],
+        "claims": proof["claims"],
+        "proof": proof["proof"],
+        "unification_id": proof["unification_id"],
+        "not_claimed": proof["not_claimed"],
     }
