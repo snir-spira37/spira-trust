@@ -1,0 +1,1197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.dev/schemas/research/test-build-failure-oracle-v3.schema.json",
+  "title": "SPIRA Test/Build Failure Contract Oracle Schema V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "status",
+    "methodology",
+    "identity_model",
+    "action_enum_policy",
+    "validator_requirements",
+    "not_authorized",
+    "cases"
+  ],
+  "properties": {
+    "schema": {
+      "const": "SPIRA_TEST_BUILD_FAILURE_ORACLE_V3"
+    },
+    "schema_version": {
+      "const": 3
+    },
+    "status": {
+      "const": "ORACLE_SCHEMA_V3_LOCKED"
+    },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "methodology_document",
+        "identity_model_document",
+        "identity_model_review_document",
+        "schema_v1_review_document",
+        "schema_v2_review_document",
+        "domain_slice"
+      ],
+      "properties": {
+        "methodology_document": {
+          "const": "research/test_build_failure_contract_methodology.md"
+        },
+        "identity_model_document": {
+          "const": "research/test_build_failure_contract_dual_identity_model_v2.md"
+        },
+        "identity_model_review_document": {
+          "const": "research/test_build_failure_contract_dual_identity_model_v2_review.md"
+        },
+        "schema_v1_review_document": {
+          "const": "research/test_build_failure_contract_oracle_schema_v1_review.md"
+        },
+        "schema_v2_review_document": {
+          "const": "research/test_build_failure_contract_oracle_schema_v2_review.md"
+        },
+        "domain_slice": {
+          "const": "Python pytest test-run evidence"
+        }
+      }
+    },
+    "identity_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_identity",
+        "result_identity",
+        "scope_identity_precondition",
+        "policy_action_binding"
+      ],
+      "properties": {
+        "run_identity": {
+          "const": "CONTEXTUAL"
+        },
+        "result_identity": {
+          "const": "POLICY_INDEPENDENT"
+        },
+        "scope_identity_precondition": {
+          "const": "REQUIRED_BEFORE_RESULT_IDENTITY"
+        },
+        "policy_action_binding": {
+          "const": "OUTSIDE_RESULT_IDENTITY"
+        }
+      }
+    },
+    "action_enum_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "included_actions",
+        "excluded_actions",
+        "rationale"
+      ],
+      "properties": {
+        "policy": {
+          "const": "FROZEN_AGENT_ACTION_SUBSET_FOR_DOMAIN_2_ORACLE_V3"
+        },
+        "included_actions": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "PROCEED"
+            },
+            {
+              "const": "STOP_BLOCKED"
+            },
+            {
+              "const": "RERUN_REQUIRED"
+            },
+            {
+              "const": "REPORT_NOT_EVALUATED"
+            },
+            {
+              "const": "REPORT_WITH_NOTES"
+            }
+          ],
+          "items": false,
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "excluded_actions": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "const": "ASK_HUMAN"
+            }
+          ],
+          "items": false,
+          "minItems": 1,
+          "maxItems": 1
+        },
+        "rationale": {
+          "const": "Domain 2 oracle V3 uses only the frozen agent actions currently emitted by the accepted SPIRA action contract for deterministic gate answers; ASK_HUMAN is not introduced as a Domain 2 action."
+        }
+      }
+    },
+    "validator_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_enforced",
+        "validator_enforced_before_oracle_population",
+        "not_required"
+      ],
+      "properties": {
+        "schema_enforced": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "enum": [
+              "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_HASH",
+              "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_PROJECTION",
+              "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTION_HASH",
+              "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTED_TEST_IDS",
+              "SCOPE_NOT_EVALUATED_IMPLIES_RESULT_NOT_EVALUATED",
+              "POLICY_ACTION_REQUIRES_DECISION_SEMANTICS_VERSION",
+              "RESULT_IDENTITY_EXCLUDES_POLICY_ACTION_FIELDS",
+              "EMITTED_RESULT_IDENTITY_REQUIRES_COMPLETE_EVIDENCE",
+              "EMITTED_RESULT_IDENTITY_REJECTS_NOT_EVALUATED_PROCESS_STATE",
+              "EMITTED_RESULT_IDENTITY_REJECTS_INVALID_RESULT_STATES",
+              "SCOPE_IDENTITY_HAS_OWN_DIGEST_OR_PROJECTION_CONTRACT",
+              "ACTION_STOP_CONSISTENCY"
+            ]
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_HASH"
+              }
+            },
+            {
+              "contains": {
+                "const": "NOT_EVALUATED_RESULT_IDENTITY_HAS_NO_PROJECTION"
+              }
+            },
+            {
+              "contains": {
+                "const": "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTION_HASH"
+              }
+            },
+            {
+              "contains": {
+                "const": "NOT_EVALUATED_SCOPE_IDENTITY_HAS_NO_COLLECTED_TEST_IDS"
+              }
+            },
+            {
+              "contains": {
+                "const": "SCOPE_NOT_EVALUATED_IMPLIES_RESULT_NOT_EVALUATED"
+              }
+            },
+            {
+              "contains": {
+                "const": "POLICY_ACTION_REQUIRES_DECISION_SEMANTICS_VERSION"
+              }
+            },
+            {
+              "contains": {
+                "const": "RESULT_IDENTITY_EXCLUDES_POLICY_ACTION_FIELDS"
+              }
+            },
+            {
+              "contains": {
+                "const": "EMITTED_RESULT_IDENTITY_REQUIRES_COMPLETE_EVIDENCE"
+              }
+            },
+            {
+              "contains": {
+                "const": "EMITTED_RESULT_IDENTITY_REJECTS_NOT_EVALUATED_PROCESS_STATE"
+              }
+            },
+            {
+              "contains": {
+                "const": "EMITTED_RESULT_IDENTITY_REJECTS_INVALID_RESULT_STATES"
+              }
+            },
+            {
+              "contains": {
+                "const": "SCOPE_IDENTITY_HAS_OWN_DIGEST_OR_PROJECTION_CONTRACT"
+              }
+            },
+            {
+              "contains": {
+                "const": "ACTION_STOP_CONSISTENCY"
+              }
+            }
+          ]
+        },
+        "validator_enforced_before_oracle_population": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "enum": [
+              "RELATED_CASE_ID_EXISTS",
+              "IDENTITY_RELATIONSHIP_SYMMETRY",
+              "CANONICAL_ARRAY_SORTING",
+              "CASE_ID_UNIQUENESS",
+              "DECLARED_DELTA_SEMANTIC_FIELD_VALIDITY",
+              "RESULT_SCOPE_IDENTITY_HASH_MATCHES_EXPECTED_SCOPE"
+            ]
+          },
+          "uniqueItems": true,
+          "allOf": [
+            {
+              "contains": {
+                "const": "RELATED_CASE_ID_EXISTS"
+              }
+            },
+            {
+              "contains": {
+                "const": "IDENTITY_RELATIONSHIP_SYMMETRY"
+              }
+            },
+            {
+              "contains": {
+                "const": "CANONICAL_ARRAY_SORTING"
+              }
+            },
+            {
+              "contains": {
+                "const": "CASE_ID_UNIQUENESS"
+              }
+            },
+            {
+              "contains": {
+                "const": "DECLARED_DELTA_SEMANTIC_FIELD_VALIDITY"
+              }
+            },
+            {
+              "contains": {
+                "const": "RESULT_SCOPE_IDENTITY_HASH_MATCHES_EXPECTED_SCOPE"
+              }
+            }
+          ]
+        },
+        "not_required": {
+          "type": "array",
+          "maxItems": 0
+        }
+      }
+    },
+    "not_authorized": {
+      "type": "array",
+      "minItems": 7,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "PRODUCER_IMPLEMENTATION",
+          "PYTEST_ADAPTER",
+          "ORACLE_POPULATION",
+          "CORPUS_MATERIALIZATION",
+          "GATE_B",
+          "DOMAIN_3",
+          "RELEASE_VERSION_TAG_PYPI"
+        ]
+      },
+      "allOf": [
+        {
+          "contains": {
+            "const": "PRODUCER_IMPLEMENTATION"
+          }
+        },
+        {
+          "contains": {
+            "const": "PYTEST_ADAPTER"
+          }
+        },
+        {
+          "contains": {
+            "const": "ORACLE_POPULATION"
+          }
+        },
+        {
+          "contains": {
+            "const": "CORPUS_MATERIALIZATION"
+          }
+        },
+        {
+          "contains": {
+            "const": "GATE_B"
+          }
+        },
+        {
+          "contains": {
+            "const": "DOMAIN_3"
+          }
+        },
+        {
+          "contains": {
+            "const": "RELEASE_VERSION_TAG_PYPI"
+          }
+        }
+      ]
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/oracle_case"
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:-]{0,127}$"
+    },
+    "canonical_test_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status4": {
+      "enum": [
+        "ANSWERED",
+        "NOT_APPLICABLE",
+        "NOT_EVALUATED",
+        "CONFLICTING"
+      ]
+    },
+    "claim_status": {
+      "enum": [
+        "OK",
+        "NOTE",
+        "WARN",
+        "NOT_EVALUATED",
+        "RERUN_REQUIRED",
+        "BLOCK"
+      ]
+    },
+    "source_state": {
+      "enum": [
+        "PRESENT_COMPLETE",
+        "PRESENT_INCOMPLETE",
+        "PRESENT_MALFORMED",
+        "ABSENT",
+        "UNSUPPORTED"
+      ]
+    },
+    "identity_status": {
+      "enum": [
+        "EMITTED",
+        "NOT_EVALUATED"
+      ]
+    },
+    "identity_relation": {
+      "enum": [
+        "SAME",
+        "DIFFERENT",
+        "NOT_EMITTED"
+      ]
+    },
+    "process_state": {
+      "enum": [
+        "COMPLETED",
+        "TIMEOUT",
+        "INTERRUPTED",
+        "CRASH",
+        "ERROR",
+        "NOT_EVALUATED"
+      ]
+    },
+    "result_state": {
+      "enum": [
+        "PASSED",
+        "FAILED",
+        "ERROR",
+        "NOT_EVALUATED",
+        "CONFLICTING",
+        "UNSUPPORTED"
+      ]
+    },
+    "observed_outcome": {
+      "enum": [
+        "FAILED",
+        "ERROR",
+        "XPASSED_BLOCKING",
+        "SKIPPED",
+        "XFAILED",
+        "XPASSED_NONBLOCKING"
+      ]
+    },
+    "failure_class": {
+      "enum": [
+        "ASSERTION_FAILURE",
+        "TIMEOUT",
+        "COLLECTION_ERROR",
+        "IMPORT_ERROR",
+        "SYNTAX_ERROR",
+        "FIXTURE_SETUP_ERROR",
+        "FIXTURE_TEARDOWN_ERROR",
+        "PROCESS_INTERRUPTED",
+        "PROCESS_CRASH",
+        "PROCESS_ERROR",
+        "SOURCE_CONFLICT",
+        "EVIDENCE_INCOMPLETE",
+        "UNSUPPORTED_INPUT",
+        "UNKNOWN"
+      ]
+    },
+    "agent_action": {
+      "enum": [
+        "PROCEED",
+        "STOP_BLOCKED",
+        "RERUN_REQUIRED",
+        "REPORT_NOT_EVALUATED",
+        "REPORT_WITH_NOTES"
+      ]
+    },
+    "delta_type": {
+      "enum": [
+        "TIMESTAMP_CHANGED",
+        "DURATION_CHANGED",
+        "PID_CHANGED",
+        "ANSI_FORMATTING_CHANGED",
+        "WHITESPACE_CHANGED",
+        "TEMP_PATH_CHANGED",
+        "TRACEBACK_FORMATTING_CHANGED",
+        "CONSOLE_ORDER_CHANGED",
+        "UNRELATED_STDOUT_ADDED",
+        "UNRELATED_STDERR_ADDED"
+      ]
+    },
+    "evidence_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "media_type",
+        "sha256",
+        "byte_length",
+        "capture_complete",
+        "source_state"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/source_id"
+        },
+        "media_type": {
+          "enum": [
+            "text/plain",
+            "application/xml",
+            "application/json",
+            "application/octet-stream"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "byte_length": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "capture_complete": {
+          "type": "boolean"
+        },
+        "source_state": {
+          "$ref": "#/$defs/source_state"
+        }
+      }
+    },
+    "explicit_case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test_id",
+        "observed_outcome"
+      ],
+      "properties": {
+        "test_id": {
+          "$ref": "#/$defs/canonical_test_id"
+        },
+        "observed_outcome": {
+          "$ref": "#/$defs/observed_outcome"
+        },
+        "failure_class": {
+          "$ref": "#/$defs/failure_class"
+        },
+        "reason_category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rerun_target": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scope_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "collection_deterministic"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/identity_status"
+        },
+        "collection_deterministic": {
+          "type": "boolean"
+        },
+        "scope_identity_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scope_projection": {
+          "$ref": "#/$defs/scope_identity_projection"
+        },
+        "scope_projection_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "collection_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "canonical_collected_test_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/canonical_test_id"
+          },
+          "uniqueItems": true
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EMITTED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "scope_identity_sha256",
+              "collection_manifest_sha256",
+              "canonical_collected_test_ids"
+            ],
+            "properties": {
+              "collection_deterministic": {
+                "const": true
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "scope_projection"
+                ]
+              },
+              {
+                "required": [
+                  "scope_projection_sha256"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "NOT_EVALUATED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "collection_deterministic": {
+                "const": false
+              }
+            },
+            "required": [
+              "reason_codes"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "collection_manifest_sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "canonical_collected_test_ids"
+                  ]
+                },
+                {
+                  "required": [
+                    "scope_identity_sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "scope_projection"
+                  ]
+                },
+                {
+                  "required": [
+                    "scope_projection_sha256"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "scope_identity_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collection_manifest_sha256",
+        "canonical_collected_test_ids"
+      ],
+      "properties": {
+        "collection_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "canonical_collected_test_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/canonical_test_id"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "result_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/identity_status"
+        },
+        "result_identity_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "projection": {
+          "$ref": "#/$defs/result_identity_projection"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EMITTED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "result_identity_sha256",
+              "projection"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "NOT_EVALUATED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "reason_codes"
+            ],
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "result_identity_sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "projection"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "result_identity_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope_identity_sha256",
+        "process_state",
+        "result_state",
+        "blocking_cases",
+        "nonblocking_cases",
+        "failure_classes",
+        "run_level_failures",
+        "evidence_completeness"
+      ],
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "policy"
+            ]
+          },
+          {
+            "required": [
+              "decision_semantics"
+            ]
+          },
+          {
+            "required": [
+              "stop"
+            ]
+          },
+          {
+            "required": [
+              "recommended_agent_action"
+            ]
+          },
+          {
+            "required": [
+              "reason_codes"
+            ]
+          }
+        ]
+      },
+      "properties": {
+        "scope_identity_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "process_state": {
+          "enum": [
+            "COMPLETED",
+            "TIMEOUT",
+            "INTERRUPTED",
+            "CRASH",
+            "ERROR"
+          ]
+        },
+        "result_state": {
+          "enum": [
+            "PASSED",
+            "FAILED",
+            "ERROR"
+          ]
+        },
+        "blocking_cases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/explicit_case"
+          },
+          "uniqueItems": true
+        },
+        "nonblocking_cases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/explicit_case"
+          },
+          "uniqueItems": true
+        },
+        "failure_classes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/failure_class"
+          },
+          "uniqueItems": true
+        },
+        "run_level_failures": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/failure_class"
+          },
+          "uniqueItems": true
+        },
+        "evidence_completeness": {
+          "const": "COMPLETE"
+        }
+      }
+    },
+    "policy_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stop",
+        "recommended_agent_action",
+        "reason_codes",
+        "decision_semantics_version"
+      ],
+      "properties": {
+        "stop": {
+          "type": "boolean"
+        },
+        "recommended_agent_action": {
+          "$ref": "#/$defs/agent_action"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "decision_semantics_version": {
+          "const": "SPIRA_DECISION_SEMANTICS_V2"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "stop": {
+                "const": false
+              }
+            },
+            "required": [
+              "stop"
+            ]
+          },
+          "then": {
+            "properties": {
+              "recommended_agent_action": {
+                "enum": [
+                  "PROCEED",
+                  "REPORT_WITH_NOTES"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "declared_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "delta_type",
+        "description",
+        "forbidden_semantic_fields"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/source_id"
+        },
+        "delta_type": {
+          "$ref": "#/$defs/delta_type"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "forbidden_semantic_fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "identity_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "related_case_id",
+        "run_identity_relation",
+        "scope_identity_relation",
+        "result_identity_relation"
+      ],
+      "properties": {
+        "related_case_id": {
+          "$ref": "#/$defs/case_id"
+        },
+        "run_identity_relation": {
+          "$ref": "#/$defs/identity_relation"
+        },
+        "scope_identity_relation": {
+          "$ref": "#/$defs/identity_relation"
+        },
+        "result_identity_relation": {
+          "$ref": "#/$defs/identity_relation"
+        },
+        "declared_input_deltas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/declared_delta"
+          }
+        }
+      }
+    },
+    "expected_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claim_type",
+        "status",
+        "reason_codes"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "$ref": "#/$defs/claim_status"
+        },
+        "value": true,
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "oracle_case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "case_schema_version",
+        "review_class",
+        "review_status",
+        "input_manifest_sha256",
+        "input_sources",
+        "supported_input",
+        "expected_source_sufficiency",
+        "expected_scope_identity",
+        "expected_result_identity",
+        "expected_policy_action",
+        "expected_identity_relationships",
+        "expected_claims",
+        "expected_explicit_lists",
+        "expected_not_evaluated",
+        "expected_not_claimed",
+        "expected_evidence_locators"
+      ],
+      "properties": {
+        "case_id": {
+          "$ref": "#/$defs/case_id"
+        },
+        "case_schema_version": {
+          "const": 2
+        },
+        "review_class": {
+          "enum": [
+            "AUTHOR_REVIEW",
+            "INDEPENDENT_REVIEW",
+            "ADVERSARIAL_FIXTURE_REVIEW",
+            "SELF_REVIEW"
+          ]
+        },
+        "review_status": {
+          "enum": [
+            "REVIEWED",
+            "NEEDS_REVIEW",
+            "REJECTED"
+          ]
+        },
+        "input_manifest_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "input_sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_source"
+          }
+        },
+        "supported_input": {
+          "type": "boolean"
+        },
+        "expected_source_sufficiency": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/status4"
+          }
+        },
+        "expected_scope_identity": {
+          "$ref": "#/$defs/scope_identity"
+        },
+        "expected_result_identity": {
+          "$ref": "#/$defs/result_identity"
+        },
+        "expected_policy_action": {
+          "$ref": "#/$defs/policy_action"
+        },
+        "expected_identity_relationships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/identity_relationship"
+          }
+        },
+        "expected_claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/expected_claim"
+          }
+        },
+        "expected_explicit_lists": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "blocking_cases",
+            "nonblocking_cases"
+          ],
+          "properties": {
+            "blocking_cases": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/explicit_case"
+              },
+              "uniqueItems": true
+            },
+            "nonblocking_cases": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/explicit_case"
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        "expected_not_evaluated": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "expected_not_claimed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "expected_evidence_locators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "locator_type",
+              "locator"
+            ],
+            "properties": {
+              "source_id": {
+                "$ref": "#/$defs/source_id"
+              },
+              "locator_type": {
+                "enum": [
+                  "line_span",
+                  "xpath",
+                  "document_field",
+                  "process_metadata_field"
+                ]
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "expected_scope_identity": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "const": "NOT_EVALUATED"
+                  }
+                },
+                "required": [
+                  "status"
+                ]
+              }
+            },
+            "required": [
+              "expected_scope_identity"
+            ]
+          },
+          "then": {
+            "properties": {
+              "expected_result_identity": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "const": "NOT_EVALUATED"
+                  }
+                },
+                "required": [
+                  "status"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
