@@ -11,11 +11,18 @@
   "privacy_scan": "PASS",
   "producer_implementation": "NOT_AUTHORIZED",
   "producer_output_observed": false,
+  "revision_authorization": "research/test_build_failure_contract_oracle_revision_authorization.md",
+  "revision_findings_closed": [
+    "ORACLE_CLASSIFICATION_SOURCE_RISK",
+    "EVIDENCE_CONFLICT_DECISION_MISMATCH",
+    "IDENTITY_RELATIONSHIP_MISMATCH",
+    "SUFFICIENCY_AND_COLLECTION_ASSUMED"
+  ],
   "schema": "SPIRA_DOMAIN2_ORACLE_POPULATION_RESULTS",
   "schema_validation": "PASS",
   "schema_version": 1,
   "secret_scan": "PASS",
-  "status": "DOMAIN_2_ORACLE_POPULATED",
+  "status": "DOMAIN_2_ORACLE_REVISED",
   "validator_counts": {
     "case_count": 38,
     "declared_delta_count": 6,

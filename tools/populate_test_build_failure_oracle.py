@@ -34,7 +34,7 @@ def main() -> None:
     _write_json(RESULTS, results)
     REPORT.write_text(_population_report(results, validation), encoding="utf-8")
     print(json.dumps({"status": results["status"], "validator": validation["verdict"]}, sort_keys=True))
-    if results["status"] != "DOMAIN_2_ORACLE_POPULATED":
+    if results["status"] != "DOMAIN_2_ORACLE_REVISED":
         raise SystemExit(1)
 
 
@@ -85,8 +85,9 @@ def _oracle_document(cases: list[dict[str, Any]]) -> dict[str, Any]:
 def _oracle_case(corpus_case: dict[str, Any]) -> dict[str, Any]:
     case_id = corpus_case["case_id"]
     input_sources = [_oracle_source(source) for source in corpus_case["input_sources"]]
-    scope = _scope_identity(corpus_case)
-    classification = _classify(corpus_case)
+    evidence = _evidence(corpus_case)
+    scope = _scope_identity(corpus_case, evidence)
+    classification = _classify(corpus_case, evidence)
     result = _result_identity(scope["scope_identity_sha256"], classification)
     policy = _policy_action(classification)
     blocking = classification["blocking_cases"]
@@ -99,7 +100,7 @@ def _oracle_case(corpus_case: dict[str, Any]) -> dict[str, Any]:
         "input_manifest_sha256": _hash_json(input_sources),
         "input_sources": input_sources,
         "supported_input": True,
-        "expected_source_sufficiency": {source["source_id"]: "ANSWERED" for source in input_sources},
+        "expected_source_sufficiency": _source_sufficiency(corpus_case, evidence),
         "expected_scope_identity": scope,
         "expected_result_identity": result,
         "expected_policy_action": policy,
@@ -115,7 +116,7 @@ def _oracle_case(corpus_case: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _scope_identity(corpus_case: dict[str, Any]) -> dict[str, Any]:
+def _scope_identity(corpus_case: dict[str, Any], evidence: dict[str, Any]) -> dict[str, Any]:
     ids = _collected_test_ids(corpus_case)
     collection_hash = validator.collection_manifest_hash(ids)
     projection = {
@@ -132,15 +133,62 @@ def _scope_identity(corpus_case: dict[str, Any]) -> dict[str, Any]:
         "relevant_plugin_contract": corpus_case["relevant_plugin_contract"],
         "collection_contract_version": "SPIRA_PYTEST_COLLECTION_MANIFEST_V1",
     }
+    deterministic = _collection_deterministic(corpus_case, evidence, ids)
     return {
         "status": "EMITTED",
-        "collection_deterministic": True,
+        "collection_deterministic": deterministic,
         "scope_identity_sha256": validator.scope_identity_hash(projection),
         "scope_projection": projection,
         "scope_projection_sha256": validator.sha256_hex(projection),
         "collection_manifest_sha256": collection_hash,
         "canonical_collected_test_ids": ids,
     }
+
+
+def _collection_deterministic(case: dict[str, Any], evidence: dict[str, Any], ids: list[str]) -> bool:
+    required_scope_fields = [
+        "project_identity",
+        "source_revision",
+        "normalized_selection_command",
+        "python_version_contract",
+        "pytest_version",
+        "relevant_plugin_contract",
+    ]
+    for field in required_scope_fields:
+        value = case.get(field)
+        if value is None or value == "":
+            return False
+        if field != "relevant_plugin_contract" and value == []:
+            return False
+    if not ids:
+        return False
+    if any(not source.get("capture_complete", False) for source in evidence["sources"].values() if source["source_id"] == "metadata"):
+        return False
+    return True
+
+
+def _source_sufficiency(corpus_case: dict[str, Any], evidence: dict[str, Any]) -> dict[str, str]:
+    console = evidence["text"].get("console", "")
+    junit = evidence["text"].get("junit", "")
+    conflict = _console_junit_conflict(console, junit)
+    incomplete = _source_incomplete(evidence)
+    malformed_junit = _junit_incomplete_or_malformed(junit)
+    result: dict[str, str] = {}
+    for source in corpus_case["input_sources"]:
+        source_id = source["source_id"]
+        if source_id == "generation_instructions":
+            result[source_id] = "NOT_APPLICABLE"
+        elif conflict and source_id in {"console", "junit"}:
+            result[source_id] = "CONFLICTING"
+        elif source_id in {"console", "junit"} and source.get("source_state") == "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW":
+            result[source_id] = "NOT_EVALUATED"
+        elif incomplete and not source.get("capture_complete", False):
+            result[source_id] = "NOT_EVALUATED"
+        elif source_id == "junit" and malformed_junit:
+            result[source_id] = "NOT_EVALUATED"
+        else:
+            result[source_id] = "ANSWERED"
+    return result
 
 
 def _result_identity(scope_hash: str, classification: dict[str, Any]) -> dict[str, Any]:
@@ -175,15 +223,60 @@ def _policy_action(classification: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _classify(case: dict[str, Any]) -> dict[str, Any]:
-    case_id = case["case_id"]
-    kind = case["case_kind"]
-    exit_code = int(case.get("exit_code", 0))
+def _evidence(case: dict[str, Any]) -> dict[str, Any]:
+    sources: dict[str, dict[str, Any]] = {}
+    text: dict[str, str] = {}
+    json_sources: dict[str, Any] = {}
+    for source in case.get("input_sources", []):
+        item = dict(source)
+        path = item.get("path")
+        if path:
+            full_path = ROOT / path
+            item["path_exists"] = full_path.exists()
+            if full_path.exists():
+                if item.get("media_type") == "application/json":
+                    payload = json.loads(full_path.read_text(encoding="utf-8"))
+                    json_sources[item["source_id"]] = payload
+                else:
+                    text[item["source_id"]] = full_path.read_text(encoding="utf-8", errors="replace")
+        else:
+            item["path_exists"] = False
+        sources[item["source_id"]] = item
+    exit_code = _evidence_exit_code(case, json_sources)
+    return {
+        "sources": sources,
+        "text": text,
+        "json": json_sources,
+        "exit_code": exit_code,
+        "public_raw_outputs_withheld": any(
+            source.get("source_state") == "WITHHELD_AFTER_PRIVACY_OR_LICENSE_REVIEW"
+            for source in case.get("input_sources", [])
+        ),
+    }
+
+
+def _evidence_exit_code(case: dict[str, Any], json_sources: dict[str, Any]) -> int | None:
+    direct = case.get("exit_code")
+    if isinstance(direct, int):
+        return direct
+    materialization = json_sources.get("public_run_materialization")
+    if isinstance(materialization, dict) and isinstance(materialization.get("exit_code"), int):
+        return int(materialization["exit_code"])
+    metadata = json_sources.get("metadata")
+    if isinstance(metadata, dict) and isinstance(metadata.get("exit_code"), int):
+        return int(metadata["exit_code"])
+    return None
+
+
+def _classify(case: dict[str, Any], evidence: dict[str, Any]) -> dict[str, Any]:
+    exit_code = evidence["exit_code"]
+    console = evidence["text"].get("console", "")
+    junit = evidence["text"].get("junit", "")
     test_id = _primary_test_id(case)
     base = {
         "result_status": "EMITTED",
         "process_state": "COMPLETED",
-        "result_state": "PASSED" if exit_code == 0 else "FAILED",
+        "result_state": "PASSED" if exit_code == 0 or _console_has_only_nonblocking(console) else "FAILED",
         "blocking_cases": [],
         "nonblocking_cases": [],
         "failure_classes": [],
@@ -193,76 +286,195 @@ def _classify(case: dict[str, Any]) -> dict[str, Any]:
         "reason_codes": ["TESTS_PASSED"],
         "not_evaluated": [],
     }
-    if kind in {"skipped_test", "xfail"}:
-        outcome = "SKIPPED" if kind == "skipped_test" else "XFAILED"
+
+    if evidence["public_raw_outputs_withheld"]:
+        return _not_evaluated(base, "PUBLIC_RUN_OUTPUT_WITHHELD")
+
+    if _source_incomplete(evidence) or _junit_incomplete_or_malformed(junit):
+        return _not_evaluated(base, "TEST_RESULT_EVIDENCE_INCOMPLETE")
+
+    if _console_junit_conflict(console, junit):
+        return _not_evaluated(
+            {
+                **base,
+                "stop": True,
+                "action": "RERUN_REQUIRED",
+                "reason_codes": ["TEST_EVIDENCE_CONFLICT"],
+                "not_evaluated": ["result_identity"],
+            },
+            "TEST_EVIDENCE_CONFLICT",
+        )
+
+    if " SKIPPED" in console or " XFAIL" in console:
+        outcome = "SKIPPED" if " SKIPPED" in console else "XFAILED"
         base["nonblocking_cases"] = [
             {
                 "test_id": test_id,
                 "observed_outcome": outcome,
-                "reason_category": kind,
+                "reason_category": outcome.lower(),
                 "rerun_target": test_id,
             }
         ]
         base["action"] = "REPORT_WITH_NOTES"
         base["reason_codes"] = ["TEST_NOTES"]
         return _finalize(base)
-    if exit_code == 0:
+
+    if " XPASS" in console:
+        base.update(
+            {
+                "result_state": "FAILED",
+                "blocking_cases": [
+                    {
+                        "test_id": test_id,
+                        "observed_outcome": "XPASSED_BLOCKING",
+                        "failure_class": "ASSERTION_FAILURE",
+                        "reason_category": "xpassed_strict",
+                        "rerun_target": test_id,
+                    }
+                ],
+                "stop": True,
+                "action": "STOP_BLOCKED",
+                "reason_codes": ["TEST_FAILURE"],
+            }
+        )
         return _finalize(base)
-    if kind in {"truncated_console", "malformed_junit_xml", "incomplete_junit_fields"}:
-        return {
-            **base,
-            "result_status": "NOT_EVALUATED",
-            "stop": True,
-            "action": "REPORT_NOT_EVALUATED",
-            "reason_codes": ["TEST_RESULT_EVIDENCE_INCOMPLETE"],
-            "not_evaluated": ["result_identity"],
-        }
-    if kind == "console_junit_conflict":
+
+    run_level = _run_level_failure_from_evidence(console, exit_code)
+    if run_level is not None:
+        base.update(
+            {
+                "process_state": _process_state_for_run_level(run_level),
+                "result_state": "ERROR",
+                "run_level_failures": [run_level],
+                "stop": True,
+                "action": "STOP_BLOCKED",
+                "reason_codes": ["TEST_FAILURE"],
+            }
+        )
+        return _finalize(base)
+
+    failed_ids = _failed_test_ids(console)
+    if failed_ids or _junit_has_failure(junit):
+        ids = failed_ids or [test_id]
+        base.update(
+            {
+                "process_state": "COMPLETED",
+                "result_state": "FAILED",
+                "blocking_cases": [
+                    {
+                        "test_id": item,
+                        "observed_outcome": "FAILED",
+                        "failure_class": "ASSERTION_FAILURE",
+                        "rerun_target": item,
+                    }
+                    for item in ids
+                ],
+                "stop": True,
+                "action": "STOP_BLOCKED",
+                "reason_codes": ["TEST_FAILURE"],
+            }
+        )
+        return _finalize(base)
+
+    if exit_code not in {None, 0}:
         base.update(
             {
                 "process_state": "ERROR",
                 "result_state": "ERROR",
-                "run_level_failures": ["SOURCE_CONFLICT"],
+                "run_level_failures": ["PROCESS_ERROR"],
                 "stop": True,
                 "action": "STOP_BLOCKED",
                 "reason_codes": ["TEST_FAILURE"],
             }
         )
-        return _finalize(base)
-    failure_class = _failure_class(kind, exit_code)
-    process_state = _process_state(kind, failure_class)
-    result_state = "ERROR" if failure_class in _RUN_LEVEL_ERROR_CLASSES else "FAILED"
-    if failure_class in _RUN_LEVEL_ERROR_CLASSES or exit_code in {2, 3, 4, 5}:
-        base.update(
-            {
-                "process_state": process_state,
-                "result_state": result_state,
-                "run_level_failures": [failure_class],
-                "stop": True,
-                "action": "STOP_BLOCKED",
-                "reason_codes": ["TEST_FAILURE"],
-            }
-        )
-        return _finalize(base)
-    outcome = "XPASSED_BLOCKING" if kind == "xpass" else "FAILED"
-    base.update(
+    return _finalize(base)
+
+
+def _not_evaluated(base: dict[str, Any], reason_code: str) -> dict[str, Any]:
+    action = "RERUN_REQUIRED" if reason_code == "TEST_EVIDENCE_CONFLICT" else "REPORT_NOT_EVALUATED"
+    return _finalize(
         {
-            "process_state": process_state,
-            "result_state": result_state,
-            "blocking_cases": [
-                {
-                    "test_id": test_id,
-                    "observed_outcome": outcome,
-                    "failure_class": failure_class,
-                    "rerun_target": test_id,
-                }
-            ],
+            **base,
+            "result_status": "NOT_EVALUATED",
             "stop": True,
-            "action": "STOP_BLOCKED",
-            "reason_codes": ["TEST_FAILURE"],
+            "action": action,
+            "reason_codes": [reason_code],
+            "not_evaluated": ["result_identity"],
+            "blocking_cases": [],
+            "nonblocking_cases": [],
+            "run_level_failures": [],
         }
     )
-    return _finalize(base)
+
+
+def _console_has_only_nonblocking(console: str) -> bool:
+    return bool(console) and not any(token in console for token in (" FAILED", "ERROR", "Traceback", "Timeout"))
+
+
+def _source_incomplete(evidence: dict[str, Any]) -> bool:
+    return any(not source.get("capture_complete", False) for source in evidence["sources"].values())
+
+
+def _junit_incomplete_or_malformed(junit: str) -> bool:
+    if not junit:
+        return False
+    if not junit.strip().endswith(">") or "<testsuite" not in junit or "</testsuite>" not in junit:
+        return True
+    if "tests=" not in junit and "failures=" not in junit:
+        return True
+    return False
+
+
+def _console_junit_conflict(console: str, junit: str) -> bool:
+    return bool(console and junit and " PASSED" in console and " FAILED" not in console and _junit_has_failure(junit))
+
+
+def _junit_has_failure(junit: str) -> bool:
+    return "<failure" in junit or re.search(r"failures=['\"]?[1-9]", junit) is not None
+
+
+def _failed_test_ids(console: str) -> list[str]:
+    ids = []
+    for line in console.splitlines():
+        if " FAILED" not in line:
+            continue
+        match = re.search(r"((?:[A-Za-z]:)?/?[A-Za-z0-9_./:-]*tests/[A-Za-z0-9_./:-]+\.py::[^\s]+)", line)
+        if match:
+            item = match.group(1).replace("\\", "/")
+            if "/tests/" in item:
+                item = "tests/" + item.split("/tests/", 1)[1]
+            ids.append(item)
+    return sorted(set(ids))
+
+
+def _run_level_failure_from_evidence(console: str, exit_code: int | None) -> str | None:
+    checks = [
+        ("Timeout", "TIMEOUT"),
+        ("ERROR collecting", "COLLECTION_ERROR"),
+        ("ImportError", "IMPORT_ERROR"),
+        ("SyntaxError", "SYNTAX_ERROR"),
+        ("ERROR at setup", "FIXTURE_SETUP_ERROR"),
+        ("ERROR at teardown", "FIXTURE_TEARDOWN_ERROR"),
+        ("KeyboardInterrupt", "PROCESS_INTERRUPTED"),
+        ("terminated by signal", "PROCESS_CRASH"),
+        ("no tests collected", "PROCESS_ERROR"),
+    ]
+    for needle, failure_class in checks:
+        if needle in console:
+            return failure_class
+    if exit_code in {2, 3, 4, 5} and not _failed_test_ids(console):
+        return "PROCESS_ERROR"
+    return None
+
+
+def _process_state_for_run_level(failure_class: str) -> str:
+    if failure_class == "TIMEOUT":
+        return "TIMEOUT"
+    if failure_class == "PROCESS_INTERRUPTED":
+        return "INTERRUPTED"
+    if failure_class == "PROCESS_CRASH":
+        return "CRASH"
+    return "ERROR"
 
 
 def _finalize(classification: dict[str, Any]) -> dict[str, Any]:
@@ -402,13 +614,19 @@ def _attach_mutation_relationships(cases: list[dict[str, Any]], pairs: list[dict
 
 
 def _relationship(related_case_id: str, pair: dict[str, Any]) -> dict[str, Any]:
+    mutation_type = pair["mutation_type"]
+    stable_result_mutation = mutation_type in {
+        "declared_formatting_mutation",
+        "declared_path_mutation",
+        "instruction_injection_mutation",
+    }
     relation = {
         "related_case_id": related_case_id,
         "run_identity_relation": "DIFFERENT",
-        "scope_identity_relation": "DIFFERENT",
-        "result_identity_relation": "DIFFERENT",
+        "scope_identity_relation": "SAME",
+        "result_identity_relation": "SAME" if stable_result_mutation else "DIFFERENT",
     }
-    delta_type = _delta_type(pair["mutation_type"])
+    delta_type = _delta_type(mutation_type)
     if delta_type is not None:
         relation["declared_input_deltas"] = [
             {
@@ -608,7 +826,7 @@ def _population_results(oracle: dict[str, Any], validation: dict[str, Any]) -> d
     return {
         "schema": "SPIRA_DOMAIN2_ORACLE_POPULATION_RESULTS",
         "schema_version": 1,
-        "status": "DOMAIN_2_ORACLE_POPULATED" if validation["verdict"] == "PASS" else "DOMAIN_2_ORACLE_NEEDS_REVISION",
+        "status": "DOMAIN_2_ORACLE_REVISED" if validation["verdict"] == "PASS" else "DOMAIN_2_ORACLE_REVISION_FAILED",
         "oracle_path": "research/test_build_failure_contract/oracle_v1.json",
         "case_count": len(oracle["cases"]),
         "populated_case_count": len(oracle["cases"]),
@@ -625,6 +843,13 @@ def _population_results(oracle: dict[str, Any], validation: dict[str, Any]) -> d
         "producer_output_observed": False,
         "producer_implementation": "NOT_AUTHORIZED",
         "gate_b": "NOT_AUTHORIZED",
+        "revision_authorization": "research/test_build_failure_contract_oracle_revision_authorization.md",
+        "revision_findings_closed": [
+            "ORACLE_CLASSIFICATION_SOURCE_RISK",
+            "EVIDENCE_CONFLICT_DECISION_MISMATCH",
+            "IDENTITY_RELATIONSHIP_MISMATCH",
+            "SUFFICIENCY_AND_COLLECTION_ASSUMED",
+        ],
         "validator_counts": validation["counts"],
     }
 
@@ -632,7 +857,7 @@ def _population_results(oracle: dict[str, Any], validation: dict[str, Any]) -> d
 def _population_report(results: dict[str, Any], validation: dict[str, Any]) -> str:
     return "\n".join(
         [
-            "# Test/Build Failure Contract Oracle Population Report",
+            "# Test/Build Failure Contract Oracle Revision Report",
             "",
             "Status:",
             "",
@@ -644,6 +869,12 @@ def _population_report(results: dict[str, Any], validation: dict[str, Any]) -> s
             "```",
             "",
             f"Oracle cases populated: {results['populated_case_count']} / {results['case_count']}",
+            "",
+            "Revision findings closed:",
+            "",
+            "```text",
+            *results["revision_findings_closed"],
+            "```",
             "",
             "Validator:",
             "",
@@ -665,7 +896,9 @@ def _population_report(results: dict[str, Any], validation: dict[str, Any]) -> s
             json.dumps(results, indent=2, sort_keys=True),
             "```",
             "",
-            "This report does not authorize producer implementation or Gate B.",
+            "This revision preserves the previously populated oracle artifact while correcting semantic expected answers under the authorized four-finding scope.",
+            "",
+            "This report does not accept the oracle semantically and does not authorize producer implementation or Gate B.",
             "",
         ]
     )

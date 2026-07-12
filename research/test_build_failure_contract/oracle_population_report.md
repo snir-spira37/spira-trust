@@ -1,15 +1,24 @@
-# Test/Build Failure Contract Oracle Population Report
+# Test/Build Failure Contract Oracle Revision Report
 
 Status:
 
 ```text
-DOMAIN_2_ORACLE_POPULATED
+DOMAIN_2_ORACLE_REVISED
 PRODUCER_IMPLEMENTATION_NOT_AUTHORIZED
 GATE_B_NOT_AUTHORIZED
 DOMAIN_3_NOT_AUTHORIZED
 ```
 
 Oracle cases populated: 38 / 38
+
+Revision findings closed:
+
+```text
+ORACLE_CLASSIFICATION_SOURCE_RISK
+EVIDENCE_CONFLICT_DECISION_MISMATCH
+IDENTITY_RELATIONSHIP_MISMATCH
+SUFFICIENCY_AND_COLLECTION_ASSUMED
+```
 
 Validator:
 
@@ -43,11 +52,18 @@ Population results:
   "privacy_scan": "PASS",
   "producer_implementation": "NOT_AUTHORIZED",
   "producer_output_observed": false,
+  "revision_authorization": "research/test_build_failure_contract_oracle_revision_authorization.md",
+  "revision_findings_closed": [
+    "ORACLE_CLASSIFICATION_SOURCE_RISK",
+    "EVIDENCE_CONFLICT_DECISION_MISMATCH",
+    "IDENTITY_RELATIONSHIP_MISMATCH",
+    "SUFFICIENCY_AND_COLLECTION_ASSUMED"
+  ],
   "schema": "SPIRA_DOMAIN2_ORACLE_POPULATION_RESULTS",
   "schema_validation": "PASS",
   "schema_version": 1,
   "secret_scan": "PASS",
-  "status": "DOMAIN_2_ORACLE_POPULATED",
+  "status": "DOMAIN_2_ORACLE_REVISED",
   "validator_counts": {
     "case_count": 38,
     "declared_delta_count": 6,
@@ -60,4 +76,6 @@ Population results:
 }
 ```
 
-This report does not authorize producer implementation or Gate B.
+This revision preserves the previously populated oracle artifact while correcting semantic expected answers under the authorized four-finding scope.
+
+This report does not accept the oracle semantically and does not authorize producer implementation or Gate B.
