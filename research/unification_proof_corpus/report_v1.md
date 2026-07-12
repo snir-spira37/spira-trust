@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-UNIFICATION_CORPUS_ACCEPT_WITH_TOOL_ERRORS
+UNIFICATION_CORPUS_PASS
 ```
 
 This run evaluates `Unification Proof V1` on the frozen PEP 770 corpus under:
@@ -13,6 +13,7 @@ methodology: research/unification_proof_corpus_methodology.md
 runner: research/unification_proof_corpus/run_corpus.py
 implementation baseline: 01edc85338b9d2a2a942f06014e188e56d54a56a
 runner cleanup hardening: 2495ad9
+tool-error closure: retry against same frozen corpus after review fail-closed hardening
 ```
 
 ## Corpus Materialization
@@ -40,13 +41,15 @@ Aggregate public results:
 ```text
 results: research/unification_proof_corpus/results/full_v1_public_results.json
 processed: 1,954
-PASS: 1,940
-TOOL_ERROR: 14
+PASS: 1,954
+TOOL_ERROR: 0
 ```
 
-`TOOL_ERROR` entries are SPIRA/tooling failures, not package findings. They are
-excluded from proof correctness statistics and must be investigated separately
-before any stronger release claim is made.
+The first full pass produced 14 `TOOL_ERROR` entries. They were classified as
+tooling/environment handling, not package findings. After hardening review
+fail-closed behavior and runner cleanup/retry behavior, the same frozen
+materialized corpus was retried for `TOOL_ERROR` entries only. The final corpus
+status is `PASS` for all 1,954 materialized wheels.
 
 For all generated proofs:
 
@@ -71,7 +74,7 @@ duplicate claim_id -> fail closed
 
 ## Size And Timing
 
-For the 1,940 generated proofs:
+For the 1,954 generated proofs:
 
 ```text
 compact reference bytes:
@@ -91,12 +94,12 @@ unification_proof.json bytes:
 
 evidence pack bytes:
   median: 31,276
-  p90: 37,897
+  p90: 37,972
   max: 159,284
 
 proof generation time:
   median: 5.47 ms
-  p90: 8.888 ms
+  p90: 8.897 ms
   max: 42.257 ms
 ```
 
@@ -108,14 +111,14 @@ The compact reference is the agent-facing handle. The full
 This run supports the narrow claim:
 
 ```text
-For generated proofs in this corpus, Unification Proof V1 preserved the
+Across the frozen 1,954-wheel corpus, Unification Proof V1 preserved the
 existing SPIRA action contract, reproduced deterministically for the same
 inputs, verified selected claim inclusion, rejected selected claim mutation,
-and preserved NOT_EVALUATED/BLOCK semantics.
+and preserved NOT_EVALUATED/BLOCK semantics for every generated proof.
 ```
 
-It does not support a broad product claim because 14 corpus items produced
-`TOOL_ERROR`.
+It does not support a broad product claim outside the existing Python wheel
+evidence domain.
 
 ## Not Claimed
 
@@ -133,20 +136,32 @@ the result generalizes to Kubernetes, Terraform, DB schemas, logs, or tests
 token, CPU, energy, or CO2 savings
 ```
 
+## Closed Tooling Gap
+
+The 14 initial `TOOL_ERROR` entries were closed before this final report status.
+They were not package findings.
+
+The closure consisted of:
+
+```text
+review fail-closed hardening for post-extraction OSError/ValueError paths
+runner retry support for selected result statuses
+best-effort cleanup for transient Windows file-handle lifecycle issues
+```
+
+The corpus was not changed. Only prior `TOOL_ERROR` entries were retried against
+the same frozen materialized manifest.
+
 ## Next Step
 
 The next engineering step is not a new producer.
 
-The next step is to inspect the 14 `TOOL_ERROR` cases and decide whether they
-are:
+The next step is a narrow release/readiness review of the Unification Proof V1
+corpus result:
 
 ```text
-Windows path / extraction cleanup issues
-SPIRA graph evidence packaging bugs
-unsupported wheel structures
-other local tooling failures
+verify public artifacts
+decide whether docs should mention corpus-scale validation
+keep not_claimed boundaries unchanged
+avoid cross-domain claims
 ```
-
-Only after those are classified should the corpus be rerun or a release claim
-be considered.
-

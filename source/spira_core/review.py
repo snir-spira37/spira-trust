@@ -534,11 +534,14 @@ def review_artifact(artifact_path: str | Path, output_dir: str | Path, *, packag
     except (ValueError, zipfile.BadZipFile, OSError) as exc:
         return _failure_report(source=source, run_root=run_root, output_root=output_root, package=package, error=exc)
 
-    artifact_hash = hash_file(source) if source.is_file() else None
-    manifest = build_manifest(view.extracted_root)
-    structured_claims = _structured_claims(view)
-    free_text = _free_text_surfaces(view)
-    probe_claims = _pre_registered_probes(view)
+    try:
+        artifact_hash = hash_file(source) if source.is_file() else None
+        manifest = build_manifest(view.extracted_root)
+        structured_claims = _structured_claims(view)
+        free_text = _free_text_surfaces(view)
+        probe_claims = _pre_registered_probes(view)
+    except (OSError, ValueError) as exc:
+        return _failure_report(source=source, run_root=run_root, output_root=output_root, package=package, error=exc)
     claims = structured_claims + probe_claims
     verdict_counts: dict[str, int] = {}
     for claim in claims:

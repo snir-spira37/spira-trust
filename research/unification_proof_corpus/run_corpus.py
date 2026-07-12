@@ -64,6 +64,12 @@ def main(argv: list[str] | None = None) -> int:
     evaluate_cmd.add_argument("--limit", type=int)
     evaluate_cmd.add_argument("--sleep", type=float, default=0.2)
     evaluate_cmd.add_argument("--resume", action="store_true")
+    evaluate_cmd.add_argument(
+        "--retry-status",
+        action="append",
+        default=[],
+        help="When resuming, remove prior results with this status and evaluate them again. May be repeated.",
+    )
     evaluate_cmd.add_argument("--keep-wheels", action="store_true")
     evaluate_cmd.add_argument("--keep-spira-outputs", action="store_true")
 
@@ -138,6 +144,14 @@ def evaluate(args: argparse.Namespace) -> int:
         work_dir=work_dir,
         limit=args.limit,
     )
+    retry_statuses = {str(status) for status in args.retry_status}
+    if retry_statuses:
+        retained = [item for item in report.get("results", []) if str(item.get("status")) not in retry_statuses]
+        if len(retained) != len(report.get("results", [])):
+            report["results"] = retained
+            report["summary"] = summarize_results(report["results"])
+            report["retry_statuses"] = sorted(retry_statuses)
+            write_json(raw_output, report)
     completed = {str(item.get("filename")) for item in report.get("results", []) if isinstance(item, dict)}
 
     for index, entry in enumerate(entries, start=1):

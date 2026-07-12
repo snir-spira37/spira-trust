@@ -1,5 +1,5 @@
 {
-  "completed_at": "2026-07-12T04:24:02Z",
+  "completed_at": "2026-07-12T05:00:56Z",
   "fixture_checks": {
     "checks": {
       "all_passed": true,
@@ -10,9 +10,9 @@
     "schema": "SPIRA_UNIFICATION_CORPUS_FIXTURE_CHECKS_V1"
   },
   "interpretation": {
-    "generated_proofs": "Correctness gates passed for all generated proofs.",
-    "release_claim": "No safety, SBOM correctness, Context Firewall, token, energy, or CO2 claim is made from this run.",
-    "tool_errors": "TOOL_ERROR entries are SPIRA/tooling failures and are excluded from proof correctness statistics; they are not package findings."
+    "full_corpus": "All 1,954 materialized wheels produced passing Unification Proof V1 corpus results.",
+    "generated_proofs": "Correctness gates passed for all generated proofs in the frozen corpus.",
+    "release_claim": "No safety, SBOM correctness, Context Firewall, token, energy, or CO2 claim is made from this run."
   },
   "materialized_manifest": "research/unification_proof_corpus/results/materialized_v1_2026-07-12.json",
   "methodology": "research/unification_proof_corpus_methodology.md",
@@ -28,18 +28,24 @@
     "Raw per-package results are kept under work/ and are not committed by default.",
     "Named package findings are not public package defects without manual review."
   ],
-  "result_status": "UNIFICATION_CORPUS_ACCEPT_WITH_TOOL_ERRORS",
+  "result_status": "UNIFICATION_CORPUS_PASS",
+  "retry_closure": {
+    "closure": "Retried TOOL_ERROR entries against the same frozen materialized corpus after hardening review fail-closed handling and runner cleanup/retry behavior.",
+    "final_tool_error_count": 0,
+    "prior_status": "UNIFICATION_CORPUS_ACCEPT_WITH_TOOL_ERRORS",
+    "prior_tool_error_count": 14
+  },
   "schema": "SPIRA_UNIFICATION_CORPUS_PUBLIC_RESULTS_V1",
   "started_at": "2026-07-12T01:19:24Z",
   "summary": {
     "agent_summary_bytes": {
-      "count": 1940,
+      "count": 1954,
       "max": 3413,
       "median": 3184,
       "p90": 3249
     },
     "compact_reference_bytes": {
-      "count": 1940,
+      "count": 1954,
       "max": 176,
       "median": 176,
       "p90": 176
@@ -54,29 +60,28 @@
       "not_evaluated_preserved": 0,
       "reproducibility": 0
     },
-    "evaluated_count": 1940,
+    "evaluated_count": 1954,
     "evidence_pack_bytes": {
-      "count": 1940,
+      "count": 1954,
       "max": 159284,
       "median": 31276,
-      "p90": 37897
+      "p90": 37972
     },
     "full_proof_bytes": {
-      "count": 1940,
+      "count": 1954,
       "max": 7139,
       "median": 7079,
       "p90": 7139
     },
     "generation_time_ms": {
-      "count": 1940,
+      "count": 1954,
       "max": 42.257,
       "median": 5.47,
-      "p90": 8.888
+      "p90": 8.897
     },
     "processed": 1954,
     "status_counts": {
-      "PASS": 1940,
-      "TOOL_ERROR": 14
+      "PASS": 1954
     }
   }
 }
