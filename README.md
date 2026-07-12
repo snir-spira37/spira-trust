@@ -112,8 +112,11 @@ what must be rerun; it does not execute verification.
 surface with `stop`, `recommended_agent_action`, `reason_codes`, and evidence
 pointers so agents do not have to infer gate policy from broad reports.
 It also references `unification_proof.json`, which binds typed claims and the
-decision context to a reproducible `unification_id` for audit drill-down. This
-is a binding proof, not a safety proof.
+decision context to a `unification_id` for audit drill-down. The ID is
+reproducible for identical canonical claims, decision, subject, and frozen
+context inputs; it is not claimed to remain identical across regenerated legacy
+report bytes, different workdirs, command fingerprints, or execution
+environments. This is a binding proof, not a safety proof.
 
 The command writes:
 

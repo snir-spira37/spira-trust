@@ -23,6 +23,33 @@ These claims, under this policy/context and decision semantics, produced this
 agent action.
 ```
 
+Unification Proof produces a reproducible `unification_id` for identical
+canonical claims, decision, subject, and frozen context inputs.
+
+It is not claimed to produce the same context-derived identity across
+regenerated legacy report bytes, different workdirs, command fingerprints, or
+execution environments.
+
+The distinction is:
+
+```text
+Semantic stability:
+claims + decision + action
+
+Contextual identity:
+subject + claims + decision + exact bound context
+```
+
+Therefore:
+
+```text
+same meaning
+!= necessarily same unification_id
+
+same canonical and contextual inputs
+= same unification_id
+```
+
 ## Files
 
 `agent_summary.json` remains the small agent-facing surface. It includes only a
@@ -130,6 +157,11 @@ action decision
 That makes cache and audit behavior stricter: the same action under a different
 claim set or policy/context is not the same proof.
 
+Legacy wheel evidence generation may produce equivalent claims and decisions
+while changing report bytes that are bound into `context_sha256`. In that case,
+semantic stability can hold while contextual identity changes. This is drift in
+the exact bound context, not proof that the action semantics changed.
+
 ## Agent Rule
 
 Agents should read `agent_summary.json` first.
@@ -153,3 +185,6 @@ not_evaluated
 - This does not perform zero-knowledge proof generation.
 - This does not turn missing evidence into OK.
 - This does not replace the full evidence pack for audit.
+- This does not claim identical `unification_id` across regenerated legacy
+  report bytes, different workdirs, command fingerprints, or execution
+  environments.
