@@ -1,15 +1,33 @@
 {
   "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
-  "raw_file_count": 1,
+  "raw_file_count": 3,
   "raw_files": [
     {
-      "byte_size": 450,
+      "byte_size": 467,
       "classification": "DIRECT_PROVIDER_RESPONSE",
       "public_path_recorded": false,
-      "raw_private_id": "3b5af8d9-91c2-423f-959b-75fd8e9f85df",
-      "sha256": "c892239a104d9b4d1829bbe1cc67d2b1acf3e372f18ccd73b4ec6f250198fe9a",
+      "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
+      "sha256": "51e8c389b432257c13f16a57809d65f3e7a91e0467cd2f878cb49ba1958e707a",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T15:59:59Z"
+      "timestamp_utc": "2026-07-13T16:27:35Z"
+    },
+    {
+      "byte_size": 6500,
+      "classification": "CLAUDE_STREAM_JSON",
+      "public_path_recorded": false,
+      "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
+      "sha256": "1b13dd7de007644cb1731e289033994b1c4562e5bd4e6b4f469f93d88d52eb0c",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T16:27:40Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_JSON",
+      "public_path_recorded": false,
+      "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T16:27:41Z"
     }
   ],
   "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"

@@ -2,34 +2,34 @@
   "authentication_ready": true,
   "benchmark_cases_sent_to_model": 0,
   "blockers": [
-    "DEEPSEEK_HARNESS_VERSION_NOT_READY"
+    "DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY"
   ],
-  "cache_decomposition_status": "AVAILABLE",
+  "cache_decomposition_status": "NOT_EVALUATED",
   "carryover_sessions": 0,
-  "claude_code_version": null,
-  "claude_init_model": null,
-  "completed_at_utc": "2026-07-13T15:59:59Z",
+  "claude_code_version": "2.1.206 (Claude Code)",
+  "claude_init_model": "deepseek-v4-pro",
+  "completed_at_utc": "2026-07-13T16:27:41Z",
   "efficiency_claim_authorized": false,
   "forbidden_tool_call_count": 0,
-  "harness_ready": false,
+  "harness_ready": true,
   "holdout_sessions": 0,
   "inventory": {
     "branch": "codex/domain3-terraform-plan-retry-1",
-    "claude_executable": null,
-    "claude_launcher_sha256": null,
-    "claude_version": null,
-    "git_commit": "01d8260370940725ddb4adcf1ddfae007e3e2498",
+    "claude_executable": "REDACTED_PATH/claude.EXE",
+    "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+    "claude_version": "2.1.206 (Claude Code)",
+    "git_commit": "74b702b1a80340e4343425555e9b943ac68d58fc",
     "node_version": null,
     "python_version": "3.12.10",
-    "timestamp_utc": "2026-07-13T15:59:58Z",
+    "timestamp_utc": "2026-07-13T16:27:26Z",
     "windows_version": "Windows-10-10.0.19045-SP0"
   },
-  "live_api_call_count": 1,
+  "live_api_call_count": 3,
   "live_calls_started": true,
   "model_resolution_ready": true,
   "phase": "DS-R0",
   "primary_sessions": 0,
-  "probe_count": 1,
+  "probe_count": 3,
   "probe_results": {
     "DS-R0-P1": {
       "errors": [],
@@ -39,7 +39,7 @@
       "model_resolution_status": "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED",
       "probe": "DS-R0-P1",
       "provider_request_id_present": false,
-      "raw_private_id": "3b5af8d9-91c2-423f-959b-75fd8e9f85df",
+      "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
       "ready": true,
       "resolved_provider_model": "deepseek-v4-pro",
       "usage": {
@@ -61,21 +61,94 @@
         ]
       }
     },
-    "claude_inventory_error": "CLAUDE_EXECUTABLE_NOT_FOUND"
+    "DS-R0-P2": {
+      "accepted_model_reference": "deepseek-v4-pro",
+      "available_tools": [
+        "Read"
+      ],
+      "errors": [],
+      "forbidden_tool_count": 0,
+      "live_call_count": 1,
+      "mcp_servers_present": false,
+      "plugins_present": false,
+      "probe": "DS-R0-P2",
+      "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
+      "ready": true,
+      "reported_model": "deepseek-v4-pro",
+      "returncode": 0,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_decomposition_status": "AVAILABLE",
+        "cache_read_input_tokens": 0,
+        "input_tokens": 695,
+        "input_total_available": true,
+        "output_tokens": 29,
+        "provider_cost_status": "NOT_EVALUATED",
+        "total_cost_usd": null,
+        "total_input_tokens": 695,
+        "usage_keys": [
+          "cache_creation",
+          "cache_creation_input_tokens",
+          "cache_read_input_tokens",
+          "inference_geo",
+          "input_tokens",
+          "iterations",
+          "output_tokens",
+          "server_tool_use",
+          "service_tier",
+          "speed"
+        ]
+      }
+    },
+    "DS-R0-P3": {
+      "errors": [
+        "DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY"
+      ],
+      "live_call_count": 1,
+      "nonce_matched": false,
+      "probe": "DS-R0-P3",
+      "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+      "ready": false,
+      "returncode": 1,
+      "structured_output_found": false,
+      "usage": {
+        "cache_decomposition_status": "NOT_EVALUATED",
+        "input_total_available": false,
+        "provider_cost_status": "NOT_EVALUATED"
+      }
+    }
   },
   "provider_cost_status": "NOT_EVALUATED",
   "raw_private_manifest": {
     "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
-    "raw_file_count": 1,
+    "raw_file_count": 3,
     "raw_files": [
       {
-        "byte_size": 450,
+        "byte_size": 467,
         "classification": "DIRECT_PROVIDER_RESPONSE",
         "public_path_recorded": false,
-        "raw_private_id": "3b5af8d9-91c2-423f-959b-75fd8e9f85df",
-        "sha256": "c892239a104d9b4d1829bbe1cc67d2b1acf3e372f18ccd73b4ec6f250198fe9a",
+        "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
+        "sha256": "51e8c389b432257c13f16a57809d65f3e7a91e0467cd2f878cb49ba1958e707a",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T15:59:59Z"
+        "timestamp_utc": "2026-07-13T16:27:35Z"
+      },
+      {
+        "byte_size": 6500,
+        "classification": "CLAUDE_STREAM_JSON",
+        "public_path_recorded": false,
+        "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
+        "sha256": "1b13dd7de007644cb1731e289033994b1c4562e5bd4e6b4f469f93d88d52eb0c",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:27:40Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_JSON",
+        "public_path_recorded": false,
+        "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:27:41Z"
       }
     ],
     "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"
@@ -88,13 +161,13 @@
   "scored": false,
   "scored_readiness_sessions": 0,
   "session_isolation_ready": false,
-  "started_at_utc": "2026-07-13T15:59:58Z",
+  "started_at_utc": "2026-07-13T16:27:26Z",
   "structured_output_ready": false,
   "terminal_status": "DS_R0_TECHNICAL_PROBES_BLOCKED",
   "terminal_statuses": [
     "DS_R0_TECHNICAL_PROBES_BLOCKED",
     "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED",
-    "DEEPSEEK_USAGE_ACCOUNTING_READY",
+    "DEEPSEEK_CLAUDE_HARNESS_READY",
     "NINE_LIVE_READINESS_SESSIONS_NOT_STARTED",
     "DS_R0_REVIEW_REQUIRED_NEXT",
     "MVP_CODE_UNCHANGED",
@@ -103,6 +176,6 @@
   ],
   "tool_isolation_ready": false,
   "track": "DeepSeek model via Claude Code harness",
-  "usage_accounting_ready": true,
+  "usage_accounting_ready": false,
   "workspace_mutation_count": 0
 }

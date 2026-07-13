@@ -15,23 +15,23 @@ RELEASE_NOT_AUTHORIZED
 track: DeepSeek model via Claude Code harness
 requested model: deepseek-v4-pro
 resolved provider model: deepseek-v4-pro
-Claude system/init model: None
-Claude Code version: None
+Claude system/init model: deepseek-v4-pro
+Claude Code version: 2.1.206 (Claude Code)
 ```
 
 ## Probe Summary
 
 ```text
-probe count: 1
-live API call count: 1
+probe count: 3
+live API call count: 3
 structured output ready: False
 tool isolation ready: False
 forbidden tool calls: 0
 workspace mutations: 0
 repository mutations: 0
 session isolation ready: False
-usage accounting ready: True
-cache decomposition: AVAILABLE
+usage accounting ready: False
+cache decomposition: NOT_EVALUATED
 provider cost: NOT_EVALUATED
 benchmark cases sent to model: 0
 scored readiness sessions: 0
@@ -39,7 +39,7 @@ scored readiness sessions: 0
 
 ## Blockers
 
-- DEEPSEEK_HARNESS_VERSION_NOT_READY
+- DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY
 
 ## Boundary
 
