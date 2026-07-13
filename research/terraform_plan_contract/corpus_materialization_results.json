@@ -1,0 +1,57 @@
+{
+  "schema": "SPIRA_DOMAIN3_TERRAFORM_PLAN_CORPUS_MATERIALIZATION_RESULTS",
+  "schema_version": 1,
+  "status": "DOMAIN_3_CORPUS_NOT_MATERIALIZABLE",
+  "branch": "codex/domain3-terraform-plan-night-run",
+  "authorization": "DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZED",
+  "methodology": "DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_ACCEPTED",
+  "target": {
+    "total_cases": 40,
+    "synthetic_controlled_cases": 32,
+    "authentic_locally_generated_terraform_plan_json_cases": 8,
+    "declared_mutation_pairs_minimum": 10
+  },
+  "local_terraform_gate": {
+    "required": true,
+    "get_command_terraform_found": false,
+    "where_terraform_found": false,
+    "terraform_version_succeeded": false,
+    "network_fetch_performed": false,
+    "provider_download_performed": false,
+    "cloud_infrastructure_touched": false,
+    "live_terraform_environment_touched": false,
+    "kubernetes_touched": false
+  },
+  "failure": {
+    "failed_gate": "AUTHENTIC_LOCAL_TERRAFORM_GENERATION_GATE",
+    "reason_code": "TERRAFORM_CLI_NOT_AVAILABLE",
+    "required_stop": "DOMAIN_3_CORPUS_NOT_MATERIALIZABLE",
+    "weakened_scope": false,
+    "synthetic_json_mislabeled_as_terraform_generated": false
+  },
+  "commands": [
+    {
+      "command": "Get-Command terraform -ErrorAction SilentlyContinue",
+      "exit_code": 1,
+      "result": "NOT_FOUND"
+    },
+    {
+      "command": "where.exe terraform",
+      "exit_code": 1,
+      "result": "NOT_FOUND"
+    },
+    {
+      "command": "terraform version",
+      "exit_code": 1,
+      "result": "COMMAND_NOT_RECOGNIZED"
+    }
+  ],
+  "artifacts_not_created": [
+    "research/terraform_plan_contract/corpus_manifest_v1.json",
+    "tools/materialize_terraform_plan_corpus.py",
+    "oracle_schema",
+    "oracle",
+    "producer"
+  ],
+  "terminal_route": "NEGATIVE_CLOSEOUT_REQUIRED"
+}

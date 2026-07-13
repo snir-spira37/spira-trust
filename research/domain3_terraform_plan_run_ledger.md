@@ -121,3 +121,36 @@ findings:
   - Authorization preserves oracle, producer, Gate B, Domain 4, MVP, and release blocks.
 next_phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_ATTEMPT
 ```
+
+## Phase C.2 - Corpus Materialization Attempt
+
+```text
+phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_ATTEMPT
+start_commit: 761602a
+end_commit: PENDING
+status: DOMAIN_3_CORPUS_NOT_MATERIALIZABLE
+authorization_used: DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZED
+files_changed:
+  - research/terraform_plan_contract/corpus_materialization_results.json
+  - research/terraform_plan_contract/corpus_materialization_report.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - Get-Command terraform -ErrorAction SilentlyContinue
+  - where.exe terraform
+  - terraform version
+  - python -m json.tool research/terraform_plan_contract/corpus_materialization_results.json
+  - rg negative materialization markers
+  - git diff --check
+  - python -m pytest
+tests:
+  - JSON validation: PASS
+  - required negative markers: PASS
+  - git diff --check: PASS
+  - full pytest: 94 passed
+findings:
+  - Terraform CLI is not available locally.
+  - Eight authentic locally generated Terraform Plan JSON cases cannot be materialized without violating the no-network/no-provider-download constraint.
+  - Synthetic JSON was not mislabeled as Terraform-generated evidence.
+  - Cloud, live Terraform state, Kubernetes, Gate B, oracle, and producer work were not touched.
+next_phase: NEGATIVE_CLOSEOUT
+```
