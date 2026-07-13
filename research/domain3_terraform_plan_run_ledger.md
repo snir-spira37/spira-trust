@@ -155,6 +155,30 @@ findings:
 next_phase: NEGATIVE_CLOSEOUT
 ```
 
+## Phase G - Negative Closeout
+
+```text
+phase: DOMAIN_3_NEGATIVE_CLOSEOUT
+start_commit: e8dfffd
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_NEGATIVE_RESULT_ACCEPTED
+authorization_used: OWNER_ATTACHED_DOMAIN_3_NIGHT_RUN_PROMPT
+files_changed:
+  - research/domain3_terraform_plan_research_closeout.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - git log --oneline --reverse 4656bc9..HEAD
+  - git rev-parse --abbrev-ref HEAD
+  - git rev-parse HEAD
+tests:
+  - closeout terminal status: PENDING
+findings:
+  - Domain 3 stopped at the corpus materialization gate.
+  - Terraform CLI was unavailable locally.
+  - No scope expansion was used.
+next_phase: NIGHT_RUN_HANDOFF
+```
+
 ## Phase C.3 - Corpus Review
 
 ```text
