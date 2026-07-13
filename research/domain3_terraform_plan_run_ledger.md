@@ -154,3 +154,26 @@ findings:
   - Cloud, live Terraform state, Kubernetes, Gate B, oracle, and producer work were not touched.
 next_phase: NEGATIVE_CLOSEOUT
 ```
+
+## Phase C.3 - Corpus Review
+
+```text
+phase: TERRAFORM_PLAN_CORPUS_REVIEW
+start_commit: e637f6e
+end_commit: PENDING
+status: DOMAIN_3_CORPUS_NOT_MATERIALIZABLE
+authorization_used: DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZED
+review_label: SOLO_MAINTAINER_PROCESS_SEPARATION_REVIEW
+files_changed:
+  - research/terraform_plan_contract/corpus_review.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - rg corpus review negative verdict
+  - git diff --check
+tests:
+  - negative corpus verdict present
+findings:
+  - Corpus materialization stopped at a valid locked gate.
+  - Negative closeout is required.
+next_phase: NEGATIVE_CLOSEOUT
+```
