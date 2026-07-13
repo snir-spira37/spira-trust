@@ -53,3 +53,12 @@ def test_compare_to_expected_detects_false_proceed():
 
 def test_readiness_inputs_are_nine():
     assert len(readiness.readiness_inputs()) == 9
+
+
+def test_claude_transport_schema_removes_only_draft_uri():
+    schema = {"$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object", "required": ["gate"]}
+
+    transported = readiness.claude_transport_schema(schema)
+
+    assert "$schema" not in transported
+    assert readiness.schema_transport_semantics_unchanged(schema, transported)

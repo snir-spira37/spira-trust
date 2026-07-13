@@ -3,166 +3,166 @@
   "raw_file_count": 18,
   "raw_files": [
     {
-      "byte_size": 0,
+      "byte_size": 2659,
       "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
       "public_path_recorded": false,
-      "raw_private_id": "40b58b45-6ee3-4fa9-88b5-24074e028367",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_private_id": "0dd4fec0-0d89-47e1-bdae-46d300640bac",
+      "sha256": "77c386e6ad72e37256fbc1cc4e78894f89dc7d7a52278458c6331fc6a4ed5417",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:44Z"
-    },
-    {
-      "byte_size": 122,
-      "classification": "CLAUDE_NATIVE_READINESS_STDERR",
-      "public_path_recorded": false,
-      "raw_private_id": "2f19c2ce-e44c-438a-a7bb-45b09c0308cd",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:44Z"
+      "timestamp_utc": "2026-07-13T18:28:10Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "0c195631-8d93-4d4f-9ba8-e2fde00ffdd0",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:46Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "2a024f27-08dc-42c2-96e3-da3f043ee3d9",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "6a3be0f1-0847-4486-93a5-459b16a3dded",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:46Z"
+      "timestamp_utc": "2026-07-13T18:28:10Z"
+    },
+    {
+      "byte_size": 1382,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "8876c2b8-bd65-4e5e-b56c-694c9063ec32",
+      "sha256": "30e2cb0ec058aa1810323867c70536103f60f87f869b9bba2ea57b98939fc376",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:28:38Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "864aa578-f5dc-4fcc-a61b-16040b0a0de3",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:48Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "1b4e9ad7-fb21-4ce1-9383-924e2d0ddf13",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "e9505305-c591-48f2-8460-02e1b332ee7b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:48Z"
+      "timestamp_utc": "2026-07-13T18:28:38Z"
+    },
+    {
+      "byte_size": 2479,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "906c4f70-1b79-46f0-b6b4-102ed8fa94ed",
+      "sha256": "869a3219fc43520d61d45b1197665cf1c7f1d1da8ba520551fb357f6b6b160ff",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:28:54Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "51c41996-151f-49d3-9620-3c38fa905890",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:50Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "52a22a06-0b98-41f9-81ac-a3eb2ce9d962",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "09bd8a86-9be5-481c-bf47-5830993f390f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:50Z"
+      "timestamp_utc": "2026-07-13T18:28:54Z"
+    },
+    {
+      "byte_size": 3560,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "879bf80a-8c31-4fff-bec9-f400396b756c",
+      "sha256": "ee5172a6446f31e63fccc4d5866516609a54ff9f93f2da50b2657f29bbe8891c",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:29:15Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "84bb69fc-f0b2-4062-b6dd-f027e1291524",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:51Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "8e02f8fe-7238-4c44-ada8-f0511a1dea62",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "e6795009-da6f-4326-8303-f6499561f193",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:51Z"
+      "timestamp_utc": "2026-07-13T18:29:15Z"
+    },
+    {
+      "byte_size": 2904,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "4d6d59d5-337c-411e-85b3-cdc1a8f5c271",
+      "sha256": "d1f1b48582729515c16a655493613717c2f426aa6962d0d530de0c37184dfa48",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:29:39Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "642f8409-22bb-4804-ba7b-b12c9c35267c",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:53Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "53c0c4bc-d245-4c04-a9bd-f52a4dd6f585",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "b2062d43-0acb-43ae-bbfb-9c6bc4c1c57f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:53Z"
+      "timestamp_utc": "2026-07-13T18:29:39Z"
+    },
+    {
+      "byte_size": 2825,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "76d3dd48-476e-41d5-b44d-90dddbd1232b",
+      "sha256": "5e496d9da5cf9551043dde245f2e3d489875544f45e23a42e6142447e214e289",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:29:55Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "52e6d2b7-3f46-4ab8-a4eb-56e7169b8f33",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:55Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "72ef598e-890f-4eac-9ca5-fc7f97cfda98",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "2bb439cb-96ac-443f-ba59-457735c0268b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:55Z"
+      "timestamp_utc": "2026-07-13T18:29:55Z"
+    },
+    {
+      "byte_size": 2770,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "d16619eb-3bc9-466b-bfd4-626d4ab4d44f",
+      "sha256": "6c711bdae69420f60cdb32c65aa725b1ebbfa0f9f31b245974e88a49a6bf5b6e",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:30:19Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "d3872f2b-afe7-430b-996d-28f98c95376e",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:57Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "41b2ba37-e4cb-4cfc-a7db-8931fbbee80d",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "1cb5c55a-8ffb-4ba3-a86c-b5c837c25321",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:57Z"
+      "timestamp_utc": "2026-07-13T18:30:19Z"
+    },
+    {
+      "byte_size": 2285,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "1682f9b7-ddcd-41e2-a8fa-148dbbf5db6a",
+      "sha256": "bf7558d9d0d25371190bbb3c44830dca6fc31112f47dc70a6e72bec660f70f84",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:30:45Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
-      "public_path_recorded": false,
-      "raw_private_id": "200b4634-4902-4e02-9d4d-2715d5ccb4e8",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:58Z"
-    },
-    {
-      "byte_size": 122,
       "classification": "CLAUDE_NATIVE_READINESS_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "8e076812-ab3e-46f4-a1d6-6e287801d026",
-      "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "raw_private_id": "7fd6b7b4-789b-4024-be06-c9e5017f4859",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:23:58Z"
+      "timestamp_utc": "2026-07-13T18:30:45Z"
+    },
+    {
+      "byte_size": 2427,
+      "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "82544bd4-d640-4cec-879b-79a6c4aae3cf",
+      "sha256": "4f7afff30137d1f0930008631edf85a2aa96be0b4cf6d844369f07ff9479630c",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:31:01Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "5185b331-632b-4cf9-b08d-2089c2622d2f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:31:01Z"
     }
   ],
   "schema": "SPIRA_CLAUDE_NATIVE_READINESS_RAW_PRIVATE_MANIFEST_V1"

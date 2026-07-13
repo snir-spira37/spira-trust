@@ -64,10 +64,13 @@ def run_readiness(*, private_root: Path | None = None) -> dict[str, Any]:
     selected = readiness_inputs()
     case_expectations = expected_by_case()
     schema = json.loads(OUTPUT_SCHEMA_PATH.read_text(encoding="utf-8"))
+    transport_schema = claude_transport_schema(schema)
     sessions: list[dict[str, Any]] = []
     pre_repo_state = repository_state()
     for item in selected:
-        sessions.append(run_session(item, case_expectations[(item["domain"], item["case_id"])], schema, private_root, raw_manifest))
+        sessions.append(
+            run_session(item, case_expectations[(item["domain"], item["case_id"])], schema, transport_schema, private_root, raw_manifest)
+        )
     errors = readiness_errors(sessions)
     if repository_state() != pre_repo_state:
         errors.append("CLAUDE_NATIVE_READINESS_REPOSITORY_MUTATION_OBSERVED")
@@ -95,6 +98,7 @@ def run_session(
     item: Mapping[str, Any],
     expected: Mapping[str, Any],
     schema: Mapping[str, Any],
+    transport_schema: Mapping[str, Any],
     private_root: Path,
     raw_manifest: list[dict[str, Any]],
 ) -> dict[str, Any]:
@@ -112,7 +116,7 @@ def run_session(
         "shell, subagents, or files outside this workspace."
     )
     try:
-        result = run_claude(prompt=prompt, workspace=workspace, schema=schema)
+        result = run_claude(prompt=prompt, workspace=workspace, schema=transport_schema)
     finally:
         post_digest = directory_digest(workspace)
         shutil.rmtree(workspace, ignore_errors=True)
@@ -138,6 +142,8 @@ def run_session(
         "returncode": result.returncode,
         "raw_private_id": raw_id,
         "output_found": isinstance(output, dict),
+        "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
+        "schema_transport_semantics_changed": False,
         "schema_valid": not schema_errors,
         "schema_errors": schema_errors,
         "comparison": comparison,
@@ -373,6 +379,18 @@ def validate_output_schema(output: Any, schema: Mapping[str, Any]) -> list[str]:
     if "drilldown_used" in output and not isinstance(output["drilldown_used"], bool):
         errors.append("INVALID_DRILLDOWN_USED")
     return errors
+
+
+def claude_transport_schema(schema: Mapping[str, Any]) -> dict[str, Any]:
+    transported = json.loads(json.dumps(schema))
+    transported.pop("$schema", None)
+    return transported
+
+
+def schema_transport_semantics_unchanged(original: Mapping[str, Any], transported: Mapping[str, Any]) -> bool:
+    original_without_draft = json.loads(json.dumps(original))
+    original_without_draft.pop("$schema", None)
+    return original_without_draft == transported
 
 
 def extract_agent_output(parsed: Any) -> Any:
