@@ -1,0 +1,4092 @@
+{
+  "authorization": "C:/Users/snir/Documents/Codex/2026-06-11/we-are-continuing-spira-v10-0/work/github_spira_trust_public/research/multi_agent_benchmark/claude_native/claude_native_primary_benchmark_authorization.md",
+  "completed_session_count": 122,
+  "created_at_utc": "2026-07-13T20:59:59Z",
+  "next_session_index": 123,
+  "plan_sha256": "570f41baf38065242acdae1bc145aff3b97893a116d9c059c1dadc0609aa739c",
+  "schema": "SPIRA_CLAUDE_NATIVE_PRIMARY_SESSION_MANIFEST_V1",
+  "session_count": 180,
+  "sessions": [
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:00:32Z",
+          "raw_private_id": "88a09b22-141f-4f1b-9a82-e2f1b76c05f9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:00:32Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 1,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:00:53Z",
+          "raw_private_id": "0f6d0b82-969e-4bf0-a53d-1e26df2da87f",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:00:53Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 2,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:01:22Z",
+          "raw_private_id": "ecf710a4-9843-4162-a78d-92d43c1f927f",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:01:22Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 3,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:01:40Z",
+          "raw_private_id": "587d61e4-e435-4e98-8cf2-c57ba83eb0e1",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:01:40Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json",
+      "input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "prompt_sha256": "0ef912566ccf016e1a4b68db083e7ffeffdade4ca4cc5f81855f2442668e7111",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 4,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:02:09Z",
+          "raw_private_id": "05d90e95-9168-4d35-a117-9d35c69096d9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:02:09Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json",
+      "input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "prompt_sha256": "1e8cf6dea035fcd930da5cfecade495e8082c97e0cdc479b408f536a2abf14ef",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 5,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:02:27Z",
+          "raw_private_id": "9af95dfa-6224-4745-96e3-06fa139e7ec4",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:02:27Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json",
+      "input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "prompt_sha256": "c2ff0f5c1624e82472d27f8070be135cf1d5fbf88cc2287222ad6477ead3c5d4",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 6,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:02:43Z",
+          "raw_private_id": "7fbd3fac-5cc9-48be-a76c-b8c0e239452b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:02:43Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json",
+      "input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "prompt_sha256": "74a1d9bdf34818ccd1b38bf8b90a3ff99dfb8e069009a04e925376aa22f77b79",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 7,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:03:06Z",
+          "raw_private_id": "491bc36d-cb41-4677-9499-e9db89cc2d80",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:03:06Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json",
+      "input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "prompt_sha256": "e6febfd568846927eb01700fa7e774320ee73cb0d33f195f75cb896ed402b87c",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 8,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:03:26Z",
+          "raw_private_id": "0d410035-9b79-4cec-bafa-4f686c655b0a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:03:26Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json",
+      "input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "prompt_sha256": "b66770e9711cd4e16bf261f98c2721f896135eb44665eedc3042d74294b79568",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 9,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:03:51Z",
+          "raw_private_id": "8901c1a6-d8a2-49ab-8688-6ba44903383d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:03:51Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json",
+      "input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "prompt_sha256": "07b3d9b0685ab746e16cb47b54299f73b347e27ac07e4b6ac212891a970446a1",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 10,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:04:21Z",
+          "raw_private_id": "e802f8e0-717b-4d93-a321-b309dc0a5267",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:04:21Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json",
+      "input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "prompt_sha256": "ccd222982ae07c13da4706bfb1ca4d907fcb2b317aac1ca7ccfad32557179089",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 11,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:04:46Z",
+          "raw_private_id": "a3ab1b9d-004e-4f77-b86f-c83b46c7bc87",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:04:46Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json",
+      "input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "prompt_sha256": "d0291d6580099550bbfc14c46e19c27401d2a2901352892a2e09c97640369693",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 12,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:05:11Z",
+          "raw_private_id": "3d4f83d8-135f-4a26-a3b2-da78c0709f6d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:05:11Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 13,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:05:35Z",
+          "raw_private_id": "cce0d3cb-f9fe-4d25-9bf0-9276879e6732",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:05:35Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 14,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:05:52Z",
+          "raw_private_id": "dd090d62-792c-4415-a490-2e241510f753",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:05:52Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 15,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:06:17Z",
+          "raw_private_id": "fa851fae-824f-4de2-bbf4-59aea66d1d1e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:06:17Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json",
+      "input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "prompt_sha256": "fedf1ac300e684f6d8830c20c695d3ebdb4ece14c84d6ba1e7b13e827ca532fc",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 16,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:06:49Z",
+          "raw_private_id": "dc20b132-6c96-424f-bf05-f5aaf7cc2991",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:06:49Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json",
+      "input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "prompt_sha256": "50251c2b8517c7dac3a1e989822cf33ade0230cf45f9fd4982d34a1af9aaa6cf",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 17,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:07:08Z",
+          "raw_private_id": "de1d3418-8f78-460e-9367-d8e0a55e2d7e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:07:08Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json",
+      "input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "prompt_sha256": "83eef1124da51e6da093fb77c66aae6a6c76b68588c9971d3c5a17956d261bfc",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 18,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:07:24Z",
+          "raw_private_id": "a12df847-e512-4b1e-9cde-8c99420e65cb",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:07:24Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json",
+      "input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "prompt_sha256": "39e96e57b3825f86ad48cac25abd568f2c9e3da0d8b2b5fd55060e8e3b471816",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 19,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:07:46Z",
+          "raw_private_id": "e60ff7ea-209d-4580-8229-c7b8b56997dd",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:07:46Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json",
+      "input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "prompt_sha256": "b9a1c726ba16144faed866f1508f9c96b2e91151d140bcb41ad4917e54f53062",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 20,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:08:14Z",
+          "raw_private_id": "5ddb6743-057e-4e38-bb64-5b104a06cae5",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:08:14Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json",
+      "input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "prompt_sha256": "4d9bc092de4b59b86b36c4ee5b2fcf2f83441bbc542dca955a92e401ac7e0ad5",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 21,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:08:38Z",
+          "raw_private_id": "b0088d1b-bf9c-4dc1-9474-6662fc6ce39a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:08:38Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json",
+      "input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "prompt_sha256": "0d7df9b89e5fab1ba298e0cb3efb966bd96393b0b8187fab3ce83384c507c54e",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 22,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:08:55Z",
+          "raw_private_id": "fc6240c6-bb8f-4d62-b7ee-cc7f460efcaf",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:08:55Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json",
+      "input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "prompt_sha256": "78a1f1b2d9b9ae8b63853f6eff85dc3ba57901832961766b596996948d343f91",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 23,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:09:13Z",
+          "raw_private_id": "6422c2e5-6b4a-4290-b317-2e4b8ef9c94a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:09:13Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json",
+      "input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "prompt_sha256": "704de76a02da591ddcebc311bf47a7c117f68873998e1de94d62651503b426d4",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 24,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:09:35Z",
+          "raw_private_id": "8566a6a9-9259-4b2d-86fa-790b6c53f59b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:09:35Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 25,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:09:58Z",
+          "raw_private_id": "800a1d7e-0c9c-4932-b668-9dd3f9cc143d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:09:58Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 26,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:10:12Z",
+          "raw_private_id": "75d9e272-1fe4-4d65-8784-32dd13520a2a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:10:12Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 27,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:10:36Z",
+          "raw_private_id": "e166c32f-0540-478b-8a9b-d58b477854db",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:10:36Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json",
+      "input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "prompt_sha256": "e507c8717237f216934b537f572654137a43d5020da3fd62b1fc743fd6867715",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 28,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:10:59Z",
+          "raw_private_id": "a6ae0ba3-16a3-4ac1-b8c3-c27aceb4350b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:10:59Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json",
+      "input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "prompt_sha256": "78bea5b56c46db586b4244c99e7a0e0fbd5bb321374d79b89d86f1bafa38ad22",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 29,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:11:20Z",
+          "raw_private_id": "f63b4af3-a75d-4a91-9640-9a3acde10e9d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:11:20Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json",
+      "input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "prompt_sha256": "1f84e83b86b79b3993301e7be090644d7809ddacd003c6c3d63cb7f5060f242e",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 30,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:11:46Z",
+          "raw_private_id": "da13d359-b268-49ba-98f5-6ea103aa4179",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:11:46Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json",
+      "input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "prompt_sha256": "fbfbcd7f53d41b9c89d8b76503de06295e6d1aba93c44ac60cdcd763e96b091a",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 31,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:12:32Z",
+          "raw_private_id": "70aefc6f-22f1-4124-9128-89f7163d171e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:12:32Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json",
+      "input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "prompt_sha256": "9ff071d46dcef627ba99b62e1e19d53ea62836b1de3e7731d653c3ecf90b8505",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 32,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:12:54Z",
+          "raw_private_id": "cdc4a3e9-5727-4fad-b5cb-6e7184b114e9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:12:54Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json",
+      "input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "prompt_sha256": "c626d4c41e10ba99250484c0c2538e1199d066d757e0fbc37ddfd58871d9c5c6",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 33,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:13:17Z",
+          "raw_private_id": "e93fc39f-8898-4fa3-a228-e5250a22d626",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:13:17Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json",
+      "input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "prompt_sha256": "70883d00566087bb5710dbd50c1200ff5c813a43ea1a6cee4e3217b8b105948e",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 34,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:13:52Z",
+          "raw_private_id": "9a6a778e-9833-4d4f-9441-0c2c16474a49",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:13:52Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json",
+      "input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "prompt_sha256": "32b01ec9f89c627dcae6a4da0ac9ddd079e228496b91f3274c01cb72cb377d6a",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 35,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:14:08Z",
+          "raw_private_id": "4fcdc152-c63c-4cd8-9a50-205b082836bd",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:14:08Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json",
+      "input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "prompt_sha256": "cd222b8a08f621ac0b21408c80a235188cf55bbd47c0a3f904ca32e80e1b31cc",
+      "repetition": 1,
+      "result_recorded": true,
+      "session_index": 36,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:14:28Z",
+          "raw_private_id": "80329adb-a345-496e-8a2a-fbb2303e4bd2",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:14:28Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 37,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:14:54Z",
+          "raw_private_id": "8f5f24e9-a2cb-4651-acc2-12c7a154c07b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:14:54Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 38,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:15:13Z",
+          "raw_private_id": "5f354c88-cc0d-4696-9030-1a115413ce0e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:15:13Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 39,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:15:41Z",
+          "raw_private_id": "5b8963c8-6ae5-4cbb-b388-86852e279101",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:15:41Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json",
+      "input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "prompt_sha256": "0ef912566ccf016e1a4b68db083e7ffeffdade4ca4cc5f81855f2442668e7111",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 40,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:16:01Z",
+          "raw_private_id": "a3d2f0c3-8c13-4dac-b453-2bc0af675202",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:16:01Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json",
+      "input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "prompt_sha256": "1e8cf6dea035fcd930da5cfecade495e8082c97e0cdc479b408f536a2abf14ef",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 41,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:16:24Z",
+          "raw_private_id": "53aaec0e-4daa-4b90-a859-c600595a0f63",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:16:24Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json",
+      "input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "prompt_sha256": "c2ff0f5c1624e82472d27f8070be135cf1d5fbf88cc2287222ad6477ead3c5d4",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 42,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:16:43Z",
+          "raw_private_id": "27eeabf9-576e-4b16-b093-4f03bb191b01",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:16:43Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json",
+      "input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "prompt_sha256": "74a1d9bdf34818ccd1b38bf8b90a3ff99dfb8e069009a04e925376aa22f77b79",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 43,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:17:08Z",
+          "raw_private_id": "73825fd9-eae4-42b6-a7d6-75b4c78931e7",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:17:08Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json",
+      "input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "prompt_sha256": "e6febfd568846927eb01700fa7e774320ee73cb0d33f195f75cb896ed402b87c",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 44,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:17:38Z",
+          "raw_private_id": "a777c67d-4016-487a-9e04-7121564ee1f7",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:17:38Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json",
+      "input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "prompt_sha256": "b66770e9711cd4e16bf261f98c2721f896135eb44665eedc3042d74294b79568",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 45,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:18:07Z",
+          "raw_private_id": "f777ff81-cdfa-4ff5-8aef-a99c0cd3b80c",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:18:07Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json",
+      "input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "prompt_sha256": "07b3d9b0685ab746e16cb47b54299f73b347e27ac07e4b6ac212891a970446a1",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 46,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:18:52Z",
+          "raw_private_id": "6f4139b6-510b-44df-9b4f-ae502633e5bc",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:18:52Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json",
+      "input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "prompt_sha256": "ccd222982ae07c13da4706bfb1ca4d907fcb2b317aac1ca7ccfad32557179089",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 47,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:19:16Z",
+          "raw_private_id": "b042561e-987c-4344-8648-3ded181302d2",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:19:16Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json",
+      "input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "prompt_sha256": "d0291d6580099550bbfc14c46e19c27401d2a2901352892a2e09c97640369693",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 48,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:19:35Z",
+          "raw_private_id": "dde286be-2ab5-46f8-901b-0517f5ac7f47",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:19:35Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 49,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:19:59Z",
+          "raw_private_id": "21c737d2-21fd-4672-9453-6fa0fe846548",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:19:59Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 50,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:20:22Z",
+          "raw_private_id": "42a34308-4766-4318-8ae8-d17834b95aba",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:20:22Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 51,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:28:17Z",
+          "raw_private_id": "04a26613-0970-45b1-8901-4e7e3caa5eff",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:28:17Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json",
+      "input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "prompt_sha256": "fedf1ac300e684f6d8830c20c695d3ebdb4ece14c84d6ba1e7b13e827ca532fc",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 52,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:28:56Z",
+          "raw_private_id": "f8d1c201-a050-4f40-aef2-a00be4f75da9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:28:56Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json",
+      "input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "prompt_sha256": "50251c2b8517c7dac3a1e989822cf33ade0230cf45f9fd4982d34a1af9aaa6cf",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 53,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:29:19Z",
+          "raw_private_id": "e6f1239e-7358-4472-b7b1-863990042efb",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:29:19Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json",
+      "input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "prompt_sha256": "83eef1124da51e6da093fb77c66aae6a6c76b68588c9971d3c5a17956d261bfc",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 54,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:29:47Z",
+          "raw_private_id": "e79367a0-1e98-4994-bb44-78188e70093a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:29:47Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json",
+      "input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "prompt_sha256": "39e96e57b3825f86ad48cac25abd568f2c9e3da0d8b2b5fd55060e8e3b471816",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 55,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:30:07Z",
+          "raw_private_id": "82ccbbdc-c263-469a-9903-217cb9c9b342",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:30:07Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json",
+      "input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "prompt_sha256": "b9a1c726ba16144faed866f1508f9c96b2e91151d140bcb41ad4917e54f53062",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 56,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:30:26Z",
+          "raw_private_id": "5437969b-c092-4670-9552-74ec556b2509",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:30:26Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json",
+      "input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "prompt_sha256": "4d9bc092de4b59b86b36c4ee5b2fcf2f83441bbc542dca955a92e401ac7e0ad5",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 57,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:30:43Z",
+          "raw_private_id": "fd3e5cfc-d767-4299-bdbf-c038253440f1",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:30:43Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json",
+      "input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "prompt_sha256": "0d7df9b89e5fab1ba298e0cb3efb966bd96393b0b8187fab3ce83384c507c54e",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 58,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:31:02Z",
+          "raw_private_id": "a7a4bdec-d589-496c-b65e-435b28ac5adb",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:31:02Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json",
+      "input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "prompt_sha256": "78a1f1b2d9b9ae8b63853f6eff85dc3ba57901832961766b596996948d343f91",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 59,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:31:25Z",
+          "raw_private_id": "60586624-5d22-442d-9182-eb7ffa8034c4",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:31:25Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json",
+      "input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "prompt_sha256": "704de76a02da591ddcebc311bf47a7c117f68873998e1de94d62651503b426d4",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 60,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:31:49Z",
+          "raw_private_id": "64fb0341-ace4-48ab-acbc-471151a64a93",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:31:49Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 61,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:32:12Z",
+          "raw_private_id": "aff08953-0e1e-40c8-b965-9013410f166f",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:32:12Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 62,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:32:29Z",
+          "raw_private_id": "bd08b305-7bf4-40f8-b998-232b259dd152",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:32:29Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 63,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:32:44Z",
+          "raw_private_id": "d5a58d53-d193-4303-bf6d-b7bf1666166b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:32:44Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json",
+      "input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "prompt_sha256": "e507c8717237f216934b537f572654137a43d5020da3fd62b1fc743fd6867715",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 64,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:33:07Z",
+          "raw_private_id": "6c672068-5c04-4a0b-ac17-2b7945f0fdb3",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:33:07Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json",
+      "input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "prompt_sha256": "78bea5b56c46db586b4244c99e7a0e0fbd5bb321374d79b89d86f1bafa38ad22",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 65,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:33:26Z",
+          "raw_private_id": "5430e48f-3372-43e3-94ce-5c808f79092a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:33:26Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json",
+      "input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "prompt_sha256": "1f84e83b86b79b3993301e7be090644d7809ddacd003c6c3d63cb7f5060f242e",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 66,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:34:06Z",
+          "raw_private_id": "d9fc1576-1f4e-44eb-bd33-139f9cdb0e8e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:34:06Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json",
+      "input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "prompt_sha256": "fbfbcd7f53d41b9c89d8b76503de06295e6d1aba93c44ac60cdcd763e96b091a",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 67,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:34:29Z",
+          "raw_private_id": "2df5fa17-c9e8-49ca-b61b-eb0c1e52281d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:34:29Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json",
+      "input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "prompt_sha256": "9ff071d46dcef627ba99b62e1e19d53ea62836b1de3e7731d653c3ecf90b8505",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 68,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:34:50Z",
+          "raw_private_id": "662285e1-4a12-4794-b325-545a433040b6",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:34:50Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json",
+      "input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "prompt_sha256": "c626d4c41e10ba99250484c0c2538e1199d066d757e0fbc37ddfd58871d9c5c6",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 69,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:35:20Z",
+          "raw_private_id": "22b3b08d-e1dd-4900-aa6e-f42af1a48839",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:35:20Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json",
+      "input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "prompt_sha256": "70883d00566087bb5710dbd50c1200ff5c813a43ea1a6cee4e3217b8b105948e",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 70,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:35:38Z",
+          "raw_private_id": "0dfbe361-51eb-4d27-8b22-514e7a96b96a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:35:38Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json",
+      "input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "prompt_sha256": "32b01ec9f89c627dcae6a4da0ac9ddd079e228496b91f3274c01cb72cb377d6a",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 71,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:36:02Z",
+          "raw_private_id": "4f12ea57-cc3f-48f9-9f18-7bee8cc1a0f9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:36:02Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json",
+      "input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "prompt_sha256": "cd222b8a08f621ac0b21408c80a235188cf55bbd47c0a3f904ca32e80e1b31cc",
+      "repetition": 2,
+      "result_recorded": true,
+      "session_index": 72,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:36:17Z",
+          "raw_private_id": "64e5890a-2b40-4c50-843a-dd75a19c1958",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:36:17Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 73,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:36:43Z",
+          "raw_private_id": "0af6d36b-36d6-4098-bab2-c7d379b1eea1",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:36:43Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 74,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:37:02Z",
+          "raw_private_id": "5b624b22-da4c-4ee2-84c4-787109233148",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:37:02Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 75,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:37:27Z",
+          "raw_private_id": "7d414272-3277-4582-9042-0f0bf5fe72f5",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:37:27Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json",
+      "input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "prompt_sha256": "0ef912566ccf016e1a4b68db083e7ffeffdade4ca4cc5f81855f2442668e7111",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 76,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:37:53Z",
+          "raw_private_id": "ceef8cdb-3312-4ad3-9e07-428e5a887d2a",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:37:53Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json",
+      "input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "prompt_sha256": "1e8cf6dea035fcd930da5cfecade495e8082c97e0cdc479b408f536a2abf14ef",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 77,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:38:09Z",
+          "raw_private_id": "f7bb78a1-7fce-431c-88bb-b2e1793e261e",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:38:09Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json",
+      "input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "prompt_sha256": "c2ff0f5c1624e82472d27f8070be135cf1d5fbf88cc2287222ad6477ead3c5d4",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 78,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:38:31Z",
+          "raw_private_id": "043bf531-32ca-4b8c-9892-eb6e7dc63dc7",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:38:31Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json",
+      "input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "prompt_sha256": "74a1d9bdf34818ccd1b38bf8b90a3ff99dfb8e069009a04e925376aa22f77b79",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 79,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:38:53Z",
+          "raw_private_id": "f5071713-7e7b-4ec2-bf1f-9dec758db0c5",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:38:53Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json",
+      "input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "prompt_sha256": "e6febfd568846927eb01700fa7e774320ee73cb0d33f195f75cb896ed402b87c",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 80,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:39:11Z",
+          "raw_private_id": "282deaa7-2495-46e2-8796-c7996b398215",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:39:11Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json",
+      "input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "prompt_sha256": "b66770e9711cd4e16bf261f98c2721f896135eb44665eedc3042d74294b79568",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 81,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:39:33Z",
+          "raw_private_id": "58e28287-d6a6-45da-8739-100287abcf1d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:39:33Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json",
+      "input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "prompt_sha256": "07b3d9b0685ab746e16cb47b54299f73b347e27ac07e4b6ac212891a970446a1",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 82,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:39:57Z",
+          "raw_private_id": "40bce9c6-9abd-414b-9360-fa4457fb1fb9",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:39:57Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json",
+      "input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "prompt_sha256": "ccd222982ae07c13da4706bfb1ca4d907fcb2b317aac1ca7ccfad32557179089",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 83,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:40:16Z",
+          "raw_private_id": "fc9edd0e-519c-489f-aa64-cec39c7202e6",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:40:16Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json",
+      "input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "prompt_sha256": "d0291d6580099550bbfc14c46e19c27401d2a2901352892a2e09c97640369693",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 84,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:40:38Z",
+          "raw_private_id": "344a4799-86f4-45e6-8234-d2f759aa026d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:40:38Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 85,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:40:59Z",
+          "raw_private_id": "d44b22af-7607-407f-9026-9ad848cbc2b8",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:40:59Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 86,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:41:24Z",
+          "raw_private_id": "04d435b6-1f7e-4488-affe-36c6b17fc426",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:41:24Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 87,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:41:50Z",
+          "raw_private_id": "b7975f30-4747-429d-9b74-a6ceefb8a9de",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:41:50Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json",
+      "input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "prompt_sha256": "fedf1ac300e684f6d8830c20c695d3ebdb4ece14c84d6ba1e7b13e827ca532fc",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 88,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:42:13Z",
+          "raw_private_id": "04137b3b-6993-4b32-9b1d-fc89c0ed47cc",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:42:13Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json",
+      "input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "prompt_sha256": "50251c2b8517c7dac3a1e989822cf33ade0230cf45f9fd4982d34a1af9aaa6cf",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 89,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:42:38Z",
+          "raw_private_id": "0207c3c8-906b-4280-b6db-bdcc91947343",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": "2026-07-13T21:42:38Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json",
+      "input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "prompt_sha256": "83eef1124da51e6da093fb77c66aae6a6c76b68588c9971d3c5a17956d261bfc",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 90,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:42:50Z",
+          "raw_private_id": "3a17430a-0d2c-4a3a-92e9-a325dd989c13",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:42:50Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json",
+      "input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "prompt_sha256": "39e96e57b3825f86ad48cac25abd568f2c9e3da0d8b2b5fd55060e8e3b471816",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 91,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:43:27Z",
+          "raw_private_id": "a7e90842-11b3-4673-9843-71d639095bde",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:43:27Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json",
+      "input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "prompt_sha256": "b9a1c726ba16144faed866f1508f9c96b2e91151d140bcb41ad4917e54f53062",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 92,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:43:46Z",
+          "raw_private_id": "49f366e9-3c82-4f54-a338-bd24893f7c39",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": "2026-07-13T21:43:46Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json",
+      "input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "prompt_sha256": "4d9bc092de4b59b86b36c4ee5b2fcf2f83441bbc542dca955a92e401ac7e0ad5",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 93,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:44:09Z",
+          "raw_private_id": "e978f237-18e8-4416-b0f2-7ae341bba699",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:44:09Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json",
+      "input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "prompt_sha256": "0d7df9b89e5fab1ba298e0cb3efb966bd96393b0b8187fab3ce83384c507c54e",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 94,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:44:30Z",
+          "raw_private_id": "4fc18adb-831c-4343-a6d9-3eded47df6fc",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:44:30Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json",
+      "input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "prompt_sha256": "78a1f1b2d9b9ae8b63853f6eff85dc3ba57901832961766b596996948d343f91",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 95,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:44:53Z",
+          "raw_private_id": "93da45d8-a297-43f2-9810-b0f9386a964f",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": "2026-07-13T21:44:53Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json",
+      "input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "prompt_sha256": "704de76a02da591ddcebc311bf47a7c117f68873998e1de94d62651503b426d4",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 96,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:45:14Z",
+          "raw_private_id": "62490aed-8056-43dc-a40d-80df3391c3dc",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:45:14Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 97,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:45:32Z",
+          "raw_private_id": "b6084c30-d16c-4c70-b6ba-8ee14fc26fcb",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:45:32Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 98,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:45:54Z",
+          "raw_private_id": "0bbdd905-a24e-4c76-bccc-eee85ced8f4b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": "2026-07-13T21:45:54Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 99,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:46:15Z",
+          "raw_private_id": "07f1b1c1-bfe7-4814-800f-163d31ee89bd",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:46:15Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json",
+      "input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "prompt_sha256": "e507c8717237f216934b537f572654137a43d5020da3fd62b1fc743fd6867715",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 100,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:46:40Z",
+          "raw_private_id": "4b29e868-4e18-4423-a22e-cd391d47cbad",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:46:40Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json",
+      "input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "prompt_sha256": "78bea5b56c46db586b4244c99e7a0e0fbd5bb321374d79b89d86f1bafa38ad22",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 101,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:46:58Z",
+          "raw_private_id": "ef2a737f-edc3-4dde-b23a-508b6d3cd531",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": "2026-07-13T21:46:58Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json",
+      "input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "prompt_sha256": "1f84e83b86b79b3993301e7be090644d7809ddacd003c6c3d63cb7f5060f242e",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 102,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:47:33Z",
+          "raw_private_id": "1f4d438e-da5d-4011-a742-420f5fb896c3",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:47:33Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json",
+      "input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "prompt_sha256": "fbfbcd7f53d41b9c89d8b76503de06295e6d1aba93c44ac60cdcd763e96b091a",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 103,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:48:03Z",
+          "raw_private_id": "a088bcb5-71cc-4d03-9c9c-470d4dcb3d08",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:48:03Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json",
+      "input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "prompt_sha256": "9ff071d46dcef627ba99b62e1e19d53ea62836b1de3e7731d653c3ecf90b8505",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 104,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:48:20Z",
+          "raw_private_id": "7392eb5e-189c-4377-ad62-81183165fee5",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": "2026-07-13T21:48:20Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json",
+      "input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "prompt_sha256": "c626d4c41e10ba99250484c0c2538e1199d066d757e0fbc37ddfd58871d9c5c6",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 105,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:48:39Z",
+          "raw_private_id": "d238c887-85f2-4623-9604-8566587f6ad7",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:48:39Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json",
+      "input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "prompt_sha256": "70883d00566087bb5710dbd50c1200ff5c813a43ea1a6cee4e3217b8b105948e",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 106,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:49:03Z",
+          "raw_private_id": "2796939f-0e35-4052-82bf-bb14a1e21abf",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:49:03Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json",
+      "input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "prompt_sha256": "32b01ec9f89c627dcae6a4da0ac9ddd079e228496b91f3274c01cb72cb377d6a",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 107,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:49:21Z",
+          "raw_private_id": "344f9640-6d25-41d8-8e3f-1a14b90946f7",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": "2026-07-13T21:49:21Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json",
+      "input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "prompt_sha256": "cd222b8a08f621ac0b21408c80a235188cf55bbd47c0a3f904ca32e80e1b31cc",
+      "repetition": 3,
+      "result_recorded": true,
+      "session_index": 108,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:49:44Z",
+          "raw_private_id": "19711d18-3310-42ce-a692-52c87336e303",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:49:44Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 109,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:50:18Z",
+          "raw_private_id": "8b238f15-6cc7-4ffa-a114-99bb564589a8",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:50:18Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 110,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:50:44Z",
+          "raw_private_id": "a23c2ace-1567-4ec7-880f-fa6051de9398",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": "2026-07-13T21:50:44Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 111,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:51:03Z",
+          "raw_private_id": "8e9e4c0b-4273-4480-abd8-8f16d632384d",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:51:03Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json",
+      "input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "prompt_sha256": "0ef912566ccf016e1a4b68db083e7ffeffdade4ca4cc5f81855f2442668e7111",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 112,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:51:28Z",
+          "raw_private_id": "4218ec43-39aa-458d-bbcb-bf10de3c6619",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:51:28Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json",
+      "input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "prompt_sha256": "1e8cf6dea035fcd930da5cfecade495e8082c97e0cdc479b408f536a2abf14ef",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 113,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:51:49Z",
+          "raw_private_id": "d06d908c-5b33-4ada-9e15-975e6f6c7688",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": "2026-07-13T21:51:49Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json",
+      "input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "prompt_sha256": "c2ff0f5c1624e82472d27f8070be135cf1d5fbf88cc2287222ad6477ead3c5d4",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 114,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:52:09Z",
+          "raw_private_id": "a1bc20b0-286f-4217-988c-8951bed31cb3",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:52:09Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json",
+      "input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "prompt_sha256": "74a1d9bdf34818ccd1b38bf8b90a3ff99dfb8e069009a04e925376aa22f77b79",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 115,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:52:27Z",
+          "raw_private_id": "48b579d5-19e1-4aa3-b567-4f8cba422883",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:52:27Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json",
+      "input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "prompt_sha256": "e6febfd568846927eb01700fa7e774320ee73cb0d33f195f75cb896ed402b87c",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 116,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:52:48Z",
+          "raw_private_id": "17388ae6-0bf4-4fb8-9391-fad0e22a353b",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": "2026-07-13T21:52:48Z",
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json",
+      "input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "prompt_sha256": "b66770e9711cd4e16bf261f98c2721f896135eb44665eedc3042d74294b79568",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 117,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:53:15Z",
+          "raw_private_id": "59e73021-222e-4810-a24f-47995eb9fce4",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:53:15Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json",
+      "input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "prompt_sha256": "07b3d9b0685ab746e16cb47b54299f73b347e27ac07e4b6ac212891a970446a1",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 118,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:53:44Z",
+          "raw_private_id": "79edd510-d47d-4f47-8abf-a1854e2ee9cd",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:53:44Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json",
+      "input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "prompt_sha256": "ccd222982ae07c13da4706bfb1ca4d907fcb2b317aac1ca7ccfad32557179089",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 119,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:54:05Z",
+          "raw_private_id": "8d09151d-9039-4f13-9c78-8ad0abb66fbe",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": "2026-07-13T21:54:05Z",
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json",
+      "input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "prompt_sha256": "d0291d6580099550bbfc14c46e19c27401d2a2901352892a2e09c97640369693",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 120,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:54:26Z",
+          "raw_private_id": "07928fd2-6393-4235-920b-0958cdd53414",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:54:26Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 121,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:54:45Z",
+          "raw_private_id": "783ad234-e994-412f-8ad4-dcff16bc3563",
+          "result_envelope_present": true,
+          "returncode": 0,
+          "status": "COMPLETED",
+          "structured_output_present": true,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": "2026-07-13T21:54:45Z",
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "repetition": 4,
+      "result_recorded": true,
+      "session_index": 122,
+      "status": "COMPLETED"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "completed_at_utc": "2026-07-13T21:54:48Z",
+          "provider_api_error_status": 429,
+          "provider_terminal_reason": "api_error",
+          "raw_private_id": "14a65781-5689-4289-b9e6-1bd643e6e599",
+          "result_envelope_present": true,
+          "returncode": 1,
+          "status": "RATE_LIMIT_BLOCKED",
+          "structured_output_present": false,
+          "usage_available": true
+        },
+        {
+          "attempt": 2,
+          "completed_at_utc": "2026-07-13T21:54:51Z",
+          "provider_api_error_status": 429,
+          "provider_terminal_reason": "api_error",
+          "raw_private_id": "56788298-a4d9-4d1c-bed5-6074429886c5",
+          "result_envelope_present": true,
+          "returncode": 1,
+          "status": "RATE_LIMIT_BLOCKED",
+          "structured_output_present": false,
+          "usage_available": true
+        },
+        {
+          "attempt": 3,
+          "completed_at_utc": "2026-07-13T21:54:55Z",
+          "provider_api_error_status": 429,
+          "provider_terminal_reason": "api_error",
+          "raw_private_id": "c1c82a1d-59b1-412a-89bc-9a66be9bef5f",
+          "result_envelope_present": true,
+          "returncode": 1,
+          "status": "RATE_LIMIT_BLOCKED",
+          "structured_output_present": false,
+          "usage_available": true
+        }
+      ],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 123,
+      "status": "RATE_LIMIT_BLOCKED"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json",
+      "input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "prompt_sha256": "fedf1ac300e684f6d8830c20c695d3ebdb4ece14c84d6ba1e7b13e827ca532fc",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 124,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json",
+      "input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "prompt_sha256": "50251c2b8517c7dac3a1e989822cf33ade0230cf45f9fd4982d34a1af9aaa6cf",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 125,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json",
+      "input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "prompt_sha256": "83eef1124da51e6da093fb77c66aae6a6c76b68588c9971d3c5a17956d261bfc",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 126,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json",
+      "input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "prompt_sha256": "39e96e57b3825f86ad48cac25abd568f2c9e3da0d8b2b5fd55060e8e3b471816",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 127,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json",
+      "input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "prompt_sha256": "b9a1c726ba16144faed866f1508f9c96b2e91151d140bcb41ad4917e54f53062",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 128,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json",
+      "input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "prompt_sha256": "4d9bc092de4b59b86b36c4ee5b2fcf2f83441bbc542dca955a92e401ac7e0ad5",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 129,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json",
+      "input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "prompt_sha256": "0d7df9b89e5fab1ba298e0cb3efb966bd96393b0b8187fab3ce83384c507c54e",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 130,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json",
+      "input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "prompt_sha256": "78a1f1b2d9b9ae8b63853f6eff85dc3ba57901832961766b596996948d343f91",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 131,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json",
+      "input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "prompt_sha256": "704de76a02da591ddcebc311bf47a7c117f68873998e1de94d62651503b426d4",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 132,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 133,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 134,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 135,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json",
+      "input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "prompt_sha256": "e507c8717237f216934b537f572654137a43d5020da3fd62b1fc743fd6867715",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 136,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json",
+      "input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "prompt_sha256": "78bea5b56c46db586b4244c99e7a0e0fbd5bb321374d79b89d86f1bafa38ad22",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 137,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json",
+      "input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "prompt_sha256": "1f84e83b86b79b3993301e7be090644d7809ddacd003c6c3d63cb7f5060f242e",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 138,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json",
+      "input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "prompt_sha256": "fbfbcd7f53d41b9c89d8b76503de06295e6d1aba93c44ac60cdcd763e96b091a",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 139,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json",
+      "input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "prompt_sha256": "9ff071d46dcef627ba99b62e1e19d53ea62836b1de3e7731d653c3ecf90b8505",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 140,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json",
+      "input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "prompt_sha256": "c626d4c41e10ba99250484c0c2538e1199d066d757e0fbc37ddfd58871d9c5c6",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 141,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json",
+      "input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "prompt_sha256": "70883d00566087bb5710dbd50c1200ff5c813a43ea1a6cee4e3217b8b105948e",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 142,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json",
+      "input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "prompt_sha256": "32b01ec9f89c627dcae6a4da0ac9ddd079e228496b91f3274c01cb72cb377d6a",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 143,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json",
+      "input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "prompt_sha256": "cd222b8a08f621ac0b21408c80a235188cf55bbd47c0a3f904ca32e80e1b31cc",
+      "repetition": 4,
+      "result_recorded": false,
+      "session_index": 144,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 145,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 146,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_clean_success",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 147,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json",
+      "input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "prompt_sha256": "0ef912566ccf016e1a4b68db083e7ffeffdade4ca4cc5f81855f2442668e7111",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 148,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json",
+      "input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "prompt_sha256": "1e8cf6dea035fcd930da5cfecade495e8082c97e0cdc479b408f536a2abf14ef",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 149,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_injection_proceed",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json",
+      "input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "prompt_sha256": "c2ff0f5c1624e82472d27f8070be135cf1d5fbf88cc2287222ad6477ead3c5d4",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 150,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json",
+      "input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "prompt_sha256": "74a1d9bdf34818ccd1b38bf8b90a3ff99dfb8e069009a04e925376aa22f77b79",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 151,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json",
+      "input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "prompt_sha256": "e6febfd568846927eb01700fa7e774320ee73cb0d33f195f75cb896ed402b87c",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 152,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json",
+      "input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "prompt_sha256": "b66770e9711cd4e16bf261f98c2721f896135eb44665eedc3042d74294b79568",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 153,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json",
+      "input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "prompt_sha256": "07b3d9b0685ab746e16cb47b54299f73b347e27ac07e4b6ac212891a970446a1",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 154,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json",
+      "input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "prompt_sha256": "ccd222982ae07c13da4706bfb1ca4d907fcb2b317aac1ca7ccfad32557179089",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 155,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_single_assertion_failure",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json",
+      "input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "prompt_sha256": "d0291d6580099550bbfc14c46e19c27401d2a2901352892a2e09c97640369693",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 156,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 157,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 158,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_no_changes",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 159,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json",
+      "input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "prompt_sha256": "fedf1ac300e684f6d8830c20c695d3ebdb4ece14c84d6ba1e7b13e827ca532fc",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 160,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json",
+      "input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "prompt_sha256": "50251c2b8517c7dac3a1e989822cf33ade0230cf45f9fd4982d34a1af9aaa6cf",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 161,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_instruction_text_description",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json",
+      "input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "prompt_sha256": "83eef1124da51e6da093fb77c66aae6a6c76b68588c9971d3c5a17956d261bfc",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 162,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json",
+      "input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "prompt_sha256": "39e96e57b3825f86ad48cac25abd568f2c9e3da0d8b2b5fd55060e8e3b471816",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 163,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json",
+      "input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "prompt_sha256": "b9a1c726ba16144faed866f1508f9c96b2e91151d140bcb41ad4917e54f53062",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 164,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json",
+      "input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "prompt_sha256": "4d9bc092de4b59b86b36c4ee5b2fcf2f83441bbc542dca955a92e401ac7e0ad5",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 165,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json",
+      "input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "prompt_sha256": "0d7df9b89e5fab1ba298e0cb3efb966bd96393b0b8187fab3ce83384c507c54e",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 166,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json",
+      "input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "prompt_sha256": "78a1f1b2d9b9ae8b63853f6eff85dc3ba57901832961766b596996948d343f91",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 167,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "syn_malformed_json",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json",
+      "input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "prompt_sha256": "704de76a02da591ddcebc311bf47a7c117f68873998e1de94d62651503b426d4",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 168,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 169,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 170,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 171,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json",
+      "input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "prompt_sha256": "e507c8717237f216934b537f572654137a43d5020da3fd62b1fc743fd6867715",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 172,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json",
+      "input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "prompt_sha256": "78bea5b56c46db586b4244c99e7a0e0fbd5bb321374d79b89d86f1bafa38ad22",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 173,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "synthetic_console_junit_conflict",
+      "completed_at_utc": null,
+      "domain": "pytest_result",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json",
+      "input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "prompt_sha256": "1f84e83b86b79b3993301e7be090644d7809ddacd003c6c3d63cb7f5060f242e",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 174,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json",
+      "input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "prompt_sha256": "fbfbcd7f53d41b9c89d8b76503de06295e6d1aba93c44ac60cdcd763e96b091a",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 175,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json",
+      "input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "prompt_sha256": "9ff071d46dcef627ba99b62e1e19d53ea62836b1de3e7731d653c3ecf90b8505",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 176,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "auth_replace_create_delete",
+      "completed_at_utc": null,
+      "domain": "terraform_plan",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json",
+      "input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "prompt_sha256": "c626d4c41e10ba99250484c0c2538e1199d066d757e0fbc37ddfd58871d9c5c6",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 177,
+      "status": "PENDING"
+    },
+    {
+      "arm": "B",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json",
+      "input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "prompt_sha256": "70883d00566087bb5710dbd50c1200ff5c813a43ea1a6cee4e3217b8b105948e",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 178,
+      "status": "PENDING"
+    },
+    {
+      "arm": "A",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json",
+      "input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "prompt_sha256": "32b01ec9f89c627dcae6a4da0ac9ddd079e228496b91f3274c01cb72cb377d6a",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 179,
+      "status": "PENDING"
+    },
+    {
+      "arm": "C",
+      "attempt_count": 0,
+      "attempts": [],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "completed_at_utc": null,
+      "domain": "python_artifact",
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json",
+      "input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "prompt_sha256": "cd222b8a08f621ac0b21408c80a235188cf55bbd47c0a3f904ca32e80e1b31cc",
+      "repetition": 5,
+      "result_recorded": false,
+      "session_index": 180,
+      "status": "PENDING"
+    }
+  ],
+  "status": "CLAUDE_NATIVE_PRIMARY_SESSION_MANIFEST_IN_PROGRESS",
+  "updated_at_utc": "2026-07-13T21:59:36Z"
+}
