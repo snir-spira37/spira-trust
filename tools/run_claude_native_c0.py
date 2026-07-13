@@ -22,7 +22,7 @@ RESULTS_PATH = TRACK_ROOT / "claude_native_c0_results.json"
 REPORT_PATH = TRACK_ROOT / "claude_native_c0_report.md"
 PRIVATE_MANIFEST_PATH = TRACK_ROOT / "claude_native_c0_raw_private_manifest.json"
 
-REQUESTED_MODEL = "sonnet"
+REQUESTED_MODEL = "haiku"
 TRACK_NAME = "Claude native through Claude Code"
 PRIVATE_ROOT_PREFIX = "spira_claude_native_c0_private_"
 READ_ONLY_TOOL_NAMES = {"read", "glob", "grep"}
@@ -368,11 +368,9 @@ def run_claude(
 ) -> ClaudeRunResult:
     claude = resolve_claude()
     session_id = str(uuid.uuid4())
-    config_dir = Path(tempfile.mkdtemp(prefix="spira_claude_native_config_"))
     env = os.environ.copy()
     env.update(
         {
-            "CLAUDE_CONFIG_DIR": str(config_dir),
             "CLAUDE_CODE_SKIP_PROMPT_HISTORY": "1",
         }
     )
@@ -387,7 +385,6 @@ def run_claude(
         env.pop(key, None)
     cmd = [
         claude,
-        "--bare",
         "--print",
         "--no-session-persistence",
         "--session-id",
@@ -434,8 +431,6 @@ def run_claude(
             returncode=124,
             session_id=session_id,
         )
-    finally:
-        shutil.rmtree(config_dir, ignore_errors=True)
 
 
 def finalize_with_repo_check(
@@ -641,6 +636,9 @@ def resolve_claude() -> str:
 
 
 def resolve_claude_or_none() -> str | None:
+    link = Path(os.environ.get("LOCALAPPDATA", "")) / "Microsoft" / "WinGet" / "Links" / "claude.exe"
+    if link.exists():
+        return str(link)
     found = shutil.which("claude")
     if found:
         return found
