@@ -3,314 +3,503 @@
 ## Status
 
 ```text
-MVP_IMPLEMENTATION_AUTHORIZATION_LOCKED
-AUTHORIZATION_REVIEW_REQUIRED_BEFORE_CODE
-MVP_IMPLEMENTATION_NOT_YET_AUTHORIZED
+MVP_IMPLEMENTATION_AUTHORIZED
+MVP_IMPLEMENTATION_AUTHORIZATION_ONLY
+THREE_DOMAIN_MVP_BOUNDARY_ACCEPTED
+UNIFIED_LOCAL_EVIDENCE_PRODUCT_AUTHORIZED
+UNIFIED_REAL_AGENT_BENCHMARK_TOOLING_AUTHORIZED
 RELEASE_NOT_AUTHORIZED
 VERSION_BUMP_NOT_AUTHORIZED
 TAG_NOT_AUTHORIZED
 PYPI_NOT_AUTHORIZED
 GATE_B_NOT_AUTHORIZED
 DOMAIN_4_NOT_AUTHORIZED
-TERRAFORM_RETRY_NOT_AUTHORIZED
 ```
 
-## Authorization Chain
+## Authorization Basis
+
+This authorization follows:
 
 ```text
-Domain 3 negative closeout:
-DOMAIN_3_TERRAFORM_PLAN_NEGATIVE_CLOSEOUT_ACCEPTED
+Domain 1:
+VALIDATED
 
-MVP product boundary:
-MVP_PRODUCT_BOUNDARY_ACCEPTED
+Domain 2:
+VALIDATED AGAINST ACCEPTED CORPUS AND INDEPENDENT ORACLE
+
+Domain 3:
+DOMAIN_3_RESEARCH_COMPLETE_WITH_BOUNDS
+
+MVP product boundary amendment:
+MVP_PRODUCT_BOUNDARY_AMENDMENT_ACCEPTED
 ```
 
-This document defines the exact implementation scope that may be authorized
-after review.
-
-It does not itself authorize code changes. Implementation remains blocked until
-a separate review returns:
+The accepted MVP boundary is:
 
 ```text
-MVP_IMPLEMENTATION_AUTHORIZATION_ACCEPTED
+Domain 1:
+INCLUDED IN MVP
+
+Domain 2:
+INCLUDED IN MVP AS A BOUNDED LOCAL EVIDENCE PRODUCER
+
+Domain 3:
+INCLUDED IN MVP AS A BOUNDED LOCAL EVIDENCE PRODUCER
+
+Gate B:
+EXCLUDED
+
+Domain 4:
+EXCLUDED
 ```
 
-## Exact MVP Scope
+## Purpose
 
-The MVP implementation may only align the public product surface with the
-accepted MVP boundary.
+This document authorizes a narrow implementation of a unified local MVP
+interface across the three accepted evidence domains.
 
-The MVP includes:
+It does not authorize:
 
 ```text
-Domain 1 as the product basis:
-Python wheel artifact evidence
+release
+merge to main
+version bump
+tag
+PyPI publication
+Gate B
+Domain 4
+semantic cache reuse
+live infrastructure access
+new product claims
+```
+
+## Authorized Work
+
+Only the following implementation work is authorized:
+
+```text
+1. Unified local MVP entry point.
+2. Domain 1 / Domain 2 / Domain 3 producer routing.
+3. Common bounded action contract presentation.
+4. Common proof and drill-down reference presentation.
+5. Consistent NOT_EVALUATED propagation.
+6. Consistent BLOCK propagation.
+7. Evidence pointer surfacing.
+8. MVP-focused tests.
+9. Three-domain regression/evaluation report.
+10. Unified real-agent benchmark tooling.
+11. Benchmark report that measures without promising savings.
+```
+
+The MVP may orchestrate accepted domain producers and existing proof assembly.
+It must not change their semantics.
+
+## Allowed Files
+
+Implementation may create or update only:
+
+```text
+source/spira_core/mvp_unified.py
+tools/run_mvp_unified_local.py
+tools/evaluate_mvp_unified.py
+tools/benchmark_mvp_unified_agent.py
+tests/test_mvp_unified.py
+research/mvp_implementation_results.json
+research/mvp_implementation_report.md
+research/mvp_unified_benchmark_results.json
+research/mvp_unified_benchmark_report.md
+```
+
+If implementation requires any file outside this list, work must stop and a new
+authorization must be written before changing that file.
+
+## Frozen Artifacts and Code
+
+The following are frozen and must not be modified:
+
+```text
+Domain 1 accepted behavior and baseline
+research/unification_proof_corpus/results/domain1_identity_baseline_v1.json
+source/spira_core/unification_proof.py
+
+Domain 2 corpus / oracle / validator / producer semantics
+research/test_build_failure_contract/
+source/spira_core/test_build_failure_oracle_validator.py
+source/spira_core/test_build_failure_producer.py
+tools/evaluate_test_build_failure_producer.py
+
+Domain 3 corpus / oracle / validator / producer semantics
+research/terraform_plan_contract/corpus_manifest_v1.json
+research/terraform_plan_contract/cases/
+research/terraform_plan_contract/oracle_v1.json
+research/terraform_plan_contract/oracle_schema_v1.schema.json
+source/spira_core/terraform_plan_oracle_validator.py
+source/spira_core/terraform_plan_producer.py
+tools/evaluate_terraform_plan_producer.py
+
+Core semantics
+SPIRA_DECISION_SEMANTICS_V2
+action enum
+claim status enum
+Gate A semantics
+Gate B status/cache/rerun semantics
+```
+
+The MVP layer may call or route to accepted code. It may not rebaseline,
+rewrite, loosen, normalize, or repair accepted artifacts to fit MVP output.
+
+## Domain Boundaries
+
+### Domain 1
+
+The MVP may expose Domain 1 as:
+
+```text
+Python artifact evidence
 accepted Unification Proof behavior
 bounded action contract
-claim inclusion verification
-claim mutation rejection
-NOT_EVALUATED preservation
-BLOCK preservation
-
-Domain 2 as a bounded validated research capability:
-Python pytest test-result evidence
-accepted 38-case corpus
-accepted independent oracle
-accepted validator
-accepted producer
-research-only positioning unless separately authorized for release
+proof and drill-down references
 ```
 
-The MVP does not include:
+It must not alter Domain 1 identity construction or the accepted baseline.
+
+### Domain 2
+
+The MVP may expose Domain 2 as:
 
 ```text
-Terraform
-Kubernetes
-Gate B status/cache/rerun generalization
+bounded local pytest result evidence
+accepted producer behavior
+accepted policy-independent result_identity
+accepted action/proof behavior
+```
+
+It must not claim:
+
+```text
+general CI support
+test correctness
+software correctness
 semantic cache reuse
-epoch/staleness resolution
-Domain 4
-orchestrator / SPIRA OS
-new public runtime domains
-release/version/tag/PyPI activity
 ```
 
-## Domain 1 Product Capabilities
+### Domain 3
 
-Domain 1 may be product-facing only within its accepted boundaries:
+The MVP may expose Domain 3 as:
 
 ```text
-artifact trust / graph behavior for Python wheel evidence
-Unification Proof for exact canonical claims, decision, subject, and frozen context
-bounded action contract
-claim inclusion and mutation rejection
-NOT_EVALUATED and BLOCK semantics
+bounded local Terraform Plan JSON evidence
+accepted producer behavior
+accepted action/proof behavior
 ```
 
-Domain 1 must not be represented as:
+It must not require or claim:
 
 ```text
-SBOM truth in the external world
-software safety proof
-vulnerability scanner
-universal supply-chain verifier
-```
-
-## Domain 2 Research-Only Boundary
-
-Domain 2 may be included only as a validated research capability.
-
-Permitted language:
-
-```text
-validated against an accepted 38-case corpus and independent oracle
-```
-
-Forbidden language:
-
-```text
-production CI platform
-universal pytest support
-general test-log summarizer
-release-ready public feature
-cache/reuse capability
-software correctness proof
-```
-
-No Domain 2 public CLI command, release-facing workflow, or product promise may
-be added unless a later authorization explicitly promotes Domain 2 from
-research capability to product feature.
-
-## Allowed Files After Review Acceptance
-
-If and only if this authorization is accepted by a separate review, a narrow MVP
-implementation may modify only:
-
-```text
-README.md
-docs/mvp_product_boundary.md
-docs/unification_proof.md
-docs/agent_integration.md
-docs/ci_quickstart.md
-source/spira_core/trust_cli.py
-tests/test_mvp_product_boundary.py
-```
-
-File intent:
-
-```text
-README.md:
-  align product claims with the accepted MVP boundary.
-
-docs/mvp_product_boundary.md:
-  publish the accepted MVP boundary for users.
-
-docs/unification_proof.md:
-  preserve bounded reproducibility and contextual identity language.
-
-docs/agent_integration.md:
-  keep agent-facing claims inside Domain 1 and accepted research boundaries.
-
-docs/ci_quickstart.md:
-  ensure CI language does not imply Gate B, Domain 2 release support, Terraform,
-  Kubernetes, or universal safety.
-
-source/spira_core/trust_cli.py:
-  help text or command-description guardrails only.
-  No new commands.
-  No behavior changes to trust/graph/status/cache/plan-rerun/drift/rebaseline.
-
-tests/test_mvp_product_boundary.py:
-  regression tests that enforce public-claim boundaries and CLI help guardrails.
-```
-
-Any additional file requires a new authorization before modification.
-
-## Forbidden Files and Areas
-
-The MVP implementation must not modify:
-
-```text
-pyproject.toml
-CHANGELOG.md
-release/
-dist/
-.github/workflows/
-schemas/
-source/spira_core/unification_proof.py
-source/spira_core/test_build_failure_producer.py
-source/spira_core/test_build_failure_oracle_validator.py
-source/spira_core/agent_cache.py
-source/spira_core/agent_status.py
-source/spira_core/rerun_planner.py
-research/test_build_failure_contract/**
-research/unification_proof_corpus/**
-research/terraform_plan_contract/**
-```
-
-Forbidden changes:
-
-```text
-version bump
-package metadata change
-new public CLI command
-new action enum
-new claim status enum
-decision semantics change
-Gate A refactor
-Gate B behavior
-Domain 2 corpus/oracle/schema/validator changes
-Terraform retry
-Domain 4
-release packaging
-```
-
-## Public Compatibility Requirements
-
-Public product version `0.6.1` remains unchanged.
-
-The implementation must preserve:
-
-```text
-spira-trust version output behavior
-existing public command names
-existing command exit semantics
-existing JSON output schemas for runtime commands
-existing Domain 1 behavior
-accepted Gate A behavior
-accepted Domain 2 research artifacts
-```
-
-No public compatibility claim may imply a new release.
-
-## Regression Gates
-
-A future implementation may be accepted only if all gates pass:
-
-```text
-focused MVP boundary tests: PASS
-full pytest: PASS
-git diff --check: PASS
-public claim grep: PASS
-forbidden claim grep: PASS
-version unchanged: 0.6.1
-pyproject.toml unchanged
-release/tag/PyPI artifacts unchanged
-Gate A files unchanged
-Gate B files unchanged
-Domain 2 corpus/oracle/schema/validator unchanged
-Terraform artifacts unchanged
-```
-
-Required forbidden-claim grep must fail the implementation if public-facing docs
-or CLI help claim:
-
-```text
-Terraform support
+live Terraform state
+terraform apply
+remote backend
+cloud credentials
+provider download at evaluation time
+infrastructure correctness
+infrastructure security
+cost correctness
+compliance correctness
 Kubernetes support
-Gate B support
-semantic cache safety
-universal Context Firewall
-software safety proof
-infrastructure safety proof
-compliance proof
-SPIRA OS / orchestrator product
-Domain 2 production CI platform
 ```
 
-## Implementation Stop Conditions
+## Unified Interface Requirements
 
-Stop and record a revision-required result if implementation requires:
+The unified local MVP interface must present, for each supported domain:
 
 ```text
-modifying files outside the allowed list
-changing runtime semantics
-adding a public command
-changing version/package metadata
-changing release files
-changing Gate A
-opening Gate B
-promoting Domain 2 to release feature
-retrying Terraform
-opening Domain 4
-weakening product-claim boundaries
+domain identifier
+subject identity
+typed claims summary
+bounded policy/action result
+reason_codes
+NOT_EVALUATED items
+BLOCK items
+proof identifier / unification reference
+evidence drill-down pointers
+not-claimed boundaries
 ```
 
-## Authorized Outcomes After Review
+It must preserve domain-specific evidence rather than flattening all domains
+into an ambiguous generic summary.
 
-If this authorization is reviewed and accepted, the implementation phase may
-end only with:
+## Required Regression Gates
+
+The implementation can be reported as pass only if all gates pass:
 
 ```text
-MVP_IMPLEMENTATION_COMPLETE
+Domain 1 regressions: PASS
+Domain 1 accepted baseline root unchanged:
+85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c
+
+Domain 2 preserved:
+38 / 38 oracle claim fidelity
+38 / 38 action equivalence
+38 / 38 scope_identity fidelity
+38 / 38 result_identity fidelity
+0 false PROCEED
+0 mismatches
+
+Domain 3 preserved:
+40 / 40 claim fidelity
+40 / 40 action equivalence
+40 / 40 strict-list fidelity
+40 / 40 evidence-pointer validity
+10 / 10 mutation relationships
+0 false PROCEED
+0 mismatches
+
+Shared gates:
+explicit NOT_EVALUATED lists preserved
+BLOCK preservation
+proof/evidence pointers valid
+0 sensitive-value leaks
+0 instruction-injection overrides
+Gate A unchanged check: PASS
+Gate B untouched: PASS
+full pytest: PASS
+unified product interface tests: PASS
+```
+
+If the full Gate A 1,954-case isolated identity regression is not run during
+MVP implementation, the report must state that clearly and may only claim an
+authorized fallback:
+
+```text
+accepted Domain 1 baseline root unchanged
+Gate A core worktree unchanged
+Gate A full identity regression: NOT_RUN
+```
+
+The fallback must not be labeled as full Gate A identity regression.
+
+## Unified Real-Agent Benchmark
+
+Benchmark tooling is authorized as part of MVP implementation, but a benchmark
+result is not an efficiency claim.
+
+The benchmark must measure:
+
+```text
+raw evidence
+vs
+domain compact contracts
+vs
+unified SPIRA product flow
+```
+
+Across:
+
+```text
+Domain 1: Python artifact evidence
+Domain 2: pytest result evidence
+Domain 3: Terraform Plan JSON evidence
+```
+
+Required benchmark preservation gates:
+
+```text
+action preserved
+reason_codes preserved
+NOT_EVALUATED preserved
+BLOCK preserved
+zero false PROCEED
+zero safety overclaim
+evidence drill-down preserved
+not-claimed boundaries preserved
+```
+
+Measurements may include:
+
+```text
+context size
+tool-call count
+evidence bytes surfaced to the agent
+latency or wall-clock observations
+human-review ergonomics
+```
+
+The benchmark must not promise or assume a savings percentage in advance. Any
+public efficiency claim requires a later reviewed benchmark result and separate
+release authorization.
+
+## Machine-Readable Results
+
+The implementation must produce:
+
+```text
+research/mvp_implementation_results.json
+research/mvp_unified_benchmark_results.json
+```
+
+The implementation results must include:
+
+```text
+schema
+schema_version
+status
+domain1_regression
+domain2_regression
+domain3_regression
+false_proceed_count
+mismatch_count
+not_evaluated_preservation
+block_preservation
+evidence_pointer_validity
+sensitive_value_leaks
+instruction_override_count
+gate_a_check
+gate_b_touched
+full_tests
+unified_interface_tests
+errors
+```
+
+The benchmark results must include:
+
+```text
+schema
+schema_version
+status
+domains_measured
+raw_evidence_measurements
+domain_contract_measurements
+unified_product_flow_measurements
+preservation_gates
+efficiency_claim_authorized: false
+errors
+```
+
+## Required Reports
+
+The implementation must produce:
+
+```text
+research/mvp_implementation_report.md
+research/mvp_unified_benchmark_report.md
+```
+
+The reports must document:
+
+```text
+authorization chain
+implemented unified entry point
+Domain 1 / Domain 2 / Domain 3 routing
+frozen artifacts checked
+regression commands and results
+benchmark commands and measurements
+Gate A unchanged check
+Gate B untouched confirmation
+truth-layer artifacts unchanged
+release boundary
+terminal status
+```
+
+## Successful Status
+
+The only successful implementation status is:
+
+```text
+MVP_IMPLEMENTATION_PASS
+```
+
+The only successful benchmark tooling status is:
+
+```text
+MVP_UNIFIED_REAL_AGENT_BENCHMARK_COMPLETED_WITHOUT_EFFICIENCY_CLAIM
+```
+
+These statuses do not authorize release.
+
+## Stop Conditions
+
+Implementation must stop with a non-pass status if any of these occur:
+
+```text
+Domain 1 behavior or baseline must change
+Domain 2 corpus/oracle/validator/producer semantics must change
+Domain 3 corpus/oracle/validator/producer semantics must change
+Gate A refactor or rebaseline is required
+Gate B behavior is required
+new action or claim-status values are required
+SPIRA_DECISION_SEMANTICS_V2 must change
+semantic cache reuse is required
+live Terraform infrastructure is required
+any domain regression mismatch remains
+any false PROCEED appears
+sensitive values are exposed
+instruction-like evidence changes action
+full pytest fails
+```
+
+Allowed non-pass statuses:
+
+```text
+MVP_IMPLEMENTATION_INCOMPLETE
+MVP_IMPLEMENTATION_FAILED
+MVP_IMPLEMENTATION_AUTHORIZATION_REVISION_REQUIRED
+MVP_BOUNDARY_REVISION_REQUIRED
+```
+
+## Post-Implementation Review Requirement
+
+Even if implementation reports:
+
+```text
+MVP_IMPLEMENTATION_PASS
+```
+
+the MVP is not accepted until a separate review records one of:
+
+```text
+MVP_IMPLEMENTATION_ACCEPTED
 MVP_IMPLEMENTATION_NEEDS_REVISION
 MVP_IMPLEMENTATION_REJECTED
-MVP_IMPLEMENTATION_AUTHORIZATION_REVISION_REQUIRED
 ```
 
-`MVP_IMPLEMENTATION_COMPLETE` would not authorize release.
+Release remains blocked after implementation acceptance until a separate
+release proposal and release review are completed.
 
-## Review Required
+## Non-Authorization
 
-The next required artifact is:
+This document does not authorize:
 
 ```text
-research/mvp_implementation_authorization_review.md
+merge to main
+release
+version bump
+tag
+PyPI publication
+Gate B
+Domain 4
+semantic cache reuse
+live Terraform state
+terraform apply
+remote backend
+cloud credentials
+Kubernetes
+orchestrator / SPIRA OS
+universal Context Firewall claim
+software safety claim
+infrastructure safety claim
+cost or compliance claim
+public efficiency claim
 ```
 
-Possible review verdicts:
+## Final Boundary
 
 ```text
-MVP_IMPLEMENTATION_AUTHORIZATION_ACCEPTED
-MVP_IMPLEMENTATION_AUTHORIZATION_NEEDS_REVISION
-MVP_IMPLEMENTATION_AUTHORIZATION_REJECTED
-```
-
-Until that review is committed and accepted:
-
-```text
-no MVP code
-no public product expansion
-no merge/push requirement
-no release
+MVP implementation: AUTHORIZED
+MVP review: REQUIRED AFTER IMPLEMENTATION
+unified real-agent benchmark tooling: AUTHORIZED
+unified efficiency claim: NOT_AUTHORIZED
+release/version/tag/PyPI: NOT_AUTHORIZED
+Gate B: NOT_AUTHORIZED
+Domain 4: NOT_AUTHORIZED
+merge to main: NOT_AUTHORIZED
 ```
