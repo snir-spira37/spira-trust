@@ -1,0 +1,19 @@
+{
+  "case_count": 40,
+  "corpus_changed": false,
+  "errors": [],
+  "mutation_relationship_count": 10,
+  "populated_case_count": 40,
+  "privacy_path_secret_scan": {
+    "hits": [],
+    "passed": true
+  },
+  "producer_output_observed": false,
+  "schema": "SPIRA_DOMAIN3_TERRAFORM_PLAN_ORACLE_POPULATION_RESULTS",
+  "schema_or_validator_changed": false,
+  "schema_validation": "PASS",
+  "schema_version": 1,
+  "status": "DOMAIN_3_TERRAFORM_PLAN_ORACLE_POPULATED",
+  "validator_error_count": 0,
+  "validator_validation": "PASS"
+}
