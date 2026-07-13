@@ -179,6 +179,29 @@ findings:
 next_phase: NIGHT_RUN_HANDOFF
 ```
 
+## Final Handoff
+
+```text
+phase: NIGHT_RUN_HANDOFF
+start_commit: ef63098
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_NEGATIVE_RESULT_ACCEPTED
+authorization_used: OWNER_ATTACHED_DOMAIN_3_NIGHT_RUN_PROMPT
+files_changed:
+  - research/domain3_terraform_plan_night_run_handoff.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - git log --oneline --reverse 4656bc9..HEAD
+  - git rev-parse HEAD
+  - git status --short --branch
+tests:
+  - handoff terminal status present: PENDING
+findings:
+  - Terminal closeout committed locally.
+  - Push was not performed.
+next_phase: NONE
+```
+
 ## Phase C.3 - Corpus Review
 
 ```text
