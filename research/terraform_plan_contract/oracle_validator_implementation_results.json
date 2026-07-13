@@ -1,0 +1,36 @@
+{
+  "accepted_schema": "research/terraform_plan_contract/oracle_schema_v1.schema.json",
+  "accepted_spec": "research/terraform_plan_contract/oracle_validator_spec.md",
+  "authorization": "research/terraform_plan_contract/oracle_validator_implementation_authorization.md",
+  "corpus_manifest_sha256": "28cdea89c9fc26d9230e8788726abf73e076c268044cd2dff1bf3f67f50ef79c",
+  "focused_tests": {
+    "command": "pytest tests\\test_terraform_plan_oracle_validator.py -q",
+    "passed": 7,
+    "result": "PASS"
+  },
+  "full_tests": {
+    "command": "$env:PYTHONPATH='source;.'; pytest -q",
+    "passed": 101,
+    "result": "PASS"
+  },
+  "implementation_files": [
+    "source/spira_core/terraform_plan_oracle_validator.py",
+    "tools/validate_terraform_plan_oracle.py",
+    "tests/test_terraform_plan_oracle_validator.py",
+    "research/terraform_plan_contract/validator_fixtures/README.md"
+  ],
+  "machine_readable_result_validation": "PASS",
+  "negative_fixtures_expected_failures": 22,
+  "negative_fixtures_total": 22,
+  "oracle_population_performed": false,
+  "positive_fixtures_passed": 3,
+  "positive_fixtures_total": 3,
+  "privacy_path_secret_scan": {
+    "command": "rg -n \"C:\\\\Users\\\\snir|BEGIN PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]+|xox[baprs]-|-----BEGIN\" <authorized implementation files>",
+    "result": "PASS"
+  },
+  "producer_output_observed": false,
+  "schema": "SPIRA_DOMAIN3_TERRAFORM_PLAN_ORACLE_VALIDATOR_IMPLEMENTATION_RESULTS",
+  "schema_version": 1,
+  "status": "DOMAIN_3_TERRAFORM_PLAN_ORACLE_VALIDATOR_IMPLEMENTATION_PASS"
+}
