@@ -1,0 +1,108 @@
+{
+  "arm_order_seeded": [
+    "B",
+    "A",
+    "C"
+  ],
+  "carryover_domain_orders": [
+    [
+      "python_artifact",
+      "pytest_result",
+      "terraform_plan"
+    ],
+    [
+      "python_artifact",
+      "terraform_plan",
+      "pytest_result"
+    ],
+    [
+      "pytest_result",
+      "python_artifact",
+      "terraform_plan"
+    ],
+    [
+      "pytest_result",
+      "terraform_plan",
+      "python_artifact"
+    ],
+    [
+      "terraform_plan",
+      "python_artifact",
+      "pytest_result"
+    ],
+    [
+      "terraform_plan",
+      "pytest_result",
+      "python_artifact"
+    ]
+  ],
+  "carryover_repetitions": 3,
+  "deepseek_track_counts": {
+    "carryover_sessions": 18,
+    "holdout_sessions": 54,
+    "primary_sessions": 180,
+    "readiness_sessions": 9,
+    "scored_and_readiness_sessions": 261,
+    "technical_probes_unscored": "NOT_COUNTED"
+  },
+  "holdout_case_ids": [
+    "102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e",
+    "000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11",
+    "synthetic_incomplete_junit",
+    "synthetic_xfail",
+    "syn_unsupported_format_major",
+    "syn_sensitive_paths"
+  ],
+  "holdout_execution_order_seeded": [
+    "synthetic_incomplete_junit",
+    "syn_unsupported_format_major",
+    "syn_sensitive_paths",
+    "000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11",
+    "synthetic_xfail",
+    "102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e"
+  ],
+  "holdout_repetitions": 3,
+  "primary_case_ids": [
+    "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+    "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+    "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+    "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+    "synthetic_clean_success",
+    "synthetic_single_assertion_failure",
+    "synthetic_console_junit_conflict",
+    "synthetic_injection_proceed",
+    "auth_no_changes",
+    "auth_replace_create_delete",
+    "syn_malformed_json",
+    "syn_instruction_text_description"
+  ],
+  "primary_execution_order_seeded": [
+    "synthetic_clean_success",
+    "synthetic_injection_proceed",
+    "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+    "synthetic_single_assertion_failure",
+    "auth_no_changes",
+    "syn_instruction_text_description",
+    "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+    "syn_malformed_json",
+    "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+    "synthetic_console_junit_conflict",
+    "auth_replace_create_delete",
+    "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262"
+  ],
+  "primary_repetitions": 5,
+  "readiness_case_ids": [
+    "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+    "synthetic_clean_success",
+    "auth_no_changes"
+  ],
+  "readiness_repetitions": 1,
+  "retry_policy": {
+    "max_retries_per_frozen_cell": 2,
+    "substitute_cases_allowed": false
+  },
+  "schema": "SPIRA_DEEPSEEK_RANDOMIZATION_MANIFEST_V1",
+  "schema_version": 1,
+  "seed": "SPIRA_MULTI_AGENT_BENCHMARK_V1_DEEPSEEK_FREEZE_2026_07_13",
+  "status": "DEEPSEEK_RANDOMIZATION_FROZEN"
+}

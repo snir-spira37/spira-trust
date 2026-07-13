@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "blocking_items": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "drilldown_used": {
+      "type": "boolean"
+    },
+    "evidence_or_proof_references": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "gate": {
+      "enum": [
+        "PROCEED",
+        "STOP"
+      ],
+      "type": "string"
+    },
+    "not_claimed": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "not_evaluated": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "recommended_agent_action": {
+      "enum": [
+        "PROCEED",
+        "REPORT_WITH_NOTES",
+        "STOP_BLOCKED",
+        "REPORT_NOT_EVALUATED",
+        "RERUN_REQUIRED",
+        "ASK_HUMAN"
+      ],
+      "type": "string"
+    },
+    "spira_verdict": {
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "gate",
+    "spira_verdict",
+    "recommended_agent_action",
+    "reason_codes",
+    "not_evaluated",
+    "blocking_items",
+    "evidence_or_proof_references",
+    "drilldown_used",
+    "not_claimed"
+  ],
+  "title": "SPIRA multi-agent benchmark response",
+  "type": "object"
+}

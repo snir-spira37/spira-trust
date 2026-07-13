@@ -1,0 +1,66 @@
+{
+  "forbidden": [
+    "primary_execution",
+    "holdout_execution",
+    "carryover_execution",
+    "token_estimation_from_characters",
+    "model_fallback"
+  ],
+  "live_model_calls_started": false,
+  "optional_usage_fields": [
+    "cache_read_input_tokens",
+    "cache_write_input_tokens",
+    "fresh_input_tokens",
+    "reasoning_tokens",
+    "cost"
+  ],
+  "readiness_session_plan": [
+    {
+      "arms": [
+        "A",
+        "B",
+        "C"
+      ],
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "domain": "python_artifact",
+      "repetitions": 1
+    },
+    {
+      "arms": [
+        "A",
+        "B",
+        "C"
+      ],
+      "case_id": "synthetic_clean_success",
+      "domain": "pytest_result",
+      "repetitions": 1
+    },
+    {
+      "arms": [
+        "A",
+        "B",
+        "C"
+      ],
+      "case_id": "auth_no_changes",
+      "domain": "terraform_plan",
+      "repetitions": 1
+    }
+  ],
+  "required_usage_fields": [
+    "input_tokens",
+    "total_input_tokens",
+    "output_tokens",
+    "api_requests"
+  ],
+  "schema": "SPIRA_DEEPSEEK_READINESS_MANIFEST_TEMPLATE_V1",
+  "schema_version": 1,
+  "status": "TEMPLATE_ONLY",
+  "technical_probes_unscored": [
+    "authentication",
+    "model_resolution",
+    "structured_output",
+    "tool_isolation",
+    "session_isolation",
+    "usage_accounting"
+  ]
+}

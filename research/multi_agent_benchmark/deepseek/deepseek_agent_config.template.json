@@ -1,0 +1,71 @@
+{
+  "api_key_storage": "PROCESS_ENVIRONMENT_ONLY",
+  "api_key_value_recorded": false,
+  "backend": "DeepSeek Anthropic-compatible API",
+  "disabled_surfaces": {
+    "claude_md_loading": true,
+    "custom_memory": true,
+    "fallback_model": true,
+    "hooks": true,
+    "mcp": true,
+    "plugins": true,
+    "session_persistence": true,
+    "subagents": true,
+    "web_search": true,
+    "write_tools": true
+  },
+  "endpoint": "https://api.deepseek.com/anthropic",
+  "evaluated_system_name": "DeepSeek model via Claude Code harness",
+  "explicitly_excluded_tools": [
+    "Edit",
+    "Write",
+    "NotebookEdit",
+    "Bash",
+    "WebSearch",
+    "WebFetch",
+    "Chrome",
+    "Agent",
+    "Task",
+    "MCP tools",
+    "git write operations"
+  ],
+  "harness": "Claude Code",
+  "model_environment_mappings": {
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro[1m]"
+  },
+  "planned_flags": [
+    "--bare",
+    "--print",
+    "--no-session-persistence",
+    "--output-format json",
+    "--json-schema research/multi_agent_benchmark/agent_output.schema.json",
+    "--max-turns 1",
+    "--model deepseek-v4-pro[1m]",
+    "--effort max",
+    "--no-chrome",
+    "--disable-slash-commands",
+    "--strict-mcp-config",
+    "--tools Read,Glob,Grep"
+  ],
+  "preferred_read_only_tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "readiness_must_verify": [
+    "installed_claude_code_version",
+    "supported_flags",
+    "actual_model_identity",
+    "usage_accounting",
+    "tool_isolation",
+    "session_isolation"
+  ],
+  "requested_model": "deepseek-v4-pro[1m]",
+  "schema": "SPIRA_DEEPSEEK_CLAUDE_CODE_CONFIG_TEMPLATE_V1",
+  "schema_version": 1,
+  "thinking_or_reasoning_effort": "max"
+}
