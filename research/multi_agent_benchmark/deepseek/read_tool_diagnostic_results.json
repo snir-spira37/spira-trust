@@ -1,0 +1,280 @@
+{
+  "benchmark_cases_sent_to_model": 0,
+  "completed_at_utc": "2026-07-13T16:59:01Z",
+  "errors": [],
+  "probe_count": 6,
+  "probes": [
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "read_only_default_prompt",
+      "permission_mode": "dontAsk",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "NONEMPTY_OTHER",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 74,
+      "stderr_private_id": "17cbc025-7fad-4881-b346-68cbdf3cbf2e",
+      "stderr_sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+      "stdout_byte_size": 0,
+      "stdout_private_id": "9ddfda21-4343-4ea9-9d0c-0a69edd0cab1",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Read",
+      "usage_accounting_available": false,
+      "workspace_mutated": false
+    },
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "read_only_manual_permission",
+      "permission_mode": "manual",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "NONEMPTY_OTHER",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 74,
+      "stderr_private_id": "f58cec42-dc27-47c2-ab5f-a707c74cd72a",
+      "stderr_sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+      "stdout_byte_size": 0,
+      "stdout_private_id": "a118e076-3e48-49d6-8149-b3d7ec2d4f3a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Read",
+      "usage_accounting_available": false,
+      "workspace_mutated": false
+    },
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "glob_only_probe",
+      "permission_mode": "dontAsk",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "NONEMPTY_OTHER",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 74,
+      "stderr_private_id": "eb2ebbac-48f8-4258-9295-ac6d93079d91",
+      "stderr_sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+      "stdout_byte_size": 0,
+      "stdout_private_id": "b37eceaf-c7a3-46ff-ba80-fe569465b8d0",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Glob",
+      "usage_accounting_available": false,
+      "workspace_mutated": false
+    },
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "grep_only_probe",
+      "permission_mode": "dontAsk",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "NONEMPTY_OTHER",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 74,
+      "stderr_private_id": "5a6b521a-0173-48ed-8adb-6ed719a3e7c9",
+      "stderr_sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+      "stdout_byte_size": 0,
+      "stdout_private_id": "ab99e99f-4484-4a19-92df-f732399a056f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Grep",
+      "usage_accounting_available": false,
+      "workspace_mutated": false
+    },
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "read_with_json_output",
+      "permission_mode": "dontAsk",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "EMPTY",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 0,
+      "stderr_private_id": "45f88a80-9e65-42c0-97fc-88c2f0f3b0b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 972,
+      "stdout_private_id": "1abfe410-9c3b-4d0f-8f9d-bdf4aac44443",
+      "stdout_sha256": "b4e0308cd5f33d54c4ed9aec741be2324c64dc2ba73a4119033969772af3eab7",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Read",
+      "usage_accounting_available": true,
+      "workspace_mutated": false
+    },
+    {
+      "glob_tool_observed": false,
+      "grep_tool_observed": false,
+      "name": "read_with_tools_syntax_space",
+      "permission_mode": "dontAsk",
+      "read_tool_observed": false,
+      "returncode": 1,
+      "safe_stderr_category": "NONEMPTY_OTHER",
+      "server_tool_use": {
+        "web_fetch_requests": 0,
+        "web_search_requests": 0
+      },
+      "stderr_byte_size": 74,
+      "stderr_private_id": "f0527d20-a2f8-4781-b133-7e01adfa0011",
+      "stderr_sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+      "stdout_byte_size": 0,
+      "stdout_private_id": "96e60c8a-c85c-4dd4-ba9f-520e6d1879a8",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false,
+      "tool_calls_observed": [],
+      "tools_arg": "Read Glob Grep",
+      "usage_accounting_available": false,
+      "workspace_mutated": false
+    }
+  ],
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 12,
+    "raw_files": [
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "9ddfda21-4343-4ea9-9d0c-0a69edd0cab1",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:42Z"
+      },
+      {
+        "byte_size": 74,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "17cbc025-7fad-4881-b346-68cbdf3cbf2e",
+        "sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:42Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "a118e076-3e48-49d6-8149-b3d7ec2d4f3a",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:45Z"
+      },
+      {
+        "byte_size": 74,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "f58cec42-dc27-47c2-ab5f-a707c74cd72a",
+        "sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:45Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "b37eceaf-c7a3-46ff-ba80-fe569465b8d0",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:47Z"
+      },
+      {
+        "byte_size": 74,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "eb2ebbac-48f8-4258-9295-ac6d93079d91",
+        "sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:47Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "ab99e99f-4484-4a19-92df-f732399a056f",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:49Z"
+      },
+      {
+        "byte_size": 74,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "5a6b521a-0173-48ed-8adb-6ed719a3e7c9",
+        "sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:49Z"
+      },
+      {
+        "byte_size": 972,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "1abfe410-9c3b-4d0f-8f9d-bdf4aac44443",
+        "sha256": "b4e0308cd5f33d54c4ed9aec741be2324c64dc2ba73a4119033969772af3eab7",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:58Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "45f88a80-9e65-42c0-97fc-88c2f0f3b0b3",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:58:58Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "96e60c8a-c85c-4dd4-ba9f-520e6d1879a8",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:59:01Z"
+      },
+      {
+        "byte_size": 74,
+        "classification": "CLAUDE_READ_DIAGNOSTIC_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "f0527d20-a2f8-4781-b133-7e01adfa0011",
+        "sha256": "feb1740346a5db353a734dd0eed0a277c2e772aa11b7bad480afe3a0256c0d25",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:59:01Z"
+      }
+    ],
+    "schema": "SPIRA_DEEPSEEK_READ_TOOL_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "readiness_sessions_started": 0,
+  "requested_model": "deepseek-v4-pro",
+  "schema": "SPIRA_DEEPSEEK_READ_TOOL_DIAGNOSTIC_RESULTS_V1",
+  "started_at_utc": "2026-07-13T16:58:40Z",
+  "terminal_status": "DEEPSEEK_CLAUDE_TOOL_CALL_COMPATIBILITY_NOT_READY",
+  "terminal_statuses": [
+    "DEEPSEEK_CLAUDE_TOOL_CALL_COMPATIBILITY_NOT_READY",
+    "NO_BENCHMARK_CASES_SENT",
+    "NO_READINESS_SESSIONS_STARTED",
+    "DS_R0_RERUN_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ]
+}
