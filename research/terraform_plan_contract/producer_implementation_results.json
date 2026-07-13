@@ -1,0 +1,62 @@
+{
+  "action_equivalence": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "block_preservation": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "case_count": 40,
+  "corpus_changed": false,
+  "errors": [],
+  "evidence_pointer_validity": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "false_proceed_count": 0,
+  "focused_tests": "PASS",
+  "full_tests": "PASS",
+  "gate_a_check": {
+    "accepted_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+    "gate_a_baseline_root_check": "PASS",
+    "gate_a_core_worktree_check": "PASS",
+    "gate_a_identity_regression": "NOT_RUN",
+    "observed_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c"
+  },
+  "instruction_override_count": 0,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "mutation_relationship_fidelity": {
+    "failed": 0,
+    "passed": 10,
+    "total": 10
+  },
+  "not_evaluated_preservation": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "oracle_changed": false,
+  "oracle_claim_fidelity": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "producer_case_count": 40,
+  "schema": "SPIRA_DOMAIN3_TERRAFORM_PLAN_PRODUCER_IMPLEMENTATION_RESULTS",
+  "schema_or_validator_changed": false,
+  "schema_validation": "PASS",
+  "schema_version": 1,
+  "sensitive_value_leaks": 0,
+  "status": "DOMAIN_3_TERRAFORM_PLAN_PRODUCER_IMPLEMENTATION_PASS",
+  "strict_list_fidelity": {
+    "failed": 0,
+    "passed": 40,
+    "total": 40
+  },
+  "validator_validation": "PASS"
+}
