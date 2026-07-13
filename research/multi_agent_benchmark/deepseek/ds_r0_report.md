@@ -22,9 +22,9 @@ Claude Code version: 2.1.206 (Claude Code)
 ## Probe Summary
 
 ```text
-probe count: 3
-live API call count: 3
-structured output ready: False
+probe count: 4
+live API call count: 4
+structured output ready: True
 tool isolation ready: False
 forbidden tool calls: 0
 workspace mutations: 0
@@ -39,7 +39,7 @@ scored readiness sessions: 0
 
 ## Blockers
 
-- DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY
+- DEEPSEEK_READ_TOOL_NOT_READY
 
 ## Boundary
 

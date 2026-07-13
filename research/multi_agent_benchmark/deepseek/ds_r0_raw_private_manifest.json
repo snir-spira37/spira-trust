@@ -1,33 +1,42 @@
 {
   "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
-  "raw_file_count": 3,
+  "raw_file_count": 4,
   "raw_files": [
     {
-      "byte_size": 467,
+      "byte_size": 454,
       "classification": "DIRECT_PROVIDER_RESPONSE",
       "public_path_recorded": false,
-      "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
-      "sha256": "51e8c389b432257c13f16a57809d65f3e7a91e0467cd2f878cb49ba1958e707a",
+      "raw_private_id": "f49d16c1-5056-4e87-a6be-8bc89f73f3c7",
+      "sha256": "f04ea171223b5a0acd25fe7cb5ca7a54afd4766230a7a761c30da7a8a9a3ebe4",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T16:27:35Z"
+      "timestamp_utc": "2026-07-13T16:51:02Z"
     },
     {
-      "byte_size": 6500,
+      "byte_size": 7488,
       "classification": "CLAUDE_STREAM_JSON",
       "public_path_recorded": false,
-      "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
-      "sha256": "1b13dd7de007644cb1731e289033994b1c4562e5bd4e6b4f469f93d88d52eb0c",
+      "raw_private_id": "60ea19ce-5bb1-4231-8b1f-d1987993b805",
+      "sha256": "7709079e9786e0eff7dc3453fd396322a1f2c4f66b63b6df847e2a01664f874a",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T16:27:40Z"
+      "timestamp_utc": "2026-07-13T16:51:07Z"
+    },
+    {
+      "byte_size": 1162,
+      "classification": "CLAUDE_JSON",
+      "public_path_recorded": false,
+      "raw_private_id": "92579441-bd85-4469-8aaf-4f4cac2ee8bb",
+      "sha256": "7aeb39b2aa0376e5cb76bfa28ea4b35e8224430d18c9915a39144252273aa68f",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T16:51:12Z"
     },
     {
       "byte_size": 0,
-      "classification": "CLAUDE_JSON",
+      "classification": "CLAUDE_STREAM_JSON",
       "public_path_recorded": false,
-      "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+      "raw_private_id": "29327e85-0344-4627-b38e-a330ab186bbb",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T16:27:41Z"
+      "timestamp_utc": "2026-07-13T16:51:14Z"
     }
   ],
   "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"

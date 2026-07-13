@@ -2,13 +2,13 @@
   "authentication_ready": true,
   "benchmark_cases_sent_to_model": 0,
   "blockers": [
-    "DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY"
+    "DEEPSEEK_READ_TOOL_NOT_READY"
   ],
   "cache_decomposition_status": "NOT_EVALUATED",
   "carryover_sessions": 0,
   "claude_code_version": "2.1.206 (Claude Code)",
   "claude_init_model": "deepseek-v4-pro",
-  "completed_at_utc": "2026-07-13T16:27:41Z",
+  "completed_at_utc": "2026-07-13T16:51:14Z",
   "efficiency_claim_authorized": false,
   "forbidden_tool_call_count": 0,
   "harness_ready": true,
@@ -18,18 +18,18 @@
     "claude_executable": "REDACTED_PATH/claude.EXE",
     "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
     "claude_version": "2.1.206 (Claude Code)",
-    "git_commit": "74b702b1a80340e4343425555e9b943ac68d58fc",
+    "git_commit": "d9b75366092f9e981c5aa917e5aa15f6838c49c9",
     "node_version": null,
     "python_version": "3.12.10",
-    "timestamp_utc": "2026-07-13T16:27:26Z",
+    "timestamp_utc": "2026-07-13T16:50:59Z",
     "windows_version": "Windows-10-10.0.19045-SP0"
   },
-  "live_api_call_count": 3,
+  "live_api_call_count": 4,
   "live_calls_started": true,
   "model_resolution_ready": true,
   "phase": "DS-R0",
   "primary_sessions": 0,
-  "probe_count": 3,
+  "probe_count": 4,
   "probe_results": {
     "DS-R0-P1": {
       "errors": [],
@@ -39,7 +39,7 @@
       "model_resolution_status": "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED",
       "probe": "DS-R0-P1",
       "provider_request_id_present": false,
-      "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
+      "raw_private_id": "f49d16c1-5056-4e87-a6be-8bc89f73f3c7",
       "ready": true,
       "resolved_provider_model": "deepseek-v4-pro",
       "usage": {
@@ -72,7 +72,7 @@
       "mcp_servers_present": false,
       "plugins_present": false,
       "probe": "DS-R0-P2",
-      "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
+      "raw_private_id": "60ea19ce-5bb1-4231-8b1f-d1987993b805",
       "ready": true,
       "reported_model": "deepseek-v4-pro",
       "returncode": 0,
@@ -80,12 +80,12 @@
         "cache_creation_input_tokens": 0,
         "cache_decomposition_status": "AVAILABLE",
         "cache_read_input_tokens": 0,
-        "input_tokens": 695,
+        "input_tokens": 696,
         "input_total_available": true,
-        "output_tokens": 29,
+        "output_tokens": 34,
         "provider_cost_status": "NOT_EVALUATED",
         "total_cost_usd": null,
-        "total_input_tokens": 695,
+        "total_input_tokens": 696,
         "usage_keys": [
           "cache_creation",
           "cache_creation_input_tokens",
@@ -101,54 +101,101 @@
       }
     },
     "DS-R0-P3": {
-      "errors": [
-        "DEEPSEEK_STRUCTURED_OUTPUT_NOT_READY"
-      ],
+      "errors": [],
+      "inline_schema_sha256": "c5bf11b778e9c1167db77772d0fba55dfaad61bd31f829d947ce2f1ab7e2d553",
       "live_call_count": 1,
-      "nonce_matched": false,
+      "nonce_matched": true,
+      "parsed_schema_object_matches_source": true,
       "probe": "DS-R0-P3",
-      "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+      "raw_private_id": "92579441-bd85-4469-8aaf-4f4cac2ee8bb",
+      "ready": true,
+      "returncode": 0,
+      "schema_semantics_changed": false,
+      "schema_transport": "INLINE_CANONICAL_JSON",
+      "structured_output_found": true,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_decomposition_status": "AVAILABLE",
+        "cache_read_input_tokens": 0,
+        "input_tokens": 548,
+        "input_total_available": true,
+        "output_tokens": 106,
+        "provider_cost_status": "NOT_EVALUATED",
+        "total_cost_usd": null,
+        "total_input_tokens": 548,
+        "usage_keys": [
+          "cache_creation",
+          "cache_creation_input_tokens",
+          "cache_read_input_tokens",
+          "inference_geo",
+          "input_tokens",
+          "iterations",
+          "output_tokens",
+          "server_tool_use",
+          "service_tier",
+          "speed"
+        ]
+      }
+    },
+    "DS-R0-P4": {
+      "errors": [
+        "DEEPSEEK_READ_TOOL_NOT_READY"
+      ],
+      "forbidden_tool_count": 0,
+      "live_call_count": 1,
+      "probe": "DS-R0-P4",
+      "raw_private_id": "29327e85-0344-4627-b38e-a330ab186bbb",
       "ready": false,
       "returncode": 1,
-      "structured_output_found": false,
+      "tools_observed": [],
       "usage": {
         "cache_decomposition_status": "NOT_EVALUATED",
         "input_total_available": false,
         "provider_cost_status": "NOT_EVALUATED"
-      }
+      },
+      "workspace_mutated": false
     }
   },
   "provider_cost_status": "NOT_EVALUATED",
   "raw_private_manifest": {
     "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
-    "raw_file_count": 3,
+    "raw_file_count": 4,
     "raw_files": [
       {
-        "byte_size": 467,
+        "byte_size": 454,
         "classification": "DIRECT_PROVIDER_RESPONSE",
         "public_path_recorded": false,
-        "raw_private_id": "3a0d420c-f1dc-4485-860e-d3494b33675c",
-        "sha256": "51e8c389b432257c13f16a57809d65f3e7a91e0467cd2f878cb49ba1958e707a",
+        "raw_private_id": "f49d16c1-5056-4e87-a6be-8bc89f73f3c7",
+        "sha256": "f04ea171223b5a0acd25fe7cb5ca7a54afd4766230a7a761c30da7a8a9a3ebe4",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T16:27:35Z"
+        "timestamp_utc": "2026-07-13T16:51:02Z"
       },
       {
-        "byte_size": 6500,
+        "byte_size": 7488,
         "classification": "CLAUDE_STREAM_JSON",
         "public_path_recorded": false,
-        "raw_private_id": "de50d14b-d9f6-49a4-95f5-01c59d459915",
-        "sha256": "1b13dd7de007644cb1731e289033994b1c4562e5bd4e6b4f469f93d88d52eb0c",
+        "raw_private_id": "60ea19ce-5bb1-4231-8b1f-d1987993b805",
+        "sha256": "7709079e9786e0eff7dc3453fd396322a1f2c4f66b63b6df847e2a01664f874a",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T16:27:40Z"
+        "timestamp_utc": "2026-07-13T16:51:07Z"
+      },
+      {
+        "byte_size": 1162,
+        "classification": "CLAUDE_JSON",
+        "public_path_recorded": false,
+        "raw_private_id": "92579441-bd85-4469-8aaf-4f4cac2ee8bb",
+        "sha256": "7aeb39b2aa0376e5cb76bfa28ea4b35e8224430d18c9915a39144252273aa68f",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T16:51:12Z"
       },
       {
         "byte_size": 0,
-        "classification": "CLAUDE_JSON",
+        "classification": "CLAUDE_STREAM_JSON",
         "public_path_recorded": false,
-        "raw_private_id": "bb86ec87-b58f-40be-966d-bf673ba1cffe",
+        "raw_private_id": "29327e85-0344-4627-b38e-a330ab186bbb",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T16:27:41Z"
+        "timestamp_utc": "2026-07-13T16:51:14Z"
       }
     ],
     "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"
@@ -161,13 +208,14 @@
   "scored": false,
   "scored_readiness_sessions": 0,
   "session_isolation_ready": false,
-  "started_at_utc": "2026-07-13T16:27:26Z",
-  "structured_output_ready": false,
+  "started_at_utc": "2026-07-13T16:50:58Z",
+  "structured_output_ready": true,
   "terminal_status": "DS_R0_TECHNICAL_PROBES_BLOCKED",
   "terminal_statuses": [
     "DS_R0_TECHNICAL_PROBES_BLOCKED",
     "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED",
     "DEEPSEEK_CLAUDE_HARNESS_READY",
+    "DEEPSEEK_STRUCTURED_OUTPUT_PASS",
     "NINE_LIVE_READINESS_SESSIONS_NOT_STARTED",
     "DS_R0_REVIEW_REQUIRED_NEXT",
     "MVP_CODE_UNCHANGED",
