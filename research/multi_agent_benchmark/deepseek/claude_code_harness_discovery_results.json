@@ -1,0 +1,42 @@
+{
+  "authorization_commit": "e053f2178dda0167b2165aaf5ac64077d4007b1e",
+  "benchmark_cases_sent_to_model": 0,
+  "claude_command_count": 0,
+  "claude_executable_discovered": false,
+  "codex_bundled_node": {
+    "available": true,
+    "path_recorded": false,
+    "version": "v24.14.0"
+  },
+  "completed_at_utc": "2026-07-13T16:12:15Z",
+  "discovery_scope": [
+    "current PATH command discovery",
+    "where.exe lookup",
+    "npm/npx command discovery",
+    "common npm global launcher locations",
+    "Codex bundled bin directory"
+  ],
+  "git_commit": "e053f2178dda0167b2165aaf5ac64077d4007b1e",
+  "harness_launch_smoke": "NOT_RUN",
+  "installation_performed": false,
+  "npm_command_count": 0,
+  "npm_global_locations_found": false,
+  "npx_command_count": 0,
+  "path_values_recorded": false,
+  "readiness_sessions_started": 0,
+  "required_flags_available": "NOT_EVALUATED",
+  "schema": "SPIRA_DEEPSEEK_CLAUDE_CODE_HARNESS_DISCOVERY_RESULTS_V1",
+  "terminal_status": "CLAUDE_EXECUTABLE_NOT_INSTALLED",
+  "terminal_statuses": [
+    "CLAUDE_EXECUTABLE_NOT_INSTALLED",
+    "CLAUDE_CODE_HARNESS_REMEDIATION_INCOMPLETE",
+    "DS_R0_RERUN_NOT_AUTHORIZED",
+    "READINESS_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "where_claude": "NOT_FOUND",
+  "where_npm": "NOT_FOUND",
+  "where_npx": "NOT_FOUND",
+  "winget_available": true
+}
