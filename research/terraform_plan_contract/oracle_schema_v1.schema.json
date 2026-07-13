@@ -1,0 +1,695 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.local/schemas/domain3/terraform_plan_oracle_v1.schema.json",
+  "title": "SPIRA Domain 3 Terraform Plan Oracle V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "status",
+    "corpus_manifest_sha256",
+    "case_count",
+    "cases",
+    "mutation_relationships",
+    "not_claimed",
+    "not_authorized"
+  ],
+  "properties": {
+    "schema": {
+      "const": "SPIRA_DOMAIN3_TERRAFORM_PLAN_ORACLE"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "const": "DOMAIN_3_TERRAFORM_PLAN_ORACLE_SCHEMA_V1_LOCKED"
+    },
+    "corpus_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "case_count": {
+      "const": 40
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 40,
+      "maxItems": 40,
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    },
+    "mutation_relationships": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "$ref": "#/$defs/mutation_relationship"
+      }
+    },
+    "not_claimed": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_SECURITY",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "APPLY_SUCCESS",
+          "LIVE_STATE_FRESHNESS",
+          "GATE_B_REUSE",
+          "TERRAFORM_PROVIDER_SAFETY",
+          "KUBERNETES_SUPPORT",
+          "DOMAIN_4",
+          "MVP_INCLUSION",
+          "RELEASE"
+        ]
+      }
+    },
+    "not_authorized": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "ORACLE_POPULATION_BEFORE_SCHEMA_ACCEPTANCE",
+          "PRODUCER_IMPLEMENTATION",
+          "GATE_B",
+          "DOMAIN_4",
+          "MVP_BOUNDARY_AMENDMENT",
+          "RELEASE_VERSION_TAG_PYPI"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^(auth|syn)_[a-z0-9_]+$"
+    },
+    "json_pointer": {
+      "type": "string",
+      "pattern": "^(/([^/~]|~0|~1)*)*$"
+    },
+    "subject_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "sha256"
+      ],
+      "properties": {
+        "type": {
+          "const": "terraform_plan"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "context_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context_sha256",
+        "run_identity_kind",
+        "unification_id_expected"
+      ],
+      "properties": {
+        "context_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "run_identity_kind": {
+          "const": "CONTEXTUAL_UNIFICATION_ID"
+        },
+        "unification_id_expected": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "optional_provenance_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "BOUND",
+            "NOT_PROVIDED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "fingerprint": {
+          "$ref": "#/$defs/sha256"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "BOUND"
+              }
+            },
+            "required": [
+              "state"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "sha256"
+                ]
+              },
+              {
+                "required": [
+                  "fingerprint"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "NOT_PROVIDED",
+                  "NOT_APPLICABLE"
+                ]
+              }
+            },
+            "required": [
+              "state"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "sha256"
+                  ]
+                },
+                {
+                  "required": [
+                    "fingerprint"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "optional_provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "configuration_sha256",
+        "prior_state_sha256",
+        "provider_lockfile_sha256",
+        "variables_manifest_sha256",
+        "generation_command_fingerprint",
+        "workspace_or_fixture_identity"
+      ],
+      "properties": {
+        "configuration_sha256": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        },
+        "prior_state_sha256": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        },
+        "provider_lockfile_sha256": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        },
+        "variables_manifest_sha256": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        },
+        "generation_command_fingerprint": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        },
+        "workspace_or_fixture_identity": {
+          "$ref": "#/$defs/optional_provenance_entry"
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "claim_type",
+        "status",
+        "subject",
+        "value",
+        "evidence"
+      ],
+      "properties": {
+        "claim_id": {
+          "type": "string",
+          "pattern": "^terraform_plan\\.[a-z0-9_.-]+$"
+        },
+        "claim_type": {
+          "enum": [
+            "TERRAFORM_PLAN_FORMAT_VERSION",
+            "TERRAFORM_VERSION",
+            "TERRAFORM_PLAN_APPLYABLE",
+            "TERRAFORM_PLAN_COMPLETE",
+            "TERRAFORM_PLAN_ERRORED",
+            "TERRAFORM_RESOURCE_ADDRESS_PRESENT",
+            "TERRAFORM_RESOURCE_TYPE_PRESENT",
+            "TERRAFORM_RESOURCE_ACTION_SEQUENCE",
+            "TERRAFORM_RESOURCE_CREATE",
+            "TERRAFORM_RESOURCE_UPDATE",
+            "TERRAFORM_RESOURCE_DELETE",
+            "TERRAFORM_RESOURCE_REPLACE",
+            "TERRAFORM_RESOURCE_READ",
+            "TERRAFORM_RESOURCE_NOOP",
+            "TERRAFORM_REPLACE_PATH_PRESENT",
+            "PLANNED_VALUE_UNKNOWN",
+            "SENSITIVE_PATH_PRESENT",
+            "OPTIONAL_PROVENANCE_STATE"
+          ]
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "BLOCK",
+            "NOT_EVALUATED"
+          ]
+        },
+        "subject": {
+          "$ref": "#/$defs/subject_identity"
+        },
+        "value": {
+          "$ref": "#/$defs/claim_value"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_locator"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "claim_type": {
+                "const": "SENSITIVE_PATH_PRESENT"
+              }
+            },
+            "required": [
+              "claim_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "NOT_EVALUATED"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "claim_type": {
+                "const": "PLANNED_VALUE_UNKNOWN"
+              }
+            },
+            "required": [
+              "claim_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "NOT_EVALUATED"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "claim_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "string": {
+          "type": "string",
+          "not": {
+            "$ref": "#/$defs/sensitive_value_pattern"
+          }
+        },
+        "boolean": {
+          "type": "boolean"
+        },
+        "integer": {
+          "type": "integer"
+        },
+        "resource_address": {
+          "type": "string"
+        },
+        "resource_type": {
+          "type": "string"
+        },
+        "action_sequence": {
+          "$ref": "#/$defs/action_sequence"
+        },
+        "json_pointer": {
+          "$ref": "#/$defs/json_pointer"
+        },
+        "provenance_state": {
+          "enum": [
+            "BOUND",
+            "NOT_PROVIDED",
+            "NOT_APPLICABLE"
+          ]
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "sensitive_value_pattern": {
+      "type": "string",
+      "pattern": "(?i)(secret|password|token|private[_ -]?key|credential|api[_ -]?key|access[_ -]?key)"
+    },
+    "action_sequence": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": {
+        "enum": [
+          "create",
+          "update",
+          "delete",
+          "read",
+          "no-op"
+        ]
+      }
+    },
+    "explicit_lists": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "create_resources",
+        "update_resources",
+        "delete_resources",
+        "replace_resources",
+        "read_resources",
+        "noop_resources",
+        "replace_paths",
+        "unknown_paths",
+        "sensitive_paths",
+        "not_evaluated"
+      ],
+      "properties": {
+        "create_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "update_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "delete_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "replace_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "read_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "noop_resources": {
+          "$ref": "#/$defs/string_list"
+        },
+        "replace_paths": {
+          "$ref": "#/$defs/json_pointer_list"
+        },
+        "unknown_paths": {
+          "$ref": "#/$defs/json_pointer_list"
+        },
+        "sensitive_paths": {
+          "$ref": "#/$defs/json_pointer_list"
+        },
+        "not_evaluated": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "string_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "json_pointer_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/json_pointer"
+      }
+    },
+    "policy_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_semantics_version",
+        "stop",
+        "recommended_agent_action",
+        "reason_codes"
+      ],
+      "properties": {
+        "decision_semantics_version": {
+          "const": "SPIRA_DECISION_SEMANTICS_V2"
+        },
+        "stop": {
+          "type": "boolean"
+        },
+        "recommended_agent_action": {
+          "enum": [
+            "PROCEED",
+            "REPORT_WITH_NOTES",
+            "STOP_BLOCKED",
+            "RERUN_REQUIRED",
+            "REPORT_NOT_EVALUATED"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "TERRAFORM_PLAN_JSON_INVALID",
+              "TERRAFORM_PLAN_EVIDENCE_CONFLICT",
+              "TERRAFORM_PLAN_ERRORED",
+              "TERRAFORM_PLAN_INCOMPLETE",
+              "TERRAFORM_PLAN_FORMAT_UNSUPPORTED",
+              "TERRAFORM_PLAN_NO_CHANGES",
+              "TERRAFORM_PLAN_NOT_APPLYABLE",
+              "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+              "TERRAFORM_PLAN_CHANGES_PRESENT"
+            ]
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "stop": {
+                "const": false
+              }
+            },
+            "required": [
+              "stop"
+            ]
+          },
+          "then": {
+            "properties": {
+              "recommended_agent_action": {
+                "enum": [
+                  "PROCEED",
+                  "REPORT_WITH_NOTES"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "stop": {
+                "const": true
+              }
+            },
+            "required": [
+              "stop"
+            ]
+          },
+          "then": {
+            "properties": {
+              "recommended_agent_action": {
+                "enum": [
+                  "STOP_BLOCKED",
+                  "RERUN_REQUIRED",
+                  "REPORT_NOT_EVALUATED"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "evidence_locator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_file",
+        "json_pointer"
+      ],
+      "properties": {
+        "case_file": {
+          "enum": [
+            "plan.json",
+            "plan.json.invalid",
+            "metadata.json",
+            "main.tf"
+          ]
+        },
+        "json_pointer": {
+          "$ref": "#/$defs/json_pointer"
+        },
+        "safe_to_publish": {
+          "const": true
+        }
+      }
+    },
+    "mutation_relationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pair_id",
+        "base_case_id",
+        "mutated_case_id",
+        "declared_delta",
+        "expected_claims_relation",
+        "expected_claims_root_relation",
+        "expected_unification_id_relation"
+      ],
+      "properties": {
+        "pair_id": {
+          "type": "string",
+          "pattern": "^mutation_[a-z0-9_]+$"
+        },
+        "base_case_id": {
+          "$ref": "#/$defs/case_id"
+        },
+        "mutated_case_id": {
+          "$ref": "#/$defs/case_id"
+        },
+        "declared_delta": {
+          "type": "string"
+        },
+        "expected_claims_relation": {
+          "enum": [
+            "SAME",
+            "DIFFERENT"
+          ]
+        },
+        "expected_claims_root_relation": {
+          "enum": [
+            "SAME",
+            "DIFFERENT"
+          ]
+        },
+        "expected_unification_id_relation": {
+          "enum": [
+            "SAME",
+            "DIFFERENT"
+          ]
+        }
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "subject",
+        "context",
+        "optional_provenance",
+        "expected_claims",
+        "explicit_lists",
+        "policy_action",
+        "mutation_membership",
+        "not_claimed"
+      ],
+      "properties": {
+        "case_id": {
+          "$ref": "#/$defs/case_id"
+        },
+        "subject": {
+          "$ref": "#/$defs/subject_identity"
+        },
+        "context": {
+          "$ref": "#/$defs/context_identity"
+        },
+        "optional_provenance": {
+          "$ref": "#/$defs/optional_provenance"
+        },
+        "expected_claims": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "explicit_lists": {
+          "$ref": "#/$defs/explicit_lists"
+        },
+        "policy_action": {
+          "$ref": "#/$defs/policy_action"
+        },
+        "mutation_membership": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^mutation_[a-z0-9_]+$"
+          }
+        },
+        "not_claimed": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "INFRASTRUCTURE_CORRECTNESS",
+              "INFRASTRUCTURE_SECURITY",
+              "INFRASTRUCTURE_COST",
+              "INFRASTRUCTURE_COMPLIANCE",
+              "APPLY_SUCCESS",
+              "LIVE_STATE_FRESHNESS"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
