@@ -14,7 +14,7 @@ RELEASE_NOT_AUTHORIZED
 
 ```text
 track: Claude native through Claude Code
-requested model: sonnet
+requested model: haiku
 Claude Code version: 2.1.206 (Claude Code)
 Claude Code binary sha256: d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2
 ```
@@ -35,11 +35,11 @@ readiness sessions: 0
 
 ## Probes
 
-- C0-P1: ready=False rc=1 errors=['CLAUDE_NATIVE_AUTHENTICATION_NOT_READY']
+- C0-P1: ready=False rc=0 errors=['CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED']
 
 ## Blockers
 
-- CLAUDE_NATIVE_AUTHENTICATION_NOT_READY
+- CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED
 
 ## Boundary
 

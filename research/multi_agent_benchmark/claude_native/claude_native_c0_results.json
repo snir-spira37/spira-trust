@@ -1,12 +1,12 @@
 {
-  "authentication_ready": false,
+  "authentication_ready": true,
   "benchmark_cases_sent_to_model": 0,
   "blockers": [
-    "CLAUDE_NATIVE_AUTHENTICATION_NOT_READY"
+    "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED"
   ],
   "claude_code_version": "2.1.206 (Claude Code)",
   "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
-  "completed_at_utc": "2026-07-13T17:31:02Z",
+  "completed_at_utc": "2026-07-13T18:02:42Z",
   "efficiency_claim_authorized": false,
   "forbidden_tool_call_count": 0,
   "inventory": {
@@ -14,10 +14,10 @@
     "claude_executable": "REDACTED_PATH/claude.exe",
     "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
     "claude_version": "2.1.206 (Claude Code)",
-    "git_commit": "5d91d3af1e70c5a3372c155ec7d12ecb579af8bf",
+    "git_commit": "9d5b51c06cb1037c7f0812eaeebec6aacd73e801",
     "node_version": null,
     "python_version": "3.12.10",
-    "timestamp_utc": "2026-07-13T17:30:57Z",
+    "timestamp_utc": "2026-07-13T18:02:25Z",
     "windows_version": "Windows-10-10.0.19045-SP0"
   },
   "model_identity_ready": false,
@@ -26,24 +26,24 @@
   "probe_count": 1,
   "probe_results": {
     "C0-P1": {
-      "auth_error_observed": true,
+      "auth_error_observed": false,
       "errors": [
-        "CLAUDE_NATIVE_AUTHENTICATION_NOT_READY"
+        "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED"
       ],
       "probe": "C0-P1",
-      "raw_private_id": "0db27d48-ed10-4ea1-96e2-c240b0e26faf",
+      "raw_private_id": "4aef3e70-6f38-46d9-b0e4-0688bd9f1243",
       "ready": false,
       "reported_model": null,
-      "requested_model": "sonnet",
-      "returncode": 1,
+      "requested_model": "haiku",
+      "returncode": 0,
       "usage": {
-        "cache_creation_input_tokens": 0,
+        "cache_creation_input_tokens": 6337,
         "cache_decomposition_status": "AVAILABLE",
         "cache_read_input_tokens": 0,
-        "input_tokens": 0,
+        "input_tokens": 10,
         "input_total_available": true,
-        "output_tokens": 0,
-        "total_input_tokens": 0,
+        "output_tokens": 137,
+        "total_input_tokens": 6347,
         "usage_keys": [
           "cache_creation",
           "cache_creation_input_tokens",
@@ -64,22 +64,22 @@
     "raw_file_count": 2,
     "raw_files": [
       {
-        "byte_size": 748,
+        "byte_size": 1262,
         "classification": "CLAUDE_NATIVE_C0_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "0db27d48-ed10-4ea1-96e2-c240b0e26faf",
-        "sha256": "c6caaac1743a243804dd963e6b5f48c5a4257658d7076897c88d8e9bf71a1205",
+        "raw_private_id": "4aef3e70-6f38-46d9-b0e4-0688bd9f1243",
+        "sha256": "7a64a7ed20fcdb8ffb7b1c2e6970a8e38d79a7fdaf49ca768ef87141fb9965ab",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T17:31:02Z"
+        "timestamp_utc": "2026-07-13T18:02:42Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_C0_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "ba41be8a-5d62-4237-a4ff-397d1edf785f",
+        "raw_private_id": "b9ff6873-0220-4348-b858-bc2d4145d12f",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T17:31:02Z"
+        "timestamp_utc": "2026-07-13T18:02:42Z"
       }
     ],
     "schema": "SPIRA_CLAUDE_NATIVE_C0_RAW_PRIVATE_MANIFEST_V1"
@@ -87,10 +87,10 @@
   "read_only_tools_ready": false,
   "readiness_sessions_started": 0,
   "release_authorized": false,
-  "requested_model": "sonnet",
+  "requested_model": "haiku",
   "schema": "SPIRA_CLAUDE_NATIVE_C0_RESULTS_V1",
   "scored": false,
-  "started_at_utc": "2026-07-13T17:30:57Z",
+  "started_at_utc": "2026-07-13T18:02:25Z",
   "structured_output_ready": false,
   "terminal_status": "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED",
   "terminal_statuses": [
