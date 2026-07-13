@@ -1,0 +1,1 @@
+{"case_id":"syn_malformed_json","coverage":["malformed JSON"],"description":"Malformed JSON fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json.invalid":"de26035864fb0db0be8a67097a5fa83f72bf74aee6444dbe9c3fe0cc7b2d0d95"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":false,"producer_output_seen":false,"stratum":"synthetic"}

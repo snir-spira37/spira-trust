@@ -1,0 +1,1 @@
+{"case_id":"syn_sensitive_paths","coverage":["sensitive paths"],"description":"Controlled sensitive structural path fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"b6ab5f54ca34b3cfb4fb5f30ffd5b6a92f42c55dc65fbca04e051bae2c6785c3"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

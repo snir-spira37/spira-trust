@@ -1,0 +1,1 @@
+{"case_id":"syn_summary_list_conflict","coverage":["summary/list conflict"],"description":"Summary/list conflict fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"b59a12b2bf69fa017378d4a03fb45401a9e398adca13f65075c0c46275097993"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

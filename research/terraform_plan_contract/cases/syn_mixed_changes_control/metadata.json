@@ -1,0 +1,1 @@
+{"case_id":"syn_mixed_changes_control","coverage":["mixed changes"],"description":"Controlled mixed-change fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"8ea500941ef24c4d75ea4845c1796ed11d472baafce5e24f5d39e0a2ac3b9cd7"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

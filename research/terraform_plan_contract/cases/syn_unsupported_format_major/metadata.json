@@ -1,0 +1,1 @@
+{"case_id":"syn_unsupported_format_major","coverage":["unsupported format major"],"description":"Unsupported format major fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"6f80c60cfb2360b00bcd62dcd161dcd265d44ffb61f43c1ef7fdebc358f31adb"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

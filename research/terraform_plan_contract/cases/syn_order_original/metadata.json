@@ -1,0 +1,1 @@
+{"case_id":"syn_order_original","coverage":["resource_changes reordered only"],"description":"Original order fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"24f741a38dbad2cf8eada6936f3a7b8817e95786c5ee6671929d7b291ce883d4"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

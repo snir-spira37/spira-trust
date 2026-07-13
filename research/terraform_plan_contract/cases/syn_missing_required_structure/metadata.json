@@ -1,0 +1,1 @@
+{"case_id":"syn_missing_required_structure","coverage":["missing required structure"],"description":"Missing required structure fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"2f014d9da58016c266f02fce4f8c6f6e525326f48e99c3736e703ead8b0ddcbd"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

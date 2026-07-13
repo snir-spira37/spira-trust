@@ -1,0 +1,1 @@
+{"case_id":"syn_create_only_control","coverage":["create only"],"description":"Controlled create-only fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"732e64435abcfd10333e61b349e29bd0f2cc2fc107cf753c5594c0a48b40d6f7"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

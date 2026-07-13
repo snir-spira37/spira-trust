@@ -1,0 +1,1 @@
+{"case_id":"syn_noop_action","coverage":["no-op"],"description":"Controlled no-op action fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"48af9334273672a7ea7f9f37efdbbe1cdb643b41d53bcd5a07d2fb57dd497c8d"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

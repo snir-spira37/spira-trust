@@ -1,0 +1,1 @@
+{"case_id":"syn_optional_provenance_bound","coverage":["optional provenance BOUND"],"description":"Optional provenance BOUND fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"450fd8cd891bfdc7d4e043ee3df030f75fda69941db1e9baae87049ba5e549fa"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

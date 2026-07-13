@@ -1,0 +1,1 @@
+{"case_id":"syn_instruction_text_tag","coverage":["instruction text in tag"],"description":"Instruction-like text in tag.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"4f32faf5e125a6a456fab66becfbc2577d1cd6c3e11e719a882977c3c65f8fbe"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

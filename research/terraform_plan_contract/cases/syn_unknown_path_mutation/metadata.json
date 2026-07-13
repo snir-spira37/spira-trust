@@ -1,0 +1,1 @@
+{"case_id":"syn_unknown_path_mutation","coverage":["same actions -> changed unknown paths"],"description":"Unknown path mutation target.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"d51ebfcb1235fe78200474a37cc6cf45da15d0fc235b24ef8e0b54e004c46bfd"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

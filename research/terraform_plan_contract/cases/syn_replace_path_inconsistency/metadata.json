@@ -1,0 +1,1 @@
+{"case_id":"syn_replace_path_inconsistency","coverage":["replace-path inconsistency"],"description":"Replace-path inconsistency fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"99d8f59ae7240cb476510633ef301c219cda5d726a465571408dcbc7e665548b"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

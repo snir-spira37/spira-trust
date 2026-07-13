@@ -3,121 +3,66 @@
 ## Status
 
 ```text
-DOMAIN_3_CORPUS_NOT_MATERIALIZABLE
-CORPUS_MATERIALIZATION_COMPLETE_NEGATIVE
+DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZED
+CORPUS_MATERIALIZATION_RETRY_COMPLETE
 ORACLE_POPULATION_NOT_AUTHORIZED
 PRODUCER_IMPLEMENTATION_NOT_AUTHORIZED
 GATE_B_NOT_AUTHORIZED
 DOMAIN_4_NOT_AUTHORIZED
-MVP_NOT_YET_AUTHORIZED
+MVP_BOUNDARY_UNCHANGED
 RELEASE_NOT_AUTHORIZED
 ```
 
-## Authorization
+## Corpus
 
 ```text
-authorization: research/terraform_plan_corpus_materialization_authorization.md
-methodology: DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_ACCEPTED
+total cases: 40
+authentic Terraform-generated cases: 8
+synthetic/controlled cases: 32
+mutation pairs: 10
+manifest sha256: 28cdea89c9fc26d9230e8788726abf73e076c268044cd2dff1bf3f67f50ef79c
 ```
 
-The authorized target was:
+## Terraform Environment
 
 ```text
-40 total cases
-32 synthetic/controlled fixtures
-8 authentic locally generated Terraform Plan JSON cases
-10 declared mutation pairs minimum
+Terraform version: 1.15.8
+Terraform binary sha256: 6eb0a1cb89344c97ccf2928ddc2d7a6cb71a1837b7ecccfd5991466b6d751e03
+provider download observed: false
+cloud/live infrastructure used: false
+remote backend used: false
 ```
 
-## Local Terraform Gate
+The authentic cases were generated locally with the built-in Terraform provider
+only. No cloud, live infrastructure, Kubernetes, remote backend, or provider
+download was used.
 
-The methodology requires eight authentic locally generated Terraform Plan JSON
-cases. Those cases may be generated only if:
+## Validation
 
 ```text
-local Terraform CLI exists
-no network/provider download is required
-only local synthetic state/resources are used
-no cloud provider or remote backend is used
-no live infrastructure is touched
+case count: PASS
+unique case IDs: PASS
+authentic count: PASS
+synthetic count: PASS
+mutation pair count: PASS
+missing files: 0
+hash mismatches: 0
+privacy/path/secret scan: PASS
 ```
 
-The local environment failed the first required condition.
-
-Commands run:
+## Boundaries
 
 ```text
-Get-Command terraform -ErrorAction SilentlyContinue
-where.exe terraform
-terraform version
-```
-
-Observed result:
-
-```text
-terraform CLI: NOT_FOUND
-network fetch: NOT_PERFORMED
-provider download: NOT_PERFORMED
-cloud infrastructure: NOT_TOUCHED
-live Terraform environment: NOT_TOUCHED
-Kubernetes: NOT_TOUCHED
-```
-
-## Why the Corpus Was Not Materialized
-
-The accepted methodology explicitly states:
-
-```text
-If eight authentic local Terraform-generated cases cannot be generated without
-network or external providers, the result is DOMAIN_3_CORPUS_NOT_MATERIALIZABLE.
-```
-
-Because Terraform CLI is not installed locally, the run cannot produce the
-required eight authentic Terraform-generated plan JSON cases under the locked
-constraints.
-
-The run did not:
-
-```text
-download Terraform
-download providers
-use network access
-touch cloud infrastructure
-touch live state
-mislabel synthetic JSON as Terraform-generated evidence
-replace the authentic stratum with synthetic fixtures
-weaken the 40-case target
-```
-
-## Artifacts Not Created
-
-The following positive-path artifacts were not created:
-
-```text
-research/terraform_plan_contract/corpus_manifest_v1.json
-tools/materialize_terraform_plan_corpus.py
-oracle schema
-oracle validator
-oracle
-producer
-```
-
-## Finding
-
-```text
-failed_gate: AUTHENTIC_LOCAL_TERRAFORM_GENERATION_GATE
-reason_code: TERRAFORM_CLI_NOT_AVAILABLE
-terminal_route: NEGATIVE_CLOSEOUT_REQUIRED
+oracle expected answers: NOT_POPULATED
+producer output observed: false
+Gate B: NOT_AUTHORIZED
+Domain 4: NOT_AUTHORIZED
+MVP boundary: UNCHANGED
+release/version/tag/PyPI: NOT_AUTHORIZED
 ```
 
 ## Verdict
 
 ```text
-DOMAIN_3_CORPUS_NOT_MATERIALIZABLE
-```
-
-This is a valid negative research result. The next required artifact is:
-
-```text
-research/domain3_terraform_plan_research_closeout.md
+DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZED
 ```

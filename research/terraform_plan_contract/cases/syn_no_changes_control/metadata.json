@@ -1,0 +1,1 @@
+{"case_id":"syn_no_changes_control","coverage":["no changes"],"description":"Controlled no-change fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"e415d4f974fabad46660fccf1a5a7aeb109b44ead2feb733406b14c9f66714ab"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

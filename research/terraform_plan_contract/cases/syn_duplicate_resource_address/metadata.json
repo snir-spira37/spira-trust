@@ -1,0 +1,1 @@
+{"case_id":"syn_duplicate_resource_address","coverage":["duplicate resource address"],"description":"Duplicate resource address fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"ae6c032cec323f0fc6bd0b3dc090f128a6ad77c0db87aab2019a3759ce005d5b"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

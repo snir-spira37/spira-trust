@@ -1,0 +1,1 @@
+{"case_id":"syn_delete_only_control","coverage":["delete only"],"description":"Controlled delete-only fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"0a913390d43c90c5c4a73cb4904f0e7f995e0b8165df6542a75df7ffb38ef2ca"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

@@ -1,0 +1,1 @@
+{"case_id":"syn_update_only_control","coverage":["update only"],"description":"Controlled update-only fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"071139bd49854b39c977c6a47775d97bf24e8e44f13d1053b5e21569e8119db8"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

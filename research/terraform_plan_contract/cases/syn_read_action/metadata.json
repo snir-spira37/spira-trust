@@ -1,0 +1,1 @@
+{"case_id":"syn_read_action","coverage":["read"],"description":"Controlled read action fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"23c9a02b4306171a75758157c4a9ed41e351e1617c16039726e39ebd58911abd"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

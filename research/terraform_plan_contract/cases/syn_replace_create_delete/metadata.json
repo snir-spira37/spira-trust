@@ -1,0 +1,1 @@
+{"case_id":"syn_replace_create_delete","coverage":["replace create/delete"],"description":"Controlled create/delete replacement.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"7e40be1a6cbc246850ead0936728b9bff8c2791a7fcc2ebc7fc015cf31a48a69"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

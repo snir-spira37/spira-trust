@@ -1,0 +1,1 @@
+{"case_id":"syn_unknown_after_values","coverage":["unknown after values"],"description":"Controlled unknown planned values fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"56c95452820205480f8d9f5b1658c60ecec2517c52efa2562cc7885151ec36ec"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}

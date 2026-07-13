@@ -1,0 +1,1 @@
+{"case_id":"syn_complete_false","coverage":["complete false"],"description":"Incomplete plan fixture.","evidence_kind":"SYNTHETIC_CONTROLLED","files":{"plan.json":"248d52008b334a511d313f75c009ac4a0243bd6e1f1e000cce8fc9e9eee306ec"},"oracle_expected_answers":"NOT_POPULATED","plan_valid_json":true,"producer_output_seen":false,"stratum":"synthetic"}
