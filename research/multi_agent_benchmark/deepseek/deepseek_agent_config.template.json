@@ -31,11 +31,11 @@
   ],
   "harness": "Claude Code",
   "model_environment_mappings": {
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro[1m]",
-    "ANTHROPIC_MODEL": "deepseek-v4-pro[1m]",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro[1m]"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_MODEL": "deepseek-v4-pro",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro"
   },
   "planned_flags": [
     "--bare",
@@ -44,7 +44,7 @@
     "--output-format json",
     "--json-schema research/multi_agent_benchmark/agent_output.schema.json",
     "--max-turns 1",
-    "--model deepseek-v4-pro[1m]",
+    "--model deepseek-v4-pro",
     "--effort max",
     "--no-chrome",
     "--disable-slash-commands",
@@ -64,7 +64,7 @@
     "tool_isolation",
     "session_isolation"
   ],
-  "requested_model": "deepseek-v4-pro[1m]",
+  "requested_model": "deepseek-v4-pro",
   "schema": "SPIRA_DEEPSEEK_CLAUDE_CODE_CONFIG_TEMPLATE_V1",
   "schema_version": 1,
   "thinking_or_reasoning_effort": "max"

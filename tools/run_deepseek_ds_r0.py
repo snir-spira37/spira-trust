@@ -26,7 +26,7 @@ RESULTS_PATH = DEEPSEEK_ROOT / "ds_r0_results.json"
 REPORT_PATH = DEEPSEEK_ROOT / "ds_r0_report.md"
 PRIVATE_MANIFEST_PATH = DEEPSEEK_ROOT / "ds_r0_raw_private_manifest.json"
 
-REQUESTED_MODEL = "deepseek-v4-pro[1m]"
+REQUESTED_MODEL = "deepseek-v4-pro"
 ENDPOINT = "https://api.deepseek.com/anthropic/v1/messages"
 TRACK_NAME = "DeepSeek model via Claude Code harness"
 PRIVATE_ROOT_PREFIX = "spira_deepseek_ds_r0_private_"
@@ -873,8 +873,6 @@ def model_resolution_status(model: Any) -> str:
         return "DEEPSEEK_REQUESTED_MODEL_NOT_CONFIRMED"
     if lowered == REQUESTED_MODEL.lower():
         return "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED"
-    if lowered == "deepseek-v4-pro":
-        return "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED"
     return "DEEPSEEK_REQUESTED_MODEL_NOT_CONFIRMED"
 
 

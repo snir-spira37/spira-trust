@@ -244,7 +244,7 @@ def _validate_deepseek_config(
         errors.append("DEEPSEEK_SYSTEM_NAME_INVALID")
     if config.get("endpoint") != "https://api.deepseek.com/anthropic":
         errors.append("DEEPSEEK_ENDPOINT_INVALID")
-    if config.get("requested_model") != "deepseek-v4-pro[1m]":
+    if config.get("requested_model") != "deepseek-v4-pro":
         errors.append("DEEPSEEK_REQUESTED_MODEL_INVALID")
     if config.get("api_key_storage") != "PROCESS_ENVIRONMENT_ONLY":
         errors.append("DEEPSEEK_SECRET_STORAGE_INVALID")
@@ -258,7 +258,7 @@ def _validate_deepseek_config(
     }
     if set(model_env) != required:
         errors.append("DEEPSEEK_MODEL_ENV_MAPPING_KEYS_INVALID")
-    if set(model_env.values()) != {"deepseek-v4-pro[1m]"}:
+    if set(model_env.values()) != {"deepseek-v4-pro"}:
         errors.append("DEEPSEEK_MODEL_ENV_MAPPING_VALUES_NOT_PINNED")
     forbidden_enabled = [
         key

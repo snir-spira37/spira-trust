@@ -64,10 +64,10 @@ def test_forbidden_tool_detection():
     assert forbidden == {"Bash", "mcp__server__tool"}
 
 
-def test_model_resolution_rejects_flash_and_accepts_normalization():
+def test_model_resolution_rejects_flash_and_old_bracketed_identity():
     assert dsr0.model_resolution_status("deepseek-v4-flash") == "DEEPSEEK_REQUESTED_MODEL_NOT_CONFIRMED"
-    assert dsr0.model_resolution_status("deepseek-v4-pro") == "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED"
-    assert dsr0.model_resolution_status("deepseek-v4-pro[1m]") == "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED"
+    assert dsr0.model_resolution_status("deepseek-v4-pro[1m]") == "DEEPSEEK_REQUESTED_MODEL_NOT_CONFIRMED"
+    assert dsr0.model_resolution_status("deepseek-v4-pro") == "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_CONFIRMED"
 
 
 def test_workspace_digest_detects_mutation(tmp_path):
