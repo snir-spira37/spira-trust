@@ -1,0 +1,72 @@
+{
+  "benchmark_cases_sent_to_model": 0,
+  "blockers": [
+    "CLAUDE_NATIVE_AUTHENTICATION_STILL_NOT_READY"
+  ],
+  "completed_at_utc": "2026-07-13T17:39:37Z",
+  "efficiency_claim_authorized": false,
+  "inventory": {
+    "branch": "codex/domain3-terraform-plan-retry-1",
+    "claude_executable": "REDACTED_PATH/claude.exe",
+    "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+    "claude_version": "2.1.206 (Claude Code)",
+    "git_commit": "070c9c027e7db4b13ea7436933d5ea7f35a15e8a",
+    "python_version": "3.12.10",
+    "timestamp_utc": "2026-07-13T17:39:30Z",
+    "windows_version": "Windows-10-10.0.19045-SP0"
+  },
+  "primary_sessions_started": 0,
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 2,
+    "raw_files": [
+      {
+        "byte_size": 748,
+        "classification": "CLAUDE_NATIVE_AUTH_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "3b0fd931-2595-4d1f-ac3d-b399f9a781ec",
+        "sha256": "a68f0579466cfebd0d6bf036e70d290346929293b4b2b3503428b3515e706694",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T17:39:37Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_AUTH_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "cd39068a-1481-4794-af88-c21c79728596",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T17:39:37Z"
+      }
+    ],
+    "schema": "SPIRA_CLAUDE_NATIVE_AUTH_REMEDIATION_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "readiness_sessions_started": 0,
+  "release_authorized": false,
+  "requested_model": "sonnet",
+  "schema": "SPIRA_CLAUDE_NATIVE_AUTH_REMEDIATION_RESULTS_V1",
+  "smoke": {
+    "auth_error_observed": true,
+    "raw_private_id": "3b0fd931-2595-4d1f-ac3d-b399f9a781ec",
+    "reported_model": null,
+    "returncode": 1,
+    "stderr_byte_size": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_byte_size": 748,
+    "stdout_sha256": "a68f0579466cfebd0d6bf036e70d290346929293b4b2b3503428b3515e706694",
+    "usage": {
+      "input_total_available": false,
+      "status": "NOT_EVALUATED_DUE_TO_AUTH"
+    }
+  },
+  "started_at_utc": "2026-07-13T17:39:30Z",
+  "terminal_status": "CLAUDE_NATIVE_AUTHENTICATION_STILL_NOT_READY",
+  "terminal_statuses": [
+    "CLAUDE_NATIVE_AUTHENTICATION_STILL_NOT_READY",
+    "NO_BENCHMARK_CASES_SENT",
+    "NO_READINESS_SESSIONS_STARTED",
+    "CLAUDE_NATIVE_C0_RERUN_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ]
+}
