@@ -1,0 +1,66 @@
+{
+  "authorization_commit": "e053f2178dda0167b2165aaf5ac64077d4007b1e",
+  "benchmark_cases_sent_to_model": 0,
+  "claude_code_version": "2.1.206",
+  "claude_executable_discovered": true,
+  "claude_executable_path_recorded": false,
+  "claude_executable_path_status": "RESOLVED_WITH_SANITIZED_WINGET_PACKAGE_PATH",
+  "claude_executable_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+  "claude_help_available": true,
+  "claude_version_confirmed": true,
+  "completed_at_utc": "2026-07-13T16:20:49Z",
+  "ds_r0_rerun_authorized": false,
+  "git_commit": "f45a40ed67d284ab17938f053215a8ca1549e5e2",
+  "harness_launch_smoke": {
+    "benchmark_case_sent": false,
+    "exit_code": 0,
+    "model": "deepseek-v4-pro",
+    "permission_denials": 0,
+    "server_tool_use": {
+      "web_fetch_requests": 0,
+      "web_search_requests": 0
+    },
+    "status": "PASS",
+    "usage_accounting_available": true
+  },
+  "installation_method": "winget install Anthropic.ClaudeCode --accept-package-agreements --accept-source-agreements",
+  "installation_performed": true,
+  "installed_package": {
+    "id": "Anthropic.ClaudeCode",
+    "name": "Claude Code",
+    "version": "2.1.206"
+  },
+  "path_visibility": {
+    "current_session_alias_visible_after_install": false,
+    "temporary_process_path_exposes_launcher": true
+  },
+  "primary_benchmark_started": false,
+  "readiness_sessions_started": 0,
+  "required_flags_available": true,
+  "required_flags_checked": [
+    "--print",
+    "--model",
+    "--output-format",
+    "--max-turns",
+    "--permission-mode",
+    "--tools",
+    "--disallowedTools",
+    "--strict-mcp-config",
+    "--no-session-persistence",
+    "--session-id"
+  ],
+  "schema": "SPIRA_DEEPSEEK_CLAUDE_CODE_HARNESS_REMEDIATION_RESULTS_V1",
+  "terminal_status": "CLAUDE_CODE_HARNESS_READY_FOR_DS_R0",
+  "terminal_statuses": [
+    "CLAUDE_EXECUTABLE_DISCOVERED",
+    "CLAUDE_CODE_VERSION_CONFIRMED",
+    "REQUIRED_FLAGS_AVAILABLE",
+    "HARNESS_LAUNCH_SMOKE_PASS",
+    "NO_BENCHMARK_CASES_SENT",
+    "NO_READINESS_SESSIONS_STARTED",
+    "CLAUDE_CODE_HARNESS_READY_FOR_DS_R0",
+    "DS_R0_RERUN_NOT_YET_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ]
+}
