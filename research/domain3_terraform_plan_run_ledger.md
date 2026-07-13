@@ -54,3 +54,26 @@ findings:
   - Declaration preserves the two-domain closeout and authorizes methodology only.
 next_phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY
 ```
+
+## Phase B.1 - Methodology
+
+```text
+phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY
+start_commit: 2470835
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_LOCKED
+authorization_used: DOMAIN_3_TERRAFORM_PLAN_DECLARATION_ACCEPTED
+files_changed:
+  - research/terraform_plan_evidence_methodology_v1.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - rg methodology mandatory markers
+  - git diff --check
+tests:
+  - mandatory decision-table markers present
+  - corpus negative-stop marker present
+findings:
+  - Methodology requires exactly 40 cases with 8 authentic local Terraform-generated cases.
+  - Synthetic JSON may not be mislabeled as Terraform-generated evidence.
+next_phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY_REVIEW
+```
