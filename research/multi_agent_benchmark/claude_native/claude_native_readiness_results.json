@@ -1,0 +1,526 @@
+{
+  "benchmark_cases_sent_to_model": 9,
+  "claude_code_version": "2.1.206 (Claude Code)",
+  "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+  "completed_at_utc": "2026-07-13T18:23:59Z",
+  "correct_count": 0,
+  "efficiency_claim_authorized": false,
+  "errors": [
+    "CLAUDE_NATIVE_READINESS_NEEDS_REVISION",
+    "CLAUDE_NATIVE_READINESS_USAGE_NOT_AVAILABLE"
+  ],
+  "false_proceed_count": 0,
+  "forbidden_tool_count": 0,
+  "primary_sessions_started": 0,
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 18,
+    "raw_files": [
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "40b58b45-6ee3-4fa9-88b5-24074e028367",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:44Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "2f19c2ce-e44c-438a-a7bb-45b09c0308cd",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:44Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "0c195631-8d93-4d4f-9ba8-e2fde00ffdd0",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:46Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "2a024f27-08dc-42c2-96e3-da3f043ee3d9",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:46Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "864aa578-f5dc-4fcc-a61b-16040b0a0de3",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:48Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "1b4e9ad7-fb21-4ce1-9383-924e2d0ddf13",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:48Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "51c41996-151f-49d3-9620-3c38fa905890",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:50Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "52a22a06-0b98-41f9-81ac-a3eb2ce9d962",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:50Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "84bb69fc-f0b2-4062-b6dd-f027e1291524",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:51Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "8e02f8fe-7238-4c44-ada8-f0511a1dea62",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:51Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "642f8409-22bb-4804-ba7b-b12c9c35267c",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:53Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "53c0c4bc-d245-4c04-a9bd-f52a4dd6f585",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:53Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "52e6d2b7-3f46-4ab8-a4eb-56e7169b8f33",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:55Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "72ef598e-890f-4eac-9ca5-fc7f97cfda98",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:55Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "d3872f2b-afe7-430b-996d-28f98c95376e",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:57Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "41b2ba37-e4cb-4cfc-a7db-8931fbbee80d",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:57Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "200b4634-4902-4e02-9d4d-2715d5ccb4e8",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:58Z"
+      },
+      {
+        "byte_size": 122,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "8e076812-ab3e-46f4-a1d6-6e287801d026",
+        "sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T18:23:58Z"
+      }
+    ],
+    "schema": "SPIRA_CLAUDE_NATIVE_READINESS_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "release_authorized": false,
+  "requested_model": "haiku",
+  "schema": "SPIRA_CLAUDE_NATIVE_READINESS_RESULTS_V1",
+  "schema_valid_count": 0,
+  "session_count": 9,
+  "sessions": [
+    {
+      "agent_output": null,
+      "arm": "A",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256_actual": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "input_sha256_expected": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "raw_private_id": "40b58b45-6ee3-4fa9-88b5-24074e028367",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "8fbc7948-5bfc-4a69-adeb-57b5a9516bba",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256_actual": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "input_sha256_expected": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "raw_private_id": "0c195631-8d93-4d4f-9ba8-e2fde00ffdd0",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "209654d7-d592-4285-b75a-ebcdf87c81b0",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "C",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256_actual": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "input_sha256_expected": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "raw_private_id": "864aa578-f5dc-4fcc-a61b-16040b0a0de3",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "eb349a5a-1fdb-421c-a787-ddc3fb1e5ee3",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "A",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256_actual": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "input_sha256_expected": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "raw_private_id": "51c41996-151f-49d3-9620-3c38fa905890",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "47d3abf9-ec03-4a4f-a9f4-0b71b64e4ee2",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "B",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256_actual": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "input_sha256_expected": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "raw_private_id": "84bb69fc-f0b2-4062-b6dd-f027e1291524",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "009ae19a-eaad-4f06-8015-2bc142825b3d",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "C",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256_actual": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "input_sha256_expected": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "raw_private_id": "642f8409-22bb-4804-ba7b-b12c9c35267c",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "b5c4b56e-5cb9-4893-942c-5eaae482e23f",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "A",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256_actual": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "input_sha256_expected": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "raw_private_id": "52e6d2b7-3f46-4ab8-a4eb-56e7169b8f33",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "ab1b734c-d95b-40fc-9a6a-1b050700029b",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "B",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256_actual": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "input_sha256_expected": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "raw_private_id": "d3872f2b-afe7-430b-996d-28f98c95376e",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "ef8bf314-7f34-429b-bffa-0a81ea97e079",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": null,
+      "arm": "C",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "errors": [
+          "OUTPUT_NOT_OBJECT"
+        ],
+        "pass": false
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256_actual": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "input_sha256_expected": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "input_sha256_match": true,
+      "output_found": false,
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "raw_private_id": "200b4634-4902-4e02-9d4d-2715d5ccb4e8",
+      "ready": false,
+      "returncode": 1,
+      "schema_errors": [
+        "OUTPUT_NOT_OBJECT"
+      ],
+      "schema_valid": false,
+      "session_id": "ee69740f-7e76-4370-8027-4d3361f0ecf0",
+      "stderr_byte_size": 122,
+      "stderr_sha256": "d8a1e758a0885d376f7a2457d829c53f27040ef929246fb4e28105670fb743de",
+      "stdout_byte_size": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tools_observed": [],
+      "usage": {
+        "input_total_available": false
+      },
+      "workspace_mutated": false
+    }
+  ],
+  "sessions_completed": 0,
+  "started_at_utc": "2026-07-13T18:23:34Z",
+  "terminal_status": "CLAUDE_NATIVE_READINESS_NEEDS_REVISION",
+  "terminal_statuses": [
+    "CLAUDE_NATIVE_READINESS_NEEDS_REVISION",
+    "PRIMARY_BENCHMARK_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "usage_available_count": 0,
+  "workspace_mutation_count": 0
+}
