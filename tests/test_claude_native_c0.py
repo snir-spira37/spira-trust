@@ -50,3 +50,53 @@ def test_auth_error_observed_from_json_result():
     parsed = c0.parse_json_bytes(result.stdout)
 
     assert c0.auth_error_observed(result, parsed)
+
+
+def test_claude_native_model_identity_rule_accepts_haiku_without_reported_model_when_usage_available():
+    result = c0.ClaudeRunResult(stdout=b'{"result":"ok"}', stderr=b"", returncode=0, session_id="s")
+
+    rule = c0.claude_native_model_identity_rule(
+        result=result,
+        parsed=c0.parse_json_bytes(result.stdout),
+        reported_model=None,
+        usage={"input_total_available": True},
+    )
+
+    assert rule["ready"]
+
+
+def test_claude_native_model_identity_rule_rejects_contradicting_reported_model():
+    result = c0.ClaudeRunResult(stdout=b'{"result":"ok"}', stderr=b"", returncode=0, session_id="s")
+
+    rule = c0.claude_native_model_identity_rule(
+        result=result,
+        parsed=c0.parse_json_bytes(result.stdout),
+        reported_model="deepseek-v4-pro",
+        usage={"input_total_available": True},
+    )
+
+    assert not rule["ready"]
+    assert rule["reported_model_contradicts_request"]
+
+
+def test_forbidden_tool_denial_summary_treats_not_enabled_result_as_denied():
+    events = [
+        {"message": {"content": [{"type": "tool_use", "name": "Write"}]}},
+        {
+            "message": {
+                "content": [
+                    {
+                        "type": "tool_result",
+                        "is_error": True,
+                        "content": "No such tool available: Write. Write exists but is not enabled in this context.",
+                    }
+                ]
+            }
+        },
+    ]
+
+    summary = c0.forbidden_tool_denial_summary(events)
+
+    assert summary["forbidden_tool_attempt_count"] == 1
+    assert summary["denied_forbidden_tool_attempt_count"] == 1
+    assert summary["executed_forbidden_tool_count"] == 0

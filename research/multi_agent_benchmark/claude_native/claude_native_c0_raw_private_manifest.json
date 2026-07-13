@@ -1,24 +1,150 @@
 {
   "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
-  "raw_file_count": 2,
+  "raw_file_count": 16,
   "raw_files": [
     {
-      "byte_size": 1262,
+      "byte_size": 1288,
       "classification": "CLAUDE_NATIVE_C0_STDOUT",
       "public_path_recorded": false,
-      "raw_private_id": "4aef3e70-6f38-46d9-b0e4-0688bd9f1243",
-      "sha256": "7a64a7ed20fcdb8ffb7b1c2e6970a8e38d79a7fdaf49ca768ef87141fb9965ab",
+      "raw_private_id": "54fff4e5-58c7-44ba-b7af-15880965f862",
+      "sha256": "b6cd4d069bba3982e03c622f3f2792f92c510224443a0428339cfb90fbd8e3eb",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:02:42Z"
+      "timestamp_utc": "2026-07-13T18:15:23Z"
     },
     {
       "byte_size": 0,
       "classification": "CLAUDE_NATIVE_C0_STDERR",
       "public_path_recorded": false,
-      "raw_private_id": "b9ff6873-0220-4348-b858-bc2d4145d12f",
+      "raw_private_id": "43a347c2-1f93-42ad-894f-fc5a391dc118",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T18:02:42Z"
+      "timestamp_utc": "2026-07-13T18:15:23Z"
+    },
+    {
+      "byte_size": 6779,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "308b9664-0607-4e3b-8d34-8c244ac6b670",
+      "sha256": "8a02ca6cccca89f195fb41f2852aafeff663568ffdd7c994650a5bd3dd4a264a",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:28Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "b5105bfe-9baa-49aa-95e1-fddbfdd63a50",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:28Z"
+    },
+    {
+      "byte_size": 1397,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "91cfef17-8b3e-4aa4-b441-afd76f9dce93",
+      "sha256": "e3751e175f303fa2d4d4858a709e42690d5cdca1141d6fb1d77110ff00b88305",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:34Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "bc8e9c0a-8344-4bdc-b019-de49ca908adc",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:34Z"
+    },
+    {
+      "byte_size": 17427,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "77cc0842-a540-4e33-b479-82843d6ac98f",
+      "sha256": "cf39dfa4d351acadad9c5ff075825705864fb03e8d995f62c8b1eb7b85755db1",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:46Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "3955fa65-ade0-434c-80f9-0ad802267a02",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:46Z"
+    },
+    {
+      "byte_size": 15069,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "e9d90c1b-741a-4c39-901e-6c5f97476bf7",
+      "sha256": "3fa056177a7364948925215810f5132121181a3ddf951b62027b7e71d49404d6",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:59Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "e5a2d70b-b0a1-4177-b313-38af86ef480d",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:15:59Z"
+    },
+    {
+      "byte_size": 1353,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "f759cbf2-4b90-4e6c-b599-14686d941c4a",
+      "sha256": "c7e9c181c8754dd1ca386b631c599c9d2a12f763aecfbab3157d914c0a0d1cbc",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:06Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "8cc0a944-45e0-49ff-b6c8-b5e43ed8af3e",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:06Z"
+    },
+    {
+      "byte_size": 1354,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "4b1e66be-82cf-4af2-94a7-7ddcad46967b",
+      "sha256": "be42f05c96681fe0e0fdd60382529e90fb7e1b51b516458c13ff89a1a8d7cdd0",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:11Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "13f90860-d1b3-4beb-a391-f2bff3b05043",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:11Z"
+    },
+    {
+      "byte_size": 1262,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "dc9c36c6-9670-47ea-ae9b-eaff49d9691a",
+      "sha256": "829f44a15e50a4a2c70db8681e7ddef409b14f2b4b1cbb6dc86cdbee9a76e0c3",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:16Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "f83e6e4e-dc0d-4c1f-9044-5e8af97c630c",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T18:16:16Z"
     }
   ],
   "schema": "SPIRA_CLAUDE_NATIVE_C0_RAW_PRIVATE_MANIFEST_V1"

@@ -134,7 +134,9 @@ def claude_model_identity_probe(private_root: Path, raw_manifest: list[dict[str,
     parsed = parse_json_bytes(result.stdout)
     errors = common_auth_errors(result, parsed, "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED")
     model = reported_model_from_json(parsed)
-    if result.returncode == 0 and not model:
+    usage = extract_usage(parsed)
+    identity_rule = claude_native_model_identity_rule(result=result, parsed=parsed, reported_model=model, usage=usage)
+    if result.returncode == 0 and not identity_rule["ready"]:
         errors.append("CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED")
     return {
         "probe": "C0-P1",
@@ -143,9 +145,36 @@ def claude_model_identity_probe(private_root: Path, raw_manifest: list[dict[str,
         "returncode": result.returncode,
         "requested_model": REQUESTED_MODEL,
         "reported_model": model,
+        "model_identity_rule": identity_rule,
         "auth_error_observed": auth_error_observed(result, parsed),
-        "usage": extract_usage(parsed),
+        "usage": usage,
         "raw_private_id": raw_id,
+    }
+
+
+def claude_native_model_identity_rule(
+    *, result: ClaudeRunResult, parsed: Any, reported_model: str | None, usage: Mapping[str, Any]
+) -> dict[str, Any]:
+    contradiction = False
+    if reported_model:
+        lowered = reported_model.lower()
+        contradiction = REQUESTED_MODEL.lower() not in lowered and "claude" not in lowered
+    ready = (
+        REQUESTED_MODEL == "haiku"
+        and result.returncode == 0
+        and not auth_error_observed(result, parsed)
+        and bool(usage.get("input_total_available"))
+        and not contradiction
+    )
+    return {
+        "rule": "REQUESTED_HAIKU_WITH_SUCCESSFUL_AUTHENTICATED_USAGE_AND_NO_CONTRADICTING_MODEL_METADATA",
+        "ready": ready,
+        "requested_model": REQUESTED_MODEL,
+        "reported_model": reported_model,
+        "reported_model_contradicts_request": contradiction,
+        "returncode": result.returncode,
+        "auth_error_observed": auth_error_observed(result, parsed),
+        "usage_accounting_available": bool(usage.get("input_total_available")),
     }
 
 
@@ -234,6 +263,7 @@ def claude_read_tools_probe(private_root: Path, raw_manifest: list[dict[str, Any
         workspace=workspace,
         max_turns=4,
         tools="Read,Glob,Grep",
+        extra_args=["--verbose"],
     )
     post = directory_digest(workspace)
     raw_id = record_raw_pair(private_root, raw_manifest, "C0-P4-read-tools", result)
@@ -273,13 +303,15 @@ def claude_denial_probe(private_root: Path, raw_manifest: list[dict[str, Any]], 
         workspace=workspace,
         max_turns=3,
         tools="Read,Glob,Grep",
+        extra_args=["--verbose"],
     )
     post = directory_digest(workspace)
     raw_id = record_raw_pair(private_root, raw_manifest, "C0-P5-denial", result)
     events = parse_json_lines(result.stdout)
     tools = tool_calls_from_value(events)
+    denial = forbidden_tool_denial_summary(events)
     errors = common_auth_errors(result, events, "CLAUDE_NATIVE_TOOL_ISOLATION_FAILED")
-    if pre != post or forbidden_tools_present(tools):
+    if pre != post or denial["executed_forbidden_tool_count"]:
         errors.append("CLAUDE_NATIVE_TOOL_ISOLATION_FAILED")
     return {
         "probe": "C0-P5",
@@ -287,7 +319,10 @@ def claude_denial_probe(private_root: Path, raw_manifest: list[dict[str, Any]], 
         "errors": sorted(set(errors)),
         "returncode": result.returncode,
         "tools_observed": sorted(tools),
-        "forbidden_tool_count": len(forbidden_tools_present(tools)),
+        "forbidden_tool_attempt_count": denial["forbidden_tool_attempt_count"],
+        "denied_forbidden_tool_attempt_count": denial["denied_forbidden_tool_attempt_count"],
+        "executed_forbidden_tool_count": denial["executed_forbidden_tool_count"],
+        "forbidden_tool_count": denial["executed_forbidden_tool_count"],
         "workspace_mutated": pre != post,
         "raw_private_id": raw_id,
     }
@@ -296,26 +331,39 @@ def claude_denial_probe(private_root: Path, raw_manifest: list[dict[str, Any]], 
 def claude_session_probe(private_root: Path, raw_manifest: list[dict[str, Any]], label: str) -> dict[str, Any]:
     workspace = make_probe_workspace()
     nonce = f"nonce_{label}_{uuid.uuid4()}"
+    schema = {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {"nonce": {"const": nonce}},
+        "required": ["nonce"],
+    }
     try:
         result = run_claude(
-            prompt=f"Return JSON only with nonce {nonce}. Do not mention any previous nonce.",
+            prompt=f"Return structured JSON with nonce {nonce}. Do not mention any previous nonce.",
             output_format="json",
             workspace=workspace,
             max_turns=1,
             tools="",
+            extra_args=["--json-schema", canonical_json(schema)],
         )
     finally:
         shutil.rmtree(workspace, ignore_errors=True)
     raw_id = record_raw_pair(private_root, raw_manifest, f"C0-P6-session-{label}", result)
     parsed = parse_json_bytes(result.stdout)
+    structured = find_structured_output(parsed)
     errors = common_auth_errors(result, parsed, "CLAUDE_NATIVE_C0_INCOMPLETE")
+    nonce_present = (
+        nonce in result.stdout.decode("utf-8", errors="replace")
+        or (isinstance(structured, Mapping) and structured.get("nonce") == nonce)
+    )
     return {
         "probe": f"C0-P6-{label}",
-        "ready": not errors and nonce in result.stdout.decode("utf-8", errors="replace"),
+        "ready": not errors and nonce_present,
         "errors": sorted(set(errors)),
         "returncode": result.returncode,
         "session_id": result.session_id,
-        "nonce_present": nonce in result.stdout.decode("utf-8", errors="replace"),
+        "nonce_present": nonce_present,
+        "schema_transport": "INLINE_CANONICAL_JSON",
         "usage": extract_usage(parsed),
         "raw_private_id": raw_id,
     }
@@ -767,6 +815,23 @@ def forbidden_tools_present(tools: Iterable[str]) -> set[str]:
         if lowered.startswith("mcp__") or lowered in FORBIDDEN_TOOL_NAMES:
             forbidden.add(tool)
     return forbidden
+
+
+def forbidden_tool_denial_summary(events: Any) -> dict[str, Any]:
+    forbidden = forbidden_tools_present(tool_calls_from_value(events))
+    serialized = json.dumps(events, sort_keys=True).lower()
+    denied = set()
+    if "tool_use_error" in serialized or "no such tool available" in serialized or "not enabled in this context" in serialized:
+        denied = set(forbidden)
+    executed = forbidden - denied
+    return {
+        "forbidden_tools": sorted(forbidden),
+        "denied_forbidden_tools": sorted(denied),
+        "executed_forbidden_tools": sorted(executed),
+        "forbidden_tool_attempt_count": len(forbidden),
+        "denied_forbidden_tool_attempt_count": len(denied),
+        "executed_forbidden_tool_count": len(executed),
+    }
 
 
 def reported_model_from_json(value: Any) -> str | None:

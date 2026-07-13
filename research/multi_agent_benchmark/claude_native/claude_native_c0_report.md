@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED
+CLAUDE_NATIVE_C0_TECHNICAL_PROBES_PASS
 BENCHMARK_CASES_NOT_EXECUTED
 READINESS_SESSIONS_NOT_STARTED
 EFFICIENCY_CLAIM_NOT_AUTHORIZED
@@ -22,11 +22,11 @@ Claude Code binary sha256: d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6a
 ## Probe Summary
 
 ```text
-probe count: 1
-structured output ready: False
-read-only tools ready: False
-tool isolation ready: False
-usage accounting ready: False
+probe count: 8
+structured output ready: True
+read-only tools ready: True
+tool isolation ready: True
+usage accounting ready: True
 workspace mutations: 0
 forbidden tool calls: 0
 benchmark cases sent: 0
@@ -35,11 +35,18 @@ readiness sessions: 0
 
 ## Probes
 
-- C0-P1: ready=False rc=0 errors=['CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED']
+- C0-P1: ready=True rc=0 errors=[]
+- C0-P2: ready=True rc=0 errors=[]
+- C0-P3: ready=True rc=0 errors=[]
+- C0-P4: ready=True rc=0 errors=[]
+- C0-P5: ready=True rc=0 errors=[]
+- C0-P6A: ready=True rc=0 errors=[]
+- C0-P6B: ready=True rc=0 errors=[]
+- C0-P7: ready=True rc=0 errors=[]
 
 ## Blockers
 
-- CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED
+- none
 
 ## Boundary
 
