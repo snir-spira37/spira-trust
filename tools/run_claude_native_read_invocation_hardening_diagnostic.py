@@ -125,6 +125,8 @@ def run_nonce_probe(
     raw_id = readiness.record_raw_pair(private_root, raw_manifest, f"read-nonce-{repeat_index}", result)
     parsed = readiness.parse_json(result.stdout)
     output = readiness.extract_agent_output(parsed)
+    result_envelope = result_envelope_present(parsed)
+    structured_output = structured_output_present(parsed)
     events = readiness.parse_json_lines(result.stdout)
     tools = readiness.tool_calls_from_value(events if events else parsed)
     forbidden = readiness.forbidden_tools_present(tools)
@@ -144,6 +146,8 @@ def run_nonce_probe(
         "output_found": isinstance(output, dict),
         "schema_valid": not schema_errors,
         "schema_errors": schema_errors,
+        "result_envelope_present": result_envelope,
+        "structured_output_present": structured_output,
         "nonce_confirmed": nonce_confirmed,
         "comparison": {
             "pass": nonce_confirmed and result.returncode == 0 and not schema_errors and not permission_denial,
@@ -194,6 +198,8 @@ def run_benchmark_session(
     raw_id = readiness.record_raw_pair(private_root, raw_manifest, f"{role.lower()}-{item['domain']}-{item['case_id']}-arm-{item['arm']}-{repeat_index}", result)
     parsed = readiness.parse_json(result.stdout)
     output = readiness.extract_agent_output(parsed)
+    result_envelope = result_envelope_present(parsed)
+    structured_output = structured_output_present(parsed)
     events = readiness.parse_json_lines(result.stdout)
     tools = readiness.tool_calls_from_value(events if events else parsed)
     forbidden = readiness.forbidden_tools_present(tools)
@@ -214,6 +220,8 @@ def run_benchmark_session(
         "output_found": isinstance(output, dict),
         "schema_valid": not schema_errors,
         "schema_errors": schema_errors,
+        "result_envelope_present": result_envelope,
+        "structured_output_present": structured_output,
         "comparison": comparison,
         "ready": result.returncode == 0 and not schema_errors and comparison["pass"] and pre_digest == post_digest and not forbidden and not permission_denial,
         "agent_output": sanitize_value(output) if isinstance(output, Mapping) else None,
@@ -288,6 +296,14 @@ def raw_permission_denial_present(parsed: Any) -> bool:
     return isinstance(parsed, Mapping) and bool(parsed.get("permission_denials"))
 
 
+def result_envelope_present(parsed: Any) -> bool:
+    return isinstance(parsed, Mapping) and parsed.get("type") == "result"
+
+
+def structured_output_present(parsed: Any) -> bool:
+    return isinstance(parsed, Mapping) and isinstance(parsed.get("structured_output"), Mapping)
+
+
 def sanitize_value(value: Any) -> Any:
     if isinstance(value, Mapping):
         return {str(key): sanitize_value(item) for key, item in value.items()}
@@ -310,6 +326,10 @@ def diagnostic_errors(sessions: list[Mapping[str, Any]]) -> list[str]:
         errors.append("CLAUDE_NATIVE_READ_HARDENING_FORBIDDEN_TOOL")
     if any(not (session.get("usage") or {}).get("input_total_available") for session in sessions):
         errors.append("CLAUDE_NATIVE_READ_HARDENING_USAGE_NOT_AVAILABLE")
+    if any(not session.get("result_envelope_present") for session in sessions):
+        errors.append("CLAUDE_NATIVE_READ_HARDENING_RESULT_ENVELOPE_MISSING")
+    if any(not session.get("structured_output_present") for session in sessions):
+        errors.append("CLAUDE_NATIVE_READ_HARDENING_STRUCTURED_OUTPUT_MISSING")
     roles = {
         "READ_NONCE_TECHNICAL_PROBE": 5,
         "CRITICAL_ARM_B": 10,
@@ -338,6 +358,8 @@ def summarize_by_cell(sessions: list[Mapping[str, Any]]) -> list[dict[str, Any]]
             "exact_count": sum(1 for session in group if session.get("ready")),
             "schema_valid_count": sum(1 for session in group if session.get("schema_valid")),
             "usage_available_count": sum(1 for session in group if (session.get("usage") or {}).get("input_total_available")),
+            "result_envelope_count": sum(1 for session in group if session.get("result_envelope_present")),
+            "structured_output_count": sum(1 for session in group if session.get("structured_output_present")),
             "permission_denial_count": sum(1 for session in group if session.get("permission_denial_observed")),
             "false_proceed_count": sum(1 for session in group if (session.get("comparison") or {}).get("false_proceed")),
         })
@@ -367,6 +389,8 @@ def finalize(started_at: str, sessions: list[dict[str, Any]], raw_manifest: list
         "schema_valid_count": sum(1 for session in sessions if session.get("schema_valid")),
         "exact_count": sum(1 for session in sessions if session.get("ready")),
         "usage_available_count": sum(1 for session in sessions if (session.get("usage") or {}).get("input_total_available")),
+        "result_envelope_count": sum(1 for session in sessions if session.get("result_envelope_present")),
+        "structured_output_count": sum(1 for session in sessions if session.get("structured_output_present")),
         "permission_denial_count": sum(1 for session in sessions if session.get("permission_denial_observed")),
         "false_proceed_count": sum(1 for session in sessions if (session.get("comparison") or {}).get("false_proceed")),
         "workspace_mutation_count": sum(1 for session in sessions if session.get("workspace_mutated")),
@@ -390,7 +414,7 @@ def finalize(started_at: str, sessions: list[dict[str, Any]], raw_manifest: list
 
 def report_markdown(results: Mapping[str, Any]) -> str:
     rows = "\n".join(
-        "- {domain} {case_id} arm {arm} {diagnostic_role}: exact={exact_count}/{session_count} schema={schema_valid_count}/{session_count} permission_denials={permission_denial_count}".format(**cell)
+        "- {domain} {case_id} arm {arm} {diagnostic_role}: exact={exact_count}/{session_count} schema={schema_valid_count}/{session_count} envelope={result_envelope_count}/{session_count} structured={structured_output_count}/{session_count} permission_denials={permission_denial_count}".format(**cell)
         for cell in results.get("cell_summary", [])
     )
     errors = "\n".join(f"- {error}" for error in results.get("errors", [])) or "- none"
@@ -415,6 +439,8 @@ session count: {results['session_count']}
 schema valid: {results['schema_valid_count']} / 20
 exact: {results['exact_count']} / 20
 usage available: {results['usage_available_count']} / 20
+JSON result envelope present: {results['result_envelope_count']} / 20
+structured_output present: {results['structured_output_count']} / 20
 permission denials: {results['permission_denial_count']}
 false PROCEED: {results['false_proceed_count']}
 workspace mutations: {results['workspace_mutation_count']}

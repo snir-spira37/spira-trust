@@ -54,3 +54,10 @@ def test_hardened_runner_source_has_single_json_output_format():
     assert '"--allowedTools"' in source
     assert '"--permission-mode"' in source
     assert '"dontAsk"' in source
+
+
+def test_result_envelope_and_structured_output_detection():
+    parsed = {"type": "result", "structured_output": {"gate": "PROCEED"}}
+
+    assert hardening.result_envelope_present(parsed)
+    assert hardening.structured_output_present(parsed)
