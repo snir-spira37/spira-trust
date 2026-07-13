@@ -307,8 +307,7 @@ def claude_structured_probe(
         "properties": {"probe_status": {"const": "PASS"}, "nonce": {"type": "string"}},
         "required": ["probe_status", "nonce"],
     }
-    schema_file = workspace / "probe_schema.json"
-    schema_file.write_text(json.dumps(schema, sort_keys=True), encoding="utf-8")
+    inline_schema = canonical_json(schema)
     result = run_claude(
         key=key,
         prompt=f"Return structured JSON with probe_status PASS and nonce {nonce}.",
@@ -316,7 +315,7 @@ def claude_structured_probe(
         workspace=workspace,
         max_turns=1,
         tools="",
-        extra_args=["--json-schema", str(schema_file)],
+        extra_args=["--json-schema", inline_schema],
     )
     raw_id = record_private_raw(private_root, raw_manifest, name="DS-R0-P3-structured-output.json", data=result.stdout, classification="CLAUDE_JSON")
     parsed = parse_json_bytes(result.stdout)
@@ -336,6 +335,10 @@ def claude_structured_probe(
         "returncode": result.returncode,
         "structured_output_found": isinstance(structured, dict),
         "nonce_matched": isinstance(structured, dict) and structured.get("nonce") == nonce,
+        "schema_transport": "INLINE_CANONICAL_JSON",
+        "schema_semantics_changed": False,
+        "inline_schema_sha256": sha256(inline_schema.encode("utf-8")),
+        "parsed_schema_object_matches_source": json.loads(inline_schema) == schema,
         "usage": extract_usage(parsed),
         "raw_private_id": raw_id,
     }
@@ -786,6 +789,10 @@ def parse_json_bytes(data: bytes) -> Any:
         return json.loads(data.decode("utf-8", errors="replace"))
     except Exception:
         return None
+
+
+def canonical_json(value: Any) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
 
 
 def parse_json_lines(data: bytes) -> list[dict[str, Any]]:

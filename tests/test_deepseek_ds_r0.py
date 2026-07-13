@@ -93,3 +93,11 @@ def test_raw_private_manifest_omits_path(tmp_path):
     assert manifest[0]["stored_outside_repository"] is True
     assert manifest[0]["public_path_recorded"] is False
     assert "path" not in manifest[0]
+
+
+def test_canonical_json_is_deterministic_and_compact():
+    left = {"b": 2, "a": {"z": 3, "c": 1}}
+    right = {"a": {"c": 1, "z": 3}, "b": 2}
+
+    assert dsr0.canonical_json(left) == dsr0.canonical_json(right)
+    assert dsr0.canonical_json(left) == '{"a":{"c":1,"z":3},"b":2}'

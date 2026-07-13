@@ -1,0 +1,20 @@
+{
+  "authorization_commit": "f4577060d22f6313cdead54274e9a131c74676e5",
+  "benchmark_cases_sent_to_model": 0,
+  "changed_files": [
+    "tools/run_deepseek_ds_r0.py",
+    "tests/test_deepseek_ds_r0.py",
+    "research/multi_agent_benchmark/deepseek/ds_r0_runner_fix_results.json",
+    "research/multi_agent_benchmark/deepseek/ds_r0_runner_fix_report.md"
+  ],
+  "inline_schema_sha256": "c5bf11b778e9c1167db77772d0fba55dfaad61bd31f829d947ce2f1ab7e2d553",
+  "parsed_schema_object_matches_source": true,
+  "readiness_sessions_started": 0,
+  "schema_additional_properties_unchanged": true,
+  "schema_const_constraints_unchanged": true,
+  "schema_enum_constraints_unchanged": true,
+  "schema_required_fields_unchanged": true,
+  "schema_semantics_changed": false,
+  "schema_transport": "INLINE_CANONICAL_JSON",
+  "terminal_status": "DS_R0_RUNNER_FIX_COMPLETE"
+}
