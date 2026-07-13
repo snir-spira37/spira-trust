@@ -26,6 +26,7 @@ CASE_MANIFEST_PATH = BENCHMARK_ROOT / "case_manifest.json"
 OUTPUT_SCHEMA_PATH = BENCHMARK_ROOT / "agent_output.schema.json"
 
 REQUESTED_MODEL = "haiku"
+ALLOWED_TOOLS = "Read,Glob,Grep"
 PRIVATE_ROOT_PREFIX = "spira_claude_native_readiness_private_"
 FORBIDDEN_TOOL_NAMES = {
     "bash",
@@ -123,6 +124,8 @@ def run_session(
     raw_id = record_raw_pair(private_root, raw_manifest, raw_name(item), result)
     parsed = parse_json(result.stdout)
     output = extract_agent_output(parsed)
+    result_envelope = result_envelope_present(parsed)
+    structured_output = structured_output_present(parsed)
     events = parse_json_lines(result.stdout)
     tools = tool_calls_from_value(events if events else parsed)
     forbidden = forbidden_tools_present(tools)
@@ -144,6 +147,8 @@ def run_session(
         "output_found": isinstance(output, dict),
         "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
         "schema_transport_semantics_changed": False,
+        "result_envelope_present": result_envelope,
+        "structured_output_present": structured_output,
         "schema_valid": not schema_errors,
         "schema_errors": schema_errors,
         "comparison": comparison,
@@ -184,6 +189,8 @@ def run_claude(*, prompt: str, workspace: Path, schema: Mapping[str, Any]) -> Cl
         "json",
         "--tools",
         "Read,Glob,Grep",
+        "--allowedTools",
+        ALLOWED_TOOLS,
         "--disallowedTools",
         "Bash,Edit,Write,NotebookEdit,WebSearch,WebFetch,Agent,Task,mcp__*",
         "--strict-mcp-config",
@@ -262,6 +269,10 @@ def readiness_errors(sessions: list[Mapping[str, Any]]) -> list[str]:
         errors.append("CLAUDE_NATIVE_READINESS_FORBIDDEN_TOOL")
     if any(not (session.get("usage") or {}).get("input_total_available") for session in sessions):
         errors.append("CLAUDE_NATIVE_READINESS_USAGE_NOT_AVAILABLE")
+    if any(not session.get("result_envelope_present") for session in sessions):
+        errors.append("CLAUDE_NATIVE_READINESS_RESULT_ENVELOPE_MISSING")
+    if any(not session.get("structured_output_present") for session in sessions):
+        errors.append("CLAUDE_NATIVE_READINESS_STRUCTURED_OUTPUT_MISSING")
     return errors
 
 
@@ -287,6 +298,8 @@ def finalize(started_at: str, sessions: list[dict[str, Any]], raw_manifest: list
         "sessions_completed": sum(1 for session in sessions if session.get("returncode") == 0),
         "schema_valid_count": sum(1 for session in sessions if session.get("schema_valid")),
         "correct_count": sum(1 for session in sessions if (session.get("comparison") or {}).get("pass")),
+        "result_envelope_count": sum(1 for session in sessions if session.get("result_envelope_present")),
+        "structured_output_count": sum(1 for session in sessions if session.get("structured_output_present")),
         "false_proceed_count": sum(1 for session in sessions if (session.get("comparison") or {}).get("false_proceed")),
         "usage_available_count": sum(1 for session in sessions if (session.get("usage") or {}).get("input_total_available")),
         "workspace_mutation_count": sum(1 for session in sessions if session.get("workspace_mutated")),
@@ -330,6 +343,8 @@ requested model: {results['requested_model']}
 session count: {results['session_count']}
 schema valid: {results['schema_valid_count']} / 9
 correct: {results['correct_count']} / 9
+JSON result envelope: {results['result_envelope_count']} / 9
+structured_output: {results['structured_output_count']} / 9
 usage available: {results['usage_available_count']} / 9
 false PROCEED: {results['false_proceed_count']}
 workspace mutations: {results['workspace_mutation_count']}
@@ -516,6 +531,14 @@ def first_number(value: Mapping[str, Any], keys: list[str]) -> int | float | Non
 
 def raw_name(item: Mapping[str, Any]) -> str:
     return f"{item['domain']}-{item['case_id']}-arm-{item['arm']}"
+
+
+def result_envelope_present(parsed: Any) -> bool:
+    return isinstance(parsed, Mapping) and parsed.get("type") == "result"
+
+
+def structured_output_present(parsed: Any) -> bool:
+    return isinstance(parsed, Mapping) and isinstance(parsed.get("structured_output"), Mapping)
 
 
 def record_raw_pair(private_root: Path, manifest: list[dict[str, Any]], name: str, result: ClaudeRunResult) -> str:

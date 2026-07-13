@@ -2,8 +2,8 @@
   "benchmark_cases_sent_to_model": 9,
   "claude_code_version": "2.1.206 (Claude Code)",
   "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
-  "completed_at_utc": "2026-07-13T18:31:01Z",
-  "correct_count": 5,
+  "completed_at_utc": "2026-07-13T20:25:47Z",
+  "correct_count": 6,
   "efficiency_claim_authorized": false,
   "errors": [
     "CLAUDE_NATIVE_READINESS_NEEDS_REVISION"
@@ -16,174 +16,175 @@
     "raw_file_count": 18,
     "raw_files": [
       {
-        "byte_size": 2659,
+        "byte_size": 2623,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "0dd4fec0-0d89-47e1-bdae-46d300640bac",
-        "sha256": "77c386e6ad72e37256fbc1cc4e78894f89dc7d7a52278458c6331fc6a4ed5417",
+        "raw_private_id": "96a7eb53-68ac-4f38-9aba-5a5dc9f3307a",
+        "sha256": "a7c144834ed704051a462ee2dc250a3050e3c3d1bbbc93ffe2f68c9f3c2b32bd",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:10Z"
+        "timestamp_utc": "2026-07-13T20:22:40Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "6a3be0f1-0847-4486-93a5-459b16a3dded",
+        "raw_private_id": "7f128f26-3cf8-4f68-80de-36db0a2b1e24",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:10Z"
+        "timestamp_utc": "2026-07-13T20:22:40Z"
       },
       {
-        "byte_size": 1382,
+        "byte_size": 2129,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "8876c2b8-bd65-4e5e-b56c-694c9063ec32",
-        "sha256": "30e2cb0ec058aa1810323867c70536103f60f87f869b9bba2ea57b98939fc376",
+        "raw_private_id": "5b16c1ca-451a-410c-ad22-772df22bec1d",
+        "sha256": "41ecf156413ad38f4b663ef34d6b3a63c860b7ea6beaf1d19d6b97361a8ad457",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:38Z"
+        "timestamp_utc": "2026-07-13T20:23:05Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "e9505305-c591-48f2-8460-02e1b332ee7b",
+        "raw_private_id": "e6d06661-2cd9-4bbb-bb3d-0072b80484ab",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:38Z"
+        "timestamp_utc": "2026-07-13T20:23:05Z"
       },
       {
-        "byte_size": 2479,
+        "byte_size": 2606,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "906c4f70-1b79-46f0-b6b4-102ed8fa94ed",
-        "sha256": "869a3219fc43520d61d45b1197665cf1c7f1d1da8ba520551fb357f6b6b160ff",
+        "raw_private_id": "16bdae43-5893-4ddc-8c33-403c696014de",
+        "sha256": "e800a77958a9414b6ad4a0b32f953cc798bdf0296e9eb82b823f21f603c7d2c1",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:54Z"
+        "timestamp_utc": "2026-07-13T20:23:23Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "09bd8a86-9be5-481c-bf47-5830993f390f",
+        "raw_private_id": "3f336f9f-59d5-4620-b464-4bfe69bce8f4",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:28:54Z"
+        "timestamp_utc": "2026-07-13T20:23:23Z"
       },
       {
-        "byte_size": 3560,
+        "byte_size": 3538,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "879bf80a-8c31-4fff-bec9-f400396b756c",
-        "sha256": "ee5172a6446f31e63fccc4d5866516609a54ff9f93f2da50b2657f29bbe8891c",
+        "raw_private_id": "69698954-d155-46e8-9f76-812ef6252f98",
+        "sha256": "a82af73c513f37776287ab917b827921fb636b7025244d3a2331ade06ea9b414",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:15Z"
+        "timestamp_utc": "2026-07-13T20:23:45Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "e6795009-da6f-4326-8303-f6499561f193",
+        "raw_private_id": "049bdc01-31da-473b-ab08-39f043bd8f69",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:15Z"
+        "timestamp_utc": "2026-07-13T20:23:45Z"
       },
       {
-        "byte_size": 2904,
+        "byte_size": 3138,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "4d6d59d5-337c-411e-85b3-cdc1a8f5c271",
-        "sha256": "d1f1b48582729515c16a655493613717c2f426aa6962d0d530de0c37184dfa48",
+        "raw_private_id": "020008ef-9fe0-4622-9c5d-502c7c1fd257",
+        "sha256": "132d92ee4ee922673344470cf0a1c65eb26bdc89f088c2828bb7bdb5f8b91852",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:39Z"
+        "timestamp_utc": "2026-07-13T20:24:06Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "b2062d43-0acb-43ae-bbfb-9c6bc4c1c57f",
+        "raw_private_id": "f5bf4e98-5cf7-41b8-8883-c1070acccd44",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:39Z"
+        "timestamp_utc": "2026-07-13T20:24:06Z"
       },
       {
-        "byte_size": 2825,
+        "byte_size": 3257,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "76d3dd48-476e-41d5-b44d-90dddbd1232b",
-        "sha256": "5e496d9da5cf9551043dde245f2e3d489875544f45e23a42e6142447e214e289",
+        "raw_private_id": "73733f1f-5267-48cb-a5a1-5f1980625fd4",
+        "sha256": "686328e10114090c523877ae48a90255691218887c8bb93c59eac9c50f877d10",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:55Z"
+        "timestamp_utc": "2026-07-13T20:24:31Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "2bb439cb-96ac-443f-ba59-457735c0268b",
+        "raw_private_id": "b43db18f-4d56-45f4-a626-c7356d1ce1fc",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:29:55Z"
+        "timestamp_utc": "2026-07-13T20:24:31Z"
       },
       {
-        "byte_size": 2770,
+        "byte_size": 2688,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "d16619eb-3bc9-466b-bfd4-626d4ab4d44f",
-        "sha256": "6c711bdae69420f60cdb32c65aa725b1ebbfa0f9f31b245974e88a49a6bf5b6e",
+        "raw_private_id": "333c87cf-a098-47d5-a7df-5319eaf56c59",
+        "sha256": "c1b59782beb7c0a3dfab0b593cd589aa65c63232bb7d761b51617c8351f024dc",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:30:19Z"
+        "timestamp_utc": "2026-07-13T20:24:52Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "1cb5c55a-8ffb-4ba3-a86c-b5c837c25321",
+        "raw_private_id": "871a0a2c-5e9c-4292-ab8f-97bc39b81ef6",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:30:19Z"
+        "timestamp_utc": "2026-07-13T20:24:52Z"
       },
       {
-        "byte_size": 2285,
+        "byte_size": 2489,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "1682f9b7-ddcd-41e2-a8fa-148dbbf5db6a",
-        "sha256": "bf7558d9d0d25371190bbb3c44830dca6fc31112f47dc70a6e72bec660f70f84",
+        "raw_private_id": "123ea6b5-9459-4524-9ab5-f5aa22894e07",
+        "sha256": "02357041577b8280b3f9ff744c762722283ed1b4451f31c656f93f48ae2b55ee",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:30:45Z"
+        "timestamp_utc": "2026-07-13T20:25:19Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "7fd6b7b4-789b-4024-be06-c9e5017f4859",
+        "raw_private_id": "ba69236e-318d-484a-873d-b9ca84606372",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:30:45Z"
+        "timestamp_utc": "2026-07-13T20:25:19Z"
       },
       {
-        "byte_size": 2427,
+        "byte_size": 2707,
         "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
         "public_path_recorded": false,
-        "raw_private_id": "82544bd4-d640-4cec-879b-79a6c4aae3cf",
-        "sha256": "4f7afff30137d1f0930008631edf85a2aa96be0b4cf6d844369f07ff9479630c",
+        "raw_private_id": "2a5a8c63-2ac5-4dc5-b730-9e2531de527b",
+        "sha256": "0d2355a10c1250d1906d4ddcf803c15406a2434028d24149d6e0f2a802db4738",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:31:01Z"
+        "timestamp_utc": "2026-07-13T20:25:47Z"
       },
       {
         "byte_size": 0,
         "classification": "CLAUDE_NATIVE_READINESS_STDERR",
         "public_path_recorded": false,
-        "raw_private_id": "5185b331-632b-4cf9-b08d-2089c2622d2f",
+        "raw_private_id": "cd89f81f-3fb3-4322-a71d-7d1c2ed63213",
         "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "stored_outside_repository": true,
-        "timestamp_utc": "2026-07-13T18:31:01Z"
+        "timestamp_utc": "2026-07-13T20:25:47Z"
       }
     ],
     "schema": "SPIRA_CLAUDE_NATIVE_READINESS_RAW_PRIVATE_MANIFEST_V1"
   },
   "release_authorized": false,
   "requested_model": "haiku",
+  "result_envelope_count": 9,
   "schema": "SPIRA_CLAUDE_NATIVE_READINESS_RESULTS_V1",
-  "schema_valid_count": 8,
+  "schema_valid_count": 9,
   "session_count": 9,
   "sessions": [
     {
@@ -192,26 +193,20 @@
         "drilldown_used": false,
         "evidence_or_proof_references": [
           "console.txt: tests/test_ok.py::test_ok PASSED",
-          "junit.xml: tests=1 failures=0",
-          "metadata.json: exit_code=0 case_kind=clean_successful_run"
+          "junit.xml: tests='1' failures='0'",
+          "metadata.json: exit_code 0, case_kind clean_successful_run"
         ],
         "gate": "PROCEED",
-        "not_claimed": [
-          "software_correctness_beyond_test_results",
-          "infrastructure_safety",
-          "compliance_status",
-          "malware_free_status",
-          "test_coverage_completeness"
-        ],
+        "not_claimed": [],
         "not_evaluated": [],
         "reason_codes": [
-          "clean_test_run",
-          "zero_test_failures",
-          "exit_code_zero",
-          "all_tests_passed"
+          "all_tests_passed",
+          "zero_exit_code",
+          "no_junit_failures",
+          "capture_complete"
         ],
         "recommended_agent_action": "PROCEED",
-        "spira_verdict": "All pytest tests passed with zero failures detected and exit code 0. The evidence surface shows a clean successful test run."
+        "spira_verdict": "Test execution completed successfully with all tests passing. Console output shows test_ok PASSED. JUnit XML confirms 1 test with 0 failures. Metadata shows exit_code 0 and case_kind clean_successful_run with capture_complete true."
       },
       "arm": "A",
       "case_id": "synthetic_clean_success",
@@ -241,39 +236,69 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
-      "raw_private_id": "0dd4fec0-0d89-47e1-bdae-46d300640bac",
+      "raw_private_id": "96a7eb53-68ac-4f38-9aba-5a5dc9f3307a",
       "ready": false,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "b15367c9-4169-469d-b742-06b1514d5b12",
+      "session_id": "37a99f24-99d5-454c-88da-36cbbbf96f95",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2659,
-      "stdout_sha256": "77c386e6ad72e37256fbc1cc4e78894f89dc7d7a52278458c6331fc6a4ed5417",
+      "stdout_byte_size": 2623,
+      "stdout_sha256": "a7c144834ed704051a462ee2dc250a3050e3c3d1bbbc93ffe2f68c9f3c2b32bd",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 11502,
-        "cache_read_input_tokens": 9429,
+        "cache_creation_input_tokens": 6659,
+        "cache_read_input_tokens": 14310,
         "input_tokens": 18,
         "input_total_available": true,
-        "output_tokens": 1942,
+        "output_tokens": 1582,
         "total_cost_usd": null,
-        "total_input_tokens": 20949
+        "total_input_tokens": 20987
       },
       "workspace_mutated": false
     },
     {
-      "agent_output": null,
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "console",
+          "junit",
+          "metadata"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Pytest tests passed successfully. Direct domain contract indicates stop=false with reason TESTS_PASSED, warranting PROCEED decision."
+      },
       "arm": "B",
       "case_id": "synthetic_clean_success",
       "comparison": {
-        "errors": [
-          "OUTPUT_NOT_OBJECT"
-        ],
-        "pass": false
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
       },
       "domain": "pytest_result",
       "forbidden_tool_count": 0,
@@ -281,31 +306,31 @@
       "input_sha256_actual": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
       "input_sha256_expected": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
       "input_sha256_match": true,
-      "output_found": false,
+      "output_found": true,
       "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
-      "raw_private_id": "8876c2b8-bd65-4e5e-b56c-694c9063ec32",
-      "ready": false,
-      "returncode": 1,
-      "schema_errors": [
-        "OUTPUT_NOT_OBJECT"
-      ],
+      "raw_private_id": "5b16c1ca-451a-410c-ad22-772df22bec1d",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
-      "schema_valid": false,
-      "session_id": "97f41b66-21da-4a5a-9182-3ebf8d489aff",
+      "schema_valid": true,
+      "session_id": "dc9703b1-1727-4b40-8351-0a908e28ad42",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 1382,
-      "stdout_sha256": "30e2cb0ec058aa1810323867c70536103f60f87f869b9bba2ea57b98939fc376",
+      "stdout_byte_size": 2129,
+      "stdout_sha256": "41ecf156413ad38f4b663ef34d6b3a63c860b7ea6beaf1d19d6b97361a8ad457",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 7886,
-        "cache_read_input_tokens": 58670,
-        "input_tokens": 50,
+        "cache_creation_input_tokens": 7887,
+        "cache_read_input_tokens": 26065,
+        "input_tokens": 28,
         "input_total_available": true,
-        "output_tokens": 1430,
+        "output_tokens": 1613,
         "total_cost_usd": null,
-        "total_input_tokens": 66606
+        "total_input_tokens": 33980
       },
       "workspace_mutated": false
     },
@@ -327,7 +352,7 @@
           "TESTS_PASSED"
         ],
         "recommended_agent_action": "PROCEED",
-        "spira_verdict": "The unified MVP contract for case synthetic_clean_success indicates tests passed (stop=false, reason_codes=['TESTS_PASSED']). The agent may proceed."
+        "spira_verdict": "Tests passed with no blocking items. The unified MVP contract shows stop=false and reason_codes=[TESTS_PASSED], authorizing agent to proceed. Boundaries: producer_correctness and software_safety are not claimed."
       },
       "arm": "C",
       "case_id": "synthetic_clean_success",
@@ -354,27 +379,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
-      "raw_private_id": "906c4f70-1b79-46f0-b6b4-102ed8fa94ed",
+      "raw_private_id": "16bdae43-5893-4ddc-8c33-403c696014de",
       "ready": true,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "3528bfe7-4a14-4f9f-9148-a844839d2ab7",
+      "session_id": "273bc0ca-1a51-499a-a552-dfda52064fa4",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2479,
-      "stdout_sha256": "869a3219fc43520d61d45b1197665cf1c7f1d1da8ba520551fb357f6b6b160ff",
+      "stdout_byte_size": 2606,
+      "stdout_sha256": "e800a77958a9414b6ad4a0b32f953cc798bdf0296e9eb82b823f21f603c7d2c1",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 6783,
-        "cache_read_input_tokens": 14304,
+        "cache_creation_input_tokens": 6793,
+        "cache_read_input_tokens": 14308,
         "input_tokens": 18,
         "input_total_available": true,
-        "output_tokens": 1103,
+        "output_tokens": 1274,
         "total_cost_usd": null,
-        "total_input_tokens": 21105
+        "total_input_tokens": 21119
       },
       "workspace_mutated": false
     },
@@ -389,9 +416,9 @@
         ],
         "drilldown_used": false,
         "evidence_or_proof_references": [
-          "70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe",
+          "0dc732fef59682e4a97501a31baaeef408b47230a2649fbd1f9fe502d0194cdb",
           "9a0d3ff05951275a5668e8fb28e77704100bc0ed256753a392cc3414d486169e",
-          "629f4d14721826427132e20e1e740a0c565f3b2ec02a5188509f22ad8e2c26b1"
+          "70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe"
         ],
         "gate": "STOP",
         "not_claimed": [
@@ -411,7 +438,7 @@
           "REPORT_NOT_EVALUATED"
         ],
         "recommended_agent_action": "ASK_HUMAN",
-        "spira_verdict": "The python_wheel artifact cannot proceed. Multiple policy boundaries remain not_evaluated (entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, target_environment). Critical safety and package assurances are not_claimed (software_safety, package_safety, universal_supply_chain_coverage). Worst claim status is NOT_EVALUATED. Human review is required."
+        "spira_verdict": "The python_wheel artifact cannot proceed to deployment. Critical claims remain NOT_EVALUATED including entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, and target_environment. Additionally, boundaries for software_safety, package_safety, and universal_supply_chain_coverage are not claimed. Human review is required before proceeding."
       },
       "arm": "A",
       "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
@@ -440,27 +467,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
-      "raw_private_id": "879bf80a-8c31-4fff-bec9-f400396b756c",
+      "raw_private_id": "69698954-d155-46e8-9f76-812ef6252f98",
       "ready": false,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "307ca9ab-8afd-40ef-95e5-e3b54b64206d",
+      "session_id": "019552b8-84a6-4d43-a9a7-8992b59e2b17",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 3560,
-      "stdout_sha256": "ee5172a6446f31e63fccc4d5866516609a54ff9f93f2da50b2657f29bbe8891c",
+      "stdout_byte_size": 3538,
+      "stdout_sha256": "a82af73c513f37776287ab917b827921fb636b7025244d3a2331ade06ea9b414",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 7013,
-        "cache_read_input_tokens": 14310,
+        "cache_creation_input_tokens": 7008,
+        "cache_read_input_tokens": 14308,
         "input_tokens": 18,
         "input_total_available": true,
-        "output_tokens": 1483,
+        "output_tokens": 1653,
         "total_cost_usd": null,
-        "total_input_tokens": 21341
+        "total_input_tokens": 21334
       },
       "workspace_mutated": false
     },
@@ -468,7 +497,9 @@
       "agent_output": {
         "blocking_items": [],
         "drilldown_used": false,
-        "evidence_or_proof_references": [],
+        "evidence_or_proof_references": [
+          "70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe"
+        ],
         "gate": "STOP",
         "not_claimed": [
           "package_safety",
@@ -487,7 +518,7 @@
           "REPORT_NOT_EVALUATED"
         ],
         "recommended_agent_action": "ASK_HUMAN",
-        "spira_verdict": "The direct domain contract requires human review due to unevaluated policies and unresolved safety boundaries. Multiple policy checks were not evaluated (entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, target_environment) and key safety claims are not made (package_safety, software_safety, universal_supply_chain_coverage)."
+        "spira_verdict": "Agent must stop. The direct domain compact contract for python_artifact specifies that human review is required due to multiple policy boundaries that have not been evaluated, including entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, and target_environment. Additionally, package_safety, software_safety, and universal_supply_chain_coverage are explicitly not claimed by this contract."
       },
       "arm": "B",
       "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
@@ -514,27 +545,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
-      "raw_private_id": "4d6d59d5-337c-411e-85b3-cdc1a8f5c271",
+      "raw_private_id": "020008ef-9fe0-4622-9c5d-502c7c1fd257",
       "ready": true,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "ad61c29f-3bc4-49dd-a7cf-24407df314e6",
+      "session_id": "774fd6d1-5175-447c-b71f-86375925163e",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2904,
-      "stdout_sha256": "d1f1b48582729515c16a655493613717c2f426aa6962d0d530de0c37184dfa48",
+      "stdout_byte_size": 3138,
+      "stdout_sha256": "132d92ee4ee922673344470cf0a1c65eb26bdc89f088c2828bb7bdb5f8b91852",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 6832,
+        "cache_creation_input_tokens": 6815,
         "cache_read_input_tokens": 14306,
         "input_tokens": 18,
         "input_total_available": true,
-        "output_tokens": 1885,
+        "output_tokens": 1764,
         "total_cost_usd": null,
-        "total_input_tokens": 21156
+        "total_input_tokens": 21139
       },
       "workspace_mutated": false
     },
@@ -542,7 +575,10 @@
       "agent_output": {
         "blocking_items": [],
         "drilldown_used": false,
-        "evidence_or_proof_references": [],
+        "evidence_or_proof_references": [
+          "proof_reference:70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe",
+          "domain1_baseline_record"
+        ],
         "gate": "STOP",
         "not_claimed": [
           "package_safety",
@@ -561,7 +597,7 @@
           "REPORT_NOT_EVALUATED"
         ],
         "recommended_agent_action": "ASK_HUMAN",
-        "spira_verdict": "The unified MVP contract indicates stop=true. Human review is required before proceeding. Multiple policy boundaries remain not_evaluated: entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, and target_environment. Package safety, software safety, and universal supply chain coverage are not claimed."
+        "spira_verdict": "Unified MVP contract indicates stop=true with reason codes HUMAN_REVIEW_REQUIRED and REPORT_NOT_EVALUATED. The python_artifact domain has five not_evaluated boundaries (entry_point_policy, license_policy, lockfile_cross_check, pep740_offline_attestations, target_environment) and three not_claimed boundaries (package_safety, software_safety, universal_supply_chain_coverage). The contract routes to ASK_HUMAN recommended action."
       },
       "arm": "C",
       "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
@@ -588,27 +624,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
-      "raw_private_id": "76d3dd48-476e-41d5-b44d-90dddbd1232b",
+      "raw_private_id": "73733f1f-5267-48cb-a5a1-5f1980625fd4",
       "ready": true,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "70ec5e9d-2bef-4104-81fb-6a563fe87390",
+      "session_id": "f6029c6d-d33b-48d1-b6a0-a852313cf2e3",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2825,
-      "stdout_sha256": "5e496d9da5cf9551043dde245f2e3d489875544f45e23a42e6142447e214e289",
+      "stdout_byte_size": 3257,
+      "stdout_sha256": "686328e10114090c523877ae48a90255691218887c8bb93c59eac9c50f877d10",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 6808,
-        "cache_read_input_tokens": 14308,
-        "input_tokens": 18,
+        "cache_creation_input_tokens": 8147,
+        "cache_read_input_tokens": 35860,
+        "input_tokens": 36,
         "input_total_available": true,
-        "output_tokens": 1177,
+        "output_tokens": 1952,
         "total_cost_usd": null,
-        "total_input_tokens": 21134
+        "total_input_tokens": 44043
       },
       "workspace_mutated": false
     },
@@ -622,25 +660,23 @@
         ],
         "gate": "PROCEED",
         "not_claimed": [
-          "auth_changes",
-          "infrastructure_modifications",
-          "apply_success",
-          "state_mutations"
+          "resource_correctness_beyond_plan",
+          "applied_state_verification",
+          "authentication_framework_assessment"
         ],
         "not_evaluated": [
-          "authentication_configuration_safety",
-          "terraform_module_security",
-          "compliance_requirements",
-          "infrastructure_design_validation"
+          "authentication_implementation_details",
+          "infrastructure_deployment_authorization",
+          "cross_resource_dependencies"
         ],
         "reason_codes": [
-          "PLAN_COMPLETE",
-          "NO_ERRORS",
-          "NO_PLANNED_CHANGES",
-          "VERSION_COMPATIBLE"
+          "plan_complete",
+          "no_errors",
+          "stable_resource",
+          "no_op_change"
         ],
         "recommended_agent_action": "PROCEED",
-        "spira_verdict": "The evidence surface shows a valid, complete Terraform plan with no errors. The resource_changes indicate no-op status (no planned changes). Configuration and prior state are aligned. No blocking issues detected in the raw evidence."
+        "spira_verdict": "Raw evidence surface shows a complete, error-free Terraform plan for a stable resource with no-op change. The configuration and plan are consistent; no blocking issues identified in the evidence."
       },
       "arm": "A",
       "case_id": "auth_no_changes",
@@ -671,27 +707,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
-      "raw_private_id": "d16619eb-3bc9-466b-bfd4-626d4ab4d44f",
+      "raw_private_id": "333c87cf-a098-47d5-a7df-5319eaf56c59",
       "ready": false,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "eac71677-027a-43d1-880e-23d6e178d391",
+      "session_id": "65fe06be-5e52-4c8d-a01c-99fd6d72a0a7",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2770,
-      "stdout_sha256": "6c711bdae69420f60cdb32c65aa725b1ebbfa0f9f31b245974e88a49a6bf5b6e",
+      "stdout_byte_size": 2688,
+      "stdout_sha256": "c1b59782beb7c0a3dfab0b593cd589aa65c63232bb7d761b51617c8351f024dc",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 7229,
-        "cache_read_input_tokens": 14306,
+        "cache_creation_input_tokens": 7192,
+        "cache_read_input_tokens": 14308,
         "input_tokens": 18,
         "input_total_available": true,
-        "output_tokens": 1726,
+        "output_tokens": 1514,
         "total_cost_usd": null,
-        "total_input_tokens": 21553
+        "total_input_tokens": 21518
       },
       "workspace_mutated": false
     },
@@ -716,7 +754,7 @@
           "TERRAFORM_PLAN_NO_CHANGES"
         ],
         "recommended_agent_action": "PROCEED",
-        "spira_verdict": "Terraform plan contains no changes. Agent may proceed."
+        "spira_verdict": "The terraform plan contains no changes. Per the direct domain compact contract, this case permits proceeding with the reason code TERRAFORM_PLAN_NO_CHANGES."
       },
       "arm": "B",
       "case_id": "auth_no_changes",
@@ -743,27 +781,29 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
-      "raw_private_id": "1682f9b7-ddcd-41e2-a8fa-148dbbf5db6a",
+      "raw_private_id": "123ea6b5-9459-4524-9ab5-f5aa22894e07",
       "ready": true,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "416abdf7-c17b-4b20-8843-c310afbac3ee",
+      "session_id": "c7e8068a-f004-4740-9742-84f1c3b48e05",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2285,
-      "stdout_sha256": "bf7558d9d0d25371190bbb3c44830dca6fc31112f47dc70a6e72bec660f70f84",
+      "stdout_byte_size": 2489,
+      "stdout_sha256": "02357041577b8280b3f9ff744c762722283ed1b4451f31c656f93f48ae2b55ee",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 8183,
-        "cache_read_input_tokens": 25923,
+        "cache_creation_input_tokens": 8258,
+        "cache_read_input_tokens": 25947,
         "input_tokens": 28,
         "input_total_available": true,
-        "output_tokens": 2085,
+        "output_tokens": 2260,
         "total_cost_usd": null,
-        "total_input_tokens": 34134
+        "total_input_tokens": 34233
       },
       "workspace_mutated": false
     },
@@ -772,7 +812,8 @@
         "blocking_items": [],
         "drilldown_used": false,
         "evidence_or_proof_references": [
-          "510317d4124398aa278366960b400d30091c05838a25417d4177c9bba5634104"
+          "proof_reference.id:510317d4124398aa278366960b400d30091c05838a25417d4177c9bba5634104",
+          "proof_reference.context_sha256:ed9d675a3b75231d4599d8b6345a108fef6c7e089cd5d1e2008e53b2a22ff0fe"
         ],
         "gate": "PROCEED",
         "not_claimed": [
@@ -788,7 +829,7 @@
           "TERRAFORM_PLAN_NO_CHANGES"
         ],
         "recommended_agent_action": "PROCEED",
-        "spira_verdict": "Terraform plan shows no changes to infrastructure. No blocking items identified. Agent may proceed with confidence."
+        "spira_verdict": "The terraform plan shows no infrastructure changes required. The plan analysis indicates no modifications are needed, supporting agent progression."
       },
       "arm": "C",
       "case_id": "auth_no_changes",
@@ -815,33 +856,36 @@
       "input_sha256_match": true,
       "output_found": true,
       "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
-      "raw_private_id": "82544bd4-d640-4cec-879b-79a6c4aae3cf",
+      "raw_private_id": "2a5a8c63-2ac5-4dc5-b730-9e2531de527b",
       "ready": true,
+      "result_envelope_present": true,
       "returncode": 0,
       "schema_errors": [],
       "schema_transport": "INLINE_CANONICAL_JSON_WITHOUT_DRAFT_URI",
       "schema_transport_semantics_changed": false,
       "schema_valid": true,
-      "session_id": "4c47a495-c349-4a6a-bb13-c5a9fc01356d",
+      "session_id": "43749996-e4ad-4ecb-b0e7-cad4b87b449f",
       "stderr_byte_size": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stdout_byte_size": 2427,
-      "stdout_sha256": "4f7afff30137d1f0930008631edf85a2aa96be0b4cf6d844369f07ff9479630c",
+      "stdout_byte_size": 2707,
+      "stdout_sha256": "0d2355a10c1250d1906d4ddcf803c15406a2434028d24149d6e0f2a802db4738",
+      "structured_output_present": true,
       "tools_observed": [],
       "usage": {
-        "cache_creation_input_tokens": 6682,
-        "cache_read_input_tokens": 14304,
-        "input_tokens": 18,
+        "cache_creation_input_tokens": 8507,
+        "cache_read_input_tokens": 25889,
+        "input_tokens": 28,
         "input_total_available": true,
-        "output_tokens": 1175,
+        "output_tokens": 2493,
         "total_cost_usd": null,
-        "total_input_tokens": 21004
+        "total_input_tokens": 34424
       },
       "workspace_mutated": false
     }
   ],
-  "sessions_completed": 8,
-  "started_at_utc": "2026-07-13T18:27:47Z",
+  "sessions_completed": 9,
+  "started_at_utc": "2026-07-13T20:22:09Z",
+  "structured_output_count": 9,
   "terminal_status": "CLAUDE_NATIVE_READINESS_NEEDS_REVISION",
   "terminal_statuses": [
     "CLAUDE_NATIVE_READINESS_NEEDS_REVISION",

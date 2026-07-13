@@ -62,3 +62,23 @@ def test_claude_transport_schema_removes_only_draft_uri():
 
     assert "$schema" not in transported
     assert readiness.schema_transport_semantics_unchanged(schema, transported)
+
+
+def test_readiness_runner_source_uses_hardened_json_invocation():
+    source = Path(readiness.__file__).read_text(encoding="utf-8")
+
+    assert source.count('"--output-format"') == 1
+    assert '"json"' in source
+    assert '"stream-json"' not in source
+    assert '"--allowedTools"' in source
+    assert '"Read,Glob,Grep"' in source
+    assert '"--json-schema"' in source
+    assert '"--permission-mode"' in source
+    assert '"dontAsk"' in source
+
+
+def test_result_envelope_and_structured_output_detection():
+    parsed = {"type": "result", "structured_output": {"gate": "PROCEED"}}
+
+    assert readiness.result_envelope_present(parsed)
+    assert readiness.structured_output_present(parsed)
