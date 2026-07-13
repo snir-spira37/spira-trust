@@ -3,13 +3,13 @@
   "raw_file_count": 1,
   "raw_files": [
     {
-      "byte_size": 454,
+      "byte_size": 450,
       "classification": "DIRECT_PROVIDER_RESPONSE",
       "public_path_recorded": false,
-      "raw_private_id": "976881a0-4202-44df-a567-e1de6aaf8229",
-      "sha256": "1f255c7b6a769bbf6b11d7404480edba7ed9007aa151417d36711e50664d880b",
+      "raw_private_id": "3b5af8d9-91c2-423f-959b-75fd8e9f85df",
+      "sha256": "c892239a104d9b4d1829bbe1cc67d2b1acf3e372f18ccd73b4ec6f250198fe9a",
       "stored_outside_repository": true,
-      "timestamp_utc": "2026-07-13T15:42:01Z"
+      "timestamp_utc": "2026-07-13T15:59:59Z"
     }
   ],
   "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"

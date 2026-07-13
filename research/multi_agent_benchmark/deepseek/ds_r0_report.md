@@ -13,7 +13,7 @@ RELEASE_NOT_AUTHORIZED
 
 ```text
 track: DeepSeek model via Claude Code harness
-requested model: deepseek-v4-pro[1m]
+requested model: deepseek-v4-pro
 resolved provider model: deepseek-v4-pro
 Claude system/init model: None
 Claude Code version: None
@@ -39,7 +39,7 @@ scored readiness sessions: 0
 
 ## Blockers
 
-- DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED
+- DEEPSEEK_HARNESS_VERSION_NOT_READY
 
 ## Boundary
 
