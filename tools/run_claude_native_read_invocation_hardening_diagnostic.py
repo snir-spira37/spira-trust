@@ -241,6 +241,8 @@ def run_claude_hardened(*, prompt: str, workspace: Path, schema: Mapping[str, An
         readiness.REQUESTED_MODEL,
         "--permission-mode",
         "dontAsk",
+        "--output-format",
+        "json",
         "--tools",
         "Read,Glob,Grep",
         "--allowedTools",

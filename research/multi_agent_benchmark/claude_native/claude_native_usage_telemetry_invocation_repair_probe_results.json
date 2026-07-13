@@ -1,0 +1,566 @@
+{
+  "cell_summary": [
+    {
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "diagnostic_role": "CRITICAL_ARM_B",
+      "domain": "pytest_result",
+      "exact_count": 2,
+      "permission_denial_count": 0,
+      "result_envelope_count": 2,
+      "schema_valid_count": 2,
+      "session_count": 2,
+      "structured_output_count": 2,
+      "usage_available_count": 2
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_clean_success",
+      "diagnostic_role": "MATCHED_ARM_C",
+      "domain": "pytest_result",
+      "exact_count": 1,
+      "permission_denial_count": 0,
+      "result_envelope_count": 1,
+      "schema_valid_count": 1,
+      "session_count": 1,
+      "structured_output_count": 1,
+      "usage_available_count": 1
+    },
+    {
+      "arm": "N/A",
+      "case_id": "read_nonce",
+      "diagnostic_role": "READ_NONCE_TECHNICAL_PROBE",
+      "domain": "technical_probe",
+      "exact_count": 3,
+      "permission_denial_count": 0,
+      "result_envelope_count": 3,
+      "schema_valid_count": 3,
+      "session_count": 3,
+      "structured_output_count": 3,
+      "usage_available_count": 3
+    }
+  ],
+  "completed_at_utc": "2026-07-13T20:01:29Z",
+  "errors": [],
+  "exact_count": 6,
+  "false_proceed_count": 0,
+  "forbidden_tool_count": 0,
+  "permission_denial_count": 0,
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 12,
+    "raw_files": [
+      {
+        "byte_size": 2033,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "2e7f36dc-b06d-4339-8e82-c1eb7e7d56e6",
+        "sha256": "aa60837f23ea808aa072e774ac923cff1da288afb12e3536f322978faf8e743e",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T19:59:43Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "ed843ea9-e920-4350-a6cc-def966ca55b1",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T19:59:43Z"
+      },
+      {
+        "byte_size": 1929,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "85eb4104-b0e7-4f6e-902e-56fbd30f60e8",
+        "sha256": "c9205f49ea6dc34dc6afc879fc8323720e0db3698e59c57eebb3bf1893ee7518",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T19:59:54Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "ed5e7683-e294-4508-94eb-1ae952009f33",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T19:59:54Z"
+      },
+      {
+        "byte_size": 1906,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "54f96124-49df-4279-98b4-f1009f7a4952",
+        "sha256": "007b5d65e9d1ee415f8caf8b51c0ff2eb94a455b938269386662c0669fa68467",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:00:07Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "f52837f6-8633-46b8-aa0f-ac2f9ff49610",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:00:07Z"
+      },
+      {
+        "byte_size": 2605,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "faa17b97-8d59-4fef-a468-f8f9cdc4f5ab",
+        "sha256": "ccf3f8e2b20e1aa35efc667bb37e9524a5e9205681cb92d04a31690c711f7a81",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:00:43Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "93f1c886-d4a7-4dbe-b37c-3ea10917d286",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:00:43Z"
+      },
+      {
+        "byte_size": 2740,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "be4ad18f-eb15-4224-ac51-86195dd56546",
+        "sha256": "65bfd605b4b8c700b35e1d22f2ec4758e4b4013d390cf0498f50168224bea784",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:01:06Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "1fbdc73f-5915-49cf-bab7-14dac81d53c6",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:01:06Z"
+      },
+      {
+        "byte_size": 2730,
+        "classification": "CLAUDE_NATIVE_READINESS_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "d587c6a2-192f-4ed2-b342-1bd466d452b3",
+        "sha256": "0573fd49843f5865d22a57671e6b7a8ff35ab7210a56ba590c86e68b3f9a835a",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:01:23Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_READINESS_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "bd701f39-3706-493d-9048-426419bee0b4",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T20:01:23Z"
+      }
+    ],
+    "schema": "SPIRA_CLAUDE_NATIVE_USAGE_TELEMETRY_INVOCATION_REPAIR_PROBE_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "repository_mutation_observed": false,
+  "result_envelope_count": 6,
+  "schema": "SPIRA_CLAUDE_NATIVE_USAGE_TELEMETRY_INVOCATION_REPAIR_PROBE_RESULTS_V1",
+  "schema_valid_count": 6,
+  "session_count": 6,
+  "sessions": [
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "SPIRA_READ_NONCE_1c1f83aab5e4438995717ad57c80b82f"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [],
+        "not_evaluated": [],
+        "reason_codes": [
+          "READ_NONCE_CONFIRMED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Nonce successfully read from nonce.txt: SPIRA_READ_NONCE_1c1f83aab5e4438995717ad57c80b82f"
+      },
+      "arm": "N/A",
+      "case_id": "read_nonce",
+      "comparison": {
+        "errors": [],
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 1,
+      "diagnostic_role": "READ_NONCE_TECHNICAL_PROBE",
+      "domain": "technical_probe",
+      "forbidden_tool_count": 0,
+      "model_identity_present": false,
+      "nonce_confirmed": true,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "raw_private_id": "2e7f36dc-b06d-4339-8e82-c1eb7e7d56e6",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "03b18078-2941-418a-b962-4388d086006a",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 2033,
+      "stdout_sha256": "aa60837f23ea808aa072e774ac923cff1da288afb12e3536f322978faf8e743e",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 4903,
+        "cache_read_input_tokens": 14330,
+        "input_tokens": 18,
+        "input_total_available": true,
+        "output_tokens": 749,
+        "total_cost_usd": null,
+        "total_input_tokens": 19251
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "SPIRA_READ_NONCE_0db2f1c877f7441298f0916644846b83"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [],
+        "not_evaluated": [],
+        "reason_codes": [
+          "READ_NONCE_CONFIRMED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Nonce successfully read from nonce.txt"
+      },
+      "arm": "N/A",
+      "case_id": "read_nonce",
+      "comparison": {
+        "errors": [],
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 2,
+      "diagnostic_role": "READ_NONCE_TECHNICAL_PROBE",
+      "domain": "technical_probe",
+      "forbidden_tool_count": 0,
+      "model_identity_present": false,
+      "nonce_confirmed": true,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "raw_private_id": "85eb4104-b0e7-4f6e-902e-56fbd30f60e8",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "1fb9ee5b-d5c1-4b88-af0a-7cb58380f070",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 1929,
+      "stdout_sha256": "c9205f49ea6dc34dc6afc879fc8323720e0db3698e59c57eebb3bf1893ee7518",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 4815,
+        "cache_read_input_tokens": 14326,
+        "input_tokens": 18,
+        "input_total_available": true,
+        "output_tokens": 648,
+        "total_cost_usd": null,
+        "total_input_tokens": 19159
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "SPIRA_READ_NONCE_041a6e9783034459b0ad50bf71c43ca2"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [],
+        "not_evaluated": [],
+        "reason_codes": [
+          "READ_NONCE_CONFIRMED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Nonce successfully read from nonce.txt"
+      },
+      "arm": "N/A",
+      "case_id": "read_nonce",
+      "comparison": {
+        "errors": [],
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 3,
+      "diagnostic_role": "READ_NONCE_TECHNICAL_PROBE",
+      "domain": "technical_probe",
+      "forbidden_tool_count": 0,
+      "model_identity_present": false,
+      "nonce_confirmed": true,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "raw_private_id": "54f96124-49df-4279-98b4-f1009f7a4952",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "85c35922-3db2-4159-b931-9a531a1e5cfe",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 1906,
+      "stdout_sha256": "007b5d65e9d1ee415f8caf8b51c0ff2eb94a455b938269386662c0669fa68467",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 4977,
+        "cache_read_input_tokens": 14330,
+        "input_tokens": 18,
+        "input_total_available": true,
+        "output_tokens": 848,
+        "total_cost_usd": null,
+        "total_input_tokens": 19325
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "compact_contract_proof_result_identity: 41faa8cc93583874449197ea874c2afe2097362b8b931a596ce6e1eee7b92dfc",
+          "compact_contract_proof_scope_identity: 69bf76b5f4c8cf9ed3b0ca2412f700c8f350571899d22426484e37eccb54100c"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Tests passed successfully according to the pytest result domain contract. The direct domain compact contract indicates stop=false and reason_codes=[TESTS_PASSED], supporting continuation."
+      },
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 1,
+      "diagnostic_role": "CRITICAL_ARM_B",
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_sha256_match": true,
+      "model_identity_present": false,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "raw_private_id": "faa17b97-8d59-4fef-a468-f8f9cdc4f5ab",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "e261d2eb-8081-4f2a-810a-1d1869d81c6f",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 2605,
+      "stdout_sha256": "ccf3f8e2b20e1aa35efc667bb37e9524a5e9205681cb92d04a31690c711f7a81",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 9363,
+        "cache_read_input_tokens": 26087,
+        "input_tokens": 28,
+        "input_total_available": true,
+        "output_tokens": 3304,
+        "total_cost_usd": null,
+        "total_input_tokens": 35478
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/console.txt",
+          "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/junit.xml",
+          "research/test_build_failure_contract/corpus/synthetic/synthetic_clean_success/metadata.json"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "The direct domain compact contract for pytest_result specifies stop=false with reason_codes [TESTS_PASSED]. No blocking items present. Evaluation complete with respect to claimed boundaries."
+      },
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 2,
+      "diagnostic_role": "CRITICAL_ARM_B",
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_sha256_match": true,
+      "model_identity_present": false,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "raw_private_id": "be4ad18f-eb15-4224-ac51-86195dd56546",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "cc64f04d-1d53-438a-b0e7-983a04ac0fe5",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 2740,
+      "stdout_sha256": "65bfd605b4b8c700b35e1d22f2ec4758e4b4013d390cf0498f50168224bea784",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 8249,
+        "cache_read_input_tokens": 26061,
+        "input_tokens": 28,
+        "input_total_available": true,
+        "output_tokens": 2017,
+        "total_cost_usd": null,
+        "total_input_tokens": 34338
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "proof_reference:result_identity_sha256:41faa8cc93583874449197ea874c2afe2097362b8b931a596ce6e1eee7b92dfc",
+          "proof_reference:scope_identity_sha256:69bf76b5f4c8cf9ed3b0ca2412f700c8f350571899d22426484e37eccb54100c"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Tests passed cleanly. The synthetic_clean_success case shows all tests passing with no failures, errors, or blocking issues. The unified MVP contract explicitly specifies stop=false and reason_codes=[TESTS_PASSED], authorizing agent proceed."
+      },
+      "arm": "C",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "diagnostic_repeat_index": 1,
+      "diagnostic_role": "MATCHED_ARM_C",
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "input_sha256_match": true,
+      "model_identity_present": false,
+      "output_found": true,
+      "permission_denial_observed": false,
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "raw_private_id": "d587c6a2-192f-4ed2-b342-1bd466d452b3",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_valid": true,
+      "session_id": "60648533-9968-4a21-92cc-a464df719d9c",
+      "stderr_byte_size": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_byte_size": 2730,
+      "stdout_sha256": "0573fd49843f5865d22a57671e6b7a8ff35ab7210a56ba590c86e68b3f9a835a",
+      "structured_output_present": true,
+      "tools_observed": [],
+      "usage": {
+        "cache_creation_input_tokens": 6858,
+        "cache_read_input_tokens": 14312,
+        "input_tokens": 18,
+        "input_total_available": true,
+        "output_tokens": 1185,
+        "total_cost_usd": null,
+        "total_input_tokens": 21188
+      },
+      "usage_available_strict": true,
+      "workspace_mutated": false
+    }
+  ],
+  "started_at_utc": "2026-07-13T19:59:25Z",
+  "structured_output_count": 6,
+  "terminal_status": "CLAUDE_NATIVE_USAGE_TELEMETRY_INVOCATION_REPAIR_PROBE_PASS",
+  "terminal_statuses": [
+    "CLAUDE_NATIVE_USAGE_TELEMETRY_INVOCATION_REPAIR_PROBE_PASS",
+    "SIX_UNSCORED_TELEMETRY_PROBES_ONLY",
+    "READINESS_RERUN_NOT_AUTHORIZED",
+    "PRIMARY_BENCHMARK_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "usage_available_count": 6,
+  "workspace_mutation_count": 0
+}

@@ -42,3 +42,15 @@ def test_sanitize_value_redacts_windows_paths():
 
     assert "C:\\Users\\snir" not in sanitized["blocking_items"][0]
     assert "<REDACTED_LOCAL_PATH>" in sanitized["blocking_items"][0]
+
+
+def test_hardened_runner_source_has_single_json_output_format():
+    source = Path(hardening.__file__).read_text(encoding="utf-8")
+
+    assert source.count('"--output-format"') == 1
+    assert '"json"' in source
+    assert '"stream-json"' not in source
+    assert '"--json-schema"' in source
+    assert '"--allowedTools"' in source
+    assert '"--permission-mode"' in source
+    assert '"dontAsk"' in source
