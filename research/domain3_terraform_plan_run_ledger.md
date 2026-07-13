@@ -100,3 +100,24 @@ findings:
   - Corpus materialization authorization may be created next.
 next_phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZATION
 ```
+
+## Phase C.1 - Corpus Materialization Authorization
+
+```text
+phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZATION
+start_commit: 7511a16
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZED
+authorization_used: DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_ACCEPTED
+files_changed:
+  - research/terraform_plan_corpus_materialization_authorization.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - rg corpus authorization status markers
+  - git diff --check
+tests:
+  - corpus materialization authorization status present
+findings:
+  - Authorization preserves oracle, producer, Gate B, Domain 4, MVP, and release blocks.
+next_phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_ATTEMPT
+```
