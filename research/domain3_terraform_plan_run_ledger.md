@@ -32,3 +32,25 @@ findings:
   - Terraform CLI is not installed locally; this will be evaluated at the corpus materialization gate.
 next_phase: DOMAIN_3_DECLARATION_REVIEW
 ```
+
+## Phase A.2 - Declaration Review
+
+```text
+phase: DOMAIN_3_DECLARATION_REVIEW
+start_commit: cba184299eaf13ef8dc74f7349e3db4e4ffee95b
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_DECLARATION_ACCEPTED
+authorization_used: OWNER_ATTACHED_DOMAIN_3_NIGHT_RUN_PROMPT
+review_label: SOLO_MAINTAINER_PROCESS_SEPARATION_REVIEW
+files_changed:
+  - research/domain3_terraform_plan_research_declaration_review.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - rg declaration status and boundary markers
+  - git diff --check
+tests:
+  - declaration accepted verdict present
+findings:
+  - Declaration preserves the two-domain closeout and authorizes methodology only.
+next_phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY
+```
