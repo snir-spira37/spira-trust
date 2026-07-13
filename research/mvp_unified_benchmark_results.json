@@ -1,0 +1,357 @@
+{
+  "arms": [
+    "raw_evidence",
+    "domain_compact_contract",
+    "unified_product_flow"
+  ],
+  "benchmark_kind": "PROTOCOL_SMOKE",
+  "domain_contract_measurements": {
+    "max_estimated_input_tokens": 245,
+    "median_estimated_input_tokens": 196,
+    "min_estimated_input_tokens": 175
+  },
+  "domains_measured": [
+    "pytest_result",
+    "python_artifact",
+    "terraform_plan"
+  ],
+  "efficiency_claim_authorized": false,
+  "errors": [],
+  "live_agent_executed": false,
+  "median_unified_overhead_ratio": -0.10204081632653061,
+  "overhead_limit_ratio": 0.15,
+  "preservation_gates": [
+    {
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "checks": {
+        "action_preserved": true,
+        "block_preserved": true,
+        "evidence_drill_down_preserved": true,
+        "not_claimed_boundaries_preserved": true,
+        "not_evaluated_preserved": true,
+        "reason_codes_preserved": true,
+        "zero_false_proceed": true,
+        "zero_safety_overclaim": true
+      },
+      "domain": "python_artifact",
+      "status": "PASS"
+    },
+    {
+      "case_id": "synthetic_clean_success",
+      "checks": {
+        "action_preserved": true,
+        "block_preserved": true,
+        "evidence_drill_down_preserved": true,
+        "not_claimed_boundaries_preserved": true,
+        "not_evaluated_preserved": true,
+        "reason_codes_preserved": true,
+        "zero_false_proceed": true,
+        "zero_safety_overclaim": true
+      },
+      "domain": "pytest_result",
+      "status": "PASS"
+    },
+    {
+      "case_id": "auth_no_changes",
+      "checks": {
+        "action_preserved": true,
+        "block_preserved": true,
+        "evidence_drill_down_preserved": true,
+        "not_claimed_boundaries_preserved": true,
+        "not_evaluated_preserved": true,
+        "reason_codes_preserved": true,
+        "zero_false_proceed": true,
+        "zero_safety_overclaim": true
+      },
+      "domain": "terraform_plan",
+      "status": "PASS"
+    }
+  ],
+  "raw_evidence_measurements": {
+    "max_estimated_input_tokens": 684,
+    "median_estimated_input_tokens": 372,
+    "min_estimated_input_tokens": 278
+  },
+  "repetitions_per_arm": 3,
+  "schema": "SPIRA_MVP_UNIFIED_REAL_AGENT_BENCHMARK_RESULTS_V1",
+  "schema_version": 1,
+  "session_count": 27,
+  "sessions": [
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1486,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 372,
+      "repetition": 1,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:raw_evidence:1"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1486,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 372,
+      "repetition": 2,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:raw_evidence:2"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1486,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 372,
+      "repetition": 3,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:raw_evidence:3"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 977,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 245,
+      "repetition": 1,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:domain_compact_contract:1"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 977,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 245,
+      "repetition": 2,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:domain_compact_contract:2"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 977,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 245,
+      "repetition": 3,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:domain_compact_contract:3"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 897,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 225,
+      "repetition": 1,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:unified_product_flow:1"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 897,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 225,
+      "repetition": 2,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:unified_product_flow:2"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 897,
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "clean_session": true,
+      "domain": "python_artifact",
+      "estimated_input_tokens": 225,
+      "repetition": 3,
+      "session_id": "python_artifact:0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4:unified_product_flow:3"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1109,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 278,
+      "repetition": 1,
+      "session_id": "pytest_result:synthetic_clean_success:raw_evidence:1"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1109,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 278,
+      "repetition": 2,
+      "session_id": "pytest_result:synthetic_clean_success:raw_evidence:2"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 1109,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 278,
+      "repetition": 3,
+      "session_id": "pytest_result:synthetic_clean_success:raw_evidence:3"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 699,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 175,
+      "repetition": 1,
+      "session_id": "pytest_result:synthetic_clean_success:domain_compact_contract:1"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 699,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 175,
+      "repetition": 2,
+      "session_id": "pytest_result:synthetic_clean_success:domain_compact_contract:2"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 699,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 175,
+      "repetition": 3,
+      "session_id": "pytest_result:synthetic_clean_success:domain_compact_contract:3"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 619,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 155,
+      "repetition": 1,
+      "session_id": "pytest_result:synthetic_clean_success:unified_product_flow:1"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 619,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 155,
+      "repetition": 2,
+      "session_id": "pytest_result:synthetic_clean_success:unified_product_flow:2"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 619,
+      "case_id": "synthetic_clean_success",
+      "clean_session": true,
+      "domain": "pytest_result",
+      "estimated_input_tokens": 155,
+      "repetition": 3,
+      "session_id": "pytest_result:synthetic_clean_success:unified_product_flow:3"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 2736,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 684,
+      "repetition": 1,
+      "session_id": "terraform_plan:auth_no_changes:raw_evidence:1"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 2736,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 684,
+      "repetition": 2,
+      "session_id": "terraform_plan:auth_no_changes:raw_evidence:2"
+    },
+    {
+      "arm": "raw_evidence",
+      "canonical_byte_count": 2736,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 684,
+      "repetition": 3,
+      "session_id": "terraform_plan:auth_no_changes:raw_evidence:3"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 781,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 196,
+      "repetition": 1,
+      "session_id": "terraform_plan:auth_no_changes:domain_compact_contract:1"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 781,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 196,
+      "repetition": 2,
+      "session_id": "terraform_plan:auth_no_changes:domain_compact_contract:2"
+    },
+    {
+      "arm": "domain_compact_contract",
+      "canonical_byte_count": 781,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 196,
+      "repetition": 3,
+      "session_id": "terraform_plan:auth_no_changes:domain_compact_contract:3"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 701,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 176,
+      "repetition": 1,
+      "session_id": "terraform_plan:auth_no_changes:unified_product_flow:1"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 701,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 176,
+      "repetition": 2,
+      "session_id": "terraform_plan:auth_no_changes:unified_product_flow:2"
+    },
+    {
+      "arm": "unified_product_flow",
+      "canonical_byte_count": 701,
+      "case_id": "auth_no_changes",
+      "clean_session": true,
+      "domain": "terraform_plan",
+      "estimated_input_tokens": 176,
+      "repetition": 3,
+      "session_id": "terraform_plan:auth_no_changes:unified_product_flow:3"
+    }
+  ],
+  "status": "MVP_UNIFIED_REAL_AGENT_BENCHMARK_COMPLETED_WITHOUT_EFFICIENCY_CLAIM",
+  "unified_product_flow_measurements": {
+    "max_estimated_input_tokens": 225,
+    "median_estimated_input_tokens": 176,
+    "min_estimated_input_tokens": 155
+  }
+}

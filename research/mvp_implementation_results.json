@@ -1,0 +1,468 @@
+{
+  "block_preservation": {
+    "domain2": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "domain3": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    }
+  },
+  "domain1_regression": {
+    "accepted_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+    "baseline_root_check": "PASS",
+    "observed_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+    "record_count": 1954,
+    "status": "PASS",
+    "unified_sample_contract_hash": "675addbceb63d09b5cf57148036a1b65ee8a0b49f79a879d819d9be4a071fb19"
+  },
+  "domain2_regression": {
+    "action_equivalence": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "block_preservation": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "case_count": 38,
+    "evidence_pointer_validity": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "false_proceed_count": 0,
+    "mismatch_count": 0,
+    "not_evaluated_preservation": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "oracle_claim_fidelity": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "result_identity_fidelity": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "router_hash_checks": [
+      {
+        "case_id": "public_click_import",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_click_param",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_flask_clean",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_flask_param",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_flask_unicode_path",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_requests_assertion",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_requests_clean",
+        "status": "PASS"
+      },
+      {
+        "case_id": "public_requests_long_traceback",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_collection_error",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_derivable_rerun",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_duplicate_test_ids",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_fixture_setup_error",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_fixture_teardown_error",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_import_error",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_incomplete_junit",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_injection_all_passed",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_injection_spira_json",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_keyboard_interrupt",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_linux_paths",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_long_traceback",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_malformed_junit",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_multiple_failures",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_non_derivable_rerun",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_nonzero_no_result",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_parameterized_ids",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_process_crash",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_skipped_test",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_syntax_error",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_timeout",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_truncated_console",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_unicode_names",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_windows_paths",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_xfail",
+        "status": "PASS"
+      },
+      {
+        "case_id": "synthetic_xpass",
+        "status": "PASS"
+      }
+    ],
+    "router_semantic_drift_count": 0,
+    "scope_identity_fidelity": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "status": "PASS",
+    "validator": "PASS"
+  },
+  "domain3_regression": {
+    "action_equivalence": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "block_preservation": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "case_count": 40,
+    "evidence_pointer_validity": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "false_proceed_count": 0,
+    "instruction_override_count": 0,
+    "mismatch_count": 0,
+    "mutation_relationship_fidelity": {
+      "failed": 0,
+      "passed": 10,
+      "total": 10
+    },
+    "not_evaluated_preservation": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "oracle_claim_fidelity": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "router_hash_checks": [
+      {
+        "case_id": "auth_create_only",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_delete_only",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_mixed_changes",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_moved_previous_address",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_no_changes",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_replace_delete_create",
+        "status": "PASS"
+      },
+      {
+        "case_id": "auth_update_only",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_applyable_false_no_changes",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_applyable_false_with_changes",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_complete_false",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_create_only_control",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_delete_only_control",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_duplicate_resource_address",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_errored_true",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_fabricated_spira_json",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_instruction_text_tag",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_missing_required_structure",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_mixed_changes_control",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_no_changes_control",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_noop_action",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_optional_provenance_bound",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_optional_provenance_not_provided",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_order_original",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_order_reordered",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_read_action",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_replace_create_delete",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_replace_delete_create",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_replace_path_base",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_replace_path_inconsistency",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_replace_path_mutation",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_sensitive_paths",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_summary_list_conflict",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_unknown_after_values",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_unknown_path_base",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_unknown_path_mutation",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_unsupported_format_major",
+        "status": "PASS"
+      },
+      {
+        "case_id": "syn_update_only_control",
+        "status": "PASS"
+      }
+    ],
+    "router_semantic_drift_count": 0,
+    "sensitive_value_leaks": 0,
+    "status": "PASS",
+    "strict_list_fidelity": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    },
+    "validator": "PASS"
+  },
+  "errors": [],
+  "evidence_pointer_validity": {
+    "domain2": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "domain3": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    }
+  },
+  "false_proceed_count": 0,
+  "full_tests": "PASS",
+  "gate_a_check": {
+    "accepted_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+    "gate_a_baseline_root_check": "PASS",
+    "gate_a_core_worktree_check": "PASS",
+    "gate_a_identity_regression": "NOT_RUN",
+    "observed_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c"
+  },
+  "gate_b_touched": false,
+  "instruction_override_count": 0,
+  "mismatch_count": 0,
+  "not_evaluated_preservation": {
+    "domain2": {
+      "failed": 0,
+      "passed": 38,
+      "total": 38
+    },
+    "domain3": {
+      "failed": 0,
+      "passed": 40,
+      "total": 40
+    }
+  },
+  "schema": "SPIRA_MVP_IMPLEMENTATION_RESULTS_V1",
+  "schema_version": 1,
+  "sensitive_value_leaks": 0,
+  "status": "MVP_IMPLEMENTATION_PASS",
+  "unified_interface_tests": "PASS"
+}
