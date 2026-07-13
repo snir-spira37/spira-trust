@@ -32,6 +32,7 @@ PRIMARY_STATUS_AUTHORIZATION_REVISION_REQUIRED = "CLAUDE_NATIVE_PRIMARY_BENCHMAR
 
 PRIVATE_ROOT_PREFIX = "spira_claude_native_primary_private_"
 MAX_INFRASTRUCTURE_RETRIES = 2
+RESUMABLE_STATUSES = {"PENDING", "RUNNING", "RATE_LIMIT_BLOCKED"}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -84,6 +85,10 @@ def run_primary(*, private_root: Path | None = None, resume: bool = False, max_n
     for entry in manifest["sessions"]:
         if entry["status"] == "COMPLETED":
             continue
+        if entry["status"] == "RATE_LIMIT_BLOCKED" and resume:
+            entry["status"] = "PENDING"
+            update_manifest_counts(manifest)
+            atomic_json_write(SESSION_MANIFEST_PATH, manifest)
         if entry["status"] == "INFRASTRUCTURE_FAILURE":
             errors.append("PERSISTENT_INFRASTRUCTURE_FAILURE_PRESENT")
             break
@@ -102,6 +107,9 @@ def run_primary(*, private_root: Path | None = None, resume: bool = False, max_n
             results,
         )
         executed_now += 1
+        if result.get("rate_limit_blocked"):
+            errors.append("RATE_LIMIT_BLOCKED")
+            break
         if result.get("persistent_infrastructure_failure"):
             errors.append("PERSISTENT_INFRASTRUCTURE_FAILURE_PRESENT")
             break
@@ -250,6 +258,8 @@ def reconcile_manifest_with_results(manifest: dict[str, Any], results: dict[str,
         elif entry["status"] == "RUNNING" and entry["session_index"] not in completed_indexes:
             entry["status"] = "PENDING"
             changed = True
+        elif entry["status"] == "RATE_LIMIT_BLOCKED" and entry["session_index"] not in completed_indexes:
+            changed = True
     if changed:
         update_manifest_counts(manifest)
         atomic_json_write(SESSION_MANIFEST_PATH, manifest)
@@ -292,6 +302,9 @@ def execute_planned_session(
         attempts.append(attempt_summary(session, attempt_number))
         manifest_entry["attempts"][-1] = attempts[-1]
 
+        if is_rate_limit_failure(session):
+            final_session = session
+            break
         if not is_infrastructure_failure(session):
             final_session = session
             break
@@ -300,6 +313,20 @@ def execute_planned_session(
             break
 
     assert final_session is not None
+    if is_rate_limit_failure(final_session):
+        final_session["rate_limit_blocked"] = True
+        results.setdefault("infrastructure_events", []).append(final_session)
+        manifest_entry["status"] = "RATE_LIMIT_BLOCKED"
+        manifest_entry["completed_at_utc"] = None
+        manifest_entry["result_recorded"] = False
+        update_manifest_counts(manifest)
+        update_results_counts(results, manifest)
+        atomic_json_write(PRIVATE_MANIFEST_PATH, raw_manifest_payload(raw_manifest))
+        atomic_json_write(RESULTS_PATH, results)
+        atomic_json_write(SESSION_MANIFEST_PATH, manifest)
+        REPORT_PATH.write_text(report_markdown(results, manifest), encoding="utf-8")
+        return final_session
+
     persistent_infra = is_infrastructure_failure(final_session)
     final_session["persistent_infrastructure_failure"] = persistent_infra
     final_session["attempts"] = attempts
@@ -334,6 +361,8 @@ def run_primary_session(
     session = readiness.run_session(item, expected, schema, transport_schema, private_root, raw_manifest)
     for raw_item in raw_manifest[raw_start:]:
         raw_item["classification"] = str(raw_item.get("classification", "")).replace("READINESS", "PRIMARY")
+    provider_error = provider_error_from_raw(private_root, session.get("raw_private_id"))
+    session.update(provider_error)
     session["session_index"] = session_index
     session["repetition"] = repetition
     session["attempt_number"] = attempt_number
@@ -366,6 +395,32 @@ def is_infrastructure_failure(session: Mapping[str, Any]) -> bool:
     )
 
 
+def is_rate_limit_failure(session: Mapping[str, Any]) -> bool:
+    result_text = str(session.get("provider_result", "")).lower()
+    return bool(
+        session.get("provider_api_error_status") == 429
+        or session.get("provider_terminal_reason") == "api_error" and "session limit" in result_text
+        or "rate limit" in result_text
+    )
+
+
+def provider_error_from_raw(private_root: Path, raw_private_id: Any) -> dict[str, Any]:
+    if not raw_private_id:
+        return {}
+    matches = list(private_root.rglob(f"{raw_private_id}-*"))
+    if not matches:
+        return {}
+    parsed = readiness.parse_json(matches[0].read_bytes())
+    if not isinstance(parsed, Mapping):
+        return {}
+    return {
+        "provider_api_error_status": parsed.get("api_error_status"),
+        "provider_terminal_reason": parsed.get("terminal_reason"),
+        "provider_is_error": parsed.get("is_error"),
+        "provider_result": parsed.get("result") if isinstance(parsed.get("result"), str) else None,
+    }
+
+
 def arm_a_operational_pass(session: Mapping[str, Any]) -> bool:
     comparison = session.get("comparison") if isinstance(session.get("comparison"), Mapping) else {}
     checks = comparison.get("checks") if isinstance(comparison.get("checks"), Mapping) else {}
@@ -385,11 +440,13 @@ def attempt_summary(session: Mapping[str, Any], attempt_number: int) -> dict[str
     return {
         "attempt": attempt_number,
         "completed_at_utc": readiness.utc_now(),
-        "status": "INFRASTRUCTURE_FAILURE" if is_infrastructure_failure(session) else "COMPLETED",
+        "status": "RATE_LIMIT_BLOCKED" if is_rate_limit_failure(session) else "INFRASTRUCTURE_FAILURE" if is_infrastructure_failure(session) else "COMPLETED",
         "returncode": session.get("returncode"),
         "result_envelope_present": session.get("result_envelope_present"),
         "structured_output_present": session.get("structured_output_present"),
         "usage_available": usage_available(session),
+        "provider_api_error_status": session.get("provider_api_error_status"),
+        "provider_terminal_reason": session.get("provider_terminal_reason"),
         "raw_private_id": session.get("raw_private_id"),
     }
 
@@ -397,7 +454,7 @@ def attempt_summary(session: Mapping[str, Any], attempt_number: int) -> dict[str
 def update_manifest_counts(manifest: dict[str, Any]) -> None:
     completed = sum(1 for item in manifest["sessions"] if item["status"] == "COMPLETED")
     manifest["completed_session_count"] = completed
-    manifest["next_session_index"] = next((item["session_index"] for item in manifest["sessions"] if item["status"] in {"PENDING", "RUNNING"}), None)
+    manifest["next_session_index"] = next((item["session_index"] for item in manifest["sessions"] if item["status"] in RESUMABLE_STATUSES), None)
     manifest["updated_at_utc"] = readiness.utc_now()
     if completed == manifest["session_count"]:
         manifest["status"] = "CLAUDE_NATIVE_PRIMARY_SESSION_MANIFEST_COMPLETE"
@@ -443,7 +500,9 @@ def finalize_results(
 ) -> dict[str, Any]:
     update_manifest_counts(manifest)
     update_results_counts(results, manifest)
-    if errors:
+    if "RATE_LIMIT_BLOCKED" in errors:
+        terminal = PRIMARY_STATUS_INFRASTRUCTURE_BLOCKED
+    elif errors:
         terminal = PRIMARY_STATUS_INFRASTRUCTURE_BLOCKED if "PERSISTENT_INFRASTRUCTURE_FAILURE_PRESENT" in errors else PRIMARY_STATUS_AUTHORIZATION_REVISION_REQUIRED
     elif results["completed_session_count"] == results["session_count"]:
         terminal = PRIMARY_STATUS_COMPLETE

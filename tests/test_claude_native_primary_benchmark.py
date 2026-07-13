@@ -72,6 +72,16 @@ def test_infrastructure_failure_classification():
     )
 
 
+def test_rate_limit_failure_is_distinct_from_scored_infra_failure():
+    session = {
+        "provider_api_error_status": 429,
+        "provider_terminal_reason": "api_error",
+        "provider_result": "You've hit your session limit",
+    }
+
+    assert primary.is_rate_limit_failure(session)
+
+
 def test_usage_and_false_proceed_helpers_are_type_safe():
     assert not primary.usage_available({"usage": "bad"})
     assert not primary.false_proceed({"comparison": "bad"})
@@ -103,6 +113,21 @@ def test_primary_runner_declares_checkpoint_files():
     assert primary.SESSION_MANIFEST_PATH.name == "claude_native_primary_session_manifest.json"
     assert primary.RESULTS_PATH.name == "claude_native_primary_results.json"
     assert primary.PRIVATE_MANIFEST_PATH.name == "claude_native_primary_raw_private_manifest.json"
+
+
+def test_manifest_next_session_includes_rate_limit_blocked():
+    manifest = {
+        "session_count": 2,
+        "sessions": [
+            {"session_index": 1, "status": "COMPLETED"},
+            {"session_index": 2, "status": "RATE_LIMIT_BLOCKED"},
+        ],
+    }
+
+    primary.update_manifest_counts(manifest)
+
+    assert manifest["completed_session_count"] == 1
+    assert manifest["next_session_index"] == 2
 
 
 def test_atomic_json_write_round_trips(tmp_path):
