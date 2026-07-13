@@ -77,3 +77,26 @@ findings:
   - Synthetic JSON may not be mislabeled as Terraform-generated evidence.
 next_phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY_REVIEW
 ```
+
+## Phase B.2 - Methodology Review
+
+```text
+phase: TERRAFORM_PLAN_EVIDENCE_METHODOLOGY_REVIEW
+start_commit: b400ece
+end_commit: PENDING
+status: DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_ACCEPTED
+authorization_used: DOMAIN_3_TERRAFORM_PLAN_METHODOLOGY_LOCKED
+review_label: SOLO_MAINTAINER_PROCESS_SEPARATION_REVIEW
+files_changed:
+  - research/terraform_plan_evidence_methodology_v1_review.md
+  - research/domain3_terraform_plan_run_ledger.md
+commands_run:
+  - rg methodology review verdict
+  - git diff --check
+tests:
+  - accepted methodology verdict present
+findings:
+  - Methodology accepted.
+  - Corpus materialization authorization may be created next.
+next_phase: TERRAFORM_PLAN_CORPUS_MATERIALIZATION_AUTHORIZATION
+```
