@@ -1,0 +1,16 @@
+{
+  "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+  "raw_file_count": 1,
+  "raw_files": [
+    {
+      "byte_size": 454,
+      "classification": "DIRECT_PROVIDER_RESPONSE",
+      "public_path_recorded": false,
+      "raw_private_id": "976881a0-4202-44df-a567-e1de6aaf8229",
+      "sha256": "1f255c7b6a769bbf6b11d7404480edba7ed9007aa151417d36711e50664d880b",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T15:42:01Z"
+    }
+  ],
+  "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"
+}

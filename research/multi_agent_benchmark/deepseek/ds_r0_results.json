@@ -1,0 +1,108 @@
+{
+  "authentication_ready": true,
+  "benchmark_cases_sent_to_model": 0,
+  "blockers": [
+    "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED"
+  ],
+  "cache_decomposition_status": "AVAILABLE",
+  "carryover_sessions": 0,
+  "claude_code_version": null,
+  "claude_init_model": null,
+  "completed_at_utc": "2026-07-13T15:42:01Z",
+  "efficiency_claim_authorized": false,
+  "forbidden_tool_call_count": 0,
+  "harness_ready": false,
+  "holdout_sessions": 0,
+  "inventory": {
+    "branch": "codex/domain3-terraform-plan-retry-1",
+    "claude_executable": null,
+    "claude_launcher_sha256": null,
+    "claude_version": null,
+    "git_commit": "72cb6d8ab3da93480b502bac9aab8bb8e08d18e8",
+    "node_version": null,
+    "python_version": "3.12.10",
+    "timestamp_utc": "2026-07-13T15:41:59Z",
+    "windows_version": "Windows-10-10.0.19045-SP0"
+  },
+  "live_api_call_count": 1,
+  "live_calls_started": true,
+  "model_resolution_ready": false,
+  "phase": "DS-R0",
+  "primary_sessions": 0,
+  "probe_count": 1,
+  "probe_results": {
+    "DS-R0-P1": {
+      "errors": [
+        "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED"
+      ],
+      "http_status": 200,
+      "live_call_count": 1,
+      "model_resolution_ready": false,
+      "model_resolution_status": "DEEPSEEK_V4_PRO_MODEL_RESOLUTION_NORMALIZED",
+      "probe": "DS-R0-P1",
+      "provider_request_id_present": false,
+      "raw_private_id": "976881a0-4202-44df-a567-e1de6aaf8229",
+      "ready": false,
+      "resolved_provider_model": "deepseek-v4-pro",
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_decomposition_status": "AVAILABLE",
+        "cache_read_input_tokens": 0,
+        "input_tokens": 9,
+        "input_total_available": true,
+        "output_tokens": 16,
+        "provider_cost_status": "NOT_EVALUATED",
+        "total_cost_usd": null,
+        "total_input_tokens": 9,
+        "usage_keys": [
+          "cache_creation_input_tokens",
+          "cache_read_input_tokens",
+          "input_tokens",
+          "output_tokens",
+          "service_tier"
+        ]
+      }
+    }
+  },
+  "provider_cost_status": "NOT_EVALUATED",
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 1,
+    "raw_files": [
+      {
+        "byte_size": 454,
+        "classification": "DIRECT_PROVIDER_RESPONSE",
+        "public_path_recorded": false,
+        "raw_private_id": "976881a0-4202-44df-a567-e1de6aaf8229",
+        "sha256": "1f255c7b6a769bbf6b11d7404480edba7ed9007aa151417d36711e50664d880b",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T15:42:01Z"
+      }
+    ],
+    "schema": "SPIRA_DEEPSEEK_DS_R0_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "release_authorized": false,
+  "repository_mutation_count": 0,
+  "requested_model": "deepseek-v4-pro[1m]",
+  "resolved_provider_model": "deepseek-v4-pro",
+  "schema": "SPIRA_DEEPSEEK_DS_R0_RESULTS_V1",
+  "scored": false,
+  "scored_readiness_sessions": 0,
+  "session_isolation_ready": false,
+  "started_at_utc": "2026-07-13T15:41:59Z",
+  "structured_output_ready": false,
+  "terminal_status": "DS_R0_TECHNICAL_PROBES_BLOCKED",
+  "terminal_statuses": [
+    "DS_R0_TECHNICAL_PROBES_BLOCKED",
+    "DEEPSEEK_USAGE_ACCOUNTING_READY",
+    "NINE_LIVE_READINESS_SESSIONS_NOT_STARTED",
+    "DS_R0_REVIEW_REQUIRED_NEXT",
+    "MVP_CODE_UNCHANGED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "tool_isolation_ready": false,
+  "track": "DeepSeek model via Claude Code harness",
+  "usage_accounting_ready": true,
+  "workspace_mutation_count": 0
+}
