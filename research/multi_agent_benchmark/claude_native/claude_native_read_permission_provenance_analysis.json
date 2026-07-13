@@ -1,0 +1,43 @@
+{
+  "authorized_session": {
+    "diagnostic_repeat_index": 4,
+    "diagnostic_role": "CRITICAL_ARM_B",
+    "raw_private_id": "8fa32b5a-0b12-48b3-80c9-be10ff07905a",
+    "stdout_sha256": "207e29e682158555b5c769f108b7601be3edb4ddf0b5fcf34db23a1e51319c77"
+  },
+  "forbidden_publication": {
+    "private_raw_file_path_published": false,
+    "raw_private_response_published": false
+  },
+  "input_public_telemetry": {
+    "returncode": 0,
+    "stderr_empty": true,
+    "tools_observed": []
+  },
+  "outcome_statuses": [
+    "READ_PERMISSION_DENIAL_RUNTIME_CONFIRMED",
+    "READ_INVOCATION_HARDENING_REQUIRED",
+    "PRIMARY_BENCHMARK_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "private_raw_analysis": {
+    "blocked_path_redacted": true,
+    "model_textual_claim_present": true,
+    "permission_denial_metadata_present": true,
+    "permission_denials_count": 1,
+    "raw_sha256_match": true,
+    "runtime_error_event_present": false,
+    "structured_output_present": true,
+    "tool_result_event_present": false,
+    "tool_use_event_present": false
+  },
+  "runtime_permission_metadata": {
+    "blocked_path_recorded_in_private_raw": true,
+    "permission_decision_or_reason_present": false,
+    "tool_input_file_path_present": true,
+    "tool_name": "Read",
+    "tool_use_id_present": true
+  },
+  "schema": "SPIRA_CLAUDE_NATIVE_READ_PERMISSION_PROVENANCE_ANALYSIS_V1"
+}
