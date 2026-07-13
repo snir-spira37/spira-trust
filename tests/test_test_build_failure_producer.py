@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import importlib.util
 import json
 from pathlib import Path
 
@@ -11,6 +12,7 @@ from spira_core import test_build_failure_producer as producer
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "research" / "test_build_failure_contract" / "corpus_manifest_v1.json"
 ORACLE = ROOT / "research" / "test_build_failure_contract" / "oracle_v1.json"
+EVALUATOR = ROOT / "tools" / "evaluate_test_build_failure_producer.py"
 
 
 def test_producer_matches_accepted_oracle_for_full_corpus():
@@ -81,6 +83,54 @@ def test_contextual_mutation_relationship_preserves_scope_and_result_identity():
     assert by_related["synthetic_multiple_failures"]["result_identity_relation"] == "DIFFERENT"
 
 
+def test_scope_identity_mismatch_fails_evaluation():
+    evaluator = _evaluator()
+    oracle = _oracle()
+    produced = producer.produce_cases(_manifest(), root=ROOT)
+    produced[0] = copy.deepcopy(produced[0])
+    produced[0]["produced_scope_identity"] = copy.deepcopy(produced[0]["produced_scope_identity"])
+    produced[0]["produced_scope_identity"]["scope_identity_sha256"] = "0" * 64
+
+    result = evaluator.evaluate_against_oracle(oracle, produced, _validator_pass())
+
+    assert result["status"] == "DOMAIN_2_PRODUCER_IMPLEMENTATION_FAILED"
+    assert result["scope_identity_fidelity"]["failed"] == 1
+    assert result["mismatch_count"] > 0
+
+
+def test_result_identity_mismatch_fails_evaluation():
+    evaluator = _evaluator()
+    oracle = _oracle()
+    produced = producer.produce_cases(_manifest(), root=ROOT)
+    produced[8] = copy.deepcopy(produced[8])
+    produced[8]["produced_result_identity"] = copy.deepcopy(produced[8]["produced_result_identity"])
+    if produced[8]["produced_result_identity"]["status"] == "EMITTED":
+        produced[8]["produced_result_identity"]["result_identity_sha256"] = "0" * 64
+    else:
+        produced[8]["produced_result_identity"]["reason_codes"] = ["MUTATED"]
+
+    result = evaluator.evaluate_against_oracle(oracle, produced, _validator_pass())
+
+    assert result["status"] == "DOMAIN_2_PRODUCER_IMPLEMENTATION_FAILED"
+    assert result["result_identity_fidelity"]["failed"] == 1
+    assert result["mismatch_count"] > 0
+
+
+def test_mismatch_count_blocks_pass_even_when_other_gates_are_green(monkeypatch):
+    evaluator = _evaluator()
+    oracle = _oracle()
+    produced = producer.produce_cases(_manifest(), root=ROOT)
+    produced[0] = copy.deepcopy(produced[0])
+    produced[0]["produced_scope_identity"] = copy.deepcopy(produced[0]["produced_scope_identity"])
+    produced[0]["produced_scope_identity"]["scope_identity_sha256"] = "0" * 64
+
+    monkeypatch.setattr(evaluator, "_count", lambda *, all_values: {"passed": len(all_values), "total": len(all_values), "failed": 0})
+    result = evaluator.evaluate_against_oracle(oracle, produced, _validator_pass())
+
+    assert result["mismatch_count"] > 0
+    assert result["status"] == "DOMAIN_2_PRODUCER_IMPLEMENTATION_FAILED"
+
+
 def _manifest():
     return json.loads(MANIFEST.read_text(encoding="utf-8"))
 
@@ -121,3 +171,25 @@ def _candidate_oracle(oracle: dict, produced: list[dict]) -> dict:
         for item in produced
     ]
     return candidate
+
+
+def _evaluator():
+    spec = importlib.util.spec_from_file_location("evaluate_test_build_failure_producer", EVALUATOR)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+def _validator_pass():
+    return {
+        "verdict": "PASS",
+        "status": "ORACLE_VALIDATION_PASS",
+        "counts": {
+            "case_count": 38,
+            "relationship_count": 12,
+            "declared_delta_count": 6,
+            "error_count": 0,
+            "warning_count": 0,
+        },
+    }

@@ -22,6 +22,12 @@ MANIFEST = OUT / "corpus_manifest_v1.json"
 ORACLE = OUT / "oracle_v1.json"
 REPORT = OUT / "producer_implementation_report.md"
 RESULTS = OUT / "producer_implementation_results.json"
+GATE_A_BASELINE = ROOT / "research" / "unification_proof_corpus" / "results" / "domain1_identity_baseline_v1.json"
+GATE_A_BASELINE_ROOT = "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c"
+GATE_A_FROZEN_FILES = [
+    "source/spira_core/unification_proof.py",
+    "research/unification_proof_corpus/results/domain1_identity_baseline_v1.json",
+]
 
 
 def main() -> None:
@@ -81,6 +87,8 @@ def evaluate_against_oracle(
     relationship_matches = []
     not_evaluated_matches = []
     block_matches = []
+    scope_identity_matches = []
+    result_identity_matches = []
     false_proceeds = []
     mismatches: list[dict[str, Any]] = []
     for case_id in case_ids:
@@ -107,6 +115,8 @@ def evaluate_against_oracle(
         relationship_matches.append(checks["relationships"])
         not_evaluated_matches.append(checks["not_evaluated"])
         block_matches.append(checks["block"])
+        scope_identity_matches.append(checks["scope_identity"])
+        result_identity_matches.append(checks["result_identity"])
         expected_action = expected["expected_policy_action"]["recommended_agent_action"]
         produced_action = produced["produced_policy_action"]["recommended_agent_action"]
         if expected_action != "PROCEED" and produced_action == "PROCEED":
@@ -114,7 +124,7 @@ def evaluate_against_oracle(
         for field, ok in checks.items():
             if not ok:
                 mismatches.append({"case_id": case_id, "field": field})
-    gate_a_check = gate_a_unchanged()
+    gate_a_checks = gate_a_baseline_checks()
     status = "DOMAIN_2_PRODUCER_IMPLEMENTATION_PASS"
     if (
         len(produced_cases) != len(case_ids)
@@ -126,8 +136,12 @@ def evaluate_against_oracle(
         or not all(relationship_matches)
         or not all(not_evaluated_matches)
         or not all(block_matches)
+        or not all(scope_identity_matches)
+        or not all(result_identity_matches)
+        or mismatches
         or validation.get("verdict") != "PASS"
-        or gate_a_check != "PASS"
+        or gate_a_checks["gate_a_baseline_root_check"] != "PASS"
+        or gate_a_checks["gate_a_core_worktree_check"] != "PASS"
     ):
         status = "DOMAIN_2_PRODUCER_IMPLEMENTATION_FAILED"
     return {
@@ -135,7 +149,11 @@ def evaluate_against_oracle(
         "schema_version": 1,
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "status": status,
+        "revision_status": "DOMAIN_2_PRODUCER_REVISION_COMPLETE"
+        if status == "DOMAIN_2_PRODUCER_IMPLEMENTATION_PASS"
+        else "DOMAIN_2_PRODUCER_REVISION_FAILED",
         "authorization": "research/test_build_failure_contract_producer_implementation_authorization.md",
+        "revision_authorization": "research/test_build_failure_contract_producer_revision_authorization.md",
         "producer_module": "source/spira_core/test_build_failure_producer.py",
         "case_count": len(case_ids),
         "producer_case_count": len(produced_cases),
@@ -148,11 +166,13 @@ def evaluate_against_oracle(
         "identity_relationship_preservation": _count(all_values=relationship_matches),
         "not_evaluated_preservation": _count(all_values=not_evaluated_matches),
         "block_preservation": _count(all_values=block_matches),
+        "scope_identity_fidelity": _count(all_values=scope_identity_matches),
+        "result_identity_fidelity": _count(all_values=result_identity_matches),
         "schema_v7_validation": "PASS" if validation.get("verdict") == "PASS" else "FAIL",
         "accepted_validator_verdict": validation.get("verdict"),
         "accepted_validator_status": validation.get("status"),
         "accepted_validator_counts": validation.get("counts"),
-        "gate_a_identity_unchanged": gate_a_check,
+        **gate_a_checks,
         "producer_output_observed": True,
         "oracle_authoring_producer_output_observed": False,
         "not_authorized": [
@@ -170,14 +190,37 @@ def evaluate_against_oracle(
     }
 
 
-def gate_a_unchanged() -> str:
-    files = [
-        "source/spira_core/unification_proof.py",
-        "research/unification_proof_corpus/results/domain1_identity_baseline_v1.json",
-    ]
+def gate_a_baseline_checks() -> dict[str, Any]:
+    baseline_root_result = "FAIL"
+    recomputed_root = None
+    record_count = 0
+    if GATE_A_BASELINE.exists():
+        baseline = _read_json(GATE_A_BASELINE)
+        records = sorted(baseline.get("records") or [], key=lambda item: str(item.get("artifact_sha256") or ""))
+        record_count = len(records)
+        recomputed_root = _sha256_canonical(records)
+        if (
+            recomputed_root == baseline.get("domain1_identity_baseline_root")
+            and recomputed_root == GATE_A_BASELINE_ROOT
+            and record_count == 1954
+        ):
+            baseline_root_result = "PASS"
+    worktree_result = gate_a_core_worktree_check()
+    return {
+        "gate_a_identity_regression": "NOT_RUN",
+        "gate_a_identity_regression_reason": "full Gate A isolated regression not run in this narrow evaluator revision; fallback root and worktree checks used",
+        "gate_a_baseline_root_check": baseline_root_result,
+        "gate_a_baseline_root": GATE_A_BASELINE_ROOT,
+        "gate_a_baseline_root_recomputed": recomputed_root,
+        "gate_a_baseline_record_count": record_count,
+        "gate_a_core_worktree_check": worktree_result,
+    }
+
+
+def gate_a_core_worktree_check() -> str:
     try:
         completed = subprocess.run(
-            ["git", "status", "--short", "--", *files],
+            ["git", "status", "--short", "--", *GATE_A_FROZEN_FILES],
             cwd=ROOT,
             check=False,
             capture_output=True,
@@ -197,6 +240,7 @@ def report_markdown(results: Mapping[str, Any], validation: Mapping[str, Any]) -
             "",
             "```text",
             str(results["status"]),
+            str(results["revision_status"]),
             "GATE_B_NOT_AUTHORIZED",
             "DOMAIN_3_NOT_AUTHORIZED",
             "```",
@@ -215,7 +259,12 @@ def report_markdown(results: Mapping[str, Any], validation: Mapping[str, Any]) -
                     "identity_relationship_preservation": results["identity_relationship_preservation"],
                     "not_evaluated_preservation": results["not_evaluated_preservation"],
                     "block_preservation": results["block_preservation"],
-                    "gate_a_identity_unchanged": results["gate_a_identity_unchanged"],
+                    "scope_identity_fidelity": results["scope_identity_fidelity"],
+                    "result_identity_fidelity": results["result_identity_fidelity"],
+                    "mismatch_count": results["mismatch_count"],
+                    "gate_a_identity_regression": results["gate_a_identity_regression"],
+                    "gate_a_baseline_root_check": results["gate_a_baseline_root_check"],
+                    "gate_a_core_worktree_check": results["gate_a_core_worktree_check"],
                 },
                 indent=2,
                 sort_keys=True,
@@ -253,6 +302,10 @@ def _count(*, all_values: list[bool]) -> dict[str, int]:
         "total": len(all_values),
         "failed": len(all_values) - passed,
     }
+
+
+def _sha256_canonical(value: Any) -> str:
+    return validator.sha256_hex(value)
 
 
 def _read_json(path: Path) -> Any:

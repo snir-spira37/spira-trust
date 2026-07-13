@@ -4,6 +4,7 @@ Status:
 
 ```text
 DOMAIN_2_PRODUCER_IMPLEMENTATION_PASS
+DOMAIN_2_PRODUCER_REVISION_COMPLETE
 GATE_B_NOT_AUTHORIZED
 DOMAIN_3_NOT_AUTHORIZED
 ```
@@ -29,18 +30,31 @@ Acceptance gates:
     "total": 38
   },
   "false_proceed_count": 0,
-  "gate_a_identity_unchanged": "PASS",
+  "gate_a_baseline_root_check": "PASS",
+  "gate_a_core_worktree_check": "PASS",
+  "gate_a_identity_regression": "NOT_RUN",
   "identity_relationship_preservation": {
     "failed": 0,
     "passed": 38,
     "total": 38
   },
+  "mismatch_count": 0,
   "not_evaluated_preservation": {
     "failed": 0,
     "passed": 38,
     "total": 38
   },
   "oracle_claim_fidelity": {
+    "failed": 0,
+    "passed": 38,
+    "total": 38
+  },
+  "result_identity_fidelity": {
+    "failed": 0,
+    "passed": 38,
+    "total": 38
+  },
+  "scope_identity_fidelity": {
     "failed": 0,
     "passed": 38,
     "total": 38

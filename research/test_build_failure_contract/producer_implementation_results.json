@@ -27,8 +27,14 @@
   },
   "false_proceed_cases": [],
   "false_proceed_count": 0,
-  "gate_a_identity_unchanged": "PASS",
-  "generated_at": "2026-07-12T23:50:55Z",
+  "gate_a_baseline_record_count": 1954,
+  "gate_a_baseline_root": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+  "gate_a_baseline_root_check": "PASS",
+  "gate_a_baseline_root_recomputed": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+  "gate_a_core_worktree_check": "PASS",
+  "gate_a_identity_regression": "NOT_RUN",
+  "gate_a_identity_regression_reason": "full Gate A isolated regression not run in this narrow evaluator revision; fallback root and worktree checks used",
+  "generated_at": "2026-07-13T00:06:23Z",
   "identity_relationship_preservation": {
     "failed": 0,
     "passed": 38,
@@ -60,9 +66,21 @@
   "producer_case_count": 38,
   "producer_module": "source/spira_core/test_build_failure_producer.py",
   "producer_output_observed": true,
+  "result_identity_fidelity": {
+    "failed": 0,
+    "passed": 38,
+    "total": 38
+  },
+  "revision_authorization": "research/test_build_failure_contract_producer_revision_authorization.md",
+  "revision_status": "DOMAIN_2_PRODUCER_REVISION_COMPLETE",
   "schema": "SPIRA_DOMAIN2_PRODUCER_IMPLEMENTATION_RESULTS",
   "schema_v7_validation": "PASS",
   "schema_version": 1,
+  "scope_identity_fidelity": {
+    "failed": 0,
+    "passed": 38,
+    "total": 38
+  },
   "status": "DOMAIN_2_PRODUCER_IMPLEMENTATION_PASS",
   "strict_list_fidelity": {
     "failed": 0,
