@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import tempfile
+import time
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -613,7 +614,19 @@ def atomic_json_write(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(f".{path.name}.{readiness.uuid.uuid4().hex}.tmp")
     tmp.write_text(json.dumps(value, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    tmp.replace(path)
+    last_error: PermissionError | None = None
+    for attempt in range(20):
+        try:
+            tmp.replace(path)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            time.sleep(0.1 * (attempt + 1))
+    try:
+        tmp.unlink(missing_ok=True)
+    finally:
+        if last_error is not None:
+            raise last_error
 
 
 if __name__ == "__main__":

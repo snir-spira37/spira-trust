@@ -103,3 +103,12 @@ def test_primary_runner_declares_checkpoint_files():
     assert primary.SESSION_MANIFEST_PATH.name == "claude_native_primary_session_manifest.json"
     assert primary.RESULTS_PATH.name == "claude_native_primary_results.json"
     assert primary.PRIVATE_MANIFEST_PATH.name == "claude_native_primary_raw_private_manifest.json"
+
+
+def test_atomic_json_write_round_trips(tmp_path):
+    path = tmp_path / "checkpoint.json"
+
+    primary.atomic_json_write(path, {"b": 2, "a": 1})
+
+    assert json.loads(path.read_text(encoding="utf-8")) == {"a": 1, "b": 2}
+    assert not list(tmp_path.glob(".*.tmp"))
