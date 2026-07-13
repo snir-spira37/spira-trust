@@ -1,0 +1,85 @@
+{
+  "analysis_scope": "EXISTING_RUNNER_AND_RESULTS_ANALYSIS_ONLY",
+  "baseline_readiness_runner": {
+    "path": "tools/run_claude_native_readiness.py",
+    "argv_features": {
+      "--allowedTools": "ABSENT",
+      "--disallowedTools": "PRESENT",
+      "--disable-slash-commands": "PRESENT",
+      "--json-schema": "PRESENT",
+      "--max-turns": "PRESENT",
+      "--model": "PRESENT",
+      "--no-chrome": "PRESENT",
+      "--no-session-persistence": "PRESENT",
+      "--output-format json": "PRESENT",
+      "--permission-mode dontAsk": "PRESENT",
+      "--print": "PRESENT",
+      "--session-id": "PRESENT",
+      "--strict-mcp-config": "PRESENT",
+      "--tools Read,Glob,Grep": "PRESENT"
+    }
+  },
+  "boundary": {
+    "cases_changed": false,
+    "comparator_changed": false,
+    "efficiency_claim_authorized": false,
+    "mvp_code_changed": false,
+    "new_live_sessions": 0,
+    "primary_benchmark_authorized": false,
+    "prompts_changed": false,
+    "raw_private_response_published": false,
+    "readiness_rerun_authorized": false,
+    "release_authorized": false,
+    "schema_changed": false
+  },
+  "findings": [
+    "HARDENED_RUNNER_OUTPUT_FORMAT_JSON_OMITTED",
+    "BARE_STRUCTURED_JSON_OUTPUT_EXPLAINED_BY_DEFAULT_OUTPUT_MODE_CANDIDATE",
+    "USAGE_TELEMETRY_FAILURE_NOT_ATTRIBUTED_TO_ALLOWED_TOOLS",
+    "USAGE_TELEMETRY_INVOCATION_REPAIR_REQUIRED"
+  ],
+  "hardening_diagnostic_result_preserved": {
+    "correctness": "20 / 20",
+    "permission_denials": 0,
+    "schema_valid": "20 / 20",
+    "usage_available": "0 / 20"
+  },
+  "hardening_diagnostic_runner": {
+    "path": "tools/run_claude_native_read_invocation_hardening_diagnostic.py",
+    "argv_features": {
+      "--allowedTools Read,Glob,Grep": "PRESENT",
+      "--disallowedTools": "PRESENT",
+      "--disable-slash-commands": "PRESENT",
+      "--json-schema": "PRESENT",
+      "--max-turns": "PRESENT",
+      "--model": "PRESENT",
+      "--no-chrome": "PRESENT",
+      "--no-session-persistence": "PRESENT",
+      "--output-format json": "ABSENT",
+      "--permission-mode dontAsk": "PRESENT",
+      "--print": "PRESENT",
+      "--session-id": "PRESENT",
+      "--strict-mcp-config": "PRESENT",
+      "--tools Read,Glob,Grep": "PRESENT"
+    }
+  },
+  "interpretation": {
+    "not_yet_proven": [
+      "restoring --output-format json will restore usage under the hardened invocation"
+    ],
+    "proven": [
+      "--output-format json was omitted from the hardening diagnostic runner",
+      "--allowedTools Read,Glob,Grep was present in the hardening diagnostic runner",
+      "--output-format json was present in the baseline readiness runner"
+    ],
+    "strongly_supported": [
+      "the omission explains bare structured JSON and missing usage envelope",
+      "usage telemetry failure is not currently attributed to --allowedTools"
+    ]
+  },
+  "next_authorization_candidate": {
+    "only_allowed_runner_change": "add --output-format json",
+    "stream_json_fallback_authorized": false
+  },
+  "schema": "SPIRA_CLAUDE_NATIVE_USAGE_TELEMETRY_RUNNER_DELTA_ANALYSIS_V1"
+}
