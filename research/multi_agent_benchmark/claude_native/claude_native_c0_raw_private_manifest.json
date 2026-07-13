@@ -1,0 +1,25 @@
+{
+  "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+  "raw_file_count": 2,
+  "raw_files": [
+    {
+      "byte_size": 748,
+      "classification": "CLAUDE_NATIVE_C0_STDOUT",
+      "public_path_recorded": false,
+      "raw_private_id": "0db27d48-ed10-4ea1-96e2-c240b0e26faf",
+      "sha256": "c6caaac1743a243804dd963e6b5f48c5a4257658d7076897c88d8e9bf71a1205",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T17:31:02Z"
+    },
+    {
+      "byte_size": 0,
+      "classification": "CLAUDE_NATIVE_C0_STDERR",
+      "public_path_recorded": false,
+      "raw_private_id": "ba41be8a-5d62-4237-a4ff-397d1edf785f",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_outside_repository": true,
+      "timestamp_utc": "2026-07-13T17:31:02Z"
+    }
+  ],
+  "schema": "SPIRA_CLAUDE_NATIVE_C0_RAW_PRIVATE_MANIFEST_V1"
+}

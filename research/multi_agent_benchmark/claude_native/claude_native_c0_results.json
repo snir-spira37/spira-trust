@@ -1,0 +1,109 @@
+{
+  "authentication_ready": false,
+  "benchmark_cases_sent_to_model": 0,
+  "blockers": [
+    "CLAUDE_NATIVE_AUTHENTICATION_NOT_READY"
+  ],
+  "claude_code_version": "2.1.206 (Claude Code)",
+  "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+  "completed_at_utc": "2026-07-13T17:31:02Z",
+  "efficiency_claim_authorized": false,
+  "forbidden_tool_call_count": 0,
+  "inventory": {
+    "branch": "codex/domain3-terraform-plan-retry-1",
+    "claude_executable": "REDACTED_PATH/claude.exe",
+    "claude_launcher_sha256": "d5072b25b9a20bffb24625d36129a05ed2be4d2eb7e35625aad6aa35596892c2",
+    "claude_version": "2.1.206 (Claude Code)",
+    "git_commit": "5d91d3af1e70c5a3372c155ec7d12ecb579af8bf",
+    "node_version": null,
+    "python_version": "3.12.10",
+    "timestamp_utc": "2026-07-13T17:30:57Z",
+    "windows_version": "Windows-10-10.0.19045-SP0"
+  },
+  "model_identity_ready": false,
+  "phase": "C0",
+  "primary_sessions_started": 0,
+  "probe_count": 1,
+  "probe_results": {
+    "C0-P1": {
+      "auth_error_observed": true,
+      "errors": [
+        "CLAUDE_NATIVE_AUTHENTICATION_NOT_READY"
+      ],
+      "probe": "C0-P1",
+      "raw_private_id": "0db27d48-ed10-4ea1-96e2-c240b0e26faf",
+      "ready": false,
+      "reported_model": null,
+      "requested_model": "sonnet",
+      "returncode": 1,
+      "usage": {
+        "cache_creation_input_tokens": 0,
+        "cache_decomposition_status": "AVAILABLE",
+        "cache_read_input_tokens": 0,
+        "input_tokens": 0,
+        "input_total_available": true,
+        "output_tokens": 0,
+        "total_input_tokens": 0,
+        "usage_keys": [
+          "cache_creation",
+          "cache_creation_input_tokens",
+          "cache_read_input_tokens",
+          "inference_geo",
+          "input_tokens",
+          "iterations",
+          "output_tokens",
+          "server_tool_use",
+          "service_tier",
+          "speed"
+        ]
+      }
+    }
+  },
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 2,
+    "raw_files": [
+      {
+        "byte_size": 748,
+        "classification": "CLAUDE_NATIVE_C0_STDOUT",
+        "public_path_recorded": false,
+        "raw_private_id": "0db27d48-ed10-4ea1-96e2-c240b0e26faf",
+        "sha256": "c6caaac1743a243804dd963e6b5f48c5a4257658d7076897c88d8e9bf71a1205",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T17:31:02Z"
+      },
+      {
+        "byte_size": 0,
+        "classification": "CLAUDE_NATIVE_C0_STDERR",
+        "public_path_recorded": false,
+        "raw_private_id": "ba41be8a-5d62-4237-a4ff-397d1edf785f",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_outside_repository": true,
+        "timestamp_utc": "2026-07-13T17:31:02Z"
+      }
+    ],
+    "schema": "SPIRA_CLAUDE_NATIVE_C0_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "read_only_tools_ready": false,
+  "readiness_sessions_started": 0,
+  "release_authorized": false,
+  "requested_model": "sonnet",
+  "schema": "SPIRA_CLAUDE_NATIVE_C0_RESULTS_V1",
+  "scored": false,
+  "started_at_utc": "2026-07-13T17:30:57Z",
+  "structured_output_ready": false,
+  "terminal_status": "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED",
+  "terminal_statuses": [
+    "CLAUDE_NATIVE_MODEL_IDENTITY_NOT_CONFIRMED",
+    "BENCHMARK_CASES_NOT_EXECUTED",
+    "READINESS_SESSIONS_NOT_STARTED",
+    "PRIMARY_BENCHMARK_NOT_STARTED",
+    "MVP_CODE_UNCHANGED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "tool_isolation_ready": false,
+  "track": "Claude native through Claude Code",
+  "usage_accounting_ready": false,
+  "workspace_mutation_count": 0
+}
