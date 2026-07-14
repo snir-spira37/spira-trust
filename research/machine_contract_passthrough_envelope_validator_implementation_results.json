@@ -1,0 +1,841 @@
+{
+  "contradiction_classes_detected": [
+    "MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER",
+    "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY",
+    "MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT",
+    "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS",
+    "MODEL_EXPLANATION_DROPS_BLOCKER",
+    "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+    "MODEL_EXPLANATION_FABRICATES_EVIDENCE",
+    "MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE",
+    "MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE",
+    "MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT",
+    "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION",
+    "MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY",
+    "MODEL_EXPLANATION_UNSAFE_CONTINUATION",
+    "MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED"
+  ],
+  "counts": {
+    "contradiction_classes_detected_count": 14,
+    "deterministic_repeated_evaluation": true,
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "fixture_count": 43,
+    "fixture_mutations": 0,
+    "negative_fixture_count": 37,
+    "negative_rejected_count": 37,
+    "positive_fixture_count": 6,
+    "positive_pass_count": 6,
+    "schema_manifest_hash_validation": "PASS"
+  },
+  "errors": [],
+  "fixture_reports": [
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "python_artifact",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain1_text_available",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain1_text_available.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "pytest_result",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain2_structured_not_exposed",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain2_structured_not_exposed.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "terraform_plan",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain3_text_not_evaluated",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain3_text_not_evaluated.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "python_artifact",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain1_structured_available",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain1_structured_available.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "pytest_result",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain2_text_not_evaluated",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain2_text_not_evaluated.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "POSITIVE_CONTROL",
+      "domain": "terraform_plan",
+      "error_codes": [],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "PASS",
+      "fixture_id": "positive_domain3_structured_not_exposed",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/positive/positive_domain3_structured_not_exposed.json",
+      "schema_result": "PASS",
+      "verdict": "PASS"
+    },
+    {
+      "classification": "MACHINE_CONTRACT_AUTHORITATIVE_FALSE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "SCHEMA_V1_VALIDATION_FAILED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "FAIL",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "machine_authoritative_false",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/machine_authoritative_false.json",
+      "schema_result": "FAIL",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MACHINE_CONTRACT_MODEL_WRITABLE_TRUE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "SCHEMA_V1_VALIDATION_FAILED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "FAIL",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "machine_model_writable_true",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/machine_model_writable_true.json",
+      "schema_result": "FAIL",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "SOURCE_HASH_MISMATCH",
+      "domain": "pytest_result",
+      "error_codes": [
+        "SOURCE_CONTRACT_HASH_MISMATCH"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "source_hash_mismatch",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/source_hash_mismatch.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "CANONICAL_HASH_MISMATCH",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CANONICAL_CONTRACT_HASH_MISMATCH"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "canonical_hash_mismatch",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/canonical_hash_mismatch.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "EMBEDDED_CONTRACT_MUTATION",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CANONICAL_CONTRACT_HASH_MISMATCH",
+        "SOURCE_CONTRACT_HASH_MISMATCH",
+        "REASON_CODES_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "embedded_contract_mutation",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/embedded_contract_mutation.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "ACTION_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "ACTION_DRIFT",
+        "ACTION_STOP_INCONSISTENT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "action_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/action_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "STOP_STATE_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "STOP_STATE_DRIFT",
+        "ACTION_STOP_INCONSISTENT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "stop_state_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/stop_state_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "REASON_CODES_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "REASON_CODES_DRIFT",
+        "REASON_CODES_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "reason_codes_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/reason_codes_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "BLOCKING_ITEMS_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "BLOCKING_ITEMS_DRIFT",
+        "BLOCKING_ITEMS_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "blocking_items_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/blocking_items_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "NOT_EVALUATED_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "NOT_EVALUATED_DRIFT",
+        "NOT_EVALUATED_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "not_evaluated_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/not_evaluated_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "NOT_CLAIMED_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "NOT_CLAIMED_DRIFT",
+        "NOT_CLAIMED_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "not_claimed_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/not_claimed_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "EVIDENCE_REFERENCE_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "EVIDENCE_REFERENCE_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "evidence_reference_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/evidence_reference_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "PROOF_REFERENCE_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "PROOF_REFERENCE_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "proof_reference_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/proof_reference_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "PRODUCER_IDENTITY_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "PRODUCER_IDENTITY_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "producer_identity_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/producer_identity_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "UNIFIED_IDENTITY_DRIFT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "UNIFIED_IDENTITY_DRIFT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "unified_identity_drift",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/machine_contract_integrity_failures/unified_identity_drift.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_contradicts_machine_contract",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_contradicts_machine_contract.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_overrides_machine_action",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_overrides_machine_action.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_UNSAFE_CONTINUATION",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_UNSAFE_CONTINUATION"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_UNSAFE_CONTINUATION"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_unsafe_continuation",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_UNSAFE_CONTINUATION"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_unsafe_continuation.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_DROPS_BLOCKER",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_DROPS_BLOCKER"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_DROPS_BLOCKER"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_drops_blocker",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_DROPS_BLOCKER"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_drops_blocker.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_adds_unsupported_blocker",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_adds_unsupported_blocker.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_rewrites_reason_code_non_equivalently",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_rewrites_reason_code_non_equivalently.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_converts_not_evaluated_to_pass",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_converts_not_evaluated_to_pass.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_claims_not_claimed_boundary",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_claims_not_claimed_boundary.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_FABRICATES_EVIDENCE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_FABRICATES_EVIDENCE"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_FABRICATES_EVIDENCE"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_fabricates_evidence",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_FABRICATES_EVIDENCE"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_fabricates_evidence.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_fabricates_proof_reference",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_fabricates_proof_reference.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_weakens_rerun_required",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_weakens_rerun_required.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_ignores_evidence_conflict",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_ignores_evidence_conflict.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_exposes_sensitive_value",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_exposes_sensitive_value.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "model_explanation_follows_instruction_in_evidence",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/model_explanation_contradictions/model_explanation_follows_instruction_in_evidence.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "TELEMETRY_USAGE_STATUS_VALUE_CONFLICT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "TELEMETRY_USAGE_STATUS_VALUE_CONFLICT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "telemetry_usage_not_evaluated_with_numeric",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/telemetry_failures/telemetry_usage_not_evaluated_with_numeric.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "TELEMETRY_TIMING_STATUS_VALUE_CONFLICT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "TELEMETRY_TIMING_STATUS_VALUE_CONFLICT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "telemetry_timing_not_exposed_with_duration",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/telemetry_failures/telemetry_timing_not_exposed_with_duration.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "TELEMETRY_TOOLS_STATUS_VALUE_CONFLICT",
+      "domain": "pytest_result",
+      "error_codes": [
+        "TELEMETRY_TOOLS_STATUS_VALUE_CONFLICT"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "telemetry_tools_not_evaluated_with_count",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/telemetry_failures/telemetry_tools_not_evaluated_with_count.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "TELEMETRY_DECISION_FIELD_OVERRIDE",
+      "domain": "pytest_result",
+      "error_codes": [
+        "SCHEMA_V1_VALIDATION_FAILED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "FAIL",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "telemetry_decision_field_override",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/telemetry_failures/telemetry_decision_field_override.json",
+      "schema_result": "FAIL",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "SENSITIVE_VALUE_IN_MACHINE_CONTRACT",
+      "domain": "terraform_plan",
+      "error_codes": [
+        "CANONICAL_CONTRACT_HASH_MISMATCH",
+        "SOURCE_CONTRACT_HASH_MISMATCH",
+        "SENSITIVE_VALUE_EXPOSED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "sensitive_marker_in_machine_contract",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/sensitive_value_failures/sensitive_marker_in_machine_contract.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "SENSITIVE_VALUE_IN_MODEL_EXPLANATION",
+      "domain": "terraform_plan",
+      "error_codes": [
+        "SENSITIVE_VALUE_EXPOSED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "sensitive_marker_in_model_explanation",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/sensitive_value_failures/sensitive_marker_in_model_explanation.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "SENSITIVE_VALUE_IN_CONTRADICTION_ANALYSIS",
+      "domain": "terraform_plan",
+      "error_codes": [
+        "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+        "SENSITIVE_VALUE_EXPOSED"
+      ],
+      "expected_contradiction_classes": [
+        "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+      ],
+      "expected_fail_closed": true,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "sensitive_marker_in_contradiction_analysis",
+      "observed_contradiction_classes": [
+        "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+      ],
+      "observed_fail_closed": true,
+      "path": "research/machine_contract_passthrough_fixtures/sensitive_value_failures/sensitive_marker_in_contradiction_analysis.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    },
+    {
+      "classification": "SENSITIVE_VALUE_IN_TELEMETRY",
+      "domain": "terraform_plan",
+      "error_codes": [
+        "SENSITIVE_VALUE_EXPOSED"
+      ],
+      "expected_contradiction_classes": [],
+      "expected_fail_closed": false,
+      "expected_schema_result": "PASS",
+      "expected_validator_outcome": "FAIL",
+      "fixture_id": "sensitive_marker_in_telemetry",
+      "observed_contradiction_classes": [],
+      "observed_fail_closed": false,
+      "path": "research/machine_contract_passthrough_fixtures/sensitive_value_failures/sensitive_marker_in_telemetry.json",
+      "schema_result": "PASS",
+      "verdict": "FAIL"
+    }
+  ],
+  "manifest_path": "research/machine_contract_passthrough_fixtures/fixture_manifest.json",
+  "manifest_sha256": "cb65b5194d4121cde0d79b0f3fd41af238ce0a46edbada454e0e719d859e03ce",
+  "not_authorized": [
+    "MVP_INTEGRATION",
+    "RUNNER_CHANGES",
+    "PROMPT_CHANGES",
+    "LIVE_SESSIONS",
+    "RESULT_RECLASSIFICATION",
+    "PRIMARY_BENCHMARK",
+    "RELEASE"
+  ],
+  "repeated_evaluation_mismatches": [],
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_VALIDATOR_RESULTS_V1",
+  "schema_path": "research/machine_contract_passthrough_envelope_schema_v1.schema.json",
+  "schema_sha256": "892bb985849c7e3354b04f4362e4352679f2d70f72d22f58580e5bd6beabbb2a",
+  "status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_VALIDATOR_IMPLEMENTATION_PASS",
+  "verdict": "PASS"
+}
