@@ -10,6 +10,7 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 
 import run_codex_native_readiness as readiness  # noqa: E402
+import run_codex_native_readiness_reliability_diagnostic as diagnostic  # noqa: E402
 
 
 def test_readiness_inputs_are_nine():
@@ -123,3 +124,35 @@ def test_arm_a_metadata_mismatch_is_not_readiness_revision_when_operationally_sa
     arm_c = {**arm_b, "arm": "C"}
 
     assert "CODEX_NATIVE_READINESS_NEEDS_REVISION" not in readiness.readiness_errors([arm_a] * 3 + [arm_b] * 3 + [arm_c] * 3)
+
+
+def test_diagnostic_enriches_missing_contract_metadata():
+    expected = {
+        "expected_reason_codes": ["TESTS_PASSED"],
+        "expected_not_claimed": ["producer_correctness", "software_safety"],
+    }
+    session = {
+        "agent_output": {
+            "reason_codes": [],
+            "not_claimed": [],
+        },
+        "comparison": {
+            "pass": False,
+            "checks": {
+                "recommended_agent_action": True,
+                "gate": True,
+                "blocking_items": True,
+                "not_evaluated": True,
+            },
+        },
+        "result_envelope_present": True,
+        "structured_output_present": True,
+        "usage": {"input_total_available": True},
+    }
+
+    enriched = diagnostic.enrich_diagnostic_session(session, expected)
+
+    assert enriched["missing_reason_codes"] == ["TESTS_PASSED"]
+    assert enriched["missing_not_claimed"] == ["producer_correctness", "software_safety"]
+    assert enriched["action_preserved"]
+    assert enriched["stop_state_preserved"]

@@ -1,0 +1,142 @@
+{
+  "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+  "raw_file_count": 15,
+  "raw_files": [
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "b35cc134-7ce6-48e4-a390-ece876fa7c40",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "e6b21852bbe5407d8af0a3fae307f533bec37510c341b0e1c7403d4b21febc62",
+      "stdout_byte_size": 8262,
+      "stdout_sha256": "0d3b02adc75e7290bc09f5e5ab902b4cbad7954df51a18096d39eeb279bd3666",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "cce18ce2-3336-46a7-8310-a1d2a286a990",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "e54f9ab423f7e938fa86e473684e6ab8d78d295008ec0ffd4da1d3a0388f21ce",
+      "stdout_byte_size": 8160,
+      "stdout_sha256": "b1bab763d500666d5299608edf5581d8a4724da23385f8de31072e4704b8328a",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "d6a5d439-f925-4f19-9479-45ce61d6c286",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "b078a9eff6d62cf6a574b1a92b69d4144940b6a8fe2f6fc3562545d659bfcace",
+      "stdout_byte_size": 8197,
+      "stdout_sha256": "af5355495121874584ee5c77969f0bac57f4e12125dd43787c5a99de204afda4",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "a323cbca-07c9-4ee7-9c93-2091932fcc54",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "34202aca8a56c2c6d6cbded37fe3a968bb8a97dc1748da53b5ce670529971b7b",
+      "stdout_byte_size": 8199,
+      "stdout_sha256": "06a2741fd5505fb87c3e69ce729699e495ce895f5a8ae62c4368314feb50fd99",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "4634107d-b7b9-437d-8236-0afa4cd8961f",
+      "stderr_byte_size": 3848,
+      "stderr_sha256": "0d1e5e7a75f1fa3d65a4042e6bc69d288e7c055a4bb792fec860f8906ab4a6ae",
+      "stdout_byte_size": 8126,
+      "stdout_sha256": "da8b1cb66a432a84aad3d64ba7e230ab49efb5972677f720024f303575c18c82",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "51b22513-605d-49d7-af97-24539f42eac8",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "a7ba82954df92912c7dcf096e9c14088d09d6b583902b41b02cebe6c4cc18562",
+      "stdout_byte_size": 8235,
+      "stdout_sha256": "0df06444f678bb4ff014a3e28d838d6bf7329b944a753ab2a9ece166863cc4db",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "73df8aa9-2041-4643-9a35-e7e9ffe152db",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "b21a2825d0a204b079cf834731998b5259d1ba87294ca48fb0b6d5a83712c521",
+      "stdout_byte_size": 8178,
+      "stdout_sha256": "5b357c7efe4b3dff8fd6f31ab3bc5573abe27585bf33afa170d51087df2d1f28",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "feae8cc4-b06a-4025-bca0-ff7f0a6e74b7",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "d7e6ec7033c48ee16dc79c7f04d197afcaddac36bde270f5fc7a1bfdb45e5b3c",
+      "stdout_byte_size": 8048,
+      "stdout_sha256": "076ab1ae3ee8fc483d600735eea36170fe92f4325534fde2f65cb6f1a5aa5b7a",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "fd59326e-9787-4f76-a10c-61348ecbe77d",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "73c9339b9b8bc786b4ffcb01e4a4386551b5b32c8eb241e1a54238506bc36668",
+      "stdout_byte_size": 8184,
+      "stdout_sha256": "ba548a17404a3957dfe5cfab9cc7329603388e5f94b8aa72bc9355ed647736d9",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "686cc53a-08db-4125-80dd-07f48c4e61f8",
+      "stderr_byte_size": 5813,
+      "stderr_sha256": "93ab282f44373c08536afeed8be5ab760d7cfe310f27ec6ea384d37b21ee64dc",
+      "stdout_byte_size": 8293,
+      "stdout_sha256": "7e0fa88903150c5751ecaa671ea244fe0234005f8e826ab8cbee424f24f7dec2",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "2f814172-c3d8-4770-92f0-7070e25c9159",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "66f26ded9b506b104d259e4397f7a3e7291f820e921a80b745f72d97a14df9c9",
+      "stdout_byte_size": 8609,
+      "stdout_sha256": "05ec4294e24f08f93f1b25feb71c4153c1a4a4a2a1790ea2912c04f9cd1489c3",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "453868b3-b710-4036-9116-957533e4b4be",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "99d5f58d0f7183344ba7a833936d464bd95b00dddb542e58e7b108200b1485e3",
+      "stdout_byte_size": 8121,
+      "stdout_sha256": "a83290815a4af47de8d9a524e68496fda14ab829fd5096f47777a9e99e627cec",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "de703967-d817-4652-b629-8335eff900cd",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "5611edc2137b67f3c533bee56e85c8a54fc916d69162b1aa0aba35567718830c",
+      "stdout_byte_size": 8064,
+      "stdout_sha256": "7f2a1a4cb252df763ff243537aca827f5ae706aba4552f3268d3119292ca1b83",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "e7b71365-1ee2-4b06-bef0-42d34cfbae43",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "188574ff366e2afc8d51414c0e915274dc662fd474e0f408d328f503d3f9d74b",
+      "stdout_byte_size": 8440,
+      "stdout_sha256": "4587f304b94e1461697df99a3714b6c887c363a4f4b79af369ecdcc7d370a19f",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "cbdccc23-f6fe-4259-bc9e-ec66de1bbe53",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "50e3bc5e12858e5674fa3f30d59cfc758a66417bf2b7221867d4fd6193df1cbf",
+      "stdout_byte_size": 8052,
+      "stdout_sha256": "0f6ad04aabdfed39b0a482805fc863dc651f5ccdaac34e1885e7382a1e708ac8",
+      "stored_outside_repository": true
+    }
+  ],
+  "schema": "SPIRA_CODEX_NATIVE_READINESS_RELIABILITY_DIAGNOSTIC_RAW_PRIVATE_MANIFEST_V1"
+}
