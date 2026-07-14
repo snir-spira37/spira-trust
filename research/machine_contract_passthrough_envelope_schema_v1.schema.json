@@ -1,0 +1,597 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.local/schemas/machine_contract_passthrough_envelope_v1.schema.json",
+  "title": "SPIRA Machine Contract Passthrough Envelope V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "status",
+    "machine_contract",
+    "model_explanation",
+    "contradiction_analysis",
+    "telemetry"
+  ],
+  "properties": {
+    "schema": {
+      "const": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "const": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_SCHEMA_V1"
+    },
+    "machine_contract": {
+      "$ref": "#/$defs/machine_contract"
+    },
+    "model_explanation": {
+      "$ref": "#/$defs/model_explanation"
+    },
+    "contradiction_analysis": {
+      "$ref": "#/$defs/contradiction_analysis"
+    },
+    "telemetry": {
+      "$ref": "#/$defs/telemetry"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "uri_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "string_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/non_empty_string"
+      }
+    },
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_type",
+        "reference_id"
+      ],
+      "properties": {
+        "reference_type": {
+          "enum": [
+            "EVIDENCE",
+            "PROOF",
+            "SOURCE_ARTIFACT",
+            "CONTRACT",
+            "PRODUCER",
+            "WRAPPER"
+          ]
+        },
+        "reference_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "json_pointer": {
+          "type": "string",
+          "pattern": "^(/([^/~]|~0|~1)*)*$"
+        },
+        "safe_to_publish": {
+          "type": "boolean"
+        }
+      }
+    },
+    "reference_list": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/reference"
+      }
+    },
+    "explicit_lists": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/string_list"
+      }
+    },
+    "identity_object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_type",
+        "identity_value"
+      ],
+      "properties": {
+        "identity_type": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "identity_value": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "machine_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative",
+        "model_writable",
+        "representation",
+        "source_contract_sha256",
+        "canonicalization",
+        "canonical_contract_sha256",
+        "embedded_contract",
+        "contract_schema",
+        "contract_schema_version",
+        "decision_semantics_version",
+        "domain",
+        "action",
+        "stop",
+        "reason_codes",
+        "blocking_items",
+        "not_evaluated",
+        "not_claimed",
+        "evidence_references",
+        "proof_references",
+        "source_artifact_references",
+        "producer_identity",
+        "sensitive_value_policy"
+      ],
+      "properties": {
+        "authoritative": {
+          "const": true
+        },
+        "model_writable": {
+          "const": false
+        },
+        "representation": {
+          "const": "EMBEDDED_AND_HASH_BOUND"
+        },
+        "source_contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "canonicalization": {
+          "const": "CANONICAL_JSON"
+        },
+        "canonical_contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "embedded_contract": {
+          "type": "object"
+        },
+        "contract_schema": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "contract_schema_version": {
+          "oneOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "$ref": "#/$defs/non_empty_string"
+            }
+          ]
+        },
+        "decision_semantics_version": {
+          "const": "SPIRA_DECISION_SEMANTICS_V2"
+        },
+        "domain": {
+          "enum": [
+            "python_artifact",
+            "pytest_result",
+            "terraform_plan"
+          ]
+        },
+        "subject_identity": {
+          "$ref": "#/$defs/identity_object"
+        },
+        "case_identity": {
+          "$ref": "#/$defs/identity_object"
+        },
+        "action": {
+          "enum": [
+            "PROCEED",
+            "REPORT_WITH_NOTES",
+            "STOP_BLOCKED",
+            "REPORT_NOT_EVALUATED",
+            "RERUN_REQUIRED",
+            "ASK_HUMAN"
+          ]
+        },
+        "stop": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/string_list"
+        },
+        "blocking_items": {
+          "$ref": "#/$defs/string_list"
+        },
+        "not_evaluated": {
+          "$ref": "#/$defs/string_list"
+        },
+        "not_claimed": {
+          "$ref": "#/$defs/string_list"
+        },
+        "explicit_lists": {
+          "$ref": "#/$defs/explicit_lists"
+        },
+        "evidence_references": {
+          "$ref": "#/$defs/reference_list"
+        },
+        "proof_references": {
+          "$ref": "#/$defs/reference_list"
+        },
+        "source_artifact_references": {
+          "$ref": "#/$defs/reference_list"
+        },
+        "producer_identity": {
+          "$ref": "#/$defs/identity_object"
+        },
+        "producer_contract_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "unified_wrapper_identity": {
+          "$ref": "#/$defs/identity_object"
+        },
+        "sensitive_value_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sensitive_values_excluded",
+            "sensitive_structural_paths_allowed",
+            "redacted_references_allowed"
+          ],
+          "properties": {
+            "sensitive_values_excluded": {
+              "const": true
+            },
+            "sensitive_structural_paths_allowed": {
+              "const": true
+            },
+            "redacted_references_allowed": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "model_explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative",
+        "model_produced",
+        "format",
+        "text"
+      ],
+      "properties": {
+        "authoritative": {
+          "const": false
+        },
+        "model_produced": {
+          "const": true
+        },
+        "format": {
+          "enum": [
+            "TEXT_ONLY",
+            "STRUCTURED_TEXT"
+          ]
+        },
+        "text": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "rationale": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "remediation_suggestions": {
+          "$ref": "#/$defs/string_list"
+        },
+        "human_review_questions": {
+          "$ref": "#/$defs/string_list"
+        },
+        "evidence_summary": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "next_step_suggestions": {
+          "$ref": "#/$defs/string_list"
+        },
+        "repeated_machine_content_is_authoritative": {
+          "const": false
+        }
+      }
+    },
+    "contradiction_class": {
+      "enum": [
+        "MODEL_EXPLANATION_CONTRADICTS_MACHINE_CONTRACT",
+        "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION",
+        "MODEL_EXPLANATION_UNSAFE_CONTINUATION",
+        "MODEL_EXPLANATION_DROPS_BLOCKER",
+        "MODEL_EXPLANATION_ADDS_UNSUPPORTED_BLOCKER",
+        "MODEL_EXPLANATION_REWRITES_REASON_CODE_NON_EQUIVALENTLY",
+        "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS",
+        "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY",
+        "MODEL_EXPLANATION_FABRICATES_EVIDENCE",
+        "MODEL_EXPLANATION_FABRICATES_PROOF_REFERENCE",
+        "MODEL_EXPLANATION_WEAKENS_RERUN_REQUIRED",
+        "MODEL_EXPLANATION_IGNORES_EVIDENCE_CONFLICT",
+        "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+        "MODEL_EXPLANATION_FOLLOWS_INSTRUCTION_IN_EVIDENCE"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "FAIL_CLOSED_CRITICAL",
+        "SAFETY_OR_SCOPE_VIOLATION",
+        "CONTRACT_CONTRADICTION",
+        "REMEDIATION_DETAIL_LOSS",
+        "QUALITY_ONLY"
+      ]
+    },
+    "contradiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "class",
+        "severity",
+        "machine_field",
+        "description",
+        "fail_closed_required"
+      ],
+      "properties": {
+        "class": {
+          "$ref": "#/$defs/contradiction_class"
+        },
+        "severity": {
+          "$ref": "#/$defs/severity"
+        },
+        "machine_field": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "explanation_fragment": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/reference_list"
+        },
+        "fail_closed_required": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "severity": {
+                "enum": [
+                  "FAIL_CLOSED_CRITICAL",
+                  "SAFETY_OR_SCOPE_VIOLATION"
+                ]
+              }
+            },
+            "required": [
+              "severity"
+            ]
+          },
+          "then": {
+            "properties": {
+              "fail_closed_required": {
+                "const": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "contradiction_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authoritative_for_machine_contract",
+        "model_writable",
+        "produced_by",
+        "compliance_status",
+        "fail_closed",
+        "contradictions"
+      ],
+      "properties": {
+        "authoritative_for_machine_contract": {
+          "const": false
+        },
+        "model_writable": {
+          "const": false
+        },
+        "produced_by": {
+          "enum": [
+            "VALIDATOR_DETERMINISTIC",
+            "MECHANICAL_CHECK",
+            "NOT_EVALUATED"
+          ]
+        },
+        "compliance_status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUATED"
+          ]
+        },
+        "fail_closed": {
+          "type": "boolean"
+        },
+        "contradictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contradiction"
+          }
+        }
+      }
+    },
+    "availability_status": {
+      "enum": [
+        "AVAILABLE",
+        "NOT_EXPOSED",
+        "NOT_EVALUATED"
+      ]
+    },
+    "usage_telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/availability_status"
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cached_input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reasoning_output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source": {
+          "$ref": "#/$defs/non_empty_string"
+        }
+      }
+    },
+    "timing_telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/availability_status"
+        },
+        "wall_clock_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "provider_api_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "tool_telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/availability_status"
+        },
+        "tool_call_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "forbidden_tool_call_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tools_observed": {
+          "$ref": "#/$defs/string_list"
+        }
+      }
+    },
+    "telemetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision_authority",
+        "model_identity_status",
+        "harness_identity_status",
+        "agent_track",
+        "usage",
+        "tools",
+        "timing",
+        "schema_validation_status",
+        "explanation_compliance_status"
+      ],
+      "properties": {
+        "decision_authority": {
+          "const": "NONE"
+        },
+        "model_identity_status": {
+          "$ref": "#/$defs/availability_status"
+        },
+        "model_identity": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "harness_identity_status": {
+          "$ref": "#/$defs/availability_status"
+        },
+        "harness_identity": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "agent_track": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "session_identity": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "runner_commit": {
+          "$ref": "#/$defs/sha256"
+        },
+        "schema_validation_status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUATED"
+          ]
+        },
+        "explanation_compliance_status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_EVALUATED"
+          ]
+        },
+        "usage": {
+          "$ref": "#/$defs/usage_telemetry"
+        },
+        "tools": {
+          "$ref": "#/$defs/tool_telemetry"
+        },
+        "timing": {
+          "$ref": "#/$defs/timing_telemetry"
+        },
+        "source_artifact_hashes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/sha256"
+          }
+        }
+      }
+    }
+  }
+}
