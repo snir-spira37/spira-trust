@@ -1,0 +1,995 @@
+{
+  "arm_a_operational_pass_count": 3,
+  "arm_b_strict_count": 2,
+  "arm_c_strict_count": 3,
+  "benchmark_cases_sent_to_model": 9,
+  "codex_cli_invocation_identity": "LOCAL_OPENAI_CODEX_BIN/codex.exe",
+  "codex_cli_sha256": "dd4adf302b112fdc30fce509a5e261a0a6f1118dc58ac2da636eb84e0a6b3e3e",
+  "codex_cli_version": "codex-cli 0.130.0-alpha.5",
+  "completed_at_utc": "2026-07-14T01:39:02Z",
+  "correct_count": 5,
+  "efficiency_claim_authorized": false,
+  "errors": [
+    "CODEX_NATIVE_READINESS_NEEDS_REVISION"
+  ],
+  "false_proceed_count": 0,
+  "forbidden_tool_count": 0,
+  "model_identity_source": "codex debug models catalog slug and successful codex exec invocation",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "primary_sessions_started": 0,
+  "raw_private_manifest": {
+    "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+    "raw_file_count": 9,
+    "raw_files": [
+      {
+        "logical_name": "pytest_result__synthetic_clean_success__A",
+        "raw_private_id": "b0e965f3-8089-4d0f-a128-47a2093958f4",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "722166851be7c8aa043c837e23f04d6bc2327d5ae0d23c1354d7741e1c2037b3",
+        "stdout_byte_size": 7748,
+        "stdout_sha256": "a89f3edf4b54131af996f7ea49342f3aac7e57f25360a451358b40636dfc2602",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "pytest_result__synthetic_clean_success__B",
+        "raw_private_id": "8489623f-e4b3-448d-986f-deeade9d4f28",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "954abe049ffe9ee6b89c9761fcab8e3a25387a41ff91c005b935a9d2d5401cd1",
+        "stdout_byte_size": 8658,
+        "stdout_sha256": "e6d0d6f4e3ef8c6cc0b40ac0907e9d240bd4ba893755a899569d44480584ac01",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "pytest_result__synthetic_clean_success__C",
+        "raw_private_id": "29d7ca77-572a-44dc-8b2d-af1ddb79dcc7",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "7019d9b17c25ee4b5b4b06fd873a31aac2f89b270d12b9b325cfa150918d6118",
+        "stdout_byte_size": 8042,
+        "stdout_sha256": "ce044ba87e6133df50d512e6947cfe189be1dd269b6d8f8c21b28742e8ee470a",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__A",
+        "raw_private_id": "b0980eb9-ea02-4327-8c24-4d2186fc2a5a",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "6c72946db6c05083391a0eaefa561eac049388c7241c57ebd2ad42097f72bdb5",
+        "stdout_byte_size": 8635,
+        "stdout_sha256": "6a39521b3d38d9bcff576119e4f71513502cb60f68a109ca2ca7a7128b17c5d8",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__B",
+        "raw_private_id": "9d6a4a75-c5cb-42fb-ba83-3b0e2da0e025",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "cee83cf261d35e87384e63c53cbff5bb25d699daf4e568b9788c7fe1a295b744",
+        "stdout_byte_size": 8186,
+        "stdout_sha256": "0180d392025cf12f6906aff959b668327fe364cf9c200f8cbd12429c1fe2aca7",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__C",
+        "raw_private_id": "122e791b-7144-4673-abef-46949047b73f",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "0280d0aa199d91c4ed93398a07cf5d7f3440cba67b0b4535ceef959326318c00",
+        "stdout_byte_size": 8021,
+        "stdout_sha256": "e75abc847da39ba54f931bd3f6b95459e3d8d28900a44d1e14c50d97871673a8",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "terraform_plan__auth_no_changes__A",
+        "raw_private_id": "5999490d-a5af-42cb-9ec6-fada32ec318f",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "4eeda42c8e3ae31189d3fd1bc961fdbb2ab488ef1d603e861324e0ee4d0c7ed3",
+        "stdout_byte_size": 10271,
+        "stdout_sha256": "fe84b0621c32b27cc031a59aa413e27983b12d937800823c8995833e66398900",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "terraform_plan__auth_no_changes__B",
+        "raw_private_id": "49003e62-c7e3-428d-9eac-ec3021a39ede",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "2ad44216ef9578c4384d03d252b9335c20a212386a2d70cdbda03f59435d6779",
+        "stdout_byte_size": 7964,
+        "stdout_sha256": "fdc37571e01f76e500130aad1343d1e46c3f8ab85f5694db97c5a7590e8c3d99",
+        "stored_outside_repository": true
+      },
+      {
+        "logical_name": "terraform_plan__auth_no_changes__C",
+        "raw_private_id": "2850cf95-71d7-4c7b-a57f-d8e1e5346d03",
+        "stderr_byte_size": 5561,
+        "stderr_sha256": "9748b624b674733efc87496328806a78e6079dec4efce05e21b2773748a63b32",
+        "stdout_byte_size": 7706,
+        "stdout_sha256": "bbecc0b29ee5c1e1109a9c9d1a10b0700e949a4c6b0e7b3ad3b9fbdc7937aea9",
+        "stored_outside_repository": true
+      }
+    ],
+    "schema": "SPIRA_CODEX_NATIVE_READINESS_RAW_PRIVATE_MANIFEST_V1"
+  },
+  "reasoning_effort": "xhigh",
+  "release_authorized": false,
+  "requested_model": "gpt-5.5",
+  "resolved_model_id": "gpt-5.5",
+  "result_envelope_count": 9,
+  "schema": "SPIRA_CODEX_NATIVE_READINESS_RESULTS_V1",
+  "schema_valid_count": 9,
+  "session_count": 9,
+  "sessions": [
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "console: tests/test_ok.py::test_ok PASSED",
+          "junit: tests='1' failures='0'",
+          "metadata: capture_complete=true exit_code=0 case_kind=clean_successful_run"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "software correctness beyond the observed pytest result",
+          "package safety",
+          "infrastructure safety",
+          "compliance",
+          "cost",
+          "malware-free status",
+          "universal test coverage"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "CAPTURE_COMPLETE",
+          "PYTEST_EXIT_CODE_0",
+          "JUNIT_ZERO_FAILURES",
+          "CONSOLE_TEST_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "The raw evidence shows a complete pytest capture with exit_code 0, one passing test in console output, and JUnit reporting 1 test with 0 failures. No blocking items are present, so the agent may proceed."
+      },
+      "arm": "A",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": false,
+          "not_evaluated": true,
+          "reason_codes": false,
+          "recommended_agent_action": true
+        },
+        "errors": [
+          "reason_codes",
+          "not_claimed"
+        ],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": false
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json",
+      "input_sha256_actual": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "input_sha256_expected": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "a990cb50da1a11cf03bf488e3eebab10d42c87b574f1a50ac46bfbf834d318c8",
+      "raw_private_id": "b0e965f3-8089-4d0f-a128-47a2093958f4",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e42-69d3-7391-9bcd-6c65f4285b69",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "722166851be7c8aa043c837e23f04d6bc2327d5ae0d23c1354d7741e1c2037b3",
+      "stdout_byte_size": 7748,
+      "stdout_sha256": "a89f3edf4b54131af996f7ea49342f3aac7e57f25360a451358b40636dfc2602",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36700,
+        "input_total_available": true,
+        "output_tokens": 959,
+        "reasoning_output_tokens": 680,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [],
+        "gate": "PROCEED",
+        "not_claimed": [],
+        "not_evaluated": [],
+        "reason_codes": [],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Reading frozen_input.json in the current workspace to apply its embedded prompts and schema."
+      },
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": false,
+          "not_evaluated": true,
+          "reason_codes": false,
+          "recommended_agent_action": true
+        },
+        "errors": [
+          "reason_codes",
+          "not_claimed"
+        ],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": false
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "input_sha256_actual": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "input_sha256_expected": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "963d39acb41cb9ecf6b0c950ee05db5d26ab3def34ba0d20bb4c050a857f9725",
+      "raw_private_id": "8489623f-e4b3-448d-986f-deeade9d4f28",
+      "ready": false,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e42-ea40-76e0-b22b-2733bcd9cdb1",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "954abe049ffe9ee6b89c9761fcab8e3a25387a41ff91c005b935a9d2d5401cd1",
+      "stdout_byte_size": 8658,
+      "stdout_sha256": "e6d0d6f4e3ef8c6cc0b40ac0907e9d240bd4ba893755a899569d44480584ac01",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36921,
+        "input_total_available": true,
+        "output_tokens": 1054,
+        "reasoning_output_tokens": 652,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "producer_contract_hash:39e93a9ec8e090dfacc89ae715e7f882cc55fafa718efe3349f70506697b58e3",
+          "result_identity_sha256:41faa8cc93583874449197ea874c2afe2097362b8b931a596ce6e1eee7b92dfc",
+          "scope_identity_sha256:69bf76b5f4c8cf9ed3b0ca2412f700c8f350571899d22426484e37eccb54100c"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Unified MVP contract has stop=false for synthetic_clean_success with reason_codes TESTS_PASSED, so the agent may proceed."
+      },
+      "arm": "C",
+      "case_id": "synthetic_clean_success",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "domain": "pytest_result",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "input_sha256_actual": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "input_sha256_expected": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "e292a41e66cd76945ff435d5c8c382132775b6a07145d2fb74bc646617ee17a7",
+      "raw_private_id": "29d7ca77-572a-44dc-8b2d-af1ddb79dcc7",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e43-7275-76b2-b54a-b31a3c75e957",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "7019d9b17c25ee4b5b4b06fd873a31aac2f89b270d12b9b325cfa150918d6118",
+      "stdout_byte_size": 8042,
+      "stdout_sha256": "ce044ba87e6133df50d512e6947cfe189be1dd269b6d8f8c21b28742e8ee470a",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36793,
+        "input_total_available": true,
+        "output_tokens": 923,
+        "reasoning_output_tokens": 623,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [
+          "policy_action.stop=true",
+          "HUMAN_REVIEW_REQUIRED",
+          "worst_claim_status=NOT_EVALUATED"
+        ],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "proof_reference.id=70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe",
+          "proof_reference.root=9a0d3ff05951275a5668e8fb28e77704100bc0ed256753a392cc3414d486169e",
+          "proof_reference.compact_reference_bytes_sha256=629f4d14721826427132e20e1e740a0c565f3b2ec02a5188509f22ad8e2c26b1",
+          "artifact_sha256=0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4"
+        ],
+        "gate": "STOP",
+        "not_claimed": [
+          "software_safety",
+          "package_safety",
+          "universal_supply_chain_coverage"
+        ],
+        "not_evaluated": [
+          "entry_point_policy",
+          "license_policy",
+          "lockfile_cross_check",
+          "pep740_offline_attestations",
+          "target_environment"
+        ],
+        "reason_codes": [
+          "HUMAN_REVIEW_REQUIRED",
+          "REPORT_NOT_EVALUATED"
+        ],
+        "recommended_agent_action": "ASK_HUMAN",
+        "spira_verdict": "STOP: raw evidence policy_action.stop is true, with human review required and NOT_EVALUATED boundaries preserved."
+      },
+      "arm": "A",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "checks": {
+          "blocking_items": false,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [
+          "blocking_items"
+        ],
+        "expected_action": "ASK_HUMAN",
+        "expected_gate": "STOP",
+        "false_proceed": false,
+        "pass": false
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json",
+      "input_sha256_actual": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "input_sha256_expected": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "80fbca3ee5ec689b833130696ef9ad813b259e8f165bd8ad109dcb50fc5c1659",
+      "raw_private_id": "b0980eb9-ea02-4327-8c24-4d2186fc2a5a",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e43-f615-7fb2-af14-d637c1ec43e9",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "6c72946db6c05083391a0eaefa561eac049388c7241c57ebd2ad42097f72bdb5",
+      "stdout_byte_size": 8635,
+      "stdout_sha256": "6a39521b3d38d9bcff576119e4f71513502cb60f68a109ca2ca7a7128b17c5d8",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 34560,
+        "input_tokens": 37017,
+        "input_total_available": true,
+        "output_tokens": 1069,
+        "reasoning_output_tokens": 670,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "producer_contract_hash:659e8b568d86616447c6d7cd179f143bf167a43bc174340687760525947d492a",
+          "proof_reference.id:70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe",
+          "proof_reference.root:9a0d3ff05951275a5668e8fb28e77704100bc0ed256753a392cc3414d486169e",
+          "proof_reference.compact_reference_bytes_sha256:629f4d14721826427132e20e1e740a0c565f3b2ec02a5188509f22ad8e2c26b1"
+        ],
+        "gate": "STOP",
+        "not_claimed": [
+          "package_safety",
+          "software_safety",
+          "universal_supply_chain_coverage"
+        ],
+        "not_evaluated": [
+          "entry_point_policy",
+          "license_policy",
+          "lockfile_cross_check",
+          "pep740_offline_attestations",
+          "target_environment"
+        ],
+        "reason_codes": [
+          "HUMAN_REVIEW_REQUIRED",
+          "REPORT_NOT_EVALUATED"
+        ],
+        "recommended_agent_action": "ASK_HUMAN",
+        "spira_verdict": "STOP: the direct domain compact contract sets stop=true with HUMAN_REVIEW_REQUIRED and REPORT_NOT_EVALUATED; preserve the listed not_evaluated and not_claimed boundaries."
+      },
+      "arm": "B",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "ASK_HUMAN",
+        "expected_gate": "STOP",
+        "false_proceed": false,
+        "pass": true
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json",
+      "input_sha256_actual": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "input_sha256_expected": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "fd1028156e99891e961d2726b01746b309802fd54e6d4631ae4e3f8de6263dee",
+      "raw_private_id": "9d6a4a75-c5cb-42fb-ba83-3b0e2da0e025",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e44-725c-7130-98c2-f89d0af07e2c",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "cee83cf261d35e87384e63c53cbff5bb25d699daf4e568b9788c7fe1a295b744",
+      "stdout_byte_size": 8186,
+      "stdout_sha256": "0180d392025cf12f6906aff959b668327fe364cf9c200f8cbd12429c1fe2aca7",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36875,
+        "input_total_available": true,
+        "output_tokens": 1097,
+        "reasoning_output_tokens": 710,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "producer_contract_hash=659e8b568d86616447c6d7cd179f143bf167a43bc174340687760525947d492a",
+          "proof_reference.id=70a70fea02f7d85a651ba4255a1877f64671968460c216f226359b3c24dc59fe",
+          "proof_reference.root=9a0d3ff05951275a5668e8fb28e77704100bc0ed256753a392cc3414d486169e",
+          "proof_reference.compact_reference_bytes_sha256=629f4d14721826427132e20e1e740a0c565f3b2ec02a5188509f22ad8e2c26b1"
+        ],
+        "gate": "STOP",
+        "not_claimed": [
+          "package_safety",
+          "software_safety",
+          "universal_supply_chain_coverage"
+        ],
+        "not_evaluated": [
+          "entry_point_policy",
+          "license_policy",
+          "lockfile_cross_check",
+          "pep740_offline_attestations",
+          "target_environment"
+        ],
+        "reason_codes": [
+          "HUMAN_REVIEW_REQUIRED",
+          "REPORT_NOT_EVALUATED"
+        ],
+        "recommended_agent_action": "ASK_HUMAN",
+        "spira_verdict": "STOP: unified MVP contract has stop=true; human review is required and listed boundaries remain not evaluated/not claimed."
+      },
+      "arm": "C",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "ASK_HUMAN",
+        "expected_gate": "STOP",
+        "false_proceed": false,
+        "pass": true
+      },
+      "domain": "python_artifact",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json",
+      "input_sha256_actual": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "input_sha256_expected": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "3ca28911ad8577e021fef15d454a3e217194a48941d57c6c53854dd9ae657c84",
+      "raw_private_id": "122e791b-7144-4673-abef-46949047b73f",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e44-e087-7d43-86c4-2d8636242178",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "0280d0aa199d91c4ed93398a07cf5d7f3440cba67b0b4535ceef959326318c00",
+      "stdout_byte_size": 8021,
+      "stdout_sha256": "e75abc847da39ba54f931bd3f6b95459e3d8d28900a44d1e14c50d97871673a8",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36868,
+        "input_total_available": true,
+        "output_tokens": 1102,
+        "reasoning_output_tokens": 729,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "plan.json: errored=false and complete=true",
+          "plan.json: applyable=false",
+          "plan.json: resource_changes[0].address=terraform_data.stable has actions=[\"no-op\"]",
+          "plan.json: before and after values for terraform_data.stable are identical with input.value=\"v1\"",
+          "main.tf: terraform_data.stable input.value=\"v1\""
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "Terraform apply success is not claimed.",
+          "Provider or backend authentication success is not claimed.",
+          "Infrastructure safety, security, compliance, and cost impact are not claimed.",
+          "Universal coverage beyond the supplied raw evidence is not claimed."
+        ],
+        "not_evaluated": [
+          "Terraform apply execution",
+          "Provider or backend authentication",
+          "External infrastructure state outside the supplied plan JSON",
+          "Security, compliance, cost, and policy impact"
+        ],
+        "reason_codes": [
+          "PLAN_COMPLETE",
+          "PLAN_NOT_ERRORED",
+          "NO_RESOURCE_CHANGES",
+          "ONLY_NO_OP_ACTIONS"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "The supplied Terraform plan is complete, not errored, and contains only a no-op change for terraform_data.stable, with planned values matching prior state. No blocking item is evidenced, so the agent may proceed while preserving the stated not-evaluated and not-claimed boundaries."
+      },
+      "arm": "A",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": false,
+          "not_evaluated": false,
+          "reason_codes": false,
+          "recommended_agent_action": true
+        },
+        "errors": [
+          "reason_codes",
+          "not_evaluated",
+          "not_claimed"
+        ],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": false
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json",
+      "input_sha256_actual": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "input_sha256_expected": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "f5795997472e3dd4a8da30861247bcf0dd3aacc067263738681cadec03905219",
+      "raw_private_id": "5999490d-a5af-42cb-9ec6-fada32ec318f",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e45-65d8-72a0-8e0c-8605280ef2a6",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "4eeda42c8e3ae31189d3fd1bc961fdbb2ab488ef1d603e861324e0ee4d0c7ed3",
+      "stdout_byte_size": 10271,
+      "stdout_sha256": "fe84b0621c32b27cc031a59aa413e27983b12d937800823c8995833e66398900",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19200,
+        "input_tokens": 37044,
+        "input_total_available": true,
+        "output_tokens": 1505,
+        "reasoning_output_tokens": 1145,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "proof_reference.id:510317d4124398aa278366960b400d30091c05838a25417d4177c9bba5634104",
+          "proof_reference.context_sha256:ed9d675a3b75231d4599d8b6345a108fef6c7e089cd5d1e2008e53b2a22ff0fe",
+          "producer_contract_hash:5a9a95dad4b2293b09a59990c10e7cf5c2965ec9091957318b49236c3552728a"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TERRAFORM_PLAN_NO_CHANGES"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "The direct domain compact contract for auth_no_changes has stop=false with reason TERRAFORM_PLAN_NO_CHANGES, so the agent may proceed. The contract makes no claims for apply success, infrastructure compliance, correctness, cost, security, or live state freshness."
+      },
+      "arm": "B",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json",
+      "input_sha256_actual": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "input_sha256_expected": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "79e62446989a796ccb777e9d1a8d88ae2b7a6df523f141f410b40a096b88eedf",
+      "raw_private_id": "49003e62-c7e3-428d-9eac-ec3021a39ede",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e46-0c99-70d2-a187-ae79db4be287",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "2ad44216ef9578c4384d03d252b9335c20a212386a2d70cdbda03f59435d6779",
+      "stdout_byte_size": 7964,
+      "stdout_sha256": "fdc37571e01f76e500130aad1343d1e46c3f8ab85f5694db97c5a7590e8c3d99",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 34560,
+        "input_tokens": 36746,
+        "input_total_available": true,
+        "output_tokens": 1028,
+        "reasoning_output_tokens": 666,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    },
+    {
+      "agent_output": {
+        "blocking_items": [],
+        "drilldown_used": false,
+        "evidence_or_proof_references": [
+          "proof_reference.id:510317d4124398aa278366960b400d30091c05838a25417d4177c9bba5634104",
+          "proof_reference.context_sha256:ed9d675a3b75231d4599d8b6345a108fef6c7e089cd5d1e2008e53b2a22ff0fe",
+          "producer_contract_hash:5a9a95dad4b2293b09a59990c10e7cf5c2965ec9091957318b49236c3552728a"
+        ],
+        "gate": "PROCEED",
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TERRAFORM_PLAN_NO_CHANGES"
+        ],
+        "recommended_agent_action": "PROCEED",
+        "spira_verdict": "Unified MVP contract reports stop=false for auth_no_changes, with no blocking items and reason TERRAFORM_PLAN_NO_CHANGES."
+      },
+      "arm": "C",
+      "case_id": "auth_no_changes",
+      "comparison": {
+        "checks": {
+          "blocking_items": true,
+          "gate": true,
+          "not_claimed": true,
+          "not_evaluated": true,
+          "reason_codes": true,
+          "recommended_agent_action": true
+        },
+        "errors": [],
+        "expected_action": "PROCEED",
+        "expected_gate": "PROCEED",
+        "false_proceed": false,
+        "pass": true
+      },
+      "domain": "terraform_plan",
+      "forbidden_tool_count": 0,
+      "forbidden_tools_observed": [],
+      "input_path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json",
+      "input_sha256_actual": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "input_sha256_expected": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "input_sha256_match": true,
+      "local_schema_validation_enforced": true,
+      "output_found": true,
+      "prompt_sha256": "9e2c44722078782f7bd2b343da59001e3398b15245b0633c0a4a3991817fed43",
+      "raw_private_id": "2850cf95-71d7-4c7b-a57f-d8e1e5346d03",
+      "ready": true,
+      "result_envelope_present": true,
+      "returncode": 0,
+      "schema_errors": [],
+      "schema_transport": "CODEX_OUTPUT_SCHEMA_WITH_UNIQUEITEMS_REMOVED_LOCAL_VALIDATION_ENFORCED",
+      "schema_transport_semantics_changed": false,
+      "schema_valid": true,
+      "session_id": "019f5e46-990a-7870-83f7-c77f376c656a",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "9748b624b674733efc87496328806a78e6079dec4efce05e21b2773748a63b32",
+      "stdout_byte_size": 7706,
+      "stdout_sha256": "bbecc0b29ee5c1e1109a9c9d1a10b0700e949a4c6b0e7b3ad3b9fbdc7937aea9",
+      "structured_output_present": true,
+      "tools_observed": [
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": null,
+          "read_only_classification": "READ_ONLY",
+          "status": "in_progress",
+          "type": "command_execution"
+        },
+        {
+          "command": "\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"Get-Content -Raw -LiteralPath .\\\\frozen_input.json\"",
+          "exit_code": 0,
+          "read_only_classification": "READ_ONLY",
+          "status": "completed",
+          "type": "command_execution"
+        }
+      ],
+      "transport_schema_weakened_for_provider": true,
+      "usage": {
+        "cached_input_tokens": 19712,
+        "input_tokens": 36671,
+        "input_total_available": true,
+        "output_tokens": 942,
+        "reasoning_output_tokens": 605,
+        "usage_source": "turn.completed.usage"
+      },
+      "workspace_mutated": false
+    }
+  ],
+  "sessions_completed": 9,
+  "started_at_utc": "2026-07-14T01:33:57Z",
+  "structured_output_count": 9,
+  "terminal_status": "CODEX_NATIVE_CONTRACT_READINESS_NOT_READY",
+  "terminal_statuses": [
+    "CODEX_NATIVE_CONTRACT_READINESS_NOT_READY",
+    "CODEX_PRIMARY_NOT_AUTHORIZED",
+    "HOLDOUT_NOT_AUTHORIZED",
+    "CARRYOVER_NOT_AUTHORIZED",
+    "EFFICIENCY_CLAIM_NOT_AUTHORIZED",
+    "RELEASE_NOT_AUTHORIZED"
+  ],
+  "usage_available_count": 9,
+  "workspace_mutation_count": 0
+}

@@ -1,0 +1,88 @@
+{
+  "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+  "raw_file_count": 9,
+  "raw_files": [
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__A",
+      "raw_private_id": "b0e965f3-8089-4d0f-a128-47a2093958f4",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "722166851be7c8aa043c837e23f04d6bc2327d5ae0d23c1354d7741e1c2037b3",
+      "stdout_byte_size": 7748,
+      "stdout_sha256": "a89f3edf4b54131af996f7ea49342f3aac7e57f25360a451358b40636dfc2602",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__B",
+      "raw_private_id": "8489623f-e4b3-448d-986f-deeade9d4f28",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "954abe049ffe9ee6b89c9761fcab8e3a25387a41ff91c005b935a9d2d5401cd1",
+      "stdout_byte_size": 8658,
+      "stdout_sha256": "e6d0d6f4e3ef8c6cc0b40ac0907e9d240bd4ba893755a899569d44480584ac01",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "pytest_result__synthetic_clean_success__C",
+      "raw_private_id": "29d7ca77-572a-44dc-8b2d-af1ddb79dcc7",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "7019d9b17c25ee4b5b4b06fd873a31aac2f89b270d12b9b325cfa150918d6118",
+      "stdout_byte_size": 8042,
+      "stdout_sha256": "ce044ba87e6133df50d512e6947cfe189be1dd269b6d8f8c21b28742e8ee470a",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__A",
+      "raw_private_id": "b0980eb9-ea02-4327-8c24-4d2186fc2a5a",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "6c72946db6c05083391a0eaefa561eac049388c7241c57ebd2ad42097f72bdb5",
+      "stdout_byte_size": 8635,
+      "stdout_sha256": "6a39521b3d38d9bcff576119e4f71513502cb60f68a109ca2ca7a7128b17c5d8",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__B",
+      "raw_private_id": "9d6a4a75-c5cb-42fb-ba83-3b0e2da0e025",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "cee83cf261d35e87384e63c53cbff5bb25d699daf4e568b9788c7fe1a295b744",
+      "stdout_byte_size": 8186,
+      "stdout_sha256": "0180d392025cf12f6906aff959b668327fe364cf9c200f8cbd12429c1fe2aca7",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "python_artifact__0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4__C",
+      "raw_private_id": "122e791b-7144-4673-abef-46949047b73f",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "0280d0aa199d91c4ed93398a07cf5d7f3440cba67b0b4535ceef959326318c00",
+      "stdout_byte_size": 8021,
+      "stdout_sha256": "e75abc847da39ba54f931bd3f6b95459e3d8d28900a44d1e14c50d97871673a8",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "terraform_plan__auth_no_changes__A",
+      "raw_private_id": "5999490d-a5af-42cb-9ec6-fada32ec318f",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "4eeda42c8e3ae31189d3fd1bc961fdbb2ab488ef1d603e861324e0ee4d0c7ed3",
+      "stdout_byte_size": 10271,
+      "stdout_sha256": "fe84b0621c32b27cc031a59aa413e27983b12d937800823c8995833e66398900",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "terraform_plan__auth_no_changes__B",
+      "raw_private_id": "49003e62-c7e3-428d-9eac-ec3021a39ede",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "2ad44216ef9578c4384d03d252b9335c20a212386a2d70cdbda03f59435d6779",
+      "stdout_byte_size": 7964,
+      "stdout_sha256": "fdc37571e01f76e500130aad1343d1e46c3f8ab85f5694db97c5a7590e8c3d99",
+      "stored_outside_repository": true
+    },
+    {
+      "logical_name": "terraform_plan__auth_no_changes__C",
+      "raw_private_id": "2850cf95-71d7-4c7b-a57f-d8e1e5346d03",
+      "stderr_byte_size": 5561,
+      "stderr_sha256": "9748b624b674733efc87496328806a78e6079dec4efce05e21b2773748a63b32",
+      "stdout_byte_size": 7706,
+      "stdout_sha256": "bbecc0b29ee5c1e1109a9c9d1a10b0700e949a4c6b0e7b3ad3b9fbdc7937aea9",
+      "stored_outside_repository": true
+    }
+  ],
+  "schema": "SPIRA_CODEX_NATIVE_READINESS_RAW_PRIVATE_MANIFEST_V1"
+}
