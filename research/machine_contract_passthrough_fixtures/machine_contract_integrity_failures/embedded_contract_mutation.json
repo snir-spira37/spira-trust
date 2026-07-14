@@ -1,0 +1,177 @@
+{
+  "contradiction_analysis": {
+    "authoritative_for_machine_contract": false,
+    "compliance_status": "PASS",
+    "contradictions": [],
+    "fail_closed": false,
+    "model_writable": false,
+    "produced_by": "VALIDATOR_DETERMINISTIC"
+  },
+  "machine_contract": {
+    "action": "STOP_BLOCKED",
+    "authoritative": true,
+    "blocking_items": [
+      "pytest failure"
+    ],
+    "canonical_contract_sha256": "3a22b04bd9f142953333b349a89635dd51a13091c39155599c2b53adfab9dad6",
+    "canonicalization": "CANONICAL_JSON",
+    "case_identity": {
+      "identity_type": "case_id",
+      "identity_value": "pytest_result_fixture_subject",
+      "sha256": "3a22b04bd9f142953333b349a89635dd51a13091c39155599c2b53adfab9dad6"
+    },
+    "contract_schema": "SPIRA_PYTEST_RESULT_MACHINE_CONTRACT_FIXTURE",
+    "contract_schema_version": 1,
+    "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+    "domain": "pytest_result",
+    "embedded_contract": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "pytest failure"
+      ],
+      "case_id": "pytest_result_fixture_subject",
+      "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+      "domain": "pytest_result",
+      "evidence_references": [
+        "pytest_result:evidence:fixture"
+      ],
+      "explicit_lists": {
+        "blocking_items": [
+          "pytest failure"
+        ],
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TEST_FAILURE"
+        ]
+      },
+      "not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "not_evaluated": [],
+      "producer_identity": "pytest_result:producer:v1",
+      "proof_references": [
+        "pytest_result:proof:fixture"
+      ],
+      "reason_codes": [
+        "MUTATED_REASON"
+      ],
+      "schema": "SPIRA_PYTEST_RESULT_MACHINE_CONTRACT_FIXTURE",
+      "schema_version": 1,
+      "stop": true,
+      "unified_wrapper_identity": "spira:unified:passthrough:v1"
+    },
+    "evidence_references": [
+      {
+        "reference_id": "pytest_result:evidence:fixture",
+        "reference_type": "EVIDENCE",
+        "safe_to_publish": true,
+        "sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+      }
+    ],
+    "explicit_lists": {
+      "blocking_items": [
+        "pytest failure"
+      ],
+      "not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "not_evaluated": [],
+      "reason_codes": [
+        "TEST_FAILURE"
+      ]
+    },
+    "model_writable": false,
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "not_evaluated": [],
+    "producer_contract_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+    "producer_identity": {
+      "identity_type": "producer",
+      "identity_value": "pytest_result:producer:v1",
+      "sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+    },
+    "proof_references": [
+      {
+        "reference_id": "pytest_result:proof:fixture",
+        "reference_type": "PROOF",
+        "safe_to_publish": true,
+        "sha256": "7777777777777777777777777777777777777777777777777777777777777777"
+      }
+    ],
+    "reason_codes": [
+      "TEST_FAILURE"
+    ],
+    "representation": "EMBEDDED_AND_HASH_BOUND",
+    "sensitive_value_policy": {
+      "redacted_references_allowed": true,
+      "sensitive_structural_paths_allowed": true,
+      "sensitive_values_excluded": true
+    },
+    "source_artifact_references": [
+      {
+        "reference_id": "pytest_result:source:fixture",
+        "reference_type": "SOURCE_ARTIFACT",
+        "safe_to_publish": true,
+        "sha256": "3a22b04bd9f142953333b349a89635dd51a13091c39155599c2b53adfab9dad6"
+      }
+    ],
+    "source_contract_sha256": "3a22b04bd9f142953333b349a89635dd51a13091c39155599c2b53adfab9dad6",
+    "stop": true,
+    "unified_wrapper_identity": {
+      "identity_type": "wrapper",
+      "identity_value": "spira:unified:passthrough:v1",
+      "sha256": "5555555555555555555555555555555555555555555555555555555555555555"
+    }
+  },
+  "model_explanation": {
+    "authoritative": false,
+    "format": "TEXT_ONLY",
+    "model_produced": true,
+    "repeated_machine_content_is_authoritative": false,
+    "text": "The explanation follows the authoritative SPIRA machine contract without replacing it."
+  },
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE",
+  "schema_version": 1,
+  "status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_SCHEMA_V1",
+  "telemetry": {
+    "agent_track": "fixture_track",
+    "decision_authority": "NONE",
+    "explanation_compliance_status": "PASS",
+    "harness_identity": "fixture-harness",
+    "harness_identity_status": "AVAILABLE",
+    "model_identity": "fixture-model",
+    "model_identity_status": "AVAILABLE",
+    "schema_validation_status": "PASS",
+    "session_identity": "pytest_result-fixture-session",
+    "source_artifact_hashes": [
+      "3a22b04bd9f142953333b349a89635dd51a13091c39155599c2b53adfab9dad6"
+    ],
+    "timing": {
+      "provider_api_ms": 1,
+      "status": "AVAILABLE",
+      "wall_clock_ms": 1
+    },
+    "tools": {
+      "forbidden_tool_call_count": 0,
+      "status": "AVAILABLE",
+      "tool_call_count": 0,
+      "tools_observed": []
+    },
+    "usage": {
+      "cached_input_tokens": 0,
+      "input_tokens": 10,
+      "output_tokens": 5,
+      "reasoning_output_tokens": 0,
+      "source": "fixture",
+      "status": "AVAILABLE"
+    }
+  }
+}

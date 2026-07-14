@@ -1,0 +1,167 @@
+{
+  "contradiction_analysis": {
+    "authoritative_for_machine_contract": false,
+    "compliance_status": "PASS",
+    "contradictions": [],
+    "fail_closed": false,
+    "model_writable": false,
+    "produced_by": "VALIDATOR_DETERMINISTIC"
+  },
+  "machine_contract": {
+    "action": "PROCEED",
+    "authoritative": true,
+    "blocking_items": [],
+    "canonical_contract_sha256": "a2d9eaad9143e45a8a1044f51b4955a9427d3f0510bd25ca9bfc881dce056155",
+    "canonicalization": "CANONICAL_JSON",
+    "case_identity": {
+      "identity_type": "case_id",
+      "identity_value": "terraform_plan_fixture_subject",
+      "sha256": "a2d9eaad9143e45a8a1044f51b4955a9427d3f0510bd25ca9bfc881dce056155"
+    },
+    "contract_schema": "SPIRA_TERRAFORM_PLAN_MACHINE_CONTRACT_FIXTURE",
+    "contract_schema_version": 1,
+    "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+    "domain": "terraform_plan",
+    "embedded_contract": {
+      "action": "PROCEED",
+      "blocking_items": [],
+      "case_id": "terraform_plan_fixture_subject",
+      "decision_semantics_version": "SPIRA_DECISION_SEMANTICS_V2",
+      "domain": "terraform_plan",
+      "evidence_references": [
+        "terraform_plan:evidence:fixture"
+      ],
+      "explicit_lists": {
+        "blocking_items": [],
+        "not_claimed": [
+          "producer_correctness",
+          "software_safety"
+        ],
+        "not_evaluated": [],
+        "reason_codes": [
+          "TESTS_PASSED"
+        ]
+      },
+      "not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "not_evaluated": [],
+      "producer_identity": "terraform_plan:producer:v1",
+      "proof_references": [
+        "terraform_plan:proof:fixture"
+      ],
+      "reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "schema": "SPIRA_TERRAFORM_PLAN_MACHINE_CONTRACT_FIXTURE",
+      "schema_version": 1,
+      "stop": false,
+      "unified_wrapper_identity": "spira:unified:passthrough:v1"
+    },
+    "evidence_references": [
+      {
+        "reference_id": "terraform_plan:evidence:fixture",
+        "reference_type": "EVIDENCE",
+        "safe_to_publish": true,
+        "sha256": "6666666666666666666666666666666666666666666666666666666666666666"
+      }
+    ],
+    "explicit_lists": {
+      "blocking_items": [],
+      "not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "not_evaluated": [],
+      "reason_codes": [
+        "TESTS_PASSED"
+      ]
+    },
+    "model_writable": false,
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "not_evaluated": [],
+    "producer_contract_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+    "producer_identity": {
+      "identity_type": "producer",
+      "identity_value": "terraform_plan:producer:v1",
+      "sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+    },
+    "proof_references": [
+      {
+        "reference_id": "terraform_plan:proof:fixture",
+        "reference_type": "PROOF",
+        "safe_to_publish": true,
+        "sha256": "7777777777777777777777777777777777777777777777777777777777777777"
+      }
+    ],
+    "reason_codes": [
+      "TESTS_PASSED"
+    ],
+    "representation": "EMBEDDED_AND_HASH_BOUND",
+    "sensitive_value_policy": {
+      "redacted_references_allowed": true,
+      "sensitive_structural_paths_allowed": true,
+      "sensitive_values_excluded": true
+    },
+    "source_artifact_references": [
+      {
+        "reference_id": "terraform_plan:source:fixture",
+        "reference_type": "SOURCE_ARTIFACT",
+        "safe_to_publish": true,
+        "sha256": "a2d9eaad9143e45a8a1044f51b4955a9427d3f0510bd25ca9bfc881dce056155"
+      }
+    ],
+    "source_contract_sha256": "a2d9eaad9143e45a8a1044f51b4955a9427d3f0510bd25ca9bfc881dce056155",
+    "stop": false,
+    "unified_wrapper_identity": {
+      "identity_type": "wrapper",
+      "identity_value": "spira:unified:passthrough:v1",
+      "sha256": "5555555555555555555555555555555555555555555555555555555555555555"
+    }
+  },
+  "model_explanation": {
+    "authoritative": false,
+    "evidence_summary": "Only non-sensitive fixture evidence is referenced.",
+    "format": "STRUCTURED_TEXT",
+    "human_review_questions": [
+      "Is additional human review required?"
+    ],
+    "model_produced": true,
+    "next_step_suggestions": [
+      "Do not override the machine contract."
+    ],
+    "rationale": "The machine contract is authoritative.",
+    "remediation_suggestions": [
+      "Follow the machine action."
+    ],
+    "repeated_machine_content_is_authoritative": false,
+    "text": "The explanation follows the authoritative SPIRA machine contract without replacing it."
+  },
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE",
+  "schema_version": 1,
+  "status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_SCHEMA_V1",
+  "telemetry": {
+    "agent_track": "fixture_track_not_exposed",
+    "decision_authority": "NONE",
+    "explanation_compliance_status": "PASS",
+    "harness_identity_status": "NOT_EXPOSED",
+    "model_identity_status": "NOT_EXPOSED",
+    "schema_validation_status": "PASS",
+    "source_artifact_hashes": [
+      "a2d9eaad9143e45a8a1044f51b4955a9427d3f0510bd25ca9bfc881dce056155"
+    ],
+    "timing": {
+      "status": "NOT_EXPOSED"
+    },
+    "tools": {
+      "status": "NOT_EXPOSED"
+    },
+    "usage": {
+      "status": "NOT_EXPOSED"
+    }
+  }
+}
