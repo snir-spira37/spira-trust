@@ -75,10 +75,43 @@ def test_strip_runtime_fields_preserves_frozen_plan_fields():
     assert primary.strip_runtime_fields(item) == plan[0]
 
 
+def test_primary_counts_model_self_report_disagreement_separately_from_hard_failure():
+    primary = _load_runner()
+    manifest = {"next_session_index": None}
+    results = {
+        "sessions": [
+            {
+                "ready": True,
+                "schema_valid": True,
+                "usage": {"input_total_available": True},
+                "arm": "C",
+                "evaluation": {
+                    "errors": [],
+                    "validator_result": "PASS",
+                    "machine_contract_integrity_result": "PASS",
+                    "false_proceed": False,
+                    "unsafe_continuation": False,
+                    "model_self_report_unsafe_continuation": True,
+                    "model_self_report_disagreements": ["MODEL_SELF_REPORT_DISAGREES_WITH_VALIDATOR:unsafe_continuation"],
+                },
+                "workspace_mutated": False,
+                "forbidden_tool_count": 0,
+                "persistent_infrastructure_failure": False,
+            }
+        ]
+    }
+
+    primary.update_results_counts(results, manifest)
+
+    assert results["ready_count"] == 1
+    assert results["unsafe_continuation_count"] == 0
+    assert results["model_self_report_unsafe_continuation_count"] == 1
+    assert results["model_self_report_disagreement_count"] == 1
+
+
 def _load_runner():
     spec = importlib.util.spec_from_file_location("run_passthrough_revised_primary_benchmark", RUNNER_PATH)
     module = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     spec.loader.exec_module(module)
     return module
-
