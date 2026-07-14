@@ -20,12 +20,12 @@ BENCHMARK_ROOT = readiness.BENCHMARK_ROOT
 CLAUDE_ROOT = readiness.CLAUDE_ROOT
 CODEX_ROOT = readiness.CODEX_ROOT
 
-AUTHORIZATION_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_revised_primary_benchmark_authorization.md"
+AUTHORIZATION_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_preflight_primary_benchmark_authorization.md"
 RANDOMIZATION_MANIFEST_PATH = BENCHMARK_ROOT / "randomization_manifest_v1.json"
 
-AGENT_ORDER_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_revised_primary_agent_order.json"
-COMBINED_REPORT_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_revised_primary_combined_report.md"
-COMBINED_REVIEW_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_revised_primary_combined_review.md"
+AGENT_ORDER_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_preflight_primary_agent_order.json"
+COMBINED_REPORT_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_preflight_primary_combined_report.md"
+COMBINED_REVIEW_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_preflight_primary_combined_review.md"
 
 MAX_INFRASTRUCTURE_RETRIES = 2
 RESUMABLE_STATUSES = {"PENDING", "RUNNING", "RATE_LIMIT_BLOCKED"}
@@ -34,12 +34,12 @@ AGENT_ORDER = ["claude_native", "codex_native"]
 AGENT_CONFIG = {
     "claude_native": {
         "root": CLAUDE_ROOT,
-        "results": CLAUDE_ROOT / "passthrough_revised_primary_results.json",
-        "report": CLAUDE_ROOT / "passthrough_revised_primary_report.md",
-        "review": CLAUDE_ROOT / "passthrough_revised_primary_review.md",
-        "private_manifest": CLAUDE_ROOT / "passthrough_revised_primary_raw_private_manifest.json",
-        "session_manifest": CLAUDE_ROOT / "passthrough_revised_primary_session_manifest.json",
-        "private_prefix": "spira_claude_native_passthrough_revised_primary_private_",
+        "results": CLAUDE_ROOT / "passthrough_post_preflight_primary_results.json",
+        "report": CLAUDE_ROOT / "passthrough_post_preflight_primary_report.md",
+        "review": CLAUDE_ROOT / "passthrough_post_preflight_primary_review.md",
+        "private_manifest": CLAUDE_ROOT / "passthrough_post_preflight_primary_raw_private_manifest.json",
+        "session_manifest": CLAUDE_ROOT / "passthrough_post_preflight_primary_session_manifest.json",
+        "private_prefix": "spira_claude_native_passthrough_post_preflight_primary_private_",
         "complete_status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_COMPLETE",
         "incomplete_status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_INCOMPLETE",
         "infra_status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_INFRASTRUCTURE_BLOCKED",
@@ -47,12 +47,12 @@ AGENT_CONFIG = {
     },
     "codex_native": {
         "root": CODEX_ROOT,
-        "results": CODEX_ROOT / "passthrough_revised_primary_results.json",
-        "report": CODEX_ROOT / "passthrough_revised_primary_report.md",
-        "review": CODEX_ROOT / "passthrough_revised_primary_review.md",
-        "private_manifest": CODEX_ROOT / "passthrough_revised_primary_raw_private_manifest.json",
-        "session_manifest": CODEX_ROOT / "passthrough_revised_primary_session_manifest.json",
-        "private_prefix": "spira_codex_native_passthrough_revised_primary_private_",
+        "results": CODEX_ROOT / "passthrough_post_preflight_primary_results.json",
+        "report": CODEX_ROOT / "passthrough_post_preflight_primary_report.md",
+        "review": CODEX_ROOT / "passthrough_post_preflight_primary_review.md",
+        "private_manifest": CODEX_ROOT / "passthrough_post_preflight_primary_raw_private_manifest.json",
+        "session_manifest": CODEX_ROOT / "passthrough_post_preflight_primary_session_manifest.json",
+        "private_prefix": "spira_codex_native_passthrough_post_preflight_primary_private_",
         "complete_status": "CODEX_NATIVE_PASSTHROUGH_REVISED_PRIMARY_COMPLETE",
         "incomplete_status": "CODEX_NATIVE_PASSTHROUGH_REVISED_PRIMARY_INCOMPLETE",
         "infra_status": "CODEX_NATIVE_PASSTHROUGH_REVISED_PRIMARY_INFRASTRUCTURE_BLOCKED",
