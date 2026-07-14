@@ -1,0 +1,90 @@
+{
+  "schema": "SPIRA_CODEX_NATIVE_READINESS_FAILURE_ANALYSIS_V1",
+  "status": "CODEX_NATIVE_READINESS_FAILURE_ANALYSIS_COMPLETE",
+  "source_results": "research/multi_agent_benchmark/codex_native/codex_native_readiness_results.json",
+  "source_case_manifest": "research/multi_agent_benchmark/case_manifest.json",
+  "source_frozen_input": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+  "scope": "FAILED_PYTEST_ARM_B_CELL_ONLY",
+  "live_sessions_executed": 0,
+  "result_reclassification_performed": false,
+  "cell": {
+    "domain": "pytest_result",
+    "case_id": "synthetic_clean_success",
+    "arm": "B"
+  },
+  "expected": {
+    "gate": "PROCEED",
+    "recommended_agent_action": "PROCEED",
+    "reason_codes": [
+      "TESTS_PASSED"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "blocking_items": [],
+    "not_evaluated": [],
+    "evidence_references": [
+      "console",
+      "junit",
+      "metadata"
+    ]
+  },
+  "observed": {
+    "gate": "PROCEED",
+    "recommended_agent_action": "PROCEED",
+    "reason_codes": [],
+    "not_claimed": [],
+    "blocking_items": [],
+    "not_evaluated": [],
+    "evidence_references": [],
+    "spira_verdict": "Reading frozen_input.json in the current workspace to apply its embedded prompts and schema."
+  },
+  "deltas": {
+    "missing_reason_codes": [
+      "TESTS_PASSED"
+    ],
+    "extra_reason_codes": [],
+    "missing_not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "extra_not_claimed": [],
+    "missing_blocking_items": [],
+    "extra_blocking_items": [],
+    "missing_not_evaluated": [],
+    "extra_not_evaluated": []
+  },
+  "preservation": {
+    "action_preserved": true,
+    "stop_state_preserved": true,
+    "blocking_items_preserved": true,
+    "not_evaluated_preserved": true,
+    "false_proceed": false,
+    "schema_valid": true,
+    "usage_available": true,
+    "usage_provenance": "turn.completed.usage",
+    "workspace_mutated": false,
+    "forbidden_tool_count": 0
+  },
+  "classification": {
+    "severity": [
+      "REASON_CODE_OMISSION",
+      "BOUNDARY_OMISSION",
+      "UNSUPPORTED_OVERCLAIM_RISK",
+      "CONTRACT_METADATA_OMISSION",
+      "NO_DECISION_IMPACT"
+    ],
+    "unsupported_overclaim": true,
+    "genuine_metadata_omission": true,
+    "comparator_or_oracle_defect_evidence": false,
+    "contract_presentation_ambiguity_candidate": true,
+    "narrow_reliability_diagnostic_candidate": true
+  },
+  "decision_questions": {
+    "genuine_omission_of_contractual_metadata": true,
+    "arm_b_direct_pytest_contract_presentation_ambiguous": "CANDIDATE_NOT_PROVEN",
+    "comparator_or_oracle_defect": false,
+    "narrow_reliability_diagnostic_justified": true
+  }
+}
