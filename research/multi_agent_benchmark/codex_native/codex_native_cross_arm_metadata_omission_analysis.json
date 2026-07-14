@@ -1,0 +1,272 @@
+{
+  "schema": "SPIRA_CODEX_NATIVE_CROSS_ARM_METADATA_OMISSION_ANALYSIS_V1",
+  "status": "CODEX_NATIVE_CROSS_ARM_METADATA_OMISSION_ANALYSIS_COMPLETE",
+  "authorization": "research/multi_agent_benchmark/codex_native/codex_native_cross_arm_metadata_omission_analysis_authorization.md",
+  "scope": {
+    "mode": "EXISTING_RESULTS_ONLY",
+    "live_sessions_executed": 0,
+    "result_reclassification_performed": false,
+    "domain": "pytest_result",
+    "case_id": "synthetic_clean_success",
+    "arms": [
+      "B",
+      "C"
+    ],
+    "codex_primary_authorized": false
+  },
+  "source_artifacts": {
+    "readiness_results": {
+      "path": "research/multi_agent_benchmark/codex_native/codex_native_readiness_results.json",
+      "sha256": "6d63140452095527abc70a4ba82ee4199713e64e93aeedd5671379e99f3ce93e"
+    },
+    "readiness_failure_analysis": {
+      "path": "research/multi_agent_benchmark/codex_native/codex_native_readiness_failure_analysis.json",
+      "sha256": "0920275b00520d513e38574ac4090751580aff91b6d35d7fb8546c8259f3f04b"
+    },
+    "reliability_diagnostic_results": {
+      "path": "research/multi_agent_benchmark/codex_native/codex_native_readiness_reliability_diagnostic_results.json",
+      "sha256": "5a8613c389748964d51b7438de799f5049636c709699ceca76d9df42b28623ce"
+    },
+    "arm_b_frozen_input": {
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json",
+      "sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8"
+    },
+    "arm_c_frozen_input": {
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json",
+      "sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203"
+    },
+    "agent_output_schema": {
+      "path": "research/multi_agent_benchmark/agent_output.schema.json",
+      "sha256": "870ee459e9aa1557eba180cee156e199316ee72b977c030a33cda4d7448d3a88"
+    }
+  },
+  "expected_contract_metadata": {
+    "reason_codes": [
+      "TESTS_PASSED"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "gate": "PROCEED",
+    "recommended_agent_action": "PROCEED",
+    "blocking_items": [],
+    "not_evaluated": []
+  },
+  "observed_events": [
+    {
+      "event_id": "original_readiness_arm_b_failure",
+      "source": "codex_native_readiness_results.json",
+      "arm": "B",
+      "diagnostic_repetition": null,
+      "schema_valid": true,
+      "usage_available": true,
+      "action_preserved": true,
+      "stop_state_preserved": true,
+      "blocking_items_preserved": true,
+      "not_evaluated_preserved": true,
+      "false_proceed": false,
+      "expected_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "observed_reason_codes": [],
+      "missing_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "extra_reason_codes": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "observed_not_claimed": [],
+      "missing_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "extra_not_claimed": [],
+      "observed_verdict_type": "READING_INPUT_STATUS_INSTEAD_OF_FINAL_CONTRACT_RECONSTRUCTION",
+      "observed_verdict_summary": "The model returned a schema-valid object stating it was reading frozen_input.json rather than a final reconstruction of the supplied SPIRA contract."
+    },
+    {
+      "event_id": "diagnostic_arm_b_successes",
+      "source": "codex_native_readiness_reliability_diagnostic_results.json",
+      "arm": "B",
+      "diagnostic_repetitions": 10,
+      "exact_count": 10,
+      "failure_count": 0,
+      "schema_valid_count": 10,
+      "usage_available_count": 10,
+      "missing_reason_codes_count": 0,
+      "missing_not_claimed_count": 0,
+      "finding": "The original Arm B omission was not reproduced in ten fresh unscored repetitions with the same frozen input, model configuration, schema, oracle, and comparator."
+    },
+    {
+      "event_id": "diagnostic_arm_c_failure",
+      "source": "codex_native_readiness_reliability_diagnostic_results.json",
+      "arm": "C",
+      "diagnostic_repetition": 4,
+      "schema_valid": true,
+      "usage_available": true,
+      "action_preserved": true,
+      "stop_state_preserved": true,
+      "blocking_items_preserved": true,
+      "not_evaluated_preserved": true,
+      "false_proceed": false,
+      "expected_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "observed_reason_codes": [
+        "READING_INPUT"
+      ],
+      "missing_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "extra_reason_codes": [
+        "READING_INPUT"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "observed_not_claimed": [],
+      "missing_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "extra_not_claimed": [],
+      "observed_verdict_type": "READING_INPUT_STATUS_INSTEAD_OF_FINAL_CONTRACT_RECONSTRUCTION",
+      "observed_verdict_summary": "The model returned a schema-valid object stating it was reading frozen_input.json rather than a final reconstruction of the supplied SPIRA contract."
+    },
+    {
+      "event_id": "diagnostic_arm_c_successes",
+      "source": "codex_native_readiness_reliability_diagnostic_results.json",
+      "arm": "C",
+      "diagnostic_repetitions": 5,
+      "exact_count": 4,
+      "failure_count": 1,
+      "schema_valid_count": 5,
+      "usage_available_count": 5,
+      "missing_reason_codes_count": 1,
+      "missing_not_claimed_count": 1,
+      "finding": "The same metadata omission pattern appeared once in the matched unified-contract control."
+    }
+  ],
+  "arm_input_comparison": {
+    "shared_prompt_obligations": {
+      "preserve_explicit_lists": true,
+      "preserve_not_evaluated_exactly": true,
+      "preserve_not_claimed_boundaries": true,
+      "return_required_json_object_exactly": true,
+      "preserve_reason_codes_blocking_items_evidence_references_and_not_claimed": true
+    },
+    "arm_b": {
+      "contract_surface": "direct_domain_contract",
+      "reason_codes_location": "evidence_surface.direct_domain_contract.policy_action.reason_codes",
+      "not_claimed_location": "evidence_surface.direct_domain_contract.not_claimed",
+      "action_location": "evidence_surface.direct_domain_contract.policy_action.recommended_agent_action",
+      "stop_location": "evidence_surface.direct_domain_contract.policy_action.stop",
+      "contract_contains_expected_metadata": true
+    },
+    "arm_c": {
+      "contract_surface": "unified_mvp_contract",
+      "reason_codes_location": "evidence_surface.unified_mvp_contract.reason_codes",
+      "not_claimed_location": "evidence_surface.unified_mvp_contract.not_claimed",
+      "action_location": "evidence_surface.unified_mvp_contract.recommended_agent_action",
+      "stop_location": "evidence_surface.unified_mvp_contract.stop",
+      "contract_contains_expected_metadata": true
+    },
+    "shared_evidence": {
+      "producer_contract_hash": "39e93a9ec8e090dfacc89ae715e7f882cc55fafa718efe3349f70506697b58e3",
+      "result_identity_sha256": "41faa8cc93583874449197ea874c2afe2097362b8b931a596ce6e1eee7b92dfc",
+      "scope_identity_sha256": "69bf76b5f4c8cf9ed3b0ca2412f700c8f350571899d22426484e37eccb54100c"
+    }
+  },
+  "schema_findings": {
+    "schema_requires_reason_codes_field": true,
+    "schema_requires_not_claimed_field": true,
+    "schema_allows_empty_reason_codes_array": true,
+    "schema_allows_empty_not_claimed_array": true,
+    "schema_allows_arbitrary_reason_code_strings": true,
+    "schema_does_not_encode_case_specific_oracle_values": true,
+    "schema_valid_is_not_oracle_exact": true,
+    "local_oracle_comparator_required_for_content_fidelity": true,
+    "schema_defect_confirmed": false
+  },
+  "layer_findings": {
+    "spira_source_contract": {
+      "status": "PASS",
+      "finding": "Both Arm B and Arm C frozen contracts contain TESTS_PASSED and the producer_correctness/software_safety not-claimed boundaries."
+    },
+    "contract_transfer_to_model": {
+      "status": "PASS_WITH_PRESENTATION_DIFFERENCES",
+      "finding": "The metadata is present in both model-visible inputs. Arm B nests reason_codes under policy_action; Arm C places reason_codes at the unified contract top level. Both are explicit."
+    },
+    "model_action_understanding": {
+      "status": "PASS",
+      "finding": "Across the original failure and diagnostic failure, PROCEED and stop=false were preserved and false PROCEED remained zero."
+    },
+    "model_contract_reconstruction": {
+      "status": "FAIL_INTERMITTENT",
+      "finding": "Codex sometimes emitted a schema-valid process/status object rather than the final oracle-exact contract metadata."
+    }
+  },
+  "candidate_cause_assessment": {
+    "model_serialization_variability": {
+      "status": "CONFIRMED",
+      "evidence": [
+        "The original Arm B omission did not reproduce in 10/10 identical Arm B repetitions.",
+        "The same omission class appeared once in 5 matched Arm C repetitions.",
+        "Most repetitions with the same frozen inputs were exact, while one produced a schema-valid status-like object."
+      ]
+    },
+    "global_contract_presentation_ambiguity": {
+      "status": "CANDIDATE_NOT_CONFIRMED",
+      "evidence": [
+        "The same success-case metadata must be preserved across both direct and unified presentations.",
+        "The shared prompt instructs exact preservation, but the output schema cannot force the specific oracle content.",
+        "Because the same frozen presentations usually succeeded, the evidence does not prove a deterministic presentation defect."
+      ]
+    },
+    "schema_content_enforcement_limitation": {
+      "status": "CONFIRMED",
+      "evidence": [
+        "Both failures were schema-valid.",
+        "The schema requires arrays but does not encode the case-specific values TESTS_PASSED, producer_correctness, or software_safety.",
+        "The comparator, not JSON Schema alone, detects the oracle-content omission."
+      ]
+    },
+    "prompt_contract_preservation_weakness": {
+      "status": "CANDIDATE_NOT_CONFIRMED",
+      "evidence": [
+        "The prompt asks for exact preservation, yet one failure returned a status-like object.",
+        "The failures are intermittent rather than deterministic under identical inputs.",
+        "Any prompt amendment would be global and would require separate authorization."
+      ]
+    },
+    "comparator_or_oracle_defect": {
+      "status": "NOT_CONFIRMED",
+      "evidence": [
+        "Expected metadata appears in both frozen inputs.",
+        "The comparator detected genuine missing and substituted values rather than ordering or normalization differences.",
+        "No alternate contract interpretation preserves oracle-exact reason_codes and not_claimed for the failing outputs."
+      ]
+    }
+  },
+  "terminal_findings": [
+    "MODEL_SERIALIZATION_VARIABILITY_CONFIRMED",
+    "SCHEMA_ENFORCES_STRUCTURE_NOT_ORACLE_CONTENT",
+    "MODEL_INSTANCE_CONTENT_OMISSION_CONFIRMED",
+    "NO_SCHEMA_DEFECT_CONFIRMED",
+    "COMPARATOR_OR_ORACLE_DEFECT_NOT_CONFIRMED",
+    "CONTRACT_PRESENTATION_AMBIGUITY_REMAINS_CANDIDATE",
+    "PROMPT_CONTRACT_PRESERVATION_WEAKNESS_REMAINS_CANDIDATE",
+    "CODEX_NATIVE_STRICT_METADATA_RELIABILITY_NOT_READY",
+    "CODEX_PRIMARY_NOT_AUTHORIZED"
+  ],
+  "next_gate": {
+    "recommended": "GLOBAL_CONTRACT_PRESENTATION_AMENDMENT_DISCUSSION_OR_TRACK_BLOCKED_DECISION",
+    "new_live_sessions_authorized": false,
+    "primary_authorized": false,
+    "release_authorized": false
+  }
+}
