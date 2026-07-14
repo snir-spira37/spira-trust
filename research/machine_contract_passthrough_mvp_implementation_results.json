@@ -1,0 +1,254 @@
+{
+  "contradiction_gate_result": {
+    "gates": [
+      {
+        "contradiction_classes": [
+          "MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION",
+          "MODEL_EXPLANATION_UNSAFE_CONTINUATION"
+        ],
+        "error_codes": [
+          "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_UNSAFE_CONTINUATION",
+          "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_OVERRIDES_MACHINE_ACTION"
+        ],
+        "expected": "FAIL",
+        "fail_closed": true,
+        "gate": "stop_override",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [
+          "MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS"
+        ],
+        "error_codes": [
+          "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_CONVERTS_NOT_EVALUATED_TO_PASS"
+        ],
+        "expected": "FAIL",
+        "fail_closed": true,
+        "gate": "not_evaluated_to_pass",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [
+          "MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY"
+        ],
+        "error_codes": [
+          "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_CLAIMS_NOT_CLAIMED_BOUNDARY"
+        ],
+        "expected": "FAIL",
+        "fail_closed": true,
+        "gate": "not_claimed_violation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [
+          "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+        ],
+        "error_codes": [
+          "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+          "SENSITIVE_VALUE_EXPOSED"
+        ],
+        "expected": "FAIL",
+        "fail_closed": true,
+        "gate": "sensitive_marker_exposure",
+        "observed": "FAIL",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "domain1_passthrough": {
+    "contradiction_classes": [],
+    "error_codes": [],
+    "expected": "PASS",
+    "fail_closed": false,
+    "gate": "domain1_passthrough",
+    "observed": "PASS",
+    "status": "PASS"
+  },
+  "domain2_passthrough": {
+    "contradiction_classes": [],
+    "error_codes": [],
+    "expected": "PASS",
+    "fail_closed": false,
+    "gate": "domain2_passthrough",
+    "observed": "PASS",
+    "status": "PASS"
+  },
+  "domain3_passthrough": {
+    "contradiction_classes": [],
+    "error_codes": [],
+    "expected": "PASS",
+    "fail_closed": false,
+    "gate": "domain3_passthrough",
+    "observed": "PASS",
+    "status": "PASS"
+  },
+  "efficiency_claim_authorized": false,
+  "errors": [],
+  "fixture_validator_regression": {
+    "false_accepts": 0,
+    "false_rejects": 0,
+    "negative_rejected_count": 37,
+    "positive_pass_count": 6,
+    "status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_VALIDATOR_IMPLEMENTATION_PASS"
+  },
+  "focused_tests": {
+    "command": "python -m pytest tests/test_machine_contract_passthrough_mvp.py tests/test_mvp_unified.py tests/test_machine_contract_passthrough_envelope_validator.py",
+    "passed": 24,
+    "status": "PASS"
+  },
+  "full_pytest": {
+    "command": "python -m pytest",
+    "passed": 204,
+    "status": "PASS"
+  },
+  "live_sessions_executed": false,
+  "machine_contract_identity_preservation": {
+    "gates": [
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "CANONICAL_CONTRACT_HASH_MISMATCH"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "hash_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "ACTION_DRIFT",
+          "ACTION_STOP_INCONSISTENT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "action_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "REASON_CODES_DRIFT",
+          "REASON_CODES_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "reason_codes_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "BLOCKING_ITEMS_DRIFT",
+          "BLOCKING_ITEMS_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "blocking_items_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "NOT_EVALUATED_DRIFT",
+          "NOT_EVALUATED_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "not_evaluated_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "NOT_CLAIMED_DRIFT",
+          "NOT_CLAIMED_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "not_claimed_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "EVIDENCE_REFERENCE_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "evidence_identity_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      },
+      {
+        "contradiction_classes": [],
+        "error_codes": [
+          "PROOF_REFERENCE_DRIFT"
+        ],
+        "expected": "FAIL",
+        "fail_closed": false,
+        "gate": "proof_identity_mutation",
+        "observed": "FAIL",
+        "status": "PASS"
+      }
+    ],
+    "status": "PASS"
+  },
+  "release_authorized": false,
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_MVP_IMPLEMENTATION_RESULTS_V1",
+  "schema_version": 1,
+  "sensitive_value_gate_result": {
+    "contradiction_classes": [
+      "MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE"
+    ],
+    "error_codes": [
+      "CONTRADICTION_CLASS_DETECTED:MODEL_EXPLANATION_EXPOSES_SENSITIVE_VALUE",
+      "SENSITIVE_VALUE_EXPOSED"
+    ],
+    "expected": "FAIL",
+    "fail_closed": true,
+    "gate": "sensitive_marker_exposure",
+    "observed": "FAIL",
+    "status": "PASS"
+  },
+  "status": "MACHINE_CONTRACT_PASSTHROUGH_MVP_IMPLEMENTATION_PASS",
+  "telemetry_gate_result": {
+    "contradiction_classes": [],
+    "error_codes": [
+      "TELEMETRY_DECISION_AUTHORITY_NOT_NONE",
+      "TELEMETRY_DECISION_AUTHORITY_NOT_NONE"
+    ],
+    "expected": "FAIL",
+    "fail_closed": false,
+    "gate": "telemetry_decision_authority",
+    "observed": "FAIL",
+    "status": "PASS"
+  },
+  "validator_result": {
+    "counts": {
+      "contradiction_classes_detected_count": 14,
+      "deterministic_repeated_evaluation": true,
+      "false_accepts": 0,
+      "false_rejects": 0,
+      "fixture_count": 43,
+      "fixture_mutations": 0,
+      "negative_fixture_count": 37,
+      "negative_rejected_count": 37,
+      "positive_fixture_count": 6,
+      "positive_pass_count": 6,
+      "schema_manifest_hash_validation": "PASS"
+    },
+    "status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_VALIDATOR_IMPLEMENTATION_PASS",
+    "verdict": "PASS"
+  }
+}
