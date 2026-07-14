@@ -1,0 +1,671 @@
+{
+  "failure_count": 12,
+  "failure_scope": "Arm B/C strict-fidelity failures only",
+  "rows": [
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_malformed_json",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "extra_items": [
+        "malformed_terraform_plan_json"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "RERUN_REQUIRED",
+      "observed_blocking_items": [
+        "malformed_terraform_plan_json"
+      ],
+      "observed_evidence_references": [
+        "7420611b49d372829f1e6536897e9157e794214c2f7f054e43e6b36385a6a043",
+        "plan.json.invalid"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 1,
+      "semantic_loss_candidate": true,
+      "session_index": 24,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "auth_replace_create_delete",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "extra_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "observed_evidence_references": [
+        "82d6cde07346fb2b1a04418de081b4f60fc83c0c924b99a2416e754e63fa1ca3",
+        "ea7b8c9e8cff7eabe099ae65f0af306942986c3f06a6a15f9af19f028a99c724"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 2,
+      "semantic_loss_candidate": true,
+      "session_index": 69,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_instruction_text_description",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "extra_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "observed_evidence_references": [
+        "6f3f1dcc3b8bc5bc0e89620fa373d07b749ece98e7cfb16a203a1dedf65de803"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [],
+      "observed_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 3,
+      "semantic_loss_candidate": true,
+      "session_index": 90,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "B",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_malformed_json",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "extra_items": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "RERUN_REQUIRED",
+      "observed_blocking_items": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "observed_evidence_references": [
+        "7420611b49d372829f1e6536897e9157e794214c2f7f054e43e6b36385a6a043"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 3,
+      "semantic_loss_candidate": true,
+      "session_index": 94,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "synthetic_console_junit_conflict",
+      "comparator_defect_candidate": false,
+      "domain": "pytest_result",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "result_identity"
+      ],
+      "expected_reason_codes": [
+        "TEST_EVIDENCE_CONFLICT"
+      ],
+      "extra_items": [
+        "console_junit_evidence_conflict"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "RERUN_REQUIRED",
+      "observed_blocking_items": [
+        "console_junit_evidence_conflict"
+      ],
+      "observed_evidence_references": [
+        "console",
+        "junit",
+        "metadata"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "result_identity"
+      ],
+      "observed_reason_codes": [
+        "TEST_EVIDENCE_CONFLICT"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 3,
+      "semantic_loss_candidate": true,
+      "session_index": 102,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "auth_replace_create_delete",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "extra_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "observed_evidence_references": [
+        "82d6cde07346fb2b1a04418de081b4f60fc83c0c924b99a2416e754e63fa1ca3"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 3,
+      "semantic_loss_candidate": true,
+      "session_index": 105,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "ITEM_SUBSTITUTION",
+        "WORDING_OR_NORMALIZATION_ONLY"
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "comparator_defect_candidate": false,
+      "domain": "python_artifact",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "BLOCK"
+      ],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "entry_point_policy",
+        "license_policy",
+        "lockfile_cross_check",
+        "pep740_offline_attestations",
+        "target_environment"
+      ],
+      "expected_reason_codes": [
+        "BLOCKING_FINDINGS",
+        "REPORT_NOT_EVALUATED"
+      ],
+      "extra_items": [
+        "Blocking findings in unified MVP contract prevent proceeding"
+      ],
+      "false_proceed": false,
+      "missing_items": [
+        "BLOCK"
+      ],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "Blocking findings in unified MVP contract prevent proceeding"
+      ],
+      "observed_evidence_references": [
+        "proof_reference.id: 2635a990e48446bcdbe4d94e4d5e7bf6ffc417a6669f943616409455110ec263",
+        "proof_reference.root: b14b115578f1433689ee870ca69a8544b5ec5358ea219351c7132b4d90b52c50"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "entry_point_policy",
+        "license_policy",
+        "lockfile_cross_check",
+        "pep740_offline_attestations",
+        "target_environment"
+      ],
+      "observed_reason_codes": [
+        "BLOCKING_FINDINGS",
+        "REPORT_NOT_EVALUATED"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 3,
+      "semantic_loss_candidate": true,
+      "session_index": 108,
+      "severity": [
+        "REMEDIATION_DETAIL_LOSS"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_instruction_text_description",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "extra_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "observed_evidence_references": [
+        "6f3f1dcc3b8bc5bc0e89620fa373d07b749ece98e7cfb16a203a1dedf65de803",
+        "research/terraform_plan_contract/cases/syn_instruction_text_description/plan.json"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [],
+      "observed_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 4,
+      "semantic_loss_candidate": true,
+      "session_index": 126,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "B",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_malformed_json",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "extra_items": [
+        "Malformed Terraform plan JSON"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "RERUN_REQUIRED",
+      "observed_blocking_items": [
+        "Malformed Terraform plan JSON"
+      ],
+      "observed_evidence_references": [
+        "7420611b49d372829f1e6536897e9157e794214c2f7f054e43e6b36385a6a043"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 4,
+      "semantic_loss_candidate": true,
+      "session_index": 130,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "B",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "auth_replace_create_delete",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "extra_items": [
+        "terraform_plan.resource_change.policy_blocked"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "terraform_plan.resource_change.policy_blocked"
+      ],
+      "observed_evidence_references": [
+        "82d6cde07346fb2b1a04418de081b4f60fc83c0c924b99a2416e754e63fa1ca3"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_id",
+        "terraform_plan.unknown.terraform_data_replaced_cbd.resource_changes_0_change_after_unknown_output"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 4,
+      "semantic_loss_candidate": true,
+      "session_index": 139,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "EXTRA_ITEM"
+      ],
+      "case_id": "syn_malformed_json",
+      "comparator_defect_candidate": false,
+      "domain": "terraform_plan",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "extra_items": [
+        "Malformed JSON in terraform plan prevents parsing"
+      ],
+      "false_proceed": false,
+      "missing_items": [],
+      "not_evaluated_preserved": true,
+      "observed_action": "RERUN_REQUIRED",
+      "observed_blocking_items": [
+        "Malformed JSON in terraform plan prevents parsing"
+      ],
+      "observed_evidence_references": [
+        "7420611b49d372829f1e6536897e9157e794214c2f7f054e43e6b36385a6a043"
+      ],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "terraform_plan.json_invalid"
+      ],
+      "observed_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 5,
+      "semantic_loss_candidate": true,
+      "session_index": 168,
+      "severity": [
+        "NO_DECISION_IMPACT",
+        "OVERBLOCKING_RISK"
+      ],
+      "stop_state_preserved": true
+    },
+    {
+      "action_preserved": true,
+      "arm": "C",
+      "blocking_items_classification": [
+        "ITEM_SUBSTITUTION",
+        "WORDING_OR_NORMALIZATION_ONLY"
+      ],
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "comparator_defect_candidate": false,
+      "domain": "python_artifact",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "BLOCK"
+      ],
+      "expected_evidence_references": "NOT_EVALUATED",
+      "expected_gate": "STOP",
+      "expected_not_evaluated": [
+        "entry_point_policy",
+        "license_policy",
+        "lockfile_cross_check",
+        "pep740_offline_attestations",
+        "target_environment"
+      ],
+      "expected_reason_codes": [
+        "BLOCKING_FINDINGS",
+        "REPORT_NOT_EVALUATED"
+      ],
+      "extra_items": [
+        "BLOCKING_FINDINGS"
+      ],
+      "false_proceed": false,
+      "missing_items": [
+        "BLOCK"
+      ],
+      "not_evaluated_preserved": true,
+      "observed_action": "STOP_BLOCKED",
+      "observed_blocking_items": [
+        "BLOCKING_FINDINGS"
+      ],
+      "observed_evidence_references": [],
+      "observed_gate": "STOP",
+      "observed_not_evaluated": [
+        "entry_point_policy",
+        "license_policy",
+        "lockfile_cross_check",
+        "pep740_offline_attestations",
+        "target_environment"
+      ],
+      "observed_reason_codes": [
+        "BLOCKING_FINDINGS",
+        "REPORT_NOT_EVALUATED"
+      ],
+      "prompt_or_contract_presentation_candidate": true,
+      "reason_codes_preserved": true,
+      "repetition": 5,
+      "semantic_loss_candidate": true,
+      "session_index": 180,
+      "severity": [
+        "REMEDIATION_DETAIL_LOSS"
+      ],
+      "stop_state_preserved": true
+    }
+  ],
+  "schema": "SPIRA_CLAUDE_NATIVE_PRIMARY_FAILURE_MATRIX_V1",
+  "source_results": "research/multi_agent_benchmark/claude_native/claude_native_primary_results.json",
+  "summary": {
+    "action_preserved_count": 12,
+    "by_arm": {
+      "B": 3,
+      "C": 9
+    },
+    "by_case": {
+      "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262": 2,
+      "auth_replace_create_delete": 3,
+      "syn_instruction_text_description": 2,
+      "syn_malformed_json": 4,
+      "synthetic_console_junit_conflict": 1
+    },
+    "by_domain": {
+      "pytest_result": 1,
+      "python_artifact": 2,
+      "terraform_plan": 9
+    },
+    "classification_counts": {
+      "EXTRA_ITEM": 10,
+      "ITEM_SUBSTITUTION": 2,
+      "WORDING_OR_NORMALIZATION_ONLY": 2
+    },
+    "false_proceed_count": 0,
+    "not_evaluated_preserved_count": 12,
+    "reason_codes_preserved_count": 12,
+    "severity_counts": {
+      "NO_DECISION_IMPACT": 10,
+      "OVERBLOCKING_RISK": 10,
+      "REMEDIATION_DETAIL_LOSS": 2
+    },
+    "stop_state_preserved_count": 12
+  }
+}

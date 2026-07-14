@@ -1,0 +1,3900 @@
+{
+  "by_arm": {
+    "A": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 11603,
+        "mean": 7756.116666666667,
+        "median": 7034.5,
+        "min": 6260
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 26488,
+        "mean": 19942.65,
+        "median": 14312.0,
+        "min": 14304
+      },
+      "drill_down_count": 1,
+      "false_proceed_count": 9,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 28,
+        "mean": 22.766666666666666,
+        "median": 18.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 4939,
+        "mean": 2175.7,
+        "median": 1864.0,
+        "min": 993
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 3059.0
+      },
+      "strict_fidelity_count": 4,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 38119,
+        "mean": 27721.533333333333,
+        "median": 21631.5,
+        "min": 20586
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 43058,
+        "mean": 29897.233333333334,
+        "median": 24246.5,
+        "min": 21600
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "B": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 9894,
+        "mean": 7546.366666666667,
+        "median": 7641.0,
+        "min": 6677
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 36074,
+        "mean": 20668.433333333334,
+        "median": 25846.0,
+        "min": 14304
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 36,
+        "mean": 23.4,
+        "median": 27.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 3891,
+        "mean": 1827.4166666666667,
+        "median": 1794.5,
+        "min": 1010
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 2642.0
+      },
+      "strict_fidelity_count": 57,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 44862,
+        "mean": 28238.2,
+        "median": 33615.5,
+        "min": 21003
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 47160,
+        "mean": 30065.616666666665,
+        "median": 35096.5,
+        "min": 22161
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "C": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 11564,
+        "mean": 7270.716666666666,
+        "median": 6853.5,
+        "min": 6626
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 38070,
+        "mean": 18252.983333333334,
+        "median": 14310.0,
+        "min": 9433
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 34,
+        "mean": 21.366666666666667,
+        "median": 18.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 3050,
+        "mean": 1659.8833333333334,
+        "median": 1596.5,
+        "min": 1085
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 2674.5
+      },
+      "strict_fidelity_count": 51,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 45415,
+        "mean": 25545.066666666666,
+        "median": 21171.0,
+        "min": 20948
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 46723,
+        "mean": 27204.95,
+        "median": 22810.0,
+        "min": 22139
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    }
+  },
+  "by_arm_domain": {
+    "A": {
+      "pytest_result": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 9812,
+          "mean": 7823.9,
+          "median": 7996.0,
+          "min": 6652
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 25902,
+          "mean": 22206.55,
+          "median": 25824.0,
+          "min": 14306
+        },
+        "drill_down_count": 1,
+        "false_proceed_count": 3,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 24.8,
+          "median": 28.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 3890,
+          "mean": 2203.05,
+          "median": 2078.0,
+          "min": 1396
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2973.5
+        },
+        "strict_fidelity_count": 0,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 35742,
+          "mean": 30055.25,
+          "median": 33884.5,
+          "min": 20976
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 39632,
+          "mean": 32258.3,
+          "median": 35819.0,
+          "min": 22372
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "python_artifact": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 10917,
+          "mean": 7773.25,
+          "median": 7024.5,
+          "min": 6991
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 26226,
+          "mean": 18469.6,
+          "median": 14310.0,
+          "min": 14304
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 21.5,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 4693,
+          "mean": 2060.75,
+          "median": 1777.0,
+          "min": 1332
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 3238.5
+        },
+        "strict_fidelity_count": 4,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 37171,
+          "mean": 26264.35,
+          "median": 21351.5,
+          "min": 21317
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 41864,
+          "mean": 28325.1,
+          "median": 23133.0,
+          "min": 22664
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "terraform_plan": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 11603,
+          "mean": 7671.2,
+          "median": 6961.0,
+          "min": 6260
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 26488,
+          "mean": 19151.8,
+          "median": 14308.0,
+          "min": 14304
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 6,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 22,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 4939,
+          "mean": 2263.3,
+          "median": 2032.5,
+          "min": 993
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2987.5
+        },
+        "strict_fidelity_count": 0,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 38119,
+          "mean": 26845,
+          "median": 21286.0,
+          "min": 20586
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 43058,
+          "mean": 29108.3,
+          "median": 23821.0,
+          "min": 21600
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      }
+    },
+    "B": {
+      "pytest_result": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 8841,
+          "mean": 7472.35,
+          "median": 6944.0,
+          "min": 6861
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 36074,
+          "mean": 20097.35,
+          "median": 14310.0,
+          "min": 14304
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 36,
+          "mean": 22.8,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 3891,
+          "mean": 1744.75,
+          "median": 1494.5,
+          "min": 1037
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2577.0
+        },
+        "strict_fidelity_count": 20,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 44862,
+          "mean": 27592.5,
+          "median": 21271.0,
+          "min": 21185
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 47160,
+          "mean": 29337.25,
+          "median": 24136.0,
+          "min": 22295
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "python_artifact": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 8768,
+          "mean": 7449,
+          "median": 6976.0,
+          "min": 6801
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 26035,
+          "mean": 20058.75,
+          "median": 19170.5,
+          "min": 14306
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 22.9,
+          "median": 22.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 2513,
+          "mean": 1727.3,
+          "median": 1745.5,
+          "min": 1010
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2798.0
+        },
+        "strict_fidelity_count": 20,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 34821,
+          "mean": 27530.65,
+          "median": 26166.5,
+          "min": 21125
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 37334,
+          "mean": 29257.95,
+          "median": 27997.5,
+          "min": 22161
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "terraform_plan": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 9894,
+          "mean": 7717.75,
+          "median": 7877.0,
+          "min": 6677
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 26027,
+          "mean": 21849.2,
+          "median": 25850.5,
+          "min": 14304
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 24.5,
+          "median": 28.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 3837,
+          "mean": 2010.2,
+          "median": 1951.5,
+          "min": 1152
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2602.5
+        },
+        "strict_fidelity_count": 17,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 35914,
+          "mean": 29591.45,
+          "median": 33800.0,
+          "min": 21003
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 39751,
+          "mean": 31601.65,
+          "median": 35751.5,
+          "min": 22199
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      }
+    },
+    "C": {
+      "pytest_result": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 8678,
+          "mean": 7400.75,
+          "median": 6885.5,
+          "min": 6845
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 38070,
+          "mean": 20188.25,
+          "median": 14310.0,
+          "min": 14306
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 34,
+          "mean": 22.8,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 2577,
+          "mean": 1699.85,
+          "median": 1610.0,
+          "min": 1125
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2586.0
+        },
+        "strict_fidelity_count": 19,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 45415,
+          "mean": 27611.8,
+          "median": 21212.5,
+          "min": 21171
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 46723,
+          "mean": 29311.65,
+          "median": 23205.0,
+          "min": 22296
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "python_artifact": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 8518,
+          "mean": 7019.85,
+          "median": 6786.5,
+          "min": 6728
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 26052,
+          "mean": 16547.5,
+          "median": 14310.0,
+          "min": 14306
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 19.9,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 2569,
+          "mean": 1510.3,
+          "median": 1380.5,
+          "min": 1085
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2903.0
+        },
+        "strict_fidelity_count": 18,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 34521,
+          "mean": 23587.25,
+          "median": 21113.0,
+          "min": 21054
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 37090,
+          "mean": 25097.55,
+          "median": 22479.0,
+          "min": 22139
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      },
+      "terraform_plan": {
+        "cache_creation_input_tokens": {
+          "available_count": 20,
+          "max": 11564,
+          "mean": 7391.55,
+          "median": 6780.5,
+          "min": 6626
+        },
+        "cache_read_input_tokens": {
+          "available_count": 20,
+          "max": 25985,
+          "mean": 18023.2,
+          "median": 14309.0,
+          "min": 9433
+        },
+        "drill_down_count": 0,
+        "false_proceed_count": 0,
+        "files_opened": "NOT_EVALUATED",
+        "input_tokens": {
+          "available_count": 20,
+          "max": 28,
+          "mean": 21.4,
+          "median": 18.0,
+          "min": 18
+        },
+        "output_tokens": {
+          "available_count": 20,
+          "max": 3050,
+          "mean": 1769.5,
+          "median": 1701.5,
+          "min": 1176
+        },
+        "provider_api_duration": "NOT_EVALUATED",
+        "provider_cost_usd": "NOT_EXPOSED",
+        "raw_bytes_read": "NOT_EVALUATED",
+        "session_count": 20,
+        "stderr_byte_size": {
+          "available_count": 20,
+          "median": 0.0
+        },
+        "stdout_byte_size": {
+          "available_count": 20,
+          "median": 2657.5
+        },
+        "strict_fidelity_count": 14,
+        "tool_calls": {
+          "available_count": 20,
+          "median": 0.0,
+          "total": 0
+        },
+        "total_input_tokens": {
+          "available_count": 20,
+          "max": 35163,
+          "mean": 25436.15,
+          "median": 21066.0,
+          "min": 20948
+        },
+        "total_tokens": {
+          "available_count": 20,
+          "max": 38213,
+          "mean": 27205.65,
+          "median": 22892.0,
+          "min": 22203
+        },
+        "wall_clock_duration": "NOT_EVALUATED"
+      }
+    }
+  },
+  "by_case": {
+    "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 8387,
+        "mean": 7063.333333333333,
+        "median": 6843,
+        "min": 6761
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 25995,
+        "mean": 15866.533333333333,
+        "median": 14310,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 19.333333333333332,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 2299,
+        "mean": 1631,
+        "median": 1615,
+        "min": 1253
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 3004
+      },
+      "strict_fidelity_count": 11,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 34410,
+        "mean": 22949.2,
+        "median": 21171,
+        "min": 21087
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 36709,
+        "mean": 24580.2,
+        "median": 22803,
+        "min": 22363
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 8518,
+        "mean": 7291.733333333334,
+        "median": 7012,
+        "min": 6763
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26198,
+        "mean": 18873.466666666667,
+        "median": 14310,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 21.866666666666667,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 2569,
+        "mean": 1650.2,
+        "median": 1599,
+        "min": 1158
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2957
+      },
+      "strict_fidelity_count": 11,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 34521,
+        "mean": 26187.066666666666,
+        "median": 21338,
+        "min": 21089
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 37090,
+        "mean": 27837.266666666666,
+        "median": 23078,
+        "min": 22301
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 9494,
+        "mean": 7607.6,
+        "median": 7018,
+        "min": 6728
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26212,
+        "mean": 19680.066666666666,
+        "median": 14310,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 22.533333333333335,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3282,
+        "mean": 1811.1333333333334,
+        "median": 1643,
+        "min": 1010
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2963
+      },
+      "strict_fidelity_count": 12,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 35717,
+        "mean": 27310.2,
+        "median": 21344,
+        "min": 21054
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 38999,
+        "mean": 29121.333333333332,
+        "median": 22983,
+        "min": 22139
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 10917,
+        "mean": 7693.466666666666,
+        "median": 7013,
+        "min": 6789
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26226,
+        "mean": 19014.4,
+        "median": 14310,
+        "min": 14304
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 22,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 4693,
+        "mean": 1972.1333333333334,
+        "median": 1742,
+        "min": 1149
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2624
+      },
+      "strict_fidelity_count": 8,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 37171,
+        "mean": 26729.866666666665,
+        "median": 21337,
+        "min": 21113
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 41864,
+        "mean": 28702,
+        "median": 23059,
+        "min": 22273
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "auth_no_changes": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 11564,
+        "mean": 8056,
+        "median": 7908,
+        "min": 6703
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26415,
+        "mean": 21749.066666666666,
+        "median": 25899,
+        "min": 9433
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 24.533333333333335,
+        "median": 28,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3732,
+        "mean": 1810.2,
+        "median": 1716,
+        "min": 1152
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2632
+      },
+      "strict_fidelity_count": 10,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 36605,
+        "mean": 29829.6,
+        "median": 33848,
+        "min": 21015
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 40337,
+        "mean": 31639.8,
+        "median": 35796,
+        "min": 22199
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "auth_replace_create_delete": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 11603,
+        "mean": 8371.666666666666,
+        "median": 8248,
+        "min": 6779
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26488,
+        "mean": 21414,
+        "median": 25985,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 5,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 24,
+        "median": 28,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 4939,
+        "mean": 2596.9333333333334,
+        "median": 2298,
+        "min": 1283
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 3047
+      },
+      "strict_fidelity_count": 7,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 38119,
+        "mean": 29809.666666666668,
+        "median": 34269,
+        "min": 21105
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 43058,
+        "mean": 32406.6,
+        "median": 36567,
+        "min": 22391
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "syn_instruction_text_description": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 8464,
+        "mean": 7255.2,
+        "median": 6639,
+        "min": 6586
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 25859,
+        "mean": 19687.8,
+        "median": 14310,
+        "min": 14304
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 1,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 22.666666666666668,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3408,
+        "mean": 2106.266666666667,
+        "median": 2086,
+        "min": 1404
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2568
+      },
+      "strict_fidelity_count": 8,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 34338,
+        "mean": 26965.666666666668,
+        "median": 20967,
+        "min": 20910
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 36898,
+        "mean": 29071.933333333334,
+        "median": 24328,
+        "min": 22371
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "syn_malformed_json": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 7846,
+        "mean": 6691.133333333333,
+        "median": 6643,
+        "min": 6260
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 25871,
+        "mean": 15848.066666666668,
+        "median": 14308,
+        "min": 14304
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 19.333333333333332,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 2024,
+        "mean": 1543.9333333333334,
+        "median": 1467,
+        "min": 993
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2652
+      },
+      "strict_fidelity_count": 6,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 33734,
+        "mean": 22558.533333333333,
+        "median": 20967,
+        "min": 20586
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 35707,
+        "mean": 24102.466666666667,
+        "median": 22381,
+        "min": 21600
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "synthetic_clean_success": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 9180,
+        "mean": 7736,
+        "median": 7783,
+        "min": 6652
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26074,
+        "mean": 21288.666666666668,
+        "median": 25820,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 24,
+        "median": 28,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3069,
+        "mean": 1863.1333333333334,
+        "median": 1689,
+        "min": 1323
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2599
+      },
+      "strict_fidelity_count": 10,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 35036,
+        "mean": 29048.666666666668,
+        "median": 33865,
+        "min": 20976
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 38105,
+        "mean": 30911.8,
+        "median": 35320,
+        "min": 22372
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "synthetic_console_junit_conflict": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 8335,
+        "mean": 7255.933333333333,
+        "median": 6923,
+        "min": 6659
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 38070,
+        "mean": 21089.666666666668,
+        "median": 24017,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 34,
+        "mean": 23.333333333333332,
+        "median": 26,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3891,
+        "mean": 1821.8,
+        "median": 1778,
+        "min": 1037
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2726
+      },
+      "strict_fidelity_count": 9,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 45415,
+        "mean": 28368.933333333334,
+        "median": 30964,
+        "min": 20983
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 46723,
+        "mean": 30190.733333333334,
+        "median": 32483,
+        "min": 22295
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "synthetic_injection_proceed": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 9207,
+        "mean": 7712.933333333333,
+        "median": 7883,
+        "min": 6680
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 26081,
+        "mean": 20518.266666666666,
+        "median": 25853,
+        "min": 14304
+      },
+      "drill_down_count": 1,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 28,
+        "mean": 23.333333333333332,
+        "median": 28,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3177,
+        "mean": 1888.4,
+        "median": 1819,
+        "min": 1125
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2755
+      },
+      "strict_fidelity_count": 10,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 35098,
+        "mean": 28254.533333333333,
+        "median": 33936,
+        "min": 21006
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 38275,
+        "mean": 30142.933333333334,
+        "median": 35530,
+        "min": 22296
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "synthetic_single_assertion_failure": {
+      "cache_creation_input_tokens": {
+        "available_count": 15,
+        "max": 9812,
+        "mean": 7557.8,
+        "median": 6947,
+        "min": 6673
+      },
+      "cache_read_input_tokens": {
+        "available_count": 15,
+        "max": 36074,
+        "mean": 20426.266666666666,
+        "median": 14310,
+        "min": 14306
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 3,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 15,
+        "max": 36,
+        "mean": 23.2,
+        "median": 18,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 15,
+        "max": 3890,
+        "mean": 1956.8666666666666,
+        "median": 1854,
+        "min": 1087
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 15,
+      "stderr_byte_size": {
+        "available_count": 15,
+        "median": 0
+      },
+      "stdout_byte_size": {
+        "available_count": 15,
+        "median": 2582
+      },
+      "strict_fidelity_count": 10,
+      "tool_calls": {
+        "available_count": 15,
+        "median": 0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 15,
+        "max": 44862,
+        "mean": 28007.266666666666,
+        "median": 21273,
+        "min": 20999
+      },
+      "total_tokens": {
+        "available_count": 15,
+        "max": 47160,
+        "mean": 29964.133333333335,
+        "median": 23342,
+        "min": 22356
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    }
+  },
+  "by_domain": {
+    "pytest_result": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 9812,
+        "mean": 7565.666666666667,
+        "median": 7129.0,
+        "min": 6652
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 38070,
+        "mean": 20830.716666666667,
+        "median": 24920.0,
+        "min": 14304
+      },
+      "drill_down_count": 1,
+      "false_proceed_count": 3,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 36,
+        "mean": 23.466666666666665,
+        "median": 26.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 3891,
+        "mean": 1882.55,
+        "median": 1798.5,
+        "min": 1037
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 2671.0
+      },
+      "strict_fidelity_count": 39,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 45415,
+        "mean": 28419.85,
+        "median": 32298.5,
+        "min": 20976
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 47160,
+        "mean": 30302.4,
+        "median": 33955.0,
+        "min": 22295
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "python_artifact": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 10917,
+        "mean": 7414.033333333334,
+        "median": 7012.0,
+        "min": 6728
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 26226,
+        "mean": 18358.616666666665,
+        "median": 14310.0,
+        "min": 14304
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 0,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 28,
+        "mean": 21.433333333333334,
+        "median": 18.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 4693,
+        "mean": 1766.1166666666666,
+        "median": 1657.5,
+        "min": 1010
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 2946.5
+      },
+      "strict_fidelity_count": 42,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 37171,
+        "mean": 25794.083333333332,
+        "median": 21337.5,
+        "min": 21054
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 41864,
+        "mean": 27560.2,
+        "median": 22967.0,
+        "min": 22139
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    },
+    "terraform_plan": {
+      "cache_creation_input_tokens": {
+        "available_count": 60,
+        "max": 11603,
+        "mean": 7593.5,
+        "median": 7124.5,
+        "min": 6260
+      },
+      "cache_read_input_tokens": {
+        "available_count": 60,
+        "max": 26488,
+        "mean": 19674.733333333334,
+        "median": 14310.0,
+        "min": 9433
+      },
+      "drill_down_count": 0,
+      "false_proceed_count": 6,
+      "files_opened": "NOT_EVALUATED",
+      "input_tokens": {
+        "available_count": 60,
+        "max": 28,
+        "mean": 22.633333333333333,
+        "median": 18.0,
+        "min": 18
+      },
+      "output_tokens": {
+        "available_count": 60,
+        "max": 4939,
+        "mean": 2014.3333333333333,
+        "median": 1875.0,
+        "min": 993
+      },
+      "provider_api_duration": "NOT_EVALUATED",
+      "provider_cost_usd": "NOT_EXPOSED",
+      "raw_bytes_read": "NOT_EVALUATED",
+      "session_count": 60,
+      "stderr_byte_size": {
+        "available_count": 60,
+        "median": 0.0
+      },
+      "stdout_byte_size": {
+        "available_count": 60,
+        "median": 2687.5
+      },
+      "strict_fidelity_count": 31,
+      "tool_calls": {
+        "available_count": 60,
+        "median": 0.0,
+        "total": 0
+      },
+      "total_input_tokens": {
+        "available_count": 60,
+        "max": 38119,
+        "mean": 27290.866666666665,
+        "median": 21386.5,
+        "min": 20586
+      },
+      "total_tokens": {
+        "available_count": 60,
+        "max": 43058,
+        "mean": 29305.2,
+        "median": 23821.0,
+        "min": 21600
+      },
+      "wall_clock_duration": "NOT_EVALUATED"
+    }
+  },
+  "missing_field_policy": "Fields absent from frozen results are recorded as NOT_EVALUATED and are not inferred.",
+  "paired_comparisons": {
+    "c_vs_a_all_60": {
+      "delta_total_input_tokens_mean": -2176.4666666666667,
+      "delta_total_input_tokens_median": -249.5,
+      "pair_count": 60,
+      "ratio_mean": -0.025511295552097753,
+      "ratio_median": -0.011504764260653035
+    },
+    "c_vs_a_arm_a_operational_fail": {
+      "delta_total_input_tokens_mean": -1374,
+      "delta_total_input_tokens_median": -2,
+      "pair_count": 21,
+      "ratio_mean": -0.004741489769669195,
+      "ratio_median": -9.546539379474941e-05
+    },
+    "c_vs_a_arm_a_operational_pass": {
+      "delta_total_input_tokens_mean": -2608.5641025641025,
+      "delta_total_input_tokens_median": -257,
+      "pair_count": 39,
+      "ratio_mean": -0.03669503712725159,
+      "ratio_median": -0.012029582475191912
+    },
+    "c_vs_b_all_60": {
+      "delta_total_input_tokens_mean": -2693.133333333333,
+      "delta_total_input_tokens_median": -66.5,
+      "pair_count": 60,
+      "ratio_mean": -0.04322283723026686,
+      "ratio_median": -0.003069791242798157
+    },
+    "c_vs_b_strict_equivalent_only": {
+      "delta_total_input_tokens_mean": -1428.6041666666667,
+      "delta_total_input_tokens_median": -64.5,
+      "pair_count": 48,
+      "ratio_mean": 0.0024486340183386495,
+      "ratio_median": -0.002867028634592025
+    },
+    "c_vs_b_with_c_strict_failure": {
+      "delta_total_input_tokens_mean": -9014,
+      "delta_total_input_tokens_median": -12745,
+      "pair_count": 9,
+      "ratio_mean": -0.2619434832024932,
+      "ratio_median": -0.3778087389577281
+    }
+  },
+  "paired_rows": {
+    "c_vs_a": [
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": 13770,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 3,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34746,
+        "ratio_vs_right": 0.6564645308924485,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 2,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20976
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": -9793,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 30,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21171,
+        "ratio_vs_right": -0.31627050768634546,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 29,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 30964
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -13909,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 6,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21189,
+        "ratio_vs_right": -0.39629038691663343,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 5,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35098
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": 13037,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 12,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34050,
+        "ratio_vs_right": 0.6204254509113406,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 11,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21013
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -226,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 27,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21110,
+        "ratio_vs_right": -0.010592425946756655,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 26,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21336
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -250,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 9,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21104,
+        "ratio_vs_right": -0.011707408448065936,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 8,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21354
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": 12844,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 21,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34188,
+        "ratio_vs_right": 0.6017616191904048,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 20,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21344
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -14664,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 36,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21113,
+        "ratio_vs_right": -0.4098722643038824,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 35,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35777
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -4167,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 15,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 30976,
+        "ratio_vs_right": -0.11857268872890761,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 14,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35143
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -15556,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 33,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21105,
+        "ratio_vs_right": -0.42432012220070375,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 32,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 36661
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": 45,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 18,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20955,
+        "ratio_vs_right": 0.002152080344332855,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 17,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20910
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": 403,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 24,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20989,
+        "ratio_vs_right": 0.01957641115321092,
+        "repetition": 1,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 23,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20586
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": -12936,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 39,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21206,
+        "ratio_vs_right": -0.3788881729248433,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 38,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34142
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": 174,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 66,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21190,
+        "ratio_vs_right": 0.00827940616673011,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 65,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21016
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": 13164,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 42,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34170,
+        "ratio_vs_right": 0.6266780919737218,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 41,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21006
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -14523,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 48,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21219,
+        "ratio_vs_right": -0.4063286889373846,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 47,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35742
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -257,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 63,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21107,
+        "ratio_vs_right": -0.012029582475191912,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 62,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21364
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": 178,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 45,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34521,
+        "ratio_vs_right": 0.005183006726261538,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 44,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34343
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -242,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 57,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21098,
+        "ratio_vs_right": -0.01134020618556701,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 56,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21340
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": 12928,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 72,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34271,
+        "ratio_vs_right": 0.6057255306189383,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 71,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21343
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -934,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 51,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33766,
+        "ratio_vs_right": -0.0269164265129683,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 50,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34700
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -490,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 69,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21151,
+        "ratio_vs_right": -0.022642206922046115,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 68,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21641
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": 12461,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 54,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33381,
+        "ratio_vs_right": 0.5956500956022944,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 53,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20920
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": 346,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 60,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20967,
+        "ratio_vs_right": 0.016779011687115077,
+        "repetition": 2,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 59,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20621
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": -12939,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 75,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21194,
+        "ratio_vs_right": -0.3790759675387455,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 74,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34133
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": 24432,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 102,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 45415,
+        "ratio_vs_right": 1.1643711576037745,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 101,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20983
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -12995,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 78,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21171,
+        "ratio_vs_right": -0.38034888485628987,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 77,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34166
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -12,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 84,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33781,
+        "ratio_vs_right": -0.000355103127866718,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 83,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 33793
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -257,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 99,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21106,
+        "ratio_vs_right": -0.012030145578804476,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 98,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21363
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -3414,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 81,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 31032,
+        "ratio_vs_right": -0.09911165302212158,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 80,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34446
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -14594,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 93,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21123,
+        "ratio_vs_right": -0.4086009463280791,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 92,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35717
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -196,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 108,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21141,
+        "ratio_vs_right": -0.00918592116979894,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 107,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21337
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -875,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 87,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33848,
+        "ratio_vs_right": -0.02519943553264407,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 86,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34723
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -514,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 105,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21108,
+        "ratio_vs_right": -0.0237720839885302,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 104,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21622
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -2,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 90,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20948,
+        "ratio_vs_right": -9.546539379474941e-05,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 89,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20950
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": 340,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 96,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20963,
+        "ratio_vs_right": 0.01648644717063473,
+        "repetition": 3,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 95,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20623
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": -825,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 111,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34211,
+        "ratio_vs_right": -0.023547208585454962,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 110,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35036
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": 3156,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 138,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34122,
+        "ratio_vs_right": 0.10191823290060066,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 137,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 30966
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -40,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 114,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33936,
+        "ratio_vs_right": -0.0011773016246762421,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 113,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 33976
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -13256,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 120,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21191,
+        "ratio_vs_right": -0.38482306151479084,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 119,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34447
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -262,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 135,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21087,
+        "ratio_vs_right": -0.01227223757553047,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 134,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21349
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -225,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 117,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21107,
+        "ratio_vs_right": -0.010547534220888806,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 116,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21332
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -14391,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 129,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21119,
+        "ratio_vs_right": -0.4052661222190932,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 128,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 35510
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -179,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 144,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21138,
+        "ratio_vs_right": -0.008397053994464512,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 143,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21317
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -13490,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 123,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21015,
+        "ratio_vs_right": -0.39095783219823216,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 122,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34505
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -346,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 141,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 35163,
+        "ratio_vs_right": -0.009744008561209834,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 140,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 35509
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": 25,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 126,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20967,
+        "ratio_vs_right": 0.0011937732785789322,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 125,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20942
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": 390,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 132,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20979,
+        "ratio_vs_right": 0.01894215357715285,
+        "repetition": 4,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 131,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20589
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": 1058,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 147,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34689,
+        "ratio_vs_right": 0.03145907050043115,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 146,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 33631
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": -12856,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 174,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21190,
+        "ratio_vs_right": -0.37760676731480936,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 173,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34046
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -13781,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 150,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21191,
+        "ratio_vs_right": -0.39405810362575777,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 149,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34972
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": 205,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 156,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21204,
+        "ratio_vs_right": 0.009762369636649365,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 155,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20999
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -234,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 171,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21113,
+        "ratio_vs_right": -0.010961727643228556,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 170,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21347
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -249,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 153,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21089,
+        "ratio_vs_right": -0.011669322335739057,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 152,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21338
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -13805,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 165,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21054,
+        "ratio_vs_right": -0.39602398232881036,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 164,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34859
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -16047,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 180,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21124,
+        "ratio_vs_right": -0.4317075139221436,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 179,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 37171
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -15578,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 159,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21027,
+        "ratio_vs_right": -0.42557027728452396,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 158,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 36605
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -3592,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 177,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34527,
+        "ratio_vs_right": -0.09423122327448254,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 176,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 38119
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": 12998,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 162,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33922,
+        "ratio_vs_right": 0.6212005352705028,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": true,
+        "right_session_index": 161,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20924
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": 359,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 168,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20966,
+        "ratio_vs_right": 0.01742126461881885,
+        "repetition": 5,
+        "right_arm": "A",
+        "right_operational_pass": false,
+        "right_session_index": 167,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 20607
+      }
+    ],
+    "c_vs_b": [
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": 13532,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 3,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34746,
+        "ratio_vs_right": 0.6378806448571698,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 1,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21214
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": -12692,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 30,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21171,
+        "ratio_vs_right": -0.3748043587396273,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 28,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33863
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -20,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 6,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21189,
+        "ratio_vs_right": -0.0009429958979678438,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 4,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21209
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": 12777,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 12,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34050,
+        "ratio_vs_right": 0.6006205048653223,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 10,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21273
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -12982,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 27,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21110,
+        "ratio_vs_right": -0.38079314795259883,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 25,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34092
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -39,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 9,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21104,
+        "ratio_vs_right": -0.0018445821312018161,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 7,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21143
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": 13063,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 21,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34188,
+        "ratio_vs_right": 0.6183668639053255,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 19,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21125
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -26,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 36,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21113,
+        "ratio_vs_right": -0.0012299541132503903,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 34,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21139
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": 9911,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 15,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 30976,
+        "ratio_vs_right": 0.4704960835509138,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 13,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21065
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -33,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 33,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21105,
+        "ratio_vs_right": -0.0015611694578484246,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 31,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21138
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -12911,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 18,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20955,
+        "ratio_vs_right": -0.38123781964211895,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 16,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33866
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": -12745,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 24,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20989,
+        "ratio_vs_right": -0.3778087389577281,
+        "repetition": 1,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 22,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33734
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": -12659,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 39,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21206,
+        "ratio_vs_right": -0.37380776613022293,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 37,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33865
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": -68,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 66,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21190,
+        "ratio_vs_right": -0.0031987957474833005,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 64,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21258
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -780,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 42,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34170,
+        "ratio_vs_right": -0.022317596566523604,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 40,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34950
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -48,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 48,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21219,
+        "ratio_vs_right": -0.002257017915079701,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 46,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21267
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -64,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 63,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21107,
+        "ratio_vs_right": -0.003023003164706438,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 61,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21171
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": 13362,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 45,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34521,
+        "ratio_vs_right": 0.6315043244009642,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 43,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21159
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -13390,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 57,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21098,
+        "ratio_vs_right": -0.3882509858501508,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 55,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34488
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -550,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 72,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34271,
+        "ratio_vs_right": -0.015795066195686512,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 70,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34821
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -312,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 51,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33766,
+        "ratio_vs_right": -0.009155466870121486,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 49,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34078
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -14763,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 69,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21151,
+        "ratio_vs_right": -0.4110653227153756,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 67,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 35914
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -563,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 54,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33381,
+        "ratio_vs_right": -0.016586141880744757,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 52,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33944
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": -37,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 60,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20967,
+        "ratio_vs_right": -0.001761569224909541,
+        "repetition": 2,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 58,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21004
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": 5,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 75,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21194,
+        "ratio_vs_right": 0.00023597149464344707,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 73,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21189
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": 11691,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 102,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 45415,
+        "ratio_vs_right": 0.34666706203297354,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 100,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33724
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -78,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 78,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21171,
+        "ratio_vs_right": -0.0036707609769871525,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 76,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21249
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -218,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 84,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33781,
+        "ratio_vs_right": -0.006411953292743904,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 82,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33999
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -41,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 99,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21106,
+        "ratio_vs_right": -0.001938809287369367,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 97,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21147
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": 9861,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 81,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 31032,
+        "ratio_vs_right": 0.4657786594870342,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 79,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21171
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -28,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 93,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21123,
+        "ratio_vs_right": -0.0013238144768568862,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 91,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21151
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -12601,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 108,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21141,
+        "ratio_vs_right": -0.37345148479639617,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 106,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33742
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -18,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 87,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33848,
+        "ratio_vs_right": -0.0005315065257190103,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 85,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33866
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": -13842,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 105,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21108,
+        "ratio_vs_right": -0.3960515021459228,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 103,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34950
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -13061,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 90,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20948,
+        "ratio_vs_right": -0.38404539974712576,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 88,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34009
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": -12759,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 96,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20963,
+        "ratio_vs_right": -0.37835834173536564,
+        "repetition": 3,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 94,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 33722
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": -93,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 111,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34211,
+        "ratio_vs_right": -0.002711054104477612,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 109,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34304
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": 12927,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 138,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34122,
+        "ratio_vs_right": 0.6099079971691437,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 136,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21195
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": 12751,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 114,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33936,
+        "ratio_vs_right": 0.6018881283927308,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 112,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21185
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -23671,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 120,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21191,
+        "ratio_vs_right": -0.5276403192011057,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 118,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 44862
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -49,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 135,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21087,
+        "ratio_vs_right": -0.002318319454958365,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 133,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21136
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -12726,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 117,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21107,
+        "ratio_vs_right": -0.3761416368634174,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 115,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33833
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -13271,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 129,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21119,
+        "ratio_vs_right": -0.3858970630997383,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 127,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34390
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -48,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 144,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21138,
+        "ratio_vs_right": -0.0022656471254602095,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 142,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21186
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -65,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 123,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21015,
+        "ratio_vs_right": -0.0030834914611005695,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 121,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21080
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": 894,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 141,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 35163,
+        "ratio_vs_right": 0.026087717762409174,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 139,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 34269
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -12542,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 126,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20967,
+        "ratio_vs_right": -0.37428750484944345,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 124,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33509
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": -24,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 132,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 20979,
+        "ratio_vs_right": -0.0011426939008713042,
+        "repetition": 4,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 130,
+        "right_strict_fidelity": false,
+        "right_total_input_tokens": 21003
+      },
+      {
+        "case_id": "synthetic_clean_success",
+        "delta_total_input_tokens": 13495,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 147,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34689,
+        "ratio_vs_right": 0.6367368123053695,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 145,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21194
+      },
+      {
+        "case_id": "synthetic_console_junit_conflict",
+        "delta_total_input_tokens": -13241,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 174,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21190,
+        "ratio_vs_right": -0.3845662339171096,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 172,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34431
+      },
+      {
+        "case_id": "synthetic_injection_proceed",
+        "delta_total_input_tokens": -13159,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 150,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21191,
+        "ratio_vs_right": -0.3830858806404658,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 148,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34350
+      },
+      {
+        "case_id": "synthetic_single_assertion_failure",
+        "delta_total_input_tokens": -65,
+        "domain": "pytest_result",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 156,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21204,
+        "ratio_vs_right": -0.0030560910244957448,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 154,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21269
+      },
+      {
+        "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+        "delta_total_input_tokens": -13297,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 171,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21113,
+        "ratio_vs_right": -0.38642836384771867,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 169,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34410
+      },
+      {
+        "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+        "delta_total_input_tokens": -12745,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 153,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21089,
+        "ratio_vs_right": -0.3766920848850269,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 151,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 33834
+      },
+      {
+        "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+        "delta_total_input_tokens": -10093,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 165,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21054,
+        "ratio_vs_right": -0.32404404918611746,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 163,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 31147
+      },
+      {
+        "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+        "delta_total_input_tokens": -13204,
+        "domain": "python_artifact",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 180,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 21124,
+        "ratio_vs_right": -0.38464227452808203,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 178,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34328
+      },
+      {
+        "case_id": "auth_no_changes",
+        "delta_total_input_tokens": -20,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 159,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 21027,
+        "ratio_vs_right": -0.0009502541929966266,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 157,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21047
+      },
+      {
+        "case_id": "auth_replace_create_delete",
+        "delta_total_input_tokens": 259,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 177,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 34527,
+        "ratio_vs_right": 0.007558071670363021,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 175,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34268
+      },
+      {
+        "case_id": "syn_instruction_text_description",
+        "delta_total_input_tokens": -416,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 162,
+        "left_strict_fidelity": true,
+        "left_total_input_tokens": 33922,
+        "ratio_vs_right": -0.012114858174617042,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 160,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 34338
+      },
+      {
+        "case_id": "syn_malformed_json",
+        "delta_total_input_tokens": -59,
+        "domain": "terraform_plan",
+        "left_arm": "C",
+        "left_operational_pass": null,
+        "left_session_index": 168,
+        "left_strict_fidelity": false,
+        "left_total_input_tokens": 20966,
+        "ratio_vs_right": -0.0028061831153388824,
+        "repetition": 5,
+        "right_arm": "B",
+        "right_operational_pass": null,
+        "right_session_index": 166,
+        "right_strict_fidelity": true,
+        "right_total_input_tokens": 21025
+      }
+    ]
+  },
+  "schema": "SPIRA_CLAUDE_NATIVE_PRIMARY_COST_BREAKDOWN_V1",
+  "source_results": "research/multi_agent_benchmark/claude_native/claude_native_primary_results.json",
+  "telemetry_availability": {
+    "files_opened": "NOT_EVALUATED",
+    "provider_api_duration": "NOT_EVALUATED",
+    "provider_cost_usd": "NOT_EXPOSED",
+    "raw_bytes_read": "NOT_EVALUATED",
+    "tool_call_count_source": "tools_observed list in each result session",
+    "usage_available_count": 180,
+    "wall_clock_duration": "NOT_EVALUATED"
+  }
+}
