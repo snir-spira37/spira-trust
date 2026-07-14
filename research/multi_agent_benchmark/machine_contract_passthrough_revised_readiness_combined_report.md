@@ -1,5 +1,11 @@
 # Machine Contract Passthrough Revised Readiness Combined Report
 
+Post-preflight authorization:
+
+```text
+research/multi_agent_benchmark/machine_contract_passthrough_revised_readiness_rerun_after_preflight_authorization.md
+```
+
 ```text
 status: MACHINE_CONTRACT_PASSTHROUGH_REVISED_READINESS_PASS
 agents: 2 / 2
