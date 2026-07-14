@@ -1,0 +1,16 @@
+{
+  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_preflight_primary_benchmark_authorization.md",
+  "carryover_authorized": false,
+  "combined_authorized_maximum": 360,
+  "concurrent_live_tracks_forbidden": true,
+  "deepseek_authorized": false,
+  "holdout_authorized": false,
+  "primary_sessions_per_agent": 180,
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_REVISED_PRIMARY_AGENT_ORDER_V1",
+  "selected_order": [
+    "claude_native",
+    "codex_native"
+  ],
+  "sequential_agent_execution_required": true,
+  "status": "FROZEN"
+}
