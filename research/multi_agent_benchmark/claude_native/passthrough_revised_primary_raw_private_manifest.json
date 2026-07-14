@@ -1,0 +1,104 @@
+{
+  "private_raw_storage": "OUTSIDE_REPOSITORY_REDACTED",
+  "raw_file_count": 14,
+  "raw_files": [
+    {
+      "byte_size": 2547,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "2ab073f1c91c22f6a6232a404b1a1853cab32b0175a2004981d232172aa416d8",
+      "raw_private_id": "ea60e914b5b8658a",
+      "sha256": "bec5becae586f15bf41b140142e9aaff3526a998915763f5e2231e8c937727b0"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "d000ccc75f80965aa0cfff67871cf98bedbd230c6312d0a21178a7e79c0a418f",
+      "raw_private_id": "36faaa1fdabdc062",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2419,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "4b938de6f27d58f7f85804f164b7b4f5d506f3d74ba6617d92523b37eb067f91",
+      "raw_private_id": "63f229f0dd5945f1",
+      "sha256": "62470e6ef8eee973be223fead529c9e62f37e4cb16b1eda87cd8d5d38a541210"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "0257e4cd0477a0ba17cd8099b8f58abe2dc34532d8a44b1dea1c0183f0cbb8d6",
+      "raw_private_id": "5027d545ab428398",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2340,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "598543d205af95fb83300b91fde75cd023cf9b0aad65cc9b09105b64731faca6",
+      "raw_private_id": "df4cea545d8e860b",
+      "sha256": "b148839b68b0fbc784cc1508f72256714b9b672165e3ac8709370321822243db"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "5f73bd84a92cd125dab58bb4820b1fb6d4de2a9cd2e0ba4d5966febaef413851",
+      "raw_private_id": "168916707cb84a81",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2427,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "b6ec415f586d9faaea59c306fcbe95ff2f78e8662dfeb96e19e3d42e6712f41c",
+      "raw_private_id": "f0ae6a653b6f99d1",
+      "sha256": "8e154e38e4270d518e61009631f9db0c9620f694616a026a271a08cb42143c57"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "6ef2950f31fbbefd16b0e9ffa8d7dfc9928afebfe053a0a84c1c8416ef8bf899",
+      "raw_private_id": "37853ea610c6bb1a",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2657,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "31b342fa22f54b823eb3a669689dc9014f9be3c5a839624e3cb3985cb05a1a8d",
+      "raw_private_id": "25e5197d6864ea96",
+      "sha256": "04c8954a4dc8ab5679292e1130c2d99418f4f50266fc5fa960b2abfb969bbeb6"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "6e6c1cbbbff3991ad90ae53b834df22e527c099e6ef3066d954f58a3610bca8d",
+      "raw_private_id": "204315590e89e18d",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2749,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "5bec1221b0effb93d77e2c4d2d665b2a22e9a7a09d7f7e05f7cb69345284ca95",
+      "raw_private_id": "0399c3537b6ccbca",
+      "sha256": "c51be23ea80bc582659d823a75c2c611964503c74eafe27bb4b5f224d2847863"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "555d8428667111f6202291acb407d517eea075a843a0f2d2d12b5bd3e0377a11",
+      "raw_private_id": "e7ded2035d608384",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_size": 2955,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDOUT",
+      "path_sha256": "b31e0e638ef821e9b48b852f3ee27d3a37538ca8900de44c7ab035f8ccb43981",
+      "raw_private_id": "3dba942739de29f0",
+      "sha256": "bde8d05922dbeaf2c00bba4d4b4d2016f30f05aef90dd8dcf88ceee47a25e2bb"
+    },
+    {
+      "byte_size": 0,
+      "classification": "PASSTHROUGH_REVISED_PRIMARY_STDERR",
+      "path_sha256": "2c9d9d843d7b9c1efc8b0aa24037fd30a666890686a27680694d017886b9ae23",
+      "raw_private_id": "56d784eb3c994409",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

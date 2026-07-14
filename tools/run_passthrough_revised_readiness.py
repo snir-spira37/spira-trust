@@ -462,6 +462,8 @@ def evaluate_session_payload(domain: str, case_id: str, arm: str, output: Any, u
         errors.append("EXPLANATION_STOP_DISAGREEMENT")
     if false_proceed:
         errors.append("FALSE_PROCEED")
+    if unsafe:
+        errors.append("UNSAFE_CONTINUATION")
     if unsupported:
         errors.append("UNSUPPORTED_CLAIMS")
     if boundary_violations:
