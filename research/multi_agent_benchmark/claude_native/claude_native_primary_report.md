@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-CLAUDE_NATIVE_PRIMARY_BENCHMARK_INFRASTRUCTURE_BLOCKED
+CLAUDE_NATIVE_PRIMARY_BENCHMARK_COMPLETE
 EFFICIENCY_CLAIM_NOT_AUTHORIZED
 RELEASE_NOT_AUTHORIZED
 ```
@@ -15,37 +15,37 @@ session count:
 180
 
 completed sessions:
-122
+180
 
 next session index:
-123
+None
 
 schema valid:
-122 / 122
+180 / 180
 
 JSON result envelope:
-122 / 122
+180 / 180
 
 structured_output:
-122 / 122
+180 / 180
 
 usage available:
-122 / 122
+180 / 180
 
 strict fidelity:
-77 / 122
+112 / 180
 
 Arm B strict fidelity:
-40
+57
 
 Arm C strict fidelity:
-34
+51
 
 Arm A operational pass:
-27
+39
 
 false PROCEED:
-7
+9
 
 workspace mutations:
 0
@@ -67,10 +67,10 @@ plan_sha256:
 570f41baf38065242acdae1bc145aff3b97893a116d9c059c1dadc0609aa739c
 
 completed_session_count:
-122
+180
 
 next_session_index:
-123
+None
 ```
 
 If interrupted, rerun the primary runner with `--resume`. The runner skips only
