@@ -1,0 +1,31 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_PYTHON_TYPED_EVIDENCE_BOUNDARY_RESULTS_COMPLETE",
+  "boundary_status": "SPIRA_FORMAL_CORE_V1_PYTHON_TYPED_EVIDENCE_BOUNDARY_PASS",
+  "authorized_module": "source/spira_core/formal_core_v1.py",
+  "authorized_tests": "tests/test_formal_core_v1_python_boundary.py",
+  "focused_pytest": {
+    "command": "python -m pytest tests/test_formal_core_v1_python_boundary.py -q",
+    "result": "PASS",
+    "passed": 8
+  },
+  "vector_coverage": {
+    "valid_proceed_vector": "PASS",
+    "blocking_vector": "PASS",
+    "required_unknown_vector": "PASS",
+    "conflicting_evidence_vector": "PASS",
+    "invalid_evidence_vector": "PASS",
+    "version_incompatible_vector": "PASS",
+    "missing_explicit_list_fails_closed": "PASS",
+    "empty_list_distinct_from_missing_list": "PASS",
+    "model_presentation_fields_no_decision_authority": "PASS"
+  },
+  "non_authorized_changes": {
+    "domain_adapter_changes": 0,
+    "raw_parser_changes": 0,
+    "runtime_integration_changes": 0,
+    "benchmark_changes": 0,
+    "result_reclassification": 0
+  },
+  "accepted_entrypoint": "spira_core.formal_core_v1.evaluate_typed_evidence",
+  "next_authorization_required": "SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_RERUN_REQUIRED"
+}
