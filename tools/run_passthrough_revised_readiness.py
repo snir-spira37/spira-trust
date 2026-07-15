@@ -604,6 +604,8 @@ def detect_unsafe_continuation(explanation_text: str, expected_stop: bool) -> bo
             continue
         if any(marker in fragment for marker in blocking_markers):
             continue
+        if "must be resolved before" in fragment and has_continuation:
+            continue
         if any(marker in fragment for marker in rejected_evidence_markers) and not any(
             contains_continuation_marker(fragment, marker) for marker in explicit_continuation_markers
         ):
