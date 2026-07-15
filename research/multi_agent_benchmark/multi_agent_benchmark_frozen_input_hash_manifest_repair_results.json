@@ -1,0 +1,485 @@
+{
+  "asset_validator": {
+    "command": "python tools/validate_multi_agent_benchmark_assets.py",
+    "errors": 0,
+    "returncode": 0,
+    "status": "MULTI_AGENT_BENCHMARK_ASSET_VALIDATION_PASS",
+    "warnings": 0
+  },
+  "authorization": "research/multi_agent_benchmark/multi_agent_benchmark_frozen_input_hash_manifest_repair_authorization.md",
+  "focused_tests": [
+    {
+      "command": "python -m pytest tests/test_multi_agent_benchmark_assets.py",
+      "returncode": 0,
+      "summary": "2 passed"
+    }
+  ],
+  "frozen_input_content_changes": 0,
+  "full_pytest": {
+    "command": "python -m pytest",
+    "returncode": 0,
+    "summary": "247 passed"
+  },
+  "gates": {
+    "asset_validator_pass": true,
+    "focused_tests_pass": true,
+    "frozen_input_content_changes_zero": true,
+    "full_pytest_pass": true,
+    "manifest_non_hash_semantic_changes_zero": true,
+    "updated_input_sha256_count_matches_mismatch_count": true
+  },
+  "input_count": 54,
+  "manifest_non_hash_semantic_changes": 0,
+  "mismatch_count_before": 54,
+  "non_hash_input_changes": [],
+  "not_authorized": [
+    "FROZEN_INPUT_CONTENT_CHANGE",
+    "CASE_MANIFEST_CHANGE",
+    "PROMPT_CHANGE",
+    "SCHEMA_CHANGE",
+    "ORACLE_CHANGE",
+    "COMPARATOR_CHANGE",
+    "LIVE_AGENT_SESSIONS",
+    "RESULT_RECLASSIFICATION",
+    "RELEASE"
+  ],
+  "root_level_manifest_changes": false,
+  "schema": "MULTI_AGENT_BENCHMARK_FROZEN_INPUT_HASH_MANIFEST_REPAIR_RESULTS",
+  "schema_version": 1,
+  "status": "MULTI_AGENT_BENCHMARK_FROZEN_INPUT_HASH_MANIFEST_REPAIR_ACCEPTED",
+  "updated_input_sha256_count": 54,
+  "updates": [
+    {
+      "arm": "A",
+      "case_id": "synthetic_clean_success",
+      "domain": "pytest_result",
+      "new_input_sha256": "9a0fc2b69422ff700a9a2f5057c368b0105989070f9529b59b928d542b4e7616",
+      "old_input_sha256": "52eb3e508beb7c3aab43f270de8f2ac5134d0f5bee4cd84e4b26b62c31bcd21e",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_clean_success",
+      "domain": "pytest_result",
+      "new_input_sha256": "03737cb7604c8472bd965690d25f44a5f10b473e78d900240b9fab4631d3edcd",
+      "old_input_sha256": "71fd835fbb3ba6de2d49bc4bbfdaee693a4005bece17e37fdbfb6dc5110553d8",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_clean_success",
+      "domain": "pytest_result",
+      "new_input_sha256": "8094eed5199ba6fa94181c882e977c3648e76afa9f18f65af60a59361da93117",
+      "old_input_sha256": "8e4cadcc3ed6ab9116b2603abb20a909c8eba6ab5256afc67bb999abacb71203",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_clean_success/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "synthetic_console_junit_conflict",
+      "domain": "pytest_result",
+      "new_input_sha256": "1fa6cecc8c43217756fad2d8a2385585614404ac4cf825c05c76f30d4b27c469",
+      "old_input_sha256": "498db5456fb3dee0db43c19932ba7dd7cebae6d9040017f86dcb39d2aa4c69af",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_console_junit_conflict",
+      "domain": "pytest_result",
+      "new_input_sha256": "a9e3cfeefb69cbf190da85db224e6c6501cefc9a7e626cb1e4a3c4747c7e40bc",
+      "old_input_sha256": "2a2099c371a42ef6a1ab8c07d7494d032103df710c50201b684881360032d95a",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_console_junit_conflict",
+      "domain": "pytest_result",
+      "new_input_sha256": "3417a69edd913d873dbd1ae28e4b31138fb163dc88c5ea0a3f9b479368ea83a7",
+      "old_input_sha256": "5ff6e609b59f18e496e6bf14cd88786438142d1605a0f905b6f624045f46c25c",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_console_junit_conflict/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "synthetic_incomplete_junit",
+      "domain": "pytest_result",
+      "new_input_sha256": "c5a85c61d09c7e582ba78a62cfea3534740fea2130a6148a76669a34e2c050b3",
+      "old_input_sha256": "498144fb30843f2457a821fdd9689f9a9f0b2a7d126f6db2d23519dbd8bcd8ce",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_incomplete_junit/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_incomplete_junit",
+      "domain": "pytest_result",
+      "new_input_sha256": "db2fcc6099adccd2a4ce8ab95d5b9171c4d88620f96aeb2564ec3f9fb363d059",
+      "old_input_sha256": "85c201302d2c2ab360ddea67bc9d27ec85a2e63c6e13475a9c491b45d760d322",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_incomplete_junit/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_incomplete_junit",
+      "domain": "pytest_result",
+      "new_input_sha256": "0c5fcca3af01160d1ec0ecda1bfd66392036c961ab348a4353a4f8bd7834d677",
+      "old_input_sha256": "169172c85c46987b1d5c50daeb2ad9ec57ae9909ad2a765d2513e316156fb27c",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_incomplete_junit/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "synthetic_injection_proceed",
+      "domain": "pytest_result",
+      "new_input_sha256": "4fed323b981439bb24549341f39534a84246d0f816d18dfb6f5cba3849781e53",
+      "old_input_sha256": "ccffcaffad471e252be359ea87f143d75f2fe8c442b637e3dea8dfefa00fde59",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_injection_proceed",
+      "domain": "pytest_result",
+      "new_input_sha256": "e0d4be6514d06a03705c708d0fce113d3fa2eb4950f1b631546cd509668f705d",
+      "old_input_sha256": "092fa515a94eac924d8affc2042810102ddcd2ad205c0faeba862b0f66ba57af",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_injection_proceed",
+      "domain": "pytest_result",
+      "new_input_sha256": "c9e635203f9f47b4cafec7b25c41115d51e50c6a3fc3df4b9351af870375223a",
+      "old_input_sha256": "b56d92c26f55dc826bcfe6ac10a9c386f11c039a09a56a89e423a612a3e604d4",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_injection_proceed/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "synthetic_single_assertion_failure",
+      "domain": "pytest_result",
+      "new_input_sha256": "f9f21b307f0147a7eb2b9b13cba82d0b138c5bd53e0358e64248b20531c747e8",
+      "old_input_sha256": "cf10632114e5cba8ba0cf75b24308a545a3464538f40323a930c46270e724a6f",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_single_assertion_failure",
+      "domain": "pytest_result",
+      "new_input_sha256": "06690c13508cf9c66d8a6c8c52983d5ba345fbeededfde36f307dc87749f342e",
+      "old_input_sha256": "78e8a720e7f1a39f7c57311ce33e54430d8f57dd6a330d3fe77e7f4a3098f53a",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_single_assertion_failure",
+      "domain": "pytest_result",
+      "new_input_sha256": "4eaa91e40a6acc9bb069eba0a6a533eed28cdffacafb766713978f100e12440a",
+      "old_input_sha256": "f37c5cdc375a806f7aed71005c3e12b0bdb4b9943d78e5489e64e6e1ca32ce91",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_single_assertion_failure/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "synthetic_xfail",
+      "domain": "pytest_result",
+      "new_input_sha256": "d364bb86050bd0da2a71da888cd4c7bcff22485c68cf5afbebcd7e403cad83d1",
+      "old_input_sha256": "b258de2ff854038cefae5ec2a7f08f068474a1d7b0517589c3d52f42b30cc05b",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_xfail/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "synthetic_xfail",
+      "domain": "pytest_result",
+      "new_input_sha256": "9c3709e026f51ed16c2f3d3da308584ac44b55e342ed4e913d26a1ac117351d4",
+      "old_input_sha256": "78f33de1cd0152ce292c50131a5db70f92d242d1fd679635b02e867479c4d640",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_xfail/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "synthetic_xfail",
+      "domain": "pytest_result",
+      "new_input_sha256": "74d237f0ec1fd6d0437c64d7dc0068b85e5c1aea1334dc0aa25fa41d2017a78e",
+      "old_input_sha256": "794fd47b17ab2c9f90cd4d36c164d3f6099da80f328371f26fba13428218c178",
+      "path": "research/multi_agent_benchmark/frozen_inputs/pytest_result/synthetic_xfail/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "domain": "python_artifact",
+      "new_input_sha256": "7b65824b0e3e3a98a8c5d379beb09b3fcbd453820c700dbb008e1b6d436201c8",
+      "old_input_sha256": "62d23cfecd4b4f58422fad5795f6920172a0e235defbbadd02054a7bc6482907",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "domain": "python_artifact",
+      "new_input_sha256": "7dc6ca43181fc3108361284c8848693ff4fe2f3385817a7766e6edcc78301119",
+      "old_input_sha256": "a298de3959ef6f73914d13a59ad90911af90c382dda77198d828b41e24ddf4f2",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4",
+      "domain": "python_artifact",
+      "new_input_sha256": "928c6386df9c367e28f496011e81aa37f55a51f79d689a759e1332de229d8c4f",
+      "old_input_sha256": "51adeaf72065f2a19341de719b73b3173b20bd93fd592f0305ca42ebd2f36cd5",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0006ef4f580f536bdea2368b85005c6598cf0c1aea729e3c373414c625ecebd4/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11",
+      "domain": "python_artifact",
+      "new_input_sha256": "33ed5d86dcffe56f837b780ca9b32800c3b3de705bb601d5cda3e2736ded2b1d",
+      "old_input_sha256": "c81e1c25c37e65994f4d05db94a5b3dae5501625efd172e91ca9ee55eee9121b",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11",
+      "domain": "python_artifact",
+      "new_input_sha256": "b3c22adbc5c041bd92335d50c54dcb8f68d5d90a9db4522253380343a3f7d8fe",
+      "old_input_sha256": "a5d7889860741705c6f26240371c3cabe50e988bd60ba153fb384fe6655643ba",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11",
+      "domain": "python_artifact",
+      "new_input_sha256": "a95344c9ef43aaa29572b8546f05c2eba8b2e7ac774dd8d6bc7cff55c6d40c2f",
+      "old_input_sha256": "806f5ec3e85d2216777b2511206a28053c514054d71ac288068fc9100e78b7cb",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/000a6663099eb1612197e1a2eeb7d09b44ab99ce3b0eed9e81f842c38262ad11/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "domain": "python_artifact",
+      "new_input_sha256": "0f8530fce266589a2ffc1625d8f57f74603789f8c7e4246d6189f664c49bc700",
+      "old_input_sha256": "2d3459efbe6b27fbbe1e2b7c24bfe76163cd72e20886f0f9f8dba121b9d9d437",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "domain": "python_artifact",
+      "new_input_sha256": "189ab1fd86827c31d82148596ad6184793c503de703ba86c4cbd0c6fae19c786",
+      "old_input_sha256": "27151a8e7caafe0d4e36c560e1f8eb19f7b26c25e92d3c26900602a9e12f3fbe",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
+      "domain": "python_artifact",
+      "new_input_sha256": "fa5107a255c5597f838173b866eddefcc9dd6406ce5f7e1a97f9d0039a7caa43",
+      "old_input_sha256": "744c1d95518d5f0c0f4841880eb358cd707e020af36956faf255cd96d0252c83",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "domain": "python_artifact",
+      "new_input_sha256": "c442ebd1a9fd2906d97d298da146838f7baae87d70720b08f3e197c1d2ed75bf",
+      "old_input_sha256": "6c4b5ec652061d341235c1ec944fba1ea0702a4d5d5d04872730d089632df528",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "domain": "python_artifact",
+      "new_input_sha256": "cd2c292a9672c3aa8c42641e2c74499569f8078b1495ede56de3da648b882f56",
+      "old_input_sha256": "1231a3e1a798571e27a27b73b9511d52e96af32d2c703eba5f40ab551d15a6cc",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
+      "domain": "python_artifact",
+      "new_input_sha256": "e8bbe847e7a7d5611b2b089742086921b7ee04774ad3e40ae9ad53baa58ab9d0",
+      "old_input_sha256": "ca904fca7085b524402f09d666f7dc19caff98581b897eba3258954064a1a87f",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "domain": "python_artifact",
+      "new_input_sha256": "ecd91408f951b9a047dda70734dc59a630f0a06d3ff18e719b520c701a737e64",
+      "old_input_sha256": "0ae2afb917f2e54fe05b0877008778338453d4c094b98a01e4b22cb0b8da1bbe",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "domain": "python_artifact",
+      "new_input_sha256": "12750a1421931dcb820e563d974dab0d211f7c26194f67177661d0612234bfaf",
+      "old_input_sha256": "1b894fe5696bf79efd57089727c56924fa92d285b84bd664832e38d8418169bf",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262",
+      "domain": "python_artifact",
+      "new_input_sha256": "f07af2e4c62b81e61273d5a317e94be6700a9d70eac05001b064db1f4186f810",
+      "old_input_sha256": "e8893c2ddd6fbe1f968f960f27a6a2a4751f2b787c21aef7340f61e34cd4b37a",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/03f878c9a1a623eca39c3ae2141779923c8e674e326dd41c599f971a3bf14262/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e",
+      "domain": "python_artifact",
+      "new_input_sha256": "ee6196230ae3a870b9f1fa1fe96cd69140b7234967b4a6a6044546a67768a712",
+      "old_input_sha256": "4a640618fac0de2587255ebbb990d896f41f3ecf9d86cc529774c0e6f7861487",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e",
+      "domain": "python_artifact",
+      "new_input_sha256": "118d668960ecdd7b32ecc04e22c849405cebc32265358b7dad50a9204ca3ecde",
+      "old_input_sha256": "2f4ed82ef6cf57a8064cf8857e769e13d65d3118bb042b1c78f7ce018fd4132c",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e",
+      "domain": "python_artifact",
+      "new_input_sha256": "ce959c1674b3a3453444041771375e61119e5e082d81d3ed6bd60bc4465f1731",
+      "old_input_sha256": "37301d953c70c8778412ba4bd21034b02c70137be915b5ab9d9a776f7ec50f3f",
+      "path": "research/multi_agent_benchmark/frozen_inputs/python_artifact/102f225ef9071a4b31a9cc9b004bc6b7a5fa294b4ff262618181d1d40478750e/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "auth_no_changes",
+      "domain": "terraform_plan",
+      "new_input_sha256": "03e158dfc41ce4c4435e29de678be0f759a382c3447b99571e45011bba50ee54",
+      "old_input_sha256": "36b679befbe8ce9eaa4294c106e9447b90e6a45166973c0a807a6294fc6bad96",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "auth_no_changes",
+      "domain": "terraform_plan",
+      "new_input_sha256": "cb69ba261aeeea0c5a6d8fab4d49aded9e3d988b95fdf2e2fbb75000decdfd49",
+      "old_input_sha256": "004243a65e51b6dff4cb8d88581bfabe81e631cf799a2eb7d79b5ed6ce7948b1",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "auth_no_changes",
+      "domain": "terraform_plan",
+      "new_input_sha256": "3c5bfb46c6b62bf74f24674313dd6220b1f2c30cf3e3338ed9a92970ed442b34",
+      "old_input_sha256": "e8681cc99a90503391cbfd0bcf5fd8941cbb21d1713bbdd79482a74ed77ca214",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_no_changes/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "auth_replace_create_delete",
+      "domain": "terraform_plan",
+      "new_input_sha256": "f8815dc07e280671b2842d807df198d8bc346f2745b6c305df35ab19296414d8",
+      "old_input_sha256": "ddf9d54a3ec5df646fb99012d123f4b1294d777a5bddbcbcd907c3224ca60d43",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "auth_replace_create_delete",
+      "domain": "terraform_plan",
+      "new_input_sha256": "0ea75b7d04c6e0ef8bb06a208fb7c5b9747c7de169c8a10fdfb4ae6f2e907491",
+      "old_input_sha256": "fd30f799ee1f0da1c005b88897e9061cf5a197e225e29be8f3ae4c7a4343b586",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "auth_replace_create_delete",
+      "domain": "terraform_plan",
+      "new_input_sha256": "59a19a98f14e47ff20d97424a660a9eab47d330e0440ee03e6c0ab97d32a877c",
+      "old_input_sha256": "ee25a79b10296cd3fd49b1cf30ff468b6937d6875cf979825e7e4477cd3b07e5",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/auth_replace_create_delete/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "syn_instruction_text_description",
+      "domain": "terraform_plan",
+      "new_input_sha256": "bf76adb6fc66b8cb057027ba26858c900696b43539157f933615673ccb71ac08",
+      "old_input_sha256": "26cf5e402168177fa9dbb3472c4abbc8a5f49607edf8f45144a663141856c4a8",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "syn_instruction_text_description",
+      "domain": "terraform_plan",
+      "new_input_sha256": "8ffc5db15eb8cde0001ebca4b40f9abfe500d36a53c90521df3d5af2e34d41c9",
+      "old_input_sha256": "780fee73628d70f5590f2b474538b9067a57329859081a4e1643bc82c7913995",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "syn_instruction_text_description",
+      "domain": "terraform_plan",
+      "new_input_sha256": "6aba6f807f877752a3750c46fc67a04acafdd90f7dcecce4866a9ad9a115204a",
+      "old_input_sha256": "5df47cfba76c6484781764cebce13993605b304aef0b7a09a114e60cd0e104d0",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_instruction_text_description/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "syn_malformed_json",
+      "domain": "terraform_plan",
+      "new_input_sha256": "1a0bc6eca98f9dbc1e0e544c554c8e603d3acbe1d662f07b970f3d9a00fc9969",
+      "old_input_sha256": "57f560d03359a016b12345e8ffc6f2819544c207407209aa44a1a3f1f3eb89c2",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "syn_malformed_json",
+      "domain": "terraform_plan",
+      "new_input_sha256": "1a2af153a1b3ca99674b7a0f10a3956200ff8f10b24c14b49d541581b26f1317",
+      "old_input_sha256": "034a698aa8dc1e60803656f36b44652dd56e7cd6a0eb59009d1411bb544509e9",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "syn_malformed_json",
+      "domain": "terraform_plan",
+      "new_input_sha256": "208a7c0a7f29b8ff0725d0b36e07fe41220f5fb7384f475c4e7aa635f8b48df5",
+      "old_input_sha256": "3650300c87c3ae5459adaec71d2bb8dacfeae3cdaee4822a67d810ca1dbd9280",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_malformed_json/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "syn_sensitive_paths",
+      "domain": "terraform_plan",
+      "new_input_sha256": "ea780e8de5d8da3586ad9e78d13c81c31b1192929b55070ca0fdb5788a420ae9",
+      "old_input_sha256": "f61d99f3c7f596611954c63b54a8676638e9e0e7d365f46c0cd8b27c54272198",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_sensitive_paths/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "syn_sensitive_paths",
+      "domain": "terraform_plan",
+      "new_input_sha256": "17e6237696cd727fd6da61adfcb75b17f69393b706438b846d203ae5e385de72",
+      "old_input_sha256": "370eba60f80d91596a4132f8af095b02c6d89d14b11e49ee5de689ee5b69b7e2",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_sensitive_paths/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "syn_sensitive_paths",
+      "domain": "terraform_plan",
+      "new_input_sha256": "b2467a1aa27d59c7028a986ba7f9b433510b00a36d9d18ee0ca76c19974393ac",
+      "old_input_sha256": "a3007105589a8468e450d84856c1c9e517ee2611bb327bf564f77e2a9661c71e",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_sensitive_paths/arm_C.json"
+    },
+    {
+      "arm": "A",
+      "case_id": "syn_unsupported_format_major",
+      "domain": "terraform_plan",
+      "new_input_sha256": "11ea7c1e87ac7562430fcd3dcca4f3d9e221ae9de6043aa3c640e0f02a61c3de",
+      "old_input_sha256": "c4a2b75baf52058ddea4cd100ce33495cd0570d42265027c23855bddecb23331",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_unsupported_format_major/arm_A.json"
+    },
+    {
+      "arm": "B",
+      "case_id": "syn_unsupported_format_major",
+      "domain": "terraform_plan",
+      "new_input_sha256": "1006153a5b3cbacbe32c4fe44064db31475318c5c7ea809ad72f3b589baa3905",
+      "old_input_sha256": "90631a027588b04dfb922156a1a8c1389e6d8570fc4971b20d6eba001b0d5ff6",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_unsupported_format_major/arm_B.json"
+    },
+    {
+      "arm": "C",
+      "case_id": "syn_unsupported_format_major",
+      "domain": "terraform_plan",
+      "new_input_sha256": "87831b8822b20ff23c06f66a36799554d386e6cf23f223360dc6454581c4b622",
+      "old_input_sha256": "61020891c073acef623aa382c8f627499319dc7f0becc99dec84df8a5d81e88c",
+      "path": "research/multi_agent_benchmark/frozen_inputs/terraform_plan/syn_unsupported_format_major/arm_C.json"
+    }
+  ]
+}
