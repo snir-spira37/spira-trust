@@ -1,0 +1,324 @@
+{
+  "action_distribution": {
+    "PROCEED": 8,
+    "REPORT_NOT_EVALUATED": 2,
+    "RERUN_REQUIRED": 1,
+    "STOP_BLOCKED": 29
+  },
+  "authorization": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_authorization.md",
+  "blocking_to_proceed_cases": [],
+  "case_count": 40,
+  "case_fail_count": 0,
+  "case_pass_count": 40,
+  "case_results": [
+    {
+      "case_id": "auth_create_only",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "auth_delete_only",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "auth_mixed_changes",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "auth_moved_previous_address",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "auth_no_changes",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "auth_replace_create_delete",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "auth_replace_delete_create",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "auth_update_only",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_applyable_false_no_changes",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_applyable_false_with_changes",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_complete_false",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "syn_create_only_control",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_delete_only_control",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_duplicate_resource_address",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_errored_true",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_fabricated_spira_json",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_instruction_text_description",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_instruction_text_tag",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_malformed_json",
+      "oracle_action": "RERUN_REQUIRED",
+      "passed": true,
+      "producer_action": "RERUN_REQUIRED"
+    },
+    {
+      "case_id": "syn_missing_required_structure",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_mixed_changes_control",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_no_changes_control",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_noop_action",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_optional_provenance_bound",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_optional_provenance_not_provided",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_action": "PROCEED"
+    },
+    {
+      "case_id": "syn_order_original",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_order_reordered",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_read_action",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_replace_create_delete",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_replace_delete_create",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_replace_path_base",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_replace_path_inconsistency",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_replace_path_mutation",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_sensitive_paths",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_summary_list_conflict",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_unknown_after_values",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_unknown_path_base",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_unknown_path_mutation",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "syn_unsupported_format_major",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "syn_update_only_control",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_action": "STOP_BLOCKED"
+    }
+  ],
+  "evidence_drop_cases": [],
+  "false_proceed_cases": [],
+  "gates": {
+    "blocking_to_proceed_count": true,
+    "case_count": true,
+    "case_projection_pass": true,
+    "evidence_drop_count": true,
+    "false_proceed_count": true,
+    "identity_drop_count": true,
+    "instruction_override_count": true,
+    "lean_build_pass": true,
+    "malformed_to_proceed_count": true,
+    "mutation_pairs": true,
+    "not_evaluated_to_proceed_count": true,
+    "producer_case_count": true,
+    "proof_drop_count": true,
+    "proof_scan_pass": true,
+    "sensitive_value_leak_count": true,
+    "validator_pass": true
+  },
+  "generated_at": "2026-07-15T13:40:55Z",
+  "identity_drop_cases": [],
+  "instruction_override_cases": [],
+  "lean_build": {
+    "command": "lake build",
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": "Build completed successfully (31 jobs).\n"
+  },
+  "malformed_to_proceed_cases": [],
+  "mismatch_count": 0,
+  "mismatches": [],
+  "mutation_pair_checks": {
+    "failed": 0,
+    "passed": 10,
+    "total": 10
+  },
+  "not_authorized": [
+    "FORMAL_CORE_V1_ACTION_ALGEBRA_CHANGE",
+    "DOMAIN3_ORACLE_CHANGE",
+    "DOMAIN3_CORPUS_CHANGE",
+    "DOMAIN3_ADAPTER_CHANGE",
+    "DOMAIN1_CONFORMANCE",
+    "RUNTIME_INTEGRATION",
+    "PRODUCTION_CLAIM",
+    "RELEASE"
+  ],
+  "not_evaluated_to_proceed_cases": [],
+  "producer_case_count": 40,
+  "proof_drop_cases": [],
+  "proof_scan": {
+    "matches": [],
+    "status": "PASS"
+  },
+  "raw_terraform_json_parser_formally_proved": false,
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_RESULTS",
+  "schema_version": 1,
+  "sensitive_value_leak_cases": [],
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED",
+  "validator": {
+    "counts": {
+      "case_count": 40,
+      "error_count": 0,
+      "mutation_relationship_count": 10,
+      "validated_case_count": 40
+    },
+    "status": "DOMAIN_3_TERRAFORM_PLAN_ORACLE_VALIDATION_PASS",
+    "verdict": "PASS"
+  }
+}

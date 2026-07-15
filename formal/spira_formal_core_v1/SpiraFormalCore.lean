@@ -15,3 +15,7 @@ import SpiraFormalCore.Domain2.Evidence
 import SpiraFormalCore.Domain2.Policy
 import SpiraFormalCore.Domain2.Decision
 import SpiraFormalCore.Domain2.Proofs
+import SpiraFormalCore.Domain3.Evidence
+import SpiraFormalCore.Domain3.Policy
+import SpiraFormalCore.Domain3.Decision
+import SpiraFormalCore.Domain3.Proofs
