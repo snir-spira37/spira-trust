@@ -1,21 +1,89 @@
 {
-  "accepted_entrypoints": [],
-  "accepted_python_typed_evidence_entrypoint": false,
+  "accepted_python_typed_evidence_entrypoint": true,
+  "all_error_vectors_fail_closed": true,
+  "all_formal_test_vectors_equal": true,
   "benchmark_changes": 0,
-  "blocker": "PYTHON_TYPED_EVIDENCE_ENTRYPOINT_NOT_ACCEPTED",
-  "comparison_executed": false,
-  "comparison_executed_reason": "blocked before comparison because no accepted Python typed-evidence entrypoint exists",
   "domain_adapter_changes": 0,
-  "domain_specific_candidates_not_accepted_as_generic_entrypoint": [
-    "source/spira_core/mvp_unified.py",
-    "source/spira_core/test_build_failure_producer.py",
-    "source/spira_core/terraform_plan_producer.py",
-    "source/spira_core/agent_summary.py"
-  ],
-  "formal_vectors_available": true,
-  "lean_reference_available": true,
-  "phase": "generic_differential_harness",
-  "python_source_changes": 0,
+  "identity_differences": 0,
+  "lean_reference": {
+    "returncode": 0,
+    "status": "PASS",
+    "stdout": "valid proceed vector: PASS\nblocking vector: PASS\nrequired unknown vector: PASS\nconflicting evidence vector: PASS\ninvalid evidence vector: PASS\nversion-incompatible vector: PASS\nGate A preservation vector: PASS\nmodel-non-authority vector: PASS\nSPIRA_FORMAL_CORE_V1_EXECUTABLE_REFERENCE_PASS\n"
+  },
+  "list_order_differences": 0,
+  "missing_field_differences": 0,
+  "nondeterministic_repeats": 0,
+  "phase": "generic_differential_harness_rerun",
+  "python_entrypoint": "spira_core.formal_core_v1.evaluate_typed_evidence",
+  "python_source_changes_outside_authorized_boundary": 0,
   "result_reclassification": 0,
-  "status": "SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_NEEDS_REVISION"
+  "status": "SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_ACCEPTED",
+  "vector_results": [
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": false,
+      "name": "valid_proceed_vector",
+      "nondeterministic": false,
+      "python_status": "ok",
+      "status": "PASS"
+    },
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": false,
+      "name": "blocking_vector",
+      "nondeterministic": false,
+      "python_status": "ok",
+      "status": "PASS"
+    },
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": false,
+      "name": "required_unknown_vector",
+      "nondeterministic": false,
+      "python_status": "ok",
+      "status": "PASS"
+    },
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": true,
+      "name": "conflicting_evidence_vector",
+      "nondeterministic": false,
+      "python_status": "error",
+      "status": "PASS"
+    },
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": true,
+      "name": "invalid_evidence_vector",
+      "nondeterministic": false,
+      "python_status": "error",
+      "status": "PASS"
+    },
+    {
+      "comparison": {
+        "mismatches": [],
+        "pass": true
+      },
+      "error_vector": true,
+      "name": "version_incompatible_vector",
+      "nondeterministic": false,
+      "python_status": "error",
+      "status": "PASS"
+    }
+  ]
 }

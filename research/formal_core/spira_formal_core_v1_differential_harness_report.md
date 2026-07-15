@@ -3,39 +3,32 @@
 ## Status
 
 ```text
-SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_NEEDS_REVISION
-PYTHON_TYPED_EVIDENCE_ENTRYPOINT_NOT_ACCEPTED
+SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_ACCEPTED
+LEAN_REFERENCE_PASS
 ```
 
-## Result
+## Vector Results
 
-The generic differential comparison did not execute.
+- valid_proceed_vector: PASS
+- blocking_vector: PASS
+- required_unknown_vector: PASS
+- conflicting_evidence_vector: PASS
+- invalid_evidence_vector: PASS
+- version_incompatible_vector: PASS
 
-Reason:
-
-```text
-blocked before comparison because no accepted Python typed-evidence entrypoint exists
-```
-
-## Discovery
-
-Accepted Python typed-evidence entrypoints:
+## Gates
 
 ```json
-[]
-```
-
-Domain-specific candidates observed but not accepted as generic typed-evidence entrypoints:
-
-```json
-[
-  "source/spira_core/mvp_unified.py",
-  "source/spira_core/test_build_failure_producer.py",
-  "source/spira_core/terraform_plan_producer.py",
-  "source/spira_core/agent_summary.py"
-]
+{
+  "all_formal_test_vectors_equal": true,
+  "all_error_vectors_fail_closed": true,
+  "list_order_differences": 0,
+  "missing_field_differences": 0,
+  "identity_differences": 0,
+  "nondeterministic_repeats": 0
+}
 ```
 
 ## Boundary
 
-No Python source, domain adapter, benchmark, corpus, oracle, or historical result was modified.
+No domain adapters, benchmark files, runtime integration, or historical results were modified.
