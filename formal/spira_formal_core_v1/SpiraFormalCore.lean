@@ -19,3 +19,7 @@ import SpiraFormalCore.Domain3.Evidence
 import SpiraFormalCore.Domain3.Policy
 import SpiraFormalCore.Domain3.Decision
 import SpiraFormalCore.Domain3.Proofs
+import SpiraFormalCore.Domain1.Evidence
+import SpiraFormalCore.Domain1.Policy
+import SpiraFormalCore.Domain1.Decision
+import SpiraFormalCore.Domain1.Proofs

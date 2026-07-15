@@ -1,0 +1,67 @@
+{
+  "authorization": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_authorization.md",
+  "baseline_root_expected": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+  "baseline_root_match": true,
+  "baseline_root_recomputed": "85f23217e29e70dea99701bc7cdd5c459457c516664a33e9c391fb45ac43816c",
+  "core_action_distribution": {
+    "REPORT_NOT_EVALUATED": 1786,
+    "STOP_BLOCKED": 168
+  },
+  "false_proceed_records": [],
+  "gates": {
+    "baseline_root_match": true,
+    "false_proceed_count": true,
+    "identity_drop_count": true,
+    "lean_build_pass": true,
+    "list_drop_count": true,
+    "not_evaluated_to_proceed_count": true,
+    "proof_scan_pass": true,
+    "record_count": true,
+    "record_projection_pass": true,
+    "sensitive_or_private_leak_count": true,
+    "unsupported_action_count": true
+  },
+  "generated_at": "2026-07-15T13:48:27Z",
+  "identity_drop_records": [],
+  "lean_build": {
+    "command": "lake build",
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": "Build completed successfully (35 jobs).\n"
+  },
+  "legacy_action_distribution": {
+    "ASK_HUMAN": 911,
+    "REPORT_NOT_EVALUATED": 875,
+    "STOP_BLOCKED": 168
+  },
+  "list_drop_records": [],
+  "mismatch_count": 0,
+  "mismatches": [],
+  "not_authorized": [
+    "RAW_WHEEL_ZIP_PARSER_PROOF",
+    "DOMAIN1_ADAPTER_CHANGE",
+    "GATE_A_IMPLEMENTATION_CHANGE",
+    "FORMAL_CORE_V1_ACTION_ALGEBRA_CHANGE",
+    "RUNTIME_INTEGRATION",
+    "PRODUCTION_CLAIM",
+    "RELEASE"
+  ],
+  "not_evaluated_to_proceed_records": [],
+  "proof_scan": {
+    "matches": [],
+    "status": "PASS"
+  },
+  "raw_wheel_zip_parser_formally_proved": false,
+  "record_count": 1954,
+  "record_fail_count": 0,
+  "record_pass_count": 1954,
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_RESULTS",
+  "schema_version": 1,
+  "sensitive_or_private_leak_records": [],
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_ACCEPTED",
+  "unsupported_action_records": [],
+  "worst_claim_status_distribution": {
+    "BLOCK": 168,
+    "NOT_EVALUATED": 1786
+  }
+}
