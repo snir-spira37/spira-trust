@@ -1,0 +1,40 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_DEMO_SCRIPT_AUTHORIZATION_REVIEW_RESULTS",
+  "schema_version": 1,
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "competitor_mapping_authorization_commit": "fe9047488438b40d0a0adf592123c7074acc38a7",
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "document_reviewed": "research/product_strategy/demo_script_authorization.md",
+  "authorized_demo_domain": "Domain 3 - Terraform plan evidence",
+  "authorized_input_type": "Terraform plan JSON fixture or reproducible generated Terraform plan JSON",
+  "authorized_result_actions": [
+    "STOP_BLOCKED",
+    "REPORT_NOT_EVALUATED",
+    "RERUN_REQUIRED"
+  ],
+  "representative_fixtures": {
+    "STOP_BLOCKED": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json",
+    "REPORT_NOT_EVALUATED": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json",
+    "RERUN_REQUIRED": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json"
+  },
+  "exact_fixture_requirement": true,
+  "exact_command_requirement": true,
+  "reproducibility_required": true,
+  "existing_schema_only": true,
+  "invented_artifacts_allowed": false,
+  "runtime_interception_claim_allowed": false,
+  "arbitrary_tool_call_claim_allowed": false,
+  "model_override_allowed": false,
+  "current_vs_conceptual_vs_roadmap_separation_required": true,
+  "competitor_research_boundaries_preserved": true,
+  "product_change_performed": false,
+  "domain_expansion_detected": false,
+  "outreach_performed": false,
+  "pitch_prepared": false,
+  "demo_script_created": false,
+  "demo_implementation_created": false,
+  "release_performed": false,
+  "verdict": "DEMO_SCRIPT_AUTHORIZATION_ACCEPTED",
+  "blockers": [],
+  "next_step": "DEMO_SCRIPT_EXECUTION_REQUIRED"
+}
