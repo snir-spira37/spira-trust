@@ -1,0 +1,81 @@
+{
+  "accepted_domain3_conformance_review": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_review.md",
+  "authorization": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_authorization.md",
+  "claim_boundary": "bounded Domain 3 production adapter alignment only; arbitrary raw Terraform Plan JSON parser proof not claimed",
+  "commands": {
+    "focused_tests": {
+      "command": "python -m pytest tests/test_terraform_plan_producer.py tests/test_terraform_plan_oracle_validator.py tests/test_formal_core_v1_domain3_raw_adapter_conformance.py tests/test_formal_core_v1_domain3_production_adapter_alignment.py",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 22 items\n\ntests\\test_terraform_plan_producer.py ........                           [ 36%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 68%]\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py ....        [ 86%]\ntests\\test_formal_core_v1_domain3_production_adapter_alignment.py ...    [100%]\n\n============================= 22 passed in 11.81s ============================="
+    },
+    "full_pytest": {
+      "command": "python -m pytest",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "tests\\test_formal_core_v1_domain3_production_adapter_alignment.py ...    [ 41%]\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py ....        [ 43%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 46%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 50%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 53%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 53%]\ntests\\test_mvp_unified.py .......                                        [ 56%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 60%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 70%]\ntests\\test_pep770_scope_v4.py .......                                    [ 72%]\ntests\\test_previous_version_gate.py ...........                          [ 76%]\ntests\\test_rerun_planner.py ..................                           [ 83%]\ntests\\test_review_fail_closed.py .                                       [ 84%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 86%]\ntests\\test_terraform_plan_producer.py ........                           [ 90%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 93%]\ntests\\test_test_build_failure_producer.py ........                       [ 96%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n======================= 260 passed in 80.22s (0:01:20) ========================"
+    }
+  },
+  "gates": {
+    "blocking_item_loss_zero": true,
+    "false_proceed_zero": true,
+    "focused_tests_pass": true,
+    "full_pytest_pass": true,
+    "not_claimed_loss_zero": true,
+    "not_evaluated_loss_zero": true,
+    "production_adapter_source_unchanged": true,
+    "production_case_count": true,
+    "production_case_pass_count": true,
+    "production_domain3_conformance_accepted": true,
+    "production_mutation_pairs_pass": true,
+    "replace_path_loss_zero": true,
+    "resource_action_loss_zero": true,
+    "sensitive_path_loss_zero": true,
+    "synthetic_fixture_contracts_match": true,
+    "synthetic_fixture_count": true,
+    "synthetic_fixture_typed_evidence_matches": true,
+    "unknown_path_loss_zero": true,
+    "validator_pass": true
+  },
+  "production_adapter_source_status": "",
+  "production_conformance_summary": {
+    "action_distribution": {
+      "PROCEED": 8,
+      "REPORT_NOT_EVALUATED": 2,
+      "RERUN_REQUIRED": 1,
+      "STOP_BLOCKED": 29
+    },
+    "blocking_to_proceed_cases": [],
+    "case_count": 40,
+    "case_fail_count": 0,
+    "case_pass_count": 40,
+    "malformed_to_proceed_cases": [],
+    "mismatch_count": 0,
+    "mutation_pair_checks": {
+      "failed": 0,
+      "passed": 10,
+      "total": 10
+    },
+    "not_evaluated_to_proceed_cases": [],
+    "sensitive_value_leak_cases": [],
+    "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED"
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_PRODUCTION_ADAPTER_ALIGNMENT_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_PRODUCTION_ADAPTER_ALIGNMENT_ACCEPTED",
+  "synthetic_fixture_summary": {
+    "blocking_item_loss_count": 0,
+    "contract_mismatch_count": 0,
+    "evidence_proof_identity_loss_count": 0,
+    "false_proceed_count": 0,
+    "fixture_count": 31,
+    "fixture_hash_mismatch_count": 0,
+    "not_claimed_loss_count": 0,
+    "not_evaluated_loss_count": 0,
+    "replace_path_loss_count": 0,
+    "resource_action_loss_count": 0,
+    "sensitive_path_loss_count": 0,
+    "typed_evidence_mismatch_count": 0,
+    "unknown_path_loss_count": 0
+  }
+}
