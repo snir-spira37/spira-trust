@@ -1,0 +1,80 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_COMPETITOR_MAPPING_AUTHORIZATION_REVIEW_RESULTS",
+  "schema_version": 1,
+  "document_reviewed": "research/product_strategy/competitor_mapping_authorization.md",
+  "authoritative_starting_point": {
+    "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+    "positioning_verdict": "POSITIONING_ACCEPTED",
+    "positioning_review_results": "research/product_strategy/spira_agent_action_gate_positioning_review_results.json"
+  },
+  "review_scope": "authorization and methodology only",
+  "methodology_structure_present": true,
+  "competitor_categories_authorized_for_future_research": [
+    "Agent identity and authorization",
+    "Agent policy and tool-call gateways",
+    "MCP gateways and MCP security systems",
+    "Runtime monitoring and observability",
+    "Agent governance frameworks",
+    "Artifact, supply-chain and evidence verification",
+    "Formal or deterministic decision systems",
+    "CI/CD and infrastructure deployment gates"
+  ],
+  "initial_research_candidates_authorized": [
+    "APort / OAP",
+    "Microsoft Agent Governance Toolkit",
+    "MCP gateways and MCP security products",
+    "agent-policy engines",
+    "identity / authorization systems for agents",
+    "infrastructure policy gates",
+    "software-supply-chain verification tools"
+  ],
+  "bias_safeguards": {
+    "spira_superiority_not_presumed": true,
+    "no_competitors_claim_forbidden": true,
+    "market_exclusivity_claim_forbidden_without_evidence": true,
+    "competitor_strengths_required": true,
+    "missing_documentation_not_equated_to_missing_capability": true,
+    "different_evidence_classes_must_be_labelled": true
+  },
+  "source_requirements": {
+    "primary_sources_required": true,
+    "source_register_required": true,
+    "freshness_documentation_required": true,
+    "claim_classification_required": true,
+    "inferences_must_be_marked": true
+  },
+  "positioning_boundaries_preserved": {
+    "accepted_spira_baseline_preserved": true,
+    "current_scope_not_expanded": true,
+    "arbitrary_tool_call_gating_not_claimed": true,
+    "arbitrary_mcp_action_gating_not_claimed": true,
+    "arbitrary_api_database_action_gating_not_claimed": true,
+    "universal_agent_governance_not_claimed": true
+  },
+  "forbidden_work_excluded": {
+    "competitor_mapping_executed": false,
+    "outreach_prepared": false,
+    "pitch_prepared": false,
+    "demo_implementation_prepared": false,
+    "product_code_changed": false,
+    "schema_changed": false,
+    "formal_core_changed": false,
+    "domain_expansion_performed": false,
+    "release_changed": false
+  },
+  "required_future_outputs_defined": [
+    "research/product_strategy/spira_agent_action_gate_competitor_mapping.md",
+    "research/product_strategy/spira_agent_action_gate_competitor_mapping_results.json",
+    "research/product_strategy/spira_agent_action_gate_competitor_source_register.json"
+  ],
+  "allowed_future_mapping_verdicts_defined": [
+    "COMPETITOR_MAPPING_ACCEPTED_POSITIONING_SUPPORTED",
+    "COMPETITOR_MAPPING_ACCEPTED_POSITIONING_REVISION_REQUIRED",
+    "COMPETITOR_MAPPING_INCONCLUSIVE_MORE_RESEARCH_REQUIRED",
+    "COMPETITOR_MAPPING_REJECTED_UNSUPPORTED_DIFFERENTIATION"
+  ],
+  "documentation_only": true,
+  "verdict": "COMPETITOR_MAPPING_AUTHORIZATION_ACCEPTED",
+  "blockers": [],
+  "next_step": "COMPETITOR_MAPPING_EXECUTION_REQUIRED"
+}
