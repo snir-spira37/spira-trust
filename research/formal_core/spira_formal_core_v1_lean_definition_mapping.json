@@ -1,0 +1,96 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_LEAN_DEFINITION_MAPPING_COMPLETE",
+  "phase": "lean_definition_implementation",
+  "source_baseline_commit": "cfa8c925217fea08cbf4736490765d676bfddf3f",
+  "formal_branch": "codex/formal-core-v1-lean",
+  "formal_worktree": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean",
+  "toolchain": {
+    "lean_toolchain_file": "leanprover/lean4:v4.32.0",
+    "lean_version": "4.32.0",
+    "lean_commit": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+    "lake_version": "5.0.0-src+8c9756b",
+    "elan_version": "NOT_AVAILABLE_LOCAL_RELEASE_ZIP_USED",
+    "release_zip_sha256": "57828abb276461c4cf62a75b1e71aa798c0bb329ab3d353c743d06b19c0ad0ac",
+    "operating_system": "Microsoft Windows 10 Enterprise 10.0.19045",
+    "architecture": "64-bit"
+  },
+  "dependency_graph": {
+    "lake_manifest": "formal/spira_formal_core_v1/lake-manifest.json",
+    "external_packages": [],
+    "mathlib": "NOT_USED",
+    "batteries": "NOT_USED"
+  },
+  "specification_hashes": {
+    "spira_formal_core_v1_contract_algebra_spec.md": "d7d60aad2f2f0127888ae4710acb93ab51909471e2aa619a70c25a7ec4062153",
+    "spira_formal_core_v1_theorem_spec.md": "b760f746df6f909b1cee3a74e42978948dd437d284cbb234eb9b707c27824e71",
+    "spira_formal_core_v1_trusted_computing_base_ledger.md": "91c7a5096c29180c22f993a2d9bfb50c53cdfcef3c3854bf14c50a29d87e0b63",
+    "spira_formal_core_v1_domain2_conformance_plan.md": "f81f9a595bff4d8d67eb2a17b43a6ac146c901b538417a86c7512c21cbbe64ab",
+    "spira_formal_core_v1_specification_review.md": "9d1b3d26484adca7677325f73da4b729a0012f731aefaa2fb5da8dcf1115c31b"
+  },
+  "definition_files": [
+    "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore.lean"
+  ],
+  "contract_algebra_mapping": {
+    "DomainId": "Basic.lean",
+    "SubjectId": "Basic.lean",
+    "PolicyId": "Basic.lean",
+    "SchemaVersion": "Basic.lean",
+    "ProducerId": "Basic.lean",
+    "ContractId": "Basic.lean",
+    "EvidenceRef": "Basic.lean",
+    "ProofRef": "Basic.lean",
+    "ReasonCode": "Basic.lean",
+    "BlockingItem": "Basic.lean",
+    "NotEvaluatedItem": "Basic.lean",
+    "NotClaimedItem": "Basic.lean",
+    "Action": "Action.lean",
+    "ExplicitList": "ExplicitList.lean",
+    "MachineContract": "Contract.lean"
+  },
+  "typed_evidence_mapping": {
+    "EvidenceValidity": "Evidence.lean",
+    "TypedClaim": "Evidence.lean",
+    "TypedEvidence": "Evidence.lean",
+    "PolicyContext": "Policy.lean"
+  },
+  "core_function_mapping": {
+    "validateTypedEvidence": "Core.lean",
+    "aggregateClaims": "Core.lean",
+    "deriveReasonCodes": "Core.lean",
+    "deriveBlockingItems": "Core.lean",
+    "deriveNotEvaluated": "Core.lean",
+    "deriveNotClaimed": "Core.lean",
+    "decideAction": "Core.lean",
+    "assembleContract": "Core.lean",
+    "core": "Core.lean",
+    "gateAWrap": "GateA.lean",
+    "projectDomainContract": "GateA.lean",
+    "passthrough": "Passthrough.lean",
+    "executedAction": "Passthrough.lean"
+  },
+  "acceptance_gates": {
+    "lake_build": "PASS",
+    "forbidden_lean_tokens": "PASS",
+    "no_sorry": true,
+    "no_admit": true,
+    "no_axiom": true,
+    "no_theorem_declarations": true,
+    "python_changes": 0,
+    "domain_adapter_changes": 0,
+    "specification_fields_represented": "100%",
+    "action_algebra_represented": "100%",
+    "explicit_list_distinctions_represented": "100%",
+    "typed_evidence_validity_states_represented": "100%",
+    "policy_context_fields_represented": "100%"
+  }
+}

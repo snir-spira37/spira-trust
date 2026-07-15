@@ -1,0 +1,6 @@
+name = "spira_formal_core_v1"
+version = "0.1.0"
+defaultTargets = ["SpiraFormalCore"]
+
+[[lean_lib]]
+name = "SpiraFormalCore"

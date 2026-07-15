@@ -1,0 +1,6 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages": [],
+ "name": "spira_formal_core_v1",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}
