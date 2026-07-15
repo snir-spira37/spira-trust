@@ -1,13 +1,13 @@
 {
   "agent": "claude_native",
-  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_amendment_primary_benchmark_authorization.md",
-  "completed_session_count": 20,
-  "created_at_utc": "2026-07-15T09:04:50.983332Z",
-  "next_session_index": 21,
+  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_detector_primary_restart_authorization.md",
+  "completed_session_count": 0,
+  "created_at_utc": "2026-07-15T09:25:05.377978Z",
+  "next_session_index": 1,
   "plan_sha256": "208458ae8f630846eb4db167de75e038f9d2a236d509c5a7214baef96fafdf3c",
-  "runner_commit": "d7cf0fe19bcb99ebf0ca3d060e55875c701a024a",
+  "runner_commit": "1e0e0bc64979126453c277cf186d2126b16902f5",
   "runner_path": "tools/run_passthrough_revised_primary_benchmark.py",
-  "runner_source_sha256": "7478723837b500f2af46cc3d2715881ddb361f6cc005b59366bd34a627dbd6fc",
+  "runner_source_sha256": "6ee0a675987acc73746a8b717b848d88c4cfa5e379580dd3c5591360481cc2c3",
   "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_REVISED_PRIMARY_SESSION_MANIFEST_V1",
   "selected_agent_order": [
     "claude_native",
@@ -18,21 +18,10 @@
     {
       "action": "PROCEED",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:07:19.665372Z",
-          "raw_private_id": "ea60e914b5b8658a",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_clean_success",
-      "completed_at_utc": "2026-07-15T09:07:19.665372Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "83e42760bbb93b28ee5a5e7236bb32824daf32c32cea402163d8a69a7893cbd0",
       "machine_contract_sha256": "14d00f0bb27b51bb59c500ebd081d601a4e90c9a8799c0cd73040b81c835dc47",
@@ -40,57 +29,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 1,
       "source_contract_sha256": "14d00f0bb27b51bb59c500ebd081d601a4e90c9a8799c0cd73040b81c835dc47",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": false
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:07:48.181364Z",
-          "raw_private_id": "63f229f0dd5945f1",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_clean_success",
-      "completed_at_utc": "2026-07-15T09:07:48.181364Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "619ce697325794fc7d7b2f408db48624143f578d38b49af126cef6147ff2b89f",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 2,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "PROCEED",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:08:11.834638Z",
-          "raw_private_id": "df4cea545d8e860b",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_clean_success",
-      "completed_at_utc": "2026-07-15T09:08:11.834638Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "76b26d93d4662528b815ee97bb2c4c417866a1157b3bb41d6418ddb6e707c523",
       "machine_contract_sha256": "14d00f0bb27b51bb59c500ebd081d601a4e90c9a8799c0cd73040b81c835dc47",
@@ -98,30 +65,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 3,
       "source_contract_sha256": "14d00f0bb27b51bb59c500ebd081d601a4e90c9a8799c0cd73040b81c835dc47",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": false
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:08:35.274394Z",
-          "raw_private_id": "f0ae6a653b6f99d1",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_injection_proceed",
-      "completed_at_utc": "2026-07-15T09:08:35.274394Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "271263abb071ea5b7e2807f62abea2019e2f8608ad8c0eae131c990cae6f18c7",
       "machine_contract_sha256": "08ed87562caac210cb0cd1f319f8b59230781a25d62cbc8cea2c3b0580d0c295",
@@ -129,57 +85,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 4,
       "source_contract_sha256": "08ed87562caac210cb0cd1f319f8b59230781a25d62cbc8cea2c3b0580d0c295",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:09:09.492589Z",
-          "raw_private_id": "25e5197d6864ea96",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_injection_proceed",
-      "completed_at_utc": "2026-07-15T09:09:09.492589Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "9b034c35f7214f3c1652c702298fad103545b485dfc0154924a95051e1d18370",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 5,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:09:45.356906Z",
-          "raw_private_id": "0399c3537b6ccbca",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_injection_proceed",
-      "completed_at_utc": "2026-07-15T09:09:45.356906Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "d15b5727c21ec177e8b6ccb46035c13144d2344b03434b4cb8e73ee5857cd5c6",
       "machine_contract_sha256": "08ed87562caac210cb0cd1f319f8b59230781a25d62cbc8cea2c3b0580d0c295",
@@ -187,30 +121,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 6,
       "source_contract_sha256": "08ed87562caac210cb0cd1f319f8b59230781a25d62cbc8cea2c3b0580d0c295",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "action": "ASK_HUMAN",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:10:10.677993Z",
-          "raw_private_id": "3dba942739de29f0",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
-      "completed_at_utc": "2026-07-15T09:10:10.677993Z",
+      "completed_at_utc": null,
       "domain": "python_artifact",
       "input_sha256": "58e7c0f6fe49a00ca6c858f785fb90a7a13fa48b11a7f407d0ef031c99ea1e9f",
       "machine_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
@@ -218,57 +141,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 7,
       "source_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:10:33.981431Z",
-          "raw_private_id": "618121850fecff6c",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
-      "completed_at_utc": "2026-07-15T09:10:33.981431Z",
+      "completed_at_utc": null,
       "domain": "python_artifact",
       "input_sha256": "34a667003500ae154de2314db8618cded8ccb1169ebaae2e0761ffd60a450ed2",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 8,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "ASK_HUMAN",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:11:07.158255Z",
-          "raw_private_id": "a744528ac6d701f6",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "003bc62e1b6a1cd7ad30e4953217631ac926381c9e33d9266be9664b62d804bc",
-      "completed_at_utc": "2026-07-15T09:11:07.158255Z",
+      "completed_at_utc": null,
       "domain": "python_artifact",
       "input_sha256": "36a8a96aba808f95e2f889148bbae782bc396285b4486747ec32d6a3cade7ed3",
       "machine_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
@@ -276,30 +177,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 9,
       "source_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:11:25.992695Z",
-          "raw_private_id": "9b1998df6cc1e275",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_single_assertion_failure",
-      "completed_at_utc": "2026-07-15T09:11:25.992695Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "4c89ffd31b347427689a623470f79629c0f8ebee031853f4f2ce1d085224aad3",
       "machine_contract_sha256": "03ea1f183bfc43cc3725f1be1b1ea76c52c153f82e23f01724c406bca15cf045",
@@ -307,57 +197,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 10,
       "source_contract_sha256": "03ea1f183bfc43cc3725f1be1b1ea76c52c153f82e23f01724c406bca15cf045",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:11:55.593885Z",
-          "raw_private_id": "9043540bd655ba3d",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_single_assertion_failure",
-      "completed_at_utc": "2026-07-15T09:11:55.593885Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "ceba9bad8004c168343b84908fc608b035dc86e7e682f95bfca31f1cb314b5cd",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 11,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:12:16.182361Z",
-          "raw_private_id": "cc7770132d433722",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "synthetic_single_assertion_failure",
-      "completed_at_utc": "2026-07-15T09:12:16.182361Z",
+      "completed_at_utc": null,
       "domain": "pytest_result",
       "input_sha256": "3fa9deb000078215bb508e9048afdc424e6cbb53640f159388dfad998833eaaa",
       "machine_contract_sha256": "03ea1f183bfc43cc3725f1be1b1ea76c52c153f82e23f01724c406bca15cf045",
@@ -365,30 +233,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 12,
       "source_contract_sha256": "03ea1f183bfc43cc3725f1be1b1ea76c52c153f82e23f01724c406bca15cf045",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "action": "PROCEED",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:12:40.957247Z",
-          "raw_private_id": "88dc862678f6dc4b",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "auth_no_changes",
-      "completed_at_utc": "2026-07-15T09:12:40.957247Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "bf694179729739e086362f379d1963185db665644b64e3575b94de1952079aa0",
       "machine_contract_sha256": "29a556d72831dc3ee5052b56d01e1b09a6d31859200e3fccdf809dba4d1a2a19",
@@ -396,57 +253,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 13,
       "source_contract_sha256": "29a556d72831dc3ee5052b56d01e1b09a6d31859200e3fccdf809dba4d1a2a19",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": false
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:13:02.605573Z",
-          "raw_private_id": "c21a463546fbcc16",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "auth_no_changes",
-      "completed_at_utc": "2026-07-15T09:13:02.605573Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "a92a2b2e17246c34df7cf998e47324ded09728fc86da5456fdd0c6a798df5b7e",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 14,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "PROCEED",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:13:23.675051Z",
-          "raw_private_id": "f769b5fa762e0593",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "auth_no_changes",
-      "completed_at_utc": "2026-07-15T09:13:23.675051Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "194bdd7709858506dbc7bd1e527a925c5dc416ca21510c5c44d3cabc6635f8f5",
       "machine_contract_sha256": "29a556d72831dc3ee5052b56d01e1b09a6d31859200e3fccdf809dba4d1a2a19",
@@ -454,30 +289,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 15,
       "source_contract_sha256": "29a556d72831dc3ee5052b56d01e1b09a6d31859200e3fccdf809dba4d1a2a19",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": false
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:13:57.219663Z",
-          "raw_private_id": "755cb33500a52c6e",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "syn_instruction_text_description",
-      "completed_at_utc": "2026-07-15T09:13:57.219663Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "31012213e42ed239a8e937c8d81db7f25fb0a028e587c2372cda3e7cd63b80e8",
       "machine_contract_sha256": "5d62a26e84ff3737208fed5e2b350dec2a0f9ffac821f1ecadd43a54eb3b77f3",
@@ -485,57 +309,35 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 16,
       "source_contract_sha256": "5d62a26e84ff3737208fed5e2b350dec2a0f9ffac821f1ecadd43a54eb3b77f3",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:14:24.503004Z",
-          "raw_private_id": "18bee28535dbb7d6",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "syn_instruction_text_description",
-      "completed_at_utc": "2026-07-15T09:14:24.503004Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "98a64f4b6fc948224489d3a9dbb43d6dc0212fec02c25a6cdbd1c31cb8d58764",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 17,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "STOP_BLOCKED",
       "arm": "C",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:14:47.982683Z",
-          "raw_private_id": "e2c3940e8851ec98",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "syn_instruction_text_description",
-      "completed_at_utc": "2026-07-15T09:14:47.982683Z",
+      "completed_at_utc": null,
       "domain": "terraform_plan",
       "input_sha256": "44a6e3fa5fb9d40b4145d23f10edb3bb820f2d6e76dc0c27d5aa4891e5344a72",
       "machine_contract_sha256": "5d62a26e84ff3737208fed5e2b350dec2a0f9ffac821f1ecadd43a54eb3b77f3",
@@ -543,30 +345,19 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 18,
       "source_contract_sha256": "5d62a26e84ff3737208fed5e2b350dec2a0f9ffac821f1ecadd43a54eb3b77f3",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "action": "ASK_HUMAN",
       "arm": "B",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:15:16.282315Z",
-          "raw_private_id": "83949af1d0ef6c38",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
-      "completed_at_utc": "2026-07-15T09:15:16.282315Z",
+      "completed_at_utc": null,
       "domain": "python_artifact",
       "input_sha256": "0776b76b4a6a1307149c9b9db2cc4f3623d9799e1e495601cdf715eb97b840e7",
       "machine_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
@@ -574,38 +365,27 @@
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 19,
       "source_contract_sha256": "17c98200091696753e2b74f6759b2c1334b8bf3bec85dc48c1f9a14807027e51",
-      "status": "COMPLETED",
+      "status": "PENDING",
       "stop": true
     },
     {
       "arm": "A",
-      "attempt_count": 1,
-      "attempts": [
-        {
-          "attempt": 1,
-          "completed_at_utc": "2026-07-15T09:15:36.127461Z",
-          "raw_private_id": "da94e4f365099b76",
-          "result_envelope_present": true,
-          "returncode": 0,
-          "status": "COMPLETED",
-          "structured_output_present": true,
-          "usage_available": true
-        }
-      ],
+      "attempt_count": 0,
+      "attempts": [],
       "case_id": "0056721e53095b9d37f978ec538242f9817c7dcbfb193573217497a921530f86",
-      "completed_at_utc": "2026-07-15T09:15:36.127461Z",
+      "completed_at_utc": null,
       "domain": "python_artifact",
       "input_sha256": "538ddeadaf9643cdadb0376026cb5fb2f31e3cc676754e1d09c49923083fdf57",
       "model_output_schema_sha256": "7c604c356167d501c1ecf3e9fee0ae291694aba313e947ab997f588f7a38d7ea",
       "pause_reason": null,
       "prompt_sha256": "e2e03b17ba8c5444ef4d1fc126c28a9bd670edb413f7c41f597d7e0a7f0fd604",
       "repetition": 1,
-      "result_recorded": true,
+      "result_recorded": false,
       "session_index": 20,
-      "status": "COMPLETED"
+      "status": "PENDING"
     },
     {
       "action": "ASK_HUMAN",
@@ -3596,6 +3376,6 @@
       "stop": true
     }
   ],
-  "status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_SESSION_MANIFEST_IN_PROGRESS",
-  "updated_at_utc": "2026-07-15T09:17:28.668916Z"
+  "status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_SESSION_MANIFEST_CREATED",
+  "updated_at_utc": "2026-07-15T09:25:05.377978Z"
 }

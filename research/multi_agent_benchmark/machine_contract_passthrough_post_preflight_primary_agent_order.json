@@ -1,5 +1,5 @@
 {
-  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_amendment_primary_benchmark_authorization.md",
+  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_detector_primary_restart_authorization.md",
   "carryover_authorized": false,
   "combined_authorized_maximum": 360,
   "concurrent_live_tracks_forbidden": true,

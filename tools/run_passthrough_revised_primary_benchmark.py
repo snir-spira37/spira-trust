@@ -20,7 +20,7 @@ BENCHMARK_ROOT = readiness.BENCHMARK_ROOT
 CLAUDE_ROOT = readiness.CLAUDE_ROOT
 CODEX_ROOT = readiness.CODEX_ROOT
 
-AUTHORIZATION_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_amendment_primary_benchmark_authorization.md"
+AUTHORIZATION_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_detector_primary_restart_authorization.md"
 RANDOMIZATION_MANIFEST_PATH = BENCHMARK_ROOT / "randomization_manifest_v1.json"
 
 AGENT_ORDER_PATH = BENCHMARK_ROOT / "machine_contract_passthrough_post_preflight_primary_agent_order.json"
