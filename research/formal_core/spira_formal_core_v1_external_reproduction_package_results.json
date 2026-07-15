@@ -1,0 +1,35 @@
+{
+  "artifact_count": 502,
+  "authorization": "research/formal_core/spira_formal_core_v1_external_reproduction_package_authorization.md",
+  "claim_boundary": "external offline reproduction package only; no live agents, parser proof, production claim, or release",
+  "gates": {
+    "artifact_manifest_has_hashes": true,
+    "expected_results_include_domains_1_2_3": true,
+    "package_files_present": true,
+    "proof_inventory_no_forbidden_tokens": true,
+    "source_artifacts_present": true,
+    "verify_scripts_no_live_agents": true
+  },
+  "package_presence": {
+    "COLD_EXTERNAL_REVIEW_TASK.md": true,
+    "FORMAL_CLAIMS_AND_BOUNDARIES.md": true,
+    "README_TASK.txt": true,
+    "SHA256SUMS": true,
+    "artifact_manifest.json": true,
+    "expected_results.json": true,
+    "proof_and_axiom_inventory.json": true,
+    "toolchain_lock.json": true,
+    "verify_all.ps1": true,
+    "verify_all.sh": true
+  },
+  "package_root": "research/formal_core/external_reproduction_package",
+  "proof_inventory_summary": {
+    "definition_like_count": 138,
+    "forbidden_token_matches": [],
+    "lean_file_count": 34,
+    "theorem_like_count": 42
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PACKAGE_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PACKAGE_ACCEPTED"
+}

@@ -1,0 +1,72 @@
+{
+  "all_domain_alignment": {
+    "status": "SPIRA_FORMAL_CORE_V1_ALL_DOMAIN_ADAPTER_ALIGNMENT_ACCEPTED"
+  },
+  "domain1": {
+    "raw_fixture_conformance": {
+      "false_proceed_count": 0,
+      "fixture_count": 33,
+      "identity_hash_loss_count": 0,
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_CONFORMANCE_ACCEPTED",
+      "unification_id_loss_count": 0
+    },
+    "typed_conformance": {
+      "false_proceed_records": 0,
+      "identity_drop_records": 0,
+      "list_drop_records": 0,
+      "record_count": 1954,
+      "record_pass_count": 1954,
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_ACCEPTED"
+    }
+  },
+  "domain2": {
+    "production_alignment": {
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_PRODUCTION_ADAPTER_ALIGNMENT_ACCEPTED"
+    },
+    "raw_fixture_conformance": {
+      "false_proceed_count": 0,
+      "fixture_count": 26,
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_CONFORMANCE_ACCEPTED"
+    },
+    "typed_conformance": {
+      "case_count": 38,
+      "case_pass_count": 38,
+      "mutation_pairs": {
+        "passed": 6,
+        "total": 6
+      },
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_ACCEPTED"
+    }
+  },
+  "domain3": {
+    "production_alignment": {
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_PRODUCTION_ADAPTER_ALIGNMENT_ACCEPTED"
+    },
+    "raw_fixture_conformance": {
+      "false_proceed_count": 0,
+      "fixture_count": 31,
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_ACCEPTED"
+    },
+    "typed_conformance": {
+      "case_count": 40,
+      "case_pass_count": 40,
+      "mutation_pairs": {
+        "passed": 10,
+        "total": 10
+      },
+      "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED"
+    }
+  },
+  "forbidden": {
+    "live_agents": true,
+    "parser_proof_claim": true,
+    "production_claim": true,
+    "release": true
+  },
+  "pytest": {
+    "expected_result": "PASS",
+    "last_full_count": 264
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_EXPECTED_RESULTS",
+  "schema_version": 1
+}

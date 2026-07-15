@@ -1,0 +1,775 @@
+{
+  "axiom_claim_boundary": "no custom axiom/sorry/admit token found by textual scan; Lean kernel and toolchain remain trusted",
+  "definition_like": [
+    {
+      "line": "inductive Action where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean"
+    },
+    {
+      "line": "def Action.nonProceeding : Action -> Bool",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean"
+    },
+    {
+      "line": "def Action.stop (action : Action) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean"
+    },
+    {
+      "line": "def defaultContractId : ContractId := \"FORMAL_CORE_V1_CONTRACT\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean"
+    },
+    {
+      "line": "def defaultUnifiedWrapperId : UnifiedWrapperId := \"FORMAL_CORE_V1_GATE_A\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean"
+    },
+    {
+      "line": "structure MachineContract where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean"
+    },
+    {
+      "line": "def MachineContract.stopConsistent (contract : MachineContract) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean"
+    },
+    {
+      "line": "def validateTypedEvidence (evidence : TypedEvidence) (policy : PolicyContext) : Option CoreError :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def aggregateClaims (evidence : TypedEvidence) : ExplicitList TypedClaim :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveReasonCodes (claims : ExplicitList TypedClaim) : ExplicitList ReasonCode :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveBlockingItems (claims : ExplicitList TypedClaim) : ExplicitList BlockingItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveNotEvaluated (claims : ExplicitList TypedClaim) : ExplicitList NotEvaluatedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveNotClaimed (claims : ExplicitList TypedClaim) : ExplicitList NotClaimedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveEvidenceRefs (claims : ExplicitList TypedClaim) (evidence : TypedEvidence) : ExplicitList EvidenceRef :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def deriveProofRefs (claims : ExplicitList TypedClaim) (evidence : TypedEvidence) : ExplicitList ProofRef :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def decideAction",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def failClosedReason (error : CoreError) : ReasonCode :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def failClosedAction (error : CoreError) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def assembleContract",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def assembleFailClosedContract",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def core (evidence : TypedEvidence) (policy : PolicyContext) : CoreResult :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean"
+    },
+    {
+      "line": "def LegacyAction.toCoreAction : LegacyAction -> Action",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def legacyStop : LegacyAction -> Bool",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def hasRequiredUnknown (evidence : PythonArtifactEvidence) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def hasBlockingStatus (evidence : PythonArtifactEvidence) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalLegacyAction (evidence : PythonArtifactEvidence) : LegacyAction :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalAction (evidence : PythonArtifactEvidence) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalReasonCodes (evidence : PythonArtifactEvidence) : ExplicitList ReasonCode :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalNotEvaluated (evidence : PythonArtifactEvidence) : ExplicitList NotEvaluatedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalNotClaimed (evidence : PythonArtifactEvidence) : ExplicitList NotClaimedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalEvidenceRefs (evidence : PythonArtifactEvidence) : ExplicitList EvidenceRef :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalProofRefs (evidence : PythonArtifactEvidence) : ExplicitList ProofRef :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "def formalContract (evidence : PythonArtifactEvidence) : MachineContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean"
+    },
+    {
+      "line": "inductive LegacyAction where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "inductive WorstClaimStatus where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "structure PythonArtifactEvidence where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def domainId : DomainId := \"DOMAIN_1_PYTHON_ARTIFACT\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def producerId : ProducerId := \"SPIRA_DOMAIN1_IDENTITY_BASELINE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def reasonHumanReviewRequired : ReasonCode := \"HUMAN_REVIEW_REQUIRED\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def reasonReportNotEvaluated : ReasonCode := \"REPORT_NOT_EVALUATED\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def reasonBlockingFindings : ReasonCode := \"BLOCKING_FINDINGS\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def requiredArtifactCheck : NotEvaluatedItem := \"target_environment\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean"
+    },
+    {
+      "line": "def policy (schemaVersion : SchemaVersion) : PolicyContext :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Policy.lean"
+    },
+    {
+      "line": "def requiredUnknownClaims : List NotEvaluatedItem -> List TypedClaim",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def notClaimedClaims : List NotClaimedItem -> List TypedClaim",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def baseClaims (evidence : PytestEvidence) : List TypedClaim :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def blockingClaims (evidence : PytestEvidence) : List TypedClaim :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def domainClaims (evidence : PytestEvidence) : ExplicitList TypedClaim :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def validity (evidence : PytestEvidence) : EvidenceValidity :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def toTypedEvidence (evidence : PytestEvidence) : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def evaluate (evidence : PytestEvidence) : CoreResult :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def contract (evidence : PytestEvidence) : MachineContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def formalAction (evidence : PytestEvidence) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def formalReasonCodes (evidence : PytestEvidence) : ExplicitList ReasonCode :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "def formalNotClaimed (evidence : PytestEvidence) : ExplicitList NotClaimedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean"
+    },
+    {
+      "line": "structure PytestEvidence where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def domainId : DomainId := \"DOMAIN_2_PYTEST_RESULT\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def producerId : ProducerId := \"SPIRA_DOMAIN2_PYTEST_PRODUCER\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonTestsPassed : ReasonCode := \"TESTS_PASSED\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonTestFailure : ReasonCode := \"TEST_FAILURE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonTestNotes : ReasonCode := \"TEST_NOTES\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonConflict : ReasonCode := \"TEST_EVIDENCE_CONFLICT\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonMalformed : ReasonCode := \"MALFORMED_TEST_EVIDENCE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def reasonVersionIncompatible : ReasonCode := \"INCOMPATIBLE_VERSION\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def blockingFailedTest : BlockingItem := \"failed_test\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def blockingCollectionOrExecution : BlockingItem := \"collection_or_execution_error\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean"
+    },
+    {
+      "line": "def policy (schemaVersion : SchemaVersion) : PolicyContext :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Policy.lean"
+    },
+    {
+      "line": "def formalAction (evidence : TerraformPlanEvidence) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean"
+    },
+    {
+      "line": "def formalReasonCodes (evidence : TerraformPlanEvidence) : ExplicitList ReasonCode :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean"
+    },
+    {
+      "line": "def formalNotEvaluated (evidence : TerraformPlanEvidence) : ExplicitList NotEvaluatedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean"
+    },
+    {
+      "line": "def formalNotClaimed (evidence : TerraformPlanEvidence) : ExplicitList NotClaimedItem :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean"
+    },
+    {
+      "line": "def formalContract (evidence : TerraformPlanEvidence) : MachineContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean"
+    },
+    {
+      "line": "structure TerraformPlanEvidence where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def domainId : DomainId := \"DOMAIN_3_TERRAFORM_PLAN\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def producerId : ProducerId := \"SPIRA_DOMAIN3_TERRAFORM_PLAN_PRODUCER\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonNoChanges : ReasonCode := \"TERRAFORM_PLAN_NO_CHANGES\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonResourceChangeBlocked : ReasonCode := \"TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonNotApplyable : ReasonCode := \"TERRAFORM_PLAN_NOT_APPLYABLE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonErrored : ReasonCode := \"TERRAFORM_PLAN_ERRORED\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonIncomplete : ReasonCode := \"TERRAFORM_PLAN_INCOMPLETE\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonUnsupportedFormat : ReasonCode := \"TERRAFORM_PLAN_FORMAT_UNSUPPORTED\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def reasonJsonInvalid : ReasonCode := \"TERRAFORM_PLAN_JSON_INVALID\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def blockingResourceChange : BlockingItem := \"terraform_plan_effective_resource_change\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def blockingNotApplyable : BlockingItem := \"terraform_plan_not_applyable\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def blockingErrored : BlockingItem := \"terraform_plan_errored\"",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean"
+    },
+    {
+      "line": "def policy (schemaVersion : SchemaVersion) : PolicyContext :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Policy.lean"
+    },
+    {
+      "line": "inductive CoreError where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean"
+    },
+    {
+      "line": "inductive CoreResult where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean"
+    },
+    {
+      "line": "def CoreResult.contract : CoreResult -> MachineContract",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean"
+    },
+    {
+      "line": "def CoreResult.action (result : CoreResult) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean"
+    },
+    {
+      "line": "def CoreResult.stop (result : CoreResult) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean"
+    },
+    {
+      "line": "inductive EvidenceValidity where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean"
+    },
+    {
+      "line": "inductive TypedClaim where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean"
+    },
+    {
+      "line": "structure TypedEvidence where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean"
+    },
+    {
+      "line": "structure ExplicitList (\u03b1 : Type) where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "def empty {\u03b1 : Type} : ExplicitList \u03b1 :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "def singleton {\u03b1 : Type} (item : \u03b1) : ExplicitList \u03b1 :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "def append {\u03b1 : Type} (left right : ExplicitList \u03b1) : ExplicitList \u03b1 :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "def isEmpty {\u03b1 : Type} (xs : ExplicitList \u03b1) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "def map {\u03b1 \u03b2 : Type} (f : \u03b1 -> \u03b2) (xs : ExplicitList \u03b1) : ExplicitList \u03b2 :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean"
+    },
+    {
+      "line": "structure UnifiedContract where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean"
+    },
+    {
+      "line": "def gateAWrap (contract : MachineContract) : UnifiedContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean"
+    },
+    {
+      "line": "def projectDomainContract (unified : UnifiedContract) : MachineContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean"
+    },
+    {
+      "line": "def renderChecks (checks : List ReferenceCheck) : String :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean"
+    },
+    {
+      "line": "def main : IO Unit := do",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean"
+    },
+    {
+      "line": "def main : IO Unit :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean"
+    },
+    {
+      "line": "structure ModelExplanation where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "structure Telemetry where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "structure PassthroughEnvelope where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "def passthrough (contract : MachineContract) (explanation : ModelExplanation) : PassthroughEnvelope :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "def executedAction (contract : MachineContract) (_explanation : ModelExplanation) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "def envelopeExecutedAction (envelope : PassthroughEnvelope) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean"
+    },
+    {
+      "line": "structure PolicyContext where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean"
+    },
+    {
+      "line": "def eqBool {\u03b1 : Type} [DecidableEq \u03b1] (left right : \u03b1) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def evaluateTypedEvidence (evidence : TypedEvidence) (policy : PolicyContext) : CoreResult :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def evaluateContract (evidence : TypedEvidence) (policy : PolicyContext) : MachineContract :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def referenceAction (evidence : TypedEvidence) (policy : PolicyContext) : Action :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def referenceStop (evidence : TypedEvidence) (policy : PolicyContext) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "structure ReferenceCheck where",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def ReferenceCheck.render (check : ReferenceCheck) : String :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def allPassed (checks : List ReferenceCheck) : Bool :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean"
+    },
+    {
+      "line": "def vectorPolicy : PolicyContext :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def vectorEvidence",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def validProceedEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def blockingEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def requiredUnknownEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def conflictingEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def invalidEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def incompatibleEvidence : TypedEvidence :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def proceedVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def blockingVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def requiredUnknownVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def conflictingVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def invalidVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def incompatibleVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def gateAPreservationVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def modelNonAuthorityVectorCheck : ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    },
+    {
+      "line": "def referenceChecks : List ReferenceCheck :=",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+    }
+  ],
+  "definition_like_count": 138,
+  "forbidden_token_matches": [],
+  "forbidden_tokens": [
+    "sorry",
+    "admit",
+    "sorryAx",
+    "axiom "
+  ],
+  "lean_file_count": 34,
+  "lean_files": [
+    "formal/spira_formal_core_v1/SpiraFormalCore.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean"
+  ],
+  "no_forbidden_tokens": true,
+  "schema": "SPIRA_FORMAL_CORE_V1_PROOF_AND_AXIOM_INVENTORY",
+  "theorem_like": [
+    {
+      "line": "theorem ask_human_maps_to_report_not_evaluated :",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem legacy_stop_consistent (action : LegacyAction) :",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem block_status_prevents_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem required_unknown_prevents_silent_pass",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem explicit_reason_codes_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem explicit_not_evaluated_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem not_claimed_boundaries_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem artifact_identity_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem proof_identity_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem contract_stop_consistent",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean"
+    },
+    {
+      "line": "theorem failed_tests_prevent_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem collection_or_execution_error_prevents_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem required_unknown_prevents_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem clean_success_produces_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem note_only_produces_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem note_only_preserves_test_notes",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem not_claimed_boundaries_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem malformed_fails_closed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem version_incompatible_fails_closed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean"
+    },
+    {
+      "line": "theorem effective_resource_changes_prevent_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem errored_plan_prevents_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem not_applyable_with_changes_prevents_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem malformed_json_rerun_required",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem unsupported_format_report_not_evaluated",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem incomplete_plan_report_not_evaluated",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem valid_no_change_produces_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem not_claimed_boundaries_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem unknown_or_sensitive_not_evaluated_preserved",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean"
+    },
+    {
+      "line": "theorem blocking_decideAction_not_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean"
+    },
+    {
+      "line": "theorem core_extensional_determinism",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_reasonCodes",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_blockingItems",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_notEvaluated",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_notClaimed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_evidenceRefs",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem assembleContract_preserves_proofRefs",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean"
+    },
+    {
+      "line": "theorem failClosedAction_not_proceed (error : CoreError) :",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean"
+    },
+    {
+      "line": "theorem assembleFailClosedContract_stop_true",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean"
+    },
+    {
+      "line": "theorem gateA_project_preserves_contract (contract : MachineContract) :",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean"
+    },
+    {
+      "line": "theorem executedAction_model_non_authority",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean"
+    },
+    {
+      "line": "theorem passthrough_preserves_machine_action",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean"
+    },
+    {
+      "line": "theorem required_unknown_decideAction_not_proceed",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean"
+    }
+  ],
+  "theorem_like_count": 42
+}
