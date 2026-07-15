@@ -9,3 +9,5 @@ import SpiraFormalCore.Core
 import SpiraFormalCore.GateA
 import SpiraFormalCore.Passthrough
 import SpiraFormalCore.Proofs.All
+import SpiraFormalCore.Reference
+import SpiraFormalCore.TestVectors

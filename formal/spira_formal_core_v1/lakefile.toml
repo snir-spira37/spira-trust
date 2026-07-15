@@ -4,3 +4,7 @@ defaultTargets = ["SpiraFormalCore"]
 
 [[lean_lib]]
 name = "SpiraFormalCore"
+
+[[lean_exe]]
+name = "spira-formal-core-v1"
+root = "SpiraFormalCore.Main"

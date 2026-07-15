@@ -1,0 +1,22 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_EXECUTABLE_REFERENCE_RESULTS_COMPLETE",
+  "lake_build": "PASS",
+  "executable_run": "PASS",
+  "reference_status": "SPIRA_FORMAL_CORE_V1_EXECUTABLE_REFERENCE_PASS",
+  "vectors": {
+    "valid_proceed_vector": "PASS",
+    "blocking_vector": "PASS",
+    "required_unknown_vector": "PASS",
+    "conflicting_evidence_vector": "PASS",
+    "invalid_evidence_vector": "PASS",
+    "version_incompatible_vector": "PASS",
+    "gate_a_preservation_vector": "PASS",
+    "model_non_authority_vector": "PASS"
+  },
+  "raw_parsers_called": 0,
+  "model_calls": 0,
+  "python_changes": 0,
+  "domain_adapter_changes": 0,
+  "benchmark_changes": 0,
+  "next_authorization_required": "SPIRA_FORMAL_CORE_V1_PYTHON_LEAN_EQUIVALENCE_PROTOCOL_REQUIRED"
+}
