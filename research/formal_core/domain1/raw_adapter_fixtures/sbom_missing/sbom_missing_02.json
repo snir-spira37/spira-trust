@@ -1,0 +1,255 @@
+{
+  "classification": "sbom_missing",
+  "expected_action": "REPORT_NOT_EVALUATED",
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw wheel/ZIP/RECORD/SBOM parser proof is not claimed",
+  "expected_evidence_refs": [
+    "artifact:sbom_missing_02",
+    "manifest:sbom_missing_02"
+  ],
+  "expected_formal_core_contract": {
+    "action": "REPORT_NOT_EVALUATED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "python_artifact",
+    "evidence_refs": [
+      "artifact:sbom_missing_02",
+      "manifest:sbom_missing_02"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety",
+      "package_safety",
+      "dependency_safety",
+      "license_compliance",
+      "malware_absence",
+      "universal_supply_chain_coverage",
+      "runtime_behavior"
+    ],
+    "not_evaluated": [
+      "SBOM"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN1_POLICY",
+    "producer_id": "domain1_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain1_raw_adapter_fixture:sbom_missing_02",
+      "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef"
+    ],
+    "reason_codes": [
+      "SBOM_MISSING"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc"
+  },
+  "expected_identity_fields": {
+    "artifact_sha256": "930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc",
+    "canonical_claims_bytes_sha256": "54b4cab3c4253d501bbeabe494e5de7811014b0c48fcc30ce93ece845d238ce1",
+    "canonical_decision_bytes_sha256": "69563eee110d2cc75bf1acbc781a5b86aba212cfd1dc2d7474f5c9b7af2069d2",
+    "canonical_proof_bytes_sha256": "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef",
+    "claims_merkle_root": "77c4eab7d987f6a351ced66c8ca922999644eb22b74bed3280d69d5fbcd1a8be",
+    "compact_reference_bytes_sha256": "d5ec9d7d5ee71779ddf388d9cdeb07cb6fd803115d041e50243b53223430e705",
+    "context_sha256": "a384202f7d9db60bb829fd83199938d17c8947fc167854460f850047fd1f6e0d",
+    "subject_sha256": "5da144e3de7a5e69c26baf13e3a0de79866e72f8359ae6860eb6f5aa994c6442",
+    "unification_id": "db4d00f56bbf4a4e4c2a0f6396c56513d6ae0349539fa6bfcb508ef7370ff3a8"
+  },
+  "expected_legacy_action": "REPORT_NOT_EVALUATED",
+  "expected_not_claimed": [
+    "producer_correctness",
+    "software_safety",
+    "package_safety",
+    "dependency_safety",
+    "license_compliance",
+    "malware_absence",
+    "universal_supply_chain_coverage",
+    "runtime_behavior"
+  ],
+  "expected_not_evaluated": [
+    "SBOM"
+  ],
+  "expected_proof_refs": [
+    "domain1_raw_adapter_fixture:sbom_missing_02",
+    "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef"
+  ],
+  "expected_reason_codes": [
+    "SBOM_MISSING"
+  ],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "python_artifact",
+    "evidence_refs": [
+      "artifact:sbom_missing_02",
+      "manifest:sbom_missing_02"
+    ],
+    "evidence_validity": "incomplete",
+    "policy_blocking_rules": [
+      "hash_mismatch_blocks_proceed",
+      "claims_root_mismatch_blocks_proceed"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN1_POLICY",
+    "policy_not_claimed_rules": [
+      "producer_correctness",
+      "software_safety",
+      "package_safety",
+      "dependency_safety",
+      "license_compliance",
+      "malware_absence",
+      "universal_supply_chain_coverage",
+      "runtime_behavior"
+    ],
+    "policy_required_claims": [
+      "python_artifact_identity_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain1_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain1_raw_adapter_fixture:sbom_missing_02",
+      "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_FIXTURE",
+    "subject_id": "930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "SBOM_MISSING"
+      },
+      {
+        "kind": "not_evaluated",
+        "value": "SBOM"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "producer_correctness"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "software_safety"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "package_safety"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "dependency_safety"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "license_compliance"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "malware_absence"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "universal_supply_chain_coverage"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "runtime_behavior"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "artifact:sbom_missing_02"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "manifest:sbom_missing_02"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain1_raw_adapter_fixture:sbom_missing_02"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef"
+      },
+      {
+        "kind": "identity",
+        "value": "artifact_sha256:930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc"
+      },
+      {
+        "kind": "identity",
+        "value": "subject_sha256:5da144e3de7a5e69c26baf13e3a0de79866e72f8359ae6860eb6f5aa994c6442"
+      },
+      {
+        "kind": "identity",
+        "value": "canonical_claims_bytes_sha256:54b4cab3c4253d501bbeabe494e5de7811014b0c48fcc30ce93ece845d238ce1"
+      },
+      {
+        "kind": "identity",
+        "value": "claims_merkle_root:77c4eab7d987f6a351ced66c8ca922999644eb22b74bed3280d69d5fbcd1a8be"
+      },
+      {
+        "kind": "identity",
+        "value": "context_sha256:a384202f7d9db60bb829fd83199938d17c8947fc167854460f850047fd1f6e0d"
+      },
+      {
+        "kind": "identity",
+        "value": "canonical_decision_bytes_sha256:69563eee110d2cc75bf1acbc781a5b86aba212cfd1dc2d7474f5c9b7af2069d2"
+      },
+      {
+        "kind": "identity",
+        "value": "compact_reference_bytes_sha256:d5ec9d7d5ee71779ddf388d9cdeb07cb6fd803115d041e50243b53223430e705"
+      },
+      {
+        "kind": "identity",
+        "value": "canonical_proof_bytes_sha256:ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef"
+      },
+      {
+        "kind": "identity",
+        "value": "unification_id:db4d00f56bbf4a4e4c2a0f6396c56513d6ae0349539fa6bfcb508ef7370ff3a8"
+      },
+      {
+        "kind": "legacy_action",
+        "value": "REPORT_NOT_EVALUATED"
+      }
+    ]
+  },
+  "expected_unification_id": "db4d00f56bbf4a4e4c2a0f6396c56513d6ae0349539fa6bfcb508ef7370ff3a8",
+  "fixture_id": "sbom_missing_02",
+  "input_state": "SBOM_MISSING",
+  "raw_inputs": {
+    "artifact_summary": {
+      "artifact_sha256": "930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc",
+      "classification": "sbom_missing",
+      "fixture_id": "sbom_missing_02",
+      "input_state": "SBOM_MISSING",
+      "subject_sha256": "5da144e3de7a5e69c26baf13e3a0de79866e72f8359ae6860eb6f5aa994c6442",
+      "subject_type": "python_wheel"
+    },
+    "manifest": {
+      "fixture_id": "sbom_missing_02",
+      "identity": {
+        "artifact_sha256": "930fb1461355438d297b3417945357122946ecaf1647888c0912b72ed0678cfc",
+        "canonical_claims_bytes_sha256": "54b4cab3c4253d501bbeabe494e5de7811014b0c48fcc30ce93ece845d238ce1",
+        "canonical_decision_bytes_sha256": "69563eee110d2cc75bf1acbc781a5b86aba212cfd1dc2d7474f5c9b7af2069d2",
+        "canonical_proof_bytes_sha256": "ab391f6cd2fcf0dab62dbe832c814754907c14097153bd42e42635d74a3904ef",
+        "claims_merkle_root": "77c4eab7d987f6a351ced66c8ca922999644eb22b74bed3280d69d5fbcd1a8be",
+        "compact_reference_bytes_sha256": "d5ec9d7d5ee71779ddf388d9cdeb07cb6fd803115d041e50243b53223430e705",
+        "context_sha256": "a384202f7d9db60bb829fd83199938d17c8947fc167854460f850047fd1f6e0d",
+        "subject_sha256": "5da144e3de7a5e69c26baf13e3a0de79866e72f8359ae6860eb6f5aa994c6442",
+        "unification_id": "db4d00f56bbf4a4e4c2a0f6396c56513d6ae0349539fa6bfcb508ef7370ff3a8"
+      },
+      "synthetic": true
+    },
+    "private_or_sensitive_path_summary": {
+      "present": false,
+      "public_value": null
+    },
+    "record_summary": {
+      "malformed": false,
+      "state": "synthetic"
+    },
+    "sbom_summary": {
+      "state": "missing"
+    },
+    "wheel_zip_summary": {
+      "contains_dist_info": true,
+      "format": "wheel",
+      "synthetic": true
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_FIXTURE_V1"
+}
