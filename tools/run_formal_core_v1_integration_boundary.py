@@ -65,6 +65,7 @@ def main() -> None:
     snapshots = snapshot_files(SIDE_EFFECT_OUTPUTS)
     checks = run_checks()
     restore_files(snapshots)
+    checks["unexpected_dirty_paths_after_restore"] = unexpected_dirty_paths()
     results = evaluate(checks)
     write_json(RESULTS, results)
     REPORT.write_text(report_markdown(results), encoding="utf-8")
@@ -83,7 +84,6 @@ def run_checks() -> dict[str, Any]:
         "status_artifacts": verify_status_artifacts(),
         "authority_chain": authority_chain(),
         "claim_boundary": claim_boundary_check(),
-        "unexpected_dirty_paths_before_results": unexpected_dirty_paths(),
     }
 
 
@@ -93,7 +93,7 @@ def evaluate(checks: Mapping[str, Any]) -> dict[str, Any]:
         "status_artifacts_pass": all(item["present"] and item["status_present"] for item in checks["status_artifacts"].values()),
         "authority_chain_complete": checks["authority_chain"]["status"] == "COMPLETE",
         "claim_boundary_preserved": checks["claim_boundary"]["status"] == "PRESERVED",
-        "no_unexpected_dirty_paths": not checks["unexpected_dirty_paths_before_results"],
+        "no_unexpected_dirty_paths": not checks["unexpected_dirty_paths_after_restore"],
         "raw_parser_proof_claim_absent": checks["claim_boundary"]["raw_parser_proof_claim_absent"],
         "production_claim_absent": checks["claim_boundary"]["production_claim_absent"],
         "release_authorization_absent": checks["claim_boundary"]["release_authorization_absent"],
