@@ -1,0 +1,537 @@
+{
+  "authorization": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_fixture_authorization.md",
+  "claim_boundary": "synthetic fixtures only; raw parser proof not claimed",
+  "coverage": {
+    "assertion_failure": 3,
+    "clean_success": 3,
+    "collection_error": 2,
+    "console_junit_conflict": 2,
+    "identity_mismatch": 2,
+    "incomplete_evidence": 2,
+    "internal_adapter_failure": 2,
+    "malformed_junit": 2,
+    "malformed_metadata_json": 2,
+    "nonblocking_note": 2,
+    "unsupported_format": 2,
+    "withheld_raw_output": 2
+  },
+  "coverage_pass": true,
+  "entries": [
+    {
+      "classification": "clean_success",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "expected_stop": false,
+      "fixture_id": "clean_success_01",
+      "fixture_sha256": "51df708e6e8d8363ae1ae73f35fa4e60fba391e0ade2da3235272693f21feb00",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/clean_success/clean_success_01.json"
+    },
+    {
+      "classification": "clean_success",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "expected_stop": false,
+      "fixture_id": "clean_success_02",
+      "fixture_sha256": "9dc62050c6a1e7cb2981b1341522872c05b260edb36fa057670da03c812c82bc",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/clean_success/clean_success_02.json"
+    },
+    {
+      "classification": "clean_success",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TESTS_PASSED"
+      ],
+      "expected_stop": false,
+      "fixture_id": "clean_success_03",
+      "fixture_sha256": "86f52f262635b81e10dfa729331e7307a32a7b46738144f306bbc68fd954221b",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/clean_success/clean_success_03.json"
+    },
+    {
+      "classification": "assertion_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "test failure"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_FAILURES_DETECTED"
+      ],
+      "expected_stop": true,
+      "fixture_id": "assertion_failure_01",
+      "fixture_sha256": "c0cc094bb3f47ceb21a79e922275da31f5b37cc29892f4a3b70d5d7feebda935",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/assertion_failure/assertion_failure_01.json"
+    },
+    {
+      "classification": "assertion_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "test failure"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_FAILURES_DETECTED"
+      ],
+      "expected_stop": true,
+      "fixture_id": "assertion_failure_02",
+      "fixture_sha256": "a11ec1e2dabb8f7c5330277420368b4de1feb4528c66ac693c0f912f59e60589",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/assertion_failure/assertion_failure_02.json"
+    },
+    {
+      "classification": "assertion_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "test failure"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_FAILURES_DETECTED"
+      ],
+      "expected_stop": true,
+      "fixture_id": "assertion_failure_03",
+      "fixture_sha256": "6eeeb73ea0e88956fdbb388985a075f6ae00d65c937a28ee3ef05725a571e495",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/assertion_failure/assertion_failure_03.json"
+    },
+    {
+      "classification": "collection_error",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "collection error"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_COLLECTION_ERROR"
+      ],
+      "expected_stop": true,
+      "fixture_id": "collection_error_01",
+      "fixture_sha256": "adbca09145d78fa9948732d3c1029f7115aca4f4677ef2a897cd5d107628f1dc",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/collection_error/collection_error_01.json"
+    },
+    {
+      "classification": "collection_error",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "collection error"
+      ],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_COLLECTION_ERROR"
+      ],
+      "expected_stop": true,
+      "fixture_id": "collection_error_02",
+      "fixture_sha256": "3e7035f9755452f76f95da958166ea0c9f58222f2c991d3b05fecbaa61b295a6",
+      "input_state": "SUPPORTED_COMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/collection_error/collection_error_02.json"
+    },
+    {
+      "classification": "malformed_junit",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "malformed_junit_01",
+      "fixture_sha256": "f414551636064227d29ffaf615ca5bc4cde5c84c6bf9be573d072699bcf1b91e",
+      "input_state": "MALFORMED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/malformed_junit/malformed_junit_01.json"
+    },
+    {
+      "classification": "malformed_junit",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "malformed_junit_02",
+      "fixture_sha256": "8fe15b55fc3a8f75081d7a1eeb5ad04a85a6a59708bea6af010c7c9597abe94d",
+      "input_state": "MALFORMED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/malformed_junit/malformed_junit_02.json"
+    },
+    {
+      "classification": "malformed_metadata_json",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "malformed_metadata_json_01",
+      "fixture_sha256": "ffd30321f6085c51fd9d4c0615bcbdfb8d39eff997a50cb2ba79cdc13398e991",
+      "input_state": "MALFORMED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/malformed_metadata_json/malformed_metadata_json_01.json"
+    },
+    {
+      "classification": "malformed_metadata_json",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "malformed_metadata_json_02",
+      "fixture_sha256": "5647f832fe32f812b2383551e8c7f5b44ac83ca4925c79e36506f6eb64c6b448",
+      "input_state": "MALFORMED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/malformed_metadata_json/malformed_metadata_json_02.json"
+    },
+    {
+      "classification": "incomplete_evidence",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "incomplete_evidence_01",
+      "fixture_sha256": "d61e57f4869257165ea4dd9f1b3fe53a4e1f8663fa60ac88a8d46eecdc37b097",
+      "input_state": "INCOMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/incomplete_evidence/incomplete_evidence_01.json"
+    },
+    {
+      "classification": "incomplete_evidence",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "incomplete_evidence_02",
+      "fixture_sha256": "8357ddd0eb3b116f9c6e2b6a04d8f630d5c0250c872830aef8d282e051267a8c",
+      "input_state": "INCOMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/incomplete_evidence/incomplete_evidence_02.json"
+    },
+    {
+      "classification": "console_junit_conflict",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "CONFLICTING_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "console_junit_conflict_01",
+      "fixture_sha256": "c0233b5a96f7b58aa5d65e1ae079a169e110a74259957b7f9eb96ff61a8e27d1",
+      "input_state": "CONFLICTING",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/console_junit_conflict/console_junit_conflict_01.json"
+    },
+    {
+      "classification": "console_junit_conflict",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "CONFLICTING_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "console_junit_conflict_02",
+      "fixture_sha256": "34742941fde97fa8c3f262b2d5a386f328e03d1b786bcb07163cb132a67e5c3b",
+      "input_state": "CONFLICTING",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/console_junit_conflict/console_junit_conflict_02.json"
+    },
+    {
+      "classification": "withheld_raw_output",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "withheld_raw_output_01",
+      "fixture_sha256": "870d8eee81c8a5cd568c9caca75ee583d8a77f3b082ec2008a63766f7419afdc",
+      "input_state": "INCOMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/withheld_raw_output/withheld_raw_output_01.json"
+    },
+    {
+      "classification": "withheld_raw_output",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "required information unavailable"
+      ],
+      "expected_reason_codes": [
+        "INCOMPLETE_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "withheld_raw_output_02",
+      "fixture_sha256": "0bc02a0409e8b2aefeeb64c43bf7a7944c82600cdebb664e71aaa7a381269859",
+      "input_state": "INCOMPLETE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/withheld_raw_output/withheld_raw_output_02.json"
+    },
+    {
+      "classification": "unsupported_format",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "schema version incompatible"
+      ],
+      "expected_reason_codes": [
+        "INCOMPATIBLE_VERSION"
+      ],
+      "expected_stop": true,
+      "fixture_id": "unsupported_format_01",
+      "fixture_sha256": "6aeb52bb9b400b0260f11834f6243c7b0284f223df52591d6f01605849e8a3ae",
+      "input_state": "UNSUPPORTED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/unsupported_format/unsupported_format_01.json"
+    },
+    {
+      "classification": "unsupported_format",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [
+        "schema version incompatible"
+      ],
+      "expected_reason_codes": [
+        "INCOMPATIBLE_VERSION"
+      ],
+      "expected_stop": true,
+      "fixture_id": "unsupported_format_02",
+      "fixture_sha256": "2a829fba5b409ad2df3421b6426ed01685cd1cf5ee10ab168ff762f1152391d6",
+      "input_state": "UNSUPPORTED",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/unsupported_format/unsupported_format_02.json"
+    },
+    {
+      "classification": "nonblocking_note",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_NOTES"
+      ],
+      "expected_stop": false,
+      "fixture_id": "nonblocking_note_01",
+      "fixture_sha256": "dc4a6578733fc06dc331199c86a05e2d76948adfabb7a4f0c432b4ec8ebe8182",
+      "input_state": "SUPPORTED_WITH_NONBLOCKING_NOTES",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/nonblocking_note/nonblocking_note_01.json"
+    },
+    {
+      "classification": "nonblocking_note",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TEST_NOTES"
+      ],
+      "expected_stop": false,
+      "fixture_id": "nonblocking_note_02",
+      "fixture_sha256": "7d02acb7a716adf7fbcca5412c49ede4b4d4e8a1bc8717991a26614259c5c817",
+      "input_state": "SUPPORTED_WITH_NONBLOCKING_NOTES",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/nonblocking_note/nonblocking_note_02.json"
+    },
+    {
+      "classification": "identity_mismatch",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "CONFLICTING_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "identity_mismatch_01",
+      "fixture_sha256": "47998af3698fbddf49550bf2cb203b3ae13e659ca354e2e06f5814c47f7cda61",
+      "input_state": "CONFLICTING",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/identity_mismatch/identity_mismatch_01.json"
+    },
+    {
+      "classification": "identity_mismatch",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "CONFLICTING_TYPED_EVIDENCE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "identity_mismatch_02",
+      "fixture_sha256": "b90df3fe218d234efd49bb760f39fe097fa64c799fbd9f7b796339bf94d641f3",
+      "input_state": "CONFLICTING",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/identity_mismatch/identity_mismatch_02.json"
+    },
+    {
+      "classification": "internal_adapter_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "INTERNAL_VALIDATION_FAILURE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "internal_adapter_failure_01",
+      "fixture_sha256": "fa75d66c1a976d1d0e7aee117f06490188b33c9478831ecf19430be67dd0841e",
+      "input_state": "INTERNAL_ADAPTER_FAILURE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/internal_adapter_failure/internal_adapter_failure_01.json"
+    },
+    {
+      "classification": "internal_adapter_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "producer_correctness",
+        "software_safety"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "INTERNAL_VALIDATION_FAILURE"
+      ],
+      "expected_stop": true,
+      "fixture_id": "internal_adapter_failure_02",
+      "fixture_sha256": "216246cb2f0b70b671b4bf59e1964430cb67f0142c4e3eeb95215a7a7061ce31",
+      "input_state": "INTERNAL_ADAPTER_FAILURE",
+      "path": "research/formal_core/domain2/raw_adapter_fixtures/internal_adapter_failure/internal_adapter_failure_02.json"
+    }
+  ],
+  "fixture_count": 26,
+  "next_recommended_authorization": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_IMPLEMENTATION_AUTHORIZATION",
+  "required_coverage": {
+    "assertion_failure": 3,
+    "clean_success": 3,
+    "collection_error": 2,
+    "console_junit_conflict": 2,
+    "identity_mismatch": 2,
+    "incomplete_evidence": 2,
+    "internal_adapter_failure": 2,
+    "malformed_junit": 2,
+    "malformed_metadata_json": 2,
+    "nonblocking_note": 2,
+    "unsupported_format": 2,
+    "withheld_raw_output": 2
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE_MANIFEST_V1",
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURES_ACCEPTED"
+}

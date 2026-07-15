@@ -1,0 +1,121 @@
+{
+  "classification": "internal_adapter_failure",
+  "expected_action": "STOP_BLOCKED",
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw parser proof is not claimed",
+  "expected_evidence_refs": [
+    "console:internal_adapter_failure_02",
+    "metadata:internal_adapter_failure_02"
+  ],
+  "expected_formal_core_contract": {
+    "action": "STOP_BLOCKED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:internal_adapter_failure_02",
+      "metadata:internal_adapter_failure_02"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "not_evaluated": [],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:internal_adapter_failure_02"
+    ],
+    "reason_codes": [
+      "INTERNAL_VALIDATION_FAILURE"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "internal_adapter_failure_02"
+  },
+  "expected_not_claimed": [
+    "producer_correctness",
+    "software_safety"
+  ],
+  "expected_not_evaluated": [],
+  "expected_proof_refs": [
+    "domain2_raw_adapter_fixture:internal_adapter_failure_02"
+  ],
+  "expected_reason_codes": [
+    "INTERNAL_VALIDATION_FAILURE"
+  ],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:internal_adapter_failure_02",
+      "metadata:internal_adapter_failure_02"
+    ],
+    "evidence_validity": "internal_failure",
+    "policy_blocking_rules": [
+      "test_failure_blocks_proceed",
+      "conflict_blocks_proceed"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "policy_not_claimed_rules": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "policy_required_claims": [
+      "pytest_result_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:internal_adapter_failure_02"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "subject_id": "internal_adapter_failure_02",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "INTERNAL_ADAPTER_FAILURE"
+      },
+      {
+        "kind": "blocking",
+        "value": "adapter internal failure"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "producer_correctness"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "software_safety"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "console:internal_adapter_failure_02"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "metadata:internal_adapter_failure_02"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain2_raw_adapter_fixture:internal_adapter_failure_02"
+      }
+    ]
+  },
+  "fixture_id": "internal_adapter_failure_02",
+  "input_state": "INTERNAL_ADAPTER_FAILURE",
+  "raw_inputs": {
+    "console_text": "synthetic pytest console for internal_adapter_failure_02 (internal_adapter_failure)",
+    "junit_xml_text": "<testsuite name=\"internal_adapter_failure_02\" spira_state=\"INTERNAL_ADAPTER_FAILURE\" />",
+    "metadata_json": {
+      "capture_complete": true,
+      "classification": "internal_adapter_failure",
+      "fixture_id": "internal_adapter_failure_02"
+    },
+    "public_run_materialization_json": {
+      "exit_code": 1,
+      "synthetic": true
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE_V1"
+}

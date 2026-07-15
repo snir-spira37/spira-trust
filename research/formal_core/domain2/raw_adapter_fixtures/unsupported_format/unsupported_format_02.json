@@ -1,0 +1,125 @@
+{
+  "classification": "unsupported_format",
+  "expected_action": "REPORT_NOT_EVALUATED",
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw parser proof is not claimed",
+  "expected_evidence_refs": [
+    "console:unsupported_format_02",
+    "metadata:unsupported_format_02"
+  ],
+  "expected_formal_core_contract": {
+    "action": "REPORT_NOT_EVALUATED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:unsupported_format_02",
+      "metadata:unsupported_format_02"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "not_evaluated": [
+      "schema version incompatible"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:unsupported_format_02"
+    ],
+    "reason_codes": [
+      "INCOMPATIBLE_VERSION"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "unsupported_format_02"
+  },
+  "expected_not_claimed": [
+    "producer_correctness",
+    "software_safety"
+  ],
+  "expected_not_evaluated": [
+    "schema version incompatible"
+  ],
+  "expected_proof_refs": [
+    "domain2_raw_adapter_fixture:unsupported_format_02"
+  ],
+  "expected_reason_codes": [
+    "INCOMPATIBLE_VERSION"
+  ],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:unsupported_format_02",
+      "metadata:unsupported_format_02"
+    ],
+    "evidence_validity": "version_incompatible",
+    "policy_blocking_rules": [
+      "test_failure_blocks_proceed",
+      "conflict_blocks_proceed"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "policy_not_claimed_rules": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "policy_required_claims": [
+      "pytest_result_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:unsupported_format_02"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "subject_id": "unsupported_format_02",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "TEST_RESULT_FORMAT_UNSUPPORTED"
+      },
+      {
+        "kind": "not_evaluated",
+        "value": "unsupported result format"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "producer_correctness"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "software_safety"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "console:unsupported_format_02"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "metadata:unsupported_format_02"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain2_raw_adapter_fixture:unsupported_format_02"
+      }
+    ]
+  },
+  "fixture_id": "unsupported_format_02",
+  "input_state": "UNSUPPORTED",
+  "raw_inputs": {
+    "console_text": "synthetic pytest console for unsupported_format_02 (unsupported_format)",
+    "junit_xml_text": "<testsuite name=\"unsupported_format_02\" spira_state=\"UNSUPPORTED\" />",
+    "metadata_json": {
+      "capture_complete": true,
+      "classification": "unsupported_format",
+      "fixture_id": "unsupported_format_02"
+    },
+    "public_run_materialization_json": {
+      "exit_code": 1,
+      "synthetic": true
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE_V1"
+}

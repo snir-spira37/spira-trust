@@ -1,0 +1,125 @@
+{
+  "classification": "identity_mismatch",
+  "expected_action": "STOP_BLOCKED",
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw parser proof is not claimed",
+  "expected_evidence_refs": [
+    "console:identity_mismatch_01",
+    "metadata:identity_mismatch_01"
+  ],
+  "expected_formal_core_contract": {
+    "action": "STOP_BLOCKED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:identity_mismatch_01",
+      "metadata:identity_mismatch_01"
+    ],
+    "not_claimed": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "not_evaluated": [],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:identity_mismatch_01"
+    ],
+    "reason_codes": [
+      "CONFLICTING_TYPED_EVIDENCE"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "identity_mismatch_01"
+  },
+  "expected_not_claimed": [
+    "producer_correctness",
+    "software_safety"
+  ],
+  "expected_not_evaluated": [],
+  "expected_proof_refs": [
+    "domain2_raw_adapter_fixture:identity_mismatch_01"
+  ],
+  "expected_reason_codes": [
+    "CONFLICTING_TYPED_EVIDENCE"
+  ],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "pytest_result",
+    "evidence_refs": [
+      "console:identity_mismatch_01",
+      "metadata:identity_mismatch_01"
+    ],
+    "evidence_validity": "conflicting",
+    "policy_blocking_rules": [
+      "test_failure_blocks_proceed",
+      "conflict_blocks_proceed"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN2_POLICY",
+    "policy_not_claimed_rules": [
+      "producer_correctness",
+      "software_safety"
+    ],
+    "policy_required_claims": [
+      "pytest_result_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain2_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain2_raw_adapter_fixture:identity_mismatch_01"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE",
+    "subject_id": "identity_mismatch_01",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "TEST_IDENTITY_CONFLICT"
+      },
+      {
+        "kind": "blocking",
+        "value": "identity mismatch"
+      },
+      {
+        "kind": "not_evaluated",
+        "value": "source identity conflict"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "producer_correctness"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "software_safety"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "console:identity_mismatch_01"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "metadata:identity_mismatch_01"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain2_raw_adapter_fixture:identity_mismatch_01"
+      }
+    ]
+  },
+  "fixture_id": "identity_mismatch_01",
+  "input_state": "CONFLICTING",
+  "raw_inputs": {
+    "console_text": "synthetic pytest console for identity_mismatch_01 (identity_mismatch)",
+    "junit_xml_text": "<testsuite name=\"identity_mismatch_01\" spira_state=\"CONFLICTING\" />",
+    "metadata_json": {
+      "capture_complete": true,
+      "classification": "identity_mismatch",
+      "fixture_id": "identity_mismatch_01"
+    },
+    "public_run_materialization_json": {
+      "exit_code": 1,
+      "synthetic": true
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_FIXTURE_V1"
+}
