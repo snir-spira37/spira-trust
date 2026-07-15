@@ -1,0 +1,33 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_MACHINE_CHECKED_PROOF_RESULTS_COMPLETE",
+  "seven_theorem_families_proved": "7/7",
+  "lake_build": "PASS",
+  "proof_files_with_sorry_or_admit": 0,
+  "custom_axioms": 0,
+  "unapproved_axioms": 0,
+  "approved_builtin_axioms": [
+    "propext"
+  ],
+  "sorryAx": 0,
+  "definition_drift": 0,
+  "theorem_statement_drift": 0,
+  "python_changes": 0,
+  "domain_adapter_changes": 0,
+  "build_command": "lake build",
+  "build_result": "Build completed successfully (21 jobs).",
+  "forbidden_token_scan": {
+    "pattern": "\\b(sorry|admit|axiom|sorryAx|opaque|unsafe)\\b",
+    "scope": "formal/spira_formal_core_v1 -g *.lean",
+    "result": "PASS"
+  },
+  "theorem_family_results": {
+    "T1_determinism": "PASS",
+    "T2_blocking_prevents_proceed": "PASS",
+    "T3_required_not_evaluated_prevents_silent_pass": "PASS",
+    "T4_explicit_contractual_lists_preserved": "PASS",
+    "T5_gate_a_preserves_complete_domain_contract": "PASS",
+    "T6_model_presentation_zero_decision_authority": "PASS",
+    "T7_invalid_internal_validation_errors_fail_closed": "PASS"
+  },
+  "next_authorization_required": "SPIRA_FORMAL_CORE_V1_EXECUTABLE_REFERENCE_AUTHORIZATION_REQUIRED"
+}

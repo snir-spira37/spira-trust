@@ -1,0 +1,72 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_PROOF_INVENTORY_COMPLETE",
+  "phase": "seven_theorem_proof",
+  "accepted_definition_commit": "a49c80f",
+  "proof_authorization": "research/formal_core/spira_formal_core_v1_seven_theorem_proof_authorization.md",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "proof_files": [
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean"
+  ],
+  "theorem_families": {
+    "T1_determinism": [
+      "SpiraFormalCore.core_extensional_determinism"
+    ],
+    "T2_blocking_prevents_proceed": [
+      "SpiraFormalCore.blocking_decideAction_not_proceed"
+    ],
+    "T3_required_not_evaluated_prevents_silent_pass": [
+      "SpiraFormalCore.required_unknown_decideAction_not_proceed"
+    ],
+    "T4_explicit_contractual_lists_preserved": [
+      "SpiraFormalCore.assembleContract_preserves_reasonCodes",
+      "SpiraFormalCore.assembleContract_preserves_blockingItems",
+      "SpiraFormalCore.assembleContract_preserves_notEvaluated",
+      "SpiraFormalCore.assembleContract_preserves_notClaimed",
+      "SpiraFormalCore.assembleContract_preserves_evidenceRefs",
+      "SpiraFormalCore.assembleContract_preserves_proofRefs"
+    ],
+    "T5_gate_a_preserves_complete_domain_contract": [
+      "SpiraFormalCore.gateA_project_preserves_contract"
+    ],
+    "T6_model_presentation_zero_decision_authority": [
+      "SpiraFormalCore.executedAction_model_non_authority",
+      "SpiraFormalCore.passthrough_preserves_machine_action"
+    ],
+    "T7_invalid_internal_validation_errors_fail_closed": [
+      "SpiraFormalCore.failClosedAction_not_proceed",
+      "SpiraFormalCore.assembleFailClosedContract_stop_true"
+    ]
+  },
+  "axiom_inventory": {
+    "approved_builtin_axioms": [
+      "propext"
+    ],
+    "custom_axioms": [],
+    "sorryAx": [],
+    "theorems_with_no_axioms": [
+      "SpiraFormalCore.assembleContract_preserves_reasonCodes",
+      "SpiraFormalCore.assembleContract_preserves_blockingItems",
+      "SpiraFormalCore.assembleContract_preserves_notEvaluated",
+      "SpiraFormalCore.assembleContract_preserves_notClaimed",
+      "SpiraFormalCore.assembleContract_preserves_evidenceRefs",
+      "SpiraFormalCore.assembleContract_preserves_proofRefs",
+      "SpiraFormalCore.gateA_project_preserves_contract",
+      "SpiraFormalCore.executedAction_model_non_authority",
+      "SpiraFormalCore.passthrough_preserves_machine_action"
+    ],
+    "theorems_using_approved_builtin_propext": [
+      "SpiraFormalCore.core_extensional_determinism",
+      "SpiraFormalCore.blocking_decideAction_not_proceed",
+      "SpiraFormalCore.required_unknown_decideAction_not_proceed",
+      "SpiraFormalCore.failClosedAction_not_proceed",
+      "SpiraFormalCore.assembleFailClosedContract_stop_true"
+    ]
+  }
+}

@@ -8,3 +8,4 @@ import SpiraFormalCore.Errors
 import SpiraFormalCore.Core
 import SpiraFormalCore.GateA
 import SpiraFormalCore.Passthrough
+import SpiraFormalCore.Proofs.All
