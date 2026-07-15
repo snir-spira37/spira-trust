@@ -1,0 +1,125 @@
+{
+  "authorization": "research/formal_core/spira_formal_core_v1_integration_boundary_authorization.md",
+  "checks": {
+    "authority_chain": {
+      "model_output_can_override_machine_contract": false,
+      "order": [
+        "typed evidence accepted by domain boundary",
+        "Formal Core V1 machine contract semantics",
+        "authoritative machine contract passthrough",
+        "deterministic validator / evaluator",
+        "non-authoritative model explanation / presentation",
+        "free-form agent suggestion"
+      ],
+      "runner_self_report_can_override_machine_contract": false,
+      "status": "COMPLETE",
+      "telemetry_can_override_machine_contract": false
+    },
+    "claim_boundary": {
+      "production_claim_absent": true,
+      "raw_parser_proof_claim_absent": true,
+      "release_authorization_absent": true,
+      "status": "PRESERVED"
+    },
+    "commands": {
+      "formal_boundary_tests": {
+        "command": "python -m pytest tests/test_formal_core_v1_python_boundary.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.12s ==============================\n"
+      },
+      "mvp_evaluation": {
+        "command": "python tools/evaluate_mvp_unified.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"mismatch_count\": 0, \"status\": \"MVP_IMPLEMENTATION_PASS\"}\n"
+      },
+      "mvp_tests": {
+        "command": "python -m pytest tests/test_mvp_unified.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.89s ==============================\n"
+      },
+      "passthrough_mvp_tests": {
+        "command": "python -m pytest tests/test_machine_contract_passthrough_mvp.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_machine_contract_passthrough_mvp.py ........                  [100%]\n\n============================== 8 passed in 2.67s ==============================\n"
+      },
+      "proof_package": {
+        "command": "python tools/run_formal_core_v1_proof_package.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"status\": \"SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_ACCEPTED\"}\n"
+      },
+      "validator_tests": {
+        "command": "python -m pytest tests/test_machine_contract_passthrough_envelope_validator.py",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 9 items\n\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [100%]\n\n============================== 9 passed in 0.40s ==============================\n"
+      }
+    },
+    "status_artifacts": {
+      "all_domains": {
+        "path": "research/formal_core/spira_formal_core_v1_all_domains_conformance_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_ALL_DOMAINS_CONFORMANCE_ACCEPTED",
+        "status_present": true
+      },
+      "claim_boundary": {
+        "path": "research/formal_core/spira_formal_core_v1_claim_boundary_summary.md",
+        "present": true,
+        "required_status": "Accepted Claim Shape",
+        "status_present": true
+      },
+      "formal_core_proof_package": {
+        "path": "research/formal_core/spira_formal_core_v1_proof_package_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_ACCEPTED",
+        "status_present": true
+      },
+      "mvp_implementation": {
+        "path": "research/mvp_implementation_review.md",
+        "present": true,
+        "required_status": "MVP_IMPLEMENTATION_ACCEPTED",
+        "status_present": true
+      },
+      "passthrough_mvp": {
+        "path": "research/machine_contract_passthrough_mvp_implementation_review.md",
+        "present": true,
+        "required_status": "MACHINE_CONTRACT_PASSTHROUGH_MVP_IMPLEMENTATION_ACCEPTED",
+        "status_present": true
+      },
+      "validator": {
+        "path": "research/machine_contract_passthrough_envelope_validator_implementation_review.md",
+        "present": true,
+        "required_status": "MACHINE_CONTRACT_PASSTHROUGH_ENVELOPE_VALIDATOR_IMPLEMENTATION_ACCEPTED",
+        "status_present": true
+      }
+    },
+    "unexpected_dirty_paths_after_restore": []
+  },
+  "gates": {
+    "authority_chain_complete": true,
+    "claim_boundary_preserved": true,
+    "commands_pass": true,
+    "no_unexpected_dirty_paths": true,
+    "production_claim_absent": true,
+    "raw_parser_proof_claim_absent": true,
+    "release_authorization_absent": true,
+    "status_artifacts_pass": true
+  },
+  "generated_at": "2026-07-15T14:43:09Z",
+  "not_authorized": [
+    "RAW_ADAPTER_PROOFS",
+    "RUNTIME_PROOF",
+    "BENCHMARK_CHANGES",
+    "NEW_LIVE_SESSIONS",
+    "RESULT_RECLASSIFICATION",
+    "PRODUCTION_CLAIM",
+    "RELEASE"
+  ],
+  "schema": "SPIRA_FORMAL_CORE_V1_INTEGRATION_BOUNDARY_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_INTEGRATION_BOUNDARY_ACCEPTED"
+}
