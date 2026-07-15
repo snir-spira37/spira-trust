@@ -2,10 +2,10 @@
   "agent": "claude_native",
   "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_post_detector_primary_restart_authorization.md",
   "completed_session_count": 0,
-  "created_at_utc": "2026-07-15T09:54:19.765783Z",
+  "created_at_utc": "2026-07-15T10:22:41.641840Z",
   "next_session_index": 1,
   "plan_sha256": "208458ae8f630846eb4db167de75e038f9d2a236d509c5a7214baef96fafdf3c",
-  "runner_commit": "0dd8bde9334db46b6b3a3e145fcf03b677cde97c",
+  "runner_commit": "05d5ee6220a16acb609d9b1f91e71aa5ce483637",
   "runner_path": "tools/run_passthrough_revised_primary_benchmark.py",
   "runner_source_sha256": "6ee0a675987acc73746a8b717b848d88c4cfa5e379580dd3c5591360481cc2c3",
   "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_REVISED_PRIMARY_SESSION_MANIFEST_V1",
@@ -3377,5 +3377,5 @@
     }
   ],
   "status": "CLAUDE_NATIVE_PASSTHROUGH_REVISED_PRIMARY_SESSION_MANIFEST_CREATED",
-  "updated_at_utc": "2026-07-15T09:54:19.765783Z"
+  "updated_at_utc": "2026-07-15T10:22:41.641840Z"
 }
