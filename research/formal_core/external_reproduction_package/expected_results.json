@@ -1,5 +1,6 @@
 {
   "all_domain_alignment": {
+    "review_path": "research/formal_core/spira_formal_core_v1_all_domain_adapter_alignment_review.md",
     "status": "SPIRA_FORMAL_CORE_V1_ALL_DOMAIN_ADAPTER_ALIGNMENT_ACCEPTED"
   },
   "domain1": {
@@ -7,6 +8,7 @@
       "false_proceed_count": 0,
       "fixture_count": 33,
       "identity_hash_loss_count": 0,
+      "results_path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_RAW_ADAPTER_CONFORMANCE_ACCEPTED",
       "unification_id_loss_count": 0
     },
@@ -16,16 +18,19 @@
       "list_drop_records": 0,
       "record_count": 1954,
       "record_pass_count": 1954,
+      "results_path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_ACCEPTED"
     }
   },
   "domain2": {
     "production_alignment": {
+      "results_path": "research/formal_core/domain2/spira_formal_core_v1_domain2_production_adapter_alignment_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_PRODUCTION_ADAPTER_ALIGNMENT_ACCEPTED"
     },
     "raw_fixture_conformance": {
       "false_proceed_count": 0,
       "fixture_count": 26,
+      "results_path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_RAW_ADAPTER_CONFORMANCE_ACCEPTED"
     },
     "typed_conformance": {
@@ -35,16 +40,19 @@
         "passed": 6,
         "total": 6
       },
+      "results_path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_ACCEPTED"
     }
   },
   "domain3": {
     "production_alignment": {
+      "results_path": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_PRODUCTION_ADAPTER_ALIGNMENT_ACCEPTED"
     },
     "raw_fixture_conformance": {
       "false_proceed_count": 0,
       "fixture_count": 31,
+      "results_path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_ACCEPTED"
     },
     "typed_conformance": {
@@ -54,6 +62,7 @@
         "passed": 10,
         "total": 10
       },
+      "results_path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_results.json",
       "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED"
     }
   },
@@ -65,7 +74,7 @@
   },
   "pytest": {
     "expected_result": "PASS",
-    "last_full_count": 264
+    "last_full_count": 269
   },
   "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_EXPECTED_RESULTS",
   "schema_version": 1

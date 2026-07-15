@@ -14,8 +14,18 @@
   ],
   "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_ARTIFACT_MANIFEST",
   "schema_version": 1,
-  "source_artifact_count": 502,
+  "source_artifact_count": 590,
   "source_artifacts": [
+    {
+      "bytes": 9026,
+      "path": "LICENSE",
+      "sha256": "f8cc463ccf3c056eb8ae503a935f06e58dbb7d963b0e18ea06c865da5b796abf"
+    },
+    {
+      "bytes": 23837,
+      "path": "README.md",
+      "sha256": "5c28b7f9cff3a912f6fc6279a0b0536622e8250f3100130c1e6c5c764e412d5c"
+    },
     {
       "bytes": 501,
       "path": "formal/spira_formal_core_v1/README.md",
@@ -205,6 +215,11 @@
       "bytes": 25,
       "path": "formal/spira_formal_core_v1/lean-toolchain",
       "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "bytes": 1824,
+      "path": "pyproject.toml",
+      "sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763"
     },
     {
       "bytes": 10169,
@@ -2387,6 +2402,386 @@
       "sha256": "4fb3850915566ff05c5653c89d190026294d1f492407c1c0b9a8a4f9ac41d0ad"
     },
     {
+      "bytes": 228,
+      "path": "source/spira_core/__init__.py",
+      "sha256": "cd366ab1580b40fcc26321cbeebe5aa2c5856d4e5a64ed8f3bfec84d2e83d2ff"
+    },
+    {
+      "bytes": 11684,
+      "path": "source/spira_core/adapters.py",
+      "sha256": "65af90357e992fd0b95f685aabea4e4abf05c1647e456456b40e1526c2a296d7"
+    },
+    {
+      "bytes": 11791,
+      "path": "source/spira_core/agent_cache.py",
+      "sha256": "651219fee08c21069ad2241801a250b2225e2d9aed7957a228efc443993f8243"
+    },
+    {
+      "bytes": 13611,
+      "path": "source/spira_core/agent_status.py",
+      "sha256": "fee4842df9b894f2e58297150330979280679008afc892da1afbdd5e4b2ecdb0"
+    },
+    {
+      "bytes": 11602,
+      "path": "source/spira_core/agent_summary.py",
+      "sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405"
+    },
+    {
+      "bytes": 8795,
+      "path": "source/spira_core/attestation_verify.py",
+      "sha256": "c000a342187878062363cb2d9e4c61e30717d833d57ccba655333352f5d0e2a9"
+    },
+    {
+      "bytes": 26858,
+      "path": "source/spira_core/bom.py",
+      "sha256": "c87b4a615afdf0ca6c81fbfe0eca0658b7c97736e9d0db5e7889c7f270d486f4"
+    },
+    {
+      "bytes": 11568,
+      "path": "source/spira_core/combined_verdict.py",
+      "sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88"
+    },
+    {
+      "bytes": 785,
+      "path": "source/spira_core/contracts.py",
+      "sha256": "c46c33c3cb0ca28dbcfe9e9f1b03f18cb43de4ff51fcbffaa4239ebbd838012c"
+    },
+    {
+      "bytes": 2744,
+      "path": "source/spira_core/core.py",
+      "sha256": "59db9d0749a7646881a9697cdc07a7f05b163e8ff4d282c83cb4dc660087e357"
+    },
+    {
+      "bytes": 13367,
+      "path": "source/spira_core/cyclonedx_export.py",
+      "sha256": "d5934cf78a4451d4dde1ebe47b8a613f1c20dce9e281f9dee101bc9b5461199b"
+    },
+    {
+      "bytes": 126,
+      "path": "source/spira_core/decision015/__init__.py",
+      "sha256": "2f04c9ea4e987026ad203a7665c15ed6c39825ca294e0018aae6b8afad043c67"
+    },
+    {
+      "bytes": 1771,
+      "path": "source/spira_core/decision015/contract.py",
+      "sha256": "835c510a1c0a245f3027dc00fe7ad47dfa19583500f63c8b519b92ca74f830dc"
+    },
+    {
+      "bytes": 3216,
+      "path": "source/spira_core/decision015/core.py",
+      "sha256": "48d5cec22520baf05fda7d707e54143263acb8ec39347a27cf440665bad16ff9"
+    },
+    {
+      "bytes": 8317,
+      "path": "source/spira_core/decision015/service.py",
+      "sha256": "9a0f9685a4d9d393ed55eda0663033ffc300d53ed2d6f8447bd951dacc1e3200"
+    },
+    {
+      "bytes": 14301,
+      "path": "source/spira_core/decision_report.py",
+      "sha256": "151327de676e9c7729268f323208ca138ba7c8aab03cf393b5fb4d5b59f9f90b"
+    },
+    {
+      "bytes": 19280,
+      "path": "source/spira_core/drift.py",
+      "sha256": "f347c52faac5273bbbd0c4d44307b568e9d97da582b70a351367b540b230da5e"
+    },
+    {
+      "bytes": 8675,
+      "path": "source/spira_core/entry_points_policy.py",
+      "sha256": "c3a3817f78de6ccb16a45a024080789d3b52ce90d8224c3d02c2db7e64c21a63"
+    },
+    {
+      "bytes": 7974,
+      "path": "source/spira_core/formal_core_v1.py",
+      "sha256": "919b9d47ca3553ab4ea01d64262eb0647876fcfd5db024181b518a9087952bb4"
+    },
+    {
+      "bytes": 24098,
+      "path": "source/spira_core/governance_engine.py",
+      "sha256": "98e798956443083264b4b9b48adb9b70715d6056b04c25f246d8ad54c325f224"
+    },
+    {
+      "bytes": 2027,
+      "path": "source/spira_core/ledger.py",
+      "sha256": "9853c4edd8af740137201ad61516c0e48534af4a0efb557209bf7bac4edd3fbb"
+    },
+    {
+      "bytes": 5132,
+      "path": "source/spira_core/license_policy.py",
+      "sha256": "05e4ea3cd29b6f732b78469bc45aff4a17e152d059acc9fcbd9314a41019a6bb"
+    },
+    {
+      "bytes": 15385,
+      "path": "source/spira_core/lockfile_policy.py",
+      "sha256": "711444c92e8227b3a631dbf4ba537c95ed968584864a4bba80a8565820ed2950"
+    },
+    {
+      "bytes": 28427,
+      "path": "source/spira_core/mvp_unified.py",
+      "sha256": "ff1dfe5d88e967625a005882e0bebf1747d45ee0bd7d98742678fab8c0941abc"
+    },
+    {
+      "bytes": 11174,
+      "path": "source/spira_core/policy_pack.py",
+      "sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc"
+    },
+    {
+      "bytes": 9579,
+      "path": "source/spira_core/range_parser.py",
+      "sha256": "b5f55465c66cd268b245a975daab440d83c7db1b60c06e7801d6d2e6ec043e6f"
+    },
+    {
+      "bytes": 7896,
+      "path": "source/spira_core/rebaseline.py",
+      "sha256": "f4ec23284c352de46eacc292034605c28d1c6a583de3e2337314a0a5e1df6480"
+    },
+    {
+      "bytes": 8231,
+      "path": "source/spira_core/rerun_planner.py",
+      "sha256": "e9d2a06ce1b6e0b62d93937790b668f02dcd768e49d3a19fc9f3e082d6ea1809"
+    },
+    {
+      "bytes": 23953,
+      "path": "source/spira_core/review.py",
+      "sha256": "1417c2143266ea3e35761c39c0f9715885fda309bcebf1f9b6792925fd3ce59e"
+    },
+    {
+      "bytes": 9719,
+      "path": "source/spira_core/sbom_consistency.py",
+      "sha256": "55a8548c472082f5ed43c5b56cbb4e703fa92a2e4fb9a91f0cf2499fd015baa9"
+    },
+    {
+      "bytes": 7630,
+      "path": "source/spira_core/target_environment.py",
+      "sha256": "2cd4d501946c4f8c4fadd3205a20483c8ac21b7ac157787cb36a4a70f47dd77e"
+    },
+    {
+      "bytes": 31932,
+      "path": "source/spira_core/terraform_plan_oracle_validator.py",
+      "sha256": "b849b55652be68d9c53c3a03ddbbb02d34d5e985a769cb5d0ad57a29bf0ffb0b"
+    },
+    {
+      "bytes": 17827,
+      "path": "source/spira_core/terraform_plan_producer.py",
+      "sha256": "de05a6a4e548d6373a01501bd2c06224b3c558c35c43a32c45534d861369d5a9"
+    },
+    {
+      "bytes": 33500,
+      "path": "source/spira_core/test_build_failure_oracle_validator.py",
+      "sha256": "dcb73bfa668d282ec093381a34c483756252acaea18342deb00aed89729949bb"
+    },
+    {
+      "bytes": 22856,
+      "path": "source/spira_core/test_build_failure_producer.py",
+      "sha256": "74638318abe676250913e38337e20c6a3c8a8907479b0cd1a7d1394069494dd1"
+    },
+    {
+      "bytes": 16770,
+      "path": "source/spira_core/trust.py",
+      "sha256": "962364d5521ec61d126facebe7c1267ae3cbc8285e6f2123c9f43f68f3d56642"
+    },
+    {
+      "bytes": 20336,
+      "path": "source/spira_core/trust_cli.py",
+      "sha256": "cc5f0ef0746fb7712af3a8fa13a9398bef0914b9c65451318a86034973c09f38"
+    },
+    {
+      "bytes": 77710,
+      "path": "source/spira_core/trust_graph.py",
+      "sha256": "34fc036b56802d710afec7d63d0a14d43a908833600fed867d11a83f7a4519ff"
+    },
+    {
+      "bytes": 14362,
+      "path": "source/spira_core/unification_proof.py",
+      "sha256": "02a05d62a112697a126dfd9baf99055c3738d198e4e137680da32dee602f0f8a"
+    },
+    {
+      "bytes": 4512,
+      "path": "source/spira_core/vendored_stone015/__init__.py",
+      "sha256": "93dd4989d67479a32470bb0ad4a7096351b48265614bd4b63e55bae32da97bfc"
+    },
+    {
+      "bytes": 954,
+      "path": "source/spira_core/vendored_stone015/spira/__init__.py",
+      "sha256": "7b48dc743d74d2ade215de4f799e1001e7c5b7a35d4d4251c8158a293ec3b013"
+    },
+    {
+      "bytes": 5683,
+      "path": "source/spira_core/vendored_stone015/spira/api.py",
+      "sha256": "da9daa05605f5e26a9d881ef1163b0d476cbaece2f66f68d1a0486b97396b0f0"
+    },
+    {
+      "bytes": 2585,
+      "path": "source/spira_core/vendored_stone015/spira/ast_nodes.py",
+      "sha256": "68ecce736b7aa58dc2c9a3cd18066055d1bf8c2802db3c7c06bff0a595104322"
+    },
+    {
+      "bytes": 5435,
+      "path": "source/spira_core/vendored_stone015/spira/backends.py",
+      "sha256": "efc93b245b86d3ebef199173a1470834dfbd9ec3970461738a604203501995f6"
+    },
+    {
+      "bytes": 45208,
+      "path": "source/spira_core/vendored_stone015/spira/bridge.py",
+      "sha256": "c0648870a481f9d24f3ea70faa6a9a2b82a73224690ca432f69752751a4265d6"
+    },
+    {
+      "bytes": 5367,
+      "path": "source/spira_core/vendored_stone015/spira/cli.py",
+      "sha256": "1fd7c7d3d14e0afb610ee3268e0518fc0255e1ef1e06688e2df846ef956699e2"
+    },
+    {
+      "bytes": 15418,
+      "path": "source/spira_core/vendored_stone015/spira/demo.py",
+      "sha256": "9eedd68e880e3aeeec303a02a0465bb2eba0f47a00e07af7437b5ed70ef1cb27"
+    },
+    {
+      "bytes": 444,
+      "path": "source/spira_core/vendored_stone015/spira/modules.py",
+      "sha256": "e05798d54935401156e52e9ce524fbc3994845d3e7bee9e0209e23b46fdc1ce9"
+    },
+    {
+      "bytes": 6234,
+      "path": "source/spira_core/vendored_stone015/spira/ontology.py",
+      "sha256": "3f723e9a2eec427a53ff60b7c0920a609a1dbc7b37aa5f146229d79d2cd01f00"
+    },
+    {
+      "bytes": 12239,
+      "path": "source/spira_core/vendored_stone015/spira/orchestrator.py",
+      "sha256": "fdc2e21a68a53cf0365ddf7509024b927978676e7ff7cf82b9451c85d674d19c"
+    },
+    {
+      "bytes": 4926,
+      "path": "source/spira_core/vendored_stone015/spira/parser.py",
+      "sha256": "537d1192d589b295a90ad177c1d61ce52220bf5067136f81c387b6b81444e1af"
+    },
+    {
+      "bytes": 49986,
+      "path": "source/spira_core/vendored_stone015/spira/runtime.py",
+      "sha256": "952aa8b76fad8ee85329093f271558b04bd3afc78878ec2e96d3beae1aad717d"
+    },
+    {
+      "bytes": 10876,
+      "path": "source/spira_core/vendored_stone015/spira/safe_eval.py",
+      "sha256": "6d938d93069172cefccf6ba3dd8101d0170a1ec127ef4cf7a0cbb3e2e1e21bab"
+    },
+    {
+      "bytes": 4304,
+      "path": "source/spira_core/vendored_stone015/spira/schemas.py",
+      "sha256": "b35164bab599de308e5f93b3e50f85e88be641068e5e5c4c9cebf9469b53d4d3"
+    },
+    {
+      "bytes": 9911,
+      "path": "source/spira_core/vendored_stone015/spira/storage.py",
+      "sha256": "6eeb8e943102de3db40ccd675838932b946b6feb950df7f62f3abfe893994170"
+    },
+    {
+      "bytes": 3074,
+      "path": "source/spira_core/vendored_stone015/spira/typesystem.py",
+      "sha256": "846b974cf602cfcb8c59bd4cf55a50b3d0407b5e27398d7a641b300d416ec9cc"
+    },
+    {
+      "bytes": 8582,
+      "path": "source/spira_core/vendored_stone015/spira/validation.py",
+      "sha256": "7527dc502e3c94e5de43fb62a9b14236b349c004a337e54af06cf4962a607936"
+    },
+    {
+      "bytes": 4186,
+      "path": "tests/fixtures/test_build_failure_oracle_validator/fixture_manifest.json",
+      "sha256": "306d38ee016c419627e4fd18a02d6515861bba4ef9253adf473e8d6e5d54ef45"
+    },
+    {
+      "bytes": 1312,
+      "path": "tests/fixtures/wheels/record_tampered/README.md",
+      "sha256": "d5507814a21ef71e287536a9b938bd2652d2d1a5505e614fac3bff8ea66c2856"
+    },
+    {
+      "bytes": 3382,
+      "path": "tests/fixtures/wheels/record_tampered/build_record_tampered_fixture.py",
+      "sha256": "044940d9e17ab8f09d6d71c28b22dc041160894a5eda3448a75c9a5ba164f924"
+    },
+    {
+      "bytes": 586,
+      "path": "tests/fixtures/wheels/record_tampered/expected.json",
+      "sha256": "2adc6e67ad6f6eb074e33d50e9ecfd18d9c1c3f8da1e59e29bf7c5cdd4500e91"
+    },
+    {
+      "bytes": 1078,
+      "path": "tests/fixtures/wheels/record_tampered/record_tampered-1.0.0-py3-none-any.whl",
+      "sha256": "b260516e8c03077dddf9c37ddef6acd9a82b5963d54274c07bc6eb25622457ed"
+    },
+    {
+      "bytes": 1078,
+      "path": "tests/fixtures/wheels/record_tampered/record_tampered_clean-1.0.0-py3-none-any.whl",
+      "sha256": "15a476e900af3141f78122e55492bdb073f14cdab51459f7df2e0481993e8274"
+    },
+    {
+      "bytes": 2262,
+      "path": "tests/fixtures/wheels/record_tampered/test_record_tampered_fixture.py",
+      "sha256": "ce8dc460324be0eeede0b88e077ec1f0c86e96f598ec26cbfe77f8949722f7ea"
+    },
+    {
+      "bytes": 26791,
+      "path": "tests/test_agent_memory_v0.py",
+      "sha256": "d8a3512ddfed1b13a203ddceba10774fff24ac70812aad5b1830d1a2a9a7e78f"
+    },
+    {
+      "bytes": 1199,
+      "path": "tests/test_claude_native_auth_remediation.py",
+      "sha256": "9713345ca9da958b1d7287cca59fdc1c6c4175e1e89a89d1bd31d485ef82a28b"
+    },
+    {
+      "bytes": 3253,
+      "path": "tests/test_claude_native_c0.py",
+      "sha256": "70705d24cf7cfdba9499d92a1659335bc3a49484feb5806eea330fec441aabbe"
+    },
+    {
+      "bytes": 4550,
+      "path": "tests/test_claude_native_primary_benchmark.py",
+      "sha256": "cd248acd9c2c1f981e8ae5a34e156d69d05f3fe44a08d26c186cbc7d5be58ee2"
+    },
+    {
+      "bytes": 2037,
+      "path": "tests/test_claude_native_read_invocation_hardening_diagnostic.py",
+      "sha256": "93e1943c1fd8568282bd9529644bd756b20ce59940df2781ecf8e1f8cab48470"
+    },
+    {
+      "bytes": 2714,
+      "path": "tests/test_claude_native_readiness.py",
+      "sha256": "a133fbb04641a103c42edf4652d8ebc0533bea735f5db119e2a3b1924f99b2f8"
+    },
+    {
+      "bytes": 2165,
+      "path": "tests/test_claude_native_reliability_diagnostic.py",
+      "sha256": "db216b382e2f9ebe1891bdc5b3144e600d4c8e83e0c497b575bd6ed72f72a998"
+    },
+    {
+      "bytes": 1389,
+      "path": "tests/test_claude_native_usage_telemetry_invocation_repair_probe.py",
+      "sha256": "730e916c6f6414a3aa51b6a848e3204cfe04b1f040cb91baa3bd7b1c6fcc87c1"
+    },
+    {
+      "bytes": 5097,
+      "path": "tests/test_codex_native_readiness.py",
+      "sha256": "4f6f44d77f4f2b2be0b34dce5b80f6a9205693cd1eb39ed811611b575acae8f6"
+    },
+    {
+      "bytes": 3231,
+      "path": "tests/test_deepseek_ds_r0.py",
+      "sha256": "cb4fd3aeb411823587c2fbc4c395e8c2e1a7f40429efb5cea0cd06703685b9cf"
+    },
+    {
+      "bytes": 1384,
+      "path": "tests/test_deepseek_read_tool_diagnostic.py",
+      "sha256": "4e16f5a5175c56a6d212ceb9be73399f54daa8f894070cc885fcf4d0c8e55e15"
+    },
+    {
+      "bytes": 1348,
+      "path": "tests/test_deepseek_structured_output_diagnostic.py",
+      "sha256": "72bbaa22f0af07718f9ae85b94cd5f25d1a87f381f7e20bbd57af597f6894ee9"
+    },
+    {
       "bytes": 2756,
       "path": "tests/test_formal_core_v1_domain1_raw_adapter_conformance.py",
       "sha256": "b1d2c6457d52614be5017578f4d6994a354e08587e4cbb82a78ba8ad8c95add7"
@@ -2412,9 +2807,9 @@
       "sha256": "66054f10f35586f6b3e613be7c73273929b5c632be4b9c69691cb8c7477d89a8"
     },
     {
-      "bytes": 2298,
+      "bytes": 2905,
       "path": "tests/test_formal_core_v1_external_reproduction_package.py",
-      "sha256": "b59de6ca8b230abe8fe73e66249233e580efdfae0003e0d00f84b8f4a4304b2d"
+      "sha256": "137933a1cd9bb9e587b22e90e8292b6c8eb46c7d5952299fa29a7099a62a39fc"
     },
     {
       "bytes": 4199,
@@ -2422,9 +2817,54 @@
       "sha256": "7bba7d6295dc9d232c20db5d6337886962a2634c22e24dfc33fe34613af44e36"
     },
     {
+      "bytes": 5576,
+      "path": "tests/test_machine_contract_passthrough_envelope_validator.py",
+      "sha256": "df088e9aae901715223bbb6e468506a2e216cf072718abf093ff6ce5931b5dbf"
+    },
+    {
+      "bytes": 6098,
+      "path": "tests/test_machine_contract_passthrough_mvp.py",
+      "sha256": "9dbb357bacc1091c96f950044b4f8595e692a2751e3d66daa5d69e005886a6aa"
+    },
+    {
+      "bytes": 895,
+      "path": "tests/test_multi_agent_benchmark_assets.py",
+      "sha256": "2227ec84f7df6cf4d2c1e71a8281b2ff55b8e9e60edf2b56e6c24d7a0aaafbc7"
+    },
+    {
       "bytes": 4971,
       "path": "tests/test_mvp_unified.py",
       "sha256": "6ac7e3e33fcc1df8a76d5141db9d57d4e0c03a0639175dd3eea93a8ca7ebd6d2"
+    },
+    {
+      "bytes": 7218,
+      "path": "tests/test_passthrough_revised_primary_benchmark.py",
+      "sha256": "871668163ba0ed684a70ec9d521904140df02992b9fd75cb522c6e429708f181"
+    },
+    {
+      "bytes": 20691,
+      "path": "tests/test_passthrough_revised_readiness.py",
+      "sha256": "244ead1a7777e7cd04ca64ce4cae313a0e274cec69e77fd162d5a7cf20191972"
+    },
+    {
+      "bytes": 7478,
+      "path": "tests/test_pep770_scope_v4.py",
+      "sha256": "50cdb5e5d3e76215f920e19e6774f34480d9cbdc94815086f1d302a86dec3560"
+    },
+    {
+      "bytes": 7725,
+      "path": "tests/test_previous_version_gate.py",
+      "sha256": "57de3884997d5ef2f0ffc196e84075c7cc5a85a50eb8d857026e59b018eb6d53"
+    },
+    {
+      "bytes": 5339,
+      "path": "tests/test_rerun_planner.py",
+      "sha256": "ceb06eec80483406e7e0e73f24f3bf499580a97eac06900f0115c267c3a095d9"
+    },
+    {
+      "bytes": 1458,
+      "path": "tests/test_review_fail_closed.py",
+      "sha256": "7cdcb316d82a4927a3e4ec7512d2a0d2d07b0be04b1bba31bdcb6fd9ed66061a"
     },
     {
       "bytes": 16608,

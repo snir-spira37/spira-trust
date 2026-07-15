@@ -10,7 +10,7 @@ Summary:
 
 ```json
 {
-  "artifact_count": 502,
+  "artifact_count": 590,
   "gates": {
     "artifact_manifest_has_hashes": true,
     "expected_results_include_domains_1_2_3": true,
