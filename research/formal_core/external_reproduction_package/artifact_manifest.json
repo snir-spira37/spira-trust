@@ -14,7 +14,7 @@
   ],
   "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_ARTIFACT_MANIFEST",
   "schema_version": 1,
-  "source_artifact_count": 590,
+  "source_artifact_count": 592,
   "source_artifacts": [
     {
       "bytes": 9026,
@@ -917,19 +917,19 @@
       "sha256": "fcb30cf9b821beb9856a9cf88c39e5e30bf05d573ae41dd0684bfc4778bcae6e"
     },
     {
-      "bytes": 1307,
+      "bytes": 1256,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_report.md",
-      "sha256": "48843575732f124d681cfded60aa575fc32ce06828dcd5ff9f3427e1a5feb314"
+      "sha256": "0cb374f49db400feecaacb2df115c9102c74284255dca60824e07020f0c247e5"
     },
     {
-      "bytes": 24906,
+      "bytes": 22801,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
-      "sha256": "9a5451b15e33f7edc8041a43e2a9ad872518f624a9a252848d5bedd0ede7fb80"
+      "sha256": "3c78f215ff6f129f09534c6ea8691d5330bd7f653a8259ae8144177256636eba"
     },
     {
-      "bytes": 1962,
+      "bytes": 1896,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_review.md",
-      "sha256": "e88a37ca0f1040b811ed61fe12a2b335b4c58587946abae286dc820fd21b0a8e"
+      "sha256": "5cdd6f4bdbba594fe87f53cdfbe0f140fab6f804a46db9bb88719365a449ac0d"
     },
     {
       "bytes": 8007,
@@ -1070,6 +1070,11 @@
       "bytes": 2474,
       "path": "research/formal_core/spira_formal_core_v1_executable_reference_review.md",
       "sha256": "4c709d315ddefb3a127cff5e91985373874d7d9a3853b28e88cc7ed791b0a985"
+    },
+    {
+      "bytes": 6549,
+      "path": "research/formal_core/spira_formal_core_v1_external_mathematical_review.md",
+      "sha256": "6050a2cfa1ad829679327c93a68f0c4b32766e72af557467a465d77186d83922"
     },
     {
       "bytes": 3826,
@@ -1220,6 +1225,11 @@
       "bytes": 4005,
       "path": "research/formal_core/spira_formal_core_v1_trusted_computing_base_ledger.md",
       "sha256": "91c7a5096c29180c22f993a2d9bfb50c53cdfcef3c3854bf14c50a29d87e0b63"
+    },
+    {
+      "bytes": 5156,
+      "path": "research/formal_core/spira_formal_core_v2_end_to_end_theorem_plan.md",
+      "sha256": "e282fa48b47adaac405a1807a0a0b5ba0da2798bb34f4af59efd4dbe1bb423af"
     },
     {
       "bytes": 121,
@@ -2802,14 +2812,14 @@
       "sha256": "e0166917f08cbc1b02cb96f69dbbf588667a8c1411ee14ff6d020188838f83a5"
     },
     {
-      "bytes": 2770,
+      "bytes": 3455,
       "path": "tests/test_formal_core_v1_domain3_raw_adapter_conformance.py",
-      "sha256": "66054f10f35586f6b3e613be7c73273929b5c632be4b9c69691cb8c7477d89a8"
+      "sha256": "89241d488fdb4cfb6dc2a00def8fa7e284d0fc6f7b1e28849ef5b53f9412f394"
     },
     {
       "bytes": 3005,
       "path": "tests/test_formal_core_v1_external_reproduction_package.py",
-      "sha256": "36ad5b003351252f9eb34dcfdc85de2b37b90c26444496ffe4591bc7f42b9dd9"
+      "sha256": "95a936708b6c5e3db81b463232917db29b6599b93cbd7bd16e9a81ea3df71355"
     },
     {
       "bytes": 4199,
@@ -2952,9 +2962,9 @@
       "sha256": "dbb8d50f76c276c62da6bbf809df0594461b5b82705ef0fb5321d3726f5b916f"
     },
     {
-      "bytes": 17513,
+      "bytes": 18251,
       "path": "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
-      "sha256": "2cf13246e5e186db1afb65183a409e248774a703db1289d6b76322bec337b062"
+      "sha256": "634a116c2f94142664c915a64ad8453be9837786439a964ccf0eaa98b7345a10"
     },
     {
       "bytes": 12165,

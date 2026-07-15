@@ -74,7 +74,7 @@
   },
   "pytest": {
     "expected_result": "PASS",
-    "last_full_count": 269
+    "last_full_count": 270
   },
   "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_EXPECTED_RESULTS",
   "schema_version": 1

@@ -65,6 +65,27 @@ def test_domain3_raw_adapter_conformance_all_fixtures_pass():
     }
 
 
+def test_domain3_raw_adapter_command_summary_is_deterministic():
+    runner = _load_runner()
+    output = "\n".join(
+        [
+            "============================= test session starts =============================",
+            "collected 4 items",
+            "tests/test_example.py .... [100%]",
+            "============================== 4 passed in 0.13s ==============================",
+        ]
+    )
+
+    summary = runner.command_output_summary(output)
+
+    assert summary == {
+        "collected": 4,
+        "summary": "============================== 4 passed in <duration> ==============================",
+        "line_count": 4,
+        "has_output": True,
+    }
+
+
 def _load_runner():
     spec = importlib.util.spec_from_file_location("run_formal_core_v1_domain3_raw_adapter_conformance", RUNNER_PATH)
     module = importlib.util.module_from_spec(spec)

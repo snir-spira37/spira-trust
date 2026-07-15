@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -137,9 +138,9 @@ def main() -> int:
         },
         "claim_boundary": "synthetic Domain 3 raw-adapter fixture conformance only; arbitrary raw Terraform Plan JSON parser proof not claimed",
     }
-    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    REPORT.write_text(report_markdown(results), encoding="utf-8")
-    REVIEW.write_text(review_markdown(results), encoding="utf-8")
+    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    REPORT.write_text(report_markdown(results), encoding="utf-8", newline="\n")
+    REVIEW.write_text(review_markdown(results), encoding="utf-8", newline="\n")
     print(json.dumps({"status": status, "counts": counts}, sort_keys=True))
     return 0 if status.endswith("_ACCEPTED") else 1
 
@@ -316,8 +317,26 @@ def run_command(command: list[str]) -> dict[str, Any]:
     return {
         "command": " ".join(command),
         "returncode": result.returncode,
-        "stdout_tail": tail(result.stdout),
-        "stderr_tail": tail(result.stderr),
+        "stdout_summary": command_output_summary(result.stdout),
+        "stderr_summary": command_output_summary(result.stderr),
+    }
+
+
+def command_output_summary(output: str) -> dict[str, Any]:
+    lines = [line.rstrip() for line in output.splitlines() if line.strip()]
+    collected = None
+    summary = None
+    for line in lines:
+        match = re.match(r"collected (\d+) items?", line)
+        if match:
+            collected = int(match.group(1))
+        if re.match(r"=+ .* (passed|failed|error|errors|skipped).* =+", line):
+            summary = re.sub(r" in \d+(?:\.\d+)?s(?: \(\d+:\d+:\d+\))?", " in <duration>", line)
+    return {
+        "collected": collected,
+        "summary": summary,
+        "line_count": len(lines),
+        "has_output": bool(lines),
     }
 
 

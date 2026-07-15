@@ -5,14 +5,34 @@
     "focused_tests": {
       "command": "python -m pytest tests/test_formal_core_v1_domain3_raw_adapter_conformance.py",
       "returncode": 0,
-      "stderr_tail": "",
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 4 items\n\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py ....        [100%]\n\n============================== 4 passed in 0.13s =============================="
+      "stderr_summary": {
+        "collected": null,
+        "has_output": false,
+        "line_count": 0,
+        "summary": null
+      },
+      "stdout_summary": {
+        "collected": 5,
+        "has_output": true,
+        "line_count": 8,
+        "summary": "============================== 5 passed in <duration> =============================="
+      }
     },
     "full_pytest": {
       "command": "python -m pytest",
       "returncode": 0,
-      "stderr_tail": "",
-      "stdout_tail": "tests\\test_formal_core_v1_domain2_raw_adapter_conformance.py ...         [ 41%]\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py ....        [ 42%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 45%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 49%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 52%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 53%]\ntests\\test_mvp_unified.py .......                                        [ 56%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 59%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 69%]\ntests\\test_pep770_scope_v4.py .......                                    [ 72%]\ntests\\test_previous_version_gate.py ...........                          [ 76%]\ntests\\test_rerun_planner.py ..................                           [ 83%]\ntests\\test_review_fail_closed.py .                                       [ 84%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 86%]\ntests\\test_terraform_plan_producer.py ........                           [ 89%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 92%]\ntests\\test_test_build_failure_producer.py ........                       [ 96%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n======================= 257 passed in 79.58s (0:01:19) ========================"
+      "stderr_summary": {
+        "collected": null,
+        "has_output": false,
+        "line_count": 0,
+        "summary": null
+      },
+      "stdout_summary": {
+        "collected": 270,
+        "has_output": true,
+        "line_count": 45,
+        "summary": "======================= 270 passed in <duration> ========================"
+      }
     }
   },
   "counts": {

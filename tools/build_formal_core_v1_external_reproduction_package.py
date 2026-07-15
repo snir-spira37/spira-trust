@@ -163,7 +163,7 @@ def build_expected_results() -> dict[str, Any]:
             },
         },
         "pytest": {
-            "last_full_count": 269,
+            "last_full_count": 270,
             "expected_result": "PASS",
         },
         "forbidden": {

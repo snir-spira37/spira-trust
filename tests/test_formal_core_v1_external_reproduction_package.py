@@ -47,7 +47,7 @@ def test_external_reproduction_package_expected_statuses_are_present():
     assert expected["domain2"]["typed_conformance"]["results_path"].endswith(
         "spira_formal_core_v1_domain2_conformance_rerun_results.json"
     )
-    assert expected["pytest"]["last_full_count"] == 269
+    assert expected["pytest"]["last_full_count"] == 270
     assert expected["domain1"]["raw_fixture_conformance"]["fixture_count"] == 33
     assert expected["domain2"]["raw_fixture_conformance"]["fixture_count"] == 26
     assert expected["domain3"]["raw_fixture_conformance"]["fixture_count"] == 31
