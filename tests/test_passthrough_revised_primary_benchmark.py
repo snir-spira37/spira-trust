@@ -32,15 +32,28 @@ def test_primary_plan_covers_only_primary_cases():
     assert all(item["arm"] in {"A", "B", "C"} for item in plan)
 
 
-def test_agent_order_is_sequential_and_declares_no_parallel_tracks():
+def test_agent_order_is_sequential_and_declares_no_parallel_tracks(tmp_path, monkeypatch):
     primary = _load_runner()
+    agent_order_path = tmp_path / "agent_order.json"
+    claude_manifest = tmp_path / "claude_manifest.json"
+    codex_manifest = tmp_path / "codex_manifest.json"
+    patched_config = {
+        "claude_native": {**primary.AGENT_CONFIG["claude_native"], "session_manifest": claude_manifest},
+        "codex_native": {**primary.AGENT_CONFIG["codex_native"], "session_manifest": codex_manifest},
+    }
+
+    monkeypatch.setattr(primary, "AGENT_ORDER_PATH", agent_order_path)
+    monkeypatch.setattr(primary, "AGENT_CONFIG", patched_config)
+
     primary.write_frozen_manifests()
-    order = json.loads(primary.AGENT_ORDER_PATH.read_text(encoding="utf-8"))
+    order = json.loads(agent_order_path.read_text(encoding="utf-8"))
 
     assert order["selected_order"] == ["claude_native", "codex_native"]
     assert order["sequential_agent_execution_required"] is True
     assert order["concurrent_live_tracks_forbidden"] is True
     assert order["combined_authorized_maximum"] == 360
+    assert json.loads(claude_manifest.read_text(encoding="utf-8"))["session_count"] == 180
+    assert json.loads(codex_manifest.read_text(encoding="utf-8"))["session_count"] == 180
 
 
 def test_manifest_next_session_includes_rate_limit_blocked():
