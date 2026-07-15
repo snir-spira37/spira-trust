@@ -1,0 +1,55 @@
+{
+  "blockers": [
+    "Documented command python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py returned exit code 1 in both runs.",
+    "The harness status was SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_NEEDS_REVISION because full_pytest_pass=false.",
+    "External reproduction package artifact_manifest.json has three hash mismatches for Domain 3 conformance result/report/review artifacts."
+  ],
+  "conformance_first_run_exit_code": 1,
+  "conformance_second_run_exit_code": 1,
+  "documentation_matches_reproduction": false,
+  "domain_expansion_detected": false,
+  "external_reproduction_package_manifest_mismatch_count": 3,
+  "external_reproduction_package_manifest_mismatches": [
+    {
+      "actual_sha256": "0cb374f49db400feecaacb2df115c9102c74284255dca60824e07020f0c247e5",
+      "error": "hash_mismatch",
+      "expected_sha256": "48843575732f124d681cfded60aa575fc32ce06828dcd5ff9f3427e1a5feb314",
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_report.md"
+    },
+    {
+      "actual_sha256": "0d1c83a81c6f66344130ce510e20f1b2bdbae79fc28898fd4c4c7fdf1d4b418b",
+      "error": "hash_mismatch",
+      "expected_sha256": "9a5451b15e33f7edc8041a43e2a9ad872518f624a9a252848d5bedd0ede7fb80",
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json"
+    },
+    {
+      "actual_sha256": "5cdd6f4bdbba594fe87f53cdfbe0f140fab6f804a46db9bb88719365a449ac0d",
+      "error": "hash_mismatch",
+      "expected_sha256": "e88a37ca0f1040b811ed61fe12a2b335b4c58587946abae286dc820fd21b0a8e",
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_review.md"
+    }
+  ],
+  "fixture_change_performed": false,
+  "fixture_hashes_match": {
+    "REPORT_NOT_EVALUATED": true,
+    "RERUN_REQUIRED": true,
+    "STOP_BLOCKED": true
+  },
+  "focused_pytest_pass": true,
+  "git_diff_check_pass": true,
+  "json_validation_pass": true,
+  "next_step": "DEMO_REPRODUCTION_REVISION_REQUIRED",
+  "no_soft_pass_on_invalid_json": true,
+  "outreach_performed": false,
+  "product_change_performed": false,
+  "release_performed": false,
+  "report_not_evaluated_verified": true,
+  "reproduction_type": "clean_worktree_reproduction_not_external_clone",
+  "rerun_required_verified": true,
+  "schema": "TERRAFORM_AGENT_ACTION_GATE_DEMO_REPRODUCTION_RUN_REVIEW_RESULTS",
+  "schema_version": 1,
+  "semantic_demo_paths_verified": true,
+  "source_commit": "bfed6f7774c48a17361ac0a2298fb9073b891ebc",
+  "stop_blocked_verified": true,
+  "verdict": "DEMO_REPRODUCTION_NEEDS_REVISION"
+}
