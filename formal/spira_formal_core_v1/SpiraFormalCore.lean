@@ -11,3 +11,7 @@ import SpiraFormalCore.Passthrough
 import SpiraFormalCore.Proofs.All
 import SpiraFormalCore.Reference
 import SpiraFormalCore.TestVectors
+import SpiraFormalCore.Domain2.Evidence
+import SpiraFormalCore.Domain2.Policy
+import SpiraFormalCore.Domain2.Decision
+import SpiraFormalCore.Domain2.Proofs

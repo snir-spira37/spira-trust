@@ -1,0 +1,370 @@
+{
+  "authorization": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_authorization.md",
+  "blocking_to_proceed_cases": [],
+  "case_count": 38,
+  "case_fail_count": 0,
+  "case_pass_count": 38,
+  "case_results": [
+    {
+      "case_id": "public_click_import",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_click_param",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_flask_clean",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_flask_param",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_flask_unicode_path",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_requests_assertion",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_requests_clean",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "public_requests_long_traceback",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "synthetic_clean_success",
+      "formal_action": "PROCEED",
+      "oracle_action": "PROCEED",
+      "passed": true,
+      "producer_formal_action": "PROCEED"
+    },
+    {
+      "case_id": "synthetic_collection_error",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_console_junit_conflict",
+      "formal_action": "RERUN_REQUIRED",
+      "oracle_action": "RERUN_REQUIRED",
+      "passed": true,
+      "producer_formal_action": "RERUN_REQUIRED"
+    },
+    {
+      "case_id": "synthetic_derivable_rerun",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_duplicate_test_ids",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_fixture_setup_error",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_fixture_teardown_error",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_import_error",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_incomplete_junit",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "synthetic_injection_all_passed",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_injection_proceed",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_injection_spira_json",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_keyboard_interrupt",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_linux_paths",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_long_traceback",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_malformed_junit",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "synthetic_multiple_failures",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_non_derivable_rerun",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_nonzero_no_result",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_parameterized_ids",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_process_crash",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_single_assertion_failure",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_skipped_test",
+      "formal_action": "PROCEED",
+      "oracle_action": "REPORT_WITH_NOTES",
+      "passed": true,
+      "producer_formal_action": "PROCEED"
+    },
+    {
+      "case_id": "synthetic_syntax_error",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_timeout",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_truncated_console",
+      "formal_action": "REPORT_NOT_EVALUATED",
+      "oracle_action": "REPORT_NOT_EVALUATED",
+      "passed": true,
+      "producer_formal_action": "REPORT_NOT_EVALUATED"
+    },
+    {
+      "case_id": "synthetic_unicode_names",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_windows_paths",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    },
+    {
+      "case_id": "synthetic_xfail",
+      "formal_action": "PROCEED",
+      "oracle_action": "REPORT_WITH_NOTES",
+      "passed": true,
+      "producer_formal_action": "PROCEED"
+    },
+    {
+      "case_id": "synthetic_xpass",
+      "formal_action": "STOP_BLOCKED",
+      "oracle_action": "STOP_BLOCKED",
+      "passed": true,
+      "producer_formal_action": "STOP_BLOCKED"
+    }
+  ],
+  "evidence_drop_cases": [],
+  "gates": {
+    "blocking_to_proceed_count": true,
+    "case_count": true,
+    "case_projection_pass": true,
+    "evidence_drop_count": true,
+    "identity_drop_count": true,
+    "lean_build_pass": true,
+    "malformed_to_proceed_count": true,
+    "mutation_pairs": true,
+    "not_evaluated_to_proceed_count": true,
+    "producer_case_count": true,
+    "proof_drop_count": true,
+    "proof_scan_pass": true,
+    "report_with_notes_count": true,
+    "report_with_notes_projected_to_proceed": true,
+    "test_notes_preserved": true
+  },
+  "generated_at": "2026-07-15T13:21:41Z",
+  "identity_drop_cases": [],
+  "lean_build": {
+    "command": "lake build",
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": "Build completed successfully (27 jobs).\n"
+  },
+  "malformed_to_proceed_cases": [],
+  "mapping_amendment_review": "research/formal_core/domain2/spira_formal_core_v1_domain2_action_mapping_amendment_review.md",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "mutation_pair_checks": {
+    "checks": [
+      {
+        "mutated_case_id": "synthetic_single_assertion_failure",
+        "passed": true,
+        "source_case_id": "synthetic_clean_success"
+      },
+      {
+        "mutated_case_id": "synthetic_multiple_failures",
+        "passed": true,
+        "source_case_id": "synthetic_single_assertion_failure"
+      },
+      {
+        "mutated_case_id": "synthetic_long_traceback",
+        "passed": true,
+        "source_case_id": "synthetic_single_assertion_failure"
+      },
+      {
+        "mutated_case_id": "synthetic_linux_paths",
+        "passed": true,
+        "source_case_id": "synthetic_windows_paths"
+      },
+      {
+        "mutated_case_id": "synthetic_injection_proceed",
+        "passed": true,
+        "source_case_id": "synthetic_single_assertion_failure"
+      },
+      {
+        "mutated_case_id": "synthetic_non_derivable_rerun",
+        "passed": true,
+        "source_case_id": "synthetic_derivable_rerun"
+      }
+    ],
+    "failed": 0,
+    "passed": 6,
+    "total": 6
+  },
+  "not_authorized": [
+    "FORMAL_CORE_V1_ACTION_ALGEBRA_CHANGE",
+    "DOMAIN2_ORACLE_CHANGE",
+    "DOMAIN2_CORPUS_CHANGE",
+    "DOMAIN2_ADAPTER_CHANGE",
+    "DOMAIN1_CONFORMANCE",
+    "DOMAIN3_CONFORMANCE",
+    "RUNTIME_INTEGRATION",
+    "PRODUCTION_CLAIM",
+    "RELEASE"
+  ],
+  "not_evaluated_to_proceed_cases": [],
+  "producer_case_count": 38,
+  "proof_drop_cases": [],
+  "proof_scan": {
+    "matches": [],
+    "status": "PASS"
+  },
+  "raw_pytest_junit_parser_formally_proved": false,
+  "report_with_notes_case_count": 2,
+  "report_with_notes_cases": [
+    "synthetic_skipped_test",
+    "synthetic_xfail"
+  ],
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_RERUN_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_ACCEPTED",
+  "test_notes_drops": []
+}
