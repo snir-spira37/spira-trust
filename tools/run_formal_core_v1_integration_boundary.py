@@ -16,6 +16,15 @@ REPORT = FORMAL / "spira_formal_core_v1_integration_boundary_report.md"
 REVIEW = FORMAL / "spira_formal_core_v1_integration_boundary_review.md"
 
 SIDE_EFFECT_OUTPUTS = [
+    FORMAL / "domain1" / "spira_formal_core_v1_domain1_conformance_results.json",
+    FORMAL / "domain1" / "spira_formal_core_v1_domain1_conformance_report.md",
+    FORMAL / "domain1" / "spira_formal_core_v1_domain1_conformance_review.md",
+    FORMAL / "domain2" / "spira_formal_core_v1_domain2_conformance_rerun_results.json",
+    FORMAL / "domain2" / "spira_formal_core_v1_domain2_conformance_rerun_report.md",
+    FORMAL / "domain2" / "spira_formal_core_v1_domain2_conformance_rerun_review.md",
+    FORMAL / "domain3" / "spira_formal_core_v1_domain3_conformance_results.json",
+    FORMAL / "domain3" / "spira_formal_core_v1_domain3_conformance_report.md",
+    FORMAL / "domain3" / "spira_formal_core_v1_domain3_conformance_review.md",
     FORMAL / "spira_formal_core_v1_proof_package_manifest.json",
     FORMAL / "spira_formal_core_v1_proof_package_results.json",
     FORMAL / "spira_formal_core_v1_proof_package_report.md",
