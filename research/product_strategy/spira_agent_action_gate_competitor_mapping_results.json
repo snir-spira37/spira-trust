@@ -1,0 +1,159 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_COMPETITOR_MAPPING_RESULTS",
+  "schema_version": 1,
+  "research_date": "2026-07-15",
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "authorization_commit": "fe9047488438b40d0a0adf592123c7074acc38a7",
+  "organizations_reviewed": [
+    "APort",
+    "Microsoft",
+    "Docker",
+    "Cloudflare",
+    "OpenAI",
+    "NVIDIA",
+    "Check Point / Lakera",
+    "Galileo",
+    "Open Policy Agent",
+    "HashiCorp",
+    "Spacelift",
+    "SLSA",
+    "Sigstore",
+    "in-toto",
+    "OpenSSF"
+  ],
+  "products_reviewed": [
+    "APort / Open Agent Passport",
+    "Microsoft Agent Governance Toolkit",
+    "Docker MCP Gateway",
+    "Cloudflare AI Gateway and MCP server portals",
+    "OpenAI Agents SDK guardrails",
+    "NVIDIA NeMo Guardrails",
+    "Lakera Guard",
+    "Galileo AI",
+    "Open Policy Agent Terraform policy",
+    "HCP Terraform policy enforcement / Sentinel / OPA",
+    "Spacelift policies",
+    "Conftest",
+    "SLSA",
+    "Sigstore Policy Controller",
+    "in-toto",
+    "OpenSSF Scorecard"
+  ],
+  "primary_sources_count": 20,
+  "secondary_sources_count": 0,
+  "current_sources_count": 20,
+  "stale_sources_count": 0,
+  "unverified_candidates": [],
+  "source_coverage_complete": true,
+  "competitor_strengths_documented": true,
+  "spira_gaps_documented": true,
+  "unsupported_spira_claims": [
+    "SPIRA has no competitors",
+    "SPIRA is the only pre-action agent gate",
+    "SPIRA governs arbitrary tool calls today",
+    "SPIRA governs arbitrary MCP/API/database actions today",
+    "SPIRA replaces IAM or identity systems",
+    "SPIRA is a universal AI-agent governance platform",
+    "SPIRA formally proves all parsers or upstream producers"
+  ],
+  "supported_spira_differentiators": [
+    {
+      "claim": "SPIRA currently positions credibly as an artifact-backed evidence gate for supported software artifacts.",
+      "classification": "MULTI_SOURCE_INFERENCE",
+      "source_ids": [
+        "SRC-013",
+        "SRC-014",
+        "SRC-017",
+        "SRC-018"
+      ]
+    },
+    {
+      "claim": "SPIRA's accepted positioning is useful because it separates authorization policy from evidence justification.",
+      "classification": "MULTI_SOURCE_INFERENCE",
+      "source_ids": [
+        "SRC-001",
+        "SRC-003",
+        "SRC-004",
+        "SRC-005",
+        "SRC-013"
+      ]
+    },
+    {
+      "claim": "The reviewed sources did not document the full SPIRA combination of domain-specific artifact evidence, deterministic machine contract, explicit not_evaluated, explicit not_claimed, evidence/proof references, and model non-authority in one system.",
+      "classification": "MULTI_SOURCE_INFERENCE",
+      "source_ids": [
+        "SRC-001",
+        "SRC-005",
+        "SRC-009",
+        "SRC-010",
+        "SRC-013",
+        "SRC-014",
+        "SRC-017",
+        "SRC-018"
+      ]
+    }
+  ],
+  "partially_supported_differentiators": [
+    {
+      "claim": "SPIRA is differentiated from model guardrail systems.",
+      "limitation": "True for reviewed content/evaluation guardrails, but not a claim that SPIRA is broader or more mature.",
+      "source_ids": [
+        "SRC-009",
+        "SRC-010",
+        "SRC-011",
+        "SRC-012"
+      ]
+    },
+    {
+      "claim": "SPIRA is differentiated from infrastructure policy gates.",
+      "limitation": "Only partially true: OPA, HCP Terraform/Sentinel and Spacelift strongly overlap with Terraform-plan policy gating. SPIRA is differentiated by machine-contract fields and AI-agent model non-authority, not by the existence of Terraform pre-apply gating.",
+      "source_ids": [
+        "SRC-013",
+        "SRC-014",
+        "SRC-015",
+        "SRC-016"
+      ]
+    }
+  ],
+  "rejected_differentiators": [
+    {
+      "claim": "No competitor exists in pre-action agent governance.",
+      "reason": "APort/OAP and Microsoft AGT explicitly address pre-action/tool-call/agent governance layers.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-003",
+        "SRC-004",
+        "SRC-005"
+      ]
+    },
+    {
+      "claim": "No competitor evaluates Terraform plans before action.",
+      "reason": "OPA, HCP Terraform/Sentinel, Spacelift and Conftest document Terraform/config policy workflows.",
+      "source_ids": [
+        "SRC-013",
+        "SRC-014",
+        "SRC-015",
+        "SRC-016"
+      ]
+    },
+    {
+      "claim": "SPIRA can be pitched as arbitrary action authorization today.",
+      "reason": "Accepted SPIRA positioning does not include arbitrary tool/MCP/API/database action adapters.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-005",
+        "SRC-006",
+        "SRC-008"
+      ]
+    }
+  ],
+  "positioning_supported": true,
+  "positioning_revision_required": false,
+  "recommended_positioning_wording": "SPIRA is an artifact-backed evidence-to-contract gate for supported AI-assisted software actions. Policy says what an agent is allowed to do; SPIRA checks whether supported evidence justifies doing it now.",
+  "domain_expansion_detected": false,
+  "product_change_performed": false,
+  "outreach_performed": false,
+  "verdict": "COMPETITOR_MAPPING_ACCEPTED_POSITIONING_SUPPORTED",
+  "blockers": [],
+  "next_step": "DEMO_SCRIPT_AUTHORIZATION_REQUIRED"
+}

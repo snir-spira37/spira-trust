@@ -1,0 +1,54 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_COMPETITOR_MAPPING_REVIEW_RESULTS",
+  "schema_version": 1,
+  "document_reviewed": "research/product_strategy/spira_agent_action_gate_competitor_mapping.md",
+  "results_reviewed": "research/product_strategy/spira_agent_action_gate_competitor_mapping_results.json",
+  "source_register_reviewed": "research/product_strategy/spira_agent_action_gate_competitor_source_register.json",
+  "review_date": "2026-07-15",
+  "url_format_checked": true,
+  "all_source_urls_reachable": true,
+  "source_register_present": true,
+  "source_count": 20,
+  "primary_sources_count": 20,
+  "secondary_sources_count": 0,
+  "all_material_competitors_source_backed": true,
+  "current_vs_roadmap_separated": true,
+  "not_found_not_used_as_absence_proof": true,
+  "competitor_strengths_documented": true,
+  "spira_gaps_documented": true,
+  "positioning_accepted_boundary_preserved": true,
+  "market_exclusivity_claim_present": false,
+  "no_competitors_claim_present": false,
+  "outreach_performed": false,
+  "product_change_performed": false,
+  "domain_expansion_detected": false,
+  "release_performed": false,
+  "unsupported_claims_detected": [],
+  "review_findings": [
+    {
+      "severity": "LOW",
+      "finding": "Several official sources do not publish explicit update dates on the page. The source register records date-not-shown freshness limitations rather than treating them as current-version proof."
+    },
+    {
+      "severity": "LOW",
+      "finding": "One source URL required a TLS verification fallback in the local reachability check, but returned HTTP 200 and remained listed as an official source."
+    }
+  ],
+  "checks_run": [
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m json.tool for source register, mapping results, and review results",
+      "status": "PASS"
+    },
+    {
+      "command": "URL reachability check for 20 source URLs",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "COMPETITOR_MAPPING_ACCEPTED_POSITIONING_SUPPORTED",
+  "blockers": [],
+  "next_step": "DEMO_SCRIPT_AUTHORIZATION_REQUIRED"
+}
