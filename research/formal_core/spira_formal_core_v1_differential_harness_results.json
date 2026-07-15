@@ -1,0 +1,21 @@
+{
+  "accepted_entrypoints": [],
+  "accepted_python_typed_evidence_entrypoint": false,
+  "benchmark_changes": 0,
+  "blocker": "PYTHON_TYPED_EVIDENCE_ENTRYPOINT_NOT_ACCEPTED",
+  "comparison_executed": false,
+  "comparison_executed_reason": "blocked before comparison because no accepted Python typed-evidence entrypoint exists",
+  "domain_adapter_changes": 0,
+  "domain_specific_candidates_not_accepted_as_generic_entrypoint": [
+    "source/spira_core/mvp_unified.py",
+    "source/spira_core/test_build_failure_producer.py",
+    "source/spira_core/terraform_plan_producer.py",
+    "source/spira_core/agent_summary.py"
+  ],
+  "formal_vectors_available": true,
+  "lean_reference_available": true,
+  "phase": "generic_differential_harness",
+  "python_source_changes": 0,
+  "result_reclassification": 0,
+  "status": "SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_NEEDS_REVISION"
+}
