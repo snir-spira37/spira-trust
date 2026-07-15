@@ -155,6 +155,19 @@ def test_primary_repository_mutation_gate_preserves_source_or_frozen_asset_mutat
     assert primary.repository_state_for_mutation_gate("claude_native") == " M source/spira_core/mvp_unified.py"
 
 
+def test_primary_private_raw_root_is_unique_per_session_attempt(tmp_path):
+    primary = _load_runner()
+
+    first = primary.primary_attempt_private_root(tmp_path, 5, 1)
+    second = primary.primary_attempt_private_root(tmp_path, 5, 2)
+    repeated_case = primary.primary_attempt_private_root(tmp_path, 41, 1)
+
+    assert first.name == "session_005_attempt_01"
+    assert second.name == "session_005_attempt_02"
+    assert repeated_case.name == "session_041_attempt_01"
+    assert len({first, second, repeated_case}) == 3
+
+
 def _load_runner():
     spec = importlib.util.spec_from_file_location("run_passthrough_revised_primary_benchmark", RUNNER_PATH)
     module = importlib.util.module_from_spec(spec)

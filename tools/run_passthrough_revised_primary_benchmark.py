@@ -417,7 +417,9 @@ def execute_planned_session(
         update_manifest_counts(agent, manifest)
         atomic_json_write(cfg["session_manifest"], manifest)
 
-        session = readiness.run_session(agent, planned["domain"], planned["case_id"], planned["arm"], private_root, raw_manifest)
+        attempt_private_root = primary_attempt_private_root(private_root, planned["session_index"], attempt_number)
+        attempt_private_root.mkdir(parents=True, exist_ok=True)
+        session = readiness.run_session(agent, planned["domain"], planned["case_id"], planned["arm"], attempt_private_root, raw_manifest)
         session["session_index"] = planned["session_index"]
         session["repetition"] = planned["repetition"]
         session["phase"] = "PASSTHROUGH_REVISED_PRIMARY"
@@ -461,6 +463,10 @@ def execute_planned_session(
     update_results_counts(results, manifest)
     persist(agent, manifest, results, raw_manifest)
     return final_session
+
+
+def primary_attempt_private_root(private_root: Path, session_index: int, attempt_number: int) -> Path:
+    return private_root / f"session_{int(session_index):03d}_attempt_{int(attempt_number):02d}"
 
 
 def persist(agent: str, manifest: dict[str, Any], results: dict[str, Any], raw_manifest: list[dict[str, Any]]) -> None:

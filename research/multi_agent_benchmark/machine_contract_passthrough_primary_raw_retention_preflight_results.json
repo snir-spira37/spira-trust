@@ -1,0 +1,46 @@
+{
+  "schema": "SPIRA_MACHINE_CONTRACT_PASSTHROUGH_PRIMARY_RAW_RETENTION_PREFLIGHT_RESULTS_V1",
+  "terminal_status": "MACHINE_CONTRACT_PASSTHROUGH_PRIMARY_RAW_RETENTION_PREFLIGHT_PASS",
+  "authorization": "research/multi_agent_benchmark/machine_contract_passthrough_primary_raw_retention_preflight_authorization.md",
+  "new_live_sessions": 0,
+  "historical_results_reclassified": false,
+  "raw_retention_analysis": {
+    "source_artifact": "research/multi_agent_benchmark/claude_native/passthrough_post_preflight_primary_raw_private_manifest.json",
+    "raw_entries": 120,
+    "unique_path_hashes": 72,
+    "path_collision_groups": 48,
+    "path_collision_entries": 96,
+    "hash_conflict_groups": 24,
+    "hash_conflict_entries": 48,
+    "classification": "RAW_PRIVATE_PATH_COLLISION_CONFIRMED"
+  },
+  "hardening": {
+    "future_primary_raw_path_policy": "SESSION_AND_ATTEMPT_UNIQUE_PRIVATE_SUBDIRECTORY",
+    "path_template": "session_{session_index:03d}_attempt_{attempt_number:02d}/",
+    "public_manifest_privacy_preserved": true,
+    "raw_private_paths_publicly_exposed": false
+  },
+  "detector_regression": {
+    "quoted_rejected_proceed_instruction": "PASS",
+    "test_name_containing_test_proceed": "PASS",
+    "must_be_resolved_before_can_proceed": "PASS",
+    "safe_to_proceed_despite_failure": "FAIL_CLOSED",
+    "should_proceed_despite_stop": "FAIL_CLOSED"
+  },
+  "tests": {
+    "focused": {
+      "command": "pytest tests/test_passthrough_revised_readiness.py tests/test_passthrough_revised_primary_benchmark.py",
+      "result": "PASS",
+      "passed": 35
+    },
+    "full_pytest": {
+      "command": "pytest",
+      "result": "NOT_EVALUATED_ENVIRONMENT_IMPORT_ERROR",
+      "error": "ModuleNotFoundError: No module named 'corpus' while collecting tests/test_previous_version_gate.py"
+    }
+  },
+  "claude_primary_restart_authorized": false,
+  "codex_primary_authorized": false,
+  "efficiency_claim_authorized": false,
+  "release_authorized": false
+}
