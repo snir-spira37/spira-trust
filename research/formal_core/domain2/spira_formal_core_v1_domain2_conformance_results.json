@@ -1,0 +1,39 @@
+{
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_NEEDS_REVISION",
+  "blocker": "DOMAIN2_ORACLE_ACTION_OUTSIDE_FORMAL_CORE_V1_ACTION_ALGEBRA",
+  "formal_core_v1_action_algebra": [
+    "PROCEED",
+    "STOP_BLOCKED",
+    "RERUN_REQUIRED",
+    "REPORT_NOT_EVALUATED"
+  ],
+  "domain2_oracle_action_distribution": {
+    "STOP_BLOCKED": 23,
+    "REPORT_NOT_EVALUATED": 11,
+    "REPORT_WITH_NOTES": 2,
+    "PROCEED": 1,
+    "RERUN_REQUIRED": 1
+  },
+  "unsupported_oracle_actions": [
+    {
+      "action": "REPORT_WITH_NOTES",
+      "case_ids": [
+        "synthetic_skipped_test",
+        "synthetic_xfail"
+      ],
+      "reason_codes": [
+        "TEST_NOTES"
+      ],
+      "stop": false
+    }
+  ],
+  "accepted_corpus_case_count": 38,
+  "accepted_mutation_pair_count": 6,
+  "formal_domain2_lean_implementation_executed": false,
+  "python_adapter_differential_evaluation_executed": false,
+  "corpus_modified": false,
+  "oracle_modified": false,
+  "domain_adapter_modified": false,
+  "python_source_modified": false,
+  "required_next_step": "FORMAL_CORE_V1_ACTION_ALGEBRA_OR_DOMAIN2_ACTION_MAPPING_AMENDMENT_REQUIRED"
+}
