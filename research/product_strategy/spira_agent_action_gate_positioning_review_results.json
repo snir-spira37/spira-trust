@@ -1,0 +1,89 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_POSITIONING_REVIEW_RESULTS",
+  "schema_version": 1,
+  "document_reviewed": "research/product_strategy/spira_agent_action_gate_positioning.md",
+  "review_scope": "documentation and positioning only",
+  "implementation_sources_checked": [
+    "source/spira_core/formal_core_v1.py",
+    "source/spira_core/terraform_plan_producer.py",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean",
+    "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"
+  ],
+  "fixture_sources_checked": [
+    "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json",
+    "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json",
+    "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_fixture_manifest.json"
+  ],
+  "schema_sources_checked": [
+    "source/spira_core/formal_core_v1.py:REQUIRED_FIELDS",
+    "source/spira_core/formal_core_v1.py:_contract",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean:MachineContract",
+    "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json:expected_formal_core_contract",
+    "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json:expected_formal_core_contract"
+  ],
+  "current_domains_confirmed": [
+    "package artifacts",
+    "test evidence",
+    "Terraform plan evidence"
+  ],
+  "domain3_values_verified": {
+    "blocked_action": "STOP_BLOCKED",
+    "not_evaluated_action": "REPORT_NOT_EVALUATED",
+    "malformed_json_action": "RERUN_REQUIRED",
+    "resource_change_reason_code": "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+    "resource_change_blocking_item": "resource change requires review",
+    "not_claimed": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ]
+  },
+  "claim_classification": {
+    "artifact_backed_evidence_gate": "positioning interpretation supported by current implementation and accepted evidence",
+    "current_domains_package_test_terraform": "directly supported by current implementation and accepted evidence",
+    "policy_spira_boundary": "positioning interpretation consistent with current implementation boundary",
+    "model_non_authority": "supported by accepted passthrough architecture and formal-core positioning evidence",
+    "domain3_terraform_demo": "directly supported by existing Domain 3 implementation and fixtures",
+    "backup_restore_approval_database_api_mcp": "roadmap or not claimed",
+    "universal_agent_governance": "not claimed",
+    "formal_parser_correctness": "not claimed",
+    "production_release_readiness": "not claimed"
+  },
+  "unsupported_claims": [],
+  "invented_fields": [],
+  "invented_actions": [],
+  "invented_reason_codes": [],
+  "invented_evidence_types": [],
+  "invented_audit_artifacts": [],
+  "domain_expansion_detected": false,
+  "policy_boundary_preserved": true,
+  "model_authority_boundary_preserved": true,
+  "not_claimed_boundary_preserved": true,
+  "formal_and_parser_boundaries_preserved": true,
+  "domain3_demo_reproducible_from_existing_material": true,
+  "documentation_only": true,
+  "documentation_corrections_applied": [
+    {
+      "severity": "LOW",
+      "file": "research/product_strategy/spira_agent_action_gate_positioning.md",
+      "change": "Replaced generic audit-artifact wording in the demo path with existing machine-readable result artifact / evidence output wording, and explicitly barred inventing a new audit schema for presentation."
+    }
+  ],
+  "tests_run": [
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/test_formal_core_v1_domain3_raw_adapter_conformance.py tests/test_terraform_plan_producer.py",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "POSITIONING_ACCEPTED",
+  "blockers": [],
+  "next_step": "COMPETITOR_MAPPING_AUTHORIZATION_REQUIRED"
+}
