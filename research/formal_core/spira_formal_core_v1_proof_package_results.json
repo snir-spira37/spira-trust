@@ -1,0 +1,143 @@
+{
+  "artifact_count": 95,
+  "authorization": "research/formal_core/spira_formal_core_v1_proof_package_authorization.md",
+  "checks": {
+    "domain_harnesses": [
+      {
+        "command": "python tools/run_formal_core_v1_domain1_conformance.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"status\": \"SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_ACCEPTED\"}\n"
+      },
+      {
+        "command": "python tools/run_formal_core_v1_domain2_conformance.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"status\": \"SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_ACCEPTED\"}\n"
+      },
+      {
+        "command": "python tools/run_formal_core_v1_domain3_conformance.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"status\": \"SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED\"}\n"
+      }
+    ],
+    "focused_tests": [
+      {
+        "command": "python -m pytest tests/test_formal_core_v1_python_boundary.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.07s ==============================\n"
+      },
+      {
+        "command": "python -m pytest tests/test_unification_proof.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 10 items\n\ntests\\test_unification_proof.py ..........                               [100%]\n\n============================= 10 passed in 0.10s ==============================\n"
+      },
+      {
+        "command": "python -m pytest tests/test_mvp_unified.py",
+        "cwd": ".",
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.37s ==============================\n"
+      }
+    ],
+    "lake_build": {
+      "command": "lake build",
+      "cwd": "formal/spira_formal_core_v1",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "Build completed successfully (35 jobs).\n"
+    },
+    "proof_scan": {
+      "matches": [],
+      "status": "PASS"
+    },
+    "status_artifacts": {
+      "all_domains": {
+        "path": "research/formal_core/spira_formal_core_v1_all_domains_conformance_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_ALL_DOMAINS_CONFORMANCE_ACCEPTED",
+        "status_present": true
+      },
+      "differential_harness": {
+        "path": "research/formal_core/spira_formal_core_v1_differential_harness_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_DIFFERENTIAL_HARNESS_ACCEPTED",
+        "status_present": true
+      },
+      "domain1": {
+        "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_DOMAIN1_CONFORMANCE_ACCEPTED",
+        "status_present": true
+      },
+      "domain2": {
+        "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_DOMAIN2_CONFORMANCE_ACCEPTED",
+        "status_present": true
+      },
+      "domain3": {
+        "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED",
+        "status_present": true
+      },
+      "executable_reference": {
+        "path": "research/formal_core/spira_formal_core_v1_executable_reference_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_EXECUTABLE_REFERENCE_ACCEPTED",
+        "status_present": true
+      },
+      "machine_checked": {
+        "path": "research/formal_core/spira_formal_core_v1_machine_checked_proof_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_MACHINE_CHECKED_PROOFS_ACCEPTED",
+        "status_present": true
+      },
+      "tcb": {
+        "path": "research/formal_core/spira_formal_core_v1_trusted_computing_base_ledger.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_TRUSTED_COMPUTING_BASE_LEDGER_SPECIFIED",
+        "status_present": true
+      },
+      "typed_boundary": {
+        "path": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_review.md",
+        "present": true,
+        "required_status": "SPIRA_FORMAL_CORE_V1_PYTHON_TYPED_EVIDENCE_BOUNDARY_ACCEPTED",
+        "status_present": true
+      }
+    }
+  },
+  "gates": {
+    "domain_harnesses_pass": true,
+    "focused_tests_pass": true,
+    "lake_build_pass": true,
+    "manifest_artifacts_hashed": true,
+    "proof_scan_pass": true,
+    "status_artifacts_pass": true,
+    "working_tree_has_no_unexpected_changes": true
+  },
+  "generated_at": "2026-07-15T14:23:25Z",
+  "manifest": "research/formal_core/spira_formal_core_v1_proof_package_manifest.json",
+  "not_authorized": [
+    "RAW_ADAPTER_PROOFS",
+    "PYTHON_RUNTIME_PROOF",
+    "PRODUCTION_RUNTIME_INTEGRATION",
+    "BENCHMARK_CHANGES",
+    "NEW_LIVE_SESSIONS",
+    "EXISTING_RESULT_RECLASSIFICATION",
+    "PRODUCTION_CLAIM",
+    "RELEASE"
+  ],
+  "schema": "SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_ACCEPTED"
+}

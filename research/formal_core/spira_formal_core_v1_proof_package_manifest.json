@@ -1,0 +1,501 @@
+{
+  "accepted_reviews": {
+    "all_domains": "research/formal_core/spira_formal_core_v1_all_domains_conformance_review.md",
+    "differential_harness": "research/formal_core/spira_formal_core_v1_differential_harness_review.md",
+    "domain1": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_review.md",
+    "domain2": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_review.md",
+    "domain3": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_review.md",
+    "executable_reference": "research/formal_core/spira_formal_core_v1_executable_reference_review.md",
+    "machine_checked": "research/formal_core/spira_formal_core_v1_machine_checked_proof_review.md",
+    "tcb": "research/formal_core/spira_formal_core_v1_trusted_computing_base_ledger.md",
+    "typed_boundary": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_review.md"
+  },
+  "artifacts": [
+    {
+      "bytes": 449,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean",
+      "sha256": "4b075602703396b0458cb74c6a13ec23f09b36564a5a2307777b78f40ae0233d"
+    },
+    {
+      "bytes": 598,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean",
+      "sha256": "56a05af5da79c6fc2f3850409c8a66f6d978df392da2e709b3fff6c17dc2d8c7"
+    },
+    {
+      "bytes": 787,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+      "sha256": "63e0bd287b66b8bf7d709a4004d2d125c6439e7df8d47cd0bb90354c14e27e35"
+    },
+    {
+      "bytes": 5724,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean",
+      "sha256": "6bd29f3b4724dbd81ca6f595d8a07efc237dc0ce08f20d25a025b1d848b57e54"
+    },
+    {
+      "bytes": 2866,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean",
+      "sha256": "43c105342b3558987b0c051ccb0d06c9324e804f7a7335a5553ca01e1d117479"
+    },
+    {
+      "bytes": 1414,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean",
+      "sha256": "39c955ac40cf102721834bd577c9aeef9f85309cf09cd1f81b6ecdde2b2b1ef2"
+    },
+    {
+      "bytes": 605,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Policy.lean",
+      "sha256": "be733f78845b3cb4de4f7209d864c5f2bdc0d94d436ef9f6909f3d2d85797530"
+    },
+    {
+      "bytes": 2034,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean",
+      "sha256": "c32db1b6e6563403f6d6d9fdf0af871ca38e0f4edb5bfb33a8d68eea13f5cf8e"
+    },
+    {
+      "bytes": 3550,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean",
+      "sha256": "f9f9efd320a2577dc8be8174242cea3356c94b29b6c6b69a7bb7d22e02faf214"
+    },
+    {
+      "bytes": 1295,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean",
+      "sha256": "babe3c9b38635140ee61aa8a16d2b25a2e18be37d5ac5443ee30e141e5563e4e"
+    },
+    {
+      "bytes": 602,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Policy.lean",
+      "sha256": "03db9d5eb27e1a92ee6dc2ca46a5e90c80ec430eb440a937ca7a11292d943531"
+    },
+    {
+      "bytes": 4170,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean",
+      "sha256": "82c5326c1d2a3b9e7b2a354c760496b23912f4445fe6307597ed6da62c21ad0a"
+    },
+    {
+      "bytes": 2573,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean",
+      "sha256": "7e43b3acbb6a7e029e1a027d52e58ff3c65b3330e850ee52568276ea8a948881"
+    },
+    {
+      "bytes": 1489,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean",
+      "sha256": "c314ae1aeb65375db52b94c7dfe6e70ce8c98ee3e52dc34589daba67374155db"
+    },
+    {
+      "bytes": 817,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Policy.lean",
+      "sha256": "88899424c4d09a6a59fae4592b369cc51ac2fa57ae8cee757da06fc22d2e7be1"
+    },
+    {
+      "bytes": 3346,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean",
+      "sha256": "ee697d2347511c92820cf1f77eb4c83ba8c96171c536ab23c476df3542797373"
+    },
+    {
+      "bytes": 782,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean",
+      "sha256": "5859d550c3d00a413047982f91bb2a50c05f61532658f5a3c4b6c02c24de4b4e"
+    },
+    {
+      "bytes": 926,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean",
+      "sha256": "99d276fac0cb19872b65db5f4bb446e74563f3166abb351c5b317c0ad7803bf2"
+    },
+    {
+      "bytes": 693,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean",
+      "sha256": "a0455441587eb34fbb8dde99f9d5f9563055d47bb3117f2603f80ae717e53ba1"
+    },
+    {
+      "bytes": 482,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean",
+      "sha256": "c1666656d407df4da1f0a51584ebe0d84b64c782a3a5d12f6e6faaeb83280970"
+    },
+    {
+      "bytes": 523,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean",
+      "sha256": "4a3a389c80f280890789b182c58698e9764fc9cc6b703b4b10dccf3834ba3a10"
+    },
+    {
+      "bytes": 908,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean",
+      "sha256": "6b284ada817176a00eb90a58b90179cfb5a64781f0abaebd1b8ae8e06a602052"
+    },
+    {
+      "bytes": 493,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean",
+      "sha256": "2b53d5692d74b394c76c5c28f6c596071a1c6626ec6cc4e6ca6070f7713b6933"
+    },
+    {
+      "bytes": 293,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean",
+      "sha256": "08afb57d5df6851bb9187d7e9bc696548c872ef456ce75dfb067548c3539762d"
+    },
+    {
+      "bytes": 401,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean",
+      "sha256": "66e5bcc256fdfea9064436a7e8daf865163264d29d6aa57779e2a64211364d64"
+    },
+    {
+      "bytes": 295,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean",
+      "sha256": "c3067ec0ecdb6f08e5495384fb944cfa6da4ccc3326ba0432bf79532b0186184"
+    },
+    {
+      "bytes": 3488,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean",
+      "sha256": "8aee7a502aa536f9ca311cffade1058587b7aa8ec662919b1cc15db8e02fc241"
+    },
+    {
+      "bytes": 591,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean",
+      "sha256": "08d883e8e2fef4a76ba56a0f3eadbf906cb8001890b835dcd16166d9878c35e0"
+    },
+    {
+      "bytes": 251,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean",
+      "sha256": "3963989c9567f1aab53d12cb6ddc42bc714b10ee5e29b033361e4d32d0f65c9f"
+    },
+    {
+      "bytes": 502,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean",
+      "sha256": "d58e127db685a6c6017afb480b10956b9769a2f43fb611959f811d2f19dd4a70"
+    },
+    {
+      "bytes": 468,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean",
+      "sha256": "551fd2c09ca0ddd02015548891bb47b8e45634bfec601c325d6fad3faad2390c"
+    },
+    {
+      "bytes": 1112,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean",
+      "sha256": "fa1e7590424370c36c78a8ed25a890de241b9c8c287d010376be19dbc539114e"
+    },
+    {
+      "bytes": 3956,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean",
+      "sha256": "33a4cf8f1f3fbd7138e3e7ffa5de7d8d3ef62c13d9c7e5a03cc88143758dbd92"
+    },
+    {
+      "bytes": 7815,
+      "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_authorization.md",
+      "sha256": "fce2b2fe755bf9c7d9c45ea5372ba6f582a350850b5f96735f0590594153d1a5"
+    },
+    {
+      "bytes": 973,
+      "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_report.md",
+      "sha256": "0dcbabc38c1d1ace1d40f4c14ae6bd508610ed1feef957f36045f8d65799637f"
+    },
+    {
+      "bytes": 2063,
+      "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_results.json",
+      "sha256": "a81ac5e24cf964dbacb92bbb216ebb559c1851395c3b4e7d7c9ac7e92233bef9"
+    },
+    {
+      "bytes": 1818,
+      "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_review.md",
+      "sha256": "8bede4dd3d89751fd4bb4e040afbfd14aa66bc05d94732244fa0e66b3bc3f58d"
+    },
+    {
+      "bytes": 7275,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_action_mapping_amendment_proposal.md",
+      "sha256": "c79f4777cb532012310c37f3c88149ce4dfe7544b085fd6b15ef32cc26cad7de"
+    },
+    {
+      "bytes": 5411,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_action_mapping_amendment_review.md",
+      "sha256": "cd5912691ee394d5a3f8dc78065965f88c45b49e8506423d1cab644c822deddf"
+    },
+    {
+      "bytes": 4241,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_authorization.md",
+      "sha256": "33ab471b6ae48892f624e332fdb490e83e154d6700837e12a3e257d9886b8f3a"
+    },
+    {
+      "bytes": 2566,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_report.md",
+      "sha256": "b3ff4bb093936ef5aaba4ef61eabace602983cd1894a6d4ad80c85c727bccc2b"
+    },
+    {
+      "bytes": 5466,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_authorization.md",
+      "sha256": "71e1fabdf49b2a73ab87fe63170e62b132b14899a0422a0266dea13250892e97"
+    },
+    {
+      "bytes": 976,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_report.md",
+      "sha256": "9863f9ef99ed106c827bf208004e6e6eab2559e823de6cb5f0567366ec6c8430"
+    },
+    {
+      "bytes": 11144,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_results.json",
+      "sha256": "8920dfc8e0bf68e86f4e8e485100744a56341adffee78671ca0d51494f562507"
+    },
+    {
+      "bytes": 1954,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_rerun_review.md",
+      "sha256": "b219cd402c06bb6bbc0b0da1fb52b709daf91a9e8625da770ea2666c87c2e5cb"
+    },
+    {
+      "bytes": 1118,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_results.json",
+      "sha256": "2f015de18805209f1f1d82efed3a074866958f6e36acad0abed9d21aaa33ee74"
+    },
+    {
+      "bytes": 2265,
+      "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_conformance_review.md",
+      "sha256": "c80e7745bed91bb3cd52f967d38618157e2d3a3253a3cab413a125e466fc653f"
+    },
+    {
+      "bytes": 5106,
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_authorization.md",
+      "sha256": "119af7acb2818d881461d72ca0e83998577d59f906d729d0f326881009e1f224"
+    },
+    {
+      "bytes": 874,
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_report.md",
+      "sha256": "b2654fb3051d62fe525150f36535357efc2be9dbe7c773c0e20d79ac21e0231e"
+    },
+    {
+      "bytes": 8601,
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_results.json",
+      "sha256": "064e7dc8734f487a471d973bb24775b5681d7120ba2f2bd3a7b66ea1b170d2c5"
+    },
+    {
+      "bytes": 1447,
+      "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_review.md",
+      "sha256": "488a52c598ea7411e7185ae0b06847962267b22571268cef030b66eb59685355"
+    },
+    {
+      "bytes": 4753,
+      "path": "research/formal_core/spira_formal_core_v1_all_domains_conformance_review.md",
+      "sha256": "dc8fe46ce067ef22e3664729c9f94b3d40fcbdeb7791cf02578502db5e43a0ec"
+    },
+    {
+      "bytes": 2274,
+      "path": "research/formal_core/spira_formal_core_v1_claim_boundary_summary.md",
+      "sha256": "168446e7b0e6428c7764f17e862c3d712e4f52a6ec3839983a33488d0406392d"
+    },
+    {
+      "bytes": 5871,
+      "path": "research/formal_core/spira_formal_core_v1_contract_algebra_spec.md",
+      "sha256": "d7d60aad2f2f0127888ae4710acb93ab51909471e2aa619a70c25a7ec4062153"
+    },
+    {
+      "bytes": 11506,
+      "path": "research/formal_core/spira_formal_core_v1_declaration_proposal.md",
+      "sha256": "1e7aae8bd4290a48a68a5c60acd98d1ebca47c87d3397d59507edc2771d48686"
+    },
+    {
+      "bytes": 7794,
+      "path": "research/formal_core/spira_formal_core_v1_declaration_review.md",
+      "sha256": "f84a7a10e4c9a62226944e756a5d8da5685f29737490faf25c634f8c9dee3195"
+    },
+    {
+      "bytes": 3437,
+      "path": "research/formal_core/spira_formal_core_v1_differential_harness_authorization.md",
+      "sha256": "14aa9427fbb0acb4a5a8c8f6717fcfd56b02afc2efb87328cdeb891f79078020"
+    },
+    {
+      "bytes": 733,
+      "path": "research/formal_core/spira_formal_core_v1_differential_harness_report.md",
+      "sha256": "e94ede4362d6f069c10b131fb3505c8908822daf0a7143a518b8a986f6a2701b"
+    },
+    {
+      "bytes": 2536,
+      "path": "research/formal_core/spira_formal_core_v1_differential_harness_rerun_authorization.md",
+      "sha256": "3852b28786c470ce479880ecfef053f89c4f66b2a026137b5bee173d1807bdc7"
+    },
+    {
+      "bytes": 2583,
+      "path": "research/formal_core/spira_formal_core_v1_differential_harness_results.json",
+      "sha256": "7c9896af4051b0a30a3fedae35c7117f3b1668566c9b9227805341334dcfd830"
+    },
+    {
+      "bytes": 532,
+      "path": "research/formal_core/spira_formal_core_v1_differential_harness_review.md",
+      "sha256": "89bc7390e20a34e61d6c2647bf125f48e51ec2d373f621392b0ae4ae325a6321"
+    },
+    {
+      "bytes": 3343,
+      "path": "research/formal_core/spira_formal_core_v1_domain2_conformance_plan.md",
+      "sha256": "f81f9a595bff4d8d67eb2a17b43a6ac146c901b538417a86c7512c21cbbe64ab"
+    },
+    {
+      "bytes": 3665,
+      "path": "research/formal_core/spira_formal_core_v1_executable_reference_authorization.md",
+      "sha256": "cd7b7c03733acadcf17e2ac108e82f1d87a3c50da0e5ae5bc6aebecf230cc8f9"
+    },
+    {
+      "bytes": 1610,
+      "path": "research/formal_core/spira_formal_core_v1_executable_reference_report.md",
+      "sha256": "77af4e338e99143903a41c30b64361e7a72eef234574d8eb3f7f2718c6a7b16c"
+    },
+    {
+      "bytes": 761,
+      "path": "research/formal_core/spira_formal_core_v1_executable_reference_results.json",
+      "sha256": "c6dbf5d4cc356f305f819b129613c6c51abdff1a3f4a2bcb7b983e7944065c2d"
+    },
+    {
+      "bytes": 2474,
+      "path": "research/formal_core/spira_formal_core_v1_executable_reference_review.md",
+      "sha256": "4c709d315ddefb3a127cff5e91985373874d7d9a3853b28e88cc7ed791b0a985"
+    },
+    {
+      "bytes": 8021,
+      "path": "research/formal_core/spira_formal_core_v1_lean_definition_implementation_authorization.md",
+      "sha256": "a73e7247895ddf25294e6187b7ee1b0e5b3c023e24d3b6656ac029a3b3ab2eac"
+    },
+    {
+      "bytes": 4136,
+      "path": "research/formal_core/spira_formal_core_v1_lean_definition_mapping.json",
+      "sha256": "2afb000a141356ba06c96aa29c2ab03c557227c333a3bd6d72f0fcf774e708e0"
+    },
+    {
+      "bytes": 3849,
+      "path": "research/formal_core/spira_formal_core_v1_lean_definition_report.md",
+      "sha256": "cae7ad3b27dfbfea3c341936a8051a9a49c03933726818228ad01d50c9f11d72"
+    },
+    {
+      "bytes": 3389,
+      "path": "research/formal_core/spira_formal_core_v1_lean_definition_review.md",
+      "sha256": "52cc9b4817fe2d290bb5026c0c8ed756321e599bfb36523832c9e12dc91b82d7"
+    },
+    {
+      "bytes": 3184,
+      "path": "research/formal_core/spira_formal_core_v1_machine_checked_proof_report.md",
+      "sha256": "de0860a3d60f8207c14a055860592a5168696e0d1060a81363034e1f1c29a350"
+    },
+    {
+      "bytes": 1189,
+      "path": "research/formal_core/spira_formal_core_v1_machine_checked_proof_results.json",
+      "sha256": "a3abbe0cf24450613a4d59301f6486252d59a10ae6a741476976a6290371f70e"
+    },
+    {
+      "bytes": 3405,
+      "path": "research/formal_core/spira_formal_core_v1_machine_checked_proof_review.md",
+      "sha256": "9f6287dd147e3c35662ef7b2e6e094e8cbe18cd2a8508949d3c1dca2e9b908e5"
+    },
+    {
+      "bytes": 3258,
+      "path": "research/formal_core/spira_formal_core_v1_proof_inventory.json",
+      "sha256": "55afb77231db8446e2b7b32d6330b9fa431c8d3f0103267bbf09c1537b32ef01"
+    },
+    {
+      "bytes": 4872,
+      "path": "research/formal_core/spira_formal_core_v1_proof_package_authorization.md",
+      "sha256": "ab2c448c0bfefb4fa22ec45115c80f6521086ef6192023daf322eca824330d57"
+    },
+    {
+      "bytes": 4781,
+      "path": "research/formal_core/spira_formal_core_v1_python_lean_equivalence_protocol.md",
+      "sha256": "987b021673fb9e13c085ebe20fe4070143dc010e61e6e1f0bd21dfefdfe6024f"
+    },
+    {
+      "bytes": 2268,
+      "path": "research/formal_core/spira_formal_core_v1_python_lean_equivalence_protocol_review.md",
+      "sha256": "826e320f50e4a2624e76881a7560876e61f34144f01984ac79432317e8b165ff"
+    },
+    {
+      "bytes": 4016,
+      "path": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_authorization.md",
+      "sha256": "881da019cde95c3031afc7524cf43f3f2c5a909458bb4ba8204b9678e1d9ec26"
+    },
+    {
+      "bytes": 1697,
+      "path": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_report.md",
+      "sha256": "de51b460959c00c540dc6b5612bb14fdd3ed772cbc6ff21b05168ac4e4407862"
+    },
+    {
+      "bytes": 1239,
+      "path": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_results.json",
+      "sha256": "a91cc07a1426bb876e8f412776d7c8842c766c766b84ff0a596c9e943e0127d4"
+    },
+    {
+      "bytes": 2079,
+      "path": "research/formal_core/spira_formal_core_v1_python_typed_evidence_boundary_review.md",
+      "sha256": "7f109461466edbe3cec363577d9d3ac876e5dfc6ad630bd33601ed2f3fa95b7e"
+    },
+    {
+      "bytes": 1644,
+      "path": "research/formal_core/spira_formal_core_v1_reproduction_guide.md",
+      "sha256": "dbb01e4c81e94f238beb621ccfac2e98859b54204b1b97bb9cec3485d811cf55"
+    },
+    {
+      "bytes": 5901,
+      "path": "research/formal_core/spira_formal_core_v1_seven_theorem_proof_authorization.md",
+      "sha256": "37ba070c1e7cd6831c277c1c8b7010789f1e80fc9e39f107388d39ac11a19db0"
+    },
+    {
+      "bytes": 9118,
+      "path": "research/formal_core/spira_formal_core_v1_specification_authorization.md",
+      "sha256": "fe326da0679728b196519e1cbdd21458c521cbc407296ab1f14d9fcafa2f8030"
+    },
+    {
+      "bytes": 4827,
+      "path": "research/formal_core/spira_formal_core_v1_specification_review.md",
+      "sha256": "9d1b3d26484adca7677325f73da4b729a0012f731aefaa2fb5da8dcf1115c31b"
+    },
+    {
+      "bytes": 5485,
+      "path": "research/formal_core/spira_formal_core_v1_theorem_spec.md",
+      "sha256": "b760f746df6f909b1cee3a74e42978948dd437d284cbb234eb9b707c27824e71"
+    },
+    {
+      "bytes": 4005,
+      "path": "research/formal_core/spira_formal_core_v1_trusted_computing_base_ledger.md",
+      "sha256": "91c7a5096c29180c22f993a2d9bfb50c53cdfcef3c3854bf14c50a29d87e0b63"
+    },
+    {
+      "bytes": 4199,
+      "path": "tests/test_formal_core_v1_python_boundary.py",
+      "sha256": "7bba7d6295dc9d232c20db5d6337886962a2634c22e24dfc33fe34613af44e36"
+    },
+    {
+      "bytes": 4971,
+      "path": "tests/test_mvp_unified.py",
+      "sha256": "6ac7e3e33fcc1df8a76d5141db9d57d4e0c03a0639175dd3eea93a8ca7ebd6d2"
+    },
+    {
+      "bytes": 9661,
+      "path": "tests/test_unification_proof.py",
+      "sha256": "84d4bad4e496d18825ca1aedb4cdd2f7e412403be67633ac9cf288a26c43e725"
+    },
+    {
+      "bytes": 13422,
+      "path": "tools/run_formal_core_v1_differential_harness.py",
+      "sha256": "afed5537ebdbea9007237cfc90fb45f412c142f949ae538f1cad445f78ef4d07"
+    },
+    {
+      "bytes": 16662,
+      "path": "tools/run_formal_core_v1_domain1_conformance.py",
+      "sha256": "8083ec39ec7e3b000cd86bf19f969e565306d022dc817f1d4705df4f65aac847"
+    },
+    {
+      "bytes": 19774,
+      "path": "tools/run_formal_core_v1_domain2_conformance.py",
+      "sha256": "a56f4ecd940aa767a8d525ddd9cba4740a1fb9fe961e6b538eaabb0819a100ba"
+    },
+    {
+      "bytes": 17868,
+      "path": "tools/run_formal_core_v1_domain3_conformance.py",
+      "sha256": "b275352353a995d3cdfa1af6cebb19d94eea013657f5b15374b73eade6453740"
+    },
+    {
+      "bytes": 13226,
+      "path": "tools/run_formal_core_v1_proof_package.py",
+      "sha256": "dbbf8582d4e61b11ac21ad4354aa06c2edd9e037c9340631e3e0a4d9ee8450da"
+    }
+  ],
+  "claim_boundary": "typed evidence boundary only; raw adapters and production runtime not formally proved",
+  "generated_at": "2026-07-15T14:23:17Z",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "repository": {
+    "branch": "codex/formal-core-v1-lean",
+    "commit": "902f15ea935560d2997438ad9eebfb2cdd25bd6a",
+    "status_short": "?? research/formal_core/spira_formal_core_v1_claim_boundary_summary.md\n?? research/formal_core/spira_formal_core_v1_proof_package_manifest.json\n?? research/formal_core/spira_formal_core_v1_proof_package_report.md\n?? research/formal_core/spira_formal_core_v1_proof_package_results.json\n?? research/formal_core/spira_formal_core_v1_proof_package_review.md\n?? research/formal_core/spira_formal_core_v1_reproduction_guide.md\n?? tools/run_formal_core_v1_proof_package.py",
+    "unexpected_dirty_paths": []
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_MANIFEST",
+  "schema_version": 1
+}
