@@ -149,7 +149,7 @@ def run_primary(
     recover_ready_infrastructure_events(agent, manifest, results)
     normalize_existing_sessions(results)
 
-    pre_repo_state = readiness.repository_state()
+    pre_repo_state = repository_state_for_mutation_gate(agent)
     errors: list[str] = []
     executed_now = 0
     if existing_hard_stop(results):
@@ -181,7 +181,7 @@ def run_primary(
             errors.append("PRIMARY_HARD_STOP_CONDITION")
             break
 
-    if readiness.repository_state() != pre_repo_state:
+    if repository_state_for_mutation_gate(agent) != pre_repo_state:
         errors.append(f"{agent.upper()}_PRIMARY_REPOSITORY_MUTATION_OBSERVED")
 
     return finalize_results(agent, started_at, manifest, results, raw_manifest, errors)
@@ -551,6 +551,41 @@ def update_results_counts(results: dict[str, Any], manifest: Mapping[str, Any]) 
     results["workspace_mutation_count"] = sum(1 for item in sessions if item.get("workspace_mutated"))
     results["forbidden_tool_count"] = sum(int(item.get("forbidden_tool_count") or 0) for item in sessions)
     results["persistent_infrastructure_failure_count"] = sum(1 for item in sessions if item.get("persistent_infrastructure_failure"))
+
+
+def repository_state_for_mutation_gate(agent: str) -> str:
+    allowed = authorized_artifact_paths(agent)
+    lines = []
+    for line in readiness.repository_state().splitlines():
+        path = porcelain_path(line)
+        if path in allowed:
+            continue
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def porcelain_path(line: str) -> str:
+    if len(line) < 4:
+        return line.strip()
+    path = line[3:].strip()
+    if " -> " in path:
+        path = path.split(" -> ", 1)[1].strip()
+    return path.strip('"').replace("\\", "/")
+
+
+def authorized_artifact_paths(agent: str) -> set[str]:
+    cfg = AGENT_CONFIG[agent]
+    paths = {
+        cfg["results"],
+        cfg["report"],
+        cfg["review"],
+        cfg["private_manifest"],
+        cfg["session_manifest"],
+        AGENT_ORDER_PATH,
+        COMBINED_REPORT_PATH,
+        COMBINED_REVIEW_PATH,
+    }
+    return {relative(path) for path in paths}
 
 
 def finalize_results(
