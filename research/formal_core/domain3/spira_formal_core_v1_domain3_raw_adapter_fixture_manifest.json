@@ -1,0 +1,953 @@
+{
+  "action_distribution": {
+    "PROCEED": 5,
+    "REPORT_NOT_EVALUATED": 10,
+    "RERUN_REQUIRED": 2,
+    "STOP_BLOCKED": 14
+  },
+  "authorization": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_fixture_authorization.md",
+  "claim_boundary": "synthetic fixtures only; raw Terraform JSON parser proof not claimed",
+  "coverage": {
+    "create_update_delete": 3,
+    "duplicate_resource_address": 2,
+    "errored_plan": 2,
+    "incomplete_plan": 2,
+    "internal_adapter_failure": 2,
+    "invalid_json": 2,
+    "no_change": 3,
+    "not_applyable": 2,
+    "optional_provenance": 2,
+    "replace_path": 3,
+    "sensitive_path": 3,
+    "unknown_path": 3,
+    "unsupported_format": 2
+  },
+  "coverage_pass": true,
+  "entries": [
+    {
+      "classification": "no_change",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NO_CHANGES"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": false,
+      "expected_unknown_paths": [],
+      "fixture_id": "no_change_01",
+      "fixture_sha256": "4ebf7fd12cc660a719b690fc71f4ed1be6b6163fd94755c4cc444fcd0af9e93e",
+      "input_state": "SUPPORTED_NO_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/no_change/no_change_01.json"
+    },
+    {
+      "classification": "no_change",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NO_CHANGES"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": false,
+      "expected_unknown_paths": [],
+      "fixture_id": "no_change_02",
+      "fixture_sha256": "9aa8cde8667c6ef7a43b520c1183df1a3ee0b8972e43c6196fb98e3a3c660771",
+      "input_state": "SUPPORTED_NO_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/no_change/no_change_02.json"
+    },
+    {
+      "classification": "no_change",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NO_CHANGES"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": false,
+      "expected_unknown_paths": [],
+      "fixture_id": "no_change_03",
+      "fixture_sha256": "a2b6ed93599be66d415eda43660848aaa77fc9b1bd4f2a1f4bd4e8886665ed9e",
+      "input_state": "SUPPORTED_NO_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/no_change/no_change_03.json"
+    },
+    {
+      "classification": "create_update_delete",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "resource change requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.change_1:create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "create_update_delete_01",
+      "fixture_sha256": "49c622e62c5255b3ec05214640fd679a89228b83ee1bb10a7ce01e258d37adbe",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json"
+    },
+    {
+      "classification": "create_update_delete",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "resource change requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.change_2:update"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "create_update_delete_02",
+      "fixture_sha256": "5839e7865727ff1ce3e67fd85b8247c0df92cd0d6d065fae6ff0acc19d3926e9",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_02.json"
+    },
+    {
+      "classification": "create_update_delete",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "resource change requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.change_3:delete"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "create_update_delete_03",
+      "fixture_sha256": "c828bb974af7b40c37ec700f6594ca661c49f7b2cf717bac9201f63ed65fe077",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_03.json"
+    },
+    {
+      "classification": "replace_path",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "replacement path requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+        "TERRAFORM_REPLACE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [
+        "/resource_changes/0/change/replace_paths/0#aws_iam_policy.replace_1"
+      ],
+      "expected_resource_actions": [
+        "aws_iam_policy.replace_1:delete,create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "replace_path_01",
+      "fixture_sha256": "75dff42073811cb64ab0a5ca7957fc9098a36aa79db897a1d63147ea1e51ebd7",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/replace_path/replace_path_01.json"
+    },
+    {
+      "classification": "replace_path",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "replacement path requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+        "TERRAFORM_REPLACE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [
+        "/resource_changes/0/change/replace_paths/0#aws_iam_policy.replace_2"
+      ],
+      "expected_resource_actions": [
+        "aws_iam_policy.replace_2:delete,create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "replace_path_02",
+      "fixture_sha256": "6576a9187fa86c19fa31fc41309f021493d7b19b0b484d59a6a5e13cc3b8e723",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/replace_path/replace_path_02.json"
+    },
+    {
+      "classification": "replace_path",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "replacement path requires review"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+        "TERRAFORM_REPLACE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [
+        "/resource_changes/0/change/replace_paths/0#aws_iam_policy.replace_3"
+      ],
+      "expected_resource_actions": [
+        "aws_iam_policy.replace_3:delete,create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "replace_path_03",
+      "fixture_sha256": "7186f65216c18d77b64830e0a5e24515098c2bf39d439eddaeb156bedad9422d",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/replace_path/replace_path_03.json"
+    },
+    {
+      "classification": "errored_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "plan errored"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_ERRORED"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "errored_plan_01",
+      "fixture_sha256": "2401776c6bdce0a54b4409555bea3cf55f077650d417abf5be1116a1a7a7b848",
+      "input_state": "PLAN_ERRORED",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/errored_plan/errored_plan_01.json"
+    },
+    {
+      "classification": "errored_plan",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "plan errored"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_ERRORED"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "errored_plan_02",
+      "fixture_sha256": "baeab25da9938bab81c39ae80bdae1f77b453f575896b932d96b9101397cec1b",
+      "input_state": "PLAN_ERRORED",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/errored_plan/errored_plan_02.json"
+    },
+    {
+      "classification": "not_applyable",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "plan is not applyable"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NOT_APPLYABLE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.not_applyable_1:create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "not_applyable_01",
+      "fixture_sha256": "2f06fb462db01b7d49f7a4ddf72d44e80be9d2a9d28f1ffa8d1537119de2b0b9",
+      "input_state": "PLAN_NOT_APPLYABLE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/not_applyable/not_applyable_01.json"
+    },
+    {
+      "classification": "not_applyable",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "plan is not applyable"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NOT_APPLYABLE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.not_applyable_2:create"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "not_applyable_02",
+      "fixture_sha256": "948393318d51320d51e7761e83409885557db8680e209bf16d47486ed02ced5f",
+      "input_state": "PLAN_NOT_APPLYABLE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/not_applyable/not_applyable_02.json"
+    },
+    {
+      "classification": "incomplete_plan",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "terraform plan incomplete"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_INCOMPLETE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "incomplete_plan_01",
+      "fixture_sha256": "b69e66ea37f7501938bff3b9b4924351d23d1b96adba1f79f50dd29731e9a910",
+      "input_state": "PLAN_INCOMPLETE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json"
+    },
+    {
+      "classification": "incomplete_plan",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "terraform plan incomplete"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_INCOMPLETE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "incomplete_plan_02",
+      "fixture_sha256": "14680f99d4d6167a1cb6e1eca932e3e21ae840efb688d1abbd85a2e8061ea9c7",
+      "input_state": "PLAN_INCOMPLETE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_02.json"
+    },
+    {
+      "classification": "unsupported_format",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "unsupported Terraform plan format"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_FORMAT_UNSUPPORTED"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "unsupported_format_01",
+      "fixture_sha256": "46598aed2ae2b35cba6b5d78620e2fc0d01e7faa4d486666ad21143bcaa82031",
+      "input_state": "FORMAT_UNSUPPORTED",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/unsupported_format/unsupported_format_01.json"
+    },
+    {
+      "classification": "unsupported_format",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "unsupported Terraform plan format"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_FORMAT_UNSUPPORTED"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "unsupported_format_02",
+      "fixture_sha256": "5069ec26bea2dc3e6efbcb49a04499c1d561bed97df9b6f4551051d7670d6424",
+      "input_state": "FORMAT_UNSUPPORTED",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/unsupported_format/unsupported_format_02.json"
+    },
+    {
+      "classification": "invalid_json",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "Terraform plan JSON parse failed"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "invalid_json_01",
+      "fixture_sha256": "50a28ffc97453e6aa612b6415349b44457880c882bfc24f586d4476444ea1970",
+      "input_state": "JSON_INVALID",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json"
+    },
+    {
+      "classification": "invalid_json",
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "Terraform plan JSON parse failed"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "invalid_json_02",
+      "fixture_sha256": "23f7cba4afe884521760c1815fd0f21bf38020556c51ca46f80636287c52c32d",
+      "input_state": "JSON_INVALID",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_02.json"
+    },
+    {
+      "classification": "unknown_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "planned value unknown"
+      ],
+      "expected_reason_codes": [
+        "PLANNED_VALUE_UNKNOWN"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [
+        "/resource_changes/0/change/after_unknown/arn#aws_iam_role.unknown_1"
+      ],
+      "fixture_id": "unknown_path_01",
+      "fixture_sha256": "e3e3b11515471b4eebaaa53b2d4487c58dbf0db51ddab9651be2f81627e084cd",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/unknown_path/unknown_path_01.json"
+    },
+    {
+      "classification": "unknown_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "planned value unknown"
+      ],
+      "expected_reason_codes": [
+        "PLANNED_VALUE_UNKNOWN"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [
+        "/resource_changes/0/change/after_unknown/arn#aws_iam_role.unknown_2"
+      ],
+      "fixture_id": "unknown_path_02",
+      "fixture_sha256": "7dae6dc4d48c450d987aaa4515eb88597bb448e93f4024d99af162375946d064",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/unknown_path/unknown_path_02.json"
+    },
+    {
+      "classification": "unknown_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "planned value unknown"
+      ],
+      "expected_reason_codes": [
+        "PLANNED_VALUE_UNKNOWN"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [
+        "/resource_changes/0/change/after_unknown/arn#aws_iam_role.unknown_3"
+      ],
+      "fixture_id": "unknown_path_03",
+      "fixture_sha256": "701fa8e909ba03b8e33060502073441da95467e2cee49dc7280c620397112d2b",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/unknown_path/unknown_path_03.json"
+    },
+    {
+      "classification": "sensitive_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "sensitive path present"
+      ],
+      "expected_reason_codes": [
+        "SENSITIVE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [
+        "/resource_changes/0/change/after_sensitive/secret#aws_iam_role.sensitive_1"
+      ],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "sensitive_path_01",
+      "fixture_sha256": "36ab4bc7d5a443f7601f4e8fc3cf139943f6341a85ec965ac586a2982a5b6f53",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/sensitive_path/sensitive_path_01.json"
+    },
+    {
+      "classification": "sensitive_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "sensitive path present"
+      ],
+      "expected_reason_codes": [
+        "SENSITIVE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [
+        "/resource_changes/0/change/after_sensitive/secret#aws_iam_role.sensitive_2"
+      ],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "sensitive_path_02",
+      "fixture_sha256": "e58136cd52c92ebc627345c843ddea1ef121e6e9f6639d7668aeb6263336821f",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/sensitive_path/sensitive_path_02.json"
+    },
+    {
+      "classification": "sensitive_path",
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "sensitive path present"
+      ],
+      "expected_reason_codes": [
+        "SENSITIVE_PATH_PRESENT"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [
+        "/resource_changes/0/change/after_sensitive/secret#aws_iam_role.sensitive_3"
+      ],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "sensitive_path_03",
+      "fixture_sha256": "0931df7a8ed198839488057d19a70283fa9d5f5de6aff5ad054f0b7c82ae6b02",
+      "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/sensitive_path/sensitive_path_03.json"
+    },
+    {
+      "classification": "optional_provenance",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NO_CHANGES",
+        "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": false,
+      "expected_unknown_paths": [],
+      "fixture_id": "optional_provenance_01",
+      "fixture_sha256": "0a92aa5a36f258a9f5a74e4d0fd734807cdd8cc603e924ba0483352c62193403",
+      "input_state": "OPTIONAL_PROVENANCE_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/optional_provenance/optional_provenance_01.json"
+    },
+    {
+      "classification": "optional_provenance",
+      "expected_action": "PROCEED",
+      "expected_blocking_items": [],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_NO_CHANGES",
+        "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": false,
+      "expected_unknown_paths": [],
+      "fixture_id": "optional_provenance_02",
+      "fixture_sha256": "ae2cd16505624b6b5ad2c153ba114241778c0b824a972be9cb284d54fef6590a",
+      "input_state": "OPTIONAL_PROVENANCE_PRESENT",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/optional_provenance/optional_provenance_02.json"
+    },
+    {
+      "classification": "duplicate_resource_address",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "duplicate resource address with effective change"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+        "TERRAFORM_DUPLICATE_RESOURCE_ADDRESS"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.duplicate:update",
+        "aws_iam_role.duplicate:delete"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "duplicate_resource_address_01",
+      "fixture_sha256": "7acf11e288d3d01d396e6b9602788a630729f7702d481729907ad41740eb9f7c",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/duplicate_resource_address/duplicate_resource_address_01.json"
+    },
+    {
+      "classification": "duplicate_resource_address",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "duplicate resource address with effective change"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+        "TERRAFORM_DUPLICATE_RESOURCE_ADDRESS"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [
+        "aws_iam_role.duplicate:update",
+        "aws_iam_role.duplicate:delete"
+      ],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "duplicate_resource_address_02",
+      "fixture_sha256": "4b607b4037c2c0259888945acb838c34d986779eef71f932418542a2a2071122",
+      "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/duplicate_resource_address/duplicate_resource_address_02.json"
+    },
+    {
+      "classification": "internal_adapter_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "adapter internal failure"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "INTERNAL_ADAPTER_FAILURE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "internal_adapter_failure_01",
+      "fixture_sha256": "7b9da550065571b344de822a990805e3e0964505a9ca20a42206f5dd7c0250ac",
+      "input_state": "INTERNAL_ADAPTER_FAILURE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/internal_adapter_failure/internal_adapter_failure_01.json"
+    },
+    {
+      "classification": "internal_adapter_failure",
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "adapter internal failure"
+      ],
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_reason_codes": [
+        "INTERNAL_ADAPTER_FAILURE"
+      ],
+      "expected_replace_paths": [],
+      "expected_resource_actions": [],
+      "expected_sensitive_paths": [],
+      "expected_stop": true,
+      "expected_unknown_paths": [],
+      "fixture_id": "internal_adapter_failure_02",
+      "fixture_sha256": "5c61f40ddc9688b4d464dabb3fca07399ff934e1869d69113b7710fc919214ff",
+      "input_state": "INTERNAL_ADAPTER_FAILURE",
+      "path": "research/formal_core/domain3/raw_adapter_fixtures/internal_adapter_failure/internal_adapter_failure_02.json"
+    }
+  ],
+  "fixture_count": 31,
+  "next_recommended_authorization": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_IMPLEMENTATION_AUTHORIZATION",
+  "note": "expected_formal_core_contract records the accepted Domain 3 action algebra target; current Python reference conformance remains a later differential implementation question",
+  "required_coverage": {
+    "create_update_delete": 3,
+    "duplicate_resource_address": 2,
+    "errored_plan": 2,
+    "incomplete_plan": 2,
+    "internal_adapter_failure": 2,
+    "invalid_json": 2,
+    "no_change": 3,
+    "not_applyable": 2,
+    "optional_provenance": 2,
+    "replace_path": 3,
+    "sensitive_path": 3,
+    "unknown_path": 3,
+    "unsupported_format": 2
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE_MANIFEST_V1",
+  "status": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURES_ACCEPTED"
+}

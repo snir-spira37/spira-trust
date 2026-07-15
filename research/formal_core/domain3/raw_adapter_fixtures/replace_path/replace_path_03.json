@@ -1,0 +1,208 @@
+{
+  "classification": "replace_path",
+  "expected_action": "STOP_BLOCKED",
+  "expected_adapter_policy_action": {
+    "action": "STOP_BLOCKED",
+    "reason_codes": [
+      "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+      "TERRAFORM_REPLACE_PATH_PRESENT"
+    ],
+    "stop": true
+  },
+  "expected_blocking_items": [
+    "replacement path requires review"
+  ],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw Terraform JSON parser proof is not claimed",
+  "expected_evidence_refs": [
+    "plan.json:replace_path_03",
+    "manifest:replace_path_03"
+  ],
+  "expected_formal_core_contract": {
+    "action": "STOP_BLOCKED",
+    "blocking_items": [
+      "replacement path requires review"
+    ],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:replace_path_03",
+      "manifest:replace_path_03"
+    ],
+    "not_claimed": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "not_evaluated": [],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:replace_path_03"
+    ],
+    "reason_codes": [
+      "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+      "TERRAFORM_REPLACE_PATH_PRESENT"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "replace_path_03"
+  },
+  "expected_not_claimed": [
+    "APPLY_SUCCESS",
+    "INFRASTRUCTURE_COMPLIANCE",
+    "INFRASTRUCTURE_CORRECTNESS",
+    "INFRASTRUCTURE_COST",
+    "INFRASTRUCTURE_SECURITY",
+    "LIVE_STATE_FRESHNESS"
+  ],
+  "expected_not_evaluated": [],
+  "expected_proof_refs": [
+    "domain3_raw_adapter_fixture:replace_path_03"
+  ],
+  "expected_reason_codes": [
+    "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+    "TERRAFORM_REPLACE_PATH_PRESENT"
+  ],
+  "expected_replace_paths": [
+    "/resource_changes/0/change/replace_paths/0#aws_iam_policy.replace_3"
+  ],
+  "expected_resource_actions": [
+    "aws_iam_policy.replace_3:delete,create"
+  ],
+  "expected_sensitive_paths": [],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:replace_path_03",
+      "manifest:replace_path_03"
+    ],
+    "evidence_validity": "valid",
+    "policy_blocking_rules": [
+      "resource_change_blocks_proceed",
+      "plan_error_blocks_proceed",
+      "unknown_or_sensitive_values_prevent_silent_pass"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "policy_not_claimed_rules": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "policy_required_claims": [
+      "terraform_plan_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:replace_path_03"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "subject_id": "replace_path_03",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      },
+      {
+        "kind": "reason",
+        "value": "TERRAFORM_REPLACE_PATH_PRESENT"
+      },
+      {
+        "kind": "blocking",
+        "value": "replacement path requires review"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "APPLY_SUCCESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COMPLIANCE"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_CORRECTNESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COST"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_SECURITY"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "LIVE_STATE_FRESHNESS"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "plan.json:replace_path_03"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "manifest:replace_path_03"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain3_raw_adapter_fixture:replace_path_03"
+      },
+      {
+        "kind": "resource_action",
+        "value": "aws_iam_policy.replace_3:delete,create"
+      },
+      {
+        "kind": "replace_path",
+        "value": "/resource_changes/0/change/replace_paths/0#aws_iam_policy.replace_3"
+      }
+    ]
+  },
+  "expected_unknown_paths": [],
+  "fixture_id": "replace_path_03",
+  "input_state": "SUPPORTED_WITH_EFFECTIVE_CHANGES",
+  "raw_inputs": {
+    "main_tf": null,
+    "manifest": {
+      "files": {
+        "plan.json": "d47e9e370f5b3e99bddb878d90d32d7018a1265a5ae2618cecbcaca72d1f6d4f"
+      },
+      "fixture_id": "replace_path_03",
+      "synthetic": true
+    },
+    "plan_json": {
+      "applyable": true,
+      "complete": true,
+      "errored": false,
+      "format_version": "1.0",
+      "resource_changes": [
+        {
+          "address": "aws_iam_policy.replace_3",
+          "change": {
+            "actions": [
+              "delete",
+              "create"
+            ],
+            "after_sensitive": {},
+            "after_unknown": {},
+            "replace_paths": [
+              [
+                "name"
+              ]
+            ]
+          },
+          "name": "replace_3",
+          "type": "aws_iam_policy"
+        }
+      ],
+      "terraform_version": "1.8.0"
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE_V1"
+}

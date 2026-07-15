@@ -1,0 +1,192 @@
+{
+  "classification": "sensitive_path",
+  "expected_action": "REPORT_NOT_EVALUATED",
+  "expected_adapter_policy_action": {
+    "action": "REPORT_NOT_EVALUATED",
+    "reason_codes": [
+      "SENSITIVE_PATH_PRESENT"
+    ],
+    "stop": true
+  },
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw Terraform JSON parser proof is not claimed",
+  "expected_evidence_refs": [
+    "plan.json:sensitive_path_03",
+    "manifest:sensitive_path_03"
+  ],
+  "expected_formal_core_contract": {
+    "action": "REPORT_NOT_EVALUATED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:sensitive_path_03",
+      "manifest:sensitive_path_03"
+    ],
+    "not_claimed": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "not_evaluated": [
+      "sensitive path present"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:sensitive_path_03"
+    ],
+    "reason_codes": [
+      "SENSITIVE_PATH_PRESENT"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "stop": true,
+    "subject_id": "sensitive_path_03"
+  },
+  "expected_not_claimed": [
+    "APPLY_SUCCESS",
+    "INFRASTRUCTURE_COMPLIANCE",
+    "INFRASTRUCTURE_CORRECTNESS",
+    "INFRASTRUCTURE_COST",
+    "INFRASTRUCTURE_SECURITY",
+    "LIVE_STATE_FRESHNESS"
+  ],
+  "expected_not_evaluated": [
+    "sensitive path present"
+  ],
+  "expected_proof_refs": [
+    "domain3_raw_adapter_fixture:sensitive_path_03"
+  ],
+  "expected_reason_codes": [
+    "SENSITIVE_PATH_PRESENT"
+  ],
+  "expected_replace_paths": [],
+  "expected_resource_actions": [],
+  "expected_sensitive_paths": [
+    "/resource_changes/0/change/after_sensitive/secret#aws_iam_role.sensitive_3"
+  ],
+  "expected_stop": true,
+  "expected_typed_evidence": {
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:sensitive_path_03",
+      "manifest:sensitive_path_03"
+    ],
+    "evidence_validity": "incomplete",
+    "policy_blocking_rules": [
+      "resource_change_blocks_proceed",
+      "plan_error_blocks_proceed",
+      "unknown_or_sensitive_values_prevent_silent_pass"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "policy_not_claimed_rules": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "policy_required_claims": [
+      "terraform_plan_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:sensitive_path_03"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "subject_id": "sensitive_path_03",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "SENSITIVE_PATH_PRESENT"
+      },
+      {
+        "kind": "not_evaluated",
+        "value": "sensitive path present"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "APPLY_SUCCESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COMPLIANCE"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_CORRECTNESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COST"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_SECURITY"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "LIVE_STATE_FRESHNESS"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "plan.json:sensitive_path_03"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "manifest:sensitive_path_03"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain3_raw_adapter_fixture:sensitive_path_03"
+      },
+      {
+        "kind": "sensitive_path",
+        "value": "/resource_changes/0/change/after_sensitive/secret#aws_iam_role.sensitive_3"
+      }
+    ]
+  },
+  "expected_unknown_paths": [],
+  "fixture_id": "sensitive_path_03",
+  "input_state": "SENSITIVE_OR_UNKNOWN_VALUES_PRESENT",
+  "raw_inputs": {
+    "main_tf": null,
+    "manifest": {
+      "files": {
+        "plan.json": "db7cbc08e58287fe781d3ffdac9112de01e7c62ad7f66887f2aeba310d822da4"
+      },
+      "fixture_id": "sensitive_path_03",
+      "synthetic": true
+    },
+    "plan_json": {
+      "applyable": true,
+      "complete": true,
+      "errored": false,
+      "format_version": "1.0",
+      "resource_changes": [
+        {
+          "address": "aws_iam_role.sensitive_3",
+          "change": {
+            "actions": [
+              "no-op"
+            ],
+            "after_sensitive": {
+              "secret": true
+            },
+            "after_unknown": {},
+            "replace_paths": []
+          },
+          "name": "sensitive_3",
+          "type": "aws_iam_role"
+        }
+      ],
+      "terraform_version": "1.8.0"
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE_V1"
+}

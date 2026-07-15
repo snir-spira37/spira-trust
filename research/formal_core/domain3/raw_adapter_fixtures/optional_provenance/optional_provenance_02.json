@@ -1,0 +1,189 @@
+{
+  "classification": "optional_provenance",
+  "expected_action": "PROCEED",
+  "expected_adapter_policy_action": {
+    "action": "PROCEED",
+    "reason_codes": [
+      "TERRAFORM_PLAN_NO_CHANGES",
+      "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+    ],
+    "stop": false
+  },
+  "expected_blocking_items": [],
+  "expected_claim_boundary": "fixture specifies expected adapter behavior only; raw Terraform JSON parser proof is not claimed",
+  "expected_evidence_refs": [
+    "plan.json:optional_provenance_02",
+    "manifest:optional_provenance_02"
+  ],
+  "expected_formal_core_contract": {
+    "action": "PROCEED",
+    "blocking_items": [],
+    "contract_id": "FORMAL_CORE_V1_CONTRACT",
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:optional_provenance_02",
+      "manifest:optional_provenance_02"
+    ],
+    "not_claimed": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "not_evaluated": [],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:optional_provenance_02"
+    ],
+    "reason_codes": [
+      "TERRAFORM_PLAN_NO_CHANGES",
+      "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "stop": false,
+    "subject_id": "optional_provenance_02"
+  },
+  "expected_not_claimed": [
+    "APPLY_SUCCESS",
+    "INFRASTRUCTURE_COMPLIANCE",
+    "INFRASTRUCTURE_CORRECTNESS",
+    "INFRASTRUCTURE_COST",
+    "INFRASTRUCTURE_SECURITY",
+    "LIVE_STATE_FRESHNESS"
+  ],
+  "expected_not_evaluated": [],
+  "expected_proof_refs": [
+    "domain3_raw_adapter_fixture:optional_provenance_02"
+  ],
+  "expected_reason_codes": [
+    "TERRAFORM_PLAN_NO_CHANGES",
+    "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+  ],
+  "expected_replace_paths": [],
+  "expected_resource_actions": [],
+  "expected_sensitive_paths": [],
+  "expected_stop": false,
+  "expected_typed_evidence": {
+    "domain_id": "terraform_plan",
+    "evidence_refs": [
+      "plan.json:optional_provenance_02",
+      "manifest:optional_provenance_02"
+    ],
+    "evidence_validity": "valid",
+    "policy_blocking_rules": [
+      "resource_change_blocks_proceed",
+      "plan_error_blocks_proceed",
+      "unknown_or_sensitive_values_prevent_silent_pass"
+    ],
+    "policy_id": "SPIRA_FORMAL_CORE_V1_DOMAIN3_POLICY",
+    "policy_not_claimed_rules": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "policy_required_claims": [
+      "terraform_plan_available"
+    ],
+    "policy_schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "producer_id": "domain3_raw_adapter_fixture_spec",
+    "proof_refs": [
+      "domain3_raw_adapter_fixture:optional_provenance_02"
+    ],
+    "schema_version": "FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE",
+    "subject_id": "optional_provenance_02",
+    "typed_claims": [
+      {
+        "kind": "reason",
+        "value": "TERRAFORM_PLAN_NO_CHANGES"
+      },
+      {
+        "kind": "reason",
+        "value": "TERRAFORM_OPTIONAL_PROVENANCE_PRESENT"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "APPLY_SUCCESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COMPLIANCE"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_CORRECTNESS"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_COST"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "INFRASTRUCTURE_SECURITY"
+      },
+      {
+        "kind": "not_claimed",
+        "value": "LIVE_STATE_FRESHNESS"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "plan.json:optional_provenance_02"
+      },
+      {
+        "kind": "evidence_ref",
+        "value": "manifest:optional_provenance_02"
+      },
+      {
+        "kind": "proof_ref",
+        "value": "domain3_raw_adapter_fixture:optional_provenance_02"
+      }
+    ]
+  },
+  "expected_unknown_paths": [],
+  "fixture_id": "optional_provenance_02",
+  "input_state": "OPTIONAL_PROVENANCE_PRESENT",
+  "raw_inputs": {
+    "main_tf": "# synthetic Terraform provenance for optional_provenance_02\n",
+    "manifest": {
+      "files": {
+        "plan.json": "f9607d0c1326ec322b4ee55f3844042dd47c768006d9cc48aa9c8107a7597073"
+      },
+      "fixture_id": "optional_provenance_02",
+      "synthetic": true
+    },
+    "plan_json": {
+      "applyable": true,
+      "complete": true,
+      "errored": false,
+      "format_version": "1.0",
+      "resource_changes": [
+        {
+          "address": "aws_iam_role.noop_2",
+          "change": {
+            "actions": [
+              "no-op"
+            ],
+            "after_sensitive": {},
+            "after_unknown": {},
+            "replace_paths": []
+          },
+          "name": "noop_2",
+          "type": "aws_iam_role"
+        }
+      ],
+      "spira_optional_provenance": {
+        "main_tf": {
+          "sha256": "4f3975ba9279988b030ac637bca7ac45d203ad5bf0a1dee4dd95e37507b25077",
+          "state": "PRESENT"
+        }
+      },
+      "terraform_version": "1.8.0"
+    }
+  },
+  "schema": "SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_FIXTURE_V1"
+}
