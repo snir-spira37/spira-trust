@@ -1,0 +1,58 @@
+{
+  "schema": "SPIRA_AGENT_ACTION_GATE_DEMO_SCRIPT_REVIEW_RESULTS",
+  "schema_version": 1,
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "demo_authorization_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2",
+  "domain": "Domain 3 - Terraform plan evidence",
+  "selected_fixtures": {
+    "STOP_BLOCKED": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json",
+    "REPORT_NOT_EVALUATED": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json",
+    "RERUN_REQUIRED": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json"
+  },
+  "fixture_hashes_verified": true,
+  "commands_verified": true,
+  "output_artifacts_verified": true,
+  "actual_output_excerpts_verified": true,
+  "stop_blocked_path_verified": true,
+  "report_not_evaluated_path_verified": true,
+  "rerun_required_path_verified": true,
+  "deterministic_semantics_verified": true,
+  "exact_schema_only": true,
+  "invented_cli_detected": false,
+  "invented_artifact_detected": false,
+  "fake_agent_runtime_detected": false,
+  "runtime_interception_claim_detected": false,
+  "arbitrary_tool_call_claim_detected": false,
+  "mcp_api_database_claim_detected": false,
+  "backup_restore_approval_claim_detected": false,
+  "model_explanation_only": true,
+  "current_conceptual_roadmap_separation_preserved": true,
+  "competitor_boundaries_preserved": true,
+  "documentation_only": true,
+  "product_change_performed": false,
+  "domain_expansion_detected": false,
+  "outreach_performed": false,
+  "release_performed": false,
+  "tests_run": [
+    {
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/test_formal_core_v1_domain3_raw_adapter_conformance.py tests/test_terraform_plan_producer.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m json.tool for reproduction manifest, verified results, and review results",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "DEMO_SCRIPT_ACCEPTED",
+  "blockers": [],
+  "next_step": "DEMO_REPRODUCTION_RUN_REQUIRED"
+}

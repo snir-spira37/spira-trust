@@ -1,0 +1,408 @@
+{
+  "actual_output_excerpts_verified": true,
+  "blockers": [],
+  "commands_verified": true,
+  "competitor_boundaries_preserved": true,
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "current_conceptual_roadmap_separation_preserved": true,
+  "demo_authorization_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2",
+  "deterministic_semantics_verified": true,
+  "documentation_only": true,
+  "domain": "Domain 3 - Terraform plan evidence",
+  "domain_expansion_detected": false,
+  "exact_schema_only": true,
+  "fake_agent_runtime_detected": false,
+  "fixture_hashes_verified": true,
+  "invented_artifact_detected": false,
+  "invented_cli_detected": false,
+  "model_explanation_only": true,
+  "next_step": "DEMO_REPRODUCTION_RUN_REQUIRED",
+  "output_artifacts_verified": true,
+  "paths": [
+    {
+      "actual_action": "STOP_BLOCKED",
+      "actual_blocking_items": [
+        "resource change requires review"
+      ],
+      "actual_evidence_refs": [
+        "plan.json:create_update_delete_01",
+        "manifest:create_update_delete_01"
+      ],
+      "actual_exit_code": 0,
+      "actual_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "actual_not_evaluated": [],
+      "actual_output_excerpt": {
+        "action": "STOP_BLOCKED",
+        "blocking_items": [
+          "resource change requires review"
+        ],
+        "evidence_refs": [
+          "plan.json:create_update_delete_01",
+          "manifest:create_update_delete_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:create_update_delete_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+        ],
+        "stop": true
+      },
+      "actual_proof_refs": [
+        "domain3_raw_adapter_fixture:create_update_delete_01"
+      ],
+      "actual_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "actual_stop": true,
+      "checks": {
+        "blocking_items_match": true,
+        "deterministic_repeatability": true,
+        "evidence_refs_match": true,
+        "expected_action_matches_contract": true,
+        "expected_stop_matches_contract": true,
+        "fixture_exists": true,
+        "fixture_hash_verified": true,
+        "fixture_json_valid": true,
+        "not_claimed_match": true,
+        "not_evaluated_match": true,
+        "proof_refs_match": true,
+        "reason_codes_match": true,
+        "resource_change_blocker_verified": true,
+        "resource_change_reason_verified": true
+      },
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "resource change requires review"
+      ],
+      "expected_evidence_refs": [
+        "plan.json:create_update_delete_01",
+        "manifest:create_update_delete_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:create_update_delete_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json",
+      "fixture_sha256": "49c622e62c5255b3ec05214640fd679a89228b83ee1bb10a7ce01e258d37adbe",
+      "path_id": "STOP_BLOCKED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    },
+    {
+      "actual_action": "REPORT_NOT_EVALUATED",
+      "actual_blocking_items": [],
+      "actual_evidence_refs": [
+        "plan.json:incomplete_plan_01",
+        "manifest:incomplete_plan_01"
+      ],
+      "actual_exit_code": 0,
+      "actual_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "actual_not_evaluated": [
+        "terraform plan incomplete"
+      ],
+      "actual_output_excerpt": {
+        "action": "REPORT_NOT_EVALUATED",
+        "blocking_items": [],
+        "evidence_refs": [
+          "plan.json:incomplete_plan_01",
+          "manifest:incomplete_plan_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [
+          "terraform plan incomplete"
+        ],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:incomplete_plan_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_PLAN_INCOMPLETE"
+        ],
+        "stop": true
+      },
+      "actual_proof_refs": [
+        "domain3_raw_adapter_fixture:incomplete_plan_01"
+      ],
+      "actual_reason_codes": [
+        "TERRAFORM_PLAN_INCOMPLETE"
+      ],
+      "actual_stop": true,
+      "checks": {
+        "blocking_items_match": true,
+        "deterministic_repeatability": true,
+        "evidence_refs_match": true,
+        "expected_action_matches_contract": true,
+        "expected_stop_matches_contract": true,
+        "fixture_exists": true,
+        "fixture_hash_verified": true,
+        "fixture_json_valid": true,
+        "not_claimed_match": true,
+        "not_evaluated_match": true,
+        "proof_refs_match": true,
+        "reason_codes_match": true
+      },
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_evidence_refs": [
+        "plan.json:incomplete_plan_01",
+        "manifest:incomplete_plan_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "terraform plan incomplete"
+      ],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:incomplete_plan_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_INCOMPLETE"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json",
+      "fixture_sha256": "b69e66ea37f7501938bff3b9b4924351d23d1b96adba1f79f50dd29731e9a910",
+      "path_id": "REPORT_NOT_EVALUATED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    },
+    {
+      "actual_action": "RERUN_REQUIRED",
+      "actual_blocking_items": [],
+      "actual_evidence_refs": [
+        "plan.json:invalid_json_01",
+        "manifest:invalid_json_01"
+      ],
+      "actual_exit_code": 0,
+      "actual_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "actual_not_evaluated": [
+        "Terraform plan JSON parse failed"
+      ],
+      "actual_output_excerpt": {
+        "action": "RERUN_REQUIRED",
+        "blocking_items": [],
+        "evidence_refs": [
+          "plan.json:invalid_json_01",
+          "manifest:invalid_json_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [
+          "Terraform plan JSON parse failed"
+        ],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:invalid_json_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_PLAN_JSON_INVALID"
+        ],
+        "stop": true
+      },
+      "actual_proof_refs": [
+        "domain3_raw_adapter_fixture:invalid_json_01"
+      ],
+      "actual_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "actual_stop": true,
+      "checks": {
+        "blocking_items_match": true,
+        "deterministic_repeatability": true,
+        "evidence_refs_match": true,
+        "expected_action_matches_contract": true,
+        "expected_stop_matches_contract": true,
+        "fixture_exists": true,
+        "fixture_hash_verified": true,
+        "fixture_json_valid": true,
+        "invalid_json_not_evaluated_verified": true,
+        "not_claimed_match": true,
+        "not_evaluated_match": true,
+        "proof_refs_match": true,
+        "reason_codes_match": true
+      },
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_refs": [
+        "plan.json:invalid_json_01",
+        "manifest:invalid_json_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "Terraform plan JSON parse failed"
+      ],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:invalid_json_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json",
+      "fixture_sha256": "50a28ffc97453e6aa612b6415349b44457880c882bfc24f586d4476444ea1970",
+      "path_id": "RERUN_REQUIRED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    }
+  ],
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "product_change_performed": false,
+  "report_not_evaluated_path_verified": true,
+  "rerun_required_path_verified": true,
+  "runtime_interception_claim_detected": false,
+  "schema": "SPIRA_AGENT_ACTION_GATE_DEMO_VERIFIED_RESULTS",
+  "schema_version": 1,
+  "selected_fixtures": {
+    "REPORT_NOT_EVALUATED": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json",
+    "RERUN_REQUIRED": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json",
+    "STOP_BLOCKED": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json"
+  },
+  "stop_blocked_path_verified": true,
+  "tests_run": [
+    {
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "note": "Existing harness verified all 31 Domain 3 raw-adapter fixtures; generated conformance-result tail changes were not committed.",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/test_formal_core_v1_domain3_raw_adapter_conformance.py tests/test_terraform_plan_producer.py",
+      "note": "12 passed",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m json.tool research/product_strategy/terraform_agent_action_gate_demo_reproduction_manifest.json; terraform_agent_action_gate_demo_verified_results.json; terraform_agent_action_gate_demo_script_review_results.json",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "DEMO_SCRIPT_ACCEPTED"
+}

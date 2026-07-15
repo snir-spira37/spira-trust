@@ -1,0 +1,170 @@
+{
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "demo_authorization_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2",
+  "domain": "Domain 3 - Terraform plan evidence",
+  "paths": [
+    {
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "STOP_BLOCKED",
+      "expected_blocking_items": [
+        "resource change requires review"
+      ],
+      "expected_evidence_refs": [
+        "plan.json:create_update_delete_01",
+        "manifest:create_update_delete_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:create_update_delete_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json",
+      "fixture_sha256": "49c622e62c5255b3ec05214640fd679a89228b83ee1bb10a7ce01e258d37adbe",
+      "intended_action": "STOP_BLOCKED",
+      "path_id": "STOP_BLOCKED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "verified_at": "2026-07-15",
+      "working_directory": "repository root"
+    },
+    {
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "REPORT_NOT_EVALUATED",
+      "expected_blocking_items": [],
+      "expected_evidence_refs": [
+        "plan.json:incomplete_plan_01",
+        "manifest:incomplete_plan_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "terraform plan incomplete"
+      ],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:incomplete_plan_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_INCOMPLETE"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json",
+      "fixture_sha256": "b69e66ea37f7501938bff3b9b4924351d23d1b96adba1f79f50dd29731e9a910",
+      "intended_action": "REPORT_NOT_EVALUATED",
+      "path_id": "REPORT_NOT_EVALUATED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "verified_at": "2026-07-15",
+      "working_directory": "repository root"
+    },
+    {
+      "command": "python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "conceptual_integration_elements": [
+        "external authorized workflow consumes result and stops next action"
+      ],
+      "current_implementation_elements": [
+        "Domain 3 raw adapter fixture",
+        "expected_typed_evidence",
+        "expected_formal_core_contract"
+      ],
+      "expected_action": "RERUN_REQUIRED",
+      "expected_blocking_items": [],
+      "expected_evidence_refs": [
+        "plan.json:invalid_json_01",
+        "manifest:invalid_json_01"
+      ],
+      "expected_exit_code": 0,
+      "expected_not_claimed": [
+        "APPLY_SUCCESS",
+        "INFRASTRUCTURE_COMPLIANCE",
+        "INFRASTRUCTURE_CORRECTNESS",
+        "INFRASTRUCTURE_COST",
+        "INFRASTRUCTURE_SECURITY",
+        "LIVE_STATE_FRESHNESS"
+      ],
+      "expected_not_evaluated": [
+        "Terraform plan JSON parse failed"
+      ],
+      "expected_output_files": [
+        "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+        "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+      ],
+      "expected_proof_refs": [
+        "domain3_raw_adapter_fixture:invalid_json_01"
+      ],
+      "expected_reason_codes": [
+        "TERRAFORM_PLAN_JSON_INVALID"
+      ],
+      "expected_stop": true,
+      "fixture_path": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json",
+      "fixture_sha256": "50a28ffc97453e6aa612b6415349b44457880c882bfc24f586d4476444ea1970",
+      "intended_action": "RERUN_REQUIRED",
+      "path_id": "RERUN_REQUIRED",
+      "prerequisites": [
+        "Python 3.12+",
+        "repository checkout"
+      ],
+      "roadmap_elements": [],
+      "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
+      "verification_result": "PASS",
+      "verified_at": "2026-07-15",
+      "working_directory": "repository root"
+    }
+  ],
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "schema": "SPIRA_AGENT_ACTION_GATE_DEMO_REPRODUCTION_MANIFEST",
+  "schema_version": 1,
+  "source_commit": "current demo-script execution commit to be recorded after commit"
+}
