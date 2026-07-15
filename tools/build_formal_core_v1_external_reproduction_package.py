@@ -295,6 +295,13 @@ def verify_all_ps1() -> str:
 $root = Resolve-Path (Join-Path $PSScriptRoot "..\..\..")
 Set-Location $root
 
+function Assert-NativeSuccess {
+  param([Parameter(Mandatory=$true)][string]$Label)
+  if ($LASTEXITCODE -ne 0) {
+    throw "$Label failed with exit code $LASTEXITCODE"
+  }
+}
+
 Write-Host "SPIRA Formal Core V1 external reproduction"
 
 @'
@@ -308,11 +315,16 @@ for item in manifest["source_artifacts"]:
         raise SystemExit(f"hash mismatch: {item['path']}")
 print("artifact_manifest_hashes: PASS")
 '@ | python -
+Assert-NativeSuccess "artifact manifest hash check"
 
 if (Get-Command lake -ErrorAction SilentlyContinue) {
   Push-Location formal\spira_formal_core_v1
-  lake build
-  Pop-Location
+  try {
+    lake build
+    Assert-NativeSuccess "lake build"
+  } finally {
+    Pop-Location
+  }
 } else {
   throw "lake not found; install the Lean toolchain declared in formal\spira_formal_core_v1\lean-toolchain"
 }
@@ -331,6 +343,7 @@ if matches:
     raise SystemExit(f"forbidden Lean tokens: {matches}")
 print("lean_no_sorry_no_admit_scan: PASS")
 '@ | python -
+Assert-NativeSuccess "Lean forbidden-token scan"
 
 python -m pytest `
   tests/test_formal_core_v1_python_boundary.py `
@@ -344,8 +357,10 @@ python -m pytest `
   tests/test_test_build_failure_oracle_validator.py `
   tests/test_terraform_plan_producer.py `
   tests/test_terraform_plan_oracle_validator.py
+Assert-NativeSuccess "focused pytest"
 
 python -m pytest
+Assert-NativeSuccess "full pytest"
 
 @'
 import json, pathlib, re
@@ -431,6 +446,7 @@ for rel in ["research/formal_core", "formal/spira_formal_core_v1"]:
 print("expected_status_and_secret_scan: PASS")
 print("SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PASS")
 '@ | python -
+Assert-NativeSuccess "expected-results and secret scan"
 '''
 
 

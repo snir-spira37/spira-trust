@@ -71,6 +71,8 @@ def test_external_reproduction_verify_scripts_do_not_run_live_agents():
     assert "codex primary" not in combined
     assert "python - <<'PY'" not in ps1
     assert "spira_formal_core_v1_domain2_conformance_results.json" not in combined
+    assert "function Assert-NativeSuccess" in ps1
+    assert ps1.count("Assert-NativeSuccess") >= 6
 
 
 def _json(name: str):
