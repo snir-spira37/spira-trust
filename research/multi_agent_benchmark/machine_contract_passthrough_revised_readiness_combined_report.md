@@ -1,13 +1,14 @@
 # Machine Contract Passthrough Revised Readiness Combined Report
 
-Post-preflight authorization:
+Post-amendment authorization:
 
 ```text
-research/multi_agent_benchmark/machine_contract_passthrough_revised_readiness_rerun_after_preflight_authorization.md
+research/multi_agent_benchmark/machine_contract_passthrough_post_amendment_readiness_rerun_authorization.md
 ```
 
 ```text
-status: MACHINE_CONTRACT_PASSTHROUGH_REVISED_READINESS_PASS
+status: MACHINE_CONTRACT_PASSTHROUGH_POST_AMENDMENT_READINESS_RERUN_PASS
+runner_terminal_status: MACHINE_CONTRACT_PASSTHROUGH_REVISED_READINESS_PASS
 agents: 2 / 2
 sessions: 18 / 18
 ready: 18 / 18
