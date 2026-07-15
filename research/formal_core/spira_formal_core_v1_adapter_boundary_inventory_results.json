@@ -1,0 +1,139 @@
+{
+  "allowed_claim": "Formal Core V1 has an accepted typed-evidence proof package and a documented raw-adapter boundary inventory for Domain 1, Domain 2, and Domain 3.",
+  "authorization": "research/formal_core/spira_formal_core_v1_adapter_boundary_inventory_authorization.md",
+  "checks": {
+    "adapter_tests_pass": true,
+    "all_three_domains_inventoried": true,
+    "authorization_present": true,
+    "formal_core_proof_package_preserved": true,
+    "full_pytest_pass": true,
+    "integration_boundary_preserved": true,
+    "no_live_sessions": true,
+    "no_product_source_implementation_changes": true,
+    "production_claim_absent": true,
+    "raw_parser_proof_claim_absent": true,
+    "release_not_authorized": true
+  },
+  "commands": {
+    "adapter_tests": {
+      "command": "python -m pytest tests/test_test_build_failure_producer.py tests/test_test_build_failure_oracle_validator.py tests/test_terraform_plan_producer.py tests/test_terraform_plan_oracle_validator.py tests/test_mvp_unified.py tests/test_formal_core_v1_python_boundary.py",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 46 items\n\ntests\\test_test_build_failure_producer.py ........                       [ 17%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 34%]\ntests\\test_terraform_plan_producer.py ........                           [ 52%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 67%]\ntests\\test_mvp_unified.py .......                                        [ 82%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================= 46 passed in 14.82s ============================="
+    },
+    "full_pytest": {
+      "command": "python -m pytest",
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "tests\\test_deepseek_read_tool_diagnostic.py ....                         [ 38%]\ntests\\test_deepseek_structured_output_diagnostic.py ....                 [ 40%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 43%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 47%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 50%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 51%]\ntests\\test_mvp_unified.py .......                                        [ 54%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 58%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 68%]\ntests\\test_pep770_scope_v4.py .......                                    [ 71%]\ntests\\test_previous_version_gate.py ...........                          [ 75%]\ntests\\test_rerun_planner.py ..................                           [ 82%]\ntests\\test_review_fail_closed.py .                                       [ 83%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 86%]\ntests\\test_terraform_plan_producer.py ........                           [ 89%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 92%]\ntests\\test_test_build_failure_producer.py ........                       [ 95%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n======================= 247 passed in 89.64s (0:01:29) ========================"
+    }
+  },
+  "disallowed_claim": "SPIRA has formally proved raw wheel/ZIP parsing, pytest/JUnit parsing, Terraform Plan JSON parsing, Python runtime behavior, live agent behavior, or release readiness.",
+  "inventory": [
+    {
+      "accepted_corpus": "1954 / 1954 accepted identity baseline records",
+      "accepted_formal_core_status": "DIFFERENTIALLY_CONFORMANT_ON_ACCEPTED_BASELINE",
+      "domain": "python_artifact",
+      "machine_checked": [
+        "Formal Core V1 typed-evidence semantics",
+        "Domain 1 conformance projection on accepted baseline records"
+      ],
+      "not_formally_proved": [
+        "wheel parsing",
+        "ZIP/RECORD parsing",
+        "metadata parsing",
+        "SBOM extraction",
+        "filesystem correctness"
+      ],
+      "raw_adapter_code": [
+        "source/spira_core/mvp_unified.py",
+        "source/spira_core/trust_graph.py",
+        "source/spira_core/bom.py"
+      ],
+      "raw_inputs": [
+        "wheel",
+        "ZIP",
+        "RECORD",
+        "metadata",
+        "SBOM and filesystem-derived identity material"
+      ],
+      "risk": "largest raw-input surface; defer until Domain 2/3 adapter tracks are specified",
+      "tested_only": [
+        "Python boundary harness",
+        "mvp_unified Domain 1 wrapping",
+        "baseline root check"
+      ],
+      "typed_evidence_boundary": "Domain 1 identity baseline record consumed by mvp_unified.wrap_domain1_record."
+    },
+    {
+      "accepted_corpus": "38 / 38 accepted pytest cases; 6 / 6 mutation pairs",
+      "accepted_formal_core_status": "DIFFERENTIALLY_CONFORMANT_ON_ACCEPTED_CASES",
+      "domain": "pytest_result",
+      "machine_checked": [
+        "Formal Core V1 typed-evidence semantics",
+        "Domain 2 conformance projection on accepted corpus"
+      ],
+      "not_formally_proved": [
+        "raw console parsing completeness",
+        "JUnit XML semantic parsing",
+        "metadata JSON parser correctness",
+        "file IO correctness"
+      ],
+      "raw_adapter_code": [
+        "source/spira_core/test_build_failure_producer.py",
+        "source/spira_core/test_build_failure_oracle_validator.py"
+      ],
+      "raw_inputs": [
+        "console text",
+        "JUnit XML text",
+        "metadata JSON",
+        "public run materialization JSON"
+      ],
+      "risk": "smallest raw adapter surface; recommended first adapter-conformance track",
+      "tested_only": [
+        "producer classification rules",
+        "oracle validator",
+        "console/JUnit conflict detection",
+        "incomplete/malformed evidence handling"
+      ],
+      "typed_evidence_boundary": "test_build_failure_producer emits produced_policy_action, produced_claims, explicit lists, evidence locators, and not_claimed."
+    },
+    {
+      "accepted_corpus": "40 / 40 accepted Terraform Plan cases; 10 / 10 mutation pairs",
+      "accepted_formal_core_status": "DIFFERENTIALLY_CONFORMANT_ON_ACCEPTED_CASES",
+      "domain": "terraform_plan",
+      "machine_checked": [
+        "Formal Core V1 typed-evidence semantics",
+        "Domain 3 conformance projection on accepted corpus"
+      ],
+      "not_formally_proved": [
+        "Terraform JSON parser correctness",
+        "JSON pointer extraction completeness",
+        "Terraform plan schema completeness",
+        "file IO correctness"
+      ],
+      "raw_adapter_code": [
+        "source/spira_core/terraform_plan_producer.py",
+        "source/spira_core/terraform_plan_oracle_validator.py"
+      ],
+      "raw_inputs": [
+        "Terraform plan JSON",
+        "invalid Terraform plan JSON",
+        "optional provenance fields"
+      ],
+      "risk": "medium raw adapter surface; good second adapter-conformance track after Domain 2",
+      "tested_only": [
+        "Terraform Plan producer rules",
+        "oracle validator",
+        "mutation relationships",
+        "invalid JSON handling",
+        "sensitive and unknown path mapping"
+      ],
+      "typed_evidence_boundary": "terraform_plan_producer emits produced_policy_action, produced_claims, explicit lists, evidence locators, context, and not_claimed."
+    }
+  ],
+  "recommended_next_track": "DOMAIN_2_RAW_ADAPTER_CONFORMANCE_SPECIFICATION",
+  "schema": "SPIRA_FORMAL_CORE_V1_ADAPTER_BOUNDARY_INVENTORY_RESULTS",
+  "schema_version": 1,
+  "status": "SPIRA_FORMAL_CORE_V1_ADAPTER_BOUNDARY_INVENTORY_ACCEPTED"
+}
