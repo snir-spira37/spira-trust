@@ -64,9 +64,9 @@ def main() -> int:
         ),
         "recommended_next_track": "DOMAIN_2_RAW_ADAPTER_CONFORMANCE_SPECIFICATION",
     }
-    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    REPORT.write_text(report_markdown(results), encoding="utf-8")
-    REVIEW.write_text(review_markdown(results), encoding="utf-8")
+    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    REPORT.write_text(report_markdown(results), encoding="utf-8", newline="\n")
+    REVIEW.write_text(review_markdown(results), encoding="utf-8", newline="\n")
     print(json.dumps({"status": status, "checks": checks}, sort_keys=True))
     return 0 if status.endswith("_ACCEPTED") else 1
 

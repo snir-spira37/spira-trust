@@ -118,9 +118,9 @@ def main() -> int:
         "accepted_domain3_conformance_review": rel(CONFORMANCE_REVIEW),
         "claim_boundary": "bounded Domain 3 production adapter alignment only; arbitrary raw Terraform Plan JSON parser proof not claimed",
     }
-    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    REPORT.write_text(report_markdown(results), encoding="utf-8")
-    REVIEW.write_text(review_markdown(results), encoding="utf-8")
+    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+    REPORT.write_text(report_markdown(results), encoding="utf-8", newline="\n")
+    REVIEW.write_text(review_markdown(results), encoding="utf-8", newline="\n")
     print(json.dumps({"status": status, "gates": gates}, sort_keys=True))
     return 0 if status.endswith("_ACCEPTED") else 1
 

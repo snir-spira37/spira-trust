@@ -90,8 +90,8 @@ def main() -> None:
     checks = run_checks()
     results = evaluate_package(manifest, checks)
     _write_json(RESULTS, results)
-    REPORT.write_text(report_markdown(results), encoding="utf-8")
-    REVIEW.write_text(review_markdown(results), encoding="utf-8")
+    REPORT.write_text(report_markdown(results), encoding="utf-8", newline="\n")
+    REVIEW.write_text(review_markdown(results), encoding="utf-8", newline="\n")
     print(json.dumps({"status": results["status"]}, sort_keys=True))
     if results["status"] != "SPIRA_FORMAL_CORE_V1_PROOF_PACKAGE_ACCEPTED":
         raise SystemExit(1)
@@ -341,7 +341,7 @@ def now() -> str:
 
 
 def _write_json(path: Path, payload: Any) -> None:
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

@@ -42,8 +42,8 @@ def main() -> None:
     proof_scan = scan_lean_sources()
     results = evaluate_conformance(manifest, oracle, produced, validation, lean, proof_scan)
     _write_json(RESULTS, results)
-    REPORT.write_text(report_markdown(results), encoding="utf-8")
-    REVIEW.write_text(review_markdown(results), encoding="utf-8")
+    REPORT.write_text(report_markdown(results), encoding="utf-8", newline="\n")
+    REVIEW.write_text(review_markdown(results), encoding="utf-8", newline="\n")
     print(json.dumps({"status": results["status"]}, sort_keys=True))
     if results["status"] != "SPIRA_FORMAL_CORE_V1_DOMAIN3_CONFORMANCE_ACCEPTED":
         raise SystemExit(1)
@@ -420,7 +420,7 @@ def _read_json(path: Path) -> Any:
 
 def _write_json(path: Path, payload: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

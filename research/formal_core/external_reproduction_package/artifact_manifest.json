@@ -392,9 +392,9 @@
       "sha256": "fce2b2fe755bf9c7d9c45ea5372ba6f582a350850b5f96735f0590594153d1a5"
     },
     {
-      "bytes": 973,
+      "bytes": 927,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_report.md",
-      "sha256": "0dcbabc38c1d1ace1d40f4c14ae6bd508610ed1feef957f36045f8d65799637f"
+      "sha256": "8311c00459f79303290de7d6396d831cdd3e166a00ebca3f29b62e7e4bcd1e45"
     },
     {
       "bytes": 2063,
@@ -402,9 +402,9 @@
       "sha256": "a81ac5e24cf964dbacb92bbb216ebb559c1851395c3b4e7d7c9ac7e92233bef9"
     },
     {
-      "bytes": 1818,
+      "bytes": 1757,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_conformance_review.md",
-      "sha256": "8bede4dd3d89751fd4bb4e040afbfd14aa66bc05d94732244fa0e66b3bc3f58d"
+      "sha256": "8351003380f20adb3cde6e696ee5473ff04f77426093b77e088319fad30a433b"
     },
     {
       "bytes": 2332,
@@ -412,19 +412,19 @@
       "sha256": "361e245cdf2433d3f2136e7ff255355a1abdd8b83eede9018ca2387a6ed647fb"
     },
     {
-      "bytes": 1176,
+      "bytes": 1129,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_report.md",
-      "sha256": "e021f50ca990c1223f9cb130c0dcf82e502c12390b2138d0a3b777f6be418a79"
+      "sha256": "843cfec0ee2d7f819c77f0cf3bcb78d3d9f19d8a9a435a2fd2493bda7e307a59"
     },
     {
-      "bytes": 23381,
+      "bytes": 22764,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_results.json",
-      "sha256": "db8313dd99925992777d51ce2736d585522880508678e7fcf22d3af1e1311a62"
+      "sha256": "c0346e911d2178b2387d16885802983ee9b07437d7d51a85a1f27b8da679a27d"
     },
     {
-      "bytes": 1810,
+      "bytes": 1749,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_review.md",
-      "sha256": "1b56b0613ea4a19ed3305f08e1a4d1519ce10e9ade36594f7ce06effbaf39d1e"
+      "sha256": "64fa232af6b3a55a83c09a1095044630eec05c7f9f0bf067d47ccb6a2585e115"
     },
     {
       "bytes": 9454,
@@ -447,19 +447,19 @@
       "sha256": "adac4db4066cc651edaa1f51fba126351e3c5f3ca19c8ae4886e876f1124fe3d"
     },
     {
-      "bytes": 70878,
+      "bytes": 69519,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_fixture_manifest.json",
-      "sha256": "7b9aae2c9cee69eb5698d4fcad746baa2aa1fcd64e3f4e1641fe04c4cc3e6d87"
+      "sha256": "c5467c167a82dfdd784e012a63b45a582942899f9c30d567140540bbef5cb655"
     },
     {
-      "bytes": 1057,
+      "bytes": 1018,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_fixture_report.md",
-      "sha256": "b7c15e9c75739fbbc1e75576bd8876c0c8fccd8d826072ecda4bcb1c63d7f200"
+      "sha256": "211b28193fe4da7b7940b0a7bc6631652345fa6c1d0491e718e9612c6998c875"
     },
     {
-      "bytes": 1454,
+      "bytes": 1399,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_fixture_review.md",
-      "sha256": "e9079b29903468086a7616e4be89e6eaa5cc68b8bda75291de45ff8cb56f2ed0"
+      "sha256": "f9f82708ee4c43e649d02337de4b0eede35a955ca0f1e62c2c8d60309472a2df"
     },
     {
       "bytes": 3982,
@@ -647,19 +647,19 @@
       "sha256": "6acef8e1b1b41f7c77f81a94b833b45c7071610e2758e9f93b03a0b857ab51aa"
     },
     {
-      "bytes": 2500,
+      "bytes": 2404,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_production_adapter_alignment_report.md",
-      "sha256": "07b1bcad4591ad35c8b289d12c66d5d57d40de00bb31fc25a08bd844220959a6"
+      "sha256": "86a851d26978fbcd26465500be5056791c62abbcd3ace1fedc96072cb471e655"
     },
     {
-      "bytes": 5883,
+      "bytes": 5786,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_production_adapter_alignment_results.json",
-      "sha256": "687676ef755699a1d54b762e11308cda0ce4c619ee4f6a15118b5c7a21f0e757"
+      "sha256": "d8ea70890bea533d017a403887361c82688d3955dcc57071383d6d708103e30b"
     },
     {
-      "bytes": 1321,
+      "bytes": 1274,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_production_adapter_alignment_review.md",
-      "sha256": "6aa95693381c8b1299a9ea35280276f7d83d4ad34b1731484cb82e5aba525f66"
+      "sha256": "7e09386a876d53030b002d8b060d07d95167df40e1c883aae6977ed66a2c5afa"
     },
     {
       "bytes": 2072,
@@ -667,19 +667,19 @@
       "sha256": "f566dbc1b02a2946bebc89f6786edc4f0d7c032d6f0bbb6ac3058e02842d9aae"
     },
     {
-      "bytes": 1037,
+      "bytes": 994,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_report.md",
-      "sha256": "fd8d564a6ad7fe993cc80e3584738c37633203e1d7f6ce467a7559e85ddd182b"
+      "sha256": "03bb37cbf506d6cc6de9b497ccfbbb5e7b8cb146fb7e8e63f00fa938223101ac"
     },
     {
-      "bytes": 16268,
+      "bytes": 15826,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_results.json",
-      "sha256": "b1e58f63b336a4b1fecd4638c620a5e8486f27a40eaa631b7d86d29a330608ab"
+      "sha256": "23d767f552f88c62266202921c1e479594f007392afb005d587ecc777acea45f"
     },
     {
-      "bytes": 1560,
+      "bytes": 1503,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_review.md",
-      "sha256": "857de76a26b121e1e9420cf13bc968d5b0223dfef1f780ae8be0f5625154df90"
+      "sha256": "0fdd2c37614d4d69930504263ada5c76ae108797b97907742540d0ce27a13519"
     },
     {
       "bytes": 7822,
@@ -702,19 +702,19 @@
       "sha256": "83d80b11885420091594c85878b937316d5bddac01dbf26d23d22e2143c6acf9"
     },
     {
-      "bytes": 19807,
+      "bytes": 19270,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_fixture_manifest.json",
-      "sha256": "eff0771b3f416750822bbdaa786667189a777e8fe2157edcf722160542c0ed63"
+      "sha256": "5f6eac30ab079d6d791c4b98da8bf940019477a64b11fca3027439bf8b7c969a"
     },
     {
-      "bytes": 886,
+      "bytes": 852,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_fixture_report.md",
-      "sha256": "19308f0b46b6fc57de02c76cb38241748185e4d8f1ffa72bb6ff0d3f7a14177b"
+      "sha256": "9795c056f4761a5eb0a1cf0f7618913f1b8c87ccc5b7c8e7b488b8daf33a1242"
     },
     {
-      "bytes": 1135,
+      "bytes": 1086,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_fixture_review.md",
-      "sha256": "4a54f40dc55710a9df37318646f060d2c3ed9555d5e2de4608018f03a3d934c5"
+      "sha256": "26b8dcebacd3a6454e870ff343913a212165eada39ffa87bd7e9fe71ba5ac3ab"
     },
     {
       "bytes": 5544,
@@ -877,9 +877,9 @@
       "sha256": "119af7acb2818d881461d72ca0e83998577d59f906d729d0f326881009e1f224"
     },
     {
-      "bytes": 874,
+      "bytes": 828,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_report.md",
-      "sha256": "b2654fb3051d62fe525150f36535357efc2be9dbe7c773c0e20d79ac21e0231e"
+      "sha256": "4278f1176b95531a3d38a4c590bf7031e13fcfe849b786192b61e3f35b734f81"
     },
     {
       "bytes": 8601,
@@ -887,9 +887,9 @@
       "sha256": "064e7dc8734f487a471d973bb24775b5681d7120ba2f2bd3a7b66ea1b170d2c5"
     },
     {
-      "bytes": 1447,
+      "bytes": 1389,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_review.md",
-      "sha256": "488a52c598ea7411e7185ae0b06847962267b22571268cef030b66eb59685355"
+      "sha256": "804078b89e8c87a3f00f61848a0555546689cd7a56f346ed9c6c8464a9652046"
     },
     {
       "bytes": 2578,
@@ -897,19 +897,19 @@
       "sha256": "b15f7e1c1edf8996b5bc45df8f05a1b775759fbfcd6654b41fca171863324232"
     },
     {
-      "bytes": 1987,
+      "bytes": 1907,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_report.md",
-      "sha256": "4fc437f20131ad85a9df247a41e3f923b0d3388192e8fe16caa7e733629accf6"
+      "sha256": "67b54367a9a36f4665d8b90ef6378b7a54e1cf70ff7f7fb2e3a2950bc3138b86"
     },
     {
-      "bytes": 5366,
+      "bytes": 5285,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_results.json",
-      "sha256": "d793d4d86043b6ceec1e8f7d22b94e9c42b1c3947f351289cd98a4a3110f2bab"
+      "sha256": "9ba82dae9cfbc895d60610abad9132642c0b92ea0ca7318abb64434cd8b70d24"
     },
     {
-      "bytes": 1724,
+      "bytes": 1671,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_review.md",
-      "sha256": "9e4a3eca1cfd8048fe84cfef026b1733c0f511cdb3b903b6c1a46015295d9f55"
+      "sha256": "50bde53a56fe9a6f1d5ac2ae80056e0ca65e6df870e95543ce043517189a5576"
     },
     {
       "bytes": 2442,
@@ -952,19 +952,19 @@
       "sha256": "596c5430a3da40c7cd75a0f5d64368c826e51deb14543f94c40bded8ade7846d"
     },
     {
-      "bytes": 35238,
+      "bytes": 34285,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_fixture_manifest.json",
-      "sha256": "d756b093c5cbd90bfabc2862210527e972b083fd850f103660fc0c86d1ef69a8"
+      "sha256": "f3e60e29872f2edc61c8a828b9064f3a4439fad2dbb7abf011afbed91655bab6"
     },
     {
-      "bytes": 1223,
+      "bytes": 1180,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_fixture_report.md",
-      "sha256": "6dcaf4e19b997551684229f26bf11e4040269a87a824beb1b81be8ff5e44d4a8"
+      "sha256": "a7d2927df120098a5b7a165fc137abe836ef76ce75b329e4aed193fc32a7dad1"
     },
     {
-      "bytes": 1692,
+      "bytes": 1633,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_fixture_review.md",
-      "sha256": "e5d44693549badefc72ffc81007dc02272d80ad9e872d1db975f2672197e7e69"
+      "sha256": "65228c34a20915172881f70ed7cdb18be846f4b58dc96766f3e331b45b5eb9b1"
     },
     {
       "bytes": 2337,
@@ -972,19 +972,19 @@
       "sha256": "bde69a31d926ff5097bb9f2b774b985fa15a8597630bf9fed4e307da314bbf38"
     },
     {
-      "bytes": 2421,
+      "bytes": 2304,
       "path": "research/formal_core/spira_formal_core_v1_adapter_boundary_inventory_report.md",
-      "sha256": "57f954d5b8ac93faa864bc65672104855f6cc4e383837084d625bf745849f49d"
+      "sha256": "8b36c084edd145cbb623028a3c8c5ea184483674a008cb80540b2f32f2f2ca66"
     },
     {
-      "bytes": 8228,
+      "bytes": 8089,
       "path": "research/formal_core/spira_formal_core_v1_adapter_boundary_inventory_results.json",
-      "sha256": "4d74de64f002f892bc2a083a4ae75f9f8081c59d86c099ea8bf0206cc38c4c43"
+      "sha256": "23837de2b6d603875f1815a6c0ab50918ab861d6e8b2a3b9f732fb8c0b21433a"
     },
     {
-      "bytes": 1227,
+      "bytes": 1177,
       "path": "research/formal_core/spira_formal_core_v1_adapter_boundary_inventory_review.md",
-      "sha256": "f5e6c104ccbc591824289ec8a31b8e04951fdc443f7fd231b7d1eefaf9b90eda"
+      "sha256": "f923d63322de6969d960d4c88e28934807eda48e556d5d6c1a58bf44d2086878"
     },
     {
       "bytes": 1617,
@@ -1027,9 +1027,9 @@
       "sha256": "14aa9427fbb0acb4a5a8c8f6717fcfd56b02afc2efb87328cdeb891f79078020"
     },
     {
-      "bytes": 733,
+      "bytes": 699,
       "path": "research/formal_core/spira_formal_core_v1_differential_harness_report.md",
-      "sha256": "e94ede4362d6f069c10b131fb3505c8908822daf0a7143a518b8a986f6a2701b"
+      "sha256": "1f767360af7ddbf21c21097f8a2857c7d17b6a372ee5bba63977f557b7435e91"
     },
     {
       "bytes": 2536,
@@ -1037,14 +1037,14 @@
       "sha256": "3852b28786c470ce479880ecfef053f89c4f66b2a026137b5bee173d1807bdc7"
     },
     {
-      "bytes": 2583,
+      "bytes": 2494,
       "path": "research/formal_core/spira_formal_core_v1_differential_harness_results.json",
-      "sha256": "7c9896af4051b0a30a3fedae35c7117f3b1668566c9b9227805341334dcfd830"
+      "sha256": "49c53814ae58b88908706d605db73860ea7188c7c2d38b18df0c300588677300"
     },
     {
-      "bytes": 532,
+      "bytes": 514,
       "path": "research/formal_core/spira_formal_core_v1_differential_harness_review.md",
-      "sha256": "89bc7390e20a34e61d6c2647bf125f48e51ec2d373f621392b0ae4ae325a6321"
+      "sha256": "1354812fa03c69f4f8da209f665ed2f4c8b2385ef93e1a92453828e65fc565b5"
     },
     {
       "bytes": 3343,
@@ -1087,19 +1087,19 @@
       "sha256": "cd2706f858cd68e8ea733736b806d53a90123b169d32fe7f2d94a7fba98ffb13"
     },
     {
-      "bytes": 520,
+      "bytes": 496,
       "path": "research/formal_core/spira_formal_core_v1_integration_boundary_report.md",
-      "sha256": "ff058a0b84efb45981e8b0ca46a19040cf82289674dc1e71f11504cebc2b3023"
+      "sha256": "22eb24e0bf926f829a8ac56b8ceb35ee67da4a04b655256fd50b475fe64770c9"
     },
     {
-      "bytes": 6671,
+      "bytes": 6546,
       "path": "research/formal_core/spira_formal_core_v1_integration_boundary_results.json",
-      "sha256": "db103a67007e2bb694406dfd2b73386b386632cd5f1f6e6ec7e9e15826bc558d"
+      "sha256": "c3df1bf91a99ce6454774e078101f7bad3361c47d3867a286b8450d2c758122f"
     },
     {
-      "bytes": 1268,
+      "bytes": 1221,
       "path": "research/formal_core/spira_formal_core_v1_integration_boundary_review.md",
-      "sha256": "389ed2b60c05c5b81efeb45dcbaa369a4968cfcd0cc57a5e6ce8758ad5d4bb61"
+      "sha256": "58feb1eb55ca58ac8f824f5de932f065b1f1208abb4861dfabb1cee2844672ea"
     },
     {
       "bytes": 8021,
@@ -1147,24 +1147,24 @@
       "sha256": "ab2c448c0bfefb4fa22ec45115c80f6521086ef6192023daf322eca824330d57"
     },
     {
-      "bytes": 21709,
+      "bytes": 21208,
       "path": "research/formal_core/spira_formal_core_v1_proof_package_manifest.json",
-      "sha256": "f187cb95c315945c5817768d9d5b938a0f8c65bc05f4db09c2f0008510dec6fb"
+      "sha256": "1f955c416e84b1012a8ee859eacec667ce9da90083f12fd40334e04e992af1aa"
     },
     {
-      "bytes": 527,
+      "bytes": 501,
       "path": "research/formal_core/spira_formal_core_v1_proof_package_report.md",
-      "sha256": "388832e8c060e7c2ebf348e53aa0ca5e16b270ef55d6d93f1b7dd25addc617aa"
+      "sha256": "6fd03e1b1ce2f84c6077195e380a7b6138ce5b902dc78ddb7bcfa36c1583bc51"
     },
     {
-      "bytes": 6753,
+      "bytes": 6610,
       "path": "research/formal_core/spira_formal_core_v1_proof_package_results.json",
-      "sha256": "af54854881ff2203ba4375ee88d4c56d7ad0982a297e8f108c2f1e7eb2f3c280"
+      "sha256": "69a6b5a1acecfeae1228a2e64c39ba1484cc2aadb7f9be84cfb35f21a9293e64"
     },
     {
-      "bytes": 936,
+      "bytes": 899,
       "path": "research/formal_core/spira_formal_core_v1_proof_package_review.md",
-      "sha256": "8b2ec9a031df37384810fd4bf64adf66d2c693506e45ffc9f04fcc74a950fd5d"
+      "sha256": "86cd2ecb19a77fddb2f8f4395b5ec90ea8b4dec2b723172be6d877caeaea67db"
     },
     {
       "bytes": 4781,
@@ -2917,49 +2917,49 @@
       "sha256": "5b0cb7f6849a05fa720f8e5384c980abd168fe7d0046baf748108dd3a8afca7f"
     },
     {
-      "bytes": 12791,
+      "bytes": 12833,
       "path": "tools/run_formal_core_v1_adapter_boundary_inventory.py",
-      "sha256": "c57d697ee56177c6d0b9d0d9d7708cf22c58f0f18434bba8605f98489acad2fa"
+      "sha256": "1e48b79b5428bb79a6014a38a60ee648504b70ba4d7bf3c329cfa3f3cbeae325"
     },
     {
-      "bytes": 13422,
+      "bytes": 13436,
       "path": "tools/run_formal_core_v1_differential_harness.py",
-      "sha256": "afed5537ebdbea9007237cfc90fb45f412c142f949ae538f1cad445f78ef4d07"
+      "sha256": "11bd0d540060258a55e3382fa0669dee94f19e03151d00b2fb684e8498985814"
     },
     {
-      "bytes": 16662,
+      "bytes": 16704,
       "path": "tools/run_formal_core_v1_domain1_conformance.py",
-      "sha256": "8083ec39ec7e3b000cd86bf19f969e565306d022dc817f1d4705df4f65aac847"
+      "sha256": "97b4b378697a5e904fb6d35450d990fcd3d79da265b17ec00b557199f81ffc8f"
     },
     {
-      "bytes": 17288,
+      "bytes": 17330,
       "path": "tools/run_formal_core_v1_domain1_raw_adapter_conformance.py",
-      "sha256": "c1f51136101d091201ced6781772b427e9274dff59eb7d2126805ca0c0ff8976"
+      "sha256": "0a295b8558e22dc0a32e4aa9383e715c83ed81219f67881726a11a5235438998"
     },
     {
-      "bytes": 19774,
+      "bytes": 19816,
       "path": "tools/run_formal_core_v1_domain2_conformance.py",
-      "sha256": "a56f4ecd940aa767a8d525ddd9cba4740a1fb9fe961e6b538eaabb0819a100ba"
+      "sha256": "743f0418e8cd2b224585c8aba83ce430ff22cf74bb08e89dd816c33db9fa16e7"
     },
     {
-      "bytes": 10063,
+      "bytes": 10105,
       "path": "tools/run_formal_core_v1_domain2_production_adapter_alignment.py",
-      "sha256": "f6f65ed3428aecec900d8aa1fc7619e08addd9653a351cc5420e2396bc3d3ca2"
+      "sha256": "97494f97a897ee94aa7f50b94ff37c7449b48588d4ab3497ece71fd36873372d"
     },
     {
-      "bytes": 13318,
+      "bytes": 13360,
       "path": "tools/run_formal_core_v1_domain2_raw_adapter_conformance.py",
-      "sha256": "5b338214871761d0b631a11bc8a4b3ee1b7478e2c0d80d6e67aa43be7d0003ba"
+      "sha256": "e6073d2b6a9cb4f35447f7cfef2cbc7f3d024114e5c9b0d63a6f48ca8040f3bf"
     },
     {
-      "bytes": 17868,
+      "bytes": 17910,
       "path": "tools/run_formal_core_v1_domain3_conformance.py",
-      "sha256": "b275352353a995d3cdfa1af6cebb19d94eea013657f5b15374b73eade6453740"
+      "sha256": "ed18993d95ad5d5493c074f863c25f4df0d0054aa70f698e9a10e4349e2476bf"
     },
     {
-      "bytes": 11142,
+      "bytes": 11184,
       "path": "tools/run_formal_core_v1_domain3_production_adapter_alignment.py",
-      "sha256": "dbb8d50f76c276c62da6bbf809df0594461b5b82705ef0fb5321d3726f5b916f"
+      "sha256": "a5e9d0cade5579deb52c7e56114d91a4be55cdd8111e2e44b99ba94e7ebaf155"
     },
     {
       "bytes": 18903,
@@ -2967,14 +2967,14 @@
       "sha256": "2e0eda61fbcb9e56fa6bc98e884eb8551354d63416b8c96e07e02ecb1ff02ecd"
     },
     {
-      "bytes": 12165,
+      "bytes": 12207,
       "path": "tools/run_formal_core_v1_integration_boundary.py",
-      "sha256": "8e9364235b38b8d27262ff0b59c00771cf329b577d81d99e1528e7842a1e3d14"
+      "sha256": "826d614b42fb8671c8fe1f36aa25abd38598e15ea127c0b86b5e362b627f3369"
     },
     {
-      "bytes": 13226,
+      "bytes": 13268,
       "path": "tools/run_formal_core_v1_proof_package.py",
-      "sha256": "dbbf8582d4e61b11ac21ad4354aa06c2edd9e037c9340631e3e0a4d9ee8450da"
+      "sha256": "28560495ae3056bfb102a10aef43f5a382b01d38dc0d11882ade4833d1c18c85"
     }
   ]
 }

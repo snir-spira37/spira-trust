@@ -279,7 +279,7 @@ def _count_missing_field_mismatches(rows: list[dict[str, Any]]) -> int:
 
 
 def write_outputs(results: dict[str, Any]) -> None:
-    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    RESULTS.write_text(json.dumps(results, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     vector_lines = [
         f"- {row['name']}: {row['status']}" for row in results["vector_results"]
     ]
