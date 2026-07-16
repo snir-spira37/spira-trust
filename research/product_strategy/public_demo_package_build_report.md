@@ -14,8 +14,8 @@ The build created a Domain 3 Terraform Plan public demo package only. It did not
 
 ```text
 package root: research/product_strategy/public_demo_package
-zip filename: spira_terraform_agent_action_gate_public_demo_df2bd9d.zip
-zip sha256: d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826
+zip filename: spira_terraform_agent_action_gate_public_demo_5962087.zip
+zip sha256: 161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739
 fixture packaging mode: copied_byte_for_byte_with_source_hash_provenance
 upload note: sidecar file outside ZIP payload to avoid self-referential ZIP hash
 ```

@@ -22,11 +22,11 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_ROOT = ROOT / "research" / "product_strategy" / "public_demo_package"
-ZIP_PATH = ROOT / "research" / "product_strategy" / "spira_terraform_agent_action_gate_public_demo_df2bd9d.zip"
+ZIP_PATH = ROOT / "research" / "product_strategy" / "spira_terraform_agent_action_gate_public_demo_5962087.zip"
 EXTRACT_CHECK_ROOT = ROOT / "research" / "product_strategy" / "_public_demo_package_extract_check"
 SIDECAR_FILES = {"UPLOAD_NOTE.txt"}
 
-SOURCE_COMMIT = "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe"
+SOURCE_COMMIT = "5962087abf44ff41fc48b96d6c102f11614835d6"
 POSITIONING_COMMIT = "da2e99d35e029f0d231e98a517ef87fe9528dde6"
 COMPETITOR_MAPPING_COMMIT = "45fe70b40c45601510559cda25dd05f533c21cf8"
 DEMO_SCRIPT_COMMIT = "bfed6f7774c48a17361ac0a2298fb9073b891ebc"
@@ -675,11 +675,11 @@ def upload_note_text(zip_sha: str) -> str:
 ZIP SHA256:
 {zip_sha}
 
-source commit:
+package source / fixed reproducibility baseline commit:
 {SOURCE_COMMIT}
 
-package build commit:
-{SOURCE_COMMIT}
+package artifact commit:
+recorded in the external delivery request or the repository commit that contains this ZIP
 
 reproduction status:
 DEMO_REPRODUCTION_ACCEPTED
@@ -694,6 +694,9 @@ note:
 This upload note is a sidecar file. It is intentionally excluded from the ZIP payload
 because embedding the enclosing ZIP SHA256 inside the ZIP would make the archive hash
 self-referential and unstable.
+
+The source baseline commit fixes cold-clone fixture byte reproducibility and is the
+commit from which this package was assembled.
 """
 
 
@@ -1007,21 +1010,41 @@ def command_result_to_json(result: CommandResult) -> dict[str, Any]:
 
 
 def run_verification_commands() -> dict[str, Any]:
-    commands = {
-        "demo_paths": ["python", "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"],
-        "conformance": ["python", "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"],
-        "focused_pytest": [
-            "python",
-            "-m",
-            "pytest",
-            "tests/test_formal_core_v1_domain3_raw_adapter_conformance.py",
-            "tests/test_terraform_plan_producer.py",
-        ],
-        "full_pytest": ["python", "-m", "pytest"],
-        "package_smoke_tests": ["python", "research/product_strategy/build_public_demo_package.py", "--verify-only"],
-        "git_diff_check": ["git", "diff", "--check"],
-    }
-    results = {name: command_result_to_json(run_command(args)) for name, args in commands.items()}
+    results: dict[str, Any] = {}
+    # The Domain 3 conformance command itself writes generated result artifacts.
+    # Run it once to stabilize those artifacts before rebuilding the external
+    # reproduction manifest that full pytest checks.
+    results["artifact_stabilization_conformance"] = command_result_to_json(
+        run_command(["python", "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"])
+    )
+    results["external_reproduction_package_rebuild_pre"] = command_result_to_json(
+        run_command(["python", "tools/build_formal_core_v1_external_reproduction_package.py"])
+    )
+    results["demo_paths"] = command_result_to_json(
+        run_command(["python", "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"])
+    )
+    # Rebuild again after the authoritative demo-path run so package smoke and
+    # full pytest never validate stale hashes.
+    results["external_reproduction_package_rebuild_post"] = command_result_to_json(
+        run_command(["python", "tools/build_formal_core_v1_external_reproduction_package.py"])
+    )
+    results["conformance"] = results["demo_paths"]
+    results["focused_pytest"] = command_result_to_json(
+        run_command(
+            [
+                "python",
+                "-m",
+                "pytest",
+                "tests/test_formal_core_v1_domain3_raw_adapter_conformance.py",
+                "tests/test_terraform_plan_producer.py",
+            ]
+        )
+    )
+    results["full_pytest"] = command_result_to_json(run_command(["python", "-m", "pytest"]))
+    results["package_smoke_tests"] = command_result_to_json(
+        run_command(["python", "research/product_strategy/build_public_demo_package.py", "--verify-only"])
+    )
+    results["git_diff_check"] = command_result_to_json(run_command(["git", "diff", "--check"]))
     lean_available = shutil.which("lake") is not None and shutil.which("lean") is not None
     if lean_available:
         results["lean_reproduction"] = command_result_to_json(run_command(["lake", "build"]))

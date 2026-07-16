@@ -1,14 +1,14 @@
 ZIP filename:
-spira_terraform_agent_action_gate_public_demo_df2bd9d.zip
+spira_terraform_agent_action_gate_public_demo_5962087.zip
 
 ZIP SHA256:
-d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826
+161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739
 
-source commit:
-df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe
+package source / fixed reproducibility baseline commit:
+5962087abf44ff41fc48b96d6c102f11614835d6
 
-package build commit:
-df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe
+package artifact commit:
+recorded in the external delivery request or the repository commit that contains this ZIP
 
 reproduction status:
 DEMO_REPRODUCTION_ACCEPTED
@@ -17,9 +17,12 @@ Lean status boundary:
 NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
 
 exact file to upload to the external reviewer:
-research/product_strategy/spira_terraform_agent_action_gate_public_demo_df2bd9d.zip
+research/product_strategy/spira_terraform_agent_action_gate_public_demo_5962087.zip
 
 note:
 This upload note is a sidecar file. It is intentionally excluded from the ZIP payload
 because embedding the enclosing ZIP SHA256 inside the ZIP would make the archive hash
 self-referential and unstable.
+
+The source baseline commit fixes cold-clone fixture byte reproducibility and is the
+commit from which this package was assembled.

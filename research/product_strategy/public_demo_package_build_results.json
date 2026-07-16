@@ -51,7 +51,7 @@
         {
           "bytes": 1635,
           "path": "COLD_DEMO_REVIEW_TASK.md",
-          "sha256": "45984cc090c9d6c07c4e4e6d2c8be8cce5eb0558e2ce5230dea79ec03907c1a0"
+          "sha256": "cadf2f89ff65d0d792fd6087bc649abe901221630875481a982d98038c70c8f5"
         },
         {
           "bytes": 3186,
@@ -61,17 +61,17 @@
         {
           "bytes": 3073,
           "path": "README_DEMO.md",
-          "sha256": "4b10b9f364410425e33ed6e5755b1adbd19ffc1baf02949546caa4b90eaaf049"
+          "sha256": "2f5a16e8307a3a0f0b1895279d88eb54b85ae9983c556a71dc6746148294ff34"
         },
         {
           "bytes": 3841,
           "path": "REPRODUCE_DEMO.md",
-          "sha256": "58a9a9f6ecf7485804232009a573b29d44f740b2552867aee8333363856d5436"
+          "sha256": "c16f3af9e1d186d891c9be336abdddebf318bb33256c0502ce570d2a55bf6597"
         },
         {
           "bytes": 1081,
           "path": "SHA256SUMS",
-          "sha256": "b09c9d5e5fbf67895634791580421f5438e5a0571c9eca48ff8825a0c06c2f96"
+          "sha256": "51b3418d02fe81c3a78ed7d59915ac0b3d92a65e3994e034e634485703147a08"
         },
         {
           "bytes": 3636,
@@ -81,7 +81,7 @@
         {
           "bytes": 4761,
           "path": "demo_reproduction_manifest.json",
-          "sha256": "8522573d13f16718b943142cd8449c58a5294e782747e8f22464ffa0c3da35c8"
+          "sha256": "87e252316d51e2d46816ff8af537daaff9f169bc3f53d62d11cf43ecf61e927d"
         },
         {
           "bytes": 5544,
@@ -105,9 +105,9 @@
         }
       ],
       "file_count": 12,
-      "semantic_hash": "c4a1bf1b82d510a98010f85251e6e468fd59a84ebaa05a29d051c115e3704a2f"
+      "semantic_hash": "2ce9ba11033b1fa46c62e6c52c05c5d4fc24fba372f94ca18654dbbf39c433d7"
     },
-    "zip_sha256": "d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826",
+    "zip_sha256": "161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739",
     "zip_validation": {
       "extracted_validation": {
         "authorized_actions_only": true,
@@ -132,7 +132,7 @@
       "zip_backslash_entries": [],
       "zip_duplicate_entries": [],
       "zip_extracts_successfully": true,
-      "zip_sha256": "d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826",
+      "zip_sha256": "161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739",
       "zip_traversal_entries": []
     }
   },
@@ -151,7 +151,7 @@
   "missing_files": [],
   "next_step": "COLD_PUBLIC_DEMO_REVIEW_REQUIRED",
   "outreach_performed": false,
-  "package_build_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "package_build_commit": "5962087abf44ff41fc48b96d6c102f11614835d6",
   "package_file_count": 12,
   "package_root": "research/product_strategy/public_demo_package",
   "package_smoke_tests_passed": true,
@@ -199,7 +199,7 @@
         {
           "bytes": 1635,
           "path": "COLD_DEMO_REVIEW_TASK.md",
-          "sha256": "45984cc090c9d6c07c4e4e6d2c8be8cce5eb0558e2ce5230dea79ec03907c1a0"
+          "sha256": "cadf2f89ff65d0d792fd6087bc649abe901221630875481a982d98038c70c8f5"
         },
         {
           "bytes": 3186,
@@ -209,17 +209,17 @@
         {
           "bytes": 3073,
           "path": "README_DEMO.md",
-          "sha256": "4b10b9f364410425e33ed6e5755b1adbd19ffc1baf02949546caa4b90eaaf049"
+          "sha256": "2f5a16e8307a3a0f0b1895279d88eb54b85ae9983c556a71dc6746148294ff34"
         },
         {
           "bytes": 3841,
           "path": "REPRODUCE_DEMO.md",
-          "sha256": "58a9a9f6ecf7485804232009a573b29d44f740b2552867aee8333363856d5436"
+          "sha256": "c16f3af9e1d186d891c9be336abdddebf318bb33256c0502ce570d2a55bf6597"
         },
         {
           "bytes": 1081,
           "path": "SHA256SUMS",
-          "sha256": "b09c9d5e5fbf67895634791580421f5438e5a0571c9eca48ff8825a0c06c2f96"
+          "sha256": "51b3418d02fe81c3a78ed7d59915ac0b3d92a65e3994e034e634485703147a08"
         },
         {
           "bytes": 3636,
@@ -229,7 +229,7 @@
         {
           "bytes": 4761,
           "path": "demo_reproduction_manifest.json",
-          "sha256": "8522573d13f16718b943142cd8449c58a5294e782747e8f22464ffa0c3da35c8"
+          "sha256": "87e252316d51e2d46816ff8af537daaff9f169bc3f53d62d11cf43ecf61e927d"
         },
         {
           "bytes": 5544,
@@ -253,9 +253,9 @@
         }
       ],
       "file_count": 12,
-      "semantic_hash": "c4a1bf1b82d510a98010f85251e6e468fd59a84ebaa05a29d051c115e3704a2f"
+      "semantic_hash": "2ce9ba11033b1fa46c62e6c52c05c5d4fc24fba372f94ca18654dbbf39c433d7"
     },
-    "zip_sha256": "d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826",
+    "zip_sha256": "161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739",
     "zip_validation": {
       "extracted_validation": {
         "authorized_actions_only": true,
@@ -280,7 +280,7 @@
       "zip_backslash_entries": [],
       "zip_duplicate_entries": [],
       "zip_extracts_successfully": true,
-      "zip_sha256": "d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826",
+      "zip_sha256": "161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739",
       "zip_traversal_entries": []
     }
   },
@@ -288,10 +288,19 @@
   "semantic_build_repeatability": true,
   "sensitive_values_detected": false,
   "sha256_mismatches": [],
-  "source_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "source_commit": "5962087abf44ff41fc48b96d6c102f11614835d6",
   "verdict": "PUBLIC_DEMO_PACKAGE_ACCEPTED",
   "verification_commands": {
     "commands": {
+      "artifact_stabilization_conformance": {
+        "args": [
+          "python",
+          "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"
+        ],
+        "returncode": 1,
+        "stderr_tail": "",
+        "stdout_tail": "{\"counts\": {\"blocking_item_loss_count\": 0, \"contract_mismatch_count\": 0, \"evidence_proof_identity_loss_count\": 0, \"false_proceed_count\": 0, \"fixture_count\": 31, \"fixture_hash_mismatch_count\": 0, \"not_claimed_loss_count\": 0, \"not_evaluated_loss_count\": 0, \"replace_path_loss_count\": 0, \"resource_action_loss_count\": 0, \"sensitive_path_loss_count\": 0, \"typed_evidence_mismatch_count\": 0, \"unknown_path_loss_count\": 0}, \"status\": \"SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_NEEDS_REVISION\"}\n"
+      },
       "conformance": {
         "args": [
           "python",
@@ -310,6 +319,24 @@
         "stderr_tail": "",
         "stdout_tail": "{\"counts\": {\"blocking_item_loss_count\": 0, \"contract_mismatch_count\": 0, \"evidence_proof_identity_loss_count\": 0, \"false_proceed_count\": 0, \"fixture_count\": 31, \"fixture_hash_mismatch_count\": 0, \"not_claimed_loss_count\": 0, \"not_evaluated_loss_count\": 0, \"replace_path_loss_count\": 0, \"resource_action_loss_count\": 0, \"sensitive_path_loss_count\": 0, \"typed_evidence_mismatch_count\": 0, \"unknown_path_loss_count\": 0}, \"status\": \"SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_ACCEPTED\"}\n"
       },
+      "external_reproduction_package_rebuild_post": {
+        "args": [
+          "python",
+          "tools/build_formal_core_v1_external_reproduction_package.py"
+        ],
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"artifact_count\": 592, \"status\": \"SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PACKAGE_ACCEPTED\"}\n"
+      },
+      "external_reproduction_package_rebuild_pre": {
+        "args": [
+          "python",
+          "tools/build_formal_core_v1_external_reproduction_package.py"
+        ],
+        "returncode": 0,
+        "stderr_tail": "",
+        "stdout_tail": "{\"artifact_count\": 592, \"status\": \"SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PACKAGE_ACCEPTED\"}\n"
+      },
       "focused_pytest": {
         "args": [
           "python",
@@ -320,7 +347,7 @@
         ],
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <repository_root>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 13 items\n\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 38%]\ntests\\test_terraform_plan_producer.py ........                           [100%]\n\n============================= 13 passed in 6.54s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <repository_root>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 13 items\n\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 38%]\ntests\\test_terraform_plan_producer.py ........                           [100%]\n\n============================= 13 passed in 6.46s ==============================\n"
       },
       "full_pytest": {
         "args": [
@@ -330,7 +357,7 @@
         ],
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "t_record_tampered_fixture.py .. [  0%]\n.                                                                        [  1%]\ntests\\test_agent_memory_v0.py ............................               [ 11%]\ntests\\test_claude_native_auth_remediation.py ...                         [ 12%]\ntests\\test_claude_native_c0.py ........                                  [ 15%]\ntests\\test_claude_native_primary_benchmark.py ...........                [ 19%]\ntests\\test_claude_native_read_invocation_hardening_diagnostic.py ......  [ 21%]\ntests\\test_claude_native_readiness.py .......                            [ 24%]\ntests\\test_claude_native_reliability_diagnostic.py ....                  [ 25%]\ntests\\test_claude_native_usage_telemetry_invocation_repair_probe.py .... [ 27%]\n                                                                         [ 27%]\ntests\\test_codex_native_readiness.py .........                           [ 30%]\ntests\\test_deepseek_ds_r0.py .........                                   [ 34%]\ntests\\test_deepseek_read_tool_diagnostic.py ....                         [ 35%]\ntests\\test_deepseek_structured_output_diagnostic.py ....                 [ 37%]\ntests\\test_formal_core_v1_domain1_raw_adapter_conformance.py ....        [ 38%]\ntests\\test_formal_core_v1_domain2_production_adapter_alignment.py ...    [ 39%]\ntests\\test_formal_core_v1_domain2_raw_adapter_conformance.py ...         [ 40%]\ntests\\test_formal_core_v1_domain3_production_adapter_alignment.py ...    [ 41%]\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 43%]\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [ 45%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 48%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 51%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 54%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 55%]\ntests\\test_mvp_unified.py .......                                        [ 58%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 61%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 71%]\ntests\\test_pep770_scope_v4.py .......                                    [ 73%]\ntests\\test_previous_version_gate.py ...........                          [ 77%]\ntests\\test_rerun_planner.py ..................                           [ 84%]\ntests\\test_review_fail_closed.py .                                       [ 84%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 87%]\ntests\\test_terraform_plan_producer.py ........                           [ 90%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 93%]\ntests\\test_test_build_failure_producer.py ........                       [ 96%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n======================= 270 passed in 62.59s (0:01:02) ========================\n"
+        "stdout_tail": "t_record_tampered_fixture.py .. [  0%]\n.                                                                        [  1%]\ntests\\test_agent_memory_v0.py ............................               [ 11%]\ntests\\test_claude_native_auth_remediation.py ...                         [ 12%]\ntests\\test_claude_native_c0.py ........                                  [ 15%]\ntests\\test_claude_native_primary_benchmark.py ...........                [ 19%]\ntests\\test_claude_native_read_invocation_hardening_diagnostic.py ......  [ 21%]\ntests\\test_claude_native_readiness.py .......                            [ 24%]\ntests\\test_claude_native_reliability_diagnostic.py ....                  [ 25%]\ntests\\test_claude_native_usage_telemetry_invocation_repair_probe.py .... [ 27%]\n                                                                         [ 27%]\ntests\\test_codex_native_readiness.py .........                           [ 30%]\ntests\\test_deepseek_ds_r0.py .........                                   [ 34%]\ntests\\test_deepseek_read_tool_diagnostic.py ....                         [ 35%]\ntests\\test_deepseek_structured_output_diagnostic.py ....                 [ 37%]\ntests\\test_formal_core_v1_domain1_raw_adapter_conformance.py ....        [ 38%]\ntests\\test_formal_core_v1_domain2_production_adapter_alignment.py ...    [ 39%]\ntests\\test_formal_core_v1_domain2_raw_adapter_conformance.py ...         [ 40%]\ntests\\test_formal_core_v1_domain3_production_adapter_alignment.py ...    [ 41%]\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 43%]\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [ 45%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 48%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 51%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 54%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 55%]\ntests\\test_mvp_unified.py .......                                        [ 58%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 61%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 71%]\ntests\\test_pep770_scope_v4.py .......                                    [ 73%]\ntests\\test_previous_version_gate.py ...........                          [ 77%]\ntests\\test_rerun_planner.py ..................                           [ 84%]\ntests\\test_review_fail_closed.py .                                       [ 84%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 87%]\ntests\\test_terraform_plan_producer.py ........                           [ 90%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 93%]\ntests\\test_test_build_failure_producer.py ........                       [ 96%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n============================ 270 passed in 59.80s =============================\n"
       },
       "git_diff_check": {
         "args": [
@@ -356,6 +383,6 @@
     "lean_reproduction_status": "NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT"
   },
   "zip_byte_reproducibility": true,
-  "zip_filename": "spira_terraform_agent_action_gate_public_demo_df2bd9d.zip",
-  "zip_sha256": "d98667eea82b5736ed37e8627e9c7c9cf13e6303130f1c9cbd172ca55661c826"
+  "zip_filename": "spira_terraform_agent_action_gate_public_demo_5962087.zip",
+  "zip_sha256": "161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739"
 }
