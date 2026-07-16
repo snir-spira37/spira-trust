@@ -33,7 +33,7 @@ Gates:
   "fixture_hashes_match": true,
   "focused_tests_pass": true,
   "formal_core_contracts_match": true,
-  "full_pytest_pass": true,
+  "full_pytest_separated_from_raw_adapter_harness": true,
   "not_claimed_loss_zero": true,
   "not_evaluated_loss_zero": true,
   "typed_evidence_matches": true

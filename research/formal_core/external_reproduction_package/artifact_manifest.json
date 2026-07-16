@@ -412,19 +412,19 @@
       "sha256": "361e245cdf2433d3f2136e7ff255355a1abdd8b83eede9018ca2387a6ed647fb"
     },
     {
-      "bytes": 1146,
+      "bytes": 1176,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_report.md",
-      "sha256": "f84945261334646bd62c7af3b75fd04da15ef2283003b3f99da2558054f652ce"
+      "sha256": "e021f50ca990c1223f9cb130c0dcf82e502c12390b2138d0a3b777f6be418a79"
     },
     {
-      "bytes": 24486,
+      "bytes": 23381,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_results.json",
-      "sha256": "ab0a8415b3cdfe9dc898607c6217dcec3fd8fe7bcd327d1a915baa49fea7f77f"
+      "sha256": "db8313dd99925992777d51ce2736d585522880508678e7fcf22d3af1e1311a62"
     },
     {
-      "bytes": 1780,
+      "bytes": 1810,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_review.md",
-      "sha256": "6880a44723cb68f2979be29e23748e28e827dc4080a48e7132f8af8daf9d50a9"
+      "sha256": "1b56b0613ea4a19ed3305f08e1a4d1519ce10e9ade36594f7ce06effbaf39d1e"
     },
     {
       "bytes": 9454,
@@ -667,19 +667,19 @@
       "sha256": "f566dbc1b02a2946bebc89f6786edc4f0d7c032d6f0bbb6ac3058e02842d9aae"
     },
     {
-      "bytes": 1007,
+      "bytes": 1037,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_report.md",
-      "sha256": "4d18b03aa614233671e6f6becabbfae3183c5f218327775b6be07e67e4a9a9c6"
+      "sha256": "fd8d564a6ad7fe993cc80e3584738c37633203e1d7f6ce467a7559e85ddd182b"
     },
     {
-      "bytes": 17373,
+      "bytes": 16268,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_results.json",
-      "sha256": "a74d2afb020225609ad8de5ba4bd76f766c23f57063f7531626c9ec918acf7c6"
+      "sha256": "b1e58f63b336a4b1fecd4638c620a5e8486f27a40eaa631b7d86d29a330608ab"
     },
     {
-      "bytes": 1530,
+      "bytes": 1560,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_review.md",
-      "sha256": "fb4325c3c49078ee425cc1842dc992026555080f38d0d875e37fbb053ff8f09e"
+      "sha256": "857de76a26b121e1e9420cf13bc968d5b0223dfef1f780ae8be0f5625154df90"
     },
     {
       "bytes": 7822,
@@ -917,19 +917,19 @@
       "sha256": "fcb30cf9b821beb9856a9cf88c39e5e30bf05d573ae41dd0684bfc4778bcae6e"
     },
     {
-      "bytes": 1256,
+      "bytes": 1286,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_report.md",
-      "sha256": "0cb374f49db400feecaacb2df115c9102c74284255dca60824e07020f0c247e5"
+      "sha256": "40ad199899acbe03a6ab5c7b9112122429d2a11c0293a4ba836f1c6579a1a4a1"
     },
     {
-      "bytes": 22801,
+      "bytes": 22949,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
-      "sha256": "3c78f215ff6f129f09534c6ea8691d5330bd7f653a8259ae8144177256636eba"
+      "sha256": "d70cf94d42a7a9bfd1b62f6a208aa3e81d310c39c726771ff25b42cd57d2fc3b"
     },
     {
-      "bytes": 1896,
+      "bytes": 1926,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_review.md",
-      "sha256": "5cdd6f4bdbba594fe87f53cdfbe0f140fab6f804a46db9bb88719365a449ac0d"
+      "sha256": "12c041c9ea8237725e4b05513314c80ed464185f9eb4a196414813863d731691"
     },
     {
       "bytes": 8007,
@@ -2932,9 +2932,9 @@
       "sha256": "8083ec39ec7e3b000cd86bf19f969e565306d022dc817f1d4705df4f65aac847"
     },
     {
-      "bytes": 16636,
+      "bytes": 17288,
       "path": "tools/run_formal_core_v1_domain1_raw_adapter_conformance.py",
-      "sha256": "348f20af874946b97cb79a350f8afb84f67d9d5a050f8b76f0a6333a8087674f"
+      "sha256": "c1f51136101d091201ced6781772b427e9274dff59eb7d2126805ca0c0ff8976"
     },
     {
       "bytes": 19774,
@@ -2947,9 +2947,9 @@
       "sha256": "f6f65ed3428aecec900d8aa1fc7619e08addd9653a351cc5420e2396bc3d3ca2"
     },
     {
-      "bytes": 12666,
+      "bytes": 13318,
       "path": "tools/run_formal_core_v1_domain2_raw_adapter_conformance.py",
-      "sha256": "aa6ed4843020186a7838bac564c3dc05764ef85ec056ea393f4a7ab222c9f90d"
+      "sha256": "5b338214871761d0b631a11bc8a4b3ee1b7478e2c0d80d6e67aa43be7d0003ba"
     },
     {
       "bytes": 17868,
@@ -2962,9 +2962,9 @@
       "sha256": "dbb8d50f76c276c62da6bbf809df0594461b5b82705ef0fb5321d3726f5b916f"
     },
     {
-      "bytes": 18251,
+      "bytes": 18903,
       "path": "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py",
-      "sha256": "634a116c2f94142664c915a64ad8453be9837786439a964ccf0eaa98b7345a10"
+      "sha256": "2e0eda61fbcb9e56fa6bc98e884eb8551354d63416b8c96e07e02ecb1ff02ecd"
     },
     {
       "bytes": 12165,

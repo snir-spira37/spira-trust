@@ -6,13 +6,17 @@
       "command": "python -m pytest tests/test_formal_core_v1_domain2_raw_adapter_conformance.py",
       "returncode": 0,
       "stderr_tail": "",
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 3 items\n\ntests\\test_formal_core_v1_domain2_raw_adapter_conformance.py ...         [100%]\n\n============================== 3 passed in 0.17s =============================="
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 3 items\n\ntests\\test_formal_core_v1_domain2_raw_adapter_conformance.py ...         [100%]\n\n============================== 3 passed in 0.19s =============================="
     },
     "full_pytest": {
-      "command": "python -m pytest",
-      "returncode": 0,
-      "stderr_tail": "",
-      "stdout_tail": "tests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 43%]\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [ 45%]\ntests\\test_formal_core_v1_python_boundary.py ........                    [ 48%]\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [ 51%]\ntests\\test_machine_contract_passthrough_mvp.py ........                  [ 54%]\ntests\\test_multi_agent_benchmark_assets.py ..                            [ 55%]\ntests\\test_mvp_unified.py .......                                        [ 58%]\ntests\\test_passthrough_revised_primary_benchmark.py ..........           [ 61%]\ntests\\test_passthrough_revised_readiness.py .........................    [ 71%]\ntests\\test_pep770_scope_v4.py .......                                    [ 73%]\ntests\\test_previous_version_gate.py ...........                          [ 77%]\ntests\\test_rerun_planner.py ..................                           [ 84%]\ntests\\test_review_fail_closed.py .                                       [ 84%]\ntests\\test_terraform_plan_oracle_validator.py .......                    [ 87%]\ntests\\test_terraform_plan_producer.py ........                           [ 90%]\ntests\\test_test_build_failure_oracle_validator.py ........               [ 93%]\ntests\\test_test_build_failure_producer.py ........                       [ 96%]\ntests\\test_unification_proof.py ..........                               [100%]\n\n======================= 270 passed in 109.34s (0:01:49) ======================="
+      "args": [
+        "python",
+        "-m",
+        "pytest"
+      ],
+      "reason": "The raw-adapter conformance harness writes generated result artifacts. Running full pytest inside the same artifact-producing command creates a self-referential package-manifest gate for cold clones. Full pytest is run by the package builder and cold reviewer after generated artifacts are stabilized.",
+      "returncode": "NOT_RUN_INSIDE_RAW_ADAPTER_CONFORMANCE_HARNESS",
+      "status": "FULL_PYTEST_IS_A_SEPARATE_REPRODUCTION_GATE"
     }
   },
   "counts": {
@@ -426,7 +430,7 @@
     "fixture_hashes_match": true,
     "focused_tests_pass": true,
     "formal_core_contracts_match": true,
-    "full_pytest_pass": true,
+    "full_pytest_separated_from_raw_adapter_harness": true,
     "not_claimed_loss_zero": true,
     "not_evaluated_loss_zero": true,
     "typed_evidence_matches": true

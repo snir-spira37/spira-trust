@@ -43,7 +43,7 @@ The Domain 3 raw adapter synthetic fixture conformance harness is accepted.
     "fixture_count": true,
     "fixture_hashes_match": true,
     "focused_tests_pass": true,
-    "full_pytest_pass": true,
+    "full_pytest_separated_from_raw_adapter_harness": true,
     "not_claimed_loss_zero": true,
     "not_evaluated_loss_zero": true,
     "replace_path_loss_zero": true,
