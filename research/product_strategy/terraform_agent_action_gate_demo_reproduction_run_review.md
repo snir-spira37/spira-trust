@@ -4,8 +4,8 @@
 
 ```text
 DEMO_REPRODUCTION_REVIEW_COMPLETE
-DEMO_REPRODUCTION_NEEDS_REVISION
-NO_RESULT_ACCEPTANCE
+DEMO_REPRODUCTION_ACCEPTED
+PUBLIC_DEMO_PACKAGE_AUTHORIZATION_REQUIRED_NEXT
 NO_PRODUCT_CHANGE
 NO_DOMAIN_EXPANSION
 NO_RELEASE
@@ -14,57 +14,29 @@ NO_OUTREACH
 
 ## Review Question
 
-Can the accepted Terraform Agent Action Gate demo be reproduced from the repository using the documented fixtures, hashes, commands, and script without hidden state or manual output repair?
+Can the accepted Terraform Agent Action Gate demo be reproduced after the package-integrity revision using the documented fixtures, hashes, commands, and script without hidden state or manual output repair?
 
 ## Findings
 
-### F1 - Required Harness Command Does Not Pass
+### F1 - Package Integrity Restored
 
-Severity: blocking
+Severity: pass
 
-The documented command was run twice:
-
-```powershell
-python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py
-```
-
-Both runs returned exit code `1`. The generated conformance result status was:
+The reproduction package passed integrity checks before and after the Domain 3 conformance runs:
 
 ```text
-SPIRA_FORMAL_CORE_V1_DOMAIN3_RAW_ADAPTER_CONFORMANCE_NEEDS_REVISION
+artifact manifest hash mismatches: 0
+missing artifacts: 0
+duplicate paths: 0
+secret scan hits: 0
+forbidden Lean token matches: 0
 ```
 
-The failing gate was:
+No hash drift recurred after repeated Domain 3 generated-output runs.
 
-```text
-full_pytest_pass: false
-```
+### F2 - Demo Paths Reproduced
 
-This prevents `DEMO_REPRODUCTION_ACCEPTED` under the authorized acceptance criteria.
-
-### F2 - External Reproduction Package Manifest Hash Mismatch
-
-Severity: blocking
-
-The full pytest failure was traced to:
-
-```text
-tests/test_formal_core_v1_external_reproduction_package.py::test_external_reproduction_package_manifest_hashes_match
-```
-
-The external reproduction package manifest has three mismatches against the current repository files:
-
-```text
-research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_report.md
-research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json
-research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_review.md
-```
-
-This is a reproducibility/package-integrity blocker. It does not show that the three selected demo paths are semantically wrong, but it does show that the current documented reproduction route is not clean.
-
-### F3 - Selected Demo Paths Reproduce Semantically
-
-Severity: informational
+Severity: pass
 
 The selected Domain 3 paths reproduced the intended semantics across two runs:
 
@@ -82,13 +54,47 @@ invalid JSON soft pass:
 not observed
 ```
 
-The focused tests passed:
+### F3 - Required Tests Passed
+
+Severity: pass
+
+The required Python and package checks passed:
 
 ```text
-12 passed
+Domain 3 conformance: PASS twice
+focused pytest: PASS
+full pytest: PASS, 270 passed
+package smoke tests: PASS
+JSON validation: PASS
+git diff --check: PASS
 ```
 
-JSON validation and `git diff --check` also passed.
+### F4 - Lean/Lake Not Evaluated In This Environment
+
+Severity: boundary
+
+Lean/Lake was not available in the local environment:
+
+```text
+NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+```
+
+This was not promoted to a PASS. Full Lean reproduction remains for an environment with the declared Lean/Lake toolchain available.
+
+### F5 - Documentation Matches The Reproduction
+
+Severity: pass
+
+The demo script matches the reproduced fixtures, commands, actions, reason codes, blockers, `not_evaluated` values, output paths, and labels:
+
+```text
+CURRENT IMPLEMENTATION
+CONCEPTUAL INTEGRATION BOUNDARY
+ROADMAP ONLY
+EXPLANATION_ONLY
+```
+
+The `spira evaluate` phrase appears only as an explicit negative statement that the demo does not use an invented CLI.
 
 ## Boundary Review
 
@@ -110,20 +116,24 @@ release: no
 outreach: no
 ```
 
-The review also found no invented public CLI, fake runtime, MCP/API/database gate, or backup/restore/approval demo claim.
+The historical failed reproduction from commit `03d92b97304f61b77e58b058875a277abb1df4c7` remains preserved in git history. The package-integrity revision from `d731c6e719322cdb2e2c276b0c200eacb26f6e40` remains a separate checkpoint.
 
-## Verdict
+## Demo Reproduction Verdict
 
 ```text
-DEMO_REPRODUCTION_NEEDS_REVISION
+DEMO_REPRODUCTION_ACCEPTED
 ```
 
-The current run cannot be accepted because a required command fails in the current repository state. The immediate revision target is the external reproduction package manifest/hash mismatch for the Domain 3 conformance artifacts.
+## Formal Package Lean Reproduction Status
+
+```text
+NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+```
 
 ## Required Next Step
 
 ```text
-DEMO_REPRODUCTION_REVISION_REQUIRED
+PUBLIC_DEMO_PACKAGE_AUTHORIZATION_REQUIRED
 ```
 
-After revision, rerun the full `DEMO_REPRODUCTION_RUN_REQUIRED` flow from a clean worktree. Do not proceed to `PUBLIC_DEMO_PACKAGE_AUTHORIZATION_REQUIRED` until the documented harness command returns PASS and the review accepts the reproduction.
+Do not perform outreach, video production, landing-page publication, or release under this review.
