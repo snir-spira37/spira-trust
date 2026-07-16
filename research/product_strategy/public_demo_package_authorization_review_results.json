@@ -1,0 +1,64 @@
+{
+  "authorized_actions": [
+    "STOP_BLOCKED",
+    "REPORT_NOT_EVALUATED",
+    "RERUN_REQUIRED"
+  ],
+  "authorized_domain": "Domain 3 - Terraform Plan evidence",
+  "authorized_fixtures": [
+    "create_update_delete_01",
+    "incomplete_plan_01",
+    "invalid_json_01"
+  ],
+  "authorized_public_claims": [
+    "The three Domain 3 demo outcomes were reproduced twice with matching semantic results.",
+    "Invalid Terraform JSON did not receive a soft PASS.",
+    "The focused and full Python test suites passed in the accepted reproduction environment.",
+    "The accepted reproduction used existing fixtures, actions, reason codes and schemas.",
+    "The demo did not require a product, adapter, schema or fixture change.",
+    "SPIRA's formal decision core contains machine-checked Lean proofs for bounded properties.",
+    "The model is explanation-only and does not own the machine action in the formal architecture."
+  ],
+  "authorized_reason_codes": [
+    "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE",
+    "TERRAFORM_PLAN_INCOMPLETE",
+    "TERRAFORM_PLAN_JSON_INVALID"
+  ],
+  "blockers": [],
+  "cold_review_task_required": true,
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "current_conceptual_roadmap_separation_required": true,
+  "demo_reproduction_commit": "2b1fab6920232ec69a2af002aedbc138cd49e1a1",
+  "demo_reproduction_status": "DEMO_REPRODUCTION_ACCEPTED",
+  "demo_script_commit": "bfed6f7774c48a17361ac0a2298fb9073b891ebc",
+  "domain_expansion_detected": false,
+  "exact_existing_commands_required": true,
+  "external_reproduction_required_before_publication": true,
+  "formal_claim_boundary_defined": true,
+  "invented_cli_allowed": false,
+  "lean_reproduction_status_in_demo_environment": "NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
+  "local_absolute_paths_allowed": false,
+  "next_step": "PUBLIC_DEMO_PACKAGE_BUILD_REQUIRED",
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "product_change_performed": false,
+  "prohibited_public_claims": [
+    "SPIRA guarantees Terraform safety",
+    "SPIRA formally proves Terraform",
+    "SPIRA governs all AI agents",
+    "SPIRA is the only pre-action gate",
+    "SPIRA is unique in Terraform policy",
+    "SPIRA replaces OPA, Sentinel, HCP Terraform or Spacelift",
+    "SPIRA replaces IAM or MCP gateways",
+    "SPIRA intercepts arbitrary actions",
+    "SPIRA is independently certified",
+    "SPIRA is production-final",
+    "the complete system was formally verified end-to-end",
+    "DEMO_REPRODUCTION_ACCEPTED means Lean reproduction passed"
+  ],
+  "public_source_scope_defined": true,
+  "schema": "SPIRA_AGENT_ACTION_GATE_PUBLIC_DEMO_PACKAGE_AUTHORIZATION_REVIEW_RESULTS",
+  "schema_version": 1,
+  "secrets_allowed": false,
+  "sha256_manifest_required": true,
+  "verdict": "PUBLIC_DEMO_PACKAGE_AUTHORIZATION_ACCEPTED"
+}
