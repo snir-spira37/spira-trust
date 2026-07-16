@@ -1,5 +1,5 @@
 {
-  "accepted_phase1_commit": "e88d3429d75c67d2d1f1b9ef0ff78cd774a4fcf7",
+  "accepted_phase1_commit": "af88cba504a349ca7977d055cabb272a3b676411",
   "expected_metrics": {
     "PROCEED_paths": 0,
     "directories_accepted_as_evidence_files": 0,

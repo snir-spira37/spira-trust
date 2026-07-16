@@ -6,7 +6,7 @@ Phase 1 validator.
 Source commit:
 
 ```text
-e88d3429d75c67d2d1f1b9ef0ff78cd774a4fcf7
+af88cba504a349ca7977d055cabb272a3b676411
 ```
 
 External reproduction authorization commit:

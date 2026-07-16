@@ -9,7 +9,7 @@ SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_PACKAGE_ACCEPTED
 ## Source
 
 ```text
-accepted Phase 1 source commit: e88d3429d75c67d2d1f1b9ef0ff78cd774a4fcf7
+accepted Phase 1 source commit: af88cba504a349ca7977d055cabb272a3b676411
 external reproduction authorization commit: b851ed0d04b58a7f526346929580543b02b47815
 package mode: clone-based
 ```
@@ -59,8 +59,8 @@ two focused semantic runs identical: True
 ## ZIP
 
 ```text
-SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_e88d342.zip
-SHA256: 7767fd109769a73f3ed22930f0e3200643ae85c6ac1054a4b8210c3544db3fd9
+SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_af88cba.zip
+SHA256: ed031c0fccebe2db4d583315e2be391613a8c95051c73faf6800c0d683db7858
 SHA256SUMS after extraction: True
 ZIP path safety: True
 ```
