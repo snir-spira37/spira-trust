@@ -1,3 +1,4 @@
 * text=auto eol=lf
 *.whl binary
 *.zip binary
+research/product_strategy/public_demo_package/fixtures/**/*.json -text -diff

@@ -1,0 +1,148 @@
+{
+  "commands": {
+    "demo_paths": [
+      "python",
+      "tools/run_formal_core_v1_domain3_raw_adapter_conformance.py"
+    ],
+    "focused_tests": [
+      "python",
+      "-m",
+      "pytest",
+      "tests/test_formal_core_v1_domain3_raw_adapter_conformance.py",
+      "tests/test_terraform_plan_producer.py"
+    ],
+    "full_tests": [
+      "python",
+      "-m",
+      "pytest"
+    ],
+    "package_smoke_tests": [
+      "python",
+      "research/product_strategy/build_public_demo_package.py",
+      "--verify-only"
+    ]
+  },
+  "competitor_mapping_commit": "45fe70b40c45601510559cda25dd05f533c21cf8",
+  "created_at": "2026-07-16",
+  "demo_reproduction_commit": "2b1fab6920232ec69a2af002aedbc138cd49e1a1",
+  "demo_reproduction_status": "DEMO_REPRODUCTION_ACCEPTED",
+  "demo_script_commit": "bfed6f7774c48a17361ac0a2298fb9073b891ebc",
+  "domain": "Domain 3 - Terraform Plan evidence",
+  "expected_actions": {
+    "REPORT_NOT_EVALUATED": "REPORT_NOT_EVALUATED",
+    "RERUN_REQUIRED": "RERUN_REQUIRED",
+    "STOP_BLOCKED": "STOP_BLOCKED"
+  },
+  "expected_blocking_items": {
+    "REPORT_NOT_EVALUATED": [],
+    "RERUN_REQUIRED": [],
+    "STOP_BLOCKED": [
+      "resource change requires review"
+    ]
+  },
+  "expected_exit_codes": {
+    "demo_paths": 0,
+    "focused_tests": 0,
+    "full_tests": 0,
+    "package_smoke_tests": 0
+  },
+  "expected_not_claimed": {
+    "REPORT_NOT_EVALUATED": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "RERUN_REQUIRED": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ],
+    "STOP_BLOCKED": [
+      "APPLY_SUCCESS",
+      "INFRASTRUCTURE_COMPLIANCE",
+      "INFRASTRUCTURE_CORRECTNESS",
+      "INFRASTRUCTURE_COST",
+      "INFRASTRUCTURE_SECURITY",
+      "LIVE_STATE_FRESHNESS"
+    ]
+  },
+  "expected_not_evaluated": {
+    "REPORT_NOT_EVALUATED": [
+      "terraform plan incomplete"
+    ],
+    "RERUN_REQUIRED": [
+      "Terraform plan JSON parse failed"
+    ],
+    "STOP_BLOCKED": []
+  },
+  "expected_output_paths": [
+    "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
+    "research/formal_core/domain3/spira_formal_core_v1_domain3_conformance_results.json"
+  ],
+  "expected_reason_codes": {
+    "REPORT_NOT_EVALUATED": [
+      "TERRAFORM_PLAN_INCOMPLETE"
+    ],
+    "RERUN_REQUIRED": [
+      "TERRAFORM_PLAN_JSON_INVALID"
+    ],
+    "STOP_BLOCKED": [
+      "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+    ]
+  },
+  "fixture_paths": {
+    "REPORT_NOT_EVALUATED": {
+      "package_path": "fixtures/incomplete_plan/incomplete_plan_01.json",
+      "source_path": "research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json"
+    },
+    "RERUN_REQUIRED": {
+      "package_path": "fixtures/invalid_json/invalid_json_01.json",
+      "source_path": "research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json"
+    },
+    "STOP_BLOCKED": {
+      "package_path": "fixtures/create_update_delete/create_update_delete_01.json",
+      "source_path": "research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json"
+    }
+  },
+  "fixture_sha256": {
+    "REPORT_NOT_EVALUATED": "b69e66ea37f7501938bff3b9b4924351d23d1b96adba1f79f50dd29731e9a910",
+    "RERUN_REQUIRED": "50a28ffc97453e6aa612b6415349b44457880c882bfc24f586d4476444ea1970",
+    "STOP_BLOCKED": "49c622e62c5255b3ec05214640fd679a89228b83ee1bb10a7ce01e258d37adbe"
+  },
+  "fixtures": [
+    "create_update_delete_01",
+    "incomplete_plan_01",
+    "invalid_json_01"
+  ],
+  "invalid_json_soft_pass_forbidden": true,
+  "lean_reproduction_status_in_demo_environment": "NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
+  "package_authorization_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "package_boundary": {
+    "current": "Domain 3 Terraform Plan artifact-backed demo only",
+    "not_claimed": [
+      "arbitrary tool-call authorization",
+      "general MCP enforcement",
+      "API/database action adapters",
+      "backup/restore evidence",
+      "approval evidence",
+      "runtime interception",
+      "release or publication"
+    ]
+  },
+  "package_schema_version": 1,
+  "package_source_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",
+  "prerequisites": [
+    "Python 3.12+",
+    "pytest for test commands",
+    "Lean/Lake only for optional formal package reproduction"
+  ],
+  "semantic_repeatability_expected": true,
+  "working_directory": "repository root"
+}
