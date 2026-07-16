@@ -81,7 +81,7 @@ formal branch:
 codex/formal-core-v1-lean
 
 formal worktree:
-C:\Users\snir\Documents\Codex\2026-06-11\we-are-continuing-spira-v10-0\work\github_spira_trust_formal_core_v1_lean
+<REPO_ROOT>
 
 baseline branch:
 codex/domain3-terraform-plan-retry-1

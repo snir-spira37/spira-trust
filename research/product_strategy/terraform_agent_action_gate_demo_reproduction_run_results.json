@@ -28,7 +28,7 @@
         "tests/test_terraform_plan_producer.py"
       ],
       "returncode": 0,
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 13 items\n\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 38%]\ntests\\test_terraform_plan_producer.py ........                           [100%]\n\n============================= 13 passed in 6.54s =============================="
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 13 items\n\ntests\\test_formal_core_v1_domain3_raw_adapter_conformance.py .....       [ 38%]\ntests\\test_terraform_plan_producer.py ........                           [100%]\n\n============================= 13 passed in 6.54s =============================="
     },
     "full_pytest": {
       "args": [
@@ -73,7 +73,7 @@
         "python",
         "-m",
         "json.tool",
-        "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\research\\product_strategy\\terraform_agent_action_gate_demo_reproduction_manifest.json"
+        "<REPO_ROOT>\\research\\product_strategy\\terraform_agent_action_gate_demo_reproduction_manifest.json"
       ],
       "returncode": 0,
       "stdout_tail": "                \"research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json\",\n                \"research/product_strategy/terraform_agent_action_gate_demo_verified_results.json\"\n            ],\n            \"expected_proof_refs\": [\n                \"domain3_raw_adapter_fixture:invalid_json_01\"\n            ],\n            \"expected_reason_codes\": [\n                \"TERRAFORM_PLAN_JSON_INVALID\"\n            ],\n            \"expected_stop\": true,\n            \"fixture_path\": \"research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json\",\n            \"fixture_sha256\": \"50a28ffc97453e6aa612b6415349b44457880c882bfc24f586d4476444ea1970\",\n            \"intended_action\": \"RERUN_REQUIRED\",\n            \"path_id\": \"RERUN_REQUIRED\",\n            \"prerequisites\": [\n                \"Python 3.12+\",\n                \"repository checkout\"\n            ],\n            \"roadmap_elements\": [],\n            \"source_commit\": \"2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs\",\n            \"verification_result\": \"PASS\",\n            \"verified_at\": \"2026-07-15\",\n            \"working_directory\": \"repository root\"\n        }\n    ],\n    \"positioning_commit\": \"da2e99d35e029f0d231e98a517ef87fe9528dde6\",\n    \"schema\": \"SPIRA_AGENT_ACTION_GATE_DEMO_REPRODUCTION_MANIFEST\",\n    \"schema_version\": 1,\n    \"source_commit\": \"current demo-script execution commit to be recorded after commit\"\n}"
@@ -93,7 +93,7 @@
         "python",
         "-m",
         "json.tool",
-        "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\research\\product_strategy\\terraform_agent_action_gate_demo_verified_results.json"
+        "<REPO_ROOT>\\research\\product_strategy\\terraform_agent_action_gate_demo_verified_results.json"
       ],
       "returncode": 0,
       "stdout_tail": "    \"schema\": \"SPIRA_AGENT_ACTION_GATE_DEMO_VERIFIED_RESULTS\",\n    \"schema_version\": 1,\n    \"selected_fixtures\": {\n        \"REPORT_NOT_EVALUATED\": \"research/formal_core/domain3/raw_adapter_fixtures/incomplete_plan/incomplete_plan_01.json\",\n        \"RERUN_REQUIRED\": \"research/formal_core/domain3/raw_adapter_fixtures/invalid_json/invalid_json_01.json\",\n        \"STOP_BLOCKED\": \"research/formal_core/domain3/raw_adapter_fixtures/create_update_delete/create_update_delete_01.json\"\n    },\n    \"stop_blocked_path_verified\": true,\n    \"tests_run\": [\n        {\n            \"command\": \"python tools/run_formal_core_v1_domain3_raw_adapter_conformance.py\",\n            \"note\": \"Existing harness verified all 31 Domain 3 raw-adapter fixtures; generated conformance-result tail changes were not committed.\",\n            \"status\": \"PASS\"\n        },\n        {\n            \"command\": \"python -m pytest tests/test_formal_core_v1_domain3_raw_adapter_conformance.py tests/test_terraform_plan_producer.py\",\n            \"note\": \"12 passed\",\n            \"status\": \"PASS\"\n        },\n        {\n            \"command\": \"python -m json.tool research/product_strategy/terraform_agent_action_gate_demo_reproduction_manifest.json; terraform_agent_action_gate_demo_verified_results.json; terraform_agent_action_gate_demo_script_review_results.json\",\n            \"status\": \"PASS\"\n        },\n        {\n            \"command\": \"git diff --check\",\n            \"status\": \"PASS\"\n        }\n    ],\n    \"verdict\": \"DEMO_SCRIPT_ACCEPTED\"\n}"
@@ -106,7 +106,7 @@
         "tests/test_formal_core_v1_external_reproduction_package.py"
       ],
       "returncode": 0,
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 5 items\n\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [100%]\n\n============================== 5 passed in 0.29s =============================="
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 5 items\n\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [100%]\n\n============================== 5 passed in 0.29s =============================="
     },
     "package_smoke_pre": {
       "args": [
@@ -116,7 +116,7 @@
         "tests/test_formal_core_v1_external_reproduction_package.py"
       ],
       "returncode": 0,
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 5 items\n\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [100%]\n\n============================== 5 passed in 0.38s =============================="
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 5 items\n\ntests\\test_formal_core_v1_external_reproduction_package.py .....         [100%]\n\n============================== 5 passed in 0.38s =============================="
     }
   },
   "conformance_result": {
@@ -503,5 +503,5 @@
   "source_commit": "d731c6e719322cdb2e2c276b0c200eacb26f6e40",
   "stop_blocked_verified": true,
   "verdict": "DEMO_REPRODUCTION_ACCEPTED",
-  "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+  "working_directory": "<REPO_ROOT>"
 }

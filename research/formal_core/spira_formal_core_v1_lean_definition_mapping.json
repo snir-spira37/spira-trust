@@ -3,7 +3,7 @@
   "phase": "lean_definition_implementation",
   "source_baseline_commit": "cfa8c925217fea08cbf4736490765d676bfddf3f",
   "formal_branch": "codex/formal-core-v1-lean",
-  "formal_worktree": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean",
+  "formal_worktree": "<REPO_ROOT>",
   "toolchain": {
     "lean_toolchain_file": "leanprover/lean4:v4.32.0",
     "lean_version": "4.32.0",

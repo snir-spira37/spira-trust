@@ -135,7 +135,7 @@
       "roadmap_elements": [],
       "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
       "verification_result": "PASS",
-      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+      "working_directory": "<REPO_ROOT>"
     },
     {
       "actual_action": "REPORT_NOT_EVALUATED",
@@ -251,7 +251,7 @@
       "roadmap_elements": [],
       "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
       "verification_result": "PASS",
-      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+      "working_directory": "<REPO_ROOT>"
     },
     {
       "actual_action": "RERUN_REQUIRED",
@@ -368,7 +368,7 @@
       "roadmap_elements": [],
       "source_commit": "2ef6f559433f1a2e0bb8c503a4b35af745e8c6a2 plus current demo-script execution outputs",
       "verification_result": "PASS",
-      "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+      "working_directory": "<REPO_ROOT>"
     }
   ],
   "positioning_commit": "da2e99d35e029f0d231e98a517ef87fe9528dde6",

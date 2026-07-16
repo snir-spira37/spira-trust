@@ -857,7 +857,7 @@
     {
       "agent_output": {
         "blocking_items": [
-          "Permission denied for Read tool - cannot access frozen_input.json from C:\\Users\\snir\\AppData\\Local\\Temp\\spira_claude_native_readiness_ws-jvi2pi5n\\"
+          "Permission denied for Read tool - cannot access frozen_input.json from <USER_HOME>\\AppData\\Local\\Temp\\spira_claude_native_readiness_ws-jvi2pi5n\\"
         ],
         "drilldown_used": false,
         "evidence_or_proof_references": [

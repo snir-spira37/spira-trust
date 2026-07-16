@@ -26,7 +26,7 @@
         "command": "python -m pytest tests/test_formal_core_v1_python_boundary.py",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.12s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.12s ==============================\n"
       },
       "mvp_evaluation": {
         "command": "python tools/evaluate_mvp_unified.py",
@@ -38,13 +38,13 @@
         "command": "python -m pytest tests/test_mvp_unified.py",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.89s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.89s ==============================\n"
       },
       "passthrough_mvp_tests": {
         "command": "python -m pytest tests/test_machine_contract_passthrough_mvp.py",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_machine_contract_passthrough_mvp.py ........                  [100%]\n\n============================== 8 passed in 2.67s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_machine_contract_passthrough_mvp.py ........                  [100%]\n\n============================== 8 passed in 2.67s ==============================\n"
       },
       "proof_package": {
         "command": "python tools/run_formal_core_v1_proof_package.py",
@@ -56,7 +56,7 @@
         "command": "python -m pytest tests/test_machine_contract_passthrough_envelope_validator.py",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 9 items\n\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [100%]\n\n============================== 9 passed in 0.40s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 9 items\n\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [100%]\n\n============================== 9 passed in 0.40s ==============================\n"
       }
     },
     "status_artifacts": {

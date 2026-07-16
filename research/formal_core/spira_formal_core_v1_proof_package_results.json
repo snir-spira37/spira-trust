@@ -31,21 +31,21 @@
         "cwd": ".",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.07s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_formal_core_v1_python_boundary.py ........                    [100%]\n\n============================== 8 passed in 0.07s ==============================\n"
       },
       {
         "command": "python -m pytest tests/test_unification_proof.py",
         "cwd": ".",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 10 items\n\ntests\\test_unification_proof.py ..........                               [100%]\n\n============================= 10 passed in 0.10s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 10 items\n\ntests\\test_unification_proof.py ..........                               [100%]\n\n============================= 10 passed in 0.10s ==============================\n"
       },
       {
         "command": "python -m pytest tests/test_mvp_unified.py",
         "cwd": ".",
         "returncode": 0,
         "stderr_tail": "",
-        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.37s ==============================\n"
+        "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 7 items\n\ntests\\test_mvp_unified.py .......                                        [100%]\n\n============================== 7 passed in 2.37s ==============================\n"
       }
     ],
     "lake_build": {

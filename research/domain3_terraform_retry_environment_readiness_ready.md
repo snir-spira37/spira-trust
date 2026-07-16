@@ -49,14 +49,14 @@ winget_installer_hash_verification: SUCCESS
 Terraform binary:
 
 ```text
-path: C:\Users\snir\AppData\Local\Microsoft\WinGet\Packages\Hashicorp.Terraform_Microsoft.Winget.Source_8wekyb3d8bbwe\terraform.exe
+path: <LOCAL_TERRAFORM_EXE>
 sha256: 6eb0a1cb89344c97ccf2928ddc2d7a6cb71a1837b7ecccfd5991466b6d751e03
 ```
 
 Winget command alias:
 
 ```text
-path: C:\Users\snir\AppData\Local\Microsoft\WinGet\Links\terraform.exe
+path: <LOCAL_TERRAFORM_LINK>
 exists: true
 ```
 

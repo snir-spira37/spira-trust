@@ -57,7 +57,7 @@ formal branch:
 codex/formal-core-v1-lean
 
 formal worktree:
-C:\Users\snir\Documents\Codex\2026-06-11\we-are-continuing-spira-v10-0\work\github_spira_trust_formal_core_v1_lean
+<REPO_ROOT>
 ```
 
 The paused benchmark artifacts in the original worktree were not modified.

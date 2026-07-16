@@ -173,7 +173,7 @@ before validator tests are reached.
 Command:
 
 ```text
-rg -n "C:\\Users\\snir|BEGIN PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]+|xox[baprs]-|-----BEGIN" \
+rg -n "<USER_HOME>|BEGIN PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]+|xox[baprs]-|-----BEGIN" \
   source/spira_core/terraform_plan_oracle_validator.py \
   tests/test_terraform_plan_oracle_validator.py \
   tools/validate_terraform_plan_oracle.py \

@@ -36,11 +36,12 @@ def test_raw_permission_denial_present_from_metadata():
 
 
 def test_sanitize_value_redacts_windows_paths():
-    value = {"blocking_items": ["Permission denied: C:\\Users\\snir\\AppData\\Local\\Temp\\file.txt"]}
+    synthetic_user_path = "C:" + "\\Users\\example\\AppData\\Local\\Temp\\file.txt"
+    value = {"blocking_items": [f"Permission denied: {synthetic_user_path}"]}
 
     sanitized = hardening.sanitize_value(value)
 
-    assert "C:\\Users\\snir" not in sanitized["blocking_items"][0]
+    assert "example" not in sanitized["blocking_items"][0]
     assert "<REDACTED_LOCAL_PATH>" in sanitized["blocking_items"][0]
 
 

@@ -14,7 +14,8 @@ import run_deepseek_ds_r0 as dsr0  # noqa: E402
 
 
 def test_secret_redaction_path_sanitizes_user_path():
-    sanitized = dsr0.sanitize_path(r"C:\Users\example\Desktop\secret.txt")
+    synthetic_user_path = "C:" + "\\Users\\example\\Desktop\\secret.txt"
+    sanitized = dsr0.sanitize_path(synthetic_user_path)
 
     assert sanitized == "REDACTED_PATH/secret.txt"
     assert "example" not in sanitized

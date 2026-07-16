@@ -6,13 +6,13 @@
       "command": "python -m pytest tests/test_machine_contract_passthrough_envelope_validator.py",
       "returncode": 0,
       "stderr_tail": "",
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 9 items\n\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [100%]\n\n============================== 9 passed in 0.31s ==============================\n"
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 9 items\n\ntests\\test_machine_contract_passthrough_envelope_validator.py .........  [100%]\n\n============================== 9 passed in 0.31s ==============================\n"
     },
     {
       "command": "python -m pytest tests/test_machine_contract_passthrough_mvp.py",
       "returncode": 0,
       "stderr_tail": "",
-      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_machine_contract_passthrough_mvp.py ........                  [100%]\n\n============================== 8 passed in 2.70s ==============================\n"
+      "stdout_tail": "============================= test session starts =============================\nplatform win32 -- Python 3.12.10, pytest-9.0.3, pluggy-1.6.0\nrootdir: <REPO_ROOT>\nconfigfile: pyproject.toml\nplugins: anyio-4.13.0\ncollected 8 items\n\ntests\\test_machine_contract_passthrough_mvp.py ........                  [100%]\n\n============================== 8 passed in 2.70s ==============================\n"
     }
   ],
   "gates": {
