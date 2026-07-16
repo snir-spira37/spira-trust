@@ -1,4 +1,5 @@
 * text=auto eol=lf
 *.whl binary
 *.zip binary
+research/formal_core/domain*/raw_adapter_fixtures/**/*.json -text -diff
 research/product_strategy/public_demo_package/fixtures/**/*.json -text -diff

@@ -1,0 +1,95 @@
+{
+  "label": "RECORDED REFERENCE OUTPUT - NOT GENERATED DURING VIEWER RUN",
+  "paths": {
+    "REPORT_NOT_EVALUATED": {
+      "actual_output_excerpt": {
+        "action": "REPORT_NOT_EVALUATED",
+        "blocking_items": [],
+        "evidence_refs": [
+          "plan.json:incomplete_plan_01",
+          "manifest:incomplete_plan_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [
+          "terraform plan incomplete"
+        ],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:incomplete_plan_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_PLAN_INCOMPLETE"
+        ],
+        "stop": true
+      },
+      "recorded_reference_output_notice": "RECORDED REFERENCE OUTPUT - NOT GENERATED DURING VIEWER RUN"
+    },
+    "RERUN_REQUIRED": {
+      "actual_output_excerpt": {
+        "action": "RERUN_REQUIRED",
+        "blocking_items": [],
+        "evidence_refs": [
+          "plan.json:invalid_json_01",
+          "manifest:invalid_json_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [
+          "Terraform plan JSON parse failed"
+        ],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:invalid_json_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_PLAN_JSON_INVALID"
+        ],
+        "stop": true
+      },
+      "recorded_reference_output_notice": "RECORDED REFERENCE OUTPUT - NOT GENERATED DURING VIEWER RUN"
+    },
+    "STOP_BLOCKED": {
+      "actual_output_excerpt": {
+        "action": "STOP_BLOCKED",
+        "blocking_items": [
+          "resource change requires review"
+        ],
+        "evidence_refs": [
+          "plan.json:create_update_delete_01",
+          "manifest:create_update_delete_01"
+        ],
+        "not_claimed": [
+          "APPLY_SUCCESS",
+          "INFRASTRUCTURE_COMPLIANCE",
+          "INFRASTRUCTURE_CORRECTNESS",
+          "INFRASTRUCTURE_COST",
+          "INFRASTRUCTURE_SECURITY",
+          "LIVE_STATE_FRESHNESS"
+        ],
+        "not_evaluated": [],
+        "proof_refs": [
+          "domain3_raw_adapter_fixture:create_update_delete_01"
+        ],
+        "reason_codes": [
+          "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
+        ],
+        "stop": true
+      },
+      "recorded_reference_output_notice": "RECORDED REFERENCE OUTPUT - NOT GENERATED DURING VIEWER RUN"
+    }
+  },
+  "schema": "SPIRA_PUBLIC_TERRAFORM_AGENT_ACTION_GATE_DEMO_REFERENCE_OUTPUTS",
+  "schema_version": 1,
+  "source": "research/product_strategy/terraform_agent_action_gate_demo_verified_results.json"
+}

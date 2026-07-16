@@ -419,7 +419,7 @@
     {
       "bytes": 24486,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_results.json",
-      "sha256": "6f28e89f91f5830d18ecde5c8a15d428a201ca5ce9d6b801407a493d37e80022"
+      "sha256": "ab0a8415b3cdfe9dc898607c6217dcec3fd8fe7bcd327d1a915baa49fea7f77f"
     },
     {
       "bytes": 1780,
@@ -674,7 +674,7 @@
     {
       "bytes": 17373,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_results.json",
-      "sha256": "88cce74a1cb2e7b177812aeb76319e64b96d1bb99182e6d77e6b678d8046b730"
+      "sha256": "a74d2afb020225609ad8de5ba4bd76f766c23f57063f7531626c9ec918acf7c6"
     },
     {
       "bytes": 1530,
@@ -922,9 +922,9 @@
       "sha256": "0cb374f49db400feecaacb2df115c9102c74284255dca60824e07020f0c247e5"
     },
     {
-      "bytes": 22801,
+      "bytes": 22800,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_raw_adapter_conformance_results.json",
-      "sha256": "3c78f215ff6f129f09534c6ea8691d5330bd7f653a8259ae8144177256636eba"
+      "sha256": "5db3b02b0ede876d696517be3c4ccde76cb1cbc2e2f970b3fd2d8a5de32c99e8"
     },
     {
       "bytes": 1896,
