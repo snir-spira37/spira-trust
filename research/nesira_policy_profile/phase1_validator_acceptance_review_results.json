@@ -26,7 +26,7 @@
     "head": "e9417dccbae966244fc70f5b9dc32d157cfb5e07",
     "operating_system": "Windows-10-10.0.19045-SP0",
     "python": "Python 3.12.10",
-    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    "working_directory": "<REPO_ROOT>"
   },
   "findings": [
     {

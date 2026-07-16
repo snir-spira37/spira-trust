@@ -15,7 +15,7 @@
     "head": "e9417dccbae966244fc70f5b9dc32d157cfb5e07",
     "os": "Windows-10-10.0.19045-SP0",
     "python": "Python 3.12.10",
-    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    "working_directory": "<REPO_ROOT>"
   },
   "four_high_findings_closed": {
     "directory_not_tool_error": true,
@@ -46,7 +46,7 @@
   ],
   "public_wheel": {
     "entry_count": 56,
-    "filename": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\dist\\_nesira_phase1_remediation_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
+    "filename": "<REPO_ROOT>\\dist\\_nesira_phase1_remediation_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
     "new_module_absent": true,
     "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
     "unexpected_entries": []

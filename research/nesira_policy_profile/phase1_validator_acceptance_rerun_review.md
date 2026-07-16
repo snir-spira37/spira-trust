@@ -92,7 +92,7 @@ git diff --check: PASS
 ## Wheel
 
 ```text
-wheel: C:\Users\snir\Documents\Codex\2026-06-11\we-are-continuing-spira-v10-0\work\github_spira_trust_formal_core_v1_lean\dist\_nesira_phase1_acceptance_rerun_wheel_check\wheelhouse\spira_trust-0.6.1-py3-none-any.whl
+wheel: <REPO_ROOT>\dist\_nesira_phase1_acceptance_rerun_wheel_check\wheelhouse\spira_trust-0.6.1-py3-none-any.whl
 sha256: 12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497
 entry_count: 56
 unexpected public modules: 0

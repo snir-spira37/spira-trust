@@ -18,7 +18,7 @@
     "head": "7d11be9a261cb3c61074a8932a8ba58a42b9ae81",
     "os": "Windows-10-10.0.19045-SP0",
     "python": "Python 3.12.10",
-    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+    "working_directory": "<REPO_ROOT>"
   },
   "error_message_hygiene": {
     "local_absolute_paths_leaked": 0,
@@ -400,7 +400,7 @@
       "spira_trust-0.6.1.dist-info/sboms/spira-trust.cdx.json"
     ],
     "entry_count": 56,
-    "filename": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\dist\\_nesira_phase1_acceptance_rerun_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
+    "filename": "<REPO_ROOT>\\dist\\_nesira_phase1_acceptance_rerun_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
     "phase1_schemas_absent": true,
     "research_fixtures_absent": true,
     "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
