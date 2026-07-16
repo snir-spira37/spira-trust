@@ -26,7 +26,7 @@
   "schema_version": "1.0",
   "secret_hits": [],
   "sha256sums_validation_after_extraction": true,
-  "source_commit": "6d06bdc8de1b2db3585c509e7917c5644e62eb5f",
+  "source_commit": "e88d3429d75c67d2d1f1b9ef0ff78cd774a4fcf7",
   "two_focused_runs_semantically_identical": true,
   "verdict": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_PACKAGE_ACCEPTED",
   "wheel": {
@@ -39,7 +39,7 @@
     "unexpected_public_modules": 0,
     "validator_module_absent": true
   },
-  "zip_filename": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_6d06bdc.zip",
+  "zip_filename": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_e88d342.zip",
   "zip_path_safety": true,
-  "zip_sha256": "66493d0e1b99c0d072129051e7c87706687bd1740bcbeb6f20fbb17886b322af"
+  "zip_sha256": "7767fd109769a73f3ed22930f0e3200643ae85c6ac1054a4b8210c3544db3fd9"
 }
