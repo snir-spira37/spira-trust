@@ -3379,7 +3379,7 @@
   },
   "schema": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_INTERNAL_BUILD_VALIDATION_RESULTS_V1",
   "schema_version": "1.0",
-  "source_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "source_commit": "c21abef47dd174284a5d1938182a633b93bd8785",
   "two_focused_semantic_runs_identical": true,
   "wheel": {
     "entry_count": 56,

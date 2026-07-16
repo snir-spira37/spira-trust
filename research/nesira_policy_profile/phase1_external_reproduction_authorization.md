@@ -17,8 +17,11 @@ validator in the public wheel, publishing a capability claim, or releasing.
 ## Authoritative Starting Point
 
 ```text
-accepted_phase1_commit:
+accepted_phase1_implementation_commit:
 a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+
+hygiene_clean_reproduction_source_commit:
+c21abef47dd174284a5d1938182a633b93bd8785
 
 accepted_phase1_verdict:
 SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTED
@@ -35,6 +38,9 @@ The historical implementation and review sequence is:
 
 a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
 -> clean acceptance rerun
+
+c21abef47dd174284a5d1938182a633b93bd8785
+-> hygiene-only redaction of local builder paths in historical logs
 ```
 
 ## Authorized Claim
@@ -125,11 +131,18 @@ deterministic fail-closed output
 
 ## Source of Reproduction
 
-The future reproduction must start from:
+The future reproduction must start from the hygiene-clean reproduction source
+commit:
 
 ```text
-a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+c21abef47dd174284a5d1938182a633b93bd8785
 ```
+
+The accepted Phase 1 implementation verdict remains anchored in
+`a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa`. The later `c21abef...` commit is
+a forward-only artifact hygiene commit that redacts local builder paths from
+tracked historical reports without changing validator code, schemas, tests, or
+Phase 1 semantics.
 
 It may use only one of two source modes:
 
@@ -513,4 +526,3 @@ If this authorization is accepted, the next required step is:
 ```text
 SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_REQUIRED
 ```
-

@@ -19,8 +19,11 @@ external reproduction.
 ## Accepted Phase 1 Identity
 
 ```text
-accepted_phase1_commit:
+accepted_phase1_implementation_commit:
 a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+
+hygiene_clean_reproduction_source_commit:
+c21abef47dd174284a5d1938182a633b93bd8785
 
 accepted_phase1_verdict:
 SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTED
@@ -78,11 +81,17 @@ Review finding: PASS.
 
 ## Required Reproduction Source
 
-The authorization requires the future reproduction to start from:
+The authorization requires the future reproduction to start from the
+hygiene-clean reproduction source commit:
 
 ```text
-a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+c21abef47dd174284a5d1938182a633b93bd8785
 ```
+
+The original Phase 1 acceptance remains anchored in
+`a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa`; `c21abef...` is a forward-only
+artifact hygiene commit that redacts local builder paths from tracked reports
+without changing validator code or semantics.
 
 It allows only:
 
@@ -207,4 +216,3 @@ SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_REQUIRED
 
 That next step still requires separate execution. This review does not build
 the package, does not run external reproduction, and does not authorize Phase 2.
-

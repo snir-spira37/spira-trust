@@ -1,5 +1,5 @@
 {
-  "accepted_phase1_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "accepted_phase1_commit": "c21abef47dd174284a5d1938182a633b93bd8785",
   "authorization_v1_1_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
   "baseline_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
   "commands": {
@@ -679,34 +679,34 @@
       "sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763"
     },
     {
-      "bytes": 13894,
+      "bytes": 13672,
       "path": "research/nesira_policy_profile/phase1_validator_acceptance_rerun_results.json",
-      "sha256": "bafa4420366649736df927640e79613a33ec8d52cb8b1efef99d8ba1d9a0163c"
+      "sha256": "6d3a467792faae8b6fb74298d560b2642fe2740b45312842c62598f9a867aae9"
     },
     {
-      "bytes": 4816,
+      "bytes": 4713,
       "path": "research/nesira_policy_profile/phase1_validator_acceptance_rerun_review.md",
-      "sha256": "2ebfa956f50c2e8efdaaa7c95feb0cd52be2a23fba1db5f55ac523efac816f8f"
+      "sha256": "1d23bb9a7bd0071dabdf5dbab010ea01c38cf461bd519bef98164cba8a795baa"
     },
     {
-      "bytes": 4981,
+      "bytes": 4775,
       "path": "research/nesira_policy_profile/phase1_validator_acceptance_review.md",
-      "sha256": "c84dfef8296a867b84f8bfb1956bee43b773bb5d118188d414255f2fd74d297a"
+      "sha256": "0b23b84c555b6eb081e5fb6ed2297cdfb1461ddc011b9d56509ddb0fd41f9755"
     },
     {
-      "bytes": 6592,
+      "bytes": 6481,
       "path": "research/nesira_policy_profile/phase1_validator_acceptance_review_results.json",
-      "sha256": "681b593e35b19f853c818e345fd3e023b6aa7c48b3e292f07486707a10b81a7e"
+      "sha256": "cc962c8f855740527a2b4ddad9262f8ad842b7b2fa0d97019f204494de2b876d"
     },
     {
-      "bytes": 2322,
+      "bytes": 2219,
       "path": "research/nesira_policy_profile/phase1_validator_implementation_report.md",
-      "sha256": "454c0fa23687d3967f417f8f7e44bb11d931f755d351085e9aeaffa64d8858f3"
+      "sha256": "ddd0fb376b108ad45e1e5a72a55c134470c00a8e28919adee2b382a26b83b66b"
     },
     {
-      "bytes": 6250,
+      "bytes": 6139,
       "path": "research/nesira_policy_profile/phase1_validator_implementation_results.json",
-      "sha256": "df14303f35cbe391effb352a10bd08bbde89a7f65992fab3accfce2b7ae7f05f"
+      "sha256": "f6c26185696f3e329ac46078e5ad2bf0f007424df395d881659b06c75c7487f9"
     },
     {
       "bytes": 3101,
@@ -714,9 +714,9 @@
       "sha256": "a28454406d9f2b7deb4776f20a6f9afc7315e82b8d17d8bc17f0f2874ba037e7"
     },
     {
-      "bytes": 6753,
+      "bytes": 6531,
       "path": "research/nesira_policy_profile/phase1_validator_remediation_results.json",
-      "sha256": "6cb2abdcf8d4b1b08d0641c72e9fe7a0d7c6e5e72874cc063947ca67717ce7de"
+      "sha256": "ae2bdbe89386250827f74cee729a1752b6524cc989b6e0fd74664d7988870c4b"
     },
     {
       "bytes": 1227,

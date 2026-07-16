@@ -5,7 +5,7 @@ Do not rely on builder-local workspace state or verbal claims.
 Work from this package plus a fresh clone pinned to:
 
 ```text
-a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+c21abef47dd174284a5d1938182a633b93bd8785
 ```
 
 Run the commands yourself. Report command lines, working directory, exit codes,

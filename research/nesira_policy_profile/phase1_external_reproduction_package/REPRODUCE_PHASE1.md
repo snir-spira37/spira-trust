@@ -5,7 +5,7 @@
 ```powershell
 git clone https://github.com/snir-spira37/spira-trust.git spira-trust-phase1
 cd spira-trust-phase1
-git checkout a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+git checkout c21abef47dd174284a5d1938182a633b93bd8785
 git status --short
 ```
 
