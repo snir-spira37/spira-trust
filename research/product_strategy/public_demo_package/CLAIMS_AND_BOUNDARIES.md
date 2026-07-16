@@ -53,7 +53,7 @@ This package does not claim end-to-end proof of Terraform parsing, all adapters,
 - universal agent governance
 - unified public action-gate CLI, unless implemented and authorized later
 
-## NOT_EVALUATED_IN_THIS_ENVIRONMENT
+## LOCAL_LEAN_REPRODUCTION
 
 Demo reproduction:
 
@@ -61,11 +61,13 @@ Demo reproduction:
 DEMO_REPRODUCTION_ACCEPTED
 ```
 
-Formal package Lean reproduction in the accepted demo environment:
+Builder-side formal package Lean reproduction after local Lean installation:
 
 ```text
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+LEAN_LOCAL_REPRODUCTION_PASS
 ```
+
+This is not independent certification. External reviewers must run Lean/Lake themselves before returning `COLD_PUBLIC_DEMO_REVIEW_ACCEPTED`. If Lean/Lake are unavailable in their environment, they should return `COLD_PUBLIC_DEMO_REVIEW_ACCEPTED_WITH_LEAN_NOT_EVALUATED`.
 
 ## NOT_CLAIMED
 

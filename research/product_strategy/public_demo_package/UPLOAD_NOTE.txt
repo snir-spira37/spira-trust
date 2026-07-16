@@ -2,7 +2,7 @@ ZIP filename:
 spira_terraform_agent_action_gate_public_demo_19c0e99.zip
 
 ZIP SHA256:
-0ba107aa2b6acef99ad9519f2e68b438b0452606306b001eb357a953a89a06cb
+c6d5e97949ad7b117438f916ea2b9fc60f57e502fdd0f117ed4f6b4b91610751
 
 package source / fixed reproducibility baseline commit:
 19c0e996a79187c444bcbba76f3f4a907e003ae1
@@ -14,7 +14,10 @@ reproduction status:
 DEMO_REPRODUCTION_ACCEPTED
 
 Lean status boundary:
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+LEAN_LOCAL_REPRODUCTION_PASS_BY_BUILDER
+
+External reviewer Lean status:
+must be independently evaluated by the reviewer; if Lean/Lake are unavailable, record NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
 
 exact file to upload to the external reviewer:
 research/product_strategy/spira_terraform_agent_action_gate_public_demo_19c0e99.zip

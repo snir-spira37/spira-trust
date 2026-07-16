@@ -7,7 +7,7 @@
 - `pytest` available for test commands
 - Repository checkout pinned to `19c0e996a79187c444bcbba76f3f4a907e003ae1` or the final package build commit that contains this package
 
-Lean/Lake is optional for this demo package review. If Lean/Lake is unavailable, record:
+Lean/Lake is optional for this demo package review. If Lean/Lake is available, run the formal package and report the actual result. If Lean/Lake is unavailable, record:
 
 ```text
 NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT

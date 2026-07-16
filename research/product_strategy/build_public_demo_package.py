@@ -235,7 +235,7 @@ This package is for external technical reviewers, platform engineers, AI-agent i
 - Python 3.12+
 - A repository checkout pinned to `{SOURCE_COMMIT}` or a later package-build commit that preserves the same demo artifacts
 - `pytest` installed for the optional Python test checks
-- Lean/Lake only if the reviewer wants to independently run the formal package; Lean was not available in the accepted demo reproduction environment
+- Lean/Lake only if the reviewer wants to independently run the formal package. Lean reproduction may be reported as PASS only when the reviewer actually runs `lake build` successfully in their own environment.
 
 ## How To Run
 
@@ -261,13 +261,11 @@ The formal core has Lean proofs for bounded decision properties, including that 
 
 This demo empirically reproduces the three Domain 3 Terraform Plan paths, focused Python tests, full Python tests, and package integrity checks. It does not claim end-to-end mathematical proof of Terraform parsing or all adapters.
 
-## What Was Not Evaluated In The Demo Environment
+## Formal Package Lean Reproduction
 
-Formal package Lean reproduction in the accepted demo environment:
+The builder later reproduced the formal package locally with Lean 4.32.0 / Lake 5.0.0 and `lake build` completed successfully. This is builder-side evidence only, not independent external certification.
 
-```text
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
-```
+External reviewers should independently run `lake build` before marking Lean reproduction as PASS. If Lean/Lake are unavailable in the review environment, record `NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT`.
 
 ## What SPIRA Does Not Claim Here
 
@@ -393,7 +391,7 @@ def reproduce_text() -> str:
 - `pytest` available for test commands
 - Repository checkout pinned to `{SOURCE_COMMIT}` or the final package build commit that contains this package
 
-Lean/Lake is optional for this demo package review. If Lean/Lake is unavailable, record:
+Lean/Lake is optional for this demo package review. If Lean/Lake is available, run the formal package and report the actual result. If Lean/Lake is unavailable, record:
 
 ```text
 NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
@@ -582,7 +580,7 @@ This package does not claim end-to-end proof of Terraform parsing, all adapters,
 - universal agent governance
 - unified public action-gate CLI, unless implemented and authorized later
 
-## NOT_EVALUATED_IN_THIS_ENVIRONMENT
+## LOCAL_LEAN_REPRODUCTION
 
 Demo reproduction:
 
@@ -590,11 +588,13 @@ Demo reproduction:
 DEMO_REPRODUCTION_ACCEPTED
 ```
 
-Formal package Lean reproduction in the accepted demo environment:
+Builder-side formal package Lean reproduction after local Lean installation:
 
 ```text
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+LEAN_LOCAL_REPRODUCTION_PASS
 ```
+
+This is not independent certification. External reviewers must run Lean/Lake themselves before returning `COLD_PUBLIC_DEMO_REVIEW_ACCEPTED`. If Lean/Lake are unavailable in their environment, they should return `COLD_PUBLIC_DEMO_REVIEW_ACCEPTED_WITH_LEAN_NOT_EVALUATED`.
 
 ## NOT_CLAIMED
 
@@ -685,7 +685,10 @@ reproduction status:
 DEMO_REPRODUCTION_ACCEPTED
 
 Lean status boundary:
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
+LEAN_LOCAL_REPRODUCTION_PASS_BY_BUILDER
+
+External reviewer Lean status:
+must be independently evaluated by the reviewer; if Lean/Lake are unavailable, record NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
 
 exact file to upload to the external reviewer:
 research/product_strategy/{ZIP_PATH.name}
@@ -751,7 +754,7 @@ def build_package_files() -> dict[str, Any]:
             "package_smoke_tests": ["python", "research/product_strategy/build_public_demo_package.py", "--verify-only"],
         },
         "working_directory": "repository root",
-        "prerequisites": ["Python 3.12+", "pytest for test commands", "Lean/Lake only for optional formal package reproduction"],
+        "prerequisites": ["Python 3.12+", "pytest for test commands", "Lean/Lake for independent formal package reproduction"],
         "expected_exit_codes": {
             "demo_paths": 0,
             "focused_tests": 0,
@@ -770,7 +773,8 @@ def build_package_files() -> dict[str, Any]:
         "semantic_repeatability_expected": True,
         "invalid_json_soft_pass_forbidden": True,
         "demo_reproduction_status": "DEMO_REPRODUCTION_ACCEPTED",
-        "lean_reproduction_status_in_demo_environment": "NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
+        "lean_reproduction_status_in_demo_environment": "LEAN_LOCAL_REPRODUCTION_PASS_BY_BUILDER",
+        "external_lean_reproduction_requirement": "Reviewer must independently run lake build before marking Lean PASS; otherwise record NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
         "created_at": "2026-07-16",
         "package_boundary": {
             "current": "Domain 3 Terraform Plan artifact-backed demo only",
@@ -1186,8 +1190,8 @@ The package was reviewed against the accepted authorization:
 - no backup/restore/approval evidence
 - no local absolute paths in the package
 - no detected secrets or sensitive values
-- Lean boundary preserved as `NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT`
-- `DEMO_REPRODUCTION_ACCEPTED` is not presented as Lean PASS
+- builder-side Lean reproduction recorded separately from independent external review
+- `DEMO_REPRODUCTION_ACCEPTED` is not presented as independent certification
 - current implementation, conceptual integration, and roadmap are separated
 - ZIP extracts successfully and preserves package hashes
 - `UPLOAD_NOTE.txt` is present as a sidecar next to the ZIP and records the ZIP SHA256

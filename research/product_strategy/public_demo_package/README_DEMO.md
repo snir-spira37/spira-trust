@@ -25,7 +25,7 @@ This package is for external technical reviewers, platform engineers, AI-agent i
 - Python 3.12+
 - A repository checkout pinned to `19c0e996a79187c444bcbba76f3f4a907e003ae1` or a later package-build commit that preserves the same demo artifacts
 - `pytest` installed for the optional Python test checks
-- Lean/Lake only if the reviewer wants to independently run the formal package; Lean was not available in the accepted demo reproduction environment
+- Lean/Lake only if the reviewer wants to independently run the formal package. Lean reproduction may be reported as PASS only when the reviewer actually runs `lake build` successfully in their own environment.
 
 ## How To Run
 
@@ -51,13 +51,11 @@ The formal core has Lean proofs for bounded decision properties, including that 
 
 This demo empirically reproduces the three Domain 3 Terraform Plan paths, focused Python tests, full Python tests, and package integrity checks. It does not claim end-to-end mathematical proof of Terraform parsing or all adapters.
 
-## What Was Not Evaluated In The Demo Environment
+## Formal Package Lean Reproduction
 
-Formal package Lean reproduction in the accepted demo environment:
+The builder later reproduced the formal package locally with Lean 4.32.0 / Lake 5.0.0 and `lake build` completed successfully. This is builder-side evidence only, not independent external certification.
 
-```text
-NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
-```
+External reviewers should independently run `lake build` before marking Lean reproduction as PASS. If Lean/Lake are unavailable in the review environment, record `NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT`.
 
 ## What SPIRA Does Not Claim Here
 

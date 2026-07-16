@@ -96,6 +96,7 @@
       "TERRAFORM_POLICY_BLOCKED_RESOURCE_CHANGE"
     ]
   },
+  "external_lean_reproduction_requirement": "Reviewer must independently run lake build before marking Lean PASS; otherwise record NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
   "fixture_paths": {
     "REPORT_NOT_EVALUATED": {
       "package_path": "fixtures/incomplete_plan/incomplete_plan_01.json",
@@ -121,7 +122,7 @@
     "invalid_json_01"
   ],
   "invalid_json_soft_pass_forbidden": true,
-  "lean_reproduction_status_in_demo_environment": "NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT",
+  "lean_reproduction_status_in_demo_environment": "LEAN_LOCAL_REPRODUCTION_PASS_BY_BUILDER",
   "package_authorization_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
   "package_boundary": {
     "current": "Domain 3 Terraform Plan artifact-backed demo only",
@@ -141,7 +142,7 @@
   "prerequisites": [
     "Python 3.12+",
     "pytest for test commands",
-    "Lean/Lake only for optional formal package reproduction"
+    "Lean/Lake for independent formal package reproduction"
   ],
   "semantic_repeatability_expected": true,
   "working_directory": "repository root"

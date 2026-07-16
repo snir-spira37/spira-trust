@@ -22,8 +22,8 @@ The package was reviewed against the accepted authorization:
 - no backup/restore/approval evidence
 - no local absolute paths in the package
 - no detected secrets or sensitive values
-- Lean boundary preserved as `NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT`
-- `DEMO_REPRODUCTION_ACCEPTED` is not presented as Lean PASS
+- builder-side Lean reproduction recorded separately from independent external review
+- `DEMO_REPRODUCTION_ACCEPTED` is not presented as independent certification
 - current implementation, conceptual integration, and roadmap are separated
 - ZIP extracts successfully and preserves package hashes
 - `UPLOAD_NOTE.txt` is present as a sidecar next to the ZIP and records the ZIP SHA256
