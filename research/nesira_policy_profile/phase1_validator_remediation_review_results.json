@@ -1,0 +1,16 @@
+{
+  "acceptance_not_declared": true,
+  "blocking_findings": [],
+  "four_high_findings_closed": {
+    "directory_not_tool_error": true,
+    "duplicates_invalid": true,
+    "posix_absolute_paths_invalid": true,
+    "windows_drive_paths_invalid": true
+  },
+  "next_step": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_RERUN_REQUIRED",
+  "phase2_authorized": false,
+  "release_authorized": false,
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_REMEDIATION_REVIEW_RESULTS_V1",
+  "schema_version": "1.0",
+  "verdict": "SPIRA_NESIRA_PHASE1_VALIDATOR_REMEDIATION_COMPLETE"
+}

@@ -1,0 +1,20 @@
+{
+  "candidate_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "control_probes": [
+    {
+      "declared_result": "PASS",
+      "probe_id": "legacy-access-denied"
+    }
+  ],
+  "environment_id": "prod-eu-1",
+  "evidence_manifest": [
+    {
+      "path": "missing.txt",
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    }
+  ],
+  "legacy_dependency_id": "legacy-db-primary",
+  "profile_id": "legacy-isolation-profile-v1",
+  "schema": "SPIRA_LEGACY_ISOLATION_RESULT_V1",
+  "schema_version": "1.0"
+}

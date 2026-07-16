@@ -1,0 +1,173 @@
+{
+  "acceptance_gates": {
+    "compileall": "PASS",
+    "critical_or_high_findings": 4,
+    "duplicate_evidence_paths_accepted": 1,
+    "false_valid_mutation_pairs": 0,
+    "focused_pytest": "8 passed",
+    "full_pytest": "278 passed",
+    "git_diff_check": "PASS",
+    "hash_mismatches_accepted": 0,
+    "positive_fixtures_structurally_accepted": "6/6",
+    "positive_fixtures_yielding_proceed": "0/6",
+    "public_wheel_build": "PASS",
+    "public_wheel_exclusion": "PASS",
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "environment": {
+    "branch": "codex/formal-core-v1-lean",
+    "clean_worktree": false,
+    "git_status": [
+      "?? research/nesira_policy_profile/",
+      "?? source/spira_core/nesira_policy_profile_validator.py",
+      "?? tests/fixtures/nesira_policy_profile/",
+      "?? tests/test_nesira_policy_profile_validator.py"
+    ],
+    "head": "e9417dccbae966244fc70f5b9dc32d157cfb5e07",
+    "operating_system": "Windows-10-10.0.19045-SP0",
+    "python": "Python 3.12.10",
+    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+  },
+  "findings": [
+    {
+      "evidence": "/tmp/evidence.txt returned NOT_EVALUATED / missing evidence instead of INVALID / unsafe evidence path.",
+      "id": "F-HIGH-001",
+      "impact": "Status mapping diverges from V1.1 for an explicitly reviewed unsafe-path class. The path did not become PROCEED, but acceptance requires exact mapping.",
+      "required_fix": "Reject root-relative/POSIX-style absolute paths as unsafe before evidence existence checks.",
+      "severity": "High",
+      "title": "POSIX-style absolute evidence paths are not classified as unsafe paths on Windows"
+    },
+    {
+      "evidence": "C:tmp/evidence.txt returned NOT_EVALUATED / missing evidence instead of INVALID / unsafe evidence path.",
+      "id": "F-HIGH-002",
+      "impact": "Windows drive-relative syntax can bypass the intended unsafe-path classification. It did not fail open, but mapping fidelity is not accepted.",
+      "required_fix": "Reject drive-qualified or drive-relative strings before path resolution.",
+      "severity": "High",
+      "title": "Drive-relative evidence paths are not classified as unsafe paths"
+    },
+    {
+      "evidence": "A directory in evidence_manifest triggered TOOL_ERROR with a local temp path in tool_errors/details.",
+      "id": "F-HIGH-003",
+      "impact": "A deterministic validation failure is masked as an internal tool defect and leaks a local path in the machine result.",
+      "required_fix": "Classify directories before read_bytes, return deterministic validation status, and avoid local path disclosure.",
+      "severity": "High",
+      "title": "Directory evidence paths become TOOL_ERROR with local path disclosure"
+    },
+    {
+      "evidence": "Two identical evidence_manifest entries for evidence_a.txt returned VALID.",
+      "id": "F-HIGH-004",
+      "impact": "The acceptance review explicitly requires duplicate evidence path review. Duplicate evidence identity should not pass as a clean structural/evidence result.",
+      "required_fix": "Reject duplicate evidence paths or duplicate evidence identities deterministically.",
+      "severity": "High",
+      "title": "Duplicate evidence paths are accepted as VALID"
+    },
+    {
+      "evidence": "All reviewed failures preserved recommended_agent_action != PROCEED and stop == true.",
+      "id": "F-INFO-001",
+      "impact": "The current blockers are mapping/integrity issues, not a PROCEED fail-open.",
+      "severity": "Informational",
+      "title": "Phase 1 preserves fail-closed action invariants for reviewed failures"
+    }
+  ],
+  "next_authorized_step": "SPIRA_NESIRA_PHASE1_IMPLEMENTATION_SCOPE_REVISION_REQUIRED",
+  "path_security_results": [
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "parent traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "nested traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "posix absolute path",
+      "expected": "INVALID",
+      "finding": "HIGH_STATUS_MAPPING_DIVERGENCE"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "windows absolute path",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "drive-relative path",
+      "expected": "INVALID",
+      "finding": "HIGH_STATUS_MAPPING_DIVERGENCE"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "backslash traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "mixed slash traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "UNC path",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "percent-encoded traversal literal",
+      "expected": "NOT_EVALUATED_OR_INVALID",
+      "note": "No URL decoding is implemented; treated as literal missing filename."
+    },
+    {
+      "accepted": false,
+      "actual": "TOOL_ERROR",
+      "case": "directory evidence path",
+      "expected": "INVALID_OR_NOT_EVALUATED",
+      "finding": "HIGH_VALIDATION_FAILURE_MASKED_AS_TOOL_ERROR"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "symlink parent escape",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": true,
+      "actual": "VALID",
+      "case": "duplicate evidence path",
+      "expected": "INVALID",
+      "finding": "HIGH_DUPLICATE_EVIDENCE_PATH_ACCEPTED"
+    }
+  ],
+  "phase2_authorized": false,
+  "protected_surface_verification": {
+    "baseline": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+    "changed_protected_surfaces": [],
+    "result": "PASS"
+  },
+  "release_authorized": false,
+  "review_commit": null,
+  "review_commit_status": "NOT_CREATED_IMPLEMENTATION_NEEDS_REVISION",
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_REVIEW_RESULTS_V1",
+  "schema_version": "1.0",
+  "v1_1_verification": {
+    "forbidden_payload_authentication_phrase": "ABSENT",
+    "json_parse": "PASS",
+    "package_verdict": "SPIRA_NESIRA_PHASE1_AUTHORIZATION_V1_1_ACCEPTED",
+    "path_safety": "PASS",
+    "proceed_allowed": false,
+    "sha256sums": "PASS",
+    "zip_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d"
+  },
+  "verdict": "SPIRA_NESIRA_PHASE1_VALIDATOR_NEEDS_REVISION"
+}

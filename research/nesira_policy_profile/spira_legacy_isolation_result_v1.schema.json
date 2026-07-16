@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.dev/schemas/spira_legacy_isolation_result_v1.schema.json",
+  "title": "SPIRA Legacy Isolation Result V1 Phase 1 Structural Contract",
+  "type": "object",
+  "required": [
+    "schema",
+    "schema_version",
+    "profile_id",
+    "environment_id",
+    "candidate_sha256",
+    "legacy_dependency_id",
+    "evidence_manifest",
+    "control_probes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "SPIRA_LEGACY_ISOLATION_RESULT_V1" },
+    "schema_version": { "const": "1.0" },
+    "profile_id": { "type": "string" },
+    "environment_id": { "type": "string" },
+    "candidate_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "legacy_dependency_id": { "type": "string" },
+    "evidence_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    },
+    "control_probes": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
+  }
+}

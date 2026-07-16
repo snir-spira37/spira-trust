@@ -1,0 +1,37 @@
+{
+    "schema":  "SPIRA_NESIRA_PHASE1_VALIDATOR_IMPLEMENTATION_REVIEW_RESULTS_V1",
+    "schema_version":  "1.0",
+    "verdict":  [
+                    "SPIRA_NESIRA_POLICY_PROFILE_PHASE1_VALIDATOR_IMPLEMENTATION_COMPLETE",
+                    "PHASE1_VALIDATOR_SEMANTICS_ACCEPTED",
+                    "CRYPTOGRAPHIC_VERIFICATION_STILL_NOT_EVALUATED",
+                    "SIGNER_IDENTITY_AND_AUTHORITY_STILL_NOT_EVALUATED",
+                    "ISOLATION_EXECUTION_STILL_NOT_EVALUATED",
+                    "COMBINED_VERDICT_INTEGRATION_NOT_PERFORMED",
+                    "PUBLIC_WHEEL_EXPOSURE_NOT_PERFORMED",
+                    "PUBLIC_CAPABILITY_CLAIM_NOT_AUTHORIZED",
+                    "PHASE2_NOT_AUTHORIZED"
+                ],
+    "blocking_findings":  [
+
+                          ],
+    "acceptance_checks":  {
+                              "implementation_matches_v1_1":  "PASS",
+                              "no_generic_evaluated_field":  "PASS",
+                              "no_signature_verification_code":  "PASS",
+                              "no_signer_authority_code":  "PASS",
+                              "no_isolation_execution_code":  "PASS",
+                              "no_proceed_path":  "PASS",
+                              "stop_always_true":  "PASS",
+                              "positive_fixtures":  "6/6",
+                              "positive_proceed_count":  0,
+                              "negative_invariant_detection":  "PASS",
+                              "mutation_pairs":  "PASS",
+                              "public_wheel_exclusion":  "PASS",
+                              "protected_surfaces":  "PASS",
+                              "full_pytest":  "278/278"
+                          },
+    "next_step":  "PHASE1_ACCEPTANCE_REVIEW_REQUIRED",
+    "phase2_authorized":  false,
+    "release_authorized":  false
+}

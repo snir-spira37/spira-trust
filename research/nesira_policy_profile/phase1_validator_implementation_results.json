@@ -1,0 +1,165 @@
+{
+  "authorization": {
+    "authoritative_v1_1_zip_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
+    "historical_v1_zip_sha256": "090d3d57966426270ac3fb3e890c191e14c2a30d1c8c37c15c731aa44c505c84",
+    "package_verification": "PASS",
+    "superseded_v1_1_zip_sha256": "604040f4eee4d1db633788f6e8d326cb11c00471c81db5d3121f9c9268a246ef"
+  },
+  "created_or_changed_files": [
+    "research/nesira_policy_profile/",
+    "source/spira_core/nesira_policy_profile_validator.py",
+    "tests/fixtures/nesira_policy_profile/",
+    "tests/test_nesira_policy_profile_validator.py"
+  ],
+  "environment": {
+    "branch": "codex/formal-core-v1-lean",
+    "head": "e9417dccbae966244fc70f5b9dc32d157cfb5e07",
+    "python": "Python 3.12.10"
+  },
+  "global_invariants": {
+    "generic_evaluated_field_absent": true,
+    "recommended_agent_action_never_proceed": true,
+    "stop_always_true": true
+  },
+  "mutation_pair_metrics": {
+    "false_valid_mutation_pairs": 0,
+    "mutation_pairs": 6,
+    "statuses": {
+      "candidate_hash_mutation": "RERUN_REQUIRED",
+      "environment_mismatch": "RERUN_REQUIRED",
+      "evidence_hash_mutation": "INVALID",
+      "subject_hash_mutation": "RERUN_REQUIRED",
+      "unsafe_path_mutation": "INVALID",
+      "unsupported_schema_mutation": "RERUN_REQUIRED"
+    }
+  },
+  "negative_fixture_metrics": {
+    "hash_mismatches_accepted": 0,
+    "negative_scenarios": 11,
+    "non_valid_count": 11,
+    "statuses": {
+      "hash_mismatch": "INVALID",
+      "malformed_dsse_envelope": "RERUN_REQUIRED",
+      "malformed_json": "RERUN_REQUIRED",
+      "missing_evidence_file": "NOT_EVALUATED",
+      "missing_expected_context": "NOT_EVALUATED",
+      "payload_decode_failure": "RERUN_REQUIRED",
+      "schema_violation": "INVALID",
+      "subject_context_mismatch": "RERUN_REQUIRED",
+      "unsafe_evidence_path_absolute": "INVALID",
+      "unsafe_evidence_path_traversal": "INVALID",
+      "unsupported_schema_version": "RERUN_REQUIRED"
+    },
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "not_authorized": [
+    "CRYPTOGRAPHIC_VERIFICATION",
+    "SIGNER_IDENTITY",
+    "SIGNER_AUTHORITY",
+    "ISOLATION_EXECUTION",
+    "COMBINED_VERDICT_INTEGRATION",
+    "PUBLIC_WHEEL_EXPOSURE",
+    "PUBLIC_CAPABILITY_CLAIM",
+    "PHASE2",
+    "RELEASE"
+  ],
+  "positive_fixture_metrics": {
+    "positive_fixtures": 6,
+    "proceed_count": 0,
+    "valid_count": 6
+  },
+  "protected_surface_preflight": "PASS",
+  "public_wheel": {
+    "build": "PASS",
+    "entries": [
+      "schemas/spira_agent_summary_v1.json",
+      "schemas/spira_decision_v1.json",
+      "spira_core/__init__.py",
+      "spira_core/adapters.py",
+      "spira_core/agent_status.py",
+      "spira_core/agent_summary.py",
+      "spira_core/attestation_verify.py",
+      "spira_core/bom.py",
+      "spira_core/combined_verdict.py",
+      "spira_core/contracts.py",
+      "spira_core/core.py",
+      "spira_core/cyclonedx_export.py",
+      "spira_core/decision015/__init__.py",
+      "spira_core/decision015/contract.py",
+      "spira_core/decision015/core.py",
+      "spira_core/decision015/service.py",
+      "spira_core/decision_report.py",
+      "spira_core/drift.py",
+      "spira_core/entry_points_policy.py",
+      "spira_core/governance_engine.py",
+      "spira_core/ledger.py",
+      "spira_core/license_policy.py",
+      "spira_core/lockfile_policy.py",
+      "spira_core/policy_pack.py",
+      "spira_core/range_parser.py",
+      "spira_core/rebaseline.py",
+      "spira_core/review.py",
+      "spira_core/sbom_consistency.py",
+      "spira_core/target_environment.py",
+      "spira_core/trust.py",
+      "spira_core/trust_cli.py",
+      "spira_core/trust_graph.py",
+      "spira_core/vendored_stone015/__init__.py",
+      "spira_core/vendored_stone015/spira/__init__.py",
+      "spira_core/vendored_stone015/spira/api.py",
+      "spira_core/vendored_stone015/spira/ast_nodes.py",
+      "spira_core/vendored_stone015/spira/backends.py",
+      "spira_core/vendored_stone015/spira/bridge.py",
+      "spira_core/vendored_stone015/spira/cli.py",
+      "spira_core/vendored_stone015/spira/demo.py",
+      "spira_core/vendored_stone015/spira/modules.py",
+      "spira_core/vendored_stone015/spira/ontology.py",
+      "spira_core/vendored_stone015/spira/orchestrator.py",
+      "spira_core/vendored_stone015/spira/parser.py",
+      "spira_core/vendored_stone015/spira/runtime.py",
+      "spira_core/vendored_stone015/spira/safe_eval.py",
+      "spira_core/vendored_stone015/spira/schemas.py",
+      "spira_core/vendored_stone015/spira/storage.py",
+      "spira_core/vendored_stone015/spira/typesystem.py",
+      "spira_core/vendored_stone015/spira/validation.py",
+      "spira_trust-0.6.1.dist-info/LICENSE",
+      "spira_trust-0.6.1.dist-info/METADATA",
+      "spira_trust-0.6.1.dist-info/RECORD",
+      "spira_trust-0.6.1.dist-info/WHEEL",
+      "spira_trust-0.6.1.dist-info/entry_points.txt",
+      "spira_trust-0.6.1.dist-info/sboms/spira-trust.cdx.json"
+    ],
+    "entry_count": 56,
+    "filename": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\dist\\_nesira_phase1_public_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
+    "new_module_absent": true,
+    "research_contracts_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "unexpected_public_modules": 0
+  },
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_IMPLEMENTATION_RESULTS_V1",
+  "schema_version": "1.0",
+  "status_mapping_implemented": [
+    "VALID",
+    "INVALID",
+    "NOT_EVALUATED",
+    "RERUN_REQUIRED",
+    "TOOL_ERROR"
+  ],
+  "test_results": {
+    "compileall": "PASS",
+    "focused_pytest": "8 passed",
+    "full_pytest": "278 passed",
+    "git_diff_check": "PASS"
+  },
+  "verdict": [
+    "SPIRA_NESIRA_POLICY_PROFILE_PHASE1_VALIDATOR_IMPLEMENTATION_COMPLETE",
+    "PHASE1_VALIDATOR_SEMANTICS_ACCEPTED",
+    "CRYPTOGRAPHIC_VERIFICATION_STILL_NOT_EVALUATED",
+    "SIGNER_IDENTITY_AND_AUTHORITY_STILL_NOT_EVALUATED",
+    "ISOLATION_EXECUTION_STILL_NOT_EVALUATED",
+    "COMBINED_VERDICT_INTEGRATION_NOT_PERFORMED",
+    "PUBLIC_WHEEL_EXPOSURE_NOT_PERFORMED",
+    "PUBLIC_CAPABILITY_CLAIM_NOT_AUTHORIZED",
+    "PHASE2_NOT_AUTHORIZED"
+  ]
+}

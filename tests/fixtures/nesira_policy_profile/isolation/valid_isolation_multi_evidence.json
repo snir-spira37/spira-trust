@@ -1,0 +1,24 @@
+{
+  "candidate_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "control_probes": [
+    {
+      "declared_result": "PASS",
+      "probe_id": "legacy-access-denied"
+    }
+  ],
+  "environment_id": "prod-eu-1",
+  "evidence_manifest": [
+    {
+      "path": "evidence_a.txt",
+      "sha256": "71f49e4f25b46d85934e84dc2cd7263fc3e886196e66fb4dae5da8d290c29e1c"
+    },
+    {
+      "path": "evidence_b.txt",
+      "sha256": "895530c53db52ae4d83617feecea2e53e76b819051f9e3c677c887c76b001504"
+    }
+  ],
+  "legacy_dependency_id": "legacy-db-primary",
+  "profile_id": "legacy-isolation-profile-v1",
+  "schema": "SPIRA_LEGACY_ISOLATION_RESULT_V1",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,234 @@
+{
+  "authorization": {
+    "acceptance_review_verdict": "SPIRA_NESIRA_PHASE1_VALIDATOR_NEEDS_REVISION",
+    "authoritative_v1_1_zip_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
+    "open_high_findings_before_remediation": 4
+  },
+  "environment": {
+    "branch": "codex/formal-core-v1-lean",
+    "git_status": [
+      "?? research/nesira_policy_profile/",
+      "?? source/spira_core/nesira_policy_profile_validator.py",
+      "?? tests/fixtures/nesira_policy_profile/",
+      "?? tests/test_nesira_policy_profile_validator.py"
+    ],
+    "head": "e9417dccbae966244fc70f5b9dc32d157cfb5e07",
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "Python 3.12.10",
+    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+  },
+  "four_high_findings_closed": {
+    "directory_not_tool_error": true,
+    "duplicates_invalid": true,
+    "posix_absolute_paths_invalid": true,
+    "windows_drive_paths_invalid": true
+  },
+  "metrics": {
+    "directories_accepted_as_evidence_files": 0,
+    "duplicate_canonical_evidence_paths_accepted": 0,
+    "false_valid_mutation_pairs": 0,
+    "hash_mismatches_accepted": 0,
+    "local_absolute_paths_leaked_in_results": 0,
+    "negative_invariant_detection": "100%",
+    "positive_fixtures_structurally_accepted": "6/6",
+    "positive_fixtures_yielding_proceed": 0,
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "next_step": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_RERUN_REQUIRED",
+  "not_authorized": [
+    "PHASE2",
+    "RELEASE",
+    "PUBLIC_CAPABILITY_CLAIM",
+    "CRYPTOGRAPHIC_VERIFICATION",
+    "SIGNER_AUTHORITY",
+    "ISOLATION_EXECUTION",
+    "COMBINED_VERDICT_INTEGRATION"
+  ],
+  "public_wheel": {
+    "entry_count": 56,
+    "filename": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\dist\\_nesira_phase1_remediation_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
+    "new_module_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "unexpected_entries": []
+  },
+  "remediation_case_summary": {
+    "directory_evidence": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "evidence path is not a regular file"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "duplicate_dot_equivalent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "duplicate_exact": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "posix_absolute_root": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "posix_absolute_tmp": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "posix_absolute_var": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "posix_absolute_with_normalization": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "unc_backslash": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "unc_slash": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "windows_absolute_backslash": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "windows_absolute_slash": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "windows_drive_only": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "windows_drive_relative": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    },
+    "windows_drive_relative_lower": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "stop": true,
+      "tool_errors": [],
+      "validation_status": "INVALID"
+    }
+  },
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_REMEDIATION_RESULTS_V1",
+  "schema_version": "1.0",
+  "tests": {
+    "compileall": "PASS",
+    "focused_pytest": "11 passed",
+    "full_pytest": "281 passed",
+    "git_diff_check": "PASS",
+    "public_wheel_build": "PASS"
+  },
+  "verdict": "SPIRA_NESIRA_PHASE1_VALIDATOR_REMEDIATION_COMPLETE"
+}

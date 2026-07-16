@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spira.dev/schemas/spira_severance_authorization_v1.schema.json",
+  "title": "SPIRA Severance Authorization V1 Phase 1 Structural Contract",
+  "type": "object",
+  "required": ["payloadType", "payload", "signatures"],
+  "additionalProperties": false,
+  "properties": {
+    "payloadType": { "const": "application/vnd.in-toto+json" },
+    "payload": { "type": "string", "minLength": 1 },
+    "signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["keyid", "sig"],
+        "additionalProperties": true,
+        "properties": {
+          "keyid": { "type": "string" },
+          "sig": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "acceptance_gates": {
+    "false_valid_mutation_pairs": 0,
+    "hash_mismatches_accepted": 0,
+    "negative_invariant_detection": "100%",
+    "positive_fixtures_structurally_valid": 6,
+    "positive_fixtures_yielding_proceed": 0,
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "authorization_zip_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
+  "mutation_pairs": [
+    {
+      "base": "valid_severance_blocked",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "subject_hash_changed",
+      "pair_id": "subject_hash_mutation"
+    },
+    {
+      "base": "valid_severance_blocked",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "candidate_hash_changed",
+      "pair_id": "candidate_hash_mutation"
+    },
+    {
+      "base": "valid_isolation_single_evidence",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "environment_changed",
+      "pair_id": "environment_mismatch"
+    },
+    {
+      "base": "valid_isolation_single_evidence",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "hash_mismatch",
+      "pair_id": "evidence_hash_mutation"
+    },
+    {
+      "base": "valid_isolation_single_evidence",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "unsafe_traversal",
+      "pair_id": "unsafe_path_mutation"
+    },
+    {
+      "base": "valid_isolation_single_evidence",
+      "expected_relation": "DIFFERENT_VALIDITY",
+      "mutated": "unsupported_schema_version",
+      "pair_id": "unsupported_schema_mutation"
+    }
+  ],
+  "negative_scenarios": [
+    "malformed_json",
+    "malformed_dsse_envelope",
+    "payload_decode_failure",
+    "schema_violation",
+    "missing_expected_context",
+    "subject_context_mismatch",
+    "hash_mismatch",
+    "unsafe_evidence_path",
+    "missing_evidence_file",
+    "symlink_escape",
+    "unsupported_schema_version",
+    "unexpected_io_failure",
+    "internal_validator_defect"
+  ],
+  "positive_fixtures": [
+    "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+    "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+    "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+    "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+    "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+    "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json"
+  ],
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_COVERAGE_MANIFEST_V1",
+  "schema_version": "1.1"
+}

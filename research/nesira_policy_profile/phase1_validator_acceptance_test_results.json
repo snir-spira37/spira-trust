@@ -1,0 +1,137 @@
+{
+  "commands": [
+    {
+      "command": "python -m compileall source tests",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/test_nesira_policy_profile_validator.py -q",
+      "exit_code": 0,
+      "result": "8 passed"
+    },
+    {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "result": "278 passed"
+    },
+    {
+      "command": "python tools/build_spira_trust_public.py dist\\_nesira_phase1_acceptance_wheel_check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "path_security_results": [
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "parent traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "nested traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "posix absolute path",
+      "expected": "INVALID",
+      "finding": "HIGH_STATUS_MAPPING_DIVERGENCE"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "windows absolute path",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "drive-relative path",
+      "expected": "INVALID",
+      "finding": "HIGH_STATUS_MAPPING_DIVERGENCE"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "backslash traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "mixed slash traversal",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "UNC path",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": false,
+      "actual": "NOT_EVALUATED",
+      "case": "percent-encoded traversal literal",
+      "expected": "NOT_EVALUATED_OR_INVALID",
+      "note": "No URL decoding is implemented; treated as literal missing filename."
+    },
+    {
+      "accepted": false,
+      "actual": "TOOL_ERROR",
+      "case": "directory evidence path",
+      "expected": "INVALID_OR_NOT_EVALUATED",
+      "finding": "HIGH_VALIDATION_FAILURE_MASKED_AS_TOOL_ERROR"
+    },
+    {
+      "accepted": false,
+      "actual": "INVALID",
+      "case": "symlink parent escape",
+      "expected": "INVALID"
+    },
+    {
+      "accepted": true,
+      "actual": "VALID",
+      "case": "duplicate evidence path",
+      "expected": "INVALID",
+      "finding": "HIGH_DUPLICATE_EVIDENCE_PATH_ACCEPTED"
+    }
+  ],
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_TEST_RESULTS_V1",
+  "schema_version": "1.0",
+  "status_mapping_matrix": {
+    "INVALID": {
+      "accepted": false,
+      "actual": "PARTIAL_PASS_WITH_PATH_MAPPING_GAPS",
+      "expected_action": "STOP_BLOCKED"
+    },
+    "NOT_EVALUATED": {
+      "accepted": true,
+      "actual": "PASS_FOR_MISSING_CONTEXT_AND_MISSING_FILE",
+      "expected_action": "REPORT_NOT_EVALUATED"
+    },
+    "RERUN_REQUIRED": {
+      "accepted": true,
+      "actual": "PASS",
+      "expected_action": "RERUN_REQUIRED"
+    },
+    "TOOL_ERROR": {
+      "accepted": false,
+      "actual": "PASS_FOR_INTERNAL_EXCEPTION_BUT_OVERUSED_FOR_DIRECTORY",
+      "expected_action": "STOP_BLOCKED"
+    },
+    "VALID": {
+      "accepted": true,
+      "actual": "PASS_FOR_POSITIVES",
+      "expected_action": "REPORT_NOT_EVALUATED"
+    }
+  }
+}
