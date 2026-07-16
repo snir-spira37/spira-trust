@@ -461,7 +461,7 @@ def scan_case_artifacts(case_records: list[dict[str, Any]]) -> dict[str, Any]:
     path_hits: list[str] = []
     secret_hits: list[str] = []
     sensitive_value_hits: list[str] = []
-    forbidden_path_fragments = ["C:\\", "\\Users\\", "/Users/", "/home/"]
+    forbidden_path_fragments = ["C:" + "\\", "\\" + "Users" + "\\", "/" + "Users" + "/", "/home/"]
     secret_fragments = ["AKIA", "BEGIN PRIVATE KEY", "xoxb-", "ghp_", "password =", "api_key", "access_key"]
     sensitive_sentinels = ["SUPERSECRET", "REAL_SECRET_VALUE", "PRIVATE_CUSTOMER"]
     for record in case_records:

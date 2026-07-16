@@ -1737,9 +1737,9 @@
       "sha256": "298cc7ee6a4ffc17d511d8f62c1fc4c69ab1eb10b3f98eb98d8c9933904397cd"
     },
     {
-      "bytes": 1555,
+      "bytes": 1561,
       "path": "research/terraform_plan_contract/oracle_validator_implementation_results.json",
-      "sha256": "ec9eb33299cef16b3edc2d96d3f7f82e334b2952370c098ce51ce6578879e24a"
+      "sha256": "f54097e75d9841c8e07d5bfeb8b7f1f43dcc402bad161449620fa7217a5f87ad"
     },
     {
       "bytes": 7612,

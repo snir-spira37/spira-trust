@@ -1,5 +1,5 @@
 {
-  "authorization": "C:/Users/snir/Documents/Codex/2026-06-11/we-are-continuing-spira-v10-0/work/github_spira_trust_public/research/multi_agent_benchmark/claude_native/claude_native_primary_benchmark_authorization.md",
+  "authorization": "<REPO_ROOT>/research/multi_agent_benchmark/claude_native/claude_native_primary_benchmark_authorization.md",
   "completed_session_count": 180,
   "created_at_utc": "2026-07-13T20:59:59Z",
   "next_session_index": null,

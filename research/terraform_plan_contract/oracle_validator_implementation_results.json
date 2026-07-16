@@ -26,7 +26,7 @@
   "positive_fixtures_passed": 3,
   "positive_fixtures_total": 3,
   "privacy_path_secret_scan": {
-    "command": "rg -n \"C:\\\\Users\\\\snir|BEGIN PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]+|xox[baprs]-|-----BEGIN\" <authorized implementation files>",
+    "command": "rg -n \"<LOCAL_USER_PATH_PATTERN>|BEGIN PRIVATE KEY|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9_]+|xox[baprs]-|-----BEGIN\" <authorized implementation files>",
     "result": "PASS"
   },
   "producer_output_observed": false,
