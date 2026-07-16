@@ -14,7 +14,7 @@
   ],
   "schema": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_ARTIFACT_MANIFEST",
   "schema_version": 1,
-  "source_artifact_count": 592,
+  "source_artifact_count": 613,
   "source_artifacts": [
     {
       "bytes": 9026,
@@ -417,9 +417,9 @@
       "sha256": "843cfec0ee2d7f819c77f0cf3bcb78d3d9f19d8a9a435a2fd2493bda7e307a59"
     },
     {
-      "bytes": 22764,
+      "bytes": 22653,
       "path": "research/formal_core/domain1/spira_formal_core_v1_domain1_raw_adapter_conformance_results.json",
-      "sha256": "c0346e911d2178b2387d16885802983ee9b07437d7d51a85a1f27b8da679a27d"
+      "sha256": "c7eacf5aed5a73b24418eae4f32436f2d5d764a880ca15370c877a905c18c102"
     },
     {
       "bytes": 1749,
@@ -652,9 +652,9 @@
       "sha256": "86a851d26978fbcd26465500be5056791c62abbcd3ace1fedc96072cb471e655"
     },
     {
-      "bytes": 5786,
+      "bytes": 5675,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_production_adapter_alignment_results.json",
-      "sha256": "d8ea70890bea533d017a403887361c82688d3955dcc57071383d6d708103e30b"
+      "sha256": "0aa20d13d861c9986365572231638dbc4a5a0a9ce7a4e27d19aa783622ce89fb"
     },
     {
       "bytes": 1274,
@@ -672,9 +672,9 @@
       "sha256": "03bb37cbf506d6cc6de9b497ccfbbb5e7b8cb146fb7e8e63f00fa938223101ac"
     },
     {
-      "bytes": 15826,
+      "bytes": 15715,
       "path": "research/formal_core/domain2/spira_formal_core_v1_domain2_raw_adapter_conformance_results.json",
-      "sha256": "23d767f552f88c62266202921c1e479594f007392afb005d587ecc777acea45f"
+      "sha256": "19b6b32bb638bc6a438e6c8a1d46caa9f11439a4525e7b5a4b97b35a32f5bc3b"
     },
     {
       "bytes": 1503,
@@ -902,9 +902,9 @@
       "sha256": "67b54367a9a36f4665d8b90ef6378b7a54e1cf70ff7f7fb2e3a2950bc3138b86"
     },
     {
-      "bytes": 5285,
+      "bytes": 5174,
       "path": "research/formal_core/domain3/spira_formal_core_v1_domain3_production_adapter_alignment_results.json",
-      "sha256": "9ba82dae9cfbc895d60610abad9132642c0b92ea0ca7318abb64434cd8b70d24"
+      "sha256": "56d02dc37186f53688492c644c1b6d696505be01a415e3165ff3b669bad6bb53"
     },
     {
       "bytes": 1671,
@@ -977,9 +977,9 @@
       "sha256": "8b36c084edd145cbb623028a3c8c5ea184483674a008cb80540b2f32f2f2ca66"
     },
     {
-      "bytes": 8089,
+      "bytes": 7978,
       "path": "research/formal_core/spira_formal_core_v1_adapter_boundary_inventory_results.json",
-      "sha256": "23837de2b6d603875f1815a6c0ab50918ab861d6e8b2a3b9f732fb8c0b21433a"
+      "sha256": "15020ec23853146b1719bd88380aa4062c6e2a5046355c16fb645d504d8f7910"
     },
     {
       "bytes": 1177,
@@ -1092,9 +1092,9 @@
       "sha256": "22eb24e0bf926f829a8ac56b8ceb35ee67da4a04b655256fd50b475fe64770c9"
     },
     {
-      "bytes": 6546,
+      "bytes": 6102,
       "path": "research/formal_core/spira_formal_core_v1_integration_boundary_results.json",
-      "sha256": "c3df1bf91a99ce6454774e078101f7bad3361c47d3867a286b8450d2c758122f"
+      "sha256": "ee40bec20004deae79ffd8b6fc67649da7e5bbb8276bac7fae2f653ad8968904"
     },
     {
       "bytes": 1221,
@@ -1102,19 +1102,19 @@
       "sha256": "58feb1eb55ca58ac8f824f5de932f065b1f1208abb4861dfabb1cee2844672ea"
     },
     {
-      "bytes": 8021,
+      "bytes": 7918,
       "path": "research/formal_core/spira_formal_core_v1_lean_definition_implementation_authorization.md",
-      "sha256": "a73e7247895ddf25294e6187b7ee1b0e5b3c023e24d3b6656ac029a3b3ab2eac"
+      "sha256": "baba8d08e65c9129dc0ed38cd5efd88636fd0c7bf35da8a881ecc58b3305512e"
     },
     {
-      "bytes": 4136,
+      "bytes": 4025,
       "path": "research/formal_core/spira_formal_core_v1_lean_definition_mapping.json",
-      "sha256": "2afb000a141356ba06c96aa29c2ab03c557227c333a3bd6d72f0fcf774e708e0"
+      "sha256": "84c8d3b0c1abb6b257516a740ff9fccc42e8218bd94095ac0d94c04bbcfe5b27"
     },
     {
-      "bytes": 3849,
+      "bytes": 3746,
       "path": "research/formal_core/spira_formal_core_v1_lean_definition_report.md",
-      "sha256": "cae7ad3b27dfbfea3c341936a8051a9a49c03933726818228ad01d50c9f11d72"
+      "sha256": "a811c087ff6b4a9e004083e6d13c73ce6960d1b2f41ae29f3a2aeebd823d0703"
     },
     {
       "bytes": 3389,
@@ -1157,9 +1157,9 @@
       "sha256": "6fd03e1b1ce2f84c6077195e380a7b6138ce5b902dc78ddb7bcfa36c1583bc51"
     },
     {
-      "bytes": 6610,
+      "bytes": 6277,
       "path": "research/formal_core/spira_formal_core_v1_proof_package_results.json",
-      "sha256": "69a6b5a1acecfeae1228a2e64c39ba1484cc2aadb7f9be84cfb35f21a9293e64"
+      "sha256": "2564a9c8254483a229141be1a0441c431a62812c26f24fe967f88135ad6bd7b2"
     },
     {
       "bytes": 899,
@@ -1732,9 +1732,9 @@
       "sha256": "823a500b1e9f0c811822dec8d6c507c9973d15e7cb8a734a7e6ab2219323e58e"
     },
     {
-      "bytes": 4987,
+      "bytes": 4983,
       "path": "research/terraform_plan_contract/oracle_validator_implementation_report.md",
-      "sha256": "25346211dd7cf0ee744634e61442c4ff9523d3b40d6305bac9ca1894d76c26d1"
+      "sha256": "298cc7ee6a4ffc17d511d8f62c1fc4c69ab1eb10b3f98eb98d8c9933904397cd"
     },
     {
       "bytes": 1555,
@@ -2532,6 +2532,11 @@
       "sha256": "ff1dfe5d88e967625a005882e0bebf1747d45ee0bd7d98742678fab8c0941abc"
     },
     {
+      "bytes": 27827,
+      "path": "source/spira_core/nesira_policy_profile_validator.py",
+      "sha256": "d0752cdb49aba89a0d0d8dadbf11f7e37fd1836ed8eb2579a320bbbe27b51a3a"
+    },
+    {
       "bytes": 11174,
       "path": "source/spira_core/policy_pack.py",
       "sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc"
@@ -2697,6 +2702,101 @@
       "sha256": "7527dc502e3c94e5de43fb62a9b14236b349c004a337e54af06cf4962a607936"
     },
     {
+      "bytes": 570,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/absolute_path.json",
+      "sha256": "e7204bb5a8ba6f7c0ae9c359e927dc0f2cea76f5e85b6f74ce962c692ab76918"
+    },
+    {
+      "bytes": 15,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_a.txt",
+      "sha256": "71f49e4f25b46d85934e84dc2cd7263fc3e886196e66fb4dae5da8d290c29e1c"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_b.txt",
+      "sha256": "895530c53db52ae4d83617feecea2e53e76b819051f9e3c677c887c76b001504"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/hash_mismatch.json",
+      "sha256": "edcb5313dac00ce64a720096573e2c5ca7c2136b886de11e65cefe8e3ffce620"
+    },
+    {
+      "bytes": 562,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/missing_evidence_file.json",
+      "sha256": "577e51966ed4b5ae472dd82558706925138a684a0ece168fd27ae4846131451b"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsafe_traversal.json",
+      "sha256": "a8c1c2393acf64e1747836f947fe546ced77b3625f3ee063b3ea37a883b6ffc1"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsupported_schema_version.json",
+      "sha256": "afaca190bfbd7cdf088dfc31e0dcdfff62e1256f061fb6219f103dec0602f295"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json",
+      "sha256": "c1dfce9cc7b017788f237856fa4cf344be39bb305e6c7242f5375c2ab8fc1cd2"
+    },
+    {
+      "bytes": 693,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+      "sha256": "f2f67f2e4f6e5528a701c381aa3c10d37ca4602c909aaa630fd1dcb5a8074ea7"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+      "sha256": "ed60c361dd536e70e61062dd995df828d9c39f9b9887f1e0ca54d8ef00afd8ce"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/expired_temporal_binding.json",
+      "sha256": "639c1e5c470cbed41aa13209d94c253b11c44ddca8a601e8ccb59a715542d60d"
+    },
+    {
+      "bytes": 72,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_dsse.json",
+      "sha256": "18aaef72cb83f9d2f78fd116638a6a293d39bc0f72d840cafaac92b8feb2da08"
+    },
+    {
+      "bytes": 2,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c"
+    },
+    {
+      "bytes": 92,
+      "path": "tests/fixtures/nesira_policy_profile/severance/payload_decode_failure.json",
+      "sha256": "b392a6605154744f5f557e231b6551f9beb38d4bb23852d2c96f8fa76da112f5"
+    },
+    {
+      "bytes": 1141,
+      "path": "tests/fixtures/nesira_policy_profile/severance/schema_violation.json",
+      "sha256": "9b3edc02f1a1d5e2e2c9dbcbd8e56ca4a8b9ed0a7d76d79f70a4458f3dcc632f"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/unsupported_schema_version.json",
+      "sha256": "d8afc8f1e1cc284bacdd281841e3770f60b319314f8365f584d788efd95f7b4b"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+      "sha256": "c16f3603ad958d9f72ad8a79d462cd2178059ec06570ec328f61815a0d69f4e9"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+      "sha256": "cb21f7bdd41d52760c96833bb21a0260c30591e59926bebcd4a8002fae90a3e1"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+      "sha256": "67de3bd7b69e6c6b91c0d63c6e0157e24ea4f0b826415642ca1e2e8eeb536c07"
+    },
+    {
       "bytes": 4186,
       "path": "tests/fixtures/test_build_failure_oracle_validator/fixture_manifest.json",
       "sha256": "306d38ee016c419627e4fd18a02d6515861bba4ef9253adf473e8d6e5d54ef45"
@@ -2752,9 +2852,9 @@
       "sha256": "cd248acd9c2c1f981e8ae5a34e156d69d05f3fe44a08d26c186cbc7d5be58ee2"
     },
     {
-      "bytes": 2037,
+      "bytes": 2088,
       "path": "tests/test_claude_native_read_invocation_hardening_diagnostic.py",
-      "sha256": "93e1943c1fd8568282bd9529644bd756b20ce59940df2781ecf8e1f8cab48470"
+      "sha256": "e6519f888bbdc09fa90d7cafc532facb531c3e51144613f8e2205ddfc4edf0cc"
     },
     {
       "bytes": 2714,
@@ -2777,9 +2877,9 @@
       "sha256": "4f6f44d77f4f2b2be0b34dce5b80f6a9205693cd1eb39ed811611b575acae8f6"
     },
     {
-      "bytes": 3231,
+      "bytes": 3285,
       "path": "tests/test_deepseek_ds_r0.py",
-      "sha256": "cb4fd3aeb411823587c2fbc4c395e8c2e1a7f40429efb5cea0cd06703685b9cf"
+      "sha256": "59d651548a41728f1469a841670b6ee5d8c824d06d9b0c80a2ad8fab930b298d"
     },
     {
       "bytes": 1384,
@@ -2845,6 +2945,11 @@
       "bytes": 4971,
       "path": "tests/test_mvp_unified.py",
       "sha256": "6ac7e3e33fcc1df8a76d5141db9d57d4e0c03a0639175dd3eea93a8ca7ebd6d2"
+    },
+    {
+      "bytes": 16886,
+      "path": "tests/test_nesira_policy_profile_validator.py",
+      "sha256": "3154404c890411c7354d44c7a0644abdb52f0a6ea7829dc17a71162e4d3d0c58"
     },
     {
       "bytes": 7218,
