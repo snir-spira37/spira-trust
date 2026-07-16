@@ -1,0 +1,411 @@
+{
+  "acceptance_review_commit": "RECORDED_IN_GIT_COMMIT_CONTAINING_THIS_FILE",
+  "commands": {
+    "action_schema_identity": "PASS",
+    "compileall": "PASS",
+    "focused_phase1_pytest": "11 passed",
+    "full_pytest": "281 passed",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "protected_surface_diff": "PASS",
+    "public_wheel_build": "PASS",
+    "wheel_inspection": "PASS"
+  },
+  "environment": {
+    "branch": "codex/formal-core-v1-lean",
+    "clean_committed_source_before_artifacts": true,
+    "git_status_before_artifact_generation": [],
+    "head": "7d11be9a261cb3c61074a8932a8ba58a42b9ae81",
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "Python 3.12.10",
+    "working_directory": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean"
+  },
+  "error_message_hygiene": {
+    "local_absolute_paths_leaked": 0,
+    "raw_exception_repr_leaked": 0,
+    "stack_traces_leaked": 0
+  },
+  "findings": [],
+  "fixture_metrics": {
+    "false_valid_mutation_pairs": 0,
+    "negative_invariant_detection": "100%",
+    "positive_fixtures_structurally_accepted": "6/6",
+    "positive_fixtures_yielding_proceed": "0/6"
+  },
+  "forbidden_capability_scan": {
+    "agent_summary_integration": false,
+    "cli_registration": false,
+    "combined_verdict_integration": false,
+    "cryptographic_verification_implemented": false,
+    "cutover_authorization": false,
+    "isolation_execution_implemented": false,
+    "phase2": false,
+    "public_export": false,
+    "release": false,
+    "signer_authority_implemented": false,
+    "sigstore_trust_implemented": false,
+    "subprocess_container_sandbox_runner": false
+  },
+  "four_finding_expected_vs_actual": {
+    "directory_evidence": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "evidence path is not a regular file"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_dot_equivalent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_exact": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_normalized_equivalent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "path_cases": [
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_tmp",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_root",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_var",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/var/log/example",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_normalization",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/tmp/../evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_drive_relative",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_drive_only",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_d_drive",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "D:folder/file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_absolute_backslash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:\\tmp\\evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_absolute_slash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:/tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "unc_backslash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "\\\\server\\share\\file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "unc_slash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "//server/share/file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "parent_traversal",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "../outside.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "mixed_traversal",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "safe/..\\outside.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING",
+        "actual_status": "NOT_EVALUATED",
+        "case": "nonexistent_file",
+        "expected_reason": "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING",
+        "expected_status": "NOT_EVALUATED",
+        "input": "missing.txt",
+        "pass": true
+      }
+    ]
+  },
+  "global_invariants": {
+    "proceed_paths": 0,
+    "stop_false_paths": 0
+  },
+  "hash_binding_results": {
+    "hash_mismatch_actual": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "hash mismatch"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "hash_mismatches_accepted": 0
+  },
+  "historical_sequence": [
+    "V1.1 authorization accepted",
+    "Phase 1 implementation complete",
+    "Initial acceptance review NEEDS_REVISION",
+    "Four High findings",
+    "Remediation complete",
+    "Acceptance rerun"
+  ],
+  "next_authorized_step": "PHASE1_EXTERNAL_REPRODUCTION_REQUIRED_OR_PHASE2_RESEARCH_AUTHORIZATION_PROPOSAL_REQUIRED",
+  "not_evaluated_boundaries": [
+    "CRYPTOGRAPHIC_VERIFICATION_NOT_EVALUATED",
+    "SIGNER_IDENTITY_AND_AUTHORITY_NOT_EVALUATED",
+    "ISOLATION_EXECUTION_NOT_EVALUATED"
+  ],
+  "path_security_results": {
+    "directories_accepted_as_evidence_files": 0,
+    "duplicate_canonical_evidence_paths_accepted": 0,
+    "symlink_file": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "symlink escape"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "symlink_parent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "symlink escape"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "unsafe_paths_accepted": 0
+  },
+  "phase2_authorized": false,
+  "protected_surfaces": {
+    "baseline": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+    "result": "PASS"
+  },
+  "public_capability_claim_authorized": false,
+  "release_authorized": false,
+  "remediation_commit": "7d11be9a261cb3c61074a8932a8ba58a42b9ae81",
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_RERUN_RESULTS_V1",
+  "schema_version": "1.0",
+  "v1_1_verification": {
+    "authorization_verdict": "SPIRA_NESIRA_PHASE1_AUTHORIZATION_V1_1_ACCEPTED",
+    "forbidden_phrase_scan": "PASS",
+    "json": "PASS",
+    "proceed_allowed": false,
+    "sha256sums": "PASS",
+    "zip_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d"
+  },
+  "verdict": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTED",
+  "wheel": {
+    "entries": [
+      "schemas/spira_agent_summary_v1.json",
+      "schemas/spira_decision_v1.json",
+      "spira_core/__init__.py",
+      "spira_core/adapters.py",
+      "spira_core/agent_status.py",
+      "spira_core/agent_summary.py",
+      "spira_core/attestation_verify.py",
+      "spira_core/bom.py",
+      "spira_core/combined_verdict.py",
+      "spira_core/contracts.py",
+      "spira_core/core.py",
+      "spira_core/cyclonedx_export.py",
+      "spira_core/decision015/__init__.py",
+      "spira_core/decision015/contract.py",
+      "spira_core/decision015/core.py",
+      "spira_core/decision015/service.py",
+      "spira_core/decision_report.py",
+      "spira_core/drift.py",
+      "spira_core/entry_points_policy.py",
+      "spira_core/governance_engine.py",
+      "spira_core/ledger.py",
+      "spira_core/license_policy.py",
+      "spira_core/lockfile_policy.py",
+      "spira_core/policy_pack.py",
+      "spira_core/range_parser.py",
+      "spira_core/rebaseline.py",
+      "spira_core/review.py",
+      "spira_core/sbom_consistency.py",
+      "spira_core/target_environment.py",
+      "spira_core/trust.py",
+      "spira_core/trust_cli.py",
+      "spira_core/trust_graph.py",
+      "spira_core/vendored_stone015/__init__.py",
+      "spira_core/vendored_stone015/spira/__init__.py",
+      "spira_core/vendored_stone015/spira/api.py",
+      "spira_core/vendored_stone015/spira/ast_nodes.py",
+      "spira_core/vendored_stone015/spira/backends.py",
+      "spira_core/vendored_stone015/spira/bridge.py",
+      "spira_core/vendored_stone015/spira/cli.py",
+      "spira_core/vendored_stone015/spira/demo.py",
+      "spira_core/vendored_stone015/spira/modules.py",
+      "spira_core/vendored_stone015/spira/ontology.py",
+      "spira_core/vendored_stone015/spira/orchestrator.py",
+      "spira_core/vendored_stone015/spira/parser.py",
+      "spira_core/vendored_stone015/spira/runtime.py",
+      "spira_core/vendored_stone015/spira/safe_eval.py",
+      "spira_core/vendored_stone015/spira/schemas.py",
+      "spira_core/vendored_stone015/spira/storage.py",
+      "spira_core/vendored_stone015/spira/typesystem.py",
+      "spira_core/vendored_stone015/spira/validation.py",
+      "spira_trust-0.6.1.dist-info/LICENSE",
+      "spira_trust-0.6.1.dist-info/METADATA",
+      "spira_trust-0.6.1.dist-info/RECORD",
+      "spira_trust-0.6.1.dist-info/WHEEL",
+      "spira_trust-0.6.1.dist-info/entry_points.txt",
+      "spira_trust-0.6.1.dist-info/sboms/spira-trust.cdx.json"
+    ],
+    "entry_count": 56,
+    "filename": "C:\\Users\\snir\\Documents\\Codex\\2026-06-11\\we-are-continuing-spira-v10-0\\work\\github_spira_trust_formal_core_v1_lean\\dist\\_nesira_phase1_acceptance_rerun_wheel_check\\wheelhouse\\spira_trust-0.6.1-py3-none-any.whl",
+    "phase1_schemas_absent": true,
+    "research_fixtures_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "tests_absent": true,
+    "unexpected_public_modules": 0,
+    "validator_module_absent": true
+  }
+}

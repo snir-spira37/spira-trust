@@ -1,0 +1,283 @@
+{
+  "commands": {
+    "action_schema_identity": "PASS",
+    "compileall": "PASS",
+    "focused_phase1_pytest": "11 passed",
+    "full_pytest": "281 passed",
+    "git_diff_check": "PASS",
+    "json_validation": "PASS",
+    "protected_surface_diff": "PASS",
+    "public_wheel_build": "PASS",
+    "wheel_inspection": "PASS"
+  },
+  "four_finding_expected_vs_actual": {
+    "directory_evidence": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "evidence path is not a regular file"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_dot_equivalent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_exact": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "duplicate evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "duplicate_normalized_equivalent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "unsafe evidence path"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "path_cases": [
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_tmp",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_root",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_var",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/var/log/example",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "posix_normalization",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "/tmp/../evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_drive_relative",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_drive_only",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_d_drive",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "D:folder/file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_absolute_backslash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:\\tmp\\evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "windows_absolute_slash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "C:/tmp/evidence.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "unc_backslash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "\\\\server\\share\\file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "unc_slash",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "//server/share/file",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "parent_traversal",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "../outside.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "actual_status": "INVALID",
+        "case": "mixed_traversal",
+        "expected_reason": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+        "expected_status": "INVALID",
+        "input": "safe/..\\outside.txt",
+        "pass": true
+      },
+      {
+        "actual_reason": "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING",
+        "actual_status": "NOT_EVALUATED",
+        "case": "nonexistent_file",
+        "expected_reason": "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING",
+        "expected_status": "NOT_EVALUATED",
+        "input": "missing.txt",
+        "pass": true
+      }
+    ]
+  },
+  "global_invariants": {
+    "proceed_paths": 0,
+    "stop_false_paths": 0
+  },
+  "hash_binding_results": {
+    "hash_mismatch_actual": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "hash mismatch"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "hash_mismatches_accepted": 0
+  },
+  "path_security_results": {
+    "directories_accepted_as_evidence_files": 0,
+    "duplicate_canonical_evidence_paths_accepted": 0,
+    "symlink_file": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "symlink escape"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "symlink_parent": {
+      "action": "STOP_BLOCKED",
+      "blocking_items": [
+        "symlink escape"
+      ],
+      "not_evaluated": [
+        "isolation_execution_observation",
+        "isolation_execution_trust",
+        "severance_authorization"
+      ],
+      "reason_codes": [
+        "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+      ],
+      "status": "INVALID",
+      "stop": true,
+      "tool_errors": []
+    },
+    "unsafe_paths_accepted": 0
+  },
+  "schema": "SPIRA_NESIRA_PHASE1_VALIDATOR_ACCEPTANCE_RERUN_TEST_RESULTS_V1",
+  "schema_version": "1.0",
+  "status_mapping_matrix": {
+    "INVALID": "PASS",
+    "NOT_EVALUATED": "PASS",
+    "RERUN_REQUIRED": "PASS",
+    "TOOL_ERROR": "PASS",
+    "VALID": "PASS"
+  }
+}
