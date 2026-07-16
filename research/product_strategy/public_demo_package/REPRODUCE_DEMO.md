@@ -5,7 +5,7 @@
 - Windows PowerShell or POSIX shell
 - Python 3.12+
 - `pytest` available for test commands
-- Repository checkout pinned to `0aa44f33455d477fe53236d3ce8daddb6d830dad` or the final package build commit that contains this package
+- Repository checkout pinned to `19c0e996a79187c444bcbba76f3f4a907e003ae1` or the final package build commit that contains this package
 
 Lean/Lake is optional for this demo package review. If Lean/Lake is unavailable, record:
 

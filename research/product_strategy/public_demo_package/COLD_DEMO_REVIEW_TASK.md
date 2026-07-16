@@ -47,5 +47,5 @@ The package is Domain 3 only. It does not claim arbitrary tool-call interception
 Source commit for package build input:
 
 ```text
-0aa44f33455d477fe53236d3ce8daddb6d830dad
+19c0e996a79187c444bcbba76f3f4a907e003ae1
 ```

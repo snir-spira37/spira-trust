@@ -20,6 +20,6 @@
   "sensitive_values_detected": false,
   "verdict": "PUBLIC_DEMO_PACKAGE_ACCEPTED",
   "zip_extracts_successfully": true,
-  "zip_filename": "spira_terraform_agent_action_gate_public_demo_0aa44f3.zip",
-  "zip_sha256": "5d2bde57305ffde48ba64503ddaa785f66d0caab73c59c4b4f75dc7a8552359d"
+  "zip_filename": "spira_terraform_agent_action_gate_public_demo_19c0e99.zip",
+  "zip_sha256": "0ba107aa2b6acef99ad9519f2e68b438b0452606306b001eb357a953a89a06cb"
 }
