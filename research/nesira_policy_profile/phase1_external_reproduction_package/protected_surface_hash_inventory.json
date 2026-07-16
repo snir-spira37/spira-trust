@@ -1,0 +1,302 @@
+{
+  "accepted_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "baseline_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "items": [
+    {
+      "accepted_sha256": "7ef5566412b506d23b4921dd7ae5332bbd7d8e4fe5d5b34fef4183a81d3ab92f",
+      "baseline_sha256": "7ef5566412b506d23b4921dd7ae5332bbd7d8e4fe5d5b34fef4183a81d3ab92f",
+      "path": "formal/spira_formal_core_v1/README.md",
+      "same": true
+    },
+    {
+      "accepted_sha256": "93cd2fb9bd20c9c5af246ed3f59d88e6b6b1ce6a91c394f71b2507f747607005",
+      "baseline_sha256": "93cd2fb9bd20c9c5af246ed3f59d88e6b6b1ce6a91c394f71b2507f747607005",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "4b075602703396b0458cb74c6a13ec23f09b36564a5a2307777b78f40ae0233d",
+      "baseline_sha256": "4b075602703396b0458cb74c6a13ec23f09b36564a5a2307777b78f40ae0233d",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "56a05af5da79c6fc2f3850409c8a66f6d978df392da2e709b3fff6c17dc2d8c7",
+      "baseline_sha256": "56a05af5da79c6fc2f3850409c8a66f6d978df392da2e709b3fff6c17dc2d8c7",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "63e0bd287b66b8bf7d709a4004d2d125c6439e7df8d47cd0bb90354c14e27e35",
+      "baseline_sha256": "63e0bd287b66b8bf7d709a4004d2d125c6439e7df8d47cd0bb90354c14e27e35",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6bd29f3b4724dbd81ca6f595d8a07efc237dc0ce08f20d25a025b1d848b57e54",
+      "baseline_sha256": "6bd29f3b4724dbd81ca6f595d8a07efc237dc0ce08f20d25a025b1d848b57e54",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "43c105342b3558987b0c051ccb0d06c9324e804f7a7335a5553ca01e1d117479",
+      "baseline_sha256": "43c105342b3558987b0c051ccb0d06c9324e804f7a7335a5553ca01e1d117479",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "39c955ac40cf102721834bd577c9aeef9f85309cf09cd1f81b6ecdde2b2b1ef2",
+      "baseline_sha256": "39c955ac40cf102721834bd577c9aeef9f85309cf09cd1f81b6ecdde2b2b1ef2",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "be733f78845b3cb4de4f7209d864c5f2bdc0d94d436ef9f6909f3d2d85797530",
+      "baseline_sha256": "be733f78845b3cb4de4f7209d864c5f2bdc0d94d436ef9f6909f3d2d85797530",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c32db1b6e6563403f6d6d9fdf0af871ca38e0f4edb5bfb33a8d68eea13f5cf8e",
+      "baseline_sha256": "c32db1b6e6563403f6d6d9fdf0af871ca38e0f4edb5bfb33a8d68eea13f5cf8e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "f9f9efd320a2577dc8be8174242cea3356c94b29b6c6b69a7bb7d22e02faf214",
+      "baseline_sha256": "f9f9efd320a2577dc8be8174242cea3356c94b29b6c6b69a7bb7d22e02faf214",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "babe3c9b38635140ee61aa8a16d2b25a2e18be37d5ac5443ee30e141e5563e4e",
+      "baseline_sha256": "babe3c9b38635140ee61aa8a16d2b25a2e18be37d5ac5443ee30e141e5563e4e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "03db9d5eb27e1a92ee6dc2ca46a5e90c80ec430eb440a937ca7a11292d943531",
+      "baseline_sha256": "03db9d5eb27e1a92ee6dc2ca46a5e90c80ec430eb440a937ca7a11292d943531",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "82c5326c1d2a3b9e7b2a354c760496b23912f4445fe6307597ed6da62c21ad0a",
+      "baseline_sha256": "82c5326c1d2a3b9e7b2a354c760496b23912f4445fe6307597ed6da62c21ad0a",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "7e43b3acbb6a7e029e1a027d52e58ff3c65b3330e850ee52568276ea8a948881",
+      "baseline_sha256": "7e43b3acbb6a7e029e1a027d52e58ff3c65b3330e850ee52568276ea8a948881",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c314ae1aeb65375db52b94c7dfe6e70ce8c98ee3e52dc34589daba67374155db",
+      "baseline_sha256": "c314ae1aeb65375db52b94c7dfe6e70ce8c98ee3e52dc34589daba67374155db",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "88899424c4d09a6a59fae4592b369cc51ac2fa57ae8cee757da06fc22d2e7be1",
+      "baseline_sha256": "88899424c4d09a6a59fae4592b369cc51ac2fa57ae8cee757da06fc22d2e7be1",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ee697d2347511c92820cf1f77eb4c83ba8c96171c536ab23c476df3542797373",
+      "baseline_sha256": "ee697d2347511c92820cf1f77eb4c83ba8c96171c536ab23c476df3542797373",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "5859d550c3d00a413047982f91bb2a50c05f61532658f5a3c4b6c02c24de4b4e",
+      "baseline_sha256": "5859d550c3d00a413047982f91bb2a50c05f61532658f5a3c4b6c02c24de4b4e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "99d276fac0cb19872b65db5f4bb446e74563f3166abb351c5b317c0ad7803bf2",
+      "baseline_sha256": "99d276fac0cb19872b65db5f4bb446e74563f3166abb351c5b317c0ad7803bf2",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "a0455441587eb34fbb8dde99f9d5f9563055d47bb3117f2603f80ae717e53ba1",
+      "baseline_sha256": "a0455441587eb34fbb8dde99f9d5f9563055d47bb3117f2603f80ae717e53ba1",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c1666656d407df4da1f0a51584ebe0d84b64c782a3a5d12f6e6faaeb83280970",
+      "baseline_sha256": "c1666656d407df4da1f0a51584ebe0d84b64c782a3a5d12f6e6faaeb83280970",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "4a3a389c80f280890789b182c58698e9764fc9cc6b703b4b10dccf3834ba3a10",
+      "baseline_sha256": "4a3a389c80f280890789b182c58698e9764fc9cc6b703b4b10dccf3834ba3a10",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6b284ada817176a00eb90a58b90179cfb5a64781f0abaebd1b8ae8e06a602052",
+      "baseline_sha256": "6b284ada817176a00eb90a58b90179cfb5a64781f0abaebd1b8ae8e06a602052",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "2b53d5692d74b394c76c5c28f6c596071a1c6626ec6cc4e6ca6070f7713b6933",
+      "baseline_sha256": "2b53d5692d74b394c76c5c28f6c596071a1c6626ec6cc4e6ca6070f7713b6933",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "08afb57d5df6851bb9187d7e9bc696548c872ef456ce75dfb067548c3539762d",
+      "baseline_sha256": "08afb57d5df6851bb9187d7e9bc696548c872ef456ce75dfb067548c3539762d",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "66e5bcc256fdfea9064436a7e8daf865163264d29d6aa57779e2a64211364d64",
+      "baseline_sha256": "66e5bcc256fdfea9064436a7e8daf865163264d29d6aa57779e2a64211364d64",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c3067ec0ecdb6f08e5495384fb944cfa6da4ccc3326ba0432bf79532b0186184",
+      "baseline_sha256": "c3067ec0ecdb6f08e5495384fb944cfa6da4ccc3326ba0432bf79532b0186184",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "8aee7a502aa536f9ca311cffade1058587b7aa8ec662919b1cc15db8e02fc241",
+      "baseline_sha256": "8aee7a502aa536f9ca311cffade1058587b7aa8ec662919b1cc15db8e02fc241",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "08d883e8e2fef4a76ba56a0f3eadbf906cb8001890b835dcd16166d9878c35e0",
+      "baseline_sha256": "08d883e8e2fef4a76ba56a0f3eadbf906cb8001890b835dcd16166d9878c35e0",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "3963989c9567f1aab53d12cb6ddc42bc714b10ee5e29b033361e4d32d0f65c9f",
+      "baseline_sha256": "3963989c9567f1aab53d12cb6ddc42bc714b10ee5e29b033361e4d32d0f65c9f",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "d58e127db685a6c6017afb480b10956b9769a2f43fb611959f811d2f19dd4a70",
+      "baseline_sha256": "d58e127db685a6c6017afb480b10956b9769a2f43fb611959f811d2f19dd4a70",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "551fd2c09ca0ddd02015548891bb47b8e45634bfec601c325d6fad3faad2390c",
+      "baseline_sha256": "551fd2c09ca0ddd02015548891bb47b8e45634bfec601c325d6fad3faad2390c",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "fa1e7590424370c36c78a8ed25a890de241b9c8c287d010376be19dbc539114e",
+      "baseline_sha256": "fa1e7590424370c36c78a8ed25a890de241b9c8c287d010376be19dbc539114e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "33a4cf8f1f3fbd7138e3e7ffa5de7d8d3ef62c13d9c7e5a03cc88143758dbd92",
+      "baseline_sha256": "33a4cf8f1f3fbd7138e3e7ffa5de7d8d3ef62c13d9c7e5a03cc88143758dbd92",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd",
+      "baseline_sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd",
+      "path": "formal/spira_formal_core_v1/lake-manifest.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ce77eccf121c2108aa45f9d7da68b2606ebf1643d3bb2b6a0b61cb80da1294c4",
+      "baseline_sha256": "ce77eccf121c2108aa45f9d7da68b2606ebf1643d3bb2b6a0b61cb80da1294c4",
+      "path": "formal/spira_formal_core_v1/lakefile.toml",
+      "same": true
+    },
+    {
+      "accepted_sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+      "baseline_sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+      "path": "formal/spira_formal_core_v1/lean-toolchain",
+      "same": true
+    },
+    {
+      "accepted_sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763",
+      "baseline_sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763",
+      "path": "pyproject.toml",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6f2ccc1381882d9aa765ca876a117f2d657225c9b059d3a1a3d98bd0768dae5b",
+      "baseline_sha256": "6f2ccc1381882d9aa765ca876a117f2d657225c9b059d3a1a3d98bd0768dae5b",
+      "path": "schemas/spira_agent_rerun_plan_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e27e5c3e988d75e76fb4ef0b8fdabac12e09009d30af98e07fdd61159bc438f2",
+      "baseline_sha256": "e27e5c3e988d75e76fb4ef0b8fdabac12e09009d30af98e07fdd61159bc438f2",
+      "path": "schemas/spira_agent_summary_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e3b3e7dbe9486bce90b62fb94fd50b0df9a5aa642bde0eed6e8fb4588577a7d8",
+      "baseline_sha256": "e3b3e7dbe9486bce90b62fb94fd50b0df9a5aa642bde0eed6e8fb4588577a7d8",
+      "path": "schemas/spira_decision_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405",
+      "baseline_sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405",
+      "path": "source/spira_core/agent_summary.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c000a342187878062363cb2d9e4c61e30717d833d57ccba655333352f5d0e2a9",
+      "baseline_sha256": "c000a342187878062363cb2d9e4c61e30717d833d57ccba655333352f5d0e2a9",
+      "path": "source/spira_core/attestation_verify.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88",
+      "baseline_sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88",
+      "path": "source/spira_core/combined_verdict.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c46c33c3cb0ca28dbcfe9e9f1b03f18cb43de4ff51fcbffaa4239ebbd838012c",
+      "baseline_sha256": "c46c33c3cb0ca28dbcfe9e9f1b03f18cb43de4ff51fcbffaa4239ebbd838012c",
+      "path": "source/spira_core/contracts.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc",
+      "baseline_sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc",
+      "path": "source/spira_core/policy_pack.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e9d2a06ce1b6e0b62d93937790b668f02dcd768e49d3a19fc9f3e082d6ea1809",
+      "baseline_sha256": "e9d2a06ce1b6e0b62d93937790b668f02dcd768e49d3a19fc9f3e082d6ea1809",
+      "path": "source/spira_core/rerun_planner.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac",
+      "baseline_sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac",
+      "path": "tools/build_spira_trust_public.py",
+      "same": true
+    }
+  ],
+  "protected_surface_diffs": 0,
+  "schema": "SPIRA_NESIRA_PHASE1_PROTECTED_SURFACE_HASH_INVENTORY_V1"
+}

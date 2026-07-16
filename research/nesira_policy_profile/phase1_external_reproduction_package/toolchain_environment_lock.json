@@ -1,0 +1,8 @@
+{
+  "dependency_source": "repository test environment; reviewer must install normal project test dependencies",
+  "os_observed_by_builder": "Windows-10-10.0.19045-SP0",
+  "python_version_observed_by_builder": "3.12.10",
+  "schema": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_TOOLCHAIN_ENVIRONMENT_LOCK_V1",
+  "v1_1_authorization_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
+  "wheel_builder": "tools/build_spira_trust_public.py"
+}

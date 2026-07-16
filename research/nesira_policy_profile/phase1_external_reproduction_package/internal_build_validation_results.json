@@ -1,0 +1,3452 @@
+{
+  "authorization_commit": "b851ed0d04b58a7f526346929580543b02b47815",
+  "protected_surface_diffs": 0,
+  "run1": {
+    "duplicate_path_results": {
+      "duplicate_dot_equivalent": {
+        "blocking_items": [
+          "duplicate evidence path"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      },
+      "duplicate_exact": {
+        "blocking_items": [
+          "duplicate evidence path"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      }
+    },
+    "filesystem_object_matrix": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "evidence path is not a regular file"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "directory instead of file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "evidence path is not a regular file"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "evidence root itself"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "symlink escape"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "symlink to file outside root"
+      }
+    ],
+    "fixtures": [
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+        "sha256": "c16f3603ad958d9f72ad8a79d462cd2178059ec06570ec328f61815a0d69f4e9"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+        "sha256": "67de3bd7b69e6c6b91c0d63c6e0157e24ea4f0b826415642ca1e2e8eeb536c07"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+        "sha256": "cb21f7bdd41d52760c96833bb21a0260c30591e59926bebcd4a8002fae90a3e1"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+        "sha256": "ed60c361dd536e70e61062dd995df828d9c39f9b9887f1e0ca54d8ef00afd8ce"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+        "sha256": "f2f67f2e4f6e5528a701c381aa3c10d37ca4602c909aaa630fd1dcb5a8074ea7"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json",
+        "sha256": "c1dfce9cc7b017788f237856fa4cf344be39bb305e6c7242f5375c2ab8fc1cd2"
+      }
+    ],
+    "hash_binding_results": {
+      "hash_mismatch": {
+        "blocking_items": [
+          "hash mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      }
+    },
+    "metrics": {
+      "PROCEED_paths": 0,
+      "directories_accepted_as_evidence_files": 0,
+      "duplicate_canonical_evidence_paths_accepted": 0,
+      "false_VALID_mutation_pairs": 0,
+      "hash_mismatches_accepted": 0,
+      "local_absolute_paths_leaked_in_results": 0,
+      "negative_invariant_detection": "100%",
+      "positive_fixtures_structurally_accepted": "6/6",
+      "positive_fixtures_yielding_PROCEED": 0,
+      "stop_false_paths": 0,
+      "unsafe_evidence_paths_accepted": 0
+    },
+    "mutation_pairs": [
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SUBJECT_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "subject_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_CANDIDATE_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "candidate_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "environment_mismatch"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "hash mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "mutated_status": "INVALID",
+        "pair_id": "evidence_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "mutated_status": "INVALID",
+        "pair_id": "unsafe_path_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "unsupported_schema_mutation"
+      }
+    ],
+    "negative_cases": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed JSON"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "decoded DSSE payload"
+          ],
+          "phase1_evaluation_completed": false,
+          "reason_codes": [
+            "NESIRA_PHASE1_MALFORMED_JSON"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "malformed_json"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed DSSE envelope"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "DSSE_PAYLOAD_MISSING"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "malformed_dsse"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "payload decode failure"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "DSSE_PAYLOAD_BASE64_INVALID"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "payload_decode_failure"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "schema violation"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SCHEMA_INVALID"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "schema_violation"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "missing expected context",
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_EXPECTED_CONTEXT_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "missing_expected_context"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SUBJECT_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "subject_context_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "unsupported_schema_version"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "artifact must be regenerated"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_EXPIRED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "expired_temporal_binding"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed JSON"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "legacy isolation result"
+          ],
+          "phase1_evaluation_completed": false,
+          "reason_codes": [
+            "NESIRA_PHASE1_MALFORMED_JSON"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "malformed_json"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "schema violation"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_RESULT_SCHEMA_INVALID"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "schema_violation"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing expected context",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EXPECTED_CONTEXT_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "missing_expected_context"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "context_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "hash mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "hash_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "unsafe_traversal"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "absolute_path"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing evidence file",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "missing_evidence_file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "unsupported_schema_version"
+      }
+    ],
+    "path_security_matrix": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/var/log/example"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/tmp/../evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "D:folder/file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:\\tmp\\evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:/tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "\\\\server\\share\\file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "//server/share/file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "../file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "a/../../file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "..\\outside.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "safe/..\\outside.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing evidence file",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "input": "missing.txt"
+      }
+    ]
+  },
+  "run2": {
+    "duplicate_path_results": {
+      "duplicate_dot_equivalent": {
+        "blocking_items": [
+          "duplicate evidence path"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      },
+      "duplicate_exact": {
+        "blocking_items": [
+          "duplicate evidence path"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      }
+    },
+    "filesystem_object_matrix": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "evidence path is not a regular file"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "directory instead of file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "evidence path is not a regular file"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "evidence root itself"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "symlink escape"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "case": "symlink to file outside root"
+      }
+    ],
+    "fixtures": [
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+        "sha256": "c16f3603ad958d9f72ad8a79d462cd2178059ec06570ec328f61815a0d69f4e9"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+        "sha256": "67de3bd7b69e6c6b91c0d63c6e0157e24ea4f0b826415642ca1e2e8eeb536c07"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+        "sha256": "cb21f7bdd41d52760c96833bb21a0260c30591e59926bebcd4a8002fae90a3e1"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+        "sha256": "ed60c361dd536e70e61062dd995df828d9c39f9b9887f1e0ca54d8ef00afd8ce"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+        "sha256": "f2f67f2e4f6e5528a701c381aa3c10d37ca4602c909aaa630fd1dcb5a8074ea7"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+            "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "VALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "expected_action": "REPORT_NOT_EVALUATED",
+        "expected_not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "expected_reason_codes": [
+          "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+          "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+        ],
+        "expected_status": "VALID",
+        "expected_stop": true,
+        "fixture_class": "positive",
+        "fixture_path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json",
+        "sha256": "c1dfce9cc7b017788f237856fa4cf344be39bb305e6c7242f5375c2ab8fc1cd2"
+      }
+    ],
+    "hash_binding_results": {
+      "hash_mismatch": {
+        "blocking_items": [
+          "hash mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      }
+    },
+    "metrics": {
+      "PROCEED_paths": 0,
+      "directories_accepted_as_evidence_files": 0,
+      "duplicate_canonical_evidence_paths_accepted": 0,
+      "false_VALID_mutation_pairs": 0,
+      "hash_mismatches_accepted": 0,
+      "local_absolute_paths_leaked_in_results": 0,
+      "negative_invariant_detection": "100%",
+      "positive_fixtures_structurally_accepted": "6/6",
+      "positive_fixtures_yielding_PROCEED": 0,
+      "stop_false_paths": 0,
+      "unsafe_evidence_paths_accepted": 0
+    },
+    "mutation_pairs": [
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SUBJECT_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "subject_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_CANDIDATE_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "candidate_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "environment_mismatch"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "hash mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "mutated_status": "INVALID",
+        "pair_id": "evidence_hash_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "mutated_status": "INVALID",
+        "pair_id": "unsafe_path_mutation"
+      },
+      {
+        "actual_distinction": true,
+        "base_status": "VALID",
+        "expected_distinction": "mutated fixture must not preserve VALID",
+        "mutated_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "mutated_status": "RERUN_REQUIRED",
+        "pair_id": "unsupported_schema_mutation"
+      }
+    ],
+    "negative_cases": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed JSON"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "decoded DSSE payload"
+          ],
+          "phase1_evaluation_completed": false,
+          "reason_codes": [
+            "NESIRA_PHASE1_MALFORMED_JSON"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "malformed_json"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed DSSE envelope"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "DSSE_PAYLOAD_MISSING"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "malformed_dsse"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "payload decode failure"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "DSSE_PAYLOAD_BASE64_INVALID"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "payload_decode_failure"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "schema violation"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SCHEMA_INVALID"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "schema_violation"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "missing expected context",
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_EXPECTED_CONTEXT_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "missing_expected_context"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SUBJECT_SHA256_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "subject_context_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "unsupported_schema_version"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "artifact must be regenerated"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "payload_trusted",
+            "safe_to_proceed",
+            "severance_authorized",
+            "signature_verified",
+            "signer_authority_established",
+            "signer_identity_established"
+          ],
+          "not_evaluated": [
+            "severance_authorization",
+            "signature_verification",
+            "signer_authority",
+            "signer_identity"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "SEVERANCE_EXPIRED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "SEVERANCE_AUTHORIZATION",
+        "case": "expired_temporal_binding"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "malformed JSON"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "legacy isolation result"
+          ],
+          "phase1_evaluation_completed": false,
+          "reason_codes": [
+            "NESIRA_PHASE1_MALFORMED_JSON"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "malformed_json"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "schema violation"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_RESULT_SCHEMA_INVALID"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "schema_violation"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing expected context",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EXPECTED_CONTEXT_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "missing_expected_context"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "subject/context mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "context_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "hash mismatch"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "hash_mismatch"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "unsafe_traversal"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "absolute_path"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing evidence file",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "missing_evidence_file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsupported schema version"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED"
+          ],
+          "recommended_agent_action": "RERUN_REQUIRED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "RERUN_REQUIRED"
+        },
+        "artifact_type": "LEGACY_ISOLATION_RESULT",
+        "case": "unsupported_schema_version"
+      }
+    ],
+    "path_security_matrix": [
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/var/log/example"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "/tmp/../evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "D:folder/file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:\\tmp\\evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "C:/tmp/evidence.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "\\\\server\\share\\file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "//server/share/file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "../file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "a/../../file"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "..\\outside.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [
+            "unsafe evidence path"
+          ],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "recommended_agent_action": "STOP_BLOCKED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "INVALID"
+        },
+        "input": "safe/..\\outside.txt"
+      },
+      {
+        "actual_result": {
+          "blocking_items": [],
+          "not_claimed": [
+            "action_approved",
+            "container_created",
+            "isolation_execution_observed",
+            "isolation_execution_trusted",
+            "safe_to_proceed",
+            "sandbox_created",
+            "severance_authorized"
+          ],
+          "not_evaluated": [
+            "isolation_execution_observation",
+            "isolation_execution_trust",
+            "missing evidence file",
+            "severance_authorization"
+          ],
+          "phase1_evaluation_completed": true,
+          "reason_codes": [
+            "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+          ],
+          "recommended_agent_action": "REPORT_NOT_EVALUATED",
+          "stop": true,
+          "tool_errors": [],
+          "validation_status": "NOT_EVALUATED"
+        },
+        "input": "missing.txt"
+      }
+    ]
+  },
+  "schema": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_INTERNAL_BUILD_VALIDATION_RESULTS_V1",
+  "schema_version": "1.0",
+  "source_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "two_focused_semantic_runs_identical": true,
+  "wheel": {
+    "entry_count": 56,
+    "filename": "spira_trust-0.6.1-py3-none-any.whl",
+    "inventory": [
+      "schemas/spira_agent_summary_v1.json",
+      "schemas/spira_decision_v1.json",
+      "spira_core/__init__.py",
+      "spira_core/adapters.py",
+      "spira_core/agent_status.py",
+      "spira_core/agent_summary.py",
+      "spira_core/attestation_verify.py",
+      "spira_core/bom.py",
+      "spira_core/combined_verdict.py",
+      "spira_core/contracts.py",
+      "spira_core/core.py",
+      "spira_core/cyclonedx_export.py",
+      "spira_core/decision015/__init__.py",
+      "spira_core/decision015/contract.py",
+      "spira_core/decision015/core.py",
+      "spira_core/decision015/service.py",
+      "spira_core/decision_report.py",
+      "spira_core/drift.py",
+      "spira_core/entry_points_policy.py",
+      "spira_core/governance_engine.py",
+      "spira_core/ledger.py",
+      "spira_core/license_policy.py",
+      "spira_core/lockfile_policy.py",
+      "spira_core/policy_pack.py",
+      "spira_core/range_parser.py",
+      "spira_core/rebaseline.py",
+      "spira_core/review.py",
+      "spira_core/sbom_consistency.py",
+      "spira_core/target_environment.py",
+      "spira_core/trust.py",
+      "spira_core/trust_cli.py",
+      "spira_core/trust_graph.py",
+      "spira_core/vendored_stone015/__init__.py",
+      "spira_core/vendored_stone015/spira/__init__.py",
+      "spira_core/vendored_stone015/spira/api.py",
+      "spira_core/vendored_stone015/spira/ast_nodes.py",
+      "spira_core/vendored_stone015/spira/backends.py",
+      "spira_core/vendored_stone015/spira/bridge.py",
+      "spira_core/vendored_stone015/spira/cli.py",
+      "spira_core/vendored_stone015/spira/demo.py",
+      "spira_core/vendored_stone015/spira/modules.py",
+      "spira_core/vendored_stone015/spira/ontology.py",
+      "spira_core/vendored_stone015/spira/orchestrator.py",
+      "spira_core/vendored_stone015/spira/parser.py",
+      "spira_core/vendored_stone015/spira/runtime.py",
+      "spira_core/vendored_stone015/spira/safe_eval.py",
+      "spira_core/vendored_stone015/spira/schemas.py",
+      "spira_core/vendored_stone015/spira/storage.py",
+      "spira_core/vendored_stone015/spira/typesystem.py",
+      "spira_core/vendored_stone015/spira/validation.py",
+      "spira_trust-0.6.1.dist-info/LICENSE",
+      "spira_trust-0.6.1.dist-info/METADATA",
+      "spira_trust-0.6.1.dist-info/RECORD",
+      "spira_trust-0.6.1.dist-info/WHEEL",
+      "spira_trust-0.6.1.dist-info/entry_points.txt",
+      "spira_trust-0.6.1.dist-info/sboms/spira-trust.cdx.json"
+    ],
+    "phase1_fixtures_absent": true,
+    "phase1_schemas_absent": true,
+    "phase1_tests_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "unexpected_public_modules": 0,
+    "validator_module_absent": true
+  }
+}

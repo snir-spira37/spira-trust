@@ -1,0 +1,847 @@
+{
+  "accepted_phase1_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "authorization_v1_1_sha256": "14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d",
+  "baseline_commit": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "commands": {
+    "compileall": {
+      "command": "python -m compileall source tests",
+      "cwd": "repo root",
+      "expected_exit_code": 0
+    },
+    "focused_phase1_pytest": {
+      "command": "python -m pytest tests/test_nesira_policy_profile_validator.py -q",
+      "cwd": "repo root",
+      "expected_exit_code": 0,
+      "expected_summary": "11 passed"
+    },
+    "full_pytest": {
+      "command": "python -m pytest -q",
+      "cwd": "repo root",
+      "expected_exit_code": 0,
+      "expected_summary": "281 passed"
+    },
+    "git_diff_check": {
+      "command": "git diff --check",
+      "cwd": "repo root",
+      "expected_exit_code": 0
+    },
+    "public_wheel_build": {
+      "command": "python tools/build_spira_trust_public.py <output-dir>",
+      "cwd": "repo root",
+      "expected_exit_code": 0
+    }
+  },
+  "created_timestamp_utc": "2026-07-16T00:00:00Z",
+  "deterministic_build_metadata": {
+    "zip_paths": "forward-slash sorted",
+    "zip_timestamp": "1980-01-01T00:00:00Z"
+  },
+  "expected_semantic_metrics": {
+    "PROCEED_paths": 0,
+    "directories_accepted_as_evidence_files": 0,
+    "duplicate_canonical_evidence_paths_accepted": 0,
+    "false_VALID_mutation_pairs": 0,
+    "hash_mismatches_accepted": 0,
+    "local_absolute_paths_leaked_in_results": 0,
+    "negative_invariant_detection": "100%",
+    "positive_fixtures_structurally_accepted": "6/6",
+    "positive_fixtures_yielding_PROCEED": 0,
+    "stop_false_paths": 0,
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "external_reproduction_authorization_commit": "b851ed0d04b58a7f526346929580543b02b47815",
+  "fixture_files": [
+    {
+      "bytes": 570,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/absolute_path.json",
+      "sha256": "e7204bb5a8ba6f7c0ae9c359e927dc0f2cea76f5e85b6f74ce962c692ab76918"
+    },
+    {
+      "bytes": 15,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_a.txt",
+      "sha256": "71f49e4f25b46d85934e84dc2cd7263fc3e886196e66fb4dae5da8d290c29e1c"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_b.txt",
+      "sha256": "895530c53db52ae4d83617feecea2e53e76b819051f9e3c677c887c76b001504"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/hash_mismatch.json",
+      "sha256": "edcb5313dac00ce64a720096573e2c5ca7c2136b886de11e65cefe8e3ffce620"
+    },
+    {
+      "bytes": 562,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/missing_evidence_file.json",
+      "sha256": "577e51966ed4b5ae472dd82558706925138a684a0ece168fd27ae4846131451b"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsafe_traversal.json",
+      "sha256": "a8c1c2393acf64e1747836f947fe546ced77b3625f3ee063b3ea37a883b6ffc1"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsupported_schema_version.json",
+      "sha256": "afaca190bfbd7cdf088dfc31e0dcdfff62e1256f061fb6219f103dec0602f295"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json",
+      "sha256": "c1dfce9cc7b017788f237856fa4cf344be39bb305e6c7242f5375c2ab8fc1cd2"
+    },
+    {
+      "bytes": 693,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+      "sha256": "f2f67f2e4f6e5528a701c381aa3c10d37ca4602c909aaa630fd1dcb5a8074ea7"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+      "sha256": "ed60c361dd536e70e61062dd995df828d9c39f9b9887f1e0ca54d8ef00afd8ce"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/expired_temporal_binding.json",
+      "sha256": "639c1e5c470cbed41aa13209d94c253b11c44ddca8a601e8ccb59a715542d60d"
+    },
+    {
+      "bytes": 72,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_dsse.json",
+      "sha256": "18aaef72cb83f9d2f78fd116638a6a293d39bc0f72d840cafaac92b8feb2da08"
+    },
+    {
+      "bytes": 2,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c"
+    },
+    {
+      "bytes": 92,
+      "path": "tests/fixtures/nesira_policy_profile/severance/payload_decode_failure.json",
+      "sha256": "b392a6605154744f5f557e231b6551f9beb38d4bb23852d2c96f8fa76da112f5"
+    },
+    {
+      "bytes": 1141,
+      "path": "tests/fixtures/nesira_policy_profile/severance/schema_violation.json",
+      "sha256": "9b3edc02f1a1d5e2e2c9dbcbd8e56ca4a8b9ed0a7d76d79f70a4458f3dcc632f"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/unsupported_schema_version.json",
+      "sha256": "d8afc8f1e1cc284bacdd281841e3770f60b319314f8365f584d788efd95f7b4b"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+      "sha256": "c16f3603ad958d9f72ad8a79d462cd2178059ec06570ec328f61815a0d69f4e9"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+      "sha256": "cb21f7bdd41d52760c96833bb21a0260c30591e59926bebcd4a8002fae90a3e1"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+      "sha256": "67de3bd7b69e6c6b91c0d63c6e0157e24ea4f0b826415642ca1e2e8eeb536c07"
+    }
+  ],
+  "mutation_pair_inventory": [
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "subject/context mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "payload_trusted",
+          "safe_to_proceed",
+          "severance_authorized",
+          "signature_verified",
+          "signer_authority_established",
+          "signer_identity_established"
+        ],
+        "not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "SEVERANCE_SUBJECT_SHA256_MISMATCH"
+        ],
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "RERUN_REQUIRED"
+      },
+      "mutated_status": "RERUN_REQUIRED",
+      "pair_id": "subject_hash_mutation"
+    },
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "subject/context mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "payload_trusted",
+          "safe_to_proceed",
+          "severance_authorized",
+          "signature_verified",
+          "signer_authority_established",
+          "signer_identity_established"
+        ],
+        "not_evaluated": [
+          "severance_authorization",
+          "signature_verification",
+          "signer_authority",
+          "signer_identity"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "SEVERANCE_CANDIDATE_SHA256_MISMATCH"
+        ],
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "RERUN_REQUIRED"
+      },
+      "mutated_status": "RERUN_REQUIRED",
+      "pair_id": "candidate_hash_mutation"
+    },
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "subject/context mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+        ],
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "RERUN_REQUIRED"
+      },
+      "mutated_status": "RERUN_REQUIRED",
+      "pair_id": "environment_mismatch"
+    },
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "hash mismatch"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      },
+      "mutated_status": "INVALID",
+      "pair_id": "evidence_hash_mutation"
+    },
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "unsafe evidence path"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+        ],
+        "recommended_agent_action": "STOP_BLOCKED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "INVALID"
+      },
+      "mutated_status": "INVALID",
+      "pair_id": "unsafe_path_mutation"
+    },
+    {
+      "actual_distinction": true,
+      "base_status": "VALID",
+      "expected_distinction": "mutated fixture must not preserve VALID",
+      "mutated_result": {
+        "blocking_items": [
+          "unsupported schema version"
+        ],
+        "not_claimed": [
+          "action_approved",
+          "container_created",
+          "isolation_execution_observed",
+          "isolation_execution_trusted",
+          "safe_to_proceed",
+          "sandbox_created",
+          "severance_authorized"
+        ],
+        "not_evaluated": [
+          "isolation_execution_observation",
+          "isolation_execution_trust",
+          "severance_authorization"
+        ],
+        "phase1_evaluation_completed": true,
+        "reason_codes": [
+          "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED"
+        ],
+        "recommended_agent_action": "RERUN_REQUIRED",
+        "stop": true,
+        "tool_errors": [],
+        "validation_status": "RERUN_REQUIRED"
+      },
+      "mutated_status": "RERUN_REQUIRED",
+      "pair_id": "unsupported_schema_mutation"
+    }
+  ],
+  "package_boundary": {
+    "phase2_authorized": false,
+    "product_integration_authorized": false,
+    "public_claim_authorized": false,
+    "release_authorized": false
+  },
+  "package_mode": "clone-based",
+  "protected_surface_baseline": "df2bd9db4e5d599a9e4a72dde2124a076e1e3dfe",
+  "protected_surface_hash_inventory": [
+    {
+      "accepted_sha256": "7ef5566412b506d23b4921dd7ae5332bbd7d8e4fe5d5b34fef4183a81d3ab92f",
+      "baseline_sha256": "7ef5566412b506d23b4921dd7ae5332bbd7d8e4fe5d5b34fef4183a81d3ab92f",
+      "path": "formal/spira_formal_core_v1/README.md",
+      "same": true
+    },
+    {
+      "accepted_sha256": "93cd2fb9bd20c9c5af246ed3f59d88e6b6b1ce6a91c394f71b2507f747607005",
+      "baseline_sha256": "93cd2fb9bd20c9c5af246ed3f59d88e6b6b1ce6a91c394f71b2507f747607005",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "4b075602703396b0458cb74c6a13ec23f09b36564a5a2307777b78f40ae0233d",
+      "baseline_sha256": "4b075602703396b0458cb74c6a13ec23f09b36564a5a2307777b78f40ae0233d",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Action.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "56a05af5da79c6fc2f3850409c8a66f6d978df392da2e709b3fff6c17dc2d8c7",
+      "baseline_sha256": "56a05af5da79c6fc2f3850409c8a66f6d978df392da2e709b3fff6c17dc2d8c7",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Basic.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "63e0bd287b66b8bf7d709a4004d2d125c6439e7df8d47cd0bb90354c14e27e35",
+      "baseline_sha256": "63e0bd287b66b8bf7d709a4004d2d125c6439e7df8d47cd0bb90354c14e27e35",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Contract.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6bd29f3b4724dbd81ca6f595d8a07efc237dc0ce08f20d25a025b1d848b57e54",
+      "baseline_sha256": "6bd29f3b4724dbd81ca6f595d8a07efc237dc0ce08f20d25a025b1d848b57e54",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Core.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "43c105342b3558987b0c051ccb0d06c9324e804f7a7335a5553ca01e1d117479",
+      "baseline_sha256": "43c105342b3558987b0c051ccb0d06c9324e804f7a7335a5553ca01e1d117479",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "39c955ac40cf102721834bd577c9aeef9f85309cf09cd1f81b6ecdde2b2b1ef2",
+      "baseline_sha256": "39c955ac40cf102721834bd577c9aeef9f85309cf09cd1f81b6ecdde2b2b1ef2",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "be733f78845b3cb4de4f7209d864c5f2bdc0d94d436ef9f6909f3d2d85797530",
+      "baseline_sha256": "be733f78845b3cb4de4f7209d864c5f2bdc0d94d436ef9f6909f3d2d85797530",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c32db1b6e6563403f6d6d9fdf0af871ca38e0f4edb5bfb33a8d68eea13f5cf8e",
+      "baseline_sha256": "c32db1b6e6563403f6d6d9fdf0af871ca38e0f4edb5bfb33a8d68eea13f5cf8e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain1/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "f9f9efd320a2577dc8be8174242cea3356c94b29b6c6b69a7bb7d22e02faf214",
+      "baseline_sha256": "f9f9efd320a2577dc8be8174242cea3356c94b29b6c6b69a7bb7d22e02faf214",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "babe3c9b38635140ee61aa8a16d2b25a2e18be37d5ac5443ee30e141e5563e4e",
+      "baseline_sha256": "babe3c9b38635140ee61aa8a16d2b25a2e18be37d5ac5443ee30e141e5563e4e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "03db9d5eb27e1a92ee6dc2ca46a5e90c80ec430eb440a937ca7a11292d943531",
+      "baseline_sha256": "03db9d5eb27e1a92ee6dc2ca46a5e90c80ec430eb440a937ca7a11292d943531",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "82c5326c1d2a3b9e7b2a354c760496b23912f4445fe6307597ed6da62c21ad0a",
+      "baseline_sha256": "82c5326c1d2a3b9e7b2a354c760496b23912f4445fe6307597ed6da62c21ad0a",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain2/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "7e43b3acbb6a7e029e1a027d52e58ff3c65b3330e850ee52568276ea8a948881",
+      "baseline_sha256": "7e43b3acbb6a7e029e1a027d52e58ff3c65b3330e850ee52568276ea8a948881",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Decision.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c314ae1aeb65375db52b94c7dfe6e70ce8c98ee3e52dc34589daba67374155db",
+      "baseline_sha256": "c314ae1aeb65375db52b94c7dfe6e70ce8c98ee3e52dc34589daba67374155db",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "88899424c4d09a6a59fae4592b369cc51ac2fa57ae8cee757da06fc22d2e7be1",
+      "baseline_sha256": "88899424c4d09a6a59fae4592b369cc51ac2fa57ae8cee757da06fc22d2e7be1",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ee697d2347511c92820cf1f77eb4c83ba8c96171c536ab23c476df3542797373",
+      "baseline_sha256": "ee697d2347511c92820cf1f77eb4c83ba8c96171c536ab23c476df3542797373",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Domain3/Proofs.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "5859d550c3d00a413047982f91bb2a50c05f61532658f5a3c4b6c02c24de4b4e",
+      "baseline_sha256": "5859d550c3d00a413047982f91bb2a50c05f61532658f5a3c4b6c02c24de4b4e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Errors.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "99d276fac0cb19872b65db5f4bb446e74563f3166abb351c5b317c0ad7803bf2",
+      "baseline_sha256": "99d276fac0cb19872b65db5f4bb446e74563f3166abb351c5b317c0ad7803bf2",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Evidence.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "a0455441587eb34fbb8dde99f9d5f9563055d47bb3117f2603f80ae717e53ba1",
+      "baseline_sha256": "a0455441587eb34fbb8dde99f9d5f9563055d47bb3117f2603f80ae717e53ba1",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/ExplicitList.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c1666656d407df4da1f0a51584ebe0d84b64c782a3a5d12f6e6faaeb83280970",
+      "baseline_sha256": "c1666656d407df4da1f0a51584ebe0d84b64c782a3a5d12f6e6faaeb83280970",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/GateA.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "4a3a389c80f280890789b182c58698e9764fc9cc6b703b4b10dccf3834ba3a10",
+      "baseline_sha256": "4a3a389c80f280890789b182c58698e9764fc9cc6b703b4b10dccf3834ba3a10",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Main.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6b284ada817176a00eb90a58b90179cfb5a64781f0abaebd1b8ae8e06a602052",
+      "baseline_sha256": "6b284ada817176a00eb90a58b90179cfb5a64781f0abaebd1b8ae8e06a602052",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Passthrough.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "2b53d5692d74b394c76c5c28f6c596071a1c6626ec6cc4e6ca6070f7713b6933",
+      "baseline_sha256": "2b53d5692d74b394c76c5c28f6c596071a1c6626ec6cc4e6ca6070f7713b6933",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Policy.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "08afb57d5df6851bb9187d7e9bc696548c872ef456ce75dfb067548c3539762d",
+      "baseline_sha256": "08afb57d5df6851bb9187d7e9bc696548c872ef456ce75dfb067548c3539762d",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "66e5bcc256fdfea9064436a7e8daf865163264d29d6aa57779e2a64211364d64",
+      "baseline_sha256": "66e5bcc256fdfea9064436a7e8daf865163264d29d6aa57779e2a64211364d64",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Blocking.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c3067ec0ecdb6f08e5495384fb944cfa6da4ccc3326ba0432bf79532b0186184",
+      "baseline_sha256": "c3067ec0ecdb6f08e5495384fb944cfa6da4ccc3326ba0432bf79532b0186184",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/Determinism.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "8aee7a502aa536f9ca311cffade1058587b7aa8ec662919b1cc15db8e02fc241",
+      "baseline_sha256": "8aee7a502aa536f9ca311cffade1058587b7aa8ec662919b1cc15db8e02fc241",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ExplicitLists.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "08d883e8e2fef4a76ba56a0f3eadbf906cb8001890b835dcd16166d9878c35e0",
+      "baseline_sha256": "08d883e8e2fef4a76ba56a0f3eadbf906cb8001890b835dcd16166d9878c35e0",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/FailClosed.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "3963989c9567f1aab53d12cb6ddc42bc714b10ee5e29b033361e4d32d0f65c9f",
+      "baseline_sha256": "3963989c9567f1aab53d12cb6ddc42bc714b10ee5e29b033361e4d32d0f65c9f",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/GateA.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "d58e127db685a6c6017afb480b10956b9769a2f43fb611959f811d2f19dd4a70",
+      "baseline_sha256": "d58e127db685a6c6017afb480b10956b9769a2f43fb611959f811d2f19dd4a70",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/ModelNonAuthority.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "551fd2c09ca0ddd02015548891bb47b8e45634bfec601c325d6fad3faad2390c",
+      "baseline_sha256": "551fd2c09ca0ddd02015548891bb47b8e45634bfec601c325d6fad3faad2390c",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/NotEvaluated.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "fa1e7590424370c36c78a8ed25a890de241b9c8c287d010376be19dbc539114e",
+      "baseline_sha256": "fa1e7590424370c36c78a8ed25a890de241b9c8c287d010376be19dbc539114e",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Reference.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "33a4cf8f1f3fbd7138e3e7ffa5de7d8d3ef62c13d9c7e5a03cc88143758dbd92",
+      "baseline_sha256": "33a4cf8f1f3fbd7138e3e7ffa5de7d8d3ef62c13d9c7e5a03cc88143758dbd92",
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/TestVectors.lean",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd",
+      "baseline_sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd",
+      "path": "formal/spira_formal_core_v1/lake-manifest.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ce77eccf121c2108aa45f9d7da68b2606ebf1643d3bb2b6a0b61cb80da1294c4",
+      "baseline_sha256": "ce77eccf121c2108aa45f9d7da68b2606ebf1643d3bb2b6a0b61cb80da1294c4",
+      "path": "formal/spira_formal_core_v1/lakefile.toml",
+      "same": true
+    },
+    {
+      "accepted_sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+      "baseline_sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e",
+      "path": "formal/spira_formal_core_v1/lean-toolchain",
+      "same": true
+    },
+    {
+      "accepted_sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763",
+      "baseline_sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763",
+      "path": "pyproject.toml",
+      "same": true
+    },
+    {
+      "accepted_sha256": "6f2ccc1381882d9aa765ca876a117f2d657225c9b059d3a1a3d98bd0768dae5b",
+      "baseline_sha256": "6f2ccc1381882d9aa765ca876a117f2d657225c9b059d3a1a3d98bd0768dae5b",
+      "path": "schemas/spira_agent_rerun_plan_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e27e5c3e988d75e76fb4ef0b8fdabac12e09009d30af98e07fdd61159bc438f2",
+      "baseline_sha256": "e27e5c3e988d75e76fb4ef0b8fdabac12e09009d30af98e07fdd61159bc438f2",
+      "path": "schemas/spira_agent_summary_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e3b3e7dbe9486bce90b62fb94fd50b0df9a5aa642bde0eed6e8fb4588577a7d8",
+      "baseline_sha256": "e3b3e7dbe9486bce90b62fb94fd50b0df9a5aa642bde0eed6e8fb4588577a7d8",
+      "path": "schemas/spira_decision_v1.json",
+      "same": true
+    },
+    {
+      "accepted_sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405",
+      "baseline_sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405",
+      "path": "source/spira_core/agent_summary.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c000a342187878062363cb2d9e4c61e30717d833d57ccba655333352f5d0e2a9",
+      "baseline_sha256": "c000a342187878062363cb2d9e4c61e30717d833d57ccba655333352f5d0e2a9",
+      "path": "source/spira_core/attestation_verify.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88",
+      "baseline_sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88",
+      "path": "source/spira_core/combined_verdict.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "c46c33c3cb0ca28dbcfe9e9f1b03f18cb43de4ff51fcbffaa4239ebbd838012c",
+      "baseline_sha256": "c46c33c3cb0ca28dbcfe9e9f1b03f18cb43de4ff51fcbffaa4239ebbd838012c",
+      "path": "source/spira_core/contracts.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc",
+      "baseline_sha256": "ede51629846c7568e8249f6db2abbbc03550334a406e6cec707aaf12dba26fdc",
+      "path": "source/spira_core/policy_pack.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "e9d2a06ce1b6e0b62d93937790b668f02dcd768e49d3a19fc9f3e082d6ea1809",
+      "baseline_sha256": "e9d2a06ce1b6e0b62d93937790b668f02dcd768e49d3a19fc9f3e082d6ea1809",
+      "path": "source/spira_core/rerun_planner.py",
+      "same": true
+    },
+    {
+      "accepted_sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac",
+      "baseline_sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac",
+      "path": "tools/build_spira_trust_public.py",
+      "same": true
+    }
+  ],
+  "public_wheel_expectations": {
+    "entry_count": 56,
+    "filename": "spira_trust-0.6.1-py3-none-any.whl",
+    "phase1_fixtures_absent": true,
+    "phase1_schemas_absent": true,
+    "phase1_tests_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "unexpected_public_modules": 0,
+    "validator_module_absent": true
+  },
+  "repository_url": "https://github.com/snir-spira37/spira-trust.git",
+  "schema": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_MANIFEST_V1",
+  "schema_version": "1.0",
+  "source_files": [
+    {
+      "bytes": 1824,
+      "path": "pyproject.toml",
+      "sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763"
+    },
+    {
+      "bytes": 13894,
+      "path": "research/nesira_policy_profile/phase1_validator_acceptance_rerun_results.json",
+      "sha256": "bafa4420366649736df927640e79613a33ec8d52cb8b1efef99d8ba1d9a0163c"
+    },
+    {
+      "bytes": 4816,
+      "path": "research/nesira_policy_profile/phase1_validator_acceptance_rerun_review.md",
+      "sha256": "2ebfa956f50c2e8efdaaa7c95feb0cd52be2a23fba1db5f55ac523efac816f8f"
+    },
+    {
+      "bytes": 4981,
+      "path": "research/nesira_policy_profile/phase1_validator_acceptance_review.md",
+      "sha256": "c84dfef8296a867b84f8bfb1956bee43b773bb5d118188d414255f2fd74d297a"
+    },
+    {
+      "bytes": 6592,
+      "path": "research/nesira_policy_profile/phase1_validator_acceptance_review_results.json",
+      "sha256": "681b593e35b19f853c818e345fd3e023b6aa7c48b3e292f07486707a10b81a7e"
+    },
+    {
+      "bytes": 2322,
+      "path": "research/nesira_policy_profile/phase1_validator_implementation_report.md",
+      "sha256": "454c0fa23687d3967f417f8f7e44bb11d931f755d351085e9aeaffa64d8858f3"
+    },
+    {
+      "bytes": 6250,
+      "path": "research/nesira_policy_profile/phase1_validator_implementation_results.json",
+      "sha256": "df14303f35cbe391effb352a10bd08bbde89a7f65992fab3accfce2b7ae7f05f"
+    },
+    {
+      "bytes": 3101,
+      "path": "research/nesira_policy_profile/phase1_validator_remediation_report.md",
+      "sha256": "a28454406d9f2b7deb4776f20a6f9afc7315e82b8d17d8bc17f0f2874ba037e7"
+    },
+    {
+      "bytes": 6753,
+      "path": "research/nesira_policy_profile/phase1_validator_remediation_results.json",
+      "sha256": "6cb2abdcf8d4b1b08d0641c72e9fe7a0d7c6e5e72874cc063947ca67717ce7de"
+    },
+    {
+      "bytes": 1227,
+      "path": "research/nesira_policy_profile/spira_legacy_isolation_result_v1.schema.json",
+      "sha256": "6a1b8b726b3b02b7e7678a94db71aa793ee947f257502c52daf535fca50118a0"
+    },
+    {
+      "bytes": 760,
+      "path": "research/nesira_policy_profile/spira_severance_authorization_v1.schema.json",
+      "sha256": "cbcd0985c0dade461f89ce40c80fe0fefa2a3a6e6cb4b79611d2a2ea52950518"
+    },
+    {
+      "bytes": 2586,
+      "path": "research/nesira_policy_profile/validator_coverage_manifest_v1.json",
+      "sha256": "6696afbcf6d554a87b092f056df2eacfffec3a9b9c80cea96d70321be23d71d9"
+    },
+    {
+      "bytes": 27827,
+      "path": "source/spira_core/nesira_policy_profile_validator.py",
+      "sha256": "d0752cdb49aba89a0d0d8dadbf11f7e37fd1836ed8eb2579a320bbbe27b51a3a"
+    },
+    {
+      "bytes": 570,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/absolute_path.json",
+      "sha256": "e7204bb5a8ba6f7c0ae9c359e927dc0f2cea76f5e85b6f74ce962c692ab76918"
+    },
+    {
+      "bytes": 15,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_a.txt",
+      "sha256": "71f49e4f25b46d85934e84dc2cd7263fc3e886196e66fb4dae5da8d290c29e1c"
+    },
+    {
+      "bytes": 14,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/evidence/evidence_b.txt",
+      "sha256": "895530c53db52ae4d83617feecea2e53e76b819051f9e3c677c887c76b001504"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/hash_mismatch.json",
+      "sha256": "edcb5313dac00ce64a720096573e2c5ca7c2136b886de11e65cefe8e3ffce620"
+    },
+    {
+      "bytes": 562,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/missing_evidence_file.json",
+      "sha256": "577e51966ed4b5ae472dd82558706925138a684a0ece168fd27ae4846131451b"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsafe_traversal.json",
+      "sha256": "a8c1c2393acf64e1747836f947fe546ced77b3625f3ee063b3ea37a883b6ffc1"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/unsupported_schema_version.json",
+      "sha256": "afaca190bfbd7cdf088dfc31e0dcdfff62e1256f061fb6219f103dec0602f295"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_control_probe.json",
+      "sha256": "c1dfce9cc7b017788f237856fa4cf344be39bb305e6c7242f5375c2ab8fc1cd2"
+    },
+    {
+      "bytes": 693,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_multi_evidence.json",
+      "sha256": "f2f67f2e4f6e5528a701c381aa3c10d37ca4602c909aaa630fd1dcb5a8074ea7"
+    },
+    {
+      "bytes": 565,
+      "path": "tests/fixtures/nesira_policy_profile/isolation/valid_isolation_single_evidence.json",
+      "sha256": "ed60c361dd536e70e61062dd995df828d9c39f9b9887f1e0ca54d8ef00afd8ce"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/expired_temporal_binding.json",
+      "sha256": "639c1e5c470cbed41aa13209d94c253b11c44ddca8a601e8ccb59a715542d60d"
+    },
+    {
+      "bytes": 72,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_dsse.json",
+      "sha256": "18aaef72cb83f9d2f78fd116638a6a293d39bc0f72d840cafaac92b8feb2da08"
+    },
+    {
+      "bytes": 2,
+      "path": "tests/fixtures/nesira_policy_profile/severance/malformed_json.json",
+      "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c"
+    },
+    {
+      "bytes": 92,
+      "path": "tests/fixtures/nesira_policy_profile/severance/payload_decode_failure.json",
+      "sha256": "b392a6605154744f5f557e231b6551f9beb38d4bb23852d2c96f8fa76da112f5"
+    },
+    {
+      "bytes": 1141,
+      "path": "tests/fixtures/nesira_policy_profile/severance/schema_violation.json",
+      "sha256": "9b3edc02f1a1d5e2e2c9dbcbd8e56ca4a8b9ed0a7d76d79f70a4458f3dcc632f"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/unsupported_schema_version.json",
+      "sha256": "d8afc8f1e1cc284bacdd281841e3770f60b319314f8365f584d788efd95f7b4b"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_blocked.json",
+      "sha256": "c16f3603ad958d9f72ad8a79d462cd2178059ec06570ec328f61815a0d69f4e9"
+    },
+    {
+      "bytes": 1261,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_cutover.json",
+      "sha256": "cb21f7bdd41d52760c96833bb21a0260c30591e59926bebcd4a8002fae90a3e1"
+    },
+    {
+      "bytes": 1253,
+      "path": "tests/fixtures/nesira_policy_profile/severance/valid_severance_review.json",
+      "sha256": "67de3bd7b69e6c6b91c0d63c6e0157e24ea4f0b826415642ca1e2e8eeb536c07"
+    },
+    {
+      "bytes": 16886,
+      "path": "tests/test_nesira_policy_profile_validator.py",
+      "sha256": "3154404c890411c7354d44c7a0644abdb52f0a6ea7829dc17a71162e4d3d0c58"
+    },
+    {
+      "bytes": 9742,
+      "path": "tools/build_spira_trust_public.py",
+      "sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac"
+    }
+  ]
+}

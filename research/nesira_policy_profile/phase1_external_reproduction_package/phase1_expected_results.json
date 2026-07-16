@@ -1,0 +1,42 @@
+{
+  "accepted_phase1_commit": "a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa",
+  "expected_metrics": {
+    "PROCEED_paths": 0,
+    "directories_accepted_as_evidence_files": 0,
+    "duplicate_canonical_evidence_paths_accepted": 0,
+    "false_VALID_mutation_pairs": 0,
+    "hash_mismatches_accepted": 0,
+    "local_absolute_paths_leaked_in_results": 0,
+    "negative_invariant_detection": "100%",
+    "positive_fixtures_structurally_accepted": "6/6",
+    "positive_fixtures_yielding_PROCEED": 0,
+    "stop_false_paths": 0,
+    "unsafe_evidence_paths_accepted": 0
+  },
+  "expected_tests": {
+    "compileall": "PASS",
+    "focused_tests": "11 passed",
+    "full_pytest": "281 passed"
+  },
+  "expected_verdict_after_external_reproduction": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_ACCEPTED_IF_ALL_GATES_PASS",
+  "not_evaluated_boundaries": [
+    "cryptographic signature trust",
+    "signer identity and authority",
+    "actual isolation execution",
+    "permission to sever",
+    "Phase 1 formal proof"
+  ],
+  "public_wheel_expectations": {
+    "entry_count": 56,
+    "filename": "spira_trust-0.6.1-py3-none-any.whl",
+    "phase1_fixtures_absent": true,
+    "phase1_schemas_absent": true,
+    "phase1_tests_absent": true,
+    "sha256": "12a7355f77c293bf3f4f719b1d77071c1adbdf33f88455469ba514f0ae43b497",
+    "unexpected_public_modules": 0,
+    "validator_module_absent": true
+  },
+  "schema": "SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_EXPECTED_RESULTS_V1",
+  "schema_version": "1.0",
+  "semantic_two_run_equality_required": true
+}

@@ -1,0 +1,13 @@
+SPIRA Nesira Phase 1 external reproduction package upload note
+
+ZIP filename: SPIRA_NESIRA_PHASE1_EXTERNAL_REPRODUCTION_a6e69cf.zip
+ZIP SHA256: 90a91168b4dddcea29f7820ec6cee187147229fb542f5e81e581ec7d5c3562e5
+source commit: a6e69cf8ea17a1a7d8e188cf3da6735cbfa7a0aa
+external reproduction authorization commit: b851ed0d04b58a7f526346929580543b02b47815
+authoritative V1.1 authorization ZIP SHA256: 14b19bbce4764778599b755ce614404ecc6875349c63a08efa9ad5439ef5370d
+package mode: clone-based
+claim boundary: structure, binding, evidence integrity, and safe evidence paths only
+cold review status: PACKAGE_PREPARED_NOT_EXTERNALLY_REPRODUCED
+
+Upload exactly the ZIP file named above plus this sidecar. The ZIP SHA256 is not
+stored inside the ZIP.
