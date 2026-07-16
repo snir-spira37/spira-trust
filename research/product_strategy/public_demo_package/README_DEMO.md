@@ -23,7 +23,7 @@ This package is for external technical reviewers, platform engineers, AI-agent i
 ## Prerequisites
 
 - Python 3.12+
-- A repository checkout pinned to `5962087abf44ff41fc48b96d6c102f11614835d6` or a later package-build commit that preserves the same demo artifacts
+- A repository checkout pinned to `0aa44f33455d477fe53236d3ce8daddb6d830dad` or a later package-build commit that preserves the same demo artifacts
 - `pytest` installed for the optional Python test checks
 - Lean/Lake only if the reviewer wants to independently run the formal package; Lean was not available in the accepted demo reproduction environment
 

@@ -1,11 +1,11 @@
 ZIP filename:
-spira_terraform_agent_action_gate_public_demo_5962087.zip
+spira_terraform_agent_action_gate_public_demo_0aa44f3.zip
 
 ZIP SHA256:
-161ab36ce50d528dd4592813d4443a09420d5199070a7ccb5e9d82fef6622739
+5d2bde57305ffde48ba64503ddaa785f66d0caab73c59c4b4f75dc7a8552359d
 
 package source / fixed reproducibility baseline commit:
-5962087abf44ff41fc48b96d6c102f11614835d6
+0aa44f33455d477fe53236d3ce8daddb6d830dad
 
 package artifact commit:
 recorded in the external delivery request or the repository commit that contains this ZIP
@@ -17,7 +17,7 @@ Lean status boundary:
 NOT_EVALUATED_LAKE_NOT_AVAILABLE_IN_ENVIRONMENT
 
 exact file to upload to the external reviewer:
-research/product_strategy/spira_terraform_agent_action_gate_public_demo_5962087.zip
+research/product_strategy/spira_terraform_agent_action_gate_public_demo_0aa44f3.zip
 
 note:
 This upload note is a sidecar file. It is intentionally excluded from the ZIP payload

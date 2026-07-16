@@ -22,11 +22,11 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_ROOT = ROOT / "research" / "product_strategy" / "public_demo_package"
-ZIP_PATH = ROOT / "research" / "product_strategy" / "spira_terraform_agent_action_gate_public_demo_5962087.zip"
+ZIP_PATH = ROOT / "research" / "product_strategy" / "spira_terraform_agent_action_gate_public_demo_0aa44f3.zip"
 EXTRACT_CHECK_ROOT = ROOT / "research" / "product_strategy" / "_public_demo_package_extract_check"
 SIDECAR_FILES = {"UPLOAD_NOTE.txt"}
 
-SOURCE_COMMIT = "5962087abf44ff41fc48b96d6c102f11614835d6"
+SOURCE_COMMIT = "0aa44f33455d477fe53236d3ce8daddb6d830dad"
 POSITIONING_COMMIT = "da2e99d35e029f0d231e98a517ef87fe9528dde6"
 COMPETITOR_MAPPING_COMMIT = "45fe70b40c45601510559cda25dd05f533c21cf8"
 DEMO_SCRIPT_COMMIT = "bfed6f7774c48a17361ac0a2298fb9073b891ebc"
