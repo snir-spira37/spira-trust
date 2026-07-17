@@ -1,0 +1,81 @@
+{
+  "boundary": {
+    "not_authorized": [
+      "signer_trust",
+      "signer_authority",
+      "isolation_execution",
+      "permission_to_sever",
+      "phase2_implementation",
+      "public_capability_claim",
+      "release"
+    ],
+    "verified": [
+      "Domain4 decision core",
+      "Python-Lean agreement",
+      "Phase 1 reproduction bridge",
+      "Option A V1/Domain4 boundary",
+      "public wheel exclusion"
+    ]
+  },
+  "cold_reproduction_commit": "cf6693b4a3581575783e3a744cf53ede9b3dfa7d",
+  "delta_from_previous_commit": {
+    "changed_lines": 2,
+    "changed_paths": [
+      "research/formal_core/external_reproduction_package/SHA256SUMS"
+    ],
+    "previous_commit": "2f222e2e784faa813607106713b456a07eb7f522",
+    "substance_changed": false
+  },
+  "domain4_harness": {
+    "layer1_core_agreement": {
+      "disagreements": 0,
+      "total": 118098
+    },
+    "layer2_mutation_pairs": {
+      "false_proceed_count": 0,
+      "false_valid_count": 0,
+      "missing_mutation_pairs": 0
+    },
+    "layer3_phase1_reproduction": {
+      "phase1_reproduction_divergences": 0,
+      "reason_codes_not_reproduced": 0
+    },
+    "two_run_semantic_diff": 0,
+    "verdict": "DOMAIN4_NESIRA_PYTHON_HARNESS_ACCEPTED",
+    "wheel_exclusion": true
+  },
+  "formal_core": {
+    "axiom_boundary": "propext only; no sorryAx",
+    "full_lake_build": "PASS",
+    "full_lake_build_includes_domain4": true
+  },
+  "local_reproduction_notes": [
+    {
+      "impact": "non_blocking",
+      "note": "Two Domain4 tests can fail under very deep Windows paths because lake build reaches MAX_PATH limits. The same tests pass in a short clean clone path."
+    },
+    {
+      "impact": "non_blocking",
+      "note": "verify_all.sh may select the Windows Store python3 stub. Using PowerShell verify_all.ps1 or setting PYTHON=python avoids that environment issue."
+    }
+  ],
+  "option_a_boundary": {
+    "domain4_in_v1_inventory_or_claims": false,
+    "v1_verify_all_build_jobs": 35,
+    "v1_verify_all_builds_domain4": false,
+    "v1_verify_all_result": "PASS"
+  },
+  "schema": "SPIRA_DOMAIN4_NESIRA_COLD_EXTERNAL_REPRODUCTION_RESULTS_V1",
+  "sha256sums": {
+    "failed": 0,
+    "passed": 622,
+    "result": "PASS"
+  },
+  "status": "DOMAIN4_NESIRA_COLD_EXTERNAL_REPRODUCTION_ACCEPTED",
+  "tests": {
+    "full_pytest": {
+      "failed": 0,
+      "passed": 286
+    }
+  }
+}
