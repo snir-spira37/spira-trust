@@ -1,0 +1,276 @@
+{
+  "assumption_floor": [
+    "PT-CRYPTO-01",
+    "PT-CLOCK-01",
+    "PT-META-01",
+    "PT-META-02",
+    "PT-META-04"
+  ],
+  "carrier_rule": {
+    "assumptions_array": "REQUIRED_NON_EMPTY",
+    "conditional_on_roots": "REQUIRED_WHEN_ROOTS_USED",
+    "empty_assumptions_allowed": false
+  },
+  "entries": [
+    {
+      "applies_to": ["all_phase2_assessments"],
+      "category": "PT-CRYPTO",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01"],
+      "forbidden_reading": "crypto checks prove the trust root is legitimate",
+      "id": "PT-CRYPTO-01",
+      "mandatory_when": ["always"],
+      "statement": "Cryptographic verification depends on correctness of the crypto library and implementation.",
+      "universality": "UNCONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signature_verification", "attestation_signature_verification"],
+      "category": "PT-CRYPTO",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01"],
+      "forbidden_reading": "algorithm acceptance proves key legitimacy or signer authority",
+      "id": "PT-CRYPTO-02",
+      "mandatory_when": ["signature_verification_used", "attestation_signature_verification_used"],
+      "statement": "Accepted cryptographic primitives and algorithms are assumed sound for the declared purpose.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signing_key_root", "attestation_key_root"],
+      "category": "PT-CRYPTO",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01"],
+      "forbidden_reading": "signature verification proves the private key was not compromised",
+      "id": "PT-CRYPTO-03",
+      "mandatory_when": ["signing_key_root_used", "attestation_key_root_used"],
+      "statement": "Key management and private-key custody are assumed outside SPIRA.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signature_key_root"],
+      "category": "PT-KEYLEGIT",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01"],
+      "forbidden_reading": "SPIRA independently proves the key is legitimate",
+      "id": "PT-KEYLEGIT-01",
+      "mandatory_when": ["signature_key_root_used"],
+      "statement": "Legitimacy of a declared signing key is assumed from the declared trust root.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signature_key_root"],
+      "category": "PT-KEYLEGIT",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01"],
+      "forbidden_reading": "a key accepted for one scope is universal",
+      "id": "PT-KEYLEGIT-02",
+      "mandatory_when": ["signature_key_root_used"],
+      "statement": "The declared signing key is assumed to be in-scope for the bounded purpose and payload class.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signer_identity_root"],
+      "category": "PT-IDENTITY",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-02"],
+      "forbidden_reading": "SPIRA proves the issuer is honest",
+      "id": "PT-IDENTITY-01",
+      "mandatory_when": ["signer_identity_root_used"],
+      "statement": "Legitimacy of the identity issuer or registry is assumed from the declared identity root.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signer_identity_root"],
+      "category": "PT-IDENTITY",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-02", "NP-TRUST-03"],
+      "forbidden_reading": "identity binding proves signer authority",
+      "id": "PT-IDENTITY-02",
+      "mandatory_when": ["signer_identity_root_used"],
+      "statement": "Credential-to-identity binding correctness depends on the declared issuer and identity namespace.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signer_authority_root"],
+      "category": "PT-AUTHORITY",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-03"],
+      "forbidden_reading": "SPIRA proves the policy source is legitimate",
+      "id": "PT-AUTHORITY-01",
+      "mandatory_when": ["signer_authority_root_used"],
+      "statement": "Legitimacy of the authority-policy source is assumed from the declared authority root.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["signer_authority_root"],
+      "category": "PT-AUTHORITY",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-03"],
+      "forbidden_reading": "policy lookup proves the policy is correct",
+      "id": "PT-AUTHORITY-02",
+      "mandatory_when": ["signer_authority_root_used"],
+      "statement": "Correctness of the authority policy itself is assumed, not proven.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["authority_policy_freshness"],
+      "category": "PT-AUTHORITY",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-03"],
+      "forbidden_reading": "a fresh policy is necessarily correct",
+      "id": "PT-AUTHORITY-03",
+      "mandatory_when": ["authority_policy_freshness_evaluated"],
+      "statement": "Policy freshness is assumed according to the declared freshness policy and clock source.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["revocation_status"],
+      "category": "PT-REVOKE",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-01", "NP-TRUST-02", "NP-TRUST-03", "NP-TRUST-06"],
+      "forbidden_reading": "revocation check proves the source is honest",
+      "id": "PT-REVOKE-01",
+      "mandatory_when": ["revocation_status_used"],
+      "statement": "Honesty and correctness of the revocation source are assumed from the declared root.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["revocation_freshness"],
+      "category": "PT-REVOKE",
+      "cross_ref": ["nesira_phase2_trust_model.md"],
+      "forbidden_reading": "stale or unreachable revocation data may be treated as valid",
+      "id": "PT-REVOKE-02",
+      "mandatory_when": ["revocation_freshness_evaluated"],
+      "statement": "Revocation freshness depends on the declared freshness policy and clock source.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["revocation_status"],
+      "category": "PT-REVOKE",
+      "cross_ref": ["nesira_phase2_trust_model.md"],
+      "forbidden_reading": "unknown revocation status can support sufficiency",
+      "id": "PT-REVOKE-03",
+      "mandatory_when": ["revocation_unknown_or_unreachable"],
+      "statement": "Unknown revocation status is not evidence of non-revocation.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["all_phase2_assessments"],
+      "category": "PT-CLOCK",
+      "cross_ref": ["nesira_phase2_trust_model.md"],
+      "forbidden_reading": "SPIRA proves clock correctness",
+      "id": "PT-CLOCK-01",
+      "mandatory_when": ["always"],
+      "statement": "All freshness, validity-window, revocation, and attestation-time checks depend on declared clock trust.",
+      "universality": "UNCONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["clock_root"],
+      "category": "PT-CLOCK",
+      "cross_ref": ["nesira_phase2_trust_model.md"],
+      "forbidden_reading": "timestamp comparison proves real-world time correctness",
+      "id": "PT-CLOCK-02",
+      "mandatory_when": ["specific_clock_root_used"],
+      "statement": "Clock-source identity and freshness are assumed according to the declared trust root.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["isolation_attestation"],
+      "category": "PT-ISOLATION",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-06"],
+      "forbidden_reading": "isolation occurred or isolation is proven",
+      "id": "PT-ISOLATION-01",
+      "mandatory_when": ["isolation_attestation_evaluated"],
+      "statement": "Isolation execution truth is delegated to the declared attestation authority; SPIRA does not verify isolation occurred.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["isolation_attestation_source"],
+      "category": "PT-ISOLATION",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-06"],
+      "forbidden_reading": "a signed attestation proves the runner was honest",
+      "id": "PT-ISOLATION-02",
+      "mandatory_when": ["isolation_attestation_source_used"],
+      "statement": "Honesty of the runner or observer producing the attestation is assumed.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["isolation_substrate"],
+      "category": "PT-ISOLATION",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-TRUST-06"],
+      "forbidden_reading": "SPIRA proves OS, runtime, or container isolation correctness",
+      "id": "PT-ISOLATION-03",
+      "mandatory_when": ["isolation_attestation_used"],
+      "statement": "Operating system, container runtime, and isolation substrate behavior are assumed outside SPIRA.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["all_phase2_assessments"],
+      "category": "PT-META",
+      "cross_ref": ["nesira_phase2_trust_model.md", "NP-META-01"],
+      "forbidden_reading": "declared root means legitimate root",
+      "id": "PT-META-01",
+      "mandatory_when": ["always"],
+      "statement": "Trust roots are declared inputs, not validated or proven by SPIRA.",
+      "universality": "UNCONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["all_phase2_assessments"],
+      "category": "PT-META",
+      "cross_ref": ["nesira_phase2_proposal.md", "NP-META-01"],
+      "forbidden_reading": "sufficient means unconditional authorization or permission to sever",
+      "id": "PT-META-02",
+      "mandatory_when": ["always"],
+      "statement": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS is conditional on declared roots and this ledger.",
+      "universality": "UNCONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["trust_chain"],
+      "category": "PT-META",
+      "cross_ref": ["nesira_phase2_trust_model.md"],
+      "forbidden_reading": "chain validated means assumptions disappeared",
+      "id": "PT-META-03",
+      "mandatory_when": ["certificate_or_delegation_chain_used"],
+      "statement": "A validated chain of trust still exposes every trusted link as an assumption ID.",
+      "universality": "CONDITIONAL",
+      "version": 1
+    },
+    {
+      "applies_to": ["all_phase2_assessments"],
+      "category": "PT-META",
+      "cross_ref": ["nesira_phase2_proposal.md", "NP-TRUST-05"],
+      "forbidden_reading": "assessment output authorizes or executes severance",
+      "id": "PT-META-04",
+      "mandatory_when": ["always"],
+      "statement": "Phase 2 assessment is not execution and not severance authorization.",
+      "universality": "UNCONDITIONAL",
+      "version": 1
+    }
+  ],
+  "ledger_id": "SPIRA_NESIRA_PHASE2_NOT_PROVEN_TRUST_LEDGER_V1",
+  "ledger_version": 1,
+  "not_authorized": [
+    "assessment decision table",
+    "implementation",
+    "schema changes",
+    "signature verification code",
+    "attestation verification code",
+    "isolation runner implementation",
+    "permission-to-sever implementation",
+    "CLI exposure",
+    "public wheel exposure",
+    "combined verdict integration",
+    "public capability claim",
+    "release"
+  ],
+  "schema": "SPIRA_NESIRA_PHASE2_NOT_PROVEN_TRUST_LEDGER_JSON_V1",
+  "stability_rule": "IDs are never deleted silently; removing or weakening an assumption requires a new ledger version and review."
+}
