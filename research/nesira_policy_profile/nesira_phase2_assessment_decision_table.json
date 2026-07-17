@@ -1,0 +1,3871 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_ASSESSMENT_DECISION_TABLE_JSON_V1",
+  "document_type": "RESEARCH_ASSESSMENT_DECISION_TABLE_ORACLE",
+  "phase": "PHASE_2",
+  "implementation_authorized": false,
+  "public_claim_authorized": false,
+  "release_authorized": false,
+  "source_rule": "STRICT_AND_COMPOSITION_FROM_NESIRA_PHASE2_ASSESSMENT_SKETCH",
+  "sub_verdict_values": [
+    "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+    "TRUST_INSUFFICIENT",
+    "TRUST_NOT_EVALUATED"
+  ],
+  "domains": [
+    "signature",
+    "identity",
+    "authority",
+    "isolation"
+  ],
+  "row_count": 81,
+  "assumption_floor_ids": [
+    "PT-CRYPTO-01",
+    "PT-CLOCK-01",
+    "PT-META-01",
+    "PT-META-02",
+    "PT-META-04"
+  ],
+  "assumption_carrying_rule": {
+    "floor": "included in every row",
+    "conditional_sub_assumptions": "included only for domains whose sub-verdict is SUFFICIENT or INSUFFICIENT",
+    "not_evaluated_domain_assumptions": "not included, but the domain remains visible in per_domain_breakdown",
+    "isolation": "PT-ISOLATION-01 required whenever isolation_sub is SUFFICIENT or INSUFFICIENT"
+  },
+  "precedence_rule": {
+    "sufficient": "all four sub-verdicts are TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+    "insufficient": "one or more sub-verdicts is TRUST_INSUFFICIENT",
+    "not_evaluated": "no sub-verdict is TRUST_INSUFFICIENT and at least one is TRUST_NOT_EVALUATED",
+    "mixed_precedence": "TRUST_INSUFFICIENT dominates TRUST_NOT_EVALUATED in mixed rows"
+  },
+  "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+  "rows": [
+    {
+      "row_id": "NESIRA-P2-ASSESS-001",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "precedence_rationale": "all_four_sub_assessments_sufficient",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-002",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-003",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-004",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-005",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-006",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-007",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-008",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-009",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-010",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-011",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-012",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-013",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-014",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-015",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-016",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-017",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-018",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-019",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-020",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-021",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-022",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-023",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-024",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-025",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-026",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-027",
+      "inputs": {
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-028",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-029",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-030",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-031",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-032",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-033",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-034",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-035",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-036",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-037",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-038",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-039",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-040",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-041",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-042",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-043",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-044",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-045",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-046",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-047",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-048",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-049",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-050",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-051",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-052",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-053",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-054",
+      "inputs": {
+        "signature_sub": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_INSUFFICIENT",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "signature_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "signature_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-055",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-056",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-057",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-058",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-059",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-060",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-061",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-062",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-063",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-064",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-065",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-066",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-067",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-068",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-069",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-070",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-071",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-072",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_INSUFFICIENT",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "identity_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "identity_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-073",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-074",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-075",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-076",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-077",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used",
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-078",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_INSUFFICIENT",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "authority_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [
+        "authority_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-079",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-080",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_INSUFFICIENT"
+      },
+      "composite_verdict": "TRUST_INSUFFICIENT",
+      "precedence_rationale": "insufficient_dominates_not_evaluated_when_present",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_INSUFFICIENT"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [
+        "isolation_sub.assumptions"
+      ],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-ISOLATION-01"
+      ],
+      "trust_roots_used_sources": [
+        "isolation_sub.trust_roots_used"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    },
+    {
+      "row_id": "NESIRA-P2-ASSESS-081",
+      "inputs": {
+        "signature_sub": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED"
+      },
+      "composite_verdict": "TRUST_NOT_EVALUATED",
+      "precedence_rationale": "no_insufficient_and_at_least_one_not_evaluated",
+      "per_domain_breakdown": {
+        "signature": "TRUST_NOT_EVALUATED",
+        "identity": "TRUST_NOT_EVALUATED",
+        "authority": "TRUST_NOT_EVALUATED",
+        "isolation": "TRUST_NOT_EVALUATED"
+      },
+      "assumption_floor_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "sub_assumption_sources_included": [],
+      "sub_assumption_sources_not_included": [
+        "signature_sub.assumptions",
+        "identity_sub.assumptions",
+        "authority_sub.assumptions",
+        "isolation_sub.assumptions"
+      ],
+      "required_explicit_assumption_ids": [
+        "PT-CRYPTO-01",
+        "PT-CLOCK-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "trust_roots_used_sources": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "scoring_or_majority_used": false,
+      "execution_authorized": false
+    }
+  ],
+  "self_check": {
+    "row_count_is_81": true,
+    "unique_row_ids": true,
+    "sufficient_rows": 1,
+    "insufficient_rows": 65,
+    "not_evaluated_rows": 15,
+    "rows_missing_floor": [],
+    "rows_missing_marker": [],
+    "rows_using_scoring_or_majority": [],
+    "rows_authorizing_execution": [],
+    "isolation_evaluated_rows_missing_pt_isolation_01": []
+  }
+}
