@@ -1,0 +1,88 @@
+{
+  "status": "DOMAIN4_NESIRA_LEAN_IMPLEMENTATION_ACCEPTED",
+  "commit_scope": "Lean-only Domain4 implementation and authorized research reports",
+  "toolchain": {
+    "lean": "leanprover/lean4:v4.32.0",
+    "lake": "5.0.0-src+8c9756b",
+    "lake_executable": "C:/Users/snir/.local/lean/lean-4.32.0-windows/bin/lake.exe"
+  },
+  "authorized_files_changed": [
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Meta.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Evidence.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Policy.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Decision.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Proofs.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Domain4/Main.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore.lean",
+    "formal/spira_formal_core_v1/SpiraFormalCore/Proofs/All.lean",
+    "research/formal_core/domain4_nesira_lean_implementation_results.json",
+    "research/formal_core/domain4_nesira_lean_implementation_report.md",
+    "research/formal_core/domain4_nesira_lean_implementation_review.md"
+  ],
+  "not_authorized_changes": {
+    "python_changes": 0,
+    "fixture_changes": 0,
+    "harness_implementation_changes": 0,
+    "phase2_implementation_changes": 0,
+    "release_changes": 0
+  },
+  "lake_build": {
+    "command": "lake build",
+    "workdir": "formal/spira_formal_core_v1",
+    "returncode": 0,
+    "jobs": 41,
+    "status": "PASS"
+  },
+  "domain4_lean": {
+    "modules_created": 6,
+    "phase1_action_has_proceed_constructor": false,
+    "execution_meta_values": 3,
+    "outcome_types": 9,
+    "outcome_values": 27,
+    "dump_total_tuples": 118098,
+    "dump_spec_disagreements": 0
+  },
+  "theorem_families": {
+    "tool_error_stops": "PROVED",
+    "input_malformed_rerun": "PROVED",
+    "schema_structural_violation_not_valid": "PROVED",
+    "hash_mismatch_not_valid": "PROVED_WITH_PRECEDENCE_PRECONDITIONS",
+    "unsafe_path_not_valid": "PROVED_WITH_PRECEDENCE_PRECONDITIONS",
+    "missing_evidence_not_evaluated": "PROVED_WITH_PRECEDENCE_PRECONDITIONS",
+    "context_expected_missing_not_evaluated": "PROVED_WITH_PRECEDENCE_PRECONDITIONS",
+    "phase1_no_proceed": "TYPE_LEVEL_PROVED_BY_ABSENCE_OF_CONSTRUCTOR",
+    "core_deterministic": "PROVED",
+    "stop_true": "PROVED"
+  },
+  "proof_hygiene": {
+    "sorry_occurrences": 0,
+    "admit_occurrences": 0,
+    "custom_axiom_declarations": 0,
+    "sorryAx_occurrences": 0,
+    "native_decide_occurrences": 0,
+    "unsafe_occurrences": 0,
+    "opaque_occurrences": 0,
+    "implemented_by_occurrences": 0,
+    "extern_occurrences": 0
+  },
+  "axiom_inventory": {
+    "tool_error_stops": ["propext"],
+    "input_malformed_rerun": ["propext"],
+    "schema_structural_violation_not_valid": ["propext"],
+    "hash_mismatch_not_valid": ["propext"],
+    "unsafe_path_not_valid": ["propext"],
+    "missing_evidence_not_evaluated": ["propext"],
+    "context_expected_missing_not_evaluated": ["propext"],
+    "core_deterministic": [],
+    "stop_true": ["propext"],
+    "sorryAx": 0,
+    "unapproved_axioms": 0
+  },
+  "regression": {
+    "domain1_build": "PASS",
+    "domain2_build": "PASS",
+    "domain3_build": "PASS",
+    "generic_core_build": "PASS"
+  },
+  "next_authorization_required": "DOMAIN4_NESIRA_PYTHON_HARNESS_AUTHORIZATION_REQUIRED"
+}

@@ -5,3 +5,4 @@ import SpiraFormalCore.Proofs.ExplicitLists
 import SpiraFormalCore.Proofs.GateA
 import SpiraFormalCore.Proofs.ModelNonAuthority
 import SpiraFormalCore.Proofs.FailClosed
+import SpiraFormalCore.Domain4.Proofs
