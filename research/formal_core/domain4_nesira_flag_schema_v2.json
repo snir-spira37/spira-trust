@@ -1,0 +1,571 @@
+{
+  "artifact_kinds": [
+    "SEVERANCE_AUTHORIZATION",
+    "LEGACY_ISOLATION_RESULT"
+  ],
+  "canonical_serialization": {
+    "encoding": "UTF-8 JSON",
+    "enum_encoding": "exact string",
+    "excluded": [
+      "timestamps",
+      "host paths",
+      "environment metadata",
+      "runtime duration",
+      "provider/tool telemetry"
+    ],
+    "sort_keys": true
+  },
+  "derived_from_root": "source/spira_core/nesira_policy_profile_validator.py",
+  "execution_meta": {
+    "type": "ExecutionMeta",
+    "values": {
+      "INPUT_MALFORMED": {
+        "definition": "Byte input could not be decoded as UTF-8 JSON before artifact validation.",
+        "derived_from": [
+          "validate_severance_authorization_bytes",
+          "validate_legacy_isolation_result_bytes"
+        ],
+        "maps_to_action": "RERUN_REQUIRED",
+        "maps_to_status": "RERUN_REQUIRED",
+        "ordinary_document_failure": false,
+        "safety_critical": false
+      },
+      "PARSED_OK": {
+        "definition": "The validator reached the per-check outcome layer.",
+        "derived_from": [
+          "validate_severance_authorization",
+          "validate_legacy_isolation_result"
+        ],
+        "maps_to_action": "CONTINUE",
+        "maps_to_status": "CONTINUE",
+        "safety_critical": false
+      },
+      "TOOL_ERROR": {
+        "definition": "The validator itself failed unexpectedly, or filesystem resolution raised a tool/runtime error.",
+        "derived_from": [
+          "validate_severance_authorization",
+          "validate_legacy_isolation_result",
+          "_validate_evidence_manifest",
+          "_tool_error"
+        ],
+        "maps_to_action": "STOP_BLOCKED",
+        "maps_to_status": "TOOL_ERROR",
+        "ordinary_document_failure": false,
+        "safety_critical": true
+      }
+    }
+  },
+  "frozen": true,
+  "minimality_rule": "Split enum values only where accepted Phase 1 assigns a different status/action, where V2->V1 projection requires it, or where artifact_kind applicability requires it. Reason-code-only distinctions stay in traceability and harness layers.",
+  "not_authorized": [
+    "Lean definitions",
+    "Lean proof scripts",
+    "Python code changes",
+    "Nesira validator changes",
+    "new fixtures",
+    "fixture materialization",
+    "test implementation",
+    "conformance harness implementation",
+    "decision-table implementation",
+    "Phase 1 reopening",
+    "Phase 2 implementation",
+    "public capability claims",
+    "release"
+  ],
+  "outcome_types": {
+    "ContextOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "CONTEXT_EXPECTED_MISSING",
+          "CONTEXT_MISMATCH"
+        ],
+        "flag": "context_match",
+        "true_values": [
+          "CONTEXT_OK"
+        ]
+      },
+      "values": {
+        "CONTEXT_EXPECTED_MISSING": {
+          "definition": "Expected/current context lacks one or more required fields.",
+          "derived_from": [
+            "_missing_fields -> SEVERANCE_EXPECTED_CONTEXT_MISSING",
+            "_missing_fields -> LEGACY_ISOLATION_EXPECTED_CONTEXT_MISSING"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "REPORT_NOT_EVALUATED",
+          "maps_to_status": "NOT_EVALUATED",
+          "safety_critical": true
+        },
+        "CONTEXT_MISMATCH": {
+          "definition": "Expected/current context is present but differs from artifact context or profile identity.",
+          "derived_from": [
+            "_first_context_mismatch -> SEVERANCE_<FIELD>_MISMATCH",
+            "_first_context_mismatch -> LEGACY_ISOLATION_<FIELD>_MISMATCH",
+            "profile_id mismatch -> LEGACY_ISOLATION_PROFILE_MISMATCH"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "RERUN_REQUIRED",
+          "maps_to_status": "RERUN_REQUIRED",
+          "safety_critical": true
+        },
+        "CONTEXT_OK": {
+          "definition": "All required accepted Phase 1 context fields are present and match.",
+          "derived_from": [
+            "_missing_fields returns empty",
+            "_first_context_mismatch returns None"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        }
+      }
+    },
+    "DirectoryEvidenceOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "DIR_AS_FILE"
+        ],
+        "flag": "directory_not_file_absent",
+        "true_values": [
+          "DIR_OK",
+          "DIR_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "DIR_AS_FILE": {
+          "definition": "An applicable evidence path exists but is not a regular file.",
+          "derived_from": [
+            "_validate_evidence_manifest -> LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-03"
+          ],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": true
+        },
+        "DIR_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 regular-file evidence check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "DIR_OK": {
+          "definition": "Every applicable evidence path that exists is a regular file before hash validation.",
+          "derived_from": [
+            "_validate_evidence_manifest path.is_file() true path"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-03"
+          ],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        }
+      }
+    },
+    "DuplicateOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "DUP_PRESENT"
+        ],
+        "flag": "duplicate_path_free",
+        "true_values": [
+          "DUP_OK",
+          "DUP_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "DUP_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 duplicate evidence-path check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "DUP_OK": {
+          "definition": "No applicable evidence path resolves to a canonical in-root path already seen in the same evidence manifest.",
+          "derived_from": [
+            "_validate_evidence_manifest seen_paths non-duplicate path"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-06"
+          ],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        },
+        "DUP_PRESENT": {
+          "definition": "Two or more applicable evidence entries resolve to the same canonical in-root path.",
+          "derived_from": [
+            "_validate_evidence_manifest -> LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-06"
+          ],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": true
+        }
+      }
+    },
+    "EvidencePresenceOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "EVIDENCE_MISSING"
+        ],
+        "flag": "evidence_present",
+        "true_values": [
+          "EVIDENCE_OK",
+          "EVIDENCE_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "EVIDENCE_MISSING": {
+          "definition": "An applicable evidence file does not exist at the normalized in-root path.",
+          "derived_from": [
+            "_validate_evidence_manifest -> LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "REPORT_NOT_EVALUATED",
+          "maps_to_status": "NOT_EVALUATED",
+          "safety_critical": false
+        },
+        "EVIDENCE_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 evidence-root file existence check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "EVIDENCE_OK": {
+          "definition": "Every evidence path accepted Phase 1 is required to inspect exists before file-type and hash validation.",
+          "derived_from": [
+            "_validate_evidence_manifest path.exists() true path"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": false
+        }
+      }
+    },
+    "HashOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "HASH_MISMATCH"
+        ],
+        "flag": "hash_ok",
+        "true_values": [
+          "HASH_OK",
+          "HASH_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "HASH_MISMATCH": {
+          "definition": "At least one applicable evidence file's computed SHA-256 differs from the declared digest.",
+          "derived_from": [
+            "_validate_evidence_manifest -> LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-05"
+          ],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": true
+        },
+        "HASH_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 evidence-root hash check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "HASH_OK": {
+          "definition": "Every applicable evidence file's SHA-256 over the bytes read by accepted Phase 1 equals the declared digest.",
+          "derived_from": [
+            "_validate_evidence_manifest actual_hash == item[\"sha256\"]"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-05"
+          ],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        }
+      }
+    },
+    "PathOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "PATH_UNSAFE"
+        ],
+        "flag": "path_safe",
+        "true_values": [
+          "PATH_OK",
+          "PATH_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "PATH_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 evidence-root path safety check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "PATH_OK": {
+          "definition": "Every applicable evidence path string passes accepted Phase 1 lexical path safety checks after separator normalization.",
+          "derived_from": [
+            "_normalize_evidence_path",
+            "_unsafe_relative_path returns None"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-06"
+          ],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        },
+        "PATH_UNSAFE": {
+          "definition": "An applicable evidence path is empty, absolute, UNC/network style, drive-qualified, contains traversal, or contains an empty path component.",
+          "derived_from": [
+            "_unsafe_relative_path -> LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-06"
+          ],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": true
+        }
+      }
+    },
+    "SchemaOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "SCHEMA_MALFORMED_OR_UNSUPPORTED_VERSION",
+          "SCHEMA_STRUCTURAL_VIOLATION"
+        ],
+        "flag": "schema_valid",
+        "true_values": [
+          "SCHEMA_OK"
+        ]
+      },
+      "values": {
+        "SCHEMA_MALFORMED_OR_UNSUPPORTED_VERSION": {
+          "definition": "The artifact is malformed at the DSSE/payload/schema identity layer, or uses an unsupported Phase 1 schema/profile version, and accepted Phase 1 maps the cause to RERUN_REQUIRED.",
+          "derived_from": [
+            "NESIRA_PHASE1_MALFORMED_DSSE_ENVELOPE",
+            "DSSE_PAYLOAD_TYPE_INVALID",
+            "DSSE_PAYLOAD_MISSING",
+            "DSSE_PAYLOAD_BASE64_INVALID",
+            "DSSE_PAYLOAD_UTF8_INVALID",
+            "DSSE_PAYLOAD_JSON_INVALID",
+            "SEVERANCE_SCHEMA_VERSION_UNSUPPORTED",
+            "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED",
+            "LEGACY_ISOLATION_PROFILE_VERSION_UNSUPPORTED"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-01",
+            "NP-ADAPTER-02"
+          ],
+          "maps_to_action": "RERUN_REQUIRED",
+          "maps_to_status": "RERUN_REQUIRED",
+          "safety_critical": false
+        },
+        "SCHEMA_OK": {
+          "definition": "The artifact passed accepted Phase 1 structural and schema/version checks required before semantic binding checks.",
+          "derived_from": [
+            "_validate_severance_authorization_core valid path before context checks",
+            "_validate_legacy_isolation_result_core valid path before context checks"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": false
+        },
+        "SCHEMA_STRUCTURAL_VIOLATION": {
+          "definition": "The artifact reached a structural validation layer and violated required Phase 1 shape or field requirements that accepted Phase 1 maps to INVALID.",
+          "derived_from": [
+            "SEVERANCE_SCHEMA_INVALID",
+            "LEGACY_ISOLATION_RESULT_SCHEMA_INVALID",
+            "LEGACY_ISOLATION_EVIDENCE_SCHEMA_INVALID"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": false
+        }
+      }
+    },
+    "SymlinkOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "NOT_APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "SYMLINK_ESCAPE"
+        ],
+        "flag": "symlink_escape_absent",
+        "true_values": [
+          "SYMLINK_OK",
+          "SYMLINK_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "SYMLINK_ESCAPE": {
+          "definition": "An applicable evidence path resolves outside evidence_root or is a symlink.",
+          "derived_from": [
+            "_validate_evidence_manifest -> LEGACY_ISOLATION_SYMLINK_ESCAPE"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-04"
+          ],
+          "maps_to_action": "STOP_BLOCKED",
+          "maps_to_status": "INVALID",
+          "safety_critical": true
+        },
+        "SYMLINK_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no Phase 1 symlink/root containment check.",
+          "derived_from": [
+            "accepted artifact_kind split for SEVERANCE_AUTHORIZATION"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "SYMLINK_OK": {
+          "definition": "Every applicable evidence path resolves inside evidence_root and is not a symlink according to accepted Phase 1 checks.",
+          "derived_from": [
+            "_validate_evidence_manifest: _is_within(resolved, root) and not path.is_symlink()"
+          ],
+          "ledger_ids": [
+            "NP-ADAPTER-04"
+          ],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": true
+        }
+      }
+    },
+    "TemporalOutcome": {
+      "applicability": {
+        "LEGACY_ISOLATION_RESULT": "NOT_APPLICABLE",
+        "SEVERANCE_AUTHORIZATION": "APPLICABLE"
+      },
+      "v1_projection": {
+        "false_values": [
+          "TEMPORAL_VIOLATION"
+        ],
+        "flag": "temporal_binding_ok",
+        "true_values": [
+          "TEMPORAL_OK",
+          "TEMPORAL_NOT_APPLICABLE"
+        ]
+      },
+      "values": {
+        "TEMPORAL_NOT_APPLICABLE": {
+          "definition": "The artifact kind has no accepted Phase 1 temporal binding check.",
+          "derived_from": [
+            "accepted artifact_kind split for LEGACY_ISOLATION_RESULT"
+          ],
+          "ledger_ids": [
+            "NP-APPLIC-01"
+          ],
+          "maps_to_action": "IGNORED_BY_CONSULTED_SET",
+          "maps_to_status": "IGNORED_BY_CONSULTED_SET",
+          "safety_critical": false
+        },
+        "TEMPORAL_OK": {
+          "definition": "Accepted Phase 1 parsed issued_at and expires_at as aware UTC instants, issued_at is not in the future, and expires_at is after now_utc.",
+          "derived_from": [
+            "_validate_temporal_binding returns None"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "CONTINUE",
+          "maps_to_status": "CONTINUE",
+          "safety_critical": false
+        },
+        "TEMPORAL_VIOLATION": {
+          "definition": "Accepted Phase 1 could not parse temporal fields, the issued_at time is in the future, or the artifact is expired.",
+          "derived_from": [
+            "SEVERANCE_TEMPORAL_BINDING_INVALID",
+            "SEVERANCE_ISSUED_AT_IN_FUTURE",
+            "SEVERANCE_EXPIRED"
+          ],
+          "ledger_ids": [],
+          "maps_to_action": "RERUN_REQUIRED",
+          "maps_to_status": "RERUN_REQUIRED",
+          "safety_critical": false
+        }
+      }
+    }
+  },
+  "schema": "SPIRA_NESIRA_DOMAIN4_FLAG_SCHEMA_JSON_V2",
+  "schema_id": "SPIRA_NESIRA_DOMAIN4_FLAGS_V2",
+  "schema_version": 2,
+  "v1_refinement": {
+    "claim": "Every SPIRA_NESIRA_DOMAIN4_FLAGS_V1 boolean is a total projection from V2 execution meta and outcome enum values.",
+    "not_applicable_guard": "NP-APPLIC-01"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "action_projection": {
+    "INVALID": "STOP_BLOCKED",
+    "NOT_EVALUATED": "REPORT_NOT_EVALUATED",
+    "RERUN_REQUIRED": "RERUN_REQUIRED",
+    "TOOL_ERROR": "STOP_BLOCKED",
+    "VALID": "REPORT_NOT_EVALUATED"
+  },
+  "derived_from_root": "source/spira_core/nesira_policy_profile_validator.py",
+  "direction_1_phase1_to_v2": [
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "validate_severance_authorization_bytes / validate_legacy_isolation_result_bytes malformed byte JSON",
+      "reason_codes": [
+        "NESIRA_PHASE1_MALFORMED_JSON"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "ExecutionMeta.INPUT_MALFORMED"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "validate_severance_authorization / validate_legacy_isolation_result exception; _validate_evidence_manifest OSError",
+      "reason_codes": [
+        "NESIRA_PHASE1_VALIDATOR_TOOL_ERROR"
+      ],
+      "status": "TOOL_ERROR",
+      "v2_mapping": "ExecutionMeta.TOOL_ERROR"
+    },
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "severance DSSE/payload/schema-version malformed-or-unsupported branches",
+      "reason_codes": [
+        "NESIRA_PHASE1_MALFORMED_DSSE_ENVELOPE",
+        "DSSE_PAYLOAD_TYPE_INVALID",
+        "DSSE_PAYLOAD_MISSING",
+        "DSSE_PAYLOAD_BASE64_INVALID",
+        "DSSE_PAYLOAD_UTF8_INVALID",
+        "DSSE_PAYLOAD_JSON_INVALID",
+        "SEVERANCE_SCHEMA_VERSION_UNSUPPORTED"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "SchemaOutcome.SCHEMA_MALFORMED_OR_UNSUPPORTED_VERSION"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_validate_severance_statement_shape",
+      "reason_codes": [
+        "SEVERANCE_SCHEMA_INVALID"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "SchemaOutcome.SCHEMA_STRUCTURAL_VIOLATION"
+    },
+    {
+      "action": "REPORT_NOT_EVALUATED",
+      "phase1_source": "severance _missing_fields expected_context",
+      "reason_codes": [
+        "SEVERANCE_EXPECTED_CONTEXT_MISSING"
+      ],
+      "status": "NOT_EVALUATED",
+      "v2_mapping": "ContextOutcome.CONTEXT_EXPECTED_MISSING"
+    },
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "severance _first_context_mismatch",
+      "reason_codes": [
+        "SEVERANCE_<FIELD>_MISMATCH"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "ContextOutcome.CONTEXT_MISMATCH"
+    },
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "_validate_temporal_binding",
+      "reason_codes": [
+        "SEVERANCE_TEMPORAL_BINDING_INVALID",
+        "SEVERANCE_ISSUED_AT_IN_FUTURE",
+        "SEVERANCE_EXPIRED"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "TemporalOutcome.TEMPORAL_VIOLATION"
+    },
+    {
+      "action": "REPORT_NOT_EVALUATED",
+      "phase1_source": "valid severance structure and binding result",
+      "reason_codes": [
+        "NESIRA_PHASE1_STRUCTURE_AND_BINDING_VALID",
+        "NESIRA_PHASE1_SIGNATURE_TRUST_NOT_EVALUATED",
+        "NESIRA_PHASE1_SIGNER_AUTHORITY_NOT_EVALUATED"
+      ],
+      "status": "VALID",
+      "v2_mapping": "SCHEMA_OK + CONTEXT_OK + TEMPORAL_OK + evidence/hash/path/symlink/duplicate/directory NOT_APPLICABLE"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "legacy isolation non-mapping result, _validate_isolation_shape, or malformed evidence manifest item",
+      "reason_codes": [
+        "LEGACY_ISOLATION_RESULT_SCHEMA_INVALID",
+        "LEGACY_ISOLATION_EVIDENCE_SCHEMA_INVALID"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "SchemaOutcome.SCHEMA_STRUCTURAL_VIOLATION"
+    },
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "legacy isolation unsupported schema/profile version",
+      "reason_codes": [
+        "LEGACY_ISOLATION_SCHEMA_VERSION_UNSUPPORTED",
+        "LEGACY_ISOLATION_PROFILE_VERSION_UNSUPPORTED"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "SchemaOutcome.SCHEMA_MALFORMED_OR_UNSUPPORTED_VERSION"
+    },
+    {
+      "action": "RERUN_REQUIRED",
+      "phase1_source": "legacy isolation context/profile mismatch",
+      "reason_codes": [
+        "LEGACY_ISOLATION_<FIELD>_MISMATCH",
+        "LEGACY_ISOLATION_PROFILE_MISMATCH"
+      ],
+      "status": "RERUN_REQUIRED",
+      "v2_mapping": "ContextOutcome.CONTEXT_MISMATCH"
+    },
+    {
+      "action": "REPORT_NOT_EVALUATED",
+      "phase1_source": "legacy isolation _missing_fields current_context",
+      "reason_codes": [
+        "LEGACY_ISOLATION_EXPECTED_CONTEXT_MISSING"
+      ],
+      "status": "NOT_EVALUATED",
+      "v2_mapping": "ContextOutcome.CONTEXT_EXPECTED_MISSING"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_unsafe_relative_path",
+      "reason_codes": [
+        "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "PathOutcome.PATH_UNSAFE"
+    },
+    {
+      "action": "REPORT_NOT_EVALUATED",
+      "phase1_source": "_validate_evidence_manifest path.exists() false",
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING"
+      ],
+      "status": "NOT_EVALUATED",
+      "v2_mapping": "EvidencePresenceOutcome.EVIDENCE_MISSING"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_validate_evidence_manifest symlink or out-of-root resolved path",
+      "reason_codes": [
+        "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "SymlinkOutcome.SYMLINK_ESCAPE"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_validate_evidence_manifest not path.is_file()",
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "DirectoryEvidenceOutcome.DIR_AS_FILE"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_validate_evidence_manifest duplicate canonical path",
+      "reason_codes": [
+        "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "DuplicateOutcome.DUP_PRESENT"
+    },
+    {
+      "action": "STOP_BLOCKED",
+      "phase1_source": "_validate_evidence_manifest actual_hash != declared hash",
+      "reason_codes": [
+        "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+      ],
+      "status": "INVALID",
+      "v2_mapping": "HashOutcome.HASH_MISMATCH"
+    },
+    {
+      "action": "REPORT_NOT_EVALUATED",
+      "phase1_source": "valid legacy isolation structure and evidence result",
+      "reason_codes": [
+        "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID",
+        "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED"
+      ],
+      "status": "VALID",
+      "v2_mapping": "SCHEMA_OK + CONTEXT_OK + EVIDENCE_OK + PATH_OK + SYMLINK_OK + DIR_OK + DUP_OK + HASH_OK + TEMPORAL_NOT_APPLICABLE"
+    }
+  ],
+  "direction_2_v2_to_phase1": {
+    "CONTEXT_EXPECTED_MISSING": "SEVERANCE_EXPECTED_CONTEXT_MISSING or LEGACY_ISOLATION_EXPECTED_CONTEXT_MISSING",
+    "CONTEXT_MISMATCH": "SEVERANCE_<FIELD>_MISMATCH, LEGACY_ISOLATION_<FIELD>_MISMATCH, or LEGACY_ISOLATION_PROFILE_MISMATCH",
+    "CONTEXT_OK": "accepted context checks passed",
+    "DIR_AS_FILE": "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE",
+    "DIR_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "DIR_OK": "path.is_file() true",
+    "DUP_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "DUP_OK": "canonical path not already seen",
+    "DUP_PRESENT": "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH",
+    "EVIDENCE_MISSING": "LEGACY_ISOLATION_EVIDENCE_FILE_MISSING",
+    "EVIDENCE_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "EVIDENCE_OK": "path.exists() true",
+    "HASH_MISMATCH": "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH",
+    "HASH_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "HASH_OK": "actual_hash == declared hash",
+    "INPUT_MALFORMED": "validate_*_bytes JSON decode failure",
+    "PARSED_OK": "validator reached per-check outcome layer",
+    "PATH_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "PATH_OK": "_unsafe_relative_path returns None",
+    "PATH_UNSAFE": "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH",
+    "SCHEMA_MALFORMED_OR_UNSUPPORTED_VERSION": "DSSE/payload/schema/profile version rerun branches",
+    "SCHEMA_OK": "accepted structural/schema path before binding checks",
+    "SCHEMA_STRUCTURAL_VIOLATION": "severance/isolation/evidence structural invalid branches",
+    "SYMLINK_ESCAPE": "LEGACY_ISOLATION_SYMLINK_ESCAPE",
+    "SYMLINK_NOT_APPLICABLE": "SEVERANCE_AUTHORIZATION artifact_kind split",
+    "SYMLINK_OK": "resolved path within root and not symlink",
+    "TEMPORAL_NOT_APPLICABLE": "LEGACY_ISOLATION_RESULT artifact_kind split",
+    "TEMPORAL_OK": "_validate_temporal_binding returns None",
+    "TEMPORAL_VIOLATION": "SEVERANCE_TEMPORAL_BINDING_INVALID, SEVERANCE_ISSUED_AT_IN_FUTURE, or SEVERANCE_EXPIRED",
+    "TOOL_ERROR": "_tool_error"
+  },
+  "reason_code_resolution_boundary": "V2 proof-core enums encode action/status causes. Reason-code-only subtypes stay in traceability and future conformance harness artifacts.",
+  "schema": "SPIRA_NESIRA_DOMAIN4_PHASE1_OUTCOME_TRACEABILITY_JSON_V2",
+  "schema_id": "SPIRA_NESIRA_DOMAIN4_FLAGS_V2",
+  "unmapped_phase1_outcome_families": 0,
+  "v2_values_without_phase1_source": 0
+}
