@@ -1,0 +1,236 @@
+{
+  "applicability_matrix": {
+    "context_match": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      }
+    },
+    "directory_not_file_absent": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "duplicate_path_free": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "evaluated": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      }
+    },
+    "evidence_present": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "hash_ok": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "path_safe": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "schema_valid": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      }
+    },
+    "symlink_escape_absent": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      }
+    },
+    "temporal_binding_ok": {
+      "LEGACY_ISOLATION_RESULT": {
+        "applicability": "NOT_APPLICABLE_TRUE_IN_V1",
+        "ledger_ids": [
+          "NP-APPLIC-01"
+        ]
+      },
+      "SEVERANCE_AUTHORIZATION": {
+        "applicability": "APPLICABLE",
+        "ledger_ids": []
+      }
+    }
+  },
+  "binding_rule": "Any statement about Domain4/Nesira Lean that is not accompanied by this ledger is an overclaim.",
+  "core_boundary": {
+    "lean_does_not_prove": "world -> flags",
+    "lean_proves": "flags -> contract"
+  },
+  "frozen": true,
+  "ledger_id": "SPIRA_NESIRA_DOMAIN4_NOT_PROVEN_V1",
+  "ledger_version": 1,
+  "not_authorized": [
+    "Lean definitions",
+    "Lean proof scripts",
+    "Python code changes",
+    "Nesira validator changes",
+    "new fixtures",
+    "fixture materialization",
+    "test implementation",
+    "decision-table implementation",
+    "Phase 1 reopening",
+    "Phase 2 implementation",
+    "signature verification",
+    "signer authority checks",
+    "isolation runner implementation",
+    "combined verdict integration",
+    "CLI or wheel exposure",
+    "public capability claims",
+    "release"
+  ],
+  "positive_claim_allowed": {
+    "claim": "Given faithful SPIRA_NESIRA_DOMAIN4_FLAGS_V1 flags, the Domain 4 decision table cannot produce PROCEED because PROCEED is unrepresentable in Phase1Action, cannot mark hash-mismatch or unsafe-path classifications as structurally valid, is deterministic for every legal flag tuple, and preserves explicit contractual boundaries.",
+    "requires_future_lean_acceptance": true
+  },
+  "sections": {
+    "NP-ADAPTER": [
+      {
+        "id": "NP-ADAPTER-01",
+        "statement": "JSON parsing correctness"
+      },
+      {
+        "id": "NP-ADAPTER-02",
+        "statement": "DSSE envelope / payload decoding correctness"
+      },
+      {
+        "id": "NP-ADAPTER-03",
+        "statement": "filesystem reads, file existence, and file type classification"
+      },
+      {
+        "id": "NP-ADAPTER-04",
+        "statement": "symlink resolution on Windows and POSIX"
+      },
+      {
+        "id": "NP-ADAPTER-05",
+        "statement": "SHA-256 computed over the correct bytes"
+      },
+      {
+        "id": "NP-ADAPTER-06",
+        "statement": "path normalization and canonicalization correctness"
+      },
+      {
+        "id": "NP-ADAPTER-07",
+        "statement": "faithfulness of each computed flag to the real artifact"
+      }
+    ],
+    "NP-APPLIC": [
+      {
+        "id": "NP-APPLIC-01",
+        "statement": "A non-applicable flag set to true must not be read as check performed; it means only not applicable in V1 for this artifact_kind."
+      }
+    ],
+    "NP-META": [
+      {
+        "id": "NP-META-01",
+        "statement": "A Lean proof of the decision table is not Nesira formally proved end to end."
+      },
+      {
+        "id": "NP-META-02",
+        "statement": "Not independent certification."
+      },
+      {
+        "id": "NP-META-03",
+        "statement": "Not production readiness."
+      },
+      {
+        "id": "NP-META-04",
+        "statement": "Not release readiness."
+      },
+      {
+        "id": "NP-META-05",
+        "statement": "Not public wheel, CLI, or product capability availability."
+      }
+    ],
+    "NP-TRUST": [
+      {
+        "id": "NP-TRUST-01",
+        "statement": "cryptographic signature validity"
+      },
+      {
+        "id": "NP-TRUST-02",
+        "statement": "signer identity"
+      },
+      {
+        "id": "NP-TRUST-03",
+        "statement": "signer authority"
+      },
+      {
+        "id": "NP-TRUST-04",
+        "statement": "severance authorization"
+      },
+      {
+        "id": "NP-TRUST-05",
+        "statement": "permission to sever"
+      },
+      {
+        "id": "NP-TRUST-06",
+        "statement": "actual isolation execution or independent observation"
+      }
+    ]
+  },
+  "schema": "SPIRA_NESIRA_DOMAIN4_NOT_PROVEN_LEDGER_JSON_V1"
+}
