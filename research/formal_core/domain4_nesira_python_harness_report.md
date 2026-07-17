@@ -181,52 +181,24 @@ $env:PYTHONPATH='source'; python -m pytest -q
 Result:
 
 ```text
-285 passed
-1 failed
+286 passed
 ```
 
-The failure is in the existing formal external reproduction package test:
+The previous full-pytest blocker was resolved by the accepted Option A boundary
+fix. The Formal Core V1 external reproduction package now verifies the
+V1-scoped Lean target (`lake build SpiraFormalCore`) and does not import or
+build Domain4 through the V1 verification path. A full `lake build` still builds
+Domain4 independently through the separate `SpiraFormalCoreDomain4` target.
+
+Boundary result:
 
 ```text
-tests/test_formal_core_v1_external_reproduction_package.py::test_external_reproduction_package_manifest_hashes_match
+V1 target excludes Domain4: PASS
+full Lake build includes Domain4: PASS
+Formal Core V1 package hash checks: PASS
+Formal Core V1 verify_all.ps1: PASS
+post-V1-verify full pytest: 286 passed
 ```
-
-The mismatch is for:
-
-```text
-formal/spira_formal_core_v1/SpiraFormalCore.lean
-```
-
-The Python harness implementation did not modify this file. However, the
-failure is not an unrelated stale manifest. It is a boundary conflict introduced
-earlier by the accepted Domain 4 Lean implementation: Domain 4 added imports to
-the shared `SpiraFormalCore.lean` aggregator, while the Formal Core V1 external
-reproduction package is V1-scoped and locks the pre-Domain4 hash of that shared
-aggregator.
-
-The correct fix is therefore not a narrow rehash of `SpiraFormalCore.lean`.
-That would make the hash test green while leaving the V1-scoped reproduction
-package semantically inconsistent: the package would build/import Domain4
-without inventory, expected-results, claims-and-boundaries, and SHA256SUMS
-coverage for Domain4. The boundary must be resolved explicitly.
-
-Recommended next action:
-
-```text
-DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZATION_REQUIRED
-```
-
-Recommended direction:
-
-```text
-Option A: keep the Formal Core V1 external reproduction package V1-scoped by
-separating its verification target from the shared aggregator that now grows
-with later domains.
-```
-
-Option B would be a full reproduction-package regeneration that explicitly
-includes Domain4 as `NOT_CLAIMED` / Phase 2 research, with complete inventory,
-claims, expected-results, SHA256SUMS, review, and cold reproduction.
 
 ## Boundary
 

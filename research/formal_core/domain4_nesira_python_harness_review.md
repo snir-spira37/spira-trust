@@ -3,7 +3,7 @@
 ## Verdict
 
 ```text
-DOMAIN4_NESIRA_PYTHON_HARNESS_NEEDS_REVISION
+DOMAIN4_NESIRA_PYTHON_HARNESS_ACCEPTED
 ```
 
 ## Summary
@@ -22,30 +22,22 @@ focused tests: PASS
 compileall: PASS
 git diff --check: PASS
 new-artifact path/secret scan: PASS
+V1 reproduction boundary fix: PASS
+full pytest: PASS
 ```
 
-However, the review cannot end in `DOMAIN4_NESIRA_PYTHON_HARNESS_ACCEPTED`
-because the authorization required full pytest, and full pytest currently has
-one failing test caused by an unresolved boundary between the accepted
-Formal Core V1 external reproduction package and the later Domain4 Lean
-aggregator import.
+The earlier review blocker was resolved by the accepted Option A boundary fix:
+the Formal Core V1 external reproduction package remains V1-scoped, while
+Domain4 remains independently buildable and outside the V1 package claims.
 
 ## Finding F1 - Formal Core V1 reproduction boundary conflict
 
 ```text
-severity: blocker for final review acceptance
+severity: resolved
 affected test: tests/test_formal_core_v1_external_reproduction_package.py::test_external_reproduction_package_manifest_hashes_match
-observed full pytest result: 285 passed, 1 failed
+observed full pytest result before fix: 285 passed, 1 failed
+observed full pytest result after fix: 286 passed
 failing path: formal/spira_formal_core_v1/SpiraFormalCore.lean
-```
-
-The Python harness implementation did not modify this file. The working tree
-diff confirms no change in this commit to:
-
-```text
-formal/spira_formal_core_v1/SpiraFormalCore.lean
-research/formal_core/external_reproduction_package/artifact_manifest.json
-artifact_manifest.json
 ```
 
 Root cause:
@@ -65,26 +57,28 @@ V1-scoped external reproduction package semantically inconsistent: Domain4
 would be imported/built through the aggregator without being represented in the
 package inventory, expected results, claims-and-boundaries, and SHA256SUMS.
 
-Required next action:
+Resolution:
 
 ```text
-DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZATION_REQUIRED
+Option A implemented.
+SpiraFormalCore.lean restored to the V1-scoped root imports.
+SpiraFormalCore.Proofs.All restored to V1 proofs only.
+lakefile.toml now defines:
+  SpiraFormalCore        = V1 target
+  SpiraFormalCoreDomain4 = Domain4 target
+verify_all builds only SpiraFormalCore for V1 reproduction.
 ```
 
-Recommended resolution:
+Post-fix gates:
 
 ```text
-Option A: keep the Formal Core V1 external reproduction package V1-scoped by
-separating its verification target from the shared aggregator that now grows
-with later domains.
-```
-
-Alternative:
-
-```text
-Option B: regenerate and re-review the full external reproduction package as a
-new deliverable that explicitly includes Domain4 with NOT_CLAIMED / Phase 2
-boundaries.
+V1 target excludes Domain4: PASS
+full Lake build includes Domain4: PASS
+source artifact manifest hashes: PASS
+SHA256SUMS: PASS
+Formal Core V1 verify_all.ps1: PASS
+full pytest: 286 passed
+post-V1-verify full pytest: 286 passed
 ```
 
 ## Confirmed Non-Findings
@@ -156,7 +150,7 @@ release
 
 ```text
 DOMAIN4_NESIRA_PYTHON_HARNESS_IMPLEMENTED
-HARNESS_INTERNAL_VERDICT_ACCEPTED
-FINAL_IMPLEMENTATION_REVIEW_NEEDS_REVISION
-FULL_PYTEST_V1_REPRODUCTION_BOUNDARY_BLOCKER
+DOMAIN4_NESIRA_PYTHON_HARNESS_ACCEPTED
+V1_REPRODUCTION_BOUNDARY_RESOLVED
+PHASE2_NOT_AUTHORIZED
 ```

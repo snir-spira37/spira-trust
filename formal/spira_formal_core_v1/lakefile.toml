@@ -1,9 +1,14 @@
 name = "spira_formal_core_v1"
 version = "0.1.0"
-defaultTargets = ["SpiraFormalCore"]
+defaultTargets = ["SpiraFormalCore", "SpiraFormalCoreDomain4"]
 
 [[lean_lib]]
 name = "SpiraFormalCore"
+globs = ["SpiraFormalCore"]
+
+[[lean_lib]]
+name = "SpiraFormalCoreDomain4"
+globs = ["SpiraFormalCore.Domain4.+"]
 
 [[lean_exe]]
 name = "spira-formal-core-v1"

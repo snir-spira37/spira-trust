@@ -3,12 +3,12 @@
 ## Verdict
 
 ```text
-DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZATION_PROPOSED
+DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZED
 ```
 
-This document proposes the narrow boundary-resolution gate required after the
+This document authorizes the narrow boundary-resolution gate required after the
 Domain 4 / Nesira Python harness implementation review found that full pytest
-is blocked by the Formal Core V1 external reproduction package.
+was blocked by the Formal Core V1 external reproduction package.
 
 This is not a request to rehash one file. It is a request to resolve the
 boundary between:
@@ -64,9 +64,8 @@ aggregator.
 
 ## Option A Authorized Work
 
-If this proposal is accepted, the implementation gate may perform only the
-minimum changes needed to keep the V1 external reproduction package stable when
-later domains are added:
+The implementation gate may perform only the minimum changes needed to keep the
+V1 external reproduction package stable when later domains are added:
 
 ```text
 create a V1-specific Lean root / aggregator for the external reproduction package
@@ -164,5 +163,5 @@ DOMAIN4_NESIRA_PYTHON_HARNESS_INTERNAL_ACCEPTED
 FINAL_HARNESS_REVIEW_BLOCKED_BY_V1_REPRODUCTION_BOUNDARY
 
 RECOMMENDED_NEXT:
-DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZATION_ACCEPTANCE_REVIEW
+DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_ACCEPTANCE_REVIEW
 ```

@@ -230,6 +230,16 @@ def run_lean_dump(repo_root: Path, *, lake_exe: str | None = None) -> list[dict[
     if not formal_root.exists():
         raise FileNotFoundError(f"formal root not found: {formal_root}")
     lake = lake_exe or find_lake_executable()
+    subprocess.run(
+        [lake, "build", "SpiraFormalCoreDomain4"],
+        cwd=formal_root,
+        check=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
     with tempfile.NamedTemporaryFile("w", suffix=".lean", delete=False, encoding="utf-8") as handle:
         temp_path = Path(handle.name)
         handle.write("import SpiraFormalCore.Domain4.Main\n\n")
@@ -240,6 +250,8 @@ def run_lean_dump(repo_root: Path, *, lake_exe: str | None = None) -> list[dict[
             cwd=formal_root,
             check=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
         )

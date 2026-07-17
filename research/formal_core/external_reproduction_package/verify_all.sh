@@ -29,7 +29,7 @@ print("artifact_manifest_hashes: PASS")
 PY
 
 if command -v lake >/dev/null 2>&1; then
-  (cd formal/spira_formal_core_v1 && lake build)
+  (cd formal/spira_formal_core_v1 && lake build SpiraFormalCore)
 else
   echo "lake not found; install the Lean toolchain declared in formal/spira_formal_core_v1/lean-toolchain" >&2
   exit 1
@@ -63,7 +63,8 @@ PY
   tests/test_terraform_plan_producer.py \
   tests/test_terraform_plan_oracle_validator.py
 
-"$PYTHON_BIN" -m pytest
+"$PYTHON_BIN" -m pytest tests/test_formal_core_v1_external_reproduction_package.py
+echo "v1_external_reproduction_package_pytest: PASS"
 
 "$PYTHON_BIN" - <<'PY'
 import json, pathlib, re

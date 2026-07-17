@@ -27,8 +27,8 @@ Assert-NativeSuccess "artifact manifest hash check"
 if (Get-Command lake -ErrorAction SilentlyContinue) {
   Push-Location formal\spira_formal_core_v1
   try {
-    lake build
-    Assert-NativeSuccess "lake build"
+    lake build SpiraFormalCore
+    Assert-NativeSuccess "lake build SpiraFormalCore"
   } finally {
     Pop-Location
   }
@@ -66,8 +66,8 @@ python -m pytest `
   tests/test_terraform_plan_oracle_validator.py
 Assert-NativeSuccess "focused pytest"
 
-python -m pytest
-Assert-NativeSuccess "full pytest"
+python -m pytest tests/test_formal_core_v1_external_reproduction_package.py
+Assert-NativeSuccess "v1 external reproduction package pytest"
 
 @'
 import json, pathlib, re

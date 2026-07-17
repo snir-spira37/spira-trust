@@ -1,0 +1,21 @@
+{
+  "boundary_result": "DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_RESOLVED",
+  "domain4_full_build_includes_domain4": true,
+  "domain4_python_harness_verdict": "DOMAIN4_NESIRA_PYTHON_HARNESS_ACCEPTED",
+  "formal_core_v1_source_artifact_manifest_errors": 0,
+  "formal_core_v1_target_excludes_domain4": true,
+  "full_pytest": {
+    "failed": 0,
+    "passed": 286
+  },
+  "post_v1_verify_full_pytest": {
+    "failed": 0,
+    "passed": 286
+  },
+  "resolution": "OPTION_A_KEEP_V1_REPRODUCTION_PACKAGE_V1_SCOPED",
+  "schema": "SPIRA_DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_RESULTS_V1",
+  "sha256sums_errors": 0,
+  "v1_external_reproduction_verify": "SPIRA_FORMAL_CORE_V1_EXTERNAL_REPRODUCTION_PASS",
+  "v1_external_reproduction_verify_target": "lake build SpiraFormalCore",
+  "v1_lean_build_jobs": 35
+}
