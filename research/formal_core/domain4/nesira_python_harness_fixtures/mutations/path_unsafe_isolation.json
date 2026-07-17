@@ -1,0 +1,22 @@
+{
+  "id": "mutation_path_unsafe_isolation",
+  "group": "mutation",
+  "target": "PathOutcome.PATH_UNSAFE",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_fixture",
+    "name": "unsafe_traversal",
+    "context": "default"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "path": "PATH_UNSAFE"
+    },
+    "validation_status": "INVALID",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_UNSAFE_EVIDENCE_PATH"
+    ]
+  }
+}

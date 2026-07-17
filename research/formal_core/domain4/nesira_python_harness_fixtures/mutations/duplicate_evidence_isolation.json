@@ -1,0 +1,21 @@
+{
+  "id": "mutation_duplicate_evidence_isolation",
+  "group": "mutation",
+  "target": "DuplicateOutcome.DUP_PRESENT",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_dynamic",
+    "case": "duplicate"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "duplicate": "DUP_PRESENT"
+    },
+    "validation_status": "INVALID",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_DUPLICATE_EVIDENCE_PATH"
+    ]
+  }
+}

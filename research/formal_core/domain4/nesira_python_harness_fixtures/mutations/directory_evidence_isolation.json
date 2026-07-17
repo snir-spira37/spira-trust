@@ -1,0 +1,21 @@
+{
+  "id": "mutation_directory_evidence_isolation",
+  "group": "mutation",
+  "target": "DirectoryEvidenceOutcome.DIR_AS_FILE",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_dynamic",
+    "case": "directory"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "directory": "DIR_AS_FILE"
+    },
+    "validation_status": "INVALID",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_EVIDENCE_NOT_REGULAR_FILE"
+    ]
+  }
+}

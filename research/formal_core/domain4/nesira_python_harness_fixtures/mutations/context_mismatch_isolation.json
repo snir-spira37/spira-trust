@@ -1,0 +1,22 @@
+{
+  "id": "mutation_context_mismatch_isolation",
+  "group": "mutation",
+  "target": "ContextOutcome.CONTEXT_MISMATCH",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_fixture",
+    "name": "valid_isolation_single_evidence",
+    "context": "environment_mismatch"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "context": "CONTEXT_MISMATCH"
+    },
+    "validation_status": "RERUN_REQUIRED",
+    "recommended_agent_action": "RERUN_REQUIRED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_ENVIRONMENT_ID_MISMATCH"
+    ]
+  }
+}

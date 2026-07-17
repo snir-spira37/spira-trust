@@ -1,0 +1,22 @@
+{
+  "id": "mutation_hash_mismatch_isolation",
+  "group": "mutation",
+  "target": "HashOutcome.HASH_MISMATCH",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_fixture",
+    "name": "hash_mismatch",
+    "context": "default"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "hash": "HASH_MISMATCH"
+    },
+    "validation_status": "INVALID",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_EVIDENCE_HASH_MISMATCH"
+    ]
+  }
+}

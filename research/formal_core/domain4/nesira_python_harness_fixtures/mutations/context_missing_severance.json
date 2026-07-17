@@ -1,0 +1,22 @@
+{
+  "id": "mutation_context_missing_severance",
+  "group": "mutation",
+  "target": "ContextOutcome.CONTEXT_EXPECTED_MISSING",
+  "base_id": "base_severance_valid",
+  "source": {
+    "kind": "severance_fixture",
+    "name": "valid_severance_blocked",
+    "context": "missing"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "context": "CONTEXT_EXPECTED_MISSING"
+    },
+    "validation_status": "NOT_EVALUATED",
+    "recommended_agent_action": "REPORT_NOT_EVALUATED",
+    "reason_codes": [
+      "SEVERANCE_EXPECTED_CONTEXT_MISSING"
+    ]
+  }
+}

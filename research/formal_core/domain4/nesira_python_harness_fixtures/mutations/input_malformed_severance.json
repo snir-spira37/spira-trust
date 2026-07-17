@@ -1,0 +1,20 @@
+{
+  "id": "mutation_input_malformed_severance",
+  "group": "mutation",
+  "target": "ExecutionMeta.INPUT_MALFORMED",
+  "base_id": "base_severance_valid",
+  "source": {
+    "kind": "severance_fixture",
+    "name": "malformed_json",
+    "context": "default",
+    "as_bytes": true
+  },
+  "expected": {
+    "execution_meta": "INPUT_MALFORMED",
+    "validation_status": "RERUN_REQUIRED",
+    "recommended_agent_action": "RERUN_REQUIRED",
+    "reason_codes": [
+      "NESIRA_PHASE1_MALFORMED_JSON"
+    ]
+  }
+}

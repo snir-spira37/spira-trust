@@ -1,0 +1,18 @@
+{
+  "id": "mutation_tool_error_isolation",
+  "group": "mutation",
+  "target": "ExecutionMeta.TOOL_ERROR",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "tool_error",
+    "artifact_kind": "LEGACY_ISOLATION_RESULT"
+  },
+  "expected": {
+    "execution_meta": "TOOL_ERROR",
+    "validation_status": "TOOL_ERROR",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "NESIRA_PHASE1_VALIDATOR_TOOL_ERROR"
+    ]
+  }
+}

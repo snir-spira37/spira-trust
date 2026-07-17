@@ -1,0 +1,22 @@
+{
+  "schema": "SPIRA_DOMAIN4_NESIRA_PYTHON_HARNESS_EXPECTED_RESULTS_V1",
+  "core_agreement_total_tuples": 118098,
+  "core_agreement_disagreements": 0,
+  "required_mutation_targets": [
+    "ContextOutcome.CONTEXT_EXPECTED_MISSING",
+    "ContextOutcome.CONTEXT_MISMATCH",
+    "DirectoryEvidenceOutcome.DIR_AS_FILE",
+    "DuplicateOutcome.DUP_PRESENT",
+    "ExecutionMeta.INPUT_MALFORMED",
+    "ExecutionMeta.TOOL_ERROR",
+    "HashOutcome.HASH_MISMATCH",
+    "PathOutcome.PATH_UNSAFE",
+    "SymlinkOutcome.SYMLINK_ESCAPE"
+  ],
+  "safety_critical_values_without_mutation_pair": 0,
+  "mutation_pair_misses": 0,
+  "phase1_reproduction_divergences": 0,
+  "reason_codes_not_reproduced": 0,
+  "two_run_semantic_diff": 0,
+  "public_wheel_domain4_or_phase1_modules_present": []
+}

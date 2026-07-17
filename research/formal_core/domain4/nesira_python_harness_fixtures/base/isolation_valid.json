@@ -1,0 +1,29 @@
+{
+  "id": "base_isolation_valid",
+  "group": "base",
+  "target": "BASELINE",
+  "source": {
+    "kind": "isolation_fixture",
+    "name": "valid_isolation_single_evidence",
+    "context": "default"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "schema": "SCHEMA_OK",
+      "evidence": "EVIDENCE_OK",
+      "hash": "HASH_OK",
+      "path": "PATH_OK",
+      "symlink": "SYMLINK_OK",
+      "duplicate": "DUP_OK",
+      "directory": "DIR_OK",
+      "context": "CONTEXT_OK"
+    },
+    "validation_status": "VALID",
+    "recommended_agent_action": "REPORT_NOT_EVALUATED",
+    "reason_codes": [
+      "NESIRA_PHASE1_ISOLATION_TRUST_NOT_EVALUATED",
+      "NESIRA_PHASE1_STRUCTURE_AND_EVIDENCE_VALID"
+    ]
+  }
+}

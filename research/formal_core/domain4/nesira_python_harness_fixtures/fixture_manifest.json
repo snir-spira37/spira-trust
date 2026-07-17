@@ -1,0 +1,16 @@
+{
+  "schema": "SPIRA_DOMAIN4_NESIRA_PYTHON_HARNESS_FIXTURE_MANIFEST_V1",
+  "fixtures": [
+    "base/severance_valid.json",
+    "base/isolation_valid.json",
+    "mutations/input_malformed_severance.json",
+    "mutations/tool_error_isolation.json",
+    "mutations/hash_mismatch_isolation.json",
+    "mutations/path_unsafe_isolation.json",
+    "mutations/symlink_escape_isolation.json",
+    "mutations/duplicate_evidence_isolation.json",
+    "mutations/directory_evidence_isolation.json",
+    "mutations/context_mismatch_isolation.json",
+    "mutations/context_missing_severance.json"
+  ]
+}

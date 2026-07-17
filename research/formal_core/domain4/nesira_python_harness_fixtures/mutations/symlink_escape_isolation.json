@@ -1,0 +1,21 @@
+{
+  "id": "mutation_symlink_escape_isolation",
+  "group": "mutation",
+  "target": "SymlinkOutcome.SYMLINK_ESCAPE",
+  "base_id": "base_isolation_valid",
+  "source": {
+    "kind": "isolation_dynamic",
+    "case": "symlink_escape"
+  },
+  "expected": {
+    "execution_meta": "PARSED_OK",
+    "tuple": {
+      "symlink": "SYMLINK_ESCAPE"
+    },
+    "validation_status": "INVALID",
+    "recommended_agent_action": "STOP_BLOCKED",
+    "reason_codes": [
+      "LEGACY_ISOLATION_SYMLINK_ESCAPE"
+    ]
+  }
+}
