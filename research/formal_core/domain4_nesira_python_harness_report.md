@@ -197,10 +197,36 @@ The mismatch is for:
 formal/spira_formal_core_v1/SpiraFormalCore.lean
 ```
 
-The file is unchanged by this implementation. The failure is outside the
-authorized Domain 4 Python harness surface and appears to be a pre-existing
-stale external-reproduction manifest hash. This phase did not modify the frozen
-external reproduction package manifest.
+The Python harness implementation did not modify this file. However, the
+failure is not an unrelated stale manifest. It is a boundary conflict introduced
+earlier by the accepted Domain 4 Lean implementation: Domain 4 added imports to
+the shared `SpiraFormalCore.lean` aggregator, while the Formal Core V1 external
+reproduction package is V1-scoped and locks the pre-Domain4 hash of that shared
+aggregator.
+
+The correct fix is therefore not a narrow rehash of `SpiraFormalCore.lean`.
+That would make the hash test green while leaving the V1-scoped reproduction
+package semantically inconsistent: the package would build/import Domain4
+without inventory, expected-results, claims-and-boundaries, and SHA256SUMS
+coverage for Domain4. The boundary must be resolved explicitly.
+
+Recommended next action:
+
+```text
+DOMAIN4_NESIRA_V1_REPRODUCTION_BOUNDARY_AUTHORIZATION_REQUIRED
+```
+
+Recommended direction:
+
+```text
+Option A: keep the Formal Core V1 external reproduction package V1-scoped by
+separating its verification target from the shared aggregator that now grows
+with later domains.
+```
+
+Option B would be a full reproduction-package regeneration that explicitly
+includes Domain4 as `NOT_CLAIMED` / Phase 2 research, with complete inventory,
+claims, expected-results, SHA256SUMS, review, and cold reproduction.
 
 ## Boundary
 
