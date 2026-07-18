@@ -1,0 +1,40 @@
+{
+  "branch": "codex/formal-core-v1-lean",
+  "checked_commit": "5801f054bc346b786e9cc1d2a2384ab99e8337b6",
+  "cold_clone": true,
+  "cryptography_install": {
+    "method": "pip install --force-reinstall --target work/adapter_deps -r requirements/nesira_adapters_win_amd64_cp312.txt",
+    "require_hashes": true,
+    "runtime_version": "49.0.0",
+    "status": "PASS"
+  },
+  "formal_core_v1_sha256sums_self_check": {
+    "failures": 0,
+    "status": "PASS"
+  },
+  "full_pytest": {
+    "passed": 295,
+    "status": "PASS"
+  },
+  "signature_adapter_conformance": {
+    "adapter_outputs_with_execution_semantics": 0,
+    "composition_mismatches": 0,
+    "default_trust_paths": 0,
+    "fixture_count": 19,
+    "metadata_mentions_cryptography": false,
+    "required_signature_failure_modes_without_fixture": 0,
+    "required_signature_failure_modes_without_mutation_pair": 0,
+    "soft_pass_clock_failure": 0,
+    "soft_pass_revocation_unknown": 0,
+    "sub_verdict_mismatches": 0,
+    "two_run_semantic_diff": 0,
+    "unexpected_sufficient_verdicts": 0,
+    "verdict": "NESIRA_PHASE2_SIGNATURE_ADAPTER_ACCEPTED",
+    "wheel_exclusion_failures": 0
+  },
+  "focused_tests": {
+    "formal_core_v1_external_reproduction_package": "5 passed",
+    "signature_adapter": "9 passed"
+  },
+  "verdict": "NESIRA_PHASE2_SIGNATURE_ADAPTER_COLD_VERIFICATION_ACCEPTED"
+}
