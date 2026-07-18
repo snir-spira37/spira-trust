@@ -207,9 +207,9 @@
       "sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd"
     },
     {
-      "bytes": 336,
+      "bytes": 443,
       "path": "formal/spira_formal_core_v1/lakefile.toml",
-      "sha256": "5c98aa6970cd4209a0e00e26cafbc382babd6e55d2326d2747ce42de6da45ef8"
+      "sha256": "d207b02ad20da8c517e03db98c10a9be6422441dbf1db8f3c3225e3a9b4b98bc"
     },
     {
       "bytes": 25,
