@@ -1,0 +1,926 @@
+{
+  "classification": {
+    "action_not_allowed_mapped_to_not_evaluated": 0,
+    "authority_outputs_with_execution_semantics": 0,
+    "authority_outputs_with_identity_verification_semantics": 0,
+    "covered_authority_failure_modes": [
+      "action_not_allowed",
+      "ambiguous_authority_policy_root",
+      "clock_missing",
+      "clock_untrusted",
+      "environment_context_mismatch",
+      "established_identity_missing",
+      "explicit_deny",
+      "identity_absent_from_policy",
+      "identity_sub_verdict_not_sufficient",
+      "malformed_authority_policy_root",
+      "missing_authority_policy_root",
+      "policy_expired",
+      "policy_not_yet_valid",
+      "policy_revoked",
+      "policy_root_mismatch",
+      "policy_source_malformed",
+      "policy_source_missing",
+      "policy_version_mismatch",
+      "policy_version_stale",
+      "purpose_context_mismatch",
+      "revocation_stale",
+      "revocation_unknown",
+      "revocation_unreachable",
+      "subject_context_mismatch",
+      "unsupported_policy_type"
+    ],
+    "default_allow_paths": 0,
+    "explicit_deny_mapped_to_not_evaluated": 0,
+    "identity_absent_mapped_to_not_evaluated": 0,
+    "mismatch_ids": [],
+    "missing_failure_modes": [],
+    "missing_policy_root_mapped_to_insufficient": 0,
+    "required_authority_failure_modes": [
+      "action_not_allowed",
+      "ambiguous_authority_policy_root",
+      "clock_missing",
+      "clock_untrusted",
+      "environment_context_mismatch",
+      "established_identity_missing",
+      "explicit_deny",
+      "identity_absent_from_policy",
+      "identity_sub_verdict_not_sufficient",
+      "malformed_authority_policy_root",
+      "missing_authority_policy_root",
+      "policy_expired",
+      "policy_not_yet_valid",
+      "policy_revoked",
+      "policy_root_mismatch",
+      "policy_source_malformed",
+      "policy_source_missing",
+      "policy_version_mismatch",
+      "policy_version_stale",
+      "purpose_context_mismatch",
+      "revocation_stale",
+      "revocation_unknown",
+      "revocation_unreachable",
+      "subject_context_mismatch",
+      "unsupported_policy_type"
+    ],
+    "required_authority_failure_modes_without_fixture": 0,
+    "required_authority_failure_modes_without_mutation_pair": 0,
+    "soft_pass_clock_failure": 0,
+    "soft_pass_revocation_unknown": 0,
+    "sub_verdict_mismatches": 0,
+    "unexpected_sufficient_verdicts": 0
+  },
+  "dependency_boundary": {
+    "new_dependencies": [],
+    "pyproject_change_required": false
+  },
+  "end_to_end_composition": {
+    "adapter_verdicts_observed": [
+      "TRUST_INSUFFICIENT",
+      "TRUST_NOT_EVALUATED",
+      "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+    ],
+    "composition_mismatches": 0,
+    "mismatch_rows": [],
+    "rows": [
+      {
+        "actual_composite": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "expected_composite": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      {
+        "actual_composite": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "expected_composite": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      {
+        "actual_composite": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_INSUFFICIENT",
+        "expected_composite": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      }
+    ]
+  },
+  "fixture_results": [
+    {
+      "actual_sub_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "has_forbidden_output_semantics": false,
+      "id": "valid_explicit_allow",
+      "mutation": null,
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_EXPLICIT_ALLOW_UNDER_DECLARED_ROOTS"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "missing_authority_policy_root",
+      "mutation": "missing_authority_policy_root",
+      "not_evaluated_items": [
+        "declared authority policy root missing"
+      ],
+      "reason_codes": [
+        "AUTHORITY_DECLARED_ROOT_MISSING"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "ambiguous_authority_policy_root",
+      "mutation": "ambiguous_authority_policy_root",
+      "not_evaluated_items": [
+        "declared authority policy root ambiguous"
+      ],
+      "reason_codes": [
+        "AUTHORITY_DECLARED_ROOT_AMBIGUOUS"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "malformed_authority_policy_root",
+      "mutation": "malformed_authority_policy_root",
+      "not_evaluated_items": [
+        "declared authority policy root malformed or unsupported",
+        "missing fields: trust_root_kind"
+      ],
+      "reason_codes": [
+        "AUTHORITY_DECLARED_ROOT_MALFORMED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_source_missing",
+      "mutation": "policy_source_missing",
+      "not_evaluated_items": [
+        "authority policy source missing or unreadable"
+      ],
+      "reason_codes": [
+        "AUTHORITY_POLICY_SOURCE_MISSING"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_source_malformed",
+      "mutation": "policy_source_malformed",
+      "not_evaluated_items": [
+        "authority policy source malformed",
+        "missing fields: allow"
+      ],
+      "reason_codes": [
+        "AUTHORITY_POLICY_SOURCE_MALFORMED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "unsupported_policy_type",
+      "mutation": "unsupported_policy_type",
+      "not_evaluated_items": [
+        "authority policy type unsupported by declared root"
+      ],
+      "reason_codes": [
+        "AUTHORITY_POLICY_TYPE_UNSUPPORTED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "established_identity_missing",
+      "mutation": "established_identity_missing",
+      "not_evaluated_items": [
+        "established signer identity missing or malformed",
+        "established identity is not a mapping"
+      ],
+      "reason_codes": [
+        "AUTHORITY_ESTABLISHED_IDENTITY_MISSING"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "identity_sub_verdict_not_sufficient",
+      "mutation": "identity_sub_verdict_not_sufficient",
+      "not_evaluated_items": [
+        "identity sub-verdict is not sufficient"
+      ],
+      "reason_codes": [
+        "AUTHORITY_IDENTITY_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "signer identity explicitly denied by authority policy",
+        "deny entry: deny-001"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "explicit_deny",
+      "mutation": "explicit_deny",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_EXPLICIT_DENY"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "signer identity absent from consultable authority policy",
+        "spira://identity/signer-001"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "identity_absent_from_policy",
+      "mutation": "identity_absent_from_policy",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_IDENTITY_ABSENT_FROM_POLICY"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "signer identity present but action is not explicitly allowed",
+        "spira://identity/signer-001"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "action_not_allowed",
+      "mutation": "action_not_allowed",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_ACTION_NOT_ALLOWED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy context mismatch",
+        "subject mismatch"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "subject_context_mismatch",
+      "mutation": "subject_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy context mismatch",
+        "environment mismatch"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "environment_context_mismatch",
+      "mutation": "environment_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy context mismatch",
+        "purpose mismatch"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "purpose_context_mismatch",
+      "mutation": "purpose_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy scope mismatch",
+        "policy_version out of declared authority root scope"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_version_mismatch",
+      "mutation": "policy_version_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_SCOPE_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy root id/version mismatch",
+        "policy authority root id differs from declared root"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_root_mismatch",
+      "mutation": "policy_root_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_ROOT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy scope mismatch",
+        "policy_version out of declared authority root scope"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_version_stale",
+      "mutation": "policy_version_stale",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_SCOPE_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy source expired or not yet valid",
+        "authority policy source expired"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_expired",
+      "mutation": "policy_expired",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_TEMPORAL_INVALID"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy source expired or not yet valid",
+        "authority policy source not yet valid"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_not_yet_valid",
+      "mutation": "policy_not_yet_valid",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_TEMPORAL_INVALID"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-AUTHORITY-01",
+        "PT-AUTHORITY-02",
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "authority policy root or source revoked",
+        "authority policy source revoked"
+      ],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_forbidden_output_semantics": false,
+      "id": "policy_revoked",
+      "mutation": "policy_revoked",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "AUTHORITY_POLICY_REVOKED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "revocation_unknown",
+      "mutation": "revocation_unknown",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "authority policy source revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "AUTHORITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "revocation_stale",
+      "mutation": "revocation_stale",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "authority policy source revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "AUTHORITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "revocation_unreachable",
+      "mutation": "revocation_unreachable",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "authority policy source revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "AUTHORITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "clock_missing",
+      "mutation": "clock_missing",
+      "not_evaluated_items": [
+        "clock missing or untrusted"
+      ],
+      "reason_codes": [
+        "AUTHORITY_CLOCK_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "dependency_boundary": {
+        "crypto_verification_performed": false,
+        "identity_verification_performed": false,
+        "new_dependencies": []
+      },
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_forbidden_output_semantics": false,
+      "id": "clock_untrusted",
+      "mutation": "clock_untrusted",
+      "not_evaluated_items": [
+        "clock missing or untrusted"
+      ],
+      "reason_codes": [
+        "AUTHORITY_CLOCK_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    }
+  ],
+  "public_wheel_exclusion": {
+    "adapter_entries": [],
+    "metadata_dependency_headers": [],
+    "metadata_mentions_new_dependency": false,
+    "wheel_built": true,
+    "wheel_exclusion_failures": 0
+  },
+  "schema": "SPIRA_NESIRA_PHASE2_AUTHORITY_ADAPTER_HARNESS_RESULTS_V1",
+  "two_run_semantic_diff": 0,
+  "verdict": "NESIRA_PHASE2_AUTHORITY_ADAPTER_ACCEPTED"
+}
