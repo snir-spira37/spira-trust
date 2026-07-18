@@ -1,0 +1,93 @@
+{
+  "status": "NESIRA_PHASE2_LEAN_COMPOSITION_IMPLEMENTED",
+  "verdict": "ACCEPTED_PENDING_COLD_VERIFICATION",
+  "phase": "PHASE_2",
+  "scope": "LEAN_COMPOSITION_CORE_ONLY",
+  "implementation_authorized_by": "research/nesira_policy_profile/nesira_phase2_lean_composition_authorization.md",
+  "oracle": "research/nesira_policy_profile/nesira_phase2_assessment_decision_table.json",
+  "lean_target": "SpiraFormalCorePhase2",
+  "separate_target_boundary": {
+    "phase2_target_added": true,
+    "v1_target_imports_phase2": false,
+    "domain4_target_imports_phase2": false,
+    "v1_clean_build_jobs": 35,
+    "phase2_oleans_after_v1_clean_build": 0,
+    "domain4_clean_build_jobs": 8,
+    "phase2_oleans_after_domain4_clean_build": 0
+  },
+  "build_results": {
+    "lean_version": "Lean 4.32.0",
+    "lake_version": "Lake 5.0.0",
+    "lake_build_spira_formal_core_phase2": "PASS_7_JOBS",
+    "lake_build_spira_formal_core": "PASS_35_JOBS",
+    "lake_build_spira_formal_core_domain4": "PASS_8_JOBS",
+    "full_lake_build": "PASS_48_JOBS"
+  },
+  "oracle_agreement": {
+    "lean_rows": 81,
+    "oracle_rows": 81,
+    "missing_rows": 0,
+    "agreement_errors": 0,
+    "fields_checked": [
+      "inputs",
+      "composite_verdict",
+      "per_domain_breakdown",
+      "trust_roots_used_sources",
+      "sub_assumption_sources_included",
+      "execution_marker",
+      "carried_assumptions_floor",
+      "PT-ISOLATION-01 inheritance"
+    ]
+  },
+  "theorems": [
+    "composition_strict_and",
+    "insufficient_dominates_not_evaluated",
+    "otherwise_not_evaluated",
+    "composition_total",
+    "composition_deterministic",
+    "floor_always_carried",
+    "sufficient_carries_full_union",
+    "isolation_caveat_inherited",
+    "sufficient_is_not_assumption_free",
+    "execution_marker_constant"
+  ],
+  "axiom_inventory": {
+    "composition_strict_and": [],
+    "insufficient_dominates_not_evaluated": ["propext"],
+    "otherwise_not_evaluated": ["propext"],
+    "composition_total": [],
+    "composition_deterministic": [],
+    "floor_always_carried": ["propext"],
+    "sufficient_carries_full_union": ["propext"],
+    "isolation_caveat_inherited": ["propext"],
+    "sufficient_is_not_assumption_free": ["propext"],
+    "execution_marker_constant": []
+  },
+  "quality_gates": {
+    "sorry": 0,
+    "admit": 0,
+    "sorryAx": 0,
+    "axiom_keyword": 0,
+    "native_decide": 0,
+    "unsafe": 0,
+    "opaque": 0,
+    "non_ascii_in_phase2_lean": 0,
+    "git_diff_check": "PASS"
+  },
+  "not_authorized_surfaces": {
+    "sub_assessment_logic": "NOT_IMPLEMENTED",
+    "signature_verification_code": "NOT_IMPLEMENTED",
+    "identity_chain_verification_code": "NOT_IMPLEMENTED",
+    "authority_policy_lookup_code": "NOT_IMPLEMENTED",
+    "revocation_lookup_code": "NOT_IMPLEMENTED",
+    "attestation_verification_code": "NOT_IMPLEMENTED",
+    "isolation_runner": "NOT_IMPLEMENTED",
+    "python_adapters": "NOT_IMPLEMENTED",
+    "cli": "NOT_IMPLEMENTED",
+    "public_wheel": "NOT_MODIFIED",
+    "combined_verdict": "NOT_MODIFIED",
+    "public_claim": "NOT_AUTHORIZED",
+    "release": "NOT_AUTHORIZED"
+  },
+  "next_required_gate": "NESIRA_PHASE2_LEAN_COMPOSITION_COLD_VERIFICATION_REQUIRED"
+}
