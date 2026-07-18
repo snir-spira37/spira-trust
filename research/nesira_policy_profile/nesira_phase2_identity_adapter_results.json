@@ -1,0 +1,899 @@
+{
+  "classification": {
+    "adapter_outputs_with_authority_semantics": 0,
+    "adapter_outputs_with_execution_semantics": 0,
+    "chain_unbuildable_mapped_to_insufficient": 0,
+    "covered_identity_failure_modes": [
+      "ambiguous_identity_root",
+      "bad_credential_signature",
+      "chain_unbuildable_missing_intermediate",
+      "clock_missing",
+      "clock_untrusted",
+      "environment_context_mismatch",
+      "expired_credential",
+      "expired_identity_root",
+      "expired_intermediate",
+      "known_but_undeclared_issuer",
+      "malformed_credential",
+      "malformed_identity_root",
+      "missing_identity_root",
+      "namespace_mismatch",
+      "purpose_context_mismatch",
+      "revocation_stale",
+      "revocation_unknown",
+      "revocation_unreachable",
+      "revoked_credential",
+      "revoked_identity_root",
+      "revoked_intermediate",
+      "signer_identity_mismatch",
+      "signing_key_binding_mismatch",
+      "subject_context_mismatch",
+      "unsupported_credential_type",
+      "untrusted_issuer",
+      "wrong_declared_identity_root"
+    ],
+    "default_trust_paths": 0,
+    "known_untrusted_issuer_mapped_to_not_evaluated": 0,
+    "mismatch_ids": [],
+    "missing_failure_modes": [],
+    "missing_root_mapped_to_insufficient": 0,
+    "required_identity_failure_modes": [
+      "ambiguous_identity_root",
+      "bad_credential_signature",
+      "chain_unbuildable_missing_intermediate",
+      "clock_missing",
+      "clock_untrusted",
+      "environment_context_mismatch",
+      "expired_credential",
+      "expired_identity_root",
+      "expired_intermediate",
+      "known_but_undeclared_issuer",
+      "malformed_credential",
+      "malformed_identity_root",
+      "missing_identity_root",
+      "namespace_mismatch",
+      "purpose_context_mismatch",
+      "revocation_stale",
+      "revocation_unknown",
+      "revocation_unreachable",
+      "revoked_credential",
+      "revoked_identity_root",
+      "revoked_intermediate",
+      "signer_identity_mismatch",
+      "signing_key_binding_mismatch",
+      "subject_context_mismatch",
+      "unsupported_credential_type",
+      "untrusted_issuer",
+      "wrong_declared_identity_root"
+    ],
+    "required_identity_failure_modes_without_fixture": 0,
+    "required_identity_failure_modes_without_mutation_pair": 0,
+    "soft_pass_clock_failure": 0,
+    "soft_pass_revocation_unknown": 0,
+    "sub_verdict_mismatches": 0,
+    "unexpected_sufficient_verdicts": 0,
+    "wrong_root_mapped_to_not_evaluated": 0
+  },
+  "crypto_pin": {
+    "library": "cryptography",
+    "version": "49.0.0"
+  },
+  "end_to_end_composition": {
+    "adapter_verdicts_observed": [
+      "TRUST_INSUFFICIENT",
+      "TRUST_NOT_EVALUATED",
+      "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+    ],
+    "composition_mismatches": 0,
+    "mismatch_rows": [],
+    "rows": [
+      {
+        "actual_composite": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "expected_composite": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      {
+        "actual_composite": "TRUST_NOT_EVALUATED",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "expected_composite": "TRUST_NOT_EVALUATED",
+        "identity_sub": "TRUST_NOT_EVALUATED",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      {
+        "actual_composite": "TRUST_INSUFFICIENT",
+        "authority_sub": "TRUST_NOT_EVALUATED",
+        "expected_composite": "TRUST_INSUFFICIENT",
+        "identity_sub": "TRUST_INSUFFICIENT",
+        "isolation_sub": "TRUST_NOT_EVALUATED",
+        "matches": true,
+        "signature_sub": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      }
+    ]
+  },
+  "fixture_results": [
+    {
+      "actual_sub_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "has_execution_semantics": false,
+      "id": "valid_identity_binding",
+      "mutation": null,
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_BOUND_UNDER_DECLARED_ROOTS"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "missing_identity_root",
+      "mutation": "missing_identity_root",
+      "not_evaluated_items": [
+        "declared identity root missing"
+      ],
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_MISSING"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "ambiguous_identity_root",
+      "mutation": "ambiguous_identity_root",
+      "not_evaluated_items": [
+        "declared identity root ambiguous"
+      ],
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_AMBIGUOUS"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "malformed_identity_root",
+      "mutation": "malformed_identity_root",
+      "not_evaluated_items": [
+        "declared identity root malformed or unsupported",
+        "missing fields: root_cert_pem"
+      ],
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_MALFORMED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "unsupported_credential_type",
+      "mutation": "unsupported_credential_type",
+      "not_evaluated_items": [
+        "identity credential type unsupported by declared root"
+      ],
+      "reason_codes": [
+        "IDENTITY_CREDENTIAL_TYPE_UNSUPPORTED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "malformed_credential",
+      "mutation": "malformed_credential",
+      "not_evaluated_items": [
+        "identity credential certificate malformed"
+      ],
+      "reason_codes": [
+        "IDENTITY_CREDENTIAL_MALFORMED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential certificate signature verification failed",
+        "validation failed: candidates exhausted: signature does not match"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "bad_credential_signature",
+      "mutation": "bad_credential_signature",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CREDENTIAL_SIGNATURE_INVALID"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "chain_unbuildable_missing_intermediate",
+      "mutation": "chain_unbuildable_missing_intermediate",
+      "not_evaluated_items": [
+        "identity certificate chain cannot be built from supplied evidence",
+        "validation failed: candidates exhausted: all candidates exhausted with no interior errors"
+      ],
+      "reason_codes": [
+        "IDENTITY_CHAIN_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential chains to a known but undeclared issuer/root",
+        "validation failed: candidates exhausted: all candidates exhausted with no interior errors"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "known_but_undeclared_issuer",
+      "mutation": "known_but_undeclared_issuer",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_KNOWN_UNDECLARED_ISSUER"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential root does not match declared identity root",
+        "credential issuer root id differs from declared identity root"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "wrong_declared_identity_root",
+      "mutation": "wrong_declared_identity_root",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity issuer is not trusted under declared root policy",
+        "identity issuer not accepted by declared root policy"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "untrusted_issuer",
+      "mutation": "untrusted_issuer",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_UNTRUSTED_ISSUER"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential, intermediate, or root expired or not yet valid",
+        "validation failed: cert is not valid at validation time (encountered processing <Certificate(subject=<Name(CN=spira://identity/signer-001)>, ...)>)"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "expired_credential",
+      "mutation": "expired_credential",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CERTIFICATE_EXPIRED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential, intermediate, or root expired or not yet valid",
+        "validation failed: candidates exhausted: cert is not valid at validation time"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "expired_intermediate",
+      "mutation": "expired_intermediate",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CERTIFICATE_EXPIRED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "declared identity root expired or not yet valid",
+        "declared identity root expired"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "expired_identity_root",
+      "mutation": "expired_identity_root",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_EXPIRED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential, intermediate, or root revoked",
+        "identity credential revoked"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "revoked_credential",
+      "mutation": "revoked_credential",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_REJECTED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential, intermediate, or root revoked",
+        "intermediate 0 revoked"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "revoked_intermediate",
+      "mutation": "revoked_intermediate",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_REJECTED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential, intermediate, or root revoked",
+        "declared identity root revoked"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "revoked_identity_root",
+      "mutation": "revoked_identity_root",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_REJECTED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "revocation_unknown",
+      "mutation": "revocation_unknown",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "identity credential revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "revocation_stale",
+      "mutation": "revocation_stale",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "identity credential revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04",
+        "PT-REVOKE-03"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "revocation_unreachable",
+      "mutation": "revocation_unreachable",
+      "not_evaluated_items": [
+        "revocation status unknown, stale, unreachable, missing, or inconclusive",
+        "identity credential revocation not fresh-good"
+      ],
+      "reason_codes": [
+        "IDENTITY_REVOCATION_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "clock_missing",
+      "mutation": "clock_missing",
+      "not_evaluated_items": [
+        "clock missing or untrusted"
+      ],
+      "reason_codes": [
+        "IDENTITY_CLOCK_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-04"
+      ],
+      "blocking_items": [],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_NOT_EVALUATED",
+      "has_execution_semantics": false,
+      "id": "clock_untrusted",
+      "mutation": "clock_untrusted",
+      "not_evaluated_items": [
+        "clock missing or untrusted"
+      ],
+      "reason_codes": [
+        "IDENTITY_CLOCK_NOT_EVALUATED"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity namespace mismatch",
+        "identity namespace mismatch"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "namespace_mismatch",
+      "mutation": "namespace_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_NAMESPACE_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity signer mismatch",
+        "signer identity outside declared identity root scope"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "signer_identity_mismatch",
+      "mutation": "signer_identity_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_SIGNER_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential does not bind expected signing key/root",
+        "bound signing key/root outside declared identity scope"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "signing_key_binding_mismatch",
+      "mutation": "signing_key_binding_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_SIGNING_KEY_BINDING_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential context mismatch",
+        "subject mismatch"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "subject_context_mismatch",
+      "mutation": "subject_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential context mismatch",
+        "environment mismatch"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "environment_context_mismatch",
+      "mutation": "environment_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    },
+    {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "assumption_ids": [
+        "PT-CLOCK-01",
+        "PT-CRYPTO-01",
+        "PT-CRYPTO-02",
+        "PT-IDENTITY-01",
+        "PT-IDENTITY-02",
+        "PT-META-01",
+        "PT-META-02",
+        "PT-META-03",
+        "PT-META-04",
+        "PT-REVOKE-01",
+        "PT-REVOKE-02"
+      ],
+      "blocking_items": [
+        "identity credential context mismatch",
+        "purpose mismatch"
+      ],
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+      "expected_sub_verdict": "TRUST_INSUFFICIENT",
+      "has_execution_semantics": false,
+      "id": "purpose_context_mismatch",
+      "mutation": "purpose_context_mismatch",
+      "not_evaluated_items": [],
+      "reason_codes": [
+        "IDENTITY_CONTEXT_MISMATCH"
+      ],
+      "sub_verdict_matches": true
+    }
+  ],
+  "public_wheel_exclusion": {
+    "adapter_entries": [],
+    "cryptography_entries": [],
+    "metadata_mentions_cryptography": false,
+    "wheel_built": true,
+    "wheel_exclusion_failures": 0
+  },
+  "schema": "SPIRA_NESIRA_PHASE2_IDENTITY_ADAPTER_HARNESS_RESULTS_V1",
+  "two_run_semantic_diff": 0,
+  "verdict": "NESIRA_PHASE2_IDENTITY_ADAPTER_ACCEPTED"
+}
