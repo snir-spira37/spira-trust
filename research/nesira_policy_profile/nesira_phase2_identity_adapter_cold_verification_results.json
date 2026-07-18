@@ -1,0 +1,125 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_IDENTITY_ADAPTER_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_IDENTITY_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+  "verified_commit": "41cdabdf58e1cd163b24bdc9fdd2c8a03e9d5b7a",
+  "verified_branch": "codex/formal-core-v1-lean",
+  "source_state": {
+    "fresh_clone": true,
+    "detached_checkout": true,
+    "git_status_clean_after_verification": true,
+    "remote_head_at_verification": "41cdabdf58e1cd163b24bdc9fdd2c8a03e9d5b7a"
+  },
+  "dependency_verification": {
+    "requirements_file": "requirements/nesira_adapters_win_amd64_cp312.txt",
+    "pip_install_exit_code": 0,
+    "cryptography_pin": "49.0.0",
+    "require_hashes": true,
+    "project_dependencies": [],
+    "project_optional_dependencies_present": false
+  },
+  "identity_conformance": {
+    "command": "python tools/run_nesira_phase2_identity_adapter_conformance.py --write-results",
+    "exit_code": 0,
+    "reported_verdict": "NESIRA_PHASE2_IDENTITY_ADAPTER_ACCEPTED",
+    "required_identity_failure_modes_without_fixture": 0,
+    "required_identity_failure_modes_without_mutation_pair": 0,
+    "sub_verdict_mismatches": 0,
+    "unexpected_sufficient_verdicts": 0,
+    "missing_root_mapped_to_insufficient": 0,
+    "wrong_root_mapped_to_not_evaluated": 0,
+    "chain_unbuildable_mapped_to_insufficient": 0,
+    "known_untrusted_issuer_mapped_to_not_evaluated": 0,
+    "soft_pass_revocation_unknown": 0,
+    "soft_pass_clock_failure": 0,
+    "default_trust_paths": 0,
+    "adapter_outputs_with_authority_semantics": 0,
+    "adapter_outputs_with_execution_semantics": 0,
+    "composition_mismatches": 0,
+    "two_run_semantic_diff": 0,
+    "wheel_exclusion_failures": 0
+  },
+  "split_chain_fixture_verification": {
+    "chain_unbuildable_missing_intermediate": {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "reason_codes": [
+        "IDENTITY_CHAIN_NOT_EVALUATED"
+      ]
+    },
+    "known_but_undeclared_issuer": {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "reason_codes": [
+        "IDENTITY_KNOWN_UNDECLARED_ISSUER"
+      ]
+    },
+    "missing_identity_root": {
+      "actual_sub_verdict": "TRUST_NOT_EVALUATED",
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_MISSING"
+      ]
+    },
+    "wrong_declared_identity_root": {
+      "actual_sub_verdict": "TRUST_INSUFFICIENT",
+      "reason_codes": [
+        "IDENTITY_DECLARED_ROOT_MISMATCH"
+      ]
+    }
+  },
+  "command_results": {
+    "identity_focused_pytest": {
+      "command": "python -m pytest tests/test_nesira_phase2_identity_adapter.py -q",
+      "exit_code": 0,
+      "summary": "10 passed"
+    },
+    "signature_and_v1_package_regression": {
+      "command": "python -m pytest tests/test_nesira_phase2_signature_adapter.py tests/test_formal_core_v1_external_reproduction_package.py -q",
+      "exit_code": 0,
+      "summary": "14 passed"
+    },
+    "compileall": {
+      "command": "python -m compileall -q source tools tests",
+      "exit_code": 0,
+      "summary": "PASS"
+    },
+    "full_pytest": {
+      "command": "python -m pytest -q",
+      "exit_code": 0,
+      "summary": "305 passed"
+    },
+    "git_diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "summary": "PASS"
+    },
+    "formal_core_v1_sha256sums_self_check": {
+      "command": "independent SHA256SUMS verifier over research/formal_core/external_reproduction_package/SHA256SUMS",
+      "exit_code": 0,
+      "total": 622,
+      "ok": 622,
+      "failed": 0
+    }
+  },
+  "boundary_checks": {
+    "identity_adapter_uses_cryptography_x509_verification": true,
+    "policybuilder_present": true,
+    "store_rooted_in_declared_identity_root": true,
+    "default_store_detected": false,
+    "load_default_detected": false,
+    "direct_public_key_verify_detected": false,
+    "load_pem_public_key_detected": false,
+    "authority_output_detected": false,
+    "execution_output_detected": false,
+    "pyproject_changed_by_identity_commit": false,
+    "lakefile_changed_by_identity_commit": false,
+    "v1_external_reproduction_artifacts_changed_by_identity_commit": false
+  },
+  "public_wheel_exclusion": {
+    "adapter_entries": [],
+    "cryptography_entries": [],
+    "metadata_mentions_cryptography": false,
+    "wheel_exclusion_failures": 0
+  },
+  "notes": [
+    "The first attempt to redirect conformance output through PowerShell produced a UTF-16 side file for local summarization only; the canonical tool write path was rerun with --write-results and produced the expected UTF-8 project artifact.",
+    "The cold verification accepts identity adapter behavior only. Authority, isolation attestation, isolation execution, CLI, combined verdict integration, public capability claims, and release remain not authorized."
+  ]
+}
