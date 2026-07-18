@@ -151,6 +151,12 @@ If additional platform wheels, dependency hashes, or a new crypto dependency are
 needed, this authorization is insufficient and a supply-chain boundary review is
 required.
 
+The adapter must not implement X.509 path validation, certificate signature
+math, chain walking, or issuer policy logic by hand. Certificate path validation
+must use the pinned `cryptography` X.509 verification APIs, anchored only in the
+declared `IDENTITY_BINDING_CA` root. The operating-system trust store, browser
+trust store, and any implicit CA bundle remain forbidden.
+
 ## Sub-Verdict Mapping
 
 The core distinction remains:
@@ -194,7 +200,8 @@ malformed credential or certificate before verification can be attempted
 credential signature invalid
   -> TRUST_INSUFFICIENT
 
-certificate / credential chain broken
+certificate / credential chain builds to a known issuer/root that is not the
+declared identity root, or is rejected by the declared root/policy
   -> TRUST_INSUFFICIENT
 
 credential issued by a root or issuer that does not match the declared root
@@ -202,6 +209,10 @@ credential issued by a root or issuer that does not match the declared root
 
 untrusted issuer under the declared root
   -> TRUST_INSUFFICIENT
+
+certificate / credential chain cannot be built because required intermediate,
+anchor, or chain evidence is missing
+  -> TRUST_NOT_EVALUATED
 
 expired credential, intermediate, or root
   -> TRUST_INSUFFICIENT
@@ -233,6 +244,8 @@ The most important non-confusion rule is:
 ```text
 missing identity root -> TRUST_NOT_EVALUATED
 wrong identity root   -> TRUST_INSUFFICIENT
+unbuildable chain due to missing evidence -> TRUST_NOT_EVALUATED
+known but undeclared/untrusted issuer     -> TRUST_INSUFFICIENT
 ```
 
 ## Assumption Carrying
@@ -314,7 +327,8 @@ malformed_identity_root
 unsupported_credential_type
 malformed_credential
 bad_credential_signature
-broken_chain
+chain_unbuildable_missing_intermediate
+known_but_undeclared_issuer
 wrong_declared_identity_root
 untrusted_issuer
 expired_credential
@@ -347,6 +361,8 @@ wrong_root_mapped_to_not_evaluated: 0
 soft_pass_revocation_unknown: 0
 soft_pass_clock_failure: 0
 default_trust_paths: 0
+chain_unbuildable_mapped_to_insufficient: 0
+known_untrusted_issuer_mapped_to_not_evaluated: 0
 identity_outputs_with_authority_semantics: 0
 identity_outputs_with_execution_semantics: 0
 composition_mismatches: 0
@@ -392,10 +408,13 @@ BROWSER_TRUST_STORE_USED
 TOFU_USED
 ANY_VALID_CERTIFICATE_ACCEPTED
 ANY_VALID_CREDENTIAL_ACCEPTED
+HAND_ROLLED_X509_CHAIN_VALIDATION_DETECTED
 REVOCATION_UNKNOWN_SOFT_PASS
 CLOCK_FAILURE_SOFT_PASS
 MISSING_ROOT_WRONGLY_MARKED_INSUFFICIENT
 WRONG_ROOT_WRONGLY_MARKED_NOT_EVALUATED
+CHAIN_UNBUILDABLE_WRONGLY_MARKED_INSUFFICIENT
+KNOWN_UNTRUSTED_ISSUER_WRONGLY_MARKED_NOT_EVALUATED
 IDENTITY_ADAPTER_EMITS_AUTHORITY
 IDENTITY_ADAPTER_EMITS_EXECUTION
 COMPOSITION_CORE_BYPASSED
@@ -410,15 +429,18 @@ The implementation review must attack:
 ```text
 1. Is identity separated from authority?
 2. Is missing identity root NOT_EVALUATED and wrong identity root INSUFFICIENT?
-3. Are broken chains, invalid credential signatures, untrusted issuers, and binding mismatches INSUFFICIENT?
-4. Are malformed/unparseable credentials and unsupported credential types NOT_EVALUATED?
-5. Do revocation unknown/stale/unreachable and clock failure fail closed?
-6. Is there no default CA store, browser trust store, TOFU, or any-valid-certificate path?
-7. Are PT-IDENTITY assumptions carried, and are PT-AUTHORITY assumptions absent?
-8. Is cryptography pinned through the existing hash-locked adapter requirements?
-9. Does the adapter feed the accepted composition oracle rather than bypass it?
-10. Are adapter modules, fixtures, reports, and crypto dependency excluded from the public wheel?
-11. Are signature adapter, composition core, V1, Domain4, and Phase 1 unchanged?
+3. Is an unbuildable chain due to missing evidence NOT_EVALUATED?
+4. Are known-but-undeclared or untrusted issuers INSUFFICIENT?
+5. Are invalid credential signatures and binding mismatches INSUFFICIENT?
+6. Are malformed/unparseable credentials and unsupported credential types NOT_EVALUATED?
+7. Do revocation unknown/stale/unreachable and clock failure fail closed?
+8. Is there no hand-rolled X.509 chain validation?
+9. Is there no default CA store, browser trust store, TOFU, or any-valid-certificate path?
+10. Are PT-IDENTITY assumptions carried, and are PT-AUTHORITY assumptions absent?
+11. Is cryptography pinned through the existing hash-locked adapter requirements?
+12. Does the adapter feed the accepted composition oracle rather than bypass it?
+13. Are adapter modules, fixtures, reports, and crypto dependency excluded from the public wheel?
+14. Are signature adapter, composition core, V1, Domain4, and Phase 1 unchanged?
 ```
 
 ## Status Lock
@@ -430,7 +452,8 @@ SIGNATURE_ADAPTER_BASELINE_COLD_VERIFIED
 IDENTITY_IS_NOT_AUTHORITY
 MISSING_IDENTITY_ROOT_NOT_EVALUATED
 WRONG_IDENTITY_ROOT_INSUFFICIENT
-CHAIN_BROKEN_INSUFFICIENT
+CHAIN_UNBUILDABLE_NOT_EVALUATED
+KNOWN_UNTRUSTED_ISSUER_INSUFFICIENT
 UNTRUSTED_ISSUER_INSUFFICIENT
 BINDING_MISMATCH_INSUFFICIENT
 MALFORMED_CREDENTIAL_NOT_EVALUATED
@@ -440,6 +463,7 @@ NO_DEFAULT_CA_STORE
 NO_BROWSER_TRUST_STORE
 NO_TOFU
 NO_ANY_VALID_CERTIFICATE
+NO_HAND_ROLLED_X509_CHAIN_VALIDATION
 PT_IDENTITY_ASSUMPTIONS_REQUIRED
 PT_AUTHORITY_ASSUMPTIONS_NOT_AUTHORIZED
 PUBLIC_WHEEL_EXCLUSION_REQUIRED

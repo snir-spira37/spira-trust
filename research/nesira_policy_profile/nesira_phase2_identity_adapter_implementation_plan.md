@@ -62,6 +62,11 @@ The implementation may use `cryptography` for certificate and signature
 verification, but it must not use default platform trust. All issuer and chain
 trust must come from the declared identity root.
 
+Do not implement X.509 chain walking, certificate signature math, or issuer
+policy logic by hand. Use the pinned `cryptography` X.509 verification APIs for
+certificate path validation, with a store rooted only in the declared
+`IDENTITY_BINDING_CA` material.
+
 ## Crypto Pin
 
 Use the existing adapter/conformance crypto pin:
@@ -95,7 +100,8 @@ malformed identity root -> TRUST_NOT_EVALUATED
 unsupported credential type -> TRUST_NOT_EVALUATED
 malformed credential before verification -> TRUST_NOT_EVALUATED
 invalid credential signature -> TRUST_INSUFFICIENT
-broken certificate / credential chain -> TRUST_INSUFFICIENT
+certificate / credential chain cannot be built because required evidence is missing -> TRUST_NOT_EVALUATED
+chain builds to known but undeclared/untrusted issuer or root -> TRUST_INSUFFICIENT
 wrong declared identity root -> TRUST_INSUFFICIENT
 untrusted issuer under declared root -> TRUST_INSUFFICIENT
 expired credential/intermediate/root -> TRUST_INSUFFICIENT
@@ -113,6 +119,8 @@ The non-confusion guard:
 ```text
 missing identity root -> TRUST_NOT_EVALUATED
 wrong identity root   -> TRUST_INSUFFICIENT
+unbuildable chain due to missing evidence -> TRUST_NOT_EVALUATED
+known but undeclared/untrusted issuer     -> TRUST_INSUFFICIENT
 ```
 
 ## Assumptions
@@ -167,7 +175,8 @@ malformed_identity_root
 unsupported_credential_type
 malformed_credential
 bad_credential_signature
-broken_chain
+chain_unbuildable_missing_intermediate
+known_but_undeclared_issuer
 untrusted_issuer
 expired_credential
 expired_intermediate
@@ -248,10 +257,13 @@ SIGNATURE_ADAPTER_FROZEN_BASELINE
 IDENTITY_IS_NOT_AUTHORITY
 MISSING_IDENTITY_ROOT_NOT_EVALUATED
 WRONG_IDENTITY_ROOT_INSUFFICIENT
+CHAIN_UNBUILDABLE_NOT_EVALUATED
+KNOWN_UNTRUSTED_ISSUER_INSUFFICIENT
 REVOCATION_UNKNOWN_NOT_EVALUATED
 CLOCK_FAILURE_NOT_EVALUATED
 NO_DEFAULT_CA_STORE
 NO_TOFU
+NO_HAND_ROLLED_X509_CHAIN_VALIDATION
 PT_IDENTITY_ASSUMPTIONS_REQUIRED
 PT_AUTHORITY_ASSUMPTIONS_NOT_AUTHORIZED
 PUBLIC_WHEEL_EXCLUSION_REQUIRED

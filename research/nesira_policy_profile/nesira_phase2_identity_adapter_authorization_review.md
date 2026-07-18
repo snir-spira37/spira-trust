@@ -82,12 +82,19 @@ wrong identity root   -> TRUST_INSUFFICIENT
 
 Result: PASS
 
-Broken chains, invalid credential signatures, untrusted issuers, binding
-mismatches, namespace mismatches, and context mismatches map to
+Invalid credential signatures, known-but-undeclared or untrusted issuers,
+binding mismatches, namespace mismatches, and context mismatches map to
 `TRUST_INSUFFICIENT`.
 
 Malformed or unsupported credentials that cannot be evaluated map to
 `TRUST_NOT_EVALUATED`.
+
+The review accepts the corrected chain distinction:
+
+```text
+unbuildable chain due to missing evidence -> TRUST_NOT_EVALUATED
+known but undeclared/untrusted issuer     -> TRUST_INSUFFICIENT
+```
 
 ### 6. Revocation And Clock
 
@@ -112,6 +119,7 @@ any valid certificate
 any valid credential
 implicit identity issuer
 implicit namespace
+hand-rolled X.509 chain validation
 ```
 
 ### 8. Assumption Carrying
@@ -129,9 +137,9 @@ Authority assumptions are explicitly forbidden in this gate.
 Result: PASS
 
 The plan requires mutation pairs for root absence, wrong root, malformed root,
-unsupported credential, malformed credential, bad signature, broken chain,
-untrusted issuer, expiry, revocation, clock, namespace, identity, key-binding,
-and context mismatches.
+unsupported credential, malformed credential, bad signature, unbuildable chain,
+known-but-undeclared issuer, untrusted issuer, expiry, revocation, clock,
+namespace, identity, key-binding, and context mismatches.
 
 ### 10. Composition Wiring
 
@@ -174,7 +182,8 @@ SIGNATURE_ADAPTER_BASELINE_COLD_VERIFIED_ACCEPTED
 IDENTITY_IS_NOT_AUTHORITY_ACCEPTED
 MISSING_IDENTITY_ROOT_NOT_EVALUATED_ACCEPTED
 WRONG_IDENTITY_ROOT_INSUFFICIENT_ACCEPTED
-CHAIN_BROKEN_INSUFFICIENT_ACCEPTED
+CHAIN_UNBUILDABLE_NOT_EVALUATED_ACCEPTED
+KNOWN_UNTRUSTED_ISSUER_INSUFFICIENT_ACCEPTED
 UNTRUSTED_ISSUER_INSUFFICIENT_ACCEPTED
 BINDING_MISMATCH_INSUFFICIENT_ACCEPTED
 MALFORMED_CREDENTIAL_NOT_EVALUATED_ACCEPTED
@@ -184,6 +193,7 @@ NO_DEFAULT_CA_STORE_ACCEPTED
 NO_BROWSER_TRUST_STORE_ACCEPTED
 NO_TOFU_ACCEPTED
 NO_ANY_VALID_CERTIFICATE_ACCEPTED
+NO_HAND_ROLLED_X509_CHAIN_VALIDATION_ACCEPTED
 PT_IDENTITY_ASSUMPTIONS_REQUIRED_ACCEPTED
 PT_AUTHORITY_ASSUMPTIONS_NOT_AUTHORIZED
 PUBLIC_WHEEL_EXCLUSION_REQUIRED_ACCEPTED
