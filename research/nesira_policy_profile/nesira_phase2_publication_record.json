@@ -1,0 +1,57 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_PUBLICATION_RECORD_V1",
+  "verdict": "NESIRA_PHASE2_PUBLICATION_BLOCKED",
+  "publication_performed": false,
+  "candidate": {
+    "version": "0.7.0",
+    "publication_authorization_commit": "945cade5639f9a9d5f4c305e5018f77b752b86a5",
+    "wheel": "spira_trust-0.7.0-py3-none-any.whl",
+    "wheel_sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b"
+  },
+  "final_checks": {
+    "head": "945cade5639f9a9d5f4c305e5018f77b752b86a5",
+    "full_pytest": "349 passed",
+    "v1_sha256sums": "622/622",
+    "v1_scope_scan_hits": 0,
+    "wheel_rebuild": "PASS",
+    "wheel_sha256_match": "PASS",
+    "pypi_0_7_0_exists": false,
+    "github_release_v0_7_0_exists": false,
+    "origin_tag_v0_7_0_exists": false,
+    "dependencies_empty": true,
+    "cryptography_optional_extra_only": true
+  },
+  "go_1": {
+    "received_from": "Snir",
+    "authorized_surfaces": [
+      "TestPyPI dry-run",
+      "git tag v0.7.0",
+      "GitHub release draft"
+    ],
+    "result": "BLOCKED_BEFORE_EXTERNAL_STAGING",
+    "blocker": "TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION"
+  },
+  "environment": {
+    "twine": "not_installed",
+    "testpypi_credentials": "absent",
+    "pypirc": "absent",
+    "github_cli": "not_installed",
+    "github_api_token": "absent"
+  },
+  "external_actions": {
+    "testpypi_upload": "NOT_PERFORMED",
+    "git_tag_v0_7_0": "NOT_PERFORMED",
+    "git_push_tag_v0_7_0": "NOT_PERFORMED",
+    "github_release_draft": "NOT_PERFORMED",
+    "real_pypi_upload": "NOT_AUTHORIZED",
+    "github_release_publication": "NOT_AUTHORIZED",
+    "announcement": "NOT_PERFORMED"
+  },
+  "still_blocked": [
+    "REAL_PYPI_UPLOAD_REQUIRES_GO_2_AFTER_STAGING",
+    "GITHUB_RELEASE_PUBLICATION_REQUIRES_GO_2_AFTER_STAGING",
+    "COMBINED_VERDICT",
+    "RUNNER",
+    "SEVERANCE_ACTION"
+  ]
+}
