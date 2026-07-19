@@ -50,7 +50,7 @@
   },
   "claim_text": {
     "path": "research/nesira_policy_profile/nesira_phase2_release_and_public_claim_readiness_claim_text.md",
-    "sha256": "015c5889673a8c033b8d02c0d5482f05e77a5de129b6be230d0903bc758eb103"
+    "sha256": "15b12f45774f81c94f7c33bc8ed0488cc12ef1f95f450f3b3adc6336fea662a5"
   },
   "blocked_surfaces": [
     "publication",

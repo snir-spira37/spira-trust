@@ -12,7 +12,7 @@ RELEASE: NOT_AUTHORIZED
 
 SPIRA includes an opt-in Nesira Phase 2 read-only assessment surface in the
 public wheel. The surface validates declared trust evidence against declared
-trust roots and composes the result through a verified fail-closed assessment
+trust roots and composes the result through a verified fail-closed composition
 core, conditional on the declared trust roots and recorded NOT_PROVEN
 assumptions. It emits an assessment artifact only.
 
