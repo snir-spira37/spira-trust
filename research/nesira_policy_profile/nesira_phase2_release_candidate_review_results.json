@@ -2,15 +2,15 @@
   "schema": "SPIRA_NESIRA_PHASE2_RELEASE_CANDIDATE_REVIEW_RESULTS_V1",
   "verdict": "NESIRA_PHASE2_RELEASE_CANDIDATE_ACCEPTED",
   "candidate_version": "0.7.0",
-  "candidate_code_commit": "404246ebd97b38a1fe9160b028a855dd2ba61bc0",
+  "candidate_code_commit": "cdceab25292e7d4522865df09f9695468990b3f9",
   "candidate_wheel": {
     "filename": "spira_trust-0.7.0-py3-none-any.whl",
-    "sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b",
+    "sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5",
     "filename_derived_from_build": true
   },
   "checks": {
     "version_bump_limited_to_project_version": "PASS",
-    "builder_change_limited_to_version": "PASS",
+    "builder_change_limited_to_version_and_runtime_allowlist_fix": "PASS",
     "builder_version_matches_pyproject": "PASS",
     "dependencies_empty": "PASS",
     "cryptography_optional_extra_only": "PASS",
@@ -28,12 +28,14 @@
     "git_tag_absent": "PASS"
   },
   "metrics": {
-    "full_pytest": "349 passed",
+    "full_pytest": "350 passed",
     "v1_sha256sums": "622/622",
     "v1_phase2_scope_hits": 0,
-    "wheel_total_entries": 62,
+    "wheel_total_entries": 63,
     "nesira_runtime_entries": 6,
-    "harness_research_test_formal_entries": 0
+    "harness_research_test_formal_entries": 0,
+    "installed_wheel_graph_runtime": "PASS",
+    "release_self_evidence_from_installed_wheel": "PASS"
   },
   "blocked_surfaces": {
     "publication": "NOT_AUTHORIZED",

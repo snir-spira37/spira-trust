@@ -4,22 +4,23 @@
   "publication_authorized": false,
   "candidate": {
     "version": "0.7.0",
-    "candidate_code_commit": "404246ebd97b38a1fe9160b028a855dd2ba61bc0",
+    "candidate_code_commit": "cdceab25292e7d4522865df09f9695468990b3f9",
     "candidate_wheel_name": "spira_trust-0.7.0-py3-none-any.whl",
-    "candidate_wheel_sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b",
+    "candidate_wheel_sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5",
     "candidate_wheel_filename_source": "derived_from_built_artifact"
   },
   "source_changes": {
     "pyproject_change": "project.version only",
-    "builder_change": "VERSION only",
+    "builder_change": "VERSION + public runtime allowlist fix",
     "dependencies_empty": true,
     "cryptography_optional_extra": "cryptography==49.0.0",
     "unconditional_cryptography_dependency": false,
     "console_entry_point_added": false,
-    "runtime_behavior_change": false
+    "runner_or_combined_verdict_behavior_change": false,
+    "runtime_packaging_fix": "spira_core/unification_proof.py included for public graph command"
   },
   "wheel_content": {
-    "total_entries": 62,
+    "total_entries": 63,
     "nesira_runtime_entries": [
       "spira_core/nesira_phase2_assessment_wiring.py",
       "spira_core/nesira_phase2_authority_adapter.py",
@@ -37,6 +38,9 @@
     "metadata_requires_dist": [
       "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'"
     ],
+    "public_graph_runtime_dependency_entries": [
+      "spira_core/unification_proof.py"
+    ],
     "historical_combined_verdict_module_present": true,
     "combined_verdict_changed_in_candidate": false,
     "combined_verdict_nesira_integration_added": false
@@ -53,21 +57,24 @@
     "formal_claims_and_boundaries_phase2_hits": 0
   },
   "cold_reproduction": {
-    "fresh_clone_commit": "404246ebd97b38a1fe9160b028a855dd2ba61bc0",
-    "full_pytest": "349 passed",
+    "fresh_clone_commit": "cdceab25292e7d4522865df09f9695468990b3f9",
+    "full_pytest": "350 passed",
     "v1_sha256sums_self_check": "622/622",
     "candidate_wheel_build": "PASS",
-    "candidate_wheel_sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b",
+    "candidate_wheel_sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5",
     "candidate_wheel_name": "spira_trust-0.7.0-py3-none-any.whl",
-    "v1_scope_scan_hits": 0
+    "v1_scope_scan_hits": 0,
+    "installed_wheel_graph_runtime": "PASS",
+    "release_self_evidence_from_installed_wheel": "PASS",
+    "release_self_evidence_decision": "GRAPH_OK_WITH_UNVERIFIED / GRAPH_OK_WITH_NOTES"
   },
   "release_text": {
     "release_notes_path": "research/nesira_policy_profile/nesira_phase2_release_candidate_release_notes.md",
-    "release_notes_sha256": "daf47bfd7f6588195abc035be25c4497825afdb706c1bc92802a90d20d3ae6a7",
+    "release_notes_sha256": "2c54809013454336f8c3847552f5f2e9725ab59356afa7ef04dd0cc15521b1a2",
     "rollback_plan_path": "research/nesira_policy_profile/nesira_phase2_release_candidate_rollback_plan.md",
     "rollback_plan_sha256": "9c8a7424a476aba8237fc3d25ccc079bec7b07862c9e35cf37208dacdf61a7f2",
     "plan_path": "research/nesira_policy_profile/nesira_phase2_release_candidate_plan.md",
-    "plan_sha256": "bdc0cddf699f40daeab8da2262c3144355ed9e22976e0a7bb0fa6bb446f92109"
+    "plan_sha256": "f2ce9a3050c8e0093ffe543d2c5dcbfddcec6f64b63054261bb7ee7f5d467c33"
   },
   "blocked_surfaces": [
     "publication",

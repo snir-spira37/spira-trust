@@ -19,13 +19,19 @@ runner execution, or authorize severance action.
 
 ```text
 candidate_version: 0.7.0
-candidate_code_commit: 404246ebd97b38a1fe9160b028a855dd2ba61bc0
+candidate_code_commit: cdceab25292e7d4522865df09f9695468990b3f9
 candidate_wheel: spira_trust-0.7.0-py3-none-any.whl
-candidate_wheel_sha256: 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+candidate_wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 ```
 
 The wheel filename was derived from the built artifact. It was not assumed from
 the previous 0.6.1 release filename.
+
+This refreshed candidate supersedes the historical `29a52445...` candidate
+after GO #1 TestPyPI staging exposed a public-wheel runtime packaging omission.
+The fix is limited to including `spira_core/unification_proof.py`, a transitive
+runtime dependency of the public `graph` command, in the explicit public wheel
+allowlist and adding an installed-wheel `graph` runtime test.
 
 Review finding: PASS.
 
@@ -35,7 +41,7 @@ The source changes are limited as authorized:
 
 ```text
 pyproject.toml: project.version only
-tools/build_spira_trust_public.py: VERSION only
+tools/build_spira_trust_public.py: VERSION + public runtime allowlist fix
 ```
 
 The versions match:
@@ -52,7 +58,7 @@ dependencies=[]
 cryptography optional extra: cryptography==49.0.0
 no unconditional cryptography dependency
 no new console entry point
-no runtime behavior change
+no runner or combined-verdict behavior change
 ```
 
 Review finding: PASS.
@@ -109,6 +115,7 @@ spira_core/nesira_phase2_identity_adapter.py
 spira_core/nesira_phase2_isolation_attestation_adapter.py
 spira_core/nesira_phase2_read_only_assessment_cli.py
 spira_core/nesira_phase2_signature_adapter.py
+spira_core/unification_proof.py
 ```
 
 The candidate wheel contains no Nesira harnesses, tests, fixtures, reports,
@@ -152,17 +159,19 @@ Review finding: PASS.
 The release candidate was reproduced from a fresh clone at:
 
 ```text
-404246ebd97b38a1fe9160b028a855dd2ba61bc0
+cdceab25292e7d4522865df09f9695468990b3f9
 ```
 
 Cold reproduction results:
 
 ```text
-full pytest: 349 passed
+full pytest: 350 passed
 V1 SHA256SUMS: 622/622
 candidate wheel build: PASS
-candidate wheel SHA256: 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+candidate wheel SHA256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 candidate wheel name: spira_trust-0.7.0-py3-none-any.whl
+installed wheel graph runtime: PASS
+release self-evidence from installed wheel: PASS
 ```
 
 Review finding: PASS.

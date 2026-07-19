@@ -32,11 +32,17 @@ creation, combined verdict integration, runner behavior, or severance action.
 ```text
 version: 0.7.0
 wheel: spira_trust-0.7.0-py3-none-any.whl
-wheel_sha256: 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 ```
 
 The wheel filename was derived from the built artifact, not copied from the
 previous release name.
+
+This refresh supersedes the historical `29a52445...` candidate after the
+TestPyPI staging dry-run exposed a public-wheel runtime packaging omission.
+The fix adds the transitive public CLI runtime module
+`spira_core/unification_proof.py` to the wheel allowlist and adds an installed
+wheel `graph` runtime test. It does not authorize publication.
 
 ## Required Source Changes
 
@@ -46,6 +52,7 @@ pyproject.toml:
 
 tools/build_spira_trust_public.py:
   VERSION: 0.6.1 -> 0.7.0
+  public wheel allowlist includes spira_core/unification_proof.py
 ```
 
 No dependency, optional-extra, entry-point, runtime behavior, combined verdict,
