@@ -1,0 +1,82 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_AUTHORITY_ADAPTER_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_AUTHORITY_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+  "commit": "93858fdaade1f7e592cd91f64a11f32feee5fccc",
+  "source_reproduction": {
+    "fresh_clone": true,
+    "detached_checkout": true,
+    "remote_commit_fetchable": true,
+    "working_tree_clean_after_verification": true
+  },
+  "changed_files": [
+    "research/nesira_policy_profile/nesira_phase2_authority_adapter_report.md",
+    "research/nesira_policy_profile/nesira_phase2_authority_adapter_results.json",
+    "research/nesira_policy_profile/nesira_phase2_authority_adapter_review.md",
+    "source/spira_core/nesira_phase2_authority_adapter.py",
+    "source/spira_core/nesira_phase2_authority_harness.py",
+    "tests/test_nesira_phase2_authority_adapter.py",
+    "tools/run_nesira_phase2_authority_adapter_conformance.py"
+  ],
+  "unchanged_boundary_files": {
+    "pyproject_toml": true,
+    "lakefile_toml": true,
+    "formal_core_v1_external_reproduction_manifest": true,
+    "formal_core_v1_external_reproduction_sha256sums": true
+  },
+  "authority_conformance": {
+    "command": "python tools/run_nesira_phase2_authority_adapter_conformance.py --write-results",
+    "verdict": "NESIRA_PHASE2_AUTHORITY_ADAPTER_ACCEPTED",
+    "required_authority_failure_modes_without_fixture": 0,
+    "required_authority_failure_modes_without_mutation_pair": 0,
+    "sub_verdict_mismatches": 0,
+    "unexpected_sufficient_verdicts": 0,
+    "default_allow_paths": 0,
+    "missing_policy_root_mapped_to_insufficient": 0,
+    "identity_absent_mapped_to_not_evaluated": 0,
+    "explicit_deny_mapped_to_not_evaluated": 0,
+    "action_not_allowed_mapped_to_not_evaluated": 0,
+    "soft_pass_revocation_unknown": 0,
+    "soft_pass_clock_failure": 0,
+    "authority_outputs_with_identity_verification_semantics": 0,
+    "authority_outputs_with_execution_semantics": 0,
+    "composition_mismatches": 0,
+    "two_run_semantic_diff": 0,
+    "wheel_exclusion_failures": 0,
+    "metadata_dependency_headers": []
+  },
+  "regression_gates": {
+    "authority_focused_pytest": "10 passed",
+    "signature_identity_v1_authority_regression_pytest": "34 passed",
+    "compileall": "PASS",
+    "full_pytest": "315 passed",
+    "git_diff_check": "PASS",
+    "formal_core_v1_sha256sums_checked": 622,
+    "formal_core_v1_sha256sums_failures": 0
+  },
+  "dependency_boundary": {
+    "dependencies_empty": true,
+    "authority_in_pyproject": false,
+    "new_dependencies": [],
+    "cryptography_used_by_authority_adapter": false
+  },
+  "accepted": [
+    "authority policy classification",
+    "default-deny authority semantics",
+    "declared authority policy root only",
+    "revocation unknown/stale/unreachable fail-closed",
+    "clock missing/untrusted fail-closed",
+    "authority-to-composition wiring",
+    "public wheel exclusion",
+    "Formal Core V1 package self-check"
+  ],
+  "not_authorized": [
+    "isolation attestation",
+    "actual isolation execution",
+    "isolation runner",
+    "CLI",
+    "combined verdict integration",
+    "public wheel exposure",
+    "public capability claim",
+    "release"
+  ]
+}
