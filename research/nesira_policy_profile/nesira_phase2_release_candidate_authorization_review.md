@@ -54,6 +54,17 @@ It authorizes the version bump but limits the pyproject change to:
 project.version
 ```
 
+It also authorizes updating the public wheel builder version constant, limited
+to:
+
+```text
+tools/build_spira_trust_public.py: VERSION
+```
+
+The builder version must match `pyproject.toml` exactly, and release-candidate
+checks must derive the candidate wheel filename from the built artifact rather
+than from the previous release name.
+
 It preserves:
 
 ```text
@@ -161,6 +172,9 @@ The implementation review must verify:
 ```text
 exact version recorded
 pyproject limited to project.version
+public wheel builder limited to VERSION
+builder VERSION equals pyproject version
+candidate wheel filename derived from built artifact
 release notes claim language accepted
 candidate wheel SHA recorded
 V1 manifest refresh narrow

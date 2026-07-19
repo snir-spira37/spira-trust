@@ -85,6 +85,7 @@ The implementation gate opened by this authorization may change only:
 
 ```text
 pyproject.toml
+tools/build_spira_trust_public.py
 research/formal_core/external_reproduction_package/artifact_manifest.json
 research/formal_core/external_reproduction_package/SHA256SUMS
 the release-candidate readiness artifacts listed above
@@ -95,6 +96,16 @@ The `pyproject.toml` change is limited to:
 ```text
 project.version
 ```
+
+The `tools/build_spira_trust_public.py` change is limited to:
+
+```text
+VERSION
+```
+
+The builder `VERSION` must match `pyproject.toml` `project.version` exactly.
+The candidate wheel filename must be derived from the built wheel, not assumed
+from the previous release filename.
 
 The following must remain unchanged:
 
@@ -284,6 +295,9 @@ The review must verify:
 ```text
 version bump is exact and recorded
 pyproject change is limited to project.version
+public wheel builder change is limited to VERSION
+builder VERSION equals pyproject project.version
+candidate wheel filename is derived dynamically from the built artifact
 dependencies remain []
 cryptography remains optional-extra only, exact version 49.0.0
 no console entry point was added
