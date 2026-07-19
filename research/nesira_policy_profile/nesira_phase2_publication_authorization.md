@@ -35,10 +35,10 @@ checks pass immediately before publication.
 
 ```text
 release_candidate_review_commit:
-cbc200f9d4a644f97dc776e3680ca440823bff78
+c3221efbebdedefac1c3b587820df83a0aeafd4b
 
 candidate_code_commit:
-404246ebd97b38a1fe9160b028a855dd2ba61bc0
+cdceab25292e7d4522865df09f9695468990b3f9
 
 version:
 0.7.0
@@ -47,7 +47,7 @@ wheel:
 spira_trust-0.7.0-py3-none-any.whl
 
 wheel_sha256:
-29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 
 accepted_verdict:
 NESIRA_PHASE2_RELEASE_CANDIDATE_ACCEPTED
@@ -114,7 +114,7 @@ publisher must verify:
 HEAD or publication source is the accepted candidate/review state
 candidate version is 0.7.0
 candidate wheel filename is spira_trust-0.7.0-py3-none-any.whl
-candidate wheel SHA256 equals 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+candidate wheel SHA256 equals 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 full pytest passes
 V1 SHA256SUMS self-check remains 622/622
 V1 claims/inventory/expected-results still have 0 Phase2 scope hits

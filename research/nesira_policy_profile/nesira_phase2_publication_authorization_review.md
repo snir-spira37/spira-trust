@@ -21,11 +21,11 @@ runner execution, or authorize severance action.
 The authorization pins publication to the accepted release candidate:
 
 ```text
-candidate_code_commit: 404246ebd97b38a1fe9160b028a855dd2ba61bc0
-release_candidate_review_commit: cbc200f9d4a644f97dc776e3680ca440823bff78
+candidate_code_commit: cdceab25292e7d4522865df09f9695468990b3f9
+release_candidate_review_commit: c3221efbebdedefac1c3b587820df83a0aeafd4b
 version: 0.7.0
 wheel: spira_trust-0.7.0-py3-none-any.whl
-wheel_sha256: 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 ```
 
 Any changed source, changed wheel SHA, changed release notes, changed claim,
