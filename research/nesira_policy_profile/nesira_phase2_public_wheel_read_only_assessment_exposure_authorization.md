@@ -96,12 +96,38 @@ surface:
 tools/build_spira_trust_public.py
 pyproject.toml
 tests/test_nesira_phase2_public_wheel_read_only_assessment_exposure.py
+tests/test_nesira_phase2_read_only_assessment_exposure.py
+tests/test_nesira_phase2_assessment_wiring.py
+tests/test_nesira_phase2_signature_adapter.py
+tests/test_nesira_phase2_identity_adapter.py
+tests/test_nesira_phase2_authority_adapter.py
+tests/test_nesira_phase2_isolation_attestation_adapter.py
 source/spira_core/nesira_phase2_read_only_assessment_cli.py
 research/nesira_policy_profile/nesira_phase2_public_wheel_read_only_assessment_exposure_report.md
 research/nesira_policy_profile/nesira_phase2_public_wheel_read_only_assessment_exposure_results.json
 research/nesira_policy_profile/nesira_phase2_public_wheel_read_only_assessment_exposure_review.md
 research/nesira_policy_profile/nesira_phase2_public_wheel_read_only_assessment_exposure_review_results.json
 ```
+
+The existing tests listed above may be updated only to invert the previous
+public-wheel exclusion assertions for the newly authorized runtime modules.
+They must continue to assert that harnesses, fixtures, tests, reports, runner
+code, combined-verdict integration, and unauthorized dependencies remain
+excluded.
+
+Because this gate may change files pinned by the Formal Core V1 external
+reproduction package, the following manifest maintenance files are also
+authorized, but only for narrow hash/size refreshes of files changed by this
+gate:
+
+```text
+research/formal_core/external_reproduction_package/artifact_manifest.json
+research/formal_core/external_reproduction_package/SHA256SUMS
+```
+
+The refresh must not add Nesira Phase 2 runtime modules to the Formal Core V1
+inventory or claims. It may only keep the V1 external reproduction package
+self-check coherent after authorized packaging-surface changes.
 
 The implementation may add the accepted runtime adapter modules to the public
 wheel allowlist only for this read-only surface. It may not change their
@@ -244,6 +270,11 @@ two-run byte equality
 full pytest remains green
 V1 SHA256SUMS self-check remains 622/622
 ```
+
+If `pyproject.toml` or the public wheel builder changes, the implementation
+must rerun the V1 package self-check and refresh only the corresponding
+manifest/SHA entries required for 622/622 coherence. A stale V1 manifest is a
+blocking failure.
 
 The review must include cold reproduction from a fresh clone before this gate
 may be marked accepted.

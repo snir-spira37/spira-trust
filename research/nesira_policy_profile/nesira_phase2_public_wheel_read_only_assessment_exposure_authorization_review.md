@@ -65,6 +65,37 @@ combined-verdict integration remain excluded.
 
 Review finding: PASS.
 
+## Manifest Maintenance Boundary
+
+The authorization explicitly covers the recurrent V1-manifest-pinning hazard:
+this gate may touch `pyproject.toml` and the public wheel builder, and at least
+`pyproject.toml` is pinned by the Formal Core V1 external reproduction package.
+
+The authorization therefore allows only narrow maintenance of:
+
+```text
+research/formal_core/external_reproduction_package/artifact_manifest.json
+research/formal_core/external_reproduction_package/SHA256SUMS
+```
+
+The maintenance is limited to hash/size refreshes for files changed by this
+gate. It does not allow adding Nesira Phase 2 runtime modules to the Formal Core
+V1 inventory or claims.
+
+Review finding: PASS.
+
+## Existing Wheel-Exclusion Assertions
+
+The authorization recognizes that previous tests intentionally asserted that
+Nesira Phase 2 modules were absent from the public wheel. This gate reverses
+that assertion only for the newly authorized runtime modules.
+
+The implementation may update those tests only to preserve the new boundary:
+runtime modules may enter, while harnesses, fixtures, reports, tests, runner
+code, combined-verdict integration, and unauthorized dependencies remain out.
+
+Review finding: PASS.
+
 ## Crypto Posture
 
 The authorization correctly treats public wheel exposure as a supply-chain
