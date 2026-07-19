@@ -3,81 +3,93 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLICATION_BLOCKED
+NESIRA_PHASE2_PUBLICATION_NOT_PERFORMED
+NESIRA_PHASE2_TESTPYPI_DRY_RUN_ACCEPTED
 ```
 
 ## Scope
 
-This record documents the GO #1 staging attempt for the accepted 0.7.0
-read-only assessment release candidate.
+This record documents GO #1 staging for the refreshed 0.7.0 read-only
+assessment release candidate.
 
-No publication action was performed.
+No real publication action was performed.
 
 ## Candidate
 
 ```text
 version: 0.7.0
-publication_authorization_commit: 945cade5639f9a9d5f4c305e5018f77b752b86a5
+publication_authorization_commit: 3559bcf20e89130bafefa7d7cb29f41f712d533e
+candidate_code_commit: cdceab25292e7d4522865df09f9695468990b3f9
 wheel: spira_trust-0.7.0-py3-none-any.whl
-wheel_sha256: 29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b
+wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 ```
 
-## Final Checks Before Staging
+## GO #1
+
+GO #1 was received from Snir for TestPyPI dry-run only:
 
 ```text
-HEAD: 945cade5639f9a9d5f4c305e5018f77b752b86a5
-full pytest: 349 passed
-V1 SHA256SUMS: 622/622
-V1 scope scan: 0 hits
-wheel rebuild: PASS
-wheel SHA256 match: PASS
-PyPI 0.7.0 exists: false
-GitHub release v0.7.0 exists: false
-origin tag v0.7.0 exists: false
-dependencies=[]: PASS
-cryptography optional extra only: PASS
+TestPyPI dry-run via workflow_dispatch
+no tag
+no GitHub release
+no real PyPI
 ```
 
-## GO #1 Result
-
-GO #1 was received from Snir for reversible staging only:
+## TestPyPI Workflow
 
 ```text
-TestPyPI dry-run
-git tag v0.7.0
-GitHub release draft
+workflow: testpypi-trusted-publishing.yml
+run_id: 29692127879
+run_url: https://github.com/snir-spira37/spira-trust/actions/runs/29692127879
+head_sha: 3559bcf20e89130bafefa7d7cb29f41f712d533e
+conclusion: success
 ```
 
-The required first staging step, TestPyPI dry-run, could not be performed in
-the current environment:
+The workflow built the public wheel, installed it, generated SPIRA
+self-evidence, uploaded release evidence, and published the wheel to TestPyPI.
+
+TestPyPI metadata:
 
 ```text
-twine: not installed
-TestPyPI credentials: absent
-.pypirc: absent
-GitHub CLI: not installed
-GitHub API token: absent
+version: 0.7.0
+filename: spira_trust-0.7.0-py3-none-any.whl
+sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
 ```
 
-The repository does contain GitHub Actions Trusted Publishing workflows.
-However, the production workflow is configured to run on `v*` tag push and to
-publish to real PyPI and publish the GitHub release. Therefore pushing
-`v0.7.0` as a GO #1 staging action would collapse GO #1 into GO #2.
+## TestPyPI Install Checks
 
-Because TestPyPI could not be used locally and tag push would trigger real
-publication automation, the publication authorization requires:
+Base install from TestPyPI:
 
 ```text
-TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION
-TAG_PUSH_WOULD_TRIGGER_REAL_PUBLICATION_REQUIRES_WORKFLOW_REVISION
+spira-trust version: 0.7.0
+cryptography installed: false
+dependencies posture: cryptography appears only as optional extra
 ```
 
-The process stopped before tag creation or GitHub release draft creation.
+Extra install from TestPyPI:
+
+```text
+package: spira-trust[nesira-assessment]==0.7.0
+cryptography version: 49.0.0
+```
+
+Installed read-only assessment tool:
+
+```text
+sufficient assessment exit: 0
+verdict: TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS
+execution_marker: ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION
+PT-ISOLATION-01 carried: true
+malformed input exit: 2
+malformed input error schema: NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1
+traceback leaked: false
+local path leaked: false
+```
 
 ## External Actions
 
 ```text
-TestPyPI upload: NOT_PERFORMED
+TestPyPI upload: PERFORMED
 git tag v0.7.0: NOT_PERFORMED
 git push tag v0.7.0: NOT_PERFORMED
 GitHub release draft: NOT_PERFORMED
@@ -91,15 +103,18 @@ announcement: NOT_PERFORMED
 ```text
 REAL_PYPI_UPLOAD: REQUIRES_GO_2_AFTER_STAGING
 GITHUB_RELEASE_PUBLICATION: REQUIRES_GO_2_AFTER_STAGING
+GITHUB_RELEASE_DRAFT: NOT_PERFORMED
+PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH: OPEN_BEFORE_GO_2
 COMBINED_VERDICT: NOT_AUTHORIZED
 RUNNER: NOT_AUTHORIZED
 SEVERANCE_ACTION: NOT_AUTHORIZED
 ```
 
-## Next Step
+## Boundary
 
-To continue staging, provide the missing TestPyPI upload mechanism and GitHub
-release mechanism, then re-run GO #1 staging from the accepted candidate.
+TestPyPI is a staging dry-run. It is not a production release, not a public
+claim, not a GitHub release, not a real PyPI upload, not combined verdict
+integration, not runner behavior, and not severance action.
 
-No GO #2 may be considered until TestPyPI dry-run and GitHub draft inspection
-are completed.
+GO #2 remains required before any real PyPI upload or production GitHub release
+publication.

@@ -1,50 +1,58 @@
 {
   "schema": "SPIRA_NESIRA_PHASE2_PUBLICATION_RECORD_V1",
-  "verdict": "NESIRA_PHASE2_PUBLICATION_BLOCKED",
+  "verdict": "NESIRA_PHASE2_PUBLICATION_NOT_PERFORMED",
+  "staging_verdict": "NESIRA_PHASE2_TESTPYPI_DRY_RUN_ACCEPTED",
   "publication_performed": false,
   "candidate": {
     "version": "0.7.0",
-    "publication_authorization_commit": "945cade5639f9a9d5f4c305e5018f77b752b86a5",
+    "publication_authorization_commit": "3559bcf20e89130bafefa7d7cb29f41f712d533e",
+    "candidate_code_commit": "cdceab25292e7d4522865df09f9695468990b3f9",
     "wheel": "spira_trust-0.7.0-py3-none-any.whl",
-    "wheel_sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b"
-  },
-  "final_checks": {
-    "head": "945cade5639f9a9d5f4c305e5018f77b752b86a5",
-    "full_pytest": "349 passed",
-    "v1_sha256sums": "622/622",
-    "v1_scope_scan_hits": 0,
-    "wheel_rebuild": "PASS",
-    "wheel_sha256_match": "PASS",
-    "pypi_0_7_0_exists": false,
-    "github_release_v0_7_0_exists": false,
-    "origin_tag_v0_7_0_exists": false,
-    "dependencies_empty": true,
-    "cryptography_optional_extra_only": true
+    "wheel_sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5"
   },
   "go_1": {
     "received_from": "Snir",
     "authorized_surfaces": [
-      "TestPyPI dry-run",
-      "git tag v0.7.0",
-      "GitHub release draft"
+      "TestPyPI dry-run via workflow_dispatch"
     ],
-    "result": "BLOCKED_BEFORE_EXTERNAL_STAGING",
-    "blockers": [
-      "TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION",
-      "TAG_PUSH_WOULD_TRIGGER_REAL_PUBLICATION_REQUIRES_WORKFLOW_REVISION"
-    ]
+    "explicitly_not_authorized": [
+      "git tag",
+      "GitHub release",
+      "real PyPI"
+    ],
+    "result": "TESTPYPI_DRY_RUN_ACCEPTED"
   },
-  "environment": {
-    "twine": "not_installed",
-    "testpypi_credentials": "absent",
-    "pypirc": "absent",
-    "github_cli": "not_installed",
-    "github_api_token": "absent",
-    "github_actions_trusted_publishing_workflows": "present",
-    "production_workflow_tag_push_publishes_real_pypi": true
+  "testpypi_workflow": {
+    "workflow": "testpypi-trusted-publishing.yml",
+    "run_id": "29692127879",
+    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29692127879",
+    "head_sha": "3559bcf20e89130bafefa7d7cb29f41f712d533e",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "testpypi_artifact": {
+    "version": "0.7.0",
+    "filename": "spira_trust-0.7.0-py3-none-any.whl",
+    "sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5",
+    "packagetype": "bdist_wheel"
+  },
+  "install_checks": {
+    "base_install_from_testpypi": "PASS",
+    "base_spira_trust_version": "0.7.0",
+    "base_cryptography_present": false,
+    "extra_install_from_testpypi": "PASS",
+    "extra_cryptography_version": "49.0.0",
+    "read_only_assessment_exit": 0,
+    "read_only_assessment_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+    "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
+    "pt_isolation_01_carried": true,
+    "malformed_input_exit": 2,
+    "malformed_input_error_schema": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1",
+    "traceback_leaked": false,
+    "local_path_leaked": false
   },
   "external_actions": {
-    "testpypi_upload": "NOT_PERFORMED",
+    "testpypi_upload": "PERFORMED",
     "git_tag_v0_7_0": "NOT_PERFORMED",
     "git_push_tag_v0_7_0": "NOT_PERFORMED",
     "github_release_draft": "NOT_PERFORMED",
@@ -55,6 +63,8 @@
   "still_blocked": [
     "REAL_PYPI_UPLOAD_REQUIRES_GO_2_AFTER_STAGING",
     "GITHUB_RELEASE_PUBLICATION_REQUIRES_GO_2_AFTER_STAGING",
+    "GITHUB_RELEASE_DRAFT_NOT_PERFORMED",
+    "PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH_OPEN_BEFORE_GO_2",
     "COMBINED_VERDICT",
     "RUNNER",
     "SEVERANCE_ACTION"
