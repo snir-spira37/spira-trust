@@ -17,6 +17,9 @@ GIT_TAG: NOT_AUTHORIZED
 This release candidate includes an opt-in Nesira Phase 2 read-only assessment
 surface in the public wheel.
 
+Existing `spira-trust` functionality is unchanged. This candidate adds only
+the opt-in assessment surface described here.
+
 The surface checks declared trust evidence against declared trust roots and
 composes the result through a verified fail-closed composition core,
 conditional on the declared trust roots and recorded NOT_PROVEN assumptions.

@@ -1,0 +1,47 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_RELEASE_CANDIDATE_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_RELEASE_CANDIDATE_ACCEPTED",
+  "candidate_version": "0.7.0",
+  "candidate_code_commit": "404246ebd97b38a1fe9160b028a855dd2ba61bc0",
+  "candidate_wheel": {
+    "filename": "spira_trust-0.7.0-py3-none-any.whl",
+    "sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b",
+    "filename_derived_from_build": true
+  },
+  "checks": {
+    "version_bump_limited_to_project_version": "PASS",
+    "builder_change_limited_to_version": "PASS",
+    "builder_version_matches_pyproject": "PASS",
+    "dependencies_empty": "PASS",
+    "cryptography_optional_extra_only": "PASS",
+    "unconditional_cryptography_dependency_absent": "PASS",
+    "release_notes_claim_boundary": "PASS",
+    "release_notes_reproduction_not_certification": "PASS",
+    "rollback_plan_present": "PASS",
+    "wheel_content_boundary": "PASS",
+    "combined_verdict_unchanged": "PASS",
+    "v1_manifest_refresh_narrow": "PASS",
+    "v1_sha256sums_self_check": "PASS",
+    "v1_scope_scan": "PASS",
+    "full_pytest_cold": "PASS",
+    "publication_absent": "PASS",
+    "git_tag_absent": "PASS"
+  },
+  "metrics": {
+    "full_pytest": "349 passed",
+    "v1_sha256sums": "622/622",
+    "v1_phase2_scope_hits": 0,
+    "wheel_total_entries": 62,
+    "nesira_runtime_entries": 6,
+    "harness_research_test_formal_entries": 0
+  },
+  "blocked_surfaces": {
+    "publication": "NOT_AUTHORIZED",
+    "pypi_upload": "NOT_AUTHORIZED",
+    "github_release": "NOT_AUTHORIZED",
+    "git_tag": "NOT_AUTHORIZED",
+    "combined_verdict": "NOT_AUTHORIZED",
+    "runner": "NOT_AUTHORIZED",
+    "severance_action": "NOT_AUTHORIZED"
+  }
+}
