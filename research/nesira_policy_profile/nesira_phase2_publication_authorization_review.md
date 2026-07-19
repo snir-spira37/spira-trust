@@ -91,19 +91,35 @@ Review finding: PASS.
 ## Publication Actions
 
 The authorization allows publication actions only after final checks and human
-go/no-go:
+go/no-go. It stages publication so the least reversible action happens last:
 
 ```text
+TestPyPI dry-run
 git tag v0.7.0
-push tag v0.7.0
-create GitHub release v0.7.0
-attach exact accepted wheel artifact
-upload exact accepted wheel artifact to PyPI
-record publication evidence
+GitHub release draft
+human inspection
+second GO for real PyPI upload
+real PyPI upload
+final GitHub release publication
+publication evidence record
 ```
 
 Partial publication is permitted only if explicitly recorded as partial, with
 unperformed surfaces marked `NOT_PERFORMED`.
+
+Review finding: PASS.
+
+## Irreversibility Guard
+
+The authorization correctly treats PyPI upload as categorically less reversible
+than tag or GitHub draft creation. It requires:
+
+```text
+GO #1 for TestPyPI, tag, and GitHub draft
+GO #2 for real PyPI upload
+```
+
+GO #2 cannot be inferred from GO #1.
 
 Review finding: PASS.
 
@@ -151,7 +167,8 @@ NESIRA_PHASE2_PUBLICATION_AUTHORIZATION_ACCEPTED
 NEXT_ALLOWED_STEP:
 FINAL_PRE_PUBLICATION_CHECKS
 
-HUMAN_GO_REQUIRED_BEFORE_PUBLICATION_COMMANDS
+HUMAN_GO_1_REQUIRED_BEFORE_STAGING_COMMANDS
+HUMAN_GO_2_REQUIRED_BEFORE_REAL_PYPI_UPLOAD
 
 COMBINED_VERDICT: NOT_AUTHORIZED
 RUNNER: NOT_AUTHORIZED

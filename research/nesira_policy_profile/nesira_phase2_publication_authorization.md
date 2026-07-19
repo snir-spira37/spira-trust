@@ -9,9 +9,11 @@ SCOPE: PUBLICATION_OF_ACCEPTED_READ_ONLY_RELEASE_CANDIDATE
 
 AUTHORIZES_CONDITIONALLY:
 FINAL_PRE_PUBLICATION_CHECKS
+TESTPYPI_DRY_RUN_FOR_V0_7_0
 GIT_TAG_CREATION_FOR_V0_7_0
-GITHUB_RELEASE_DRAFT_OR_PUBLICATION_FOR_V0_7_0
-PYPI_UPLOAD_FOR_V0_7_0
+GITHUB_RELEASE_DRAFT_FOR_V0_7_0
+GITHUB_RELEASE_PUBLICATION_FOR_V0_7_0
+PYPI_UPLOAD_FOR_V0_7_0_REQUIRES_SECOND_GO
 PUBLIC_RELEASE_NOTES_USE
 PUBLIC_CLAIM_USE_WITH_ACCEPTED_BOUNDARY
 
@@ -129,16 +131,53 @@ no existing PyPI 0.7.0 release already exists
 
 If any check fails, publication must stop.
 
-## Authorized Publication Actions
+## Publication Staging
 
-If and only if all final pre-publication checks pass, this gate authorizes:
+Publication must be staged so that the least reversible action happens last.
+
+The required order is:
 
 ```text
+1. final pre-publication checks
+2. GO #1 from Snir for reversible/publication-preview actions
+3. TestPyPI dry-run upload/install check
+4. git tag v0.7.0
+5. GitHub release draft creation
+6. inspect the GitHub draft and attached artifact
+7. GO #2 from Snir for real PyPI upload
+8. upload the exact accepted wheel artifact to PyPI
+9. publish or finalize the GitHub release
+10. record publication evidence
+```
+
+PyPI upload is the least reversible step. It requires a second explicit human
+go/no-go after the TestPyPI dry-run and GitHub draft inspection.
+
+If TestPyPI cannot be used, the publisher must record why and stop with:
+
+```text
+TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION
+```
+
+## Authorized Publication Actions
+
+If and only if all final pre-publication checks pass and GO #1 is given, this
+gate authorizes:
+
+```text
+upload the exact accepted wheel artifact to TestPyPI
+install/check the TestPyPI artifact in an isolated environment
 git tag v0.7.0 at the accepted publication commit
 push tag v0.7.0
-create GitHub release v0.7.0 using the accepted release notes
-attach the exact accepted wheel artifact
-upload the exact accepted wheel artifact to PyPI
+create a GitHub release draft v0.7.0 using the accepted release notes
+attach the exact accepted wheel artifact to the GitHub draft
+```
+
+Only after GO #2 is given, this gate authorizes:
+
+```text
+upload the exact accepted wheel artifact to real PyPI
+publish or finalize the GitHub release
 record publication evidence after the upload/release
 ```
 
@@ -213,6 +252,18 @@ NESIRA_PHASE2_PUBLICATION_REJECTED
 
 This authorization requires explicit human go/no-go before any actual external
 publication command is executed.
+
+It requires two separate human decisions:
+
+```text
+GO_1_PREVIEW_PUBLICATION_STAGING:
+  permits TestPyPI dry-run, tag creation, and GitHub release draft creation
+
+GO_2_REAL_PYPI_UPLOAD:
+  permits real PyPI upload and final GitHub release publication
+```
+
+GO #2 must not be inferred from GO #1.
 
 The go/no-go owner is:
 
