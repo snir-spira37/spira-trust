@@ -12,7 +12,11 @@ Source assessment commit:
 26b560822ca9ad2a518ec74334fe6cc7abb864e5
 
 Package artifact commit:
-Record the repository commit that contains this ZIP before external delivery.
+17b34e0fa716b5326fa7e854b5705359a7dd309b
+
+Note:
+The package artifact commit above is the first repository commit that contains
+this ZIP. Later commits may update sidecar notes without changing the ZIP.
 
 Boundary:
 This is an assessment-only internal reproduction package. Package delivery,
