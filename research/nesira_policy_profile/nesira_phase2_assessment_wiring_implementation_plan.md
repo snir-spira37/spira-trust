@@ -76,6 +76,11 @@ The exact fixture shape may remain deliberately small, but each field must be
 caller supplied. Expected candidate, environment, action, identity, authority
 purpose, and attestation profile values must not be learned from evidence.
 
+There is exactly one `expected_context` for the assessment request. The wiring
+must pass that same object to all four adapters. It must not construct
+per-adapter expected contexts or allow evidence from one adapter to define the
+expected subject for another adapter.
+
 ## Adapter Invocation Order
 
 The wiring should invoke adapters in dependency order:
@@ -220,7 +225,13 @@ attestation_not_evaluated
 mixed_insufficient_and_not_evaluated
 malformed_adapter_result
 missing_caller_context
+cross_subject_mismatch
 ```
+
+The `cross_subject_mismatch` fixture must use one caller-supplied
+`expected_context` while at least two evidence artifacts point at different
+candidates or subjects. At least one adapter must return `TRUST_INSUFFICIENT`,
+and the composite verdict must be not sufficient.
 
 Required checks:
 
@@ -228,6 +239,7 @@ Required checks:
 all 81 oracle rows reproduced
 strict AND respected
 INSUFFICIENT dominates NOT_EVALUATED
+cross-subject mismatch produces not sufficient
 floor carried on every output
 PT-ISOLATION-01 carried on sufficient composite row
 per-domain breakdown preserved

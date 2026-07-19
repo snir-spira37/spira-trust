@@ -117,6 +117,20 @@ expected values from the evidence being checked.
 
 This prevents circular binding.
 
+The review specifically requires one shared `expected_context` object to be
+passed to all four adapters. It forbids per-adapter expected contexts that could
+let signature, identity, authority, and attestation evidence bind to different
+subjects while still composing into a sufficient assessment.
+
+The plan also requires a `cross_subject_mismatch` conformance fixture:
+
+```text
+evidence artifacts point at different candidates or subjects
+one caller-supplied expected_context is used
+at least one adapter returns TRUST_INSUFFICIENT
+composite verdict is not sufficient
+```
+
 ### 7. Assessment Is Not Combined Verdict
 
 Result: PASS
@@ -197,4 +211,3 @@ PUBLIC_WHEEL_EXPOSURE_NOT_AUTHORIZED
 PUBLIC_CLAIM_NOT_AUTHORIZED
 RELEASE_NOT_AUTHORIZED
 ```
-

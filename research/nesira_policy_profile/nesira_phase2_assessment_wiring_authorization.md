@@ -221,8 +221,12 @@ authority policy purpose
 attestation profile
 ```
 
-The wiring may pass that context into adapters. It must not learn the expected
-context from the evidence being checked.
+The wiring must pass the same `expected_context` object to all four adapters.
+It must not create per-adapter expected contexts, let adapters derive expected
+context from their own evidence, or allow the four sub-assessments to bind
+against different subjects.
+
+The wiring must not learn the expected context from the evidence being checked.
 
 If the caller context is missing, malformed, or internally inconsistent, the
 wiring must fail closed:
@@ -302,6 +306,7 @@ The wiring conformance corpus must verify:
 two-run semantic diff: 0
 full pytest: PASS
 V1 SHA256SUMS: PASS
+cross-subject mismatch fixture: composite not sufficient
 ```
 
 ## Stop Conditions
@@ -331,9 +336,11 @@ The implementation review must check:
 5. Does it preserve PT-ISOLATION-01 in the sufficient composite row?
 6. Does malformed adapter output fail closed without upgrade?
 7. Does caller context flow into adapters without being learned from evidence?
-8. Does the output avoid execution, severance, CLI, and combined-verdict semantics?
-9. Is the wiring excluded from the public wheel?
-10. Are frozen adapters, composition core, V1, Domain4, and Phase 1 unchanged?
+8. Does one shared expected_context feed all four adapters?
+9. Does a cross-subject mismatch fixture produce a not-sufficient composite?
+10. Does the output avoid execution, severance, CLI, and combined-verdict semantics?
+11. Is the wiring excluded from the public wheel?
+12. Are frozen adapters, composition core, V1, Domain4, and Phase 1 unchanged?
 ```
 
 ## Verdict
