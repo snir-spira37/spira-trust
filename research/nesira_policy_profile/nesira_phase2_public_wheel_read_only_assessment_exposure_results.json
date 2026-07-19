@@ -1,0 +1,75 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED_PENDING_COLD_REPRODUCTION",
+  "accepted_pending_cold_reproduction": true,
+  "public_wheel": {
+    "wheel_sha256": "d82ebb1f64dcc3b60e409b7b2050d56693d7fc5eeffbdf1cba0b68e2c282efa3",
+    "runtime_entries": [
+      "spira_core/nesira_phase2_assessment_wiring.py",
+      "spira_core/nesira_phase2_authority_adapter.py",
+      "spira_core/nesira_phase2_identity_adapter.py",
+      "spira_core/nesira_phase2_isolation_attestation_adapter.py",
+      "spira_core/nesira_phase2_read_only_assessment_cli.py",
+      "spira_core/nesira_phase2_signature_adapter.py"
+    ],
+    "harness_entries": [],
+    "metadata_provides_extra": [
+      "Provides-Extra: nesira-assessment"
+    ],
+    "metadata_requires_dist": [
+      "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'"
+    ],
+    "unconditional_cryptography_dependency": false
+  },
+  "wheel_runtime_cases": [
+    {
+      "case": "sufficient",
+      "returncode": 0,
+      "verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION"
+    },
+    {
+      "case": "not_evaluated",
+      "returncode": 0,
+      "verdict": "TRUST_NOT_EVALUATED",
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION"
+    },
+    {
+      "case": "insufficient",
+      "returncode": 0,
+      "verdict": "TRUST_INSUFFICIENT",
+      "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION"
+    }
+  ],
+  "malformed_input": {
+    "returncode": 2,
+    "schema": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1",
+    "traceback": false
+  },
+  "v1_manifest_refresh": {
+    "narrow": true,
+    "pinned_changed_files": [
+      "pyproject.toml"
+    ],
+    "sha256sums_changed_entries": [
+      "pyproject.toml",
+      "research/formal_core/external_reproduction_package/artifact_manifest.json"
+    ],
+    "v1_sha256sums_self_check": "622/622",
+    "phase2_mentions_in_v1_inventory_claims_expected_manifest": 0
+  },
+  "local_verification": {
+    "focused_pytest": "63 passed",
+    "v1_external_reproduction_package_test": "5 passed",
+    "full_pytest": "349 passed",
+    "compileall": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "blocked_claims": [
+    "runner",
+    "combined_verdict",
+    "public_claim",
+    "release",
+    "severance_action"
+  ]
+}

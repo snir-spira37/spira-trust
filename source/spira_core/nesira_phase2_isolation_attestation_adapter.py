@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import base64
 import binascii
+import json
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Any, Mapping
 
-from spira_core.nesira_domain4_v2_core import canonical_json
 from spira_core.nesira_phase2_signature_adapter import (
     FLOOR_ASSUMPTIONS,
     PINNED_CRYPTOGRAPHY_VERSION,
@@ -419,7 +419,7 @@ def _decode_signature(value: Any) -> bytes | None:
 
 
 def _payload_bytes(payload: Mapping[str, Any]) -> bytes:
-    return canonical_json(payload).encode("utf-8")
+    return json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
 
 
 def _load_public_key(public_key_pem: Any) -> Any | None:

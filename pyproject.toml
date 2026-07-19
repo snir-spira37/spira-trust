@@ -12,6 +12,9 @@ license = { text = "Apache-2.0" }
 authors = [{ name = "SPIRA Trust" }]
 dependencies = []
 
+[project.optional-dependencies]
+nesira-assessment = ["cryptography==49.0.0"]
+
 [project.urls]
 Homepage = "https://github.com/snir-spira37/spira-trust"
 Repository = "https://github.com/snir-spira37/spira-trust"

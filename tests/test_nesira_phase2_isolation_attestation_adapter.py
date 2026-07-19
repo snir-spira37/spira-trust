@@ -129,14 +129,27 @@ def test_isolation_attestation_binds_against_external_expected_context():
     assert "expected context missing" in source
 
 
-def test_isolation_attestation_adapter_and_crypto_dependency_are_excluded_from_public_wheel():
-    results = run_isolation_attestation_harness(ROOT, build_wheel=True)
-    wheel = results["public_wheel_exclusion"]
+def test_isolation_attestation_runtime_is_public_but_harness_and_crypto_package_are_excluded(tmp_path):
+    import subprocess
+    import sys
 
-    assert wheel["wheel_exclusion_failures"] == 0
-    assert wheel["adapter_entries"] == []
-    assert wheel["cryptography_entries"] == []
-    assert wheel["metadata_mentions_new_dependency"] is False
+    result = subprocess.run(
+        [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    wheel_path = Path(result.stdout.splitlines()[0])
+    with zipfile.ZipFile(wheel_path) as zf:
+        names = zf.namelist()
+        metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
+        metadata = zf.read(metadata_name).decode("utf-8")
+
+    assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" in names
+    assert "spira_core/nesira_phase2_isolation_attestation_harness.py" not in names
+    assert all("cryptography" not in name.lower() for name in names)
+    assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
 
 
 def test_project_dependencies_remain_empty_and_crypto_pin_reused():
@@ -144,19 +157,19 @@ def test_project_dependencies_remain_empty_and_crypto_pin_reused():
     requirements = (ROOT / "requirements" / "nesira_adapters_win_amd64_cp312.txt").read_text(encoding="utf-8")
 
     assert pyproject["project"]["dependencies"] == []
-    assert "optional-dependencies" not in pyproject["project"]
+    assert pyproject["project"]["optional-dependencies"] == {"nesira-assessment": ["cryptography==49.0.0"]}
     assert f"cryptography=={adapter.PINNED_CRYPTOGRAPHY_VERSION}" in requirements
     assert "isolation-attestation" not in requirements.lower()
 
 
-def test_isolation_attestation_adapter_module_not_in_public_builder_allowlist():
+def test_isolation_attestation_runtime_in_public_builder_allowlist_but_harness_excluded():
     builder = (ROOT / "tools" / "build_spira_trust_public.py").read_text(encoding="utf-8")
 
-    assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" not in builder
+    assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" in builder
     assert "spira_core/nesira_phase2_isolation_attestation_harness.py" not in builder
 
 
-def test_public_wheel_metadata_does_not_include_isolation_attestation_adapter_or_new_dependency(tmp_path):
+def test_public_wheel_metadata_includes_attestation_crypto_only_as_optional_extra(tmp_path):
     import subprocess
     import sys
 
@@ -173,6 +186,8 @@ def test_public_wheel_metadata_does_not_include_isolation_attestation_adapter_or
         metadata_name = next(name for name in zf.namelist() if name.endswith(".dist-info/METADATA"))
         metadata = zf.read(metadata_name).decode("utf-8")
 
-    assert all("nesira_phase2_isolation_attestation" not in name for name in names)
-    assert "Requires-Dist:" not in metadata
-    assert "Provides-Extra:" not in metadata
+    assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" in names
+    assert all("nesira_phase2_isolation_attestation_harness" not in name for name in names)
+    assert "Provides-Extra: nesira-assessment" in metadata
+    assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
+    assert "Requires-Dist: cryptography==49.0.0\n" not in metadata

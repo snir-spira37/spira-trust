@@ -16,6 +16,7 @@ from spira_core.nesira_phase2_assessment_wiring_harness import _valid_request
 
 ROOT = Path(__file__).resolve().parents[1]
 TOOL = ROOT / "tools" / "run_nesira_phase2_read_only_assessment.py"
+PUBLIC_MODULE = "spira_core.nesira_phase2_read_only_assessment_cli"
 FORBIDDEN_FLAGS = (
     "--enforce",
     "--apply",
@@ -120,14 +121,15 @@ def test_tool_surface_has_no_forbidden_flags_or_action_fields():
 def test_no_console_entry_point_and_crypto_remains_gated():
     pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     scripts = pyproject["project"].get("scripts", {})
+    optional = pyproject["project"].get("optional-dependencies", {})
 
     assert pyproject["project"]["dependencies"] == []
-    assert "optional-dependencies" not in pyproject["project"]
+    assert optional == {"nesira-assessment": ["cryptography==49.0.0"]}
     assert all("nesira_phase2" not in name for name in scripts)
     assert all("nesira_phase2" not in target for target in scripts.values())
 
 
-def test_read_only_tool_is_not_in_public_wheel(tmp_path):
+def test_read_only_runtime_is_exposed_in_public_wheel_without_action_surface(tmp_path):
     result = subprocess.run(
         [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
         cwd=ROOT,
@@ -142,9 +144,42 @@ def test_read_only_tool_is_not_in_public_wheel(tmp_path):
         metadata = zf.read(metadata_name).decode("utf-8")
 
     assert all("run_nesira_phase2_read_only_assessment" not in name for name in names)
-    assert all("nesira_phase2" not in name for name in names)
-    assert "Requires-Dist:" not in metadata
-    assert "cryptography" not in metadata.lower()
+    assert "spira_core/nesira_phase2_read_only_assessment_cli.py" in names
+    assert "spira_core/nesira_phase2_assessment_wiring.py" in names
+    assert "spira_core/nesira_phase2_signature_adapter.py" in names
+    assert "spira_core/nesira_phase2_identity_adapter.py" in names
+    assert "spira_core/nesira_phase2_authority_adapter.py" in names
+    assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" in names
+    assert all("_harness.py" not in name for name in names)
+    assert "Provides-Extra: nesira-assessment" in metadata
+    assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
+
+
+def test_public_wheel_module_runs_read_only_assessment_with_tool_success_exit(tmp_path):
+    wheel_path = _build_public_wheel(tmp_path)
+    request = _write_request(tmp_path, _valid_request())
+    result = _run_wheel_module(wheel_path, request)
+    artifact = json.loads(result.stdout)
+
+    assert result.returncode == 0
+    assert artifact["verdict"] == "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+    assert artifact["execution_marker"] == EXECUTION_MARKER
+    assert not _contains_forbidden_key(artifact)
+
+
+def test_public_wheel_module_returns_clean_json_error_for_malformed_input(tmp_path):
+    wheel_path = _build_public_wheel(tmp_path)
+    request = tmp_path / "bad.json"
+    request.write_text("{not json", encoding="utf-8")
+    result = _run_wheel_module(wheel_path, request)
+
+    assert result.returncode != 0
+    assert result.stdout == ""
+    error = json.loads(result.stderr)
+    assert error["schema"] == "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1"
+    assert "Traceback" not in result.stderr
+    assert "C:\\Users\\" not in result.stderr
+    assert "C:/Users/" not in result.stderr
 
 
 def _write_request(tmp_path: Path, request: dict[str, object]) -> Path:
@@ -157,6 +192,29 @@ def _run_tool(request: Path, *args: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [sys.executable, str(TOOL), str(request), *args],
         cwd=ROOT,
+        text=True,
+        capture_output=True,
+    )
+
+
+def _build_public_wheel(tmp_path: Path) -> Path:
+    result = subprocess.run(
+        [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    return Path(result.stdout.splitlines()[0])
+
+
+def _run_wheel_module(wheel_path: Path, request: Path) -> subprocess.CompletedProcess[str]:
+    env = dict(**__import__("os").environ)
+    env["PYTHONPATH"] = str(wheel_path)
+    return subprocess.run(
+        [sys.executable, "-m", PUBLIC_MODULE, str(request)],
+        cwd=ROOT,
+        env=env,
         text=True,
         capture_output=True,
     )

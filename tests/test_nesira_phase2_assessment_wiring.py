@@ -114,34 +114,7 @@ def test_missing_caller_context_fails_closed():
     assert set(case["per_domain_breakdown"].values()) == {wiring.VERDICT_NOT_EVALUATED}
 
 
-def test_assessment_wiring_and_dependencies_are_excluded_from_public_wheel():
-    results = run_assessment_wiring_harness(ROOT, build_wheel=True)
-    wheel = results["public_wheel_exclusion"]
-
-    assert wheel["wheel_exclusion_failures"] == 0
-    assert wheel["blocked_entries"] == []
-    assert wheel["cryptography_entries"] == []
-    assert wheel["metadata_dependency_headers"] == []
-    assert wheel["metadata_mentions_new_dependency"] is False
-
-
-def test_project_dependencies_remain_empty_and_requirements_unchanged_for_wiring():
-    pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
-    requirements = (ROOT / "requirements" / "nesira_adapters_win_amd64_cp312.txt").read_text(encoding="utf-8")
-
-    assert pyproject["project"]["dependencies"] == []
-    assert "optional-dependencies" not in pyproject["project"]
-    assert "assessment-wiring" not in requirements.lower()
-
-
-def test_assessment_wiring_module_not_in_public_builder_allowlist():
-    builder = (ROOT / "tools" / "build_spira_trust_public.py").read_text(encoding="utf-8")
-
-    assert "spira_core/nesira_phase2_assessment_wiring.py" not in builder
-    assert "spira_core/nesira_phase2_assessment_wiring_harness.py" not in builder
-
-
-def test_public_wheel_metadata_does_not_include_wiring_or_adapter_dependency(tmp_path):
+def test_assessment_wiring_runtime_is_in_public_wheel_but_harness_is_excluded(tmp_path):
     import subprocess
     import sys
 
@@ -158,17 +131,50 @@ def test_public_wheel_metadata_does_not_include_wiring_or_adapter_dependency(tmp
         metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
         metadata = zf.read(metadata_name).decode("utf-8")
 
-    blocked = [
-        "nesira_phase2_assessment_wiring",
-        "nesira_phase2_signature",
-        "nesira_phase2_identity",
-        "nesira_phase2_authority",
-        "nesira_phase2_isolation_attestation",
-    ]
-    assert all(not any(fragment in name for fragment in blocked) for name in names)
-    assert "Requires-Dist:" not in metadata
-    assert "Provides-Extra:" not in metadata
-    assert "cryptography" not in metadata.lower()
+    assert "spira_core/nesira_phase2_assessment_wiring.py" in names
+    assert "spira_core/nesira_phase2_assessment_wiring_harness.py" not in names
+    assert all("_harness.py" not in name for name in names)
+    assert "Provides-Extra: nesira-assessment" in metadata
+    assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
+
+
+def test_project_dependencies_remain_empty_and_requirements_unchanged_for_wiring():
+    pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    requirements = (ROOT / "requirements" / "nesira_adapters_win_amd64_cp312.txt").read_text(encoding="utf-8")
+
+    assert pyproject["project"]["dependencies"] == []
+    assert pyproject["project"]["optional-dependencies"] == {"nesira-assessment": ["cryptography==49.0.0"]}
+    assert "assessment-wiring" not in requirements.lower()
+
+
+def test_assessment_wiring_runtime_in_public_builder_allowlist_but_harness_excluded():
+    builder = (ROOT / "tools" / "build_spira_trust_public.py").read_text(encoding="utf-8")
+
+    assert "spira_core/nesira_phase2_assessment_wiring.py" in builder
+    assert "spira_core/nesira_phase2_assessment_wiring_harness.py" not in builder
+
+
+def test_public_wheel_metadata_exposes_crypto_only_as_optional_extra(tmp_path):
+    import subprocess
+    import sys
+
+    result = subprocess.run(
+        [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    wheel_path = Path(result.stdout.splitlines()[0])
+    with zipfile.ZipFile(wheel_path) as zf:
+        names = zf.namelist()
+        metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
+        metadata = zf.read(metadata_name).decode("utf-8")
+
+    assert all("_harness.py" not in name for name in names)
+    assert "Provides-Extra: nesira-assessment" in metadata
+    assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
+    assert "Requires-Dist: cryptography==49.0.0\n" not in metadata
 
 
 def _sub(verdict: str, *, isolation: bool = False) -> dict[str, object]:

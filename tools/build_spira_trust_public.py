@@ -66,6 +66,12 @@ PUBLIC_FILES = [
     "spira_core/decision015/contract.py",
     "spira_core/decision015/core.py",
     "spira_core/decision015/service.py",
+    "spira_core/nesira_phase2_assessment_wiring.py",
+    "spira_core/nesira_phase2_authority_adapter.py",
+    "spira_core/nesira_phase2_identity_adapter.py",
+    "spira_core/nesira_phase2_isolation_attestation_adapter.py",
+    "spira_core/nesira_phase2_read_only_assessment_cli.py",
+    "spira_core/nesira_phase2_signature_adapter.py",
 ]
 
 PUBLIC_DIRS = [
@@ -150,6 +156,8 @@ def _write_dist_info(stage: Path) -> None:
     msg["License"] = "Apache-2.0"
     msg["License-File"] = "LICENSE"
     msg["Description-Content-Type"] = "text/markdown"
+    msg["Provides-Extra"] = "nesira-assessment"
+    msg["Requires-Dist"] = "cryptography==49.0.0; extra == 'nesira-assessment'"
     msg["Project-URL"] = "Homepage, https://github.com/snir-spira37/spira-trust"
     msg["Project-URL"] = "Repository, https://github.com/snir-spira37/spira-trust"
     msg["Project-URL"] = "Issues, https://github.com/snir-spira37/spira-trust/issues"

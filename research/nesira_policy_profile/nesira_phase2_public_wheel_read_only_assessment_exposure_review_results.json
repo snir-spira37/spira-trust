@@ -1,0 +1,13 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED_PENDING_COLD_REPRODUCTION",
+  "accepted_pending_cold_reproduction": true,
+  "reason": "local implementation, public wheel content, optional crypto metadata, read-only runtime, narrow V1 manifest refresh, focused tests, full pytest, compileall, and git diff checks passed; cold reproduction remains required",
+  "blocked_claims": [
+    "runner",
+    "combined_verdict",
+    "public_claim",
+    "release",
+    "severance_action"
+  ]
+}
