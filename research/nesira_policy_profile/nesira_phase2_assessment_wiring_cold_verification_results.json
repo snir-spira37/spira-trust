@@ -1,0 +1,56 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_ASSESSMENT_WIRING_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_ASSESSMENT_WIRING_COLD_VERIFICATION_ACCEPTED",
+  "source_commit": "0abcd75f0346da36dec0c764b5185fd74c571777",
+  "fresh_clone_path": "C:\\tmp\\spira_wiring_cold_0abcd75",
+  "checks": {
+    "harness_verdict": "NESIRA_PHASE2_ASSESSMENT_WIRING_ACCEPTED",
+    "focused_pytest": {
+      "passed": 12,
+      "failed": 0
+    },
+    "adapter_and_v1_regression_pytest": {
+      "passed": 58,
+      "failed": 0
+    },
+    "full_pytest": {
+      "passed": 339,
+      "failed": 0
+    },
+    "compileall": "PASS",
+    "formal_core_v1_sha256sums": {
+      "checked": 622,
+      "failures": 0
+    },
+    "oracle_agreement": {
+      "wiring_rows_checked": 81,
+      "wiring_oracle_disagreements": 0,
+      "duplicate_oracle_keys": 0,
+      "oracle_required_assumption_failures": 0
+    },
+    "cross_subject_mismatch": {
+      "produced_sufficient": 0,
+      "not_sufficient": 1
+    },
+    "assumption_carrying": {
+      "outputs_missing_floor": 0,
+      "sufficient_outputs_missing_pt_isolation_01": 0
+    },
+    "forbidden_output_semantics": 0,
+    "wheel_exclusion_failures": 0,
+    "forbidden_field_name_hits": 0,
+    "secret_or_local_path_hits": 0,
+    "ascii_failures": 0,
+    "git_diff_check": "PASS",
+    "deterministic_results_rewrite": "PASS",
+    "protected_boundary_diff": "PASS"
+  },
+  "blocked_claims": [
+    "runner",
+    "product_verdict_wiring",
+    "cli",
+    "public_wheel_exposure",
+    "release",
+    "public_capability_claim"
+  ]
+}
