@@ -1,0 +1,14 @@
+{
+  "accepted": true,
+  "blocked_claims": [
+    "runner",
+    "combined_verdict",
+    "public_wheel_exposure",
+    "public_claim",
+    "release",
+    "severance_action"
+  ],
+  "reason": "focused, boundary, compileall, full pytest, V1 package, and wheel-exclusion checks passed",
+  "schema": "SPIRA_NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED"
+}

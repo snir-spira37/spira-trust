@@ -1,0 +1,36 @@
+{
+  "blocked_claims": [
+    "runner",
+    "combined_verdict",
+    "public_wheel_exposure",
+    "public_claim",
+    "release",
+    "severance_action"
+  ],
+  "checks": {
+    "canonical_json_output": "PASS",
+    "clean_tool_error_without_traceback": "PASS",
+    "compileall": "PASS",
+    "console_entry_point_added": false,
+    "exit_code_reflects_tool_success_not_assessment_permission": "PASS",
+    "forbidden_cli_flags": 0,
+    "forbidden_output_fields": 0,
+    "full_pytest": "347 passed",
+    "git_diff_check": "PASS",
+    "output_file_matches_stdout": "PASS",
+    "public_wheel_exclusion": "PASS",
+    "pyproject_dependencies_empty": true,
+    "raw_verdict_tokens_preserved": true,
+    "two_run_semantic_diff": 0
+  },
+  "focused_pytest": {
+    "failed": 0,
+    "passed": 25
+  },
+  "implemented_files": [
+    "tools/run_nesira_phase2_read_only_assessment.py",
+    "tests/test_nesira_phase2_read_only_assessment_exposure.py"
+  ],
+  "schema": "SPIRA_NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED"
+}
