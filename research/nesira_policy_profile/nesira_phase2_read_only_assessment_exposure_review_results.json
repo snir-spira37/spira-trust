@@ -8,7 +8,12 @@
     "release",
     "severance_action"
   ],
-  "reason": "focused, boundary, compileall, full pytest, V1 package, and wheel-exclusion checks passed",
+  "cold_verification": {
+    "fresh_clone": true,
+    "source_commit": "9f9729d83015a1a2bc4948a0867ca4672c5aef2a",
+    "verdict": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_ACCEPTED"
+  },
+  "reason": "focused, boundary, compileall, full pytest, V1 package, wheel-exclusion, and cold reproduction checks passed",
   "schema": "SPIRA_NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_REVIEW_RESULTS_V1",
   "verdict": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED"
 }

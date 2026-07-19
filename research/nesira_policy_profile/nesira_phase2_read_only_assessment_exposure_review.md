@@ -52,6 +52,29 @@ full pytest: 347 passed
 git diff --check: PASS
 ```
 
+## Cold Reproduction
+
+The authorization required cold reproduction from a fresh clone before this
+gate could be treated as fully accepted. That reproduction was completed at:
+
+```text
+9f9729d83015a1a2bc4948a0867ca4672c5aef2a
+```
+
+Cold results:
+
+```text
+hash-locked cryptography requirements install: PASS
+CLI exit-code matrix across all three verdicts: PASS
+malformed input clean JSON error: PASS
+focused read-only/wiring/V1 pytest: 25 passed
+full pytest: 347 passed
+V1 SHA256SUMS self-check: 622/622
+public wheel exclusion: PASS
+two-run byte equality: PASS
+git diff --check: PASS
+```
+
 ## Boundary
 
 ```text

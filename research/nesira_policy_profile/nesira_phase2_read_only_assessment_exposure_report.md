@@ -73,3 +73,29 @@ focused read-only/wiring/V1 pytest: 25 passed
 full pytest: 347 passed
 git diff --check: PASS
 ```
+
+## Cold Reproduction
+
+Completed from a fresh clone at commit:
+
+```text
+9f9729d83015a1a2bc4948a0867ca4672c5aef2a
+```
+
+Cold reproduction covered:
+
+```text
+hash-locked cryptography requirements install: PASS
+read-only CLI exit-code matrix: PASS
+malformed input clean JSON error: PASS
+compileall: PASS
+focused read-only/wiring/V1 pytest: 25 passed
+full pytest: 347 passed
+V1 SHA256SUMS self-check: 622/622
+public wheel exclusion: PASS
+two-run byte equality: PASS
+git diff --check: PASS
+```
+
+The final accepted status is therefore backed by cold reproduction, not only by
+local implementation checks.

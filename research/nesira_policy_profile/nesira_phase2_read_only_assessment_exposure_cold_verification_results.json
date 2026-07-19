@@ -1,0 +1,49 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_ACCEPTED",
+  "accepted": true,
+  "source_commit": "9f9729d83015a1a2bc4948a0867ca4672c5aef2a",
+  "fresh_clone_path": "C:\\tmp\\spira_ro_cold_9f9729d_20260719131123",
+  "checks": {
+    "hash_locked_requirements_install": "PASS",
+    "cli_exit_code_matrix": {
+      "trust_sufficient_under_declared_roots": {
+        "exit_code": 0,
+        "verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+      },
+      "trust_not_evaluated": {
+        "exit_code": 0,
+        "verdict": "TRUST_NOT_EVALUATED"
+      },
+      "trust_insufficient": {
+        "exit_code": 0,
+        "verdict": "TRUST_INSUFFICIENT"
+      }
+    },
+    "malformed_input_clean_json_error": {
+      "exit_code": 2,
+      "schema": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1",
+      "traceback": false
+    },
+    "compileall": "PASS",
+    "focused_pytest": "25 passed",
+    "full_pytest": "347 passed",
+    "v1_sha256sums_self_check": {
+      "ok": 622,
+      "failed": 0,
+      "total": 622
+    },
+    "public_wheel_exclusion": "PASS",
+    "two_run_byte_equality": "PASS",
+    "git_diff_check": "PASS",
+    "tracked_tree_clean": true
+  },
+  "blocked_claims": [
+    "runner",
+    "combined_verdict",
+    "public_wheel_exposure",
+    "public_claim",
+    "release",
+    "severance_action"
+  ]
+}
