@@ -1,11 +1,22 @@
 {
-  "schema": "SPIRA_NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_RESULTS_V1",
-  "verdict": "NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED",
+  "schema": "SPIRA_NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_ACCEPTED",
   "accepted": true,
-  "cold_verification": {
-    "fresh_clone": true,
-    "source_commit": "181ee58e06eb56794237ee9fc25e96421d18cb03",
-    "verdict": "NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_COLD_VERIFICATION_ACCEPTED"
+  "source_commit": "181ee58e06eb56794237ee9fc25e96421d18cb03",
+  "fresh_clone_path": "C:\\tmp\\spira_wheel_cold_181ee58_20260719",
+  "checks": {
+    "hash_locked_requirements_install": "PASS",
+    "compileall": "PASS",
+    "focused_public_wheel_exposure_pytest": "63 passed",
+    "v1_external_reproduction_package_test": "5 passed",
+    "v1_sha256sums_self_check": {
+      "ok": 622,
+      "failed": 0,
+      "total": 622
+    },
+    "full_pytest": "349 passed",
+    "git_diff_check": "PASS",
+    "v1_phase2_scope_scan_hits": 0
   },
   "public_wheel": {
     "wheel_sha256": "d82ebb1f64dcc3b60e409b7b2050d56693d7fc5eeffbdf1cba0b68e2c282efa3",
@@ -50,25 +61,6 @@
     "returncode": 2,
     "schema": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1",
     "traceback": false
-  },
-  "v1_manifest_refresh": {
-    "narrow": true,
-    "pinned_changed_files": [
-      "pyproject.toml"
-    ],
-    "sha256sums_changed_entries": [
-      "pyproject.toml",
-      "research/formal_core/external_reproduction_package/artifact_manifest.json"
-    ],
-    "v1_sha256sums_self_check": "622/622",
-    "phase2_mentions_in_v1_inventory_claims_expected_manifest": 0
-  },
-  "local_verification": {
-    "focused_pytest": "63 passed",
-    "v1_external_reproduction_package_test": "5 passed",
-    "full_pytest": "349 passed",
-    "compileall": "PASS",
-    "git_diff_check": "PASS"
   },
   "blocked_claims": [
     "runner",

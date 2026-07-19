@@ -3,7 +3,7 @@
 ## Status
 
 ```text
-NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED_PENDING_COLD_REPRODUCTION
+NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED
 ```
 
 ## Implemented Surface
@@ -111,5 +111,26 @@ RELEASE
 SEVERANCE_ACTION
 ```
 
-Cold reproduction from a fresh clone remains required before the final accepted
-verdict may be recorded.
+## Cold Reproduction
+
+Completed from a fresh clone at:
+
+```text
+181ee58e06eb56794237ee9fc25e96421d18cb03
+```
+
+Cold results:
+
+```text
+hash-locked cryptography requirements install: PASS
+focused public-wheel exposure pytest: 63 passed
+V1 external reproduction package test: 5 passed
+V1 SHA256SUMS self-check: 622/622
+full pytest: 349 passed
+compileall: PASS
+public wheel runtime execution: PASS
+V1 Phase2 scope scan: 0 hits
+git diff --check: PASS
+```
+
+The final accepted verdict is backed by cold reproduction.

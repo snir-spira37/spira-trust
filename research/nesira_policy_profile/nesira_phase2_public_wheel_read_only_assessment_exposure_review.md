@@ -3,14 +3,15 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED_PENDING_COLD_REPRODUCTION
+NESIRA_PHASE2_PUBLIC_WHEEL_READ_ONLY_ASSESSMENT_EXPOSURE_ACCEPTED
 ```
 
 ## Review Scope
 
-This review covers the local implementation of the narrow public wheel
-read-only assessment exposure. It does not authorize combined verdict
-integration, runner execution, public claims, release, or severance action.
+This review covers the implementation and cold reproduction of the narrow
+public wheel read-only assessment exposure. It does not authorize combined
+verdict integration, runner execution, public claims, release, or severance
+action.
 
 ## Findings
 
@@ -85,5 +86,26 @@ RELEASE: NOT_AUTHORIZED
 SEVERANCE_ACTION: NOT_AUTHORIZED
 ```
 
-Cold reproduction from a fresh clone is still required before this gate can be
-recorded as fully accepted.
+## Cold Reproduction
+
+Cold reproduction was completed from a fresh clone at:
+
+```text
+181ee58e06eb56794237ee9fc25e96421d18cb03
+```
+
+Cold checks passed:
+
+```text
+hash-locked cryptography requirements install
+focused public-wheel exposure pytest: 63 passed
+V1 external reproduction package test: 5 passed
+V1 SHA256SUMS self-check: 622/622
+full pytest: 349 passed
+compileall
+public wheel runtime execution from built wheel
+V1 Phase2 scope scan: 0 hits
+git diff --check
+```
+
+The gate is fully accepted after cold reproduction.
