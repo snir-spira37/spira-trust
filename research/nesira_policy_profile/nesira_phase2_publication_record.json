@@ -1,8 +1,9 @@
 {
   "schema": "SPIRA_NESIRA_PHASE2_PUBLICATION_RECORD_V1",
-  "verdict": "NESIRA_PHASE2_PUBLICATION_NOT_PERFORMED",
+  "verdict": "NESIRA_PHASE2_PUBLICATION_BLOCKED",
   "staging_verdict": "NESIRA_PHASE2_TESTPYPI_DRY_RUN_ACCEPTED",
   "publication_performed": false,
+  "production_attempt_verdict": "NESIRA_PHASE2_PRODUCTION_TAG_PUSH_PRE_UPLOAD_GUARD_FAILED",
   "candidate": {
     "version": "0.7.0",
     "publication_authorization_commit": "3559bcf20e89130bafefa7d7cb29f41f712d533e",
@@ -53,18 +54,35 @@
   },
   "external_actions": {
     "testpypi_upload": "PERFORMED",
-    "git_tag_v0_7_0": "NOT_PERFORMED",
-    "git_push_tag_v0_7_0": "NOT_PERFORMED",
+    "git_tag_v0_7_0": "PERFORMED",
+    "git_push_tag_v0_7_0": "PERFORMED",
     "github_release_draft": "NOT_PERFORMED",
-    "real_pypi_upload": "NOT_AUTHORIZED",
-    "github_release_publication": "NOT_AUTHORIZED",
+    "real_pypi_upload": "NOT_PERFORMED",
+    "github_release_publication": "NOT_PERFORMED",
     "announcement": "NOT_PERFORMED"
   },
+  "go_2_attempt": {
+    "received_from": "Snir",
+    "tag": "v0.7.0",
+    "target": "e75b0960ece18c41ebdf73008671043f7b0108c1",
+    "action": "tag push triggering production workflow",
+    "workflow": "pypi-production-publish.yml",
+    "run_id": "29694289448",
+    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29694289448",
+    "head_sha": "e75b0960ece18c41ebdf73008671043f7b0108c1",
+    "conclusion": "failure",
+    "failed_step": "Guard release agent summary size",
+    "failure": "dist/release-evidence/graph/agent_summary.json is 3141 bytes; limit is 3072 bytes",
+    "real_pypi_upload": "SKIPPED",
+    "github_release_publication": "SKIPPED"
+  },
   "still_blocked": [
-    "REAL_PYPI_UPLOAD_REQUIRES_GO_2_AFTER_STAGING",
-    "GITHUB_RELEASE_PUBLICATION_REQUIRES_GO_2_AFTER_STAGING",
+    "REAL_PYPI_UPLOAD_NOT_PERFORMED",
+    "GITHUB_RELEASE_PUBLICATION_NOT_PERFORMED",
     "GITHUB_RELEASE_DRAFT_NOT_PERFORMED",
-    "PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH_OPEN_BEFORE_GO_2",
+    "PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH_RESOLVED",
+    "PRODUCTION_AGENT_SUMMARY_SIZE_GUARD_FAILED_BEFORE_UPLOAD",
+    "TAG_V0_7_0_REMOTE_EXISTS",
     "COMBINED_VERDICT",
     "RUNNER",
     "SEVERANCE_ACTION"

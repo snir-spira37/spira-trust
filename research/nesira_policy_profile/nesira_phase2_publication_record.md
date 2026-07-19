@@ -3,16 +3,18 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLICATION_NOT_PERFORMED
+NESIRA_PHASE2_PUBLICATION_BLOCKED
 NESIRA_PHASE2_TESTPYPI_DRY_RUN_ACCEPTED
+NESIRA_PHASE2_PRODUCTION_TAG_PUSH_PRE_UPLOAD_GUARD_FAILED
 ```
 
 ## Scope
 
-This record documents GO #1 staging for the refreshed 0.7.0 read-only
-assessment release candidate.
+This record documents GO #1 staging and the first GO #2 production attempt for
+the refreshed 0.7.0 read-only assessment release candidate.
 
-No real publication action was performed.
+The GO #2 tag push was performed, but the production workflow stopped before
+real PyPI upload and before GitHub release publication.
 
 ## Candidate
 
@@ -90,21 +92,55 @@ local path leaked: false
 
 ```text
 TestPyPI upload: PERFORMED
-git tag v0.7.0: NOT_PERFORMED
-git push tag v0.7.0: NOT_PERFORMED
+git tag v0.7.0: PERFORMED
+git push tag v0.7.0: PERFORMED
 GitHub release draft: NOT_PERFORMED
-real PyPI upload: NOT_AUTHORIZED
-GitHub release publication: NOT_AUTHORIZED
+real PyPI upload: NOT_PERFORMED
+GitHub release publication: NOT_PERFORMED
 announcement: NOT_PERFORMED
+```
+
+## GO #2 Attempt
+
+GO #2 was received from Snir for:
+
+```text
+tag: v0.7.0
+target: e75b0960ece18c41ebdf73008671043f7b0108c1
+action: tag push triggering production workflow
+```
+
+Production workflow:
+
+```text
+workflow: pypi-production-publish.yml
+run_id: 29694289448
+run_url: https://github.com/snir-spira37/spira-trust/actions/runs/29694289448
+head_sha: e75b0960ece18c41ebdf73008671043f7b0108c1
+conclusion: failure
+failed_step: Guard release agent summary size
+failure: dist/release-evidence/graph/agent_summary.json is 3141 bytes; limit is 3072 bytes
+```
+
+The workflow stopped before:
+
+```text
+Run previous public version gate
+Prepare release evidence assets
+Attach evidence to draft GitHub Release
+Publish package distributions to PyPI
+Publish GitHub Release
 ```
 
 ## Still Blocked
 
 ```text
-REAL_PYPI_UPLOAD: REQUIRES_GO_2_AFTER_STAGING
-GITHUB_RELEASE_PUBLICATION: REQUIRES_GO_2_AFTER_STAGING
+REAL_PYPI_UPLOAD: NOT_PERFORMED
+GITHUB_RELEASE_PUBLICATION: NOT_PERFORMED
 GITHUB_RELEASE_DRAFT: NOT_PERFORMED
-PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH: OPEN_BEFORE_GO_2
+PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH: RESOLVED
+PRODUCTION_AGENT_SUMMARY_SIZE_GUARD: FAILED_BEFORE_UPLOAD
+TAG_V0_7_0_REMOTE_EXISTS: TRUE
 COMBINED_VERDICT: NOT_AUTHORIZED
 RUNNER: NOT_AUTHORIZED
 SEVERANCE_ACTION: NOT_AUTHORIZED
@@ -116,5 +152,6 @@ TestPyPI is a staging dry-run. It is not a production release, not a public
 claim, not a GitHub release, not a real PyPI upload, not combined verdict
 integration, not runner behavior, and not severance action.
 
-GO #2 remains required before any real PyPI upload or production GitHub release
-publication.
+No real PyPI upload or production GitHub release publication occurred. Any
+retry that retargets, deletes, or recreates `v0.7.0` requires a separate,
+explicit human authorization because the tag is already public.
