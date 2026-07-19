@@ -75,7 +75,7 @@ full pytest
 V1 SHA256SUMS 622/622
 V1 scope scan
 dependency posture
-release notes hash
+production workflow release notes generation includes the approved Nesira public snippet and preserves the release-evidence ritual
 rollback plan hash
 combined verdict unchanged
 runner/severance unchanged

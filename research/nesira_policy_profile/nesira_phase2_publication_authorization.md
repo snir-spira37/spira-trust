@@ -121,7 +121,7 @@ V1 claims/inventory/expected-results still have 0 Phase2 scope hits
 dependencies=[]
 cryptography appears only under optional extra nesira-assessment
 no unconditional cryptography Requires-Dist
-release notes hash matches accepted RC evidence
+production workflow release notes generation includes the approved Nesira public snippet and preserves the release-evidence ritual
 rollback plan hash matches accepted RC evidence
 no combined verdict integration change
 no runner/severance action change
