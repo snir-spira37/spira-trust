@@ -1,0 +1,38 @@
+{
+  "blocked_claims": [
+    "package_delivery",
+    "runner",
+    "combined_verdict",
+    "cli",
+    "public_wheel_exposure",
+    "public_claim",
+    "release"
+  ],
+  "package_directory": "research/nesira_policy_profile/phase2_external_reproduction_package",
+  "package_file_count": 10,
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_RESULTS_V1",
+  "source_artifact_count": 103,
+  "source_assessment_commit": "26b560822ca9ad2a518ec74334fe6cc7abb864e5",
+  "status": "NESIRA_PHASE2_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_ACCEPTED",
+  "validation": {
+    "accepted": true,
+    "claim_boundary": "package build only; delivery and product claims remain blocked",
+    "forbidden_phrase_hits": [],
+    "json_failures": [],
+    "local_path_hits": [],
+    "missing_files": [],
+    "non_ascii_files": [],
+    "package_files_checked": 10,
+    "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_INTERNAL_BUILD_VALIDATION_V1",
+    "sha256sum_failures": [],
+    "status": "PASS",
+    "zip_path_safety": {
+      "duplicate_entries": [],
+      "safe": true,
+      "unsafe_entries": []
+    }
+  },
+  "zip_bytes": 13433,
+  "zip_path": "research/nesira_policy_profile/SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_26b5608.zip",
+  "zip_sha256": "d4416afc17687500ce60091664c51e8e33b2ffc8e8838daf8ca2894537777dee"
+}

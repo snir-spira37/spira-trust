@@ -1,0 +1,14 @@
+{
+  "adapter_requirements_install": "python -m pip install --require-hashes -r requirements/nesira_adapters_win_amd64_cp312.txt",
+  "adapter_requirements_path": "requirements/nesira_adapters_win_amd64_cp312.txt",
+  "adapter_requirements_sha256": "6e736c64f5ea551581ae4a85e472a42ed5708089921b46cbaca49d6499b051d6",
+  "cryptography_requirement": "cryptography==49.0.0",
+  "lake_requirement": "Lake 5.0.0",
+  "lean_requirement": "leanprover/lean4:v4.32.0",
+  "observed_builder_os": "Windows-10-10.0.19045-SP0",
+  "observed_builder_timestamp_utc": "2026-07-19T05:57:02Z",
+  "observed_python": "3.12.10",
+  "pyproject_product_dependencies": "must remain empty",
+  "python_requirement": "Python 3.12.x",
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_TOOLCHAIN_LOCK_V1"
+}

@@ -1,0 +1,17 @@
+{
+  "accepted": true,
+  "blocked_claims": [
+    "package_delivery",
+    "runner",
+    "combined_verdict",
+    "cli",
+    "public_wheel_exposure",
+    "public_claim",
+    "release"
+  ],
+  "package_delivery_authorized": false,
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_REVIEW_RESULTS_V1",
+  "source_assessment_commit": "26b560822ca9ad2a518ec74334fe6cc7abb864e5",
+  "verdict": "NESIRA_PHASE2_EXTERNAL_REPRODUCTION_PACKAGE_BUILD_ACCEPTED",
+  "zip_sha256": "d4416afc17687500ce60091664c51e8e33b2ffc8e8838daf8ca2894537777dee"
+}

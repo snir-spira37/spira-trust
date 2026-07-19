@@ -1,0 +1,62 @@
+{
+  "boundary": "records public-wheel, V1, oracle, ledger, toolchain, and crypto-pin surfaces that package reviewers must inspect",
+  "protected_surface_count": 11,
+  "protected_surfaces": [
+    {
+      "bytes": 1824,
+      "path": "pyproject.toml",
+      "sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763"
+    },
+    {
+      "bytes": 9742,
+      "path": "tools/build_spira_trust_public.py",
+      "sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac"
+    },
+    {
+      "bytes": 443,
+      "path": "formal/spira_formal_core_v1/lakefile.toml",
+      "sha256": "d207b02ad20da8c517e03db98c10a9be6422441dbf1db8f3c3225e3a9b4b98bc"
+    },
+    {
+      "bytes": 25,
+      "path": "formal/spira_formal_core_v1/lean-toolchain",
+      "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "bytes": 152,
+      "path": "formal/spira_formal_core_v1/lake-manifest.json",
+      "sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd"
+    },
+    {
+      "bytes": 863,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/SHA256SUMS",
+      "sha256": "22ce90868b81a82867dd00caa7a3b4b69f310ae055b4af7215a009456f0fc79b"
+    },
+    {
+      "bytes": 34094,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/phase1_reproduction_manifest.json",
+      "sha256": "ebddc1e768c5b109879df078df1f93f393fad36f4c2d13a64bb8a97527a9dead"
+    },
+    {
+      "bytes": 1856,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/CLAIMS_AND_BOUNDARIES.md",
+      "sha256": "b6f10062dae1f6bdcdb970bc8c6544657e34177d07832251ea122abb8b160849"
+    },
+    {
+      "bytes": 128041,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_decision_table.json",
+      "sha256": "23d498769cf4eee12b6b8b1d0d0fcaecc1e84fdf16230b9fe11a9c09fc8e9371"
+    },
+    {
+      "bytes": 11689,
+      "path": "research/nesira_policy_profile/nesira_phase2_not_proven_trust_ledger.json",
+      "sha256": "a6c5eefd94fbfee138747e138db3a55d578030b08938583aab211a26ba6cf2b8"
+    },
+    {
+      "bytes": 341,
+      "path": "requirements/nesira_adapters_win_amd64_cp312.txt",
+      "sha256": "6e736c64f5ea551581ae4a85e472a42ed5708089921b46cbaca49d6499b051d6"
+    }
+  ],
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_PROTECTED_SURFACE_INVENTORY_V1"
+}

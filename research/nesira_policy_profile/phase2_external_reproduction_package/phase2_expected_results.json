@@ -1,0 +1,48 @@
+{
+  "adapters": {
+    "authority": "NESIRA_PHASE2_AUTHORITY_ADAPTER_ACCEPTED",
+    "identity": "NESIRA_PHASE2_IDENTITY_ADAPTER_ACCEPTED",
+    "isolation_attestation": "NESIRA_PHASE2_ISOLATION_ATTESTATION_ADAPTER_ACCEPTED",
+    "signature": "NESIRA_PHASE2_SIGNATURE_ADAPTER_ACCEPTED"
+  },
+  "assessment_wiring": {
+    "cross_subject_mismatch_not_sufficient": 1,
+    "cross_subject_mismatch_produces_sufficient": 0,
+    "oracle_disagreements": 0,
+    "oracle_rows_checked": 81,
+    "verdict": "NESIRA_PHASE2_ASSESSMENT_WIRING_ACCEPTED"
+  },
+  "blocked_claims": {
+    "cli": "NOT_AUTHORIZED",
+    "combined_verdict": "NOT_AUTHORIZED",
+    "public_claim": "NOT_AUTHORIZED",
+    "public_wheel_exposure": "NOT_AUTHORIZED",
+    "release": "NOT_AUTHORIZED",
+    "runner": "NOT_AUTHORIZED"
+  },
+  "expected_full_pytest": "339 passed",
+  "formal_core_v1_external_reproduction_package": {
+    "sha256sums_checked": 622,
+    "sha256sums_failures": 0,
+    "v1_scope_contains_phase2_claims": false
+  },
+  "lean_composition": {
+    "oracle_disagreements": 0,
+    "oracle_rows": 81,
+    "sorryAx": 0,
+    "target": "SpiraFormalCorePhase2",
+    "verdict_distribution": {
+      "INSUFFICIENT": 65,
+      "NOT_EVALUATED": 15,
+      "SUFFICIENT": 1
+    }
+  },
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_EXPECTED_RESULTS_V1",
+  "source_assessment_commit": "26b560822ca9ad2a518ec74334fe6cc7abb864e5",
+  "wheel_exclusion": {
+    "cryptography_metadata_absent": true,
+    "phase2_adapters_absent": true,
+    "phase2_harnesses_absent": true,
+    "pyproject_dependencies_empty": true
+  }
+}

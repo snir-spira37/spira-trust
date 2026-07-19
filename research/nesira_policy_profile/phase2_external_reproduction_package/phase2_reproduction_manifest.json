@@ -1,0 +1,553 @@
+{
+  "accepted_statuses": {
+    "assessment_wiring": "NESIRA_PHASE2_ASSESSMENT_WIRING_COLD_VERIFICATION_ACCEPTED",
+    "authority_adapter": "NESIRA_PHASE2_AUTHORITY_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+    "identity_adapter": "NESIRA_PHASE2_IDENTITY_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+    "internal_milestone": "NESIRA_PHASE2_INTERNAL_ASSESSMENT_ENGINE_COMPLETE_INTERNAL_ONLY",
+    "isolation_attestation_adapter": "NESIRA_PHASE2_ISOLATION_ATTESTATION_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+    "lean_composition": "NESIRA_PHASE2_LEAN_COMPOSITION_COLD_VERIFICATION_ACCEPTED",
+    "signature_adapter": "NESIRA_PHASE2_SIGNATURE_ADAPTER_COLD_VERIFICATION_ACCEPTED"
+  },
+  "authorization": "research/nesira_policy_profile/nesira_phase2_external_reproduction_package_authorization.md",
+  "authorization_review": "research/nesira_policy_profile/nesira_phase2_external_reproduction_package_authorization_review.md",
+  "deterministic_build_metadata": {
+    "sha256sums_scope": "package files except SHA256SUMS itself",
+    "zip_paths": "forward-slash sorted",
+    "zip_timestamp": "1980-01-01T00:00:00Z"
+  },
+  "package_delivery_authorized": false,
+  "package_files": [
+    "README_REPRODUCTION.md",
+    "CLAIMS_AND_BOUNDARIES.md",
+    "REPRODUCE_PHASE2.md",
+    "COLD_EXTERNAL_REVIEW_TASK.md",
+    "phase2_reproduction_manifest.json",
+    "phase2_expected_results.json",
+    "protected_surface_hash_inventory.json",
+    "toolchain_environment_lock.json",
+    "internal_build_validation_results.json",
+    "SHA256SUMS"
+  ],
+  "package_scope": "internal assessment engine external reproduction only",
+  "product_claim_authorized": false,
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_MANIFEST_V1",
+  "source_artifact_count": 103,
+  "source_artifacts": [
+    {
+      "bytes": 9026,
+      "path": "LICENSE",
+      "sha256": "f8cc463ccf3c056eb8ae503a935f06e58dbb7d963b0e18ea06c865da5b796abf"
+    },
+    {
+      "bytes": 23837,
+      "path": "README.md",
+      "sha256": "5c28b7f9cff3a912f6fc6279a0b0536622e8250f3100130c1e6c5c764e412d5c"
+    },
+    {
+      "bytes": 1403,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Phase2/Assessment.lean",
+      "sha256": "e5ed908bfe8b5e48f5f1e306b080d7c41999e82c1aeff3f86cf35b80104a5835"
+    },
+    {
+      "bytes": 7822,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Phase2/Assumptions.lean",
+      "sha256": "afef9d67e5a45e6c1738df12743182dee45bbe8b38ef854fd557d50621e038a8"
+    },
+    {
+      "bytes": 2277,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Phase2/Composition.lean",
+      "sha256": "f928ad83926fb80b4f4980fbff03e1cad80b4bc7b756b6e54f6cc66b62fb193a"
+    },
+    {
+      "bytes": 3192,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Phase2/Main.lean",
+      "sha256": "3010563f96c2ba34ef1fa6bed6a5e1ebcd31cf865bc2a134fbb6a94d74bc0148"
+    },
+    {
+      "bytes": 4212,
+      "path": "formal/spira_formal_core_v1/SpiraFormalCore/Phase2/Proofs.lean",
+      "sha256": "6fbad632eae3ee84e3dcc39f96c6c27e9934925f734a676fb9ed20f98d1ad1c6"
+    },
+    {
+      "bytes": 152,
+      "path": "formal/spira_formal_core_v1/lake-manifest.json",
+      "sha256": "6df2eadc8caec299804b04a73cabcf35036e03545e4699a25be11821bdfa76cd"
+    },
+    {
+      "bytes": 443,
+      "path": "formal/spira_formal_core_v1/lakefile.toml",
+      "sha256": "d207b02ad20da8c517e03db98c10a9be6422441dbf1db8f3c3225e3a9b4b98bc"
+    },
+    {
+      "bytes": 25,
+      "path": "formal/spira_formal_core_v1/lean-toolchain",
+      "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+    },
+    {
+      "bytes": 1824,
+      "path": "pyproject.toml",
+      "sha256": "89f901ae9815e730d8e910a2fa2fba62e94694e8f28973d70de4189ecabec763"
+    },
+    {
+      "bytes": 341,
+      "path": "requirements/nesira_adapters_win_amd64_cp312.txt",
+      "sha256": "6e736c64f5ea551581ae4a85e472a42ed5708089921b46cbaca49d6499b051d6"
+    },
+    {
+      "bytes": 10988,
+      "path": "research/nesira_policy_profile/nesira_phase2_adapters_authorization.md",
+      "sha256": "16d6cba20c20a64225d60b5b50a48cdadf255478722880f275fc9cb60f782a98"
+    },
+    {
+      "bytes": 5098,
+      "path": "research/nesira_policy_profile/nesira_phase2_adapters_authorization_review.md",
+      "sha256": "7fec8c1044c9a872d25dc61acff379fe162c6ad2e107f0372cc1f685341b0731"
+    },
+    {
+      "bytes": 128041,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_decision_table.json",
+      "sha256": "23d498769cf4eee12b6b8b1d0d0fcaecc1e84fdf16230b9fe11a9c09fc8e9371"
+    },
+    {
+      "bytes": 3665,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_decision_table_review.md",
+      "sha256": "28118493161574f9e4468287546d900d638a232f297e83dbe4577b3534b15d95"
+    },
+    {
+      "bytes": 24412,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_decision_table_spec.md",
+      "sha256": "af8f4ff50d0d99fadebc4e3eccf3f1e2e4086c18a288be52f362adbe3c13391c"
+    },
+    {
+      "bytes": 7376,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_sketch.md",
+      "sha256": "816f70d63ce730e7f1d605bc75f28e93041c37cdbed036f1148ceffe67e8182a"
+    },
+    {
+      "bytes": 3897,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_sketch_review.md",
+      "sha256": "458275fffa8292526da4cc7ec4e9cd3df21469fae6688a8a86ed3bf4f14f2382"
+    },
+    {
+      "bytes": 9978,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_authorization.md",
+      "sha256": "8341d7c2a5bc113c1dd40891786bfdb529840020e3d5cfdedce890d033fa9622"
+    },
+    {
+      "bytes": 5022,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_authorization_review.md",
+      "sha256": "3b3b59f6a7aa4e5b1fe2d6c70c3895b1b56d3aff401ece02853d84db622db8f4"
+    },
+    {
+      "bytes": 1548,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_cold_verification_results.json",
+      "sha256": "916597ee7445c55a858d0d678c50a55b6784343d944bd3172d4503b914d07293"
+    },
+    {
+      "bytes": 2130,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_cold_verification_review.md",
+      "sha256": "51cd211c1b192922133f1f91058b879ca868bf87fbecc4c73e279854725db28c"
+    },
+    {
+      "bytes": 8017,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_implementation_plan.md",
+      "sha256": "b05582355b5c5bc87f271a52b087b2c24043dd08e831823765a1556cc862cfc7"
+    },
+    {
+      "bytes": 2211,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_report.md",
+      "sha256": "a83dfb9f452b6817e50a14b49fddb8da4cee37c00e753039310eb1abe179dd25"
+    },
+    {
+      "bytes": 18510,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_results.json",
+      "sha256": "d93173e037c9095f7a8a451421272833fc535f69e08bb3f11c9c0ea6674aa248"
+    },
+    {
+      "bytes": 2088,
+      "path": "research/nesira_policy_profile/nesira_phase2_assessment_wiring_review.md",
+      "sha256": "88fe489f73f06c0b659ae990cbc93d52f771e4ec4b265c3fa16ea226b8a4c144"
+    },
+    {
+      "bytes": 12671,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_authorization.md",
+      "sha256": "95566cb3365e1b3d2c50278fce1b91e5ec54954ff0d130ec6b7a4faaca78ce8b"
+    },
+    {
+      "bytes": 5311,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_authorization_review.md",
+      "sha256": "93127b02a52b56a1890e4adc5027000e82c6b2dfe56171463c3e0f792562b4a2"
+    },
+    {
+      "bytes": 3149,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_cold_verification_results.json",
+      "sha256": "aa70252d36bc721e9995381038508a3fc788d4d6c63b8efd643288666ebaf820"
+    },
+    {
+      "bytes": 4718,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_cold_verification_review.md",
+      "sha256": "3ee0b7635b693061542e0fe19d9260d4f329bc0c351ffe4275487899bd5f644b"
+    },
+    {
+      "bytes": 7349,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_implementation_plan.md",
+      "sha256": "114394b4fd54508a0c21f773265b9a717663749f680ce167a14ccb740bf5a1e4"
+    },
+    {
+      "bytes": 5032,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_report.md",
+      "sha256": "54f4853b327382360cabc2400b186ba7a2c9f072f7d62caa3646efeedb1db6f1"
+    },
+    {
+      "bytes": 29063,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_results.json",
+      "sha256": "61ac275189d9c73923e897b1c74e0746cc0d95a5d3e807fec8aee66584c1142c"
+    },
+    {
+      "bytes": 4052,
+      "path": "research/nesira_policy_profile/nesira_phase2_authority_adapter_review.md",
+      "sha256": "bba58abacf917c1ecd5c375b156f01755fc1ad330e2a49776be6039e54277d31"
+    },
+    {
+      "bytes": 12581,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_authorization.md",
+      "sha256": "3aa6b590eb7fbb53364f5d8191eef14b8a106d52bf22f41cb7d584742585d985"
+    },
+    {
+      "bytes": 5047,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_authorization_review.md",
+      "sha256": "2b0e46c379861fa9dc85608666a7214a74f9867ba004408dd289ce1e6fedc4c3"
+    },
+    {
+      "bytes": 4733,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_cold_verification_results.json",
+      "sha256": "acd383353863b270661cb380f74e8e0d9df7edd5518b5777827010bc48868725"
+    },
+    {
+      "bytes": 4940,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_cold_verification_review.md",
+      "sha256": "539fda4f4298d69c766d74f2012651d42c7cf0ce6060343e216d70564ce48abd"
+    },
+    {
+      "bytes": 7311,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_implementation_plan.md",
+      "sha256": "01186312f5aff680e0f08918601cf2468b4b87fc4cd789b4033734c03ebfd78b"
+    },
+    {
+      "bytes": 4788,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_report.md",
+      "sha256": "7d9842bdb742251a431d30d66874c80c1c41d00c64e84371f81377596f503b93"
+    },
+    {
+      "bytes": 27580,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_results.json",
+      "sha256": "dcd1225610042050ff8c23b3aa7442b42fbd6b2fef8cadb0ef17d67d5caf4ee7"
+    },
+    {
+      "bytes": 4752,
+      "path": "research/nesira_policy_profile/nesira_phase2_identity_adapter_review.md",
+      "sha256": "1f8096b54e878958e5b7871e5db6c7280de00bdb22804cbba6430dca686abf14"
+    },
+    {
+      "bytes": 4132,
+      "path": "research/nesira_policy_profile/nesira_phase2_internal_assessment_milestone.md",
+      "sha256": "e1d1e3f89b991d5869ee30c6ab50e9fa53c4d9d48cd1eac74fe0cd70a397e818"
+    },
+    {
+      "bytes": 12686,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_authorization.md",
+      "sha256": "3fdfda64d82bdae647f8ad9b818853b8710e947eeb1ab5dfbf09a3ec53e66b10"
+    },
+    {
+      "bytes": 6469,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_authorization_review.md",
+      "sha256": "1cd0e786414803370c8ef74a5f6658540504ededaeec0d1114a14e3ff26ba1d1"
+    },
+    {
+      "bytes": 1370,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_cold_verification_results.json",
+      "sha256": "3d384d19abec880f620f5e172943646f34cc0804a5d8ff038e0d8d7ff64a5e66"
+    },
+    {
+      "bytes": 2129,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_cold_verification_review.md",
+      "sha256": "a6ead9183fee7b70abb300592763b469334b9893afaaab87864fa2a44cf11b99"
+    },
+    {
+      "bytes": 10348,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_implementation_plan.md",
+      "sha256": "4ad89eb09171303bde11f7754b94bb8fbd92011246990df4d2f93c165c223f92"
+    },
+    {
+      "bytes": 5578,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_report.md",
+      "sha256": "820c8e2e80e8f4455f4b46e83b50c77d95d7e5c8169e5f60947c2012ef01fdcd"
+    },
+    {
+      "bytes": 28402,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_results.json",
+      "sha256": "b1a253d716051c857df36d6a60cc2dc33f61ec727ff095d7c115b93b0725e1dc"
+    },
+    {
+      "bytes": 4258,
+      "path": "research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_review.md",
+      "sha256": "f0a861f67dec39530bd735d12f1a7b6cf317c0d13eb0405fc6d5af172f915a87"
+    },
+    {
+      "bytes": 9342,
+      "path": "research/nesira_policy_profile/nesira_phase2_lean_composition_authorization.md",
+      "sha256": "ed354c0675b0f9a4bdbae8975516c8967b68495b2416df5732af5c45e1eb84d9"
+    },
+    {
+      "bytes": 4855,
+      "path": "research/nesira_policy_profile/nesira_phase2_lean_composition_report.md",
+      "sha256": "f9aee57bfadc1a4dcd9b532beef7f239b11982d1eafda6f0c3d204b1a600afd7"
+    },
+    {
+      "bytes": 3174,
+      "path": "research/nesira_policy_profile/nesira_phase2_lean_composition_results.json",
+      "sha256": "6a8aef2ebdba3084fa1514beb23b575560104dcadff65dcd1fdcedfddabdbbae"
+    },
+    {
+      "bytes": 3985,
+      "path": "research/nesira_policy_profile/nesira_phase2_lean_composition_review.md",
+      "sha256": "efc7acfd1cfcd50b76ecd1b17f98ca1e64aebb18577902fdb993d74fd6be1ac3"
+    },
+    {
+      "bytes": 11689,
+      "path": "research/nesira_policy_profile/nesira_phase2_not_proven_trust_ledger.json",
+      "sha256": "a6c5eefd94fbfee138747e138db3a55d578030b08938583aab211a26ba6cf2b8"
+    },
+    {
+      "bytes": 10018,
+      "path": "research/nesira_policy_profile/nesira_phase2_not_proven_trust_ledger.md",
+      "sha256": "4133404bbeaf94c2d5884f68313a9c0ed72856826ecccbced786b7cd1a0997eb"
+    },
+    {
+      "bytes": 3267,
+      "path": "research/nesira_policy_profile/nesira_phase2_not_proven_trust_ledger_review.md",
+      "sha256": "b59b500f07eb72817cd9fdd559f8608907fd10483a3c65e7acecd4d1e6438ed2"
+    },
+    {
+      "bytes": 8043,
+      "path": "research/nesira_policy_profile/nesira_phase2_proposal.md",
+      "sha256": "5ecc79123a184d3f7b706509d94fb00259f4489ddb8a1a341132c8f16e0a8b53"
+    },
+    {
+      "bytes": 3535,
+      "path": "research/nesira_policy_profile/nesira_phase2_proposal_review.md",
+      "sha256": "5bae25dc77f041dd5767f47fae3d6ac06ab248b934a9abaad09a7a93d23530f1"
+    },
+    {
+      "bytes": 7841,
+      "path": "research/nesira_policy_profile/nesira_phase2_research_authorization.md",
+      "sha256": "b5f50080a53fe967bdf8823bed1913f63009ba4f3cc767a0a6d1ec40d9f40711"
+    },
+    {
+      "bytes": 1347,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_cold_verification_results.json",
+      "sha256": "51b467485c4e868e037adc21de4d13cdedf3bbc65896e8d111986298ca3bfa18"
+    },
+    {
+      "bytes": 3961,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_cold_verification_review.md",
+      "sha256": "49a17553ed61f08a7f1d98918c54bc00541997d37ea4f84093883b03180921f8"
+    },
+    {
+      "bytes": 11374,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_implementation_plan.md",
+      "sha256": "5874e819b06d320a66c275765ca98cd6925cfe6c0b392e046d1a2f8382d7b1a6"
+    },
+    {
+      "bytes": 5519,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_implementation_plan_review.md",
+      "sha256": "b2a44d624c5d03cd37aefddc5f02ce1f7d46474b53cc262ed6a689f9aea5c90b"
+    },
+    {
+      "bytes": 7193,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_report.md",
+      "sha256": "091cfe0c8a9e5b80a08b5cfc7a8fad9822234ba2f91ebe8fec6200253e7bb79a"
+    },
+    {
+      "bytes": 18366,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_results.json",
+      "sha256": "3526f79ac2ae413bd72564143d4c8a5daff9bb25e9c7bb0843599199756c6128"
+    },
+    {
+      "bytes": 5694,
+      "path": "research/nesira_policy_profile/nesira_phase2_signature_adapter_review.md",
+      "sha256": "0392dc377c40022700e0b7cec7b878246b886d1f6f12be0885aa0d2519547245"
+    },
+    {
+      "bytes": 8842,
+      "path": "research/nesira_policy_profile/nesira_phase2_trust_model.md",
+      "sha256": "48c8b6778bc522e1013161ed4721303b0432343b91e65e393a972639d3e0742c"
+    },
+    {
+      "bytes": 3487,
+      "path": "research/nesira_policy_profile/nesira_phase2_trust_model_review.md",
+      "sha256": "f84145b3f04fe45f680320b065e7f9fb7b32f13fbd738d298a94aec025e9f40c"
+    },
+    {
+      "bytes": 1856,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/CLAIMS_AND_BOUNDARIES.md",
+      "sha256": "b6f10062dae1f6bdcdb970bc8c6544657e34177d07832251ea122abb8b160849"
+    },
+    {
+      "bytes": 835,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/COLD_EXTERNAL_REVIEW_TASK.md",
+      "sha256": "b3705d64e06a9f1a87579d1cd4099d65c375c2989f82f5041bf39b5a80516574"
+    },
+    {
+      "bytes": 732,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/README_REPRODUCTION.md",
+      "sha256": "459a1d9c9c28b9999baf37526404bb379091bfb620ad03ce07efd022702a2956"
+    },
+    {
+      "bytes": 1214,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/REPRODUCE_PHASE1.md",
+      "sha256": "a82d26a977250a55695aeafc854fb15bbe098b32134e15ba3682f53ec57d0270"
+    },
+    {
+      "bytes": 863,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/SHA256SUMS",
+      "sha256": "22ce90868b81a82867dd00caa7a3b4b69f310ae055b4af7215a009456f0fc79b"
+    },
+    {
+      "bytes": 110902,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/internal_build_validation_results.json",
+      "sha256": "737f39e95d3abfca6d2568ae249d4ebe29ba98661ee2d4f6c5d091d267c8e127"
+    },
+    {
+      "bytes": 1525,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/phase1_expected_results.json",
+      "sha256": "8078a5fb98366b6dc552f2c5df3c3203015d942ef9d05a5263dccc434516a075"
+    },
+    {
+      "bytes": 34094,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/phase1_reproduction_manifest.json",
+      "sha256": "ebddc1e768c5b109879df078df1f93f393fad36f4c2d13a64bb8a97527a9dead"
+    },
+    {
+      "bytes": 14414,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/protected_surface_hash_inventory.json",
+      "sha256": "6ef70e4769fa104bdca822d2e71712551d16bb88dccd8863b4de310fdae85ced"
+    },
+    {
+      "bytes": 463,
+      "path": "research/nesira_policy_profile/phase1_external_reproduction_package/toolchain_environment_lock.json",
+      "sha256": "eee5f666d7368299d6d650cfa8543af8e14b86711639903a555278532cdfabad"
+    },
+    {
+      "bytes": 9923,
+      "path": "source/spira_core/nesira_phase2_assessment_wiring.py",
+      "sha256": "a2a9ec210af9f60c45f82550b280a73a1fb105df7ec3bbda1b550af88a391bf3"
+    },
+    {
+      "bytes": 18928,
+      "path": "source/spira_core/nesira_phase2_assessment_wiring_harness.py",
+      "sha256": "53a2e3fc7b7a62fa7c669d74e0883ed60b4c8c9bd4a1d1dcca381745b0027c88"
+    },
+    {
+      "bytes": 18414,
+      "path": "source/spira_core/nesira_phase2_authority_adapter.py",
+      "sha256": "e775ba16b9b33193adb35760422360177dc19dca3a8e4cd73771db85710a3169"
+    },
+    {
+      "bytes": 19709,
+      "path": "source/spira_core/nesira_phase2_authority_harness.py",
+      "sha256": "45d95d47d602da04eac776f027c49e6fc3b70a258f64acc54432a3eda11729ea"
+    },
+    {
+      "bytes": 21224,
+      "path": "source/spira_core/nesira_phase2_identity_adapter.py",
+      "sha256": "e0eee4867ffcc753a1c7e04e735f884e32c7ebb17e698bc3b7c7c952a5c94d1d"
+    },
+    {
+      "bytes": 25157,
+      "path": "source/spira_core/nesira_phase2_identity_harness.py",
+      "sha256": "394596a56f569b85875f66020239f3b8e210884390ad6a55a0a2a9b444f0e53e"
+    },
+    {
+      "bytes": 18595,
+      "path": "source/spira_core/nesira_phase2_isolation_attestation_adapter.py",
+      "sha256": "831cc27e4345accf481a1eaf1bffd9557c96d612a5c460a3dd4455b52a4c53d9"
+    },
+    {
+      "bytes": 23249,
+      "path": "source/spira_core/nesira_phase2_isolation_attestation_harness.py",
+      "sha256": "b2c4b333518fd18fefd616b799f1bba54429589ef29b209e6011f4d2b717bd0e"
+    },
+    {
+      "bytes": 14705,
+      "path": "source/spira_core/nesira_phase2_signature_adapter.py",
+      "sha256": "c71291b548d1c9d51238dd60d813ce12bb630009bb0368b690170b08072e7843"
+    },
+    {
+      "bytes": 16780,
+      "path": "source/spira_core/nesira_phase2_signature_harness.py",
+      "sha256": "e95adaea5b26b6dff5fdde90c15333fb8bc4b0352f51ea05a1152ba0f08b752d"
+    },
+    {
+      "bytes": 3005,
+      "path": "tests/test_formal_core_v1_external_reproduction_package.py",
+      "sha256": "95a936708b6c5e3db81b463232917db29b6599b93cbd7bd16e9a81ea3df71355"
+    },
+    {
+      "bytes": 7783,
+      "path": "tests/test_nesira_phase2_assessment_wiring.py",
+      "sha256": "988f6d549906bcc121413d43c3ccb371f0d97505bccebd6ff546cc5689d68f50"
+    },
+    {
+      "bytes": 7082,
+      "path": "tests/test_nesira_phase2_authority_adapter.py",
+      "sha256": "572a717519698c2b309500dc2ac2ad134bd99d28567c4f9ae7df82a4f4720bd0"
+    },
+    {
+      "bytes": 7153,
+      "path": "tests/test_nesira_phase2_identity_adapter.py",
+      "sha256": "48fd80240c306a51e121a742b5b79041fa994c5f94d25c99d4b597a6067262d0"
+    },
+    {
+      "bytes": 8547,
+      "path": "tests/test_nesira_phase2_isolation_attestation_adapter.py",
+      "sha256": "8b8261b86bf69d7d79218a48420f11d9a0a151e55325591290a75074a6c762d4"
+    },
+    {
+      "bytes": 5868,
+      "path": "tests/test_nesira_phase2_signature_adapter.py",
+      "sha256": "3dcf23e9bd62e1ecb6d9fcf848eb4db6c69fe766f7f795ae9b12992ab80104a6"
+    },
+    {
+      "bytes": 9742,
+      "path": "tools/build_spira_trust_public.py",
+      "sha256": "45c3853c8e1123126e556d3bc7e779800b4b611aea69ed46b5cac7132863f3ac"
+    },
+    {
+      "bytes": 1298,
+      "path": "tools/run_nesira_phase2_assessment_wiring_conformance.py",
+      "sha256": "9c9356338705d69b449c89da88aa13a64674bdd0b3d26479e5670eee659f73cb"
+    },
+    {
+      "bytes": 1123,
+      "path": "tools/run_nesira_phase2_authority_adapter_conformance.py",
+      "sha256": "359882fa4dbc7105add1febe40034871890ca84d698f0925db4bea5c50adafae"
+    },
+    {
+      "bytes": 1118,
+      "path": "tools/run_nesira_phase2_identity_adapter_conformance.py",
+      "sha256": "a9e0b3c85743e2d30134e4a8edb7fdfdf55b733b13b79ff47f52a6c8962d732a"
+    },
+    {
+      "bytes": 1337,
+      "path": "tools/run_nesira_phase2_isolation_attestation_adapter_conformance.py",
+      "sha256": "0adb57fa1c717c358764b23d70fcc37f4195ce63d92821fefebb22eb29dd572c"
+    },
+    {
+      "bytes": 766,
+      "path": "tools/run_nesira_phase2_signature_adapter_conformance.py",
+      "sha256": "d0fa57f225dfbb8dbf18e24812455f8f4e143285c3b23b75617a62cfd8518327"
+    }
+  ],
+  "source_assessment_commit": "26b560822ca9ad2a518ec74334fe6cc7abb864e5"
+}

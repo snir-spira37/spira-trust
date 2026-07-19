@@ -1,0 +1,18 @@
+{
+  "accepted": true,
+  "claim_boundary": "package build only; delivery and product claims remain blocked",
+  "forbidden_phrase_hits": [],
+  "json_failures": [],
+  "local_path_hits": [],
+  "missing_files": [],
+  "non_ascii_files": [],
+  "package_files_checked": 10,
+  "schema": "SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_INTERNAL_BUILD_VALIDATION_V1",
+  "sha256sum_failures": [],
+  "status": "PASS",
+  "zip_path_safety": {
+    "duplicate_entries": [],
+    "safe": true,
+    "unsafe_entries": []
+  }
+}

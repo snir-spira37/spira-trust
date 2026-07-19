@@ -1,0 +1,20 @@
+SPIRA Nesira Phase 2 external reproduction package
+
+Status: PACKAGE_BUILD_ACCEPTED
+
+ZIP:
+research/nesira_policy_profile/SPIRA_NESIRA_PHASE2_EXTERNAL_REPRODUCTION_26b5608.zip
+
+SHA256:
+d4416afc17687500ce60091664c51e8e33b2ffc8e8838daf8ca2894537777dee
+
+Source assessment commit:
+26b560822ca9ad2a518ec74334fe6cc7abb864e5
+
+Package artifact commit:
+Record the repository commit that contains this ZIP before external delivery.
+
+Boundary:
+This is an assessment-only internal reproduction package. Package delivery,
+runner, combined verdict, CLI, public wheel exposure, public claim, and release
+remain NOT_AUTHORIZED until separately approved by the user.
