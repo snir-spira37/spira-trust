@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 import subprocess
 import sys
 import tomllib
@@ -150,9 +151,47 @@ def test_read_only_runtime_is_exposed_in_public_wheel_without_action_surface(tmp
     assert "spira_core/nesira_phase2_identity_adapter.py" in names
     assert "spira_core/nesira_phase2_authority_adapter.py" in names
     assert "spira_core/nesira_phase2_isolation_attestation_adapter.py" in names
+    assert "spira_core/unification_proof.py" in names
     assert all("_harness.py" not in name for name in names)
     assert "Provides-Extra: nesira-assessment" in metadata
     assert "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'" in metadata
+
+
+def test_public_wheel_graph_command_has_runtime_dependencies(tmp_path):
+    wheel_path = _build_public_wheel(tmp_path)
+    graph_out = tmp_path / "graph"
+    install_target = tmp_path / "installed"
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "--no-index", "--target", str(install_target), str(wheel_path)],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(install_target)
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "spira_core.trust_cli",
+            "graph",
+            str(wheel_path),
+            "--output-dir",
+            str(graph_out),
+            "--format",
+            "json",
+        ],
+        cwd=ROOT,
+        text=True,
+        capture_output=True,
+        env=env,
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert "ModuleNotFoundError" not in result.stderr
+    assert (graph_out / "unification_proof.json").is_file()
 
 
 def test_public_wheel_module_runs_read_only_assessment_with_tool_success_exit(tmp_path):

@@ -1,0 +1,54 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_PUBLICATION_STAGING_RUNTIME_PACKAGING_FIX_V1",
+  "verdict": "NESIRA_PHASE2_PUBLICATION_STAGING_RUNTIME_PACKAGING_FIX_LOCAL_ACCEPTED",
+  "next_external_staging": "REQUIRES_RENEWED_GO_1_FOR_CHANGED_WHEEL_SHA",
+  "publication_performed": false,
+  "external_upload_after_fix_performed": false,
+  "failed_testpypi_workflow": {
+    "run_id": "29689814443",
+    "url": "https://github.com/snir-spira37/spira-trust/actions/runs/29689814443",
+    "failed_step": "Generate SPIRA self-evidence",
+    "upload_to_testpypi": "SKIPPED"
+  },
+  "root_cause": {
+    "kind": "PUBLIC_WHEEL_RUNTIME_PACKAGING_OMISSION",
+    "missing_module": "spira_core.unification_proof",
+    "importing_module": "spira_core.agent_summary",
+    "optional_crypto_extra_missing_is_blocking_issue": false
+  },
+  "fix": {
+    "public_wheel_allowlist_added": [
+      "spira_core/unification_proof.py"
+    ],
+    "tests_added": [
+      "tests/test_nesira_phase2_read_only_assessment_exposure.py::test_public_wheel_graph_command_has_runtime_dependencies"
+    ]
+  },
+  "verification": {
+    "targeted_public_wheel_graph_runtime_tests": "PASS",
+    "nesira_phase2_targeted_suite": "64 passed",
+    "full_pytest": "350 passed",
+    "formal_core_v1_sha256sums": "622/622",
+    "public_wheel_rebuild": "PASS",
+    "release_self_evidence_from_installed_wheel": "PASS",
+    "trust_exit": 0,
+    "graph_exit": 0,
+    "decision": {
+      "verdict": "GRAPH_OK_WITH_UNVERIFIED",
+      "combined_verdict": "GRAPH_OK_WITH_NOTES",
+      "winning_status": "NOTE",
+      "exit_code": 0
+    }
+  },
+  "wheel": {
+    "filename": "spira_trust-0.7.0-py3-none-any.whl",
+    "previous_sha256": "29a52445a5045c76264fcce60df5288836cbe870193411c9b84d16ad9e454c6b",
+    "new_sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5"
+  },
+  "blocked_until_renewed_go": [
+    "TESTPYPI_DRY_RUN",
+    "GITHUB_RELEASE_DRAFT",
+    "REAL_PYPI_UPLOAD",
+    "GITHUB_RELEASE_PUBLICATION"
+  ]
+}

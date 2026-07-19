@@ -62,6 +62,7 @@ PUBLIC_FILES = [
     "spira_core/trust.py",
     "spira_core/trust_cli.py",
     "spira_core/trust_graph.py",
+    "spira_core/unification_proof.py",
     "spira_core/decision015/__init__.py",
     "spira_core/decision015/contract.py",
     "spira_core/decision015/core.py",
