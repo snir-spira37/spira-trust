@@ -172,4 +172,3 @@ SEVERANCE_ACTION: NOT_AUTHORIZED
 
 The next step may implement the narrow read-only report/CLI surface. Any broader
 product exposure remains blocked.
-
