@@ -63,6 +63,10 @@ attestation signature over canonical attestation payload
 declared ATTESTATION_AUTHORITY public key/root material
 ```
 
+The expected candidate, environment, and isolation profile come from the
+caller-supplied assessment context. They must not be read from the attestation
+itself.
+
 The binding check must mean only:
 
 ```text
@@ -156,6 +160,16 @@ verified attestation -> not isolation occurred
 verified attestation -> not permission to sever
 ```
 
+Clock failure has precedence over expiry:
+
+```text
+clock missing/untrusted + attestation expired/not-yet-valid
+  -> TRUST_NOT_EVALUATED
+```
+
+The adapter may classify expiry or not-yet-valid only when a trusted clock is
+available. Without that clock, temporal status is not evaluated.
+
 ## Assumptions
 
 Every output carries the floor:
@@ -185,10 +199,39 @@ Unknown revocation carries:
 PT-REVOKE-03
 ```
 
-## Forbidden Language And Output Semantics
+## Isolation Language Allowlist And Output Semantics
 
-No adapter output, reason code, report, or test expected value may state or
-imply:
+No adapter output, reason code, report, or test expected value may use
+isolation-language outside the allowlist below.
+
+The scan must treat every token matching:
+
+```text
+isolat*
+sandbox*
+contain*
+```
+
+as a failure unless the token appears inside an explicitly allowed phrase.
+This is an allowlist, not a blocklist.
+
+Allowed phrases:
+
+```text
+attestation checked != isolation proven
+isolation attestation
+isolation profile
+isolation profile claim
+isolation profile claims
+isolation profile id
+isolation profile version
+expected isolation profile
+PT-ISOLATION-01
+isolation caveat
+isolation sub-verdict
+```
+
+Forbidden phrases include, but are not limited to:
 
 ```text
 isolation occurred
@@ -196,13 +239,22 @@ isolation happened
 isolation confirmed
 isolation proven
 isolation executed
+isolation verified
+isolation established
+isolation guaranteed
+isolation ensured
+isolation enforced
+ran in isolation
+was isolated
+sandboxed
+contained
 runtime isolated
 filesystem isolated
 network isolated
 process isolated
 ```
 
-Allowed language:
+Reason-code language should use attestation terms:
 
 ```text
 attestation verified against declared authority
@@ -292,7 +344,13 @@ research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_*.md
 research/nesira_policy_profile/nesira_phase2_isolation_attestation_adapter_results.json
 ```
 
-Forbidden language scan:
+Isolation-language allowlist scan:
+
+```text
+fail on any non-allowlisted isolat* / sandbox* / contain* token
+```
+
+Forbidden phrases must also be checked explicitly:
 
 ```text
 isolation occurred
@@ -300,6 +358,15 @@ isolation happened
 isolation confirmed
 isolation proven
 isolation executed
+isolation verified
+isolation established
+isolation guaranteed
+isolation ensured
+isolation enforced
+ran in isolation
+was isolated
+sandboxed
+contained
 runtime isolated
 filesystem isolated
 network isolated
@@ -336,6 +403,7 @@ pyproject change
 lakefile change
 V1 artifact change
 language that says isolation occurred/happened/confirmed/proven
+non-allowlisted isolat* / sandbox* / contain* language
 ```
 
 ## Cold Verification Requirement

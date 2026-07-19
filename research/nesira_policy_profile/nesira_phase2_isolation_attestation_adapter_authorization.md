@@ -29,7 +29,8 @@ attestation checked != isolation proven
 
 The adapter may evaluate whether an isolation attestation is authentic under a
 declared `ATTESTATION_AUTHORITY` root and whether the attestation claims bind
-the expected candidate/environment/isolation profile.
+the expected candidate/environment/isolation profile supplied by the caller's
+external assessment context.
 
 It must not run isolation, observe isolation, inspect a live process, inspect a
 filesystem sandbox, inspect network isolation, perform severance, wire combined
@@ -123,6 +124,15 @@ operational severance
 
 The adapter checks an attestation object. It does not prove that isolation
 occurred.
+
+The expected candidate, environment, and isolation profile must come from the
+caller-supplied assessment context. They must not be learned from the
+attestation being checked. Otherwise the binding check is circular and must
+stop with:
+
+```text
+SCOPE_REVISION_REQUIRED
+```
 
 ## Semantics
 
@@ -236,6 +246,16 @@ missing declared attestation root -> TRUST_NOT_EVALUATED
 verified attestation -> not a claim that isolation occurred
 ```
 
+Clock failure has precedence over temporal expiry:
+
+```text
+clock missing or untrusted + attestation expired/not-yet-valid
+  -> TRUST_NOT_EVALUATED
+```
+
+Expiry and not-yet-valid classifications require a trusted clock. If the clock
+cannot be evaluated, the adapter must not infer temporal invalidity.
+
 ## Isolation Caveat Carrying
 
 Every isolation sub-verdict must carry:
@@ -276,7 +296,19 @@ PT-REVOKE-03
 
 ## Reason-Code Language Rule
 
-Reason codes and reports may say:
+Reason codes, reports, and test expected values must use an allowlist for
+isolation-language. Any token matching:
+
+```text
+isolat*
+sandbox*
+contain*
+```
+
+is forbidden unless it appears inside one of the explicitly allowed phrases
+below. This is an allowlist, not a blocklist.
+
+Allowed phrases:
 
 ```text
 ATTESTATION_VERIFIED_AGAINST_DECLARED_AUTHORITY
@@ -284,9 +316,20 @@ ATTESTATION_CLAIMS_BOUND_EXPECTED_PROFILE
 ATTESTATION_SIGNATURE_INVALID
 ATTESTATION_CLAIMS_MISMATCH
 ATTESTATION_AUTHORITY_NOT_EVALUATED
+attestation checked != isolation proven
+isolation attestation
+isolation profile
+isolation profile claim
+isolation profile claims
+isolation profile id
+isolation profile version
+expected isolation profile
+PT-ISOLATION-01
+isolation caveat
+isolation sub-verdict
 ```
 
-They must not say:
+Forbidden phrases include, but are not limited to:
 
 ```text
 ISOLATION_OCCURRED
@@ -294,6 +337,15 @@ ISOLATION_HAPPENED
 ISOLATION_CONFIRMED
 ISOLATION_PROVEN
 ISOLATION_EXECUTED
+ISOLATION_VERIFIED
+ISOLATION_ESTABLISHED
+ISOLATION_GUARANTEED
+ISOLATION_ENSURED
+ISOLATION_ENFORCED
+SANDBOXED
+CONTAINED
+RAN_IN_ISOLATION
+WAS_ISOLATED
 RUNTIME_ISOLATED
 FILESYSTEM_ISOLATED
 NETWORK_ISOLATED
@@ -345,11 +397,14 @@ unexpected_sufficient_verdicts: 0
 missing_root_mapped_to_insufficient: 0
 known_undeclared_authority_mapped_to_not_evaluated: 0
 claims_mismatch_mapped_to_not_evaluated: 0
+clock_failure_mapped_to_temporal_invalid: 0
 soft_pass_revocation_unknown: 0
 soft_pass_clock_failure: 0
 outputs_without_pt_isolation_01: 0
 outputs_with_execution_semantics: 0
 outputs_with_isolation_truth_semantics: 0
+forbidden_isolation_language_hits: 0
+non_allowlisted_isolation_language_hits: 0
 composition_mismatches: 0
 two_run_semantic_diff: 0
 wheel_exclusion_failures: 0
@@ -391,6 +446,15 @@ isolation occurred
 isolation happened
 isolation confirmed
 isolation proven
+isolation verified
+isolation established
+isolation guaranteed
+isolation ensured
+isolation enforced
+ran in isolation
+was isolated
+sandboxed
+contained
 runtime observation
 filesystem observation
 network observation

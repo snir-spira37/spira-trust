@@ -31,7 +31,7 @@ execution
 
 The adapter may only evaluate whether an attestation is authentic under a
 declared `ATTESTATION_AUTHORITY` and whether it claims the expected isolation
-profile.
+profile supplied by the caller's external assessment context.
 
 ## Checks
 
@@ -74,7 +74,15 @@ isolation occurred
 isolation happened
 isolation confirmed
 isolation proven
+isolation verified
+isolation established
+isolation guaranteed
+isolation ensured
+isolation enforced
 ```
+
+The review requires an allowlist, not merely a blocklist: non-allowlisted
+`isolat*`, `sandbox*`, and `contain*` language is a gate failure.
 
 ### 4. PT-ISOLATION-01 Always Carried
 
@@ -109,6 +117,13 @@ claim mismatch -> TRUST_INSUFFICIENT
 revocation unknown/stale/unreachable -> TRUST_NOT_EVALUATED
 clock missing/untrusted -> TRUST_NOT_EVALUATED
 ```
+
+Clock failure has precedence over expiry. If the clock is missing or untrusted,
+an expired/not-yet-valid attestation is `TRUST_NOT_EVALUATED`, because temporal
+invalidity cannot be determined without a trusted clock.
+
+Expected candidate/environment/profile inputs are external caller context, not
+claims copied from the attestation itself.
 
 ### 7. No Runner Or Observation
 
@@ -155,6 +170,8 @@ The plan also requires metrics for:
 outputs_without_pt_isolation_01
 outputs_with_execution_semantics
 outputs_with_isolation_truth_semantics
+forbidden_isolation_language_hits
+non_allowlisted_isolation_language_hits
 ```
 
 ### 10. Composition Wiring
@@ -209,6 +226,9 @@ CLAIMS_MISMATCH_INSUFFICIENT_ACCEPTED
 REVOCATION_UNKNOWN_NOT_EVALUATED_ACCEPTED
 CLOCK_FAILURE_NOT_EVALUATED_ACCEPTED
 FORBIDDEN_ISOLATION_TRUTH_LANGUAGE_SCAN_REQUIRED
+ISOLATION_LANGUAGE_ALLOWLIST_REQUIRED
+EXPECTED_CONTEXT_EXTERNAL_NOT_FROM_ATTESTATION_ACCEPTED
+CLOCK_FAILURE_PRECEDES_EXPIRY_ACCEPTED
 PUBLIC_WHEEL_EXCLUSION_REQUIRED_ACCEPTED
 
 ISOLATION_RUNNER_NOT_AUTHORIZED
