@@ -1,0 +1,48 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_ISOLATION_ATTESTATION_ADAPTER_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_ISOLATION_ATTESTATION_ADAPTER_COLD_VERIFICATION_ACCEPTED",
+  "source_commit": "2467c304b8839a296aad4645c254a25989d0b249",
+  "fresh_clone_path": "C:\\tmp\\spira_iso_cold_2467c30",
+  "checks": {
+    "harness_verdict": "NESIRA_PHASE2_ISOLATION_ATTESTATION_ADAPTER_ACCEPTED",
+    "focused_pytest": {
+      "passed": 12,
+      "failed": 0
+    },
+    "adapter_regression_pytest": {
+      "passed": 46,
+      "failed": 0
+    },
+    "full_pytest": {
+      "passed": 327,
+      "failed": 0
+    },
+    "compileall": "PASS",
+    "formal_core_v1_sha256sums": {
+      "checked": 622,
+      "failures": 0
+    },
+    "language_allowlist": {
+      "non_allowlisted_hits": 0,
+      "forbidden_phrase_hits": 0
+    },
+    "pt_isolation_01_carried_on_all_sub_verdicts": true,
+    "execution_semantics_outputs": 0,
+    "truth_semantics_outputs": 0,
+    "composition_mismatches": 0,
+    "composite_caveat_mismatches": 0,
+    "wheel_exclusion_failures": 0,
+    "secret_or_local_path_hits": 0,
+    "git_diff_check": "PASS",
+    "deterministic_results_rewrite": "PASS",
+    "protected_boundary_diff": "PASS"
+  },
+  "blocked_claims": [
+    "runner",
+    "combined_verdict_wiring",
+    "cli",
+    "public_wheel_exposure",
+    "release",
+    "public_capability_claim"
+  ]
+}
