@@ -29,14 +29,19 @@
       "GitHub release draft"
     ],
     "result": "BLOCKED_BEFORE_EXTERNAL_STAGING",
-    "blocker": "TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION"
+    "blockers": [
+      "TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION",
+      "TAG_PUSH_WOULD_TRIGGER_REAL_PUBLICATION_REQUIRES_WORKFLOW_REVISION"
+    ]
   },
   "environment": {
     "twine": "not_installed",
     "testpypi_credentials": "absent",
     "pypirc": "absent",
     "github_cli": "not_installed",
-    "github_api_token": "absent"
+    "github_api_token": "absent",
+    "github_actions_trusted_publishing_workflows": "present",
+    "production_workflow_tag_push_publishes_real_pypi": true
   },
   "external_actions": {
     "testpypi_upload": "NOT_PERFORMED",

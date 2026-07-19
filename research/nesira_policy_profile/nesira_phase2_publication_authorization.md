@@ -153,6 +153,16 @@ The required order is:
 PyPI upload is the least reversible step. It requires a second explicit human
 go/no-go after the TestPyPI dry-run and GitHub draft inspection.
 
+Existing repository automation must not collapse GO #1 into GO #2. If any
+workflow publishes to real PyPI or publishes a GitHub release on tag push, tag
+push is not a reversible GO #1 action in that repository state.
+
+In that case, staging must stop with:
+
+```text
+TAG_PUSH_WOULD_TRIGGER_REAL_PUBLICATION_REQUIRES_WORKFLOW_REVISION
+```
+
 If TestPyPI cannot be used, the publisher must record why and stop with:
 
 ```text
@@ -167,8 +177,7 @@ gate authorizes:
 ```text
 upload the exact accepted wheel artifact to TestPyPI
 install/check the TestPyPI artifact in an isolated environment
-git tag v0.7.0 at the accepted publication commit
-push tag v0.7.0
+prepare git tag v0.7.0 locally or as a draft plan
 create a GitHub release draft v0.7.0 using the accepted release notes
 attach the exact accepted wheel artifact to the GitHub draft
 ```
@@ -176,6 +185,7 @@ attach the exact accepted wheel artifact to the GitHub draft
 Only after GO #2 is given, this gate authorizes:
 
 ```text
+push tag v0.7.0 if that push triggers real publication automation
 upload the exact accepted wheel artifact to real PyPI
 publish or finalize the GitHub release
 record publication evidence after the upload/release
@@ -257,10 +267,13 @@ It requires two separate human decisions:
 
 ```text
 GO_1_PREVIEW_PUBLICATION_STAGING:
-  permits TestPyPI dry-run, tag creation, and GitHub release draft creation
+  permits TestPyPI dry-run, local tag preparation, and GitHub release draft
+  creation only if repository automation cannot publish real PyPI from that
+  action
 
 GO_2_REAL_PYPI_UPLOAD:
-  permits real PyPI upload and final GitHub release publication
+  permits tag push that triggers real publication, real PyPI upload, and final
+  GitHub release publication
 ```
 
 GO #2 must not be inferred from GO #1.

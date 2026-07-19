@@ -59,10 +59,17 @@ GitHub CLI: not installed
 GitHub API token: absent
 ```
 
-Because TestPyPI could not be used, the publication authorization requires:
+The repository does contain GitHub Actions Trusted Publishing workflows.
+However, the production workflow is configured to run on `v*` tag push and to
+publish to real PyPI and publish the GitHub release. Therefore pushing
+`v0.7.0` as a GO #1 staging action would collapse GO #1 into GO #2.
+
+Because TestPyPI could not be used locally and tag push would trigger real
+publication automation, the publication authorization requires:
 
 ```text
 TESTPYPI_DRY_RUN_NOT_EVALUATED_REQUIRES_HUMAN_DECISION
+TAG_PUSH_WOULD_TRIGGER_REAL_PUBLICATION_REQUIRES_WORKFLOW_REVISION
 ```
 
 The process stopped before tag creation or GitHub release draft creation.

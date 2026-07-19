@@ -99,6 +99,7 @@ git tag v0.7.0
 GitHub release draft
 human inspection
 second GO for real PyPI upload
+tag push if tag push triggers production publication automation
 real PyPI upload
 final GitHub release publication
 publication evidence record
@@ -120,6 +121,11 @@ GO #2 for real PyPI upload
 ```
 
 GO #2 cannot be inferred from GO #1.
+
+The review also notes a repository-specific automation hazard: a production
+workflow that publishes to real PyPI on `v*` tag push makes tag push a GO #2
+surface, not a reversible GO #1 surface, unless that workflow is revised or
+externally disabled before staging.
 
 Review finding: PASS.
 
