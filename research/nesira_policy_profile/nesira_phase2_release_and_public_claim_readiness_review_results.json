@@ -1,0 +1,35 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_RELEASE_AND_PUBLIC_CLAIM_READINESS_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_RELEASE_AND_PUBLIC_CLAIM_READINESS_ACCEPTED",
+  "accepted": true,
+  "claim_text_scope": {
+    "assessment_only": true,
+    "conditional_on_declared_roots": true,
+    "not_proven_assumptions_carried": true,
+    "certification_overclaim_absent": true,
+    "execution_overclaim_absent": true,
+    "severance_overclaim_absent": true,
+    "combined_verdict_overclaim_absent": true
+  },
+  "evidence_manifest": {
+    "wheel_sha256": "d82ebb1f64dcc3b60e409b7b2050d56693d7fc5eeffbdf1cba0b68e2c282efa3",
+    "accepted_chain_present": true,
+    "blocked_surfaces_present": true
+  },
+  "publication_actions": {
+    "publication": false,
+    "pypi_upload": false,
+    "github_release": false,
+    "version_bump": false,
+    "git_tag": false
+  },
+  "blocked_surfaces": [
+    "publication",
+    "pypi_upload",
+    "github_release",
+    "version_bump",
+    "combined_verdict",
+    "runner",
+    "severance_action"
+  ]
+}

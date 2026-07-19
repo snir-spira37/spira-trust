@@ -129,10 +129,18 @@ SPIRA performs severance
 SPIRA runs isolation
 SPIRA product verdict now incorporates Nesira Phase 2
 production release approved
+independently certified
+audited
+externally endorsed
+externally approved
+third-party validated
+security guarantee
+trust guarantee
 ```
 
 Any claim wording that a reasonable reader could interpret as execution,
-permission, severance, or absolute trust must stop with:
+permission, severance, absolute trust, certification, endorsement, audit, or
+guarantee must stop with:
 
 ```text
 CLAIM_SCOPE_REVISION_REQUIRED
@@ -189,6 +197,8 @@ The review must verify:
 ```text
 claim text matches the allowlist
 forbidden claim language absent
+reproduction is not described as certification, audit, endorsement, approval,
+  third-party validation, or guarantee
 assessment-only boundary appears in the headline and body
 trust-root conditionality appears in the headline or first paragraph
 NOT_PROVEN assumptions are explicitly carried

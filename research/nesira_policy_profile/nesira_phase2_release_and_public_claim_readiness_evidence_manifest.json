@@ -1,0 +1,64 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_RELEASE_AND_PUBLIC_CLAIM_READINESS_EVIDENCE_MANIFEST_V1",
+  "status": "READINESS_EVIDENCE_ASSEMBLED",
+  "publication_authorized": false,
+  "source": {
+    "readiness_authorization_commit": "5f2e96b3664d03a6d7d9bf4701a68facf6a15044",
+    "public_wheel_exposure_cold_record_commit": "0f255c33f425110dc46e907f3a629b7b7be986c7",
+    "public_wheel_exposure_implementation_commit": "181ee58e06eb56794237ee9fc25e96421d18cb03"
+  },
+  "candidate_artifact": {
+    "wheel_name": "spira_trust-0.6.1-py3-none-any.whl",
+    "wheel_sha256": "d82ebb1f64dcc3b60e409b7b2050d56693d7fc5eeffbdf1cba0b68e2c282efa3",
+    "runtime_entries": [
+      "spira_core/nesira_phase2_assessment_wiring.py",
+      "spira_core/nesira_phase2_authority_adapter.py",
+      "spira_core/nesira_phase2_identity_adapter.py",
+      "spira_core/nesira_phase2_isolation_attestation_adapter.py",
+      "spira_core/nesira_phase2_read_only_assessment_cli.py",
+      "spira_core/nesira_phase2_signature_adapter.py"
+    ],
+    "harness_entries": [],
+    "metadata_provides_extra": [
+      "Provides-Extra: nesira-assessment"
+    ],
+    "metadata_requires_dist": [
+      "Requires-Dist: cryptography==49.0.0; extra == 'nesira-assessment'"
+    ],
+    "base_dependencies_empty": true,
+    "unconditional_cryptography_dependency": false
+  },
+  "accepted_evidence_chain": {
+    "phase1_validator_and_cold_reproduction": "ACCEPTED",
+    "phase2_external_reproduction": "ACCEPTED",
+    "phase2_lean_composition_core": "ACCEPTED",
+    "phase2_signature_adapter": "ACCEPTED",
+    "phase2_identity_adapter": "ACCEPTED",
+    "phase2_authority_adapter": "ACCEPTED",
+    "phase2_isolation_attestation_adapter": "ACCEPTED",
+    "phase2_assessment_wiring": "ACCEPTED",
+    "phase2_read_only_internal_exposure": "ACCEPTED",
+    "phase2_public_wheel_read_only_exposure": "ACCEPTED"
+  },
+  "cold_reproduction_summary": {
+    "focused_public_wheel_exposure_pytest": "63 passed",
+    "v1_external_reproduction_package_test": "5 passed",
+    "v1_sha256sums_self_check": "622/622",
+    "full_pytest": "349 passed",
+    "public_wheel_runtime_execution": "PASS",
+    "v1_phase2_scope_scan_hits": 0
+  },
+  "claim_text": {
+    "path": "research/nesira_policy_profile/nesira_phase2_release_and_public_claim_readiness_claim_text.md",
+    "sha256": "015c5889673a8c033b8d02c0d5482f05e77a5de129b6be230d0903bc758eb103"
+  },
+  "blocked_surfaces": [
+    "publication",
+    "pypi_upload",
+    "github_release",
+    "version_bump",
+    "combined_verdict",
+    "runner",
+    "severance_action"
+  ]
+}

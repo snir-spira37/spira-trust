@@ -72,6 +72,25 @@ approval.
 
 Review finding: PASS.
 
+## Certification Boundary
+
+The authorization correctly blocks the common public-reading error:
+
+```text
+externally reproducible != independently certified
+externally reproducible != audited
+externally reproducible != externally endorsed
+externally reproducible != third-party validated
+externally reproducible != security guarantee
+externally reproducible != trust guarantee
+```
+
+Any claim text that collapses reproduction into certification, audit,
+endorsement, approval, validation, or guarantee must stop with
+`CLAIM_SCOPE_REVISION_REQUIRED`.
+
+Review finding: PASS.
+
 ## Evidence Requirements
 
 The authorization requires the readiness package to cite the actual accepted
