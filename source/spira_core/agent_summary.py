@@ -124,9 +124,6 @@ def build_agent_summary(
         "recommended_agent_action": agent_decision["recommended_agent_action"],
         "reason_codes": reason_codes,
         "not_evaluated": not_evaluated,
-        "blockers": blockers,
-        "warnings": warnings,
-        "notes": notes,
         "evidence": evidence,
         "summary_of": {
             "artifact_count": len(artifacts),
@@ -143,7 +140,6 @@ def build_agent_summary(
         "approval": {
             "approved": False,
             "approval_source": "unverified",
-            "note": "approval metadata is separate from evidence and does not change the verdict",
         },
         "not_claimed": [
             "agent summary is an index over existing SPIRA evidence",
@@ -153,6 +149,12 @@ def build_agent_summary(
             "approval metadata does not alter graph or combined verdicts",
         ],
     }
+    if blockers:
+        summary["blockers"] = blockers
+    if warnings:
+        summary["warnings"] = warnings
+    if notes:
+        summary["notes"] = notes
     proof = build_unification_proof(summary, decision)
     summary["unification"] = build_unification_reference(proof)
     return summary

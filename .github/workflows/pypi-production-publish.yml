@@ -100,7 +100,7 @@ jobs:
           from pathlib import Path
           import sys
 
-          limit = 4 * 1024
+          limit = 3 * 1024
           candidates = list(Path("dist/release-evidence").rglob("agent_summary.json"))
 
           if not candidates:

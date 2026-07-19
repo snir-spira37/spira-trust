@@ -2432,9 +2432,9 @@
       "sha256": "fee4842df9b894f2e58297150330979280679008afc892da1afbdd5e4b2ecdb0"
     },
     {
-      "bytes": 11602,
+      "bytes": 11578,
       "path": "source/spira_core/agent_summary.py",
-      "sha256": "936e28ace3060e388367db4d5371394176dc2584a49b88eccf29f7d8082af405"
+      "sha256": "1e0674e8c0594aace6e1952d8f7ae8497eb55e306b2cbe368e5f348d5b2074db"
     },
     {
       "bytes": 8795,
