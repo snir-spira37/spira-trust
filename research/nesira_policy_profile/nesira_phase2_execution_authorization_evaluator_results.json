@@ -6,8 +6,8 @@
   "test_file": "tests/test_nesira_phase2_execution_authorization_evaluator.py",
   "core_lock": "EVALUATOR_CHECKS_AUTHORIZATION_CONSISTENCY_NOT_RUNNER_TRUTH",
   "checks": {
-    "targeted_pytest": "28 passed",
-    "full_pytest": "420 passed",
+    "targeted_pytest": "29 passed",
+    "full_pytest": "421 passed",
     "v1_sha256sums": "622/622 OK, 0 FAILED",
     "side_effect_import_scan": "PASS",
     "forbidden_output_fields_absent": "PASS",
@@ -15,7 +15,8 @@
     "public_wheel_exclusion": "PASS",
     "action_not_performed_every_output": "PASS",
     "ea_tcb_03_every_assumption_set": "PASS",
-    "conformance_cases": "22/22"
+    "conformance_cases": "22/22 plus allowlist hardening case",
+    "missing_action_allowlists_fail_closed": "PASS_NOT_EVALUATED"
   },
   "verdicts": [
     "EXECUTION_AUTHORIZATION_SUFFICIENT_FOR_FUTURE_RUNNER_GATE",

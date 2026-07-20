@@ -204,6 +204,20 @@ def test_21_action_class_not_allowlisted_is_not_authorized():
     assert "ACTION_CLASS_NOT_ALLOWLISTED" in artifact["blocking_reasons"]
 
 
+def test_23_missing_action_allowlists_are_not_evaluated():
+    context = _context()
+    del context["allowed_action_classes"]
+    human_go = _human_go()
+    del human_go["approver_allowed_action_classes"]
+
+    artifact = evaluator.evaluate_execution_authorization(context, human_go, _verifier())
+
+    assert artifact["verdict"] == evaluator.VERDICT_NOT_EVALUATED
+    assert "ACTION_CLASS_ALLOWLIST_MISSING" in artifact["not_evaluated_reasons"]
+    assert "APPROVER_ACTION_CLASS_ALLOWLIST_MISSING" in artifact["not_evaluated_reasons"]
+    _assert_floor_and_not_performed(artifact)
+
+
 def test_22_all_authorization_evidence_sufficient_still_does_not_perform_action():
     artifact = evaluator.evaluate_execution_authorization(_context(), _human_go(), _verifier())
 

@@ -172,7 +172,7 @@ def _evaluate_human_go(
     elif decision != "allow":
         not_evaluated_reasons.append("HUMAN_GO_DECISION_NOT_EVALUATED")
 
-    _evaluate_action_scope(human_go, expected_context, blocking_reasons)
+    _evaluate_action_scope(human_go, expected_context, blocking_reasons, not_evaluated_reasons)
     _evaluate_clock_and_revocation(human_go, blocking_reasons, not_evaluated_reasons, assumptions)
     _evaluate_roles(human_go, blocking_reasons, assumptions)
     _evaluate_context_bindings(human_go, expected_context, blocking_reasons, not_evaluated_reasons, assumptions)
@@ -225,14 +225,19 @@ def _evaluate_action_scope(
     human_go: Mapping[str, Any],
     expected_context: Mapping[str, Any],
     blocking_reasons: list[str],
+    not_evaluated_reasons: list[str],
 ) -> None:
     action_class = _string(expected_context.get("action_class"))
     allowlist = _string_list(expected_context.get("allowed_action_classes"))
-    if action_class and allowlist and action_class not in allowlist:
+    if not allowlist:
+        not_evaluated_reasons.append("ACTION_CLASS_ALLOWLIST_MISSING")
+    elif action_class and action_class not in allowlist:
         blocking_reasons.append("ACTION_CLASS_NOT_ALLOWLISTED")
 
     approver_allowlist = _string_list(human_go.get("approver_allowed_action_classes"))
-    if action_class and approver_allowlist and action_class not in approver_allowlist:
+    if not approver_allowlist:
+        not_evaluated_reasons.append("APPROVER_ACTION_CLASS_ALLOWLIST_MISSING")
+    elif action_class and action_class not in approver_allowlist:
         blocking_reasons.append("APPROVER_NOT_ALLOWED_FOR_ACTION_CLASS")
 
 

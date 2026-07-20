@@ -68,6 +68,12 @@ Implemented the 22 required conformance cases from:
 nesira_phase2_execution_authorization_conformance_spec.md
 ```
 
+Added one hardening case:
+
+```text
+missing action allowlists -> EXECUTION_AUTHORIZATION_NOT_EVALUATED
+```
+
 The load-bearing cases include:
 
 ```text
@@ -77,6 +83,7 @@ CI success as human go -> EXECUTION_NOT_AUTHORIZED
 prepared bundle matches but runner input differs -> EXECUTION_NOT_AUTHORIZED
 opaque hash without human-readable text -> EXECUTION_NOT_AUTHORIZED
 nonce replay -> EXECUTION_NOT_AUTHORIZED
+missing action allowlists -> EXECUTION_AUTHORIZATION_NOT_EVALUATED
 all evidence sufficient -> ACTION_NOT_PERFORMED
 ```
 
@@ -111,8 +118,8 @@ claim expansion
 ## Verification
 
 ```text
-targeted pytest: 28 passed
-full pytest: 420 passed
+targeted pytest: 29 passed
+full pytest: 421 passed
 V1 SHA256SUMS: 622/622 OK, 0 FAILED
 two-run equality: PASS
 public wheel exclusion: PASS
@@ -126,6 +133,7 @@ forbidden output fields: PASS
 NESIRA_PHASE2_EXECUTION_AUTHORIZATION_EVALUATOR_IMPLEMENTED
 ACTION_NOT_PERFORMED_ALWAYS_CARRIED
 EA_TCB_03_ALWAYS_CARRIED
+MISSING_ACTION_ALLOWLISTS_FAIL_CLOSED
 RUNNER_TRUTH_NOT_CLAIMED
 EXECUTION_NOT_IMPLEMENTED
 ```

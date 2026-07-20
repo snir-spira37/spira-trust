@@ -11,8 +11,9 @@
     "ea_tcb_03_every_assumption_set": "PASS",
     "consistency_not_runner_truth": "PASS",
     "public_wheel_exclusion": "PASS",
-    "full_pytest": "PASS_420",
-    "v1_sha256sums": "PASS_622"
+    "full_pytest": "PASS_421",
+    "v1_sha256sums": "PASS_622",
+    "missing_action_allowlists_fail_closed": "PASS_NOT_EVALUATED"
   },
   "not_authorized": [
     "runner implementation",

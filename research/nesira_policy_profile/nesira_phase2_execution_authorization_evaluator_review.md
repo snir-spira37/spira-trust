@@ -56,6 +56,15 @@ all evidence sufficient -> ACTION_NOT_PERFORMED
 Case 14 is load-bearing: the evaluator fails closed when a prepared bundle
 matches but the runner-intended context differs.
 
+The implementation also includes a hardening case beyond the original 22:
+
+```text
+missing action allowlists -> EXECUTION_AUTHORIZATION_NOT_EVALUATED
+```
+
+This preserves the boundary requirement that action classes must be explicitly
+allowlisted.
+
 ## Assumption Carrying
 
 Every output carries a non-empty assumption set with:
@@ -93,8 +102,8 @@ workflow, pyproject, version, or release change was made.
 ## Verification
 
 ```text
-targeted pytest: 28 passed
-full pytest: 420 passed
+targeted pytest: 29 passed
+full pytest: 421 passed
 V1 SHA256SUMS: 622/622 OK, 0 FAILED
 ```
 
