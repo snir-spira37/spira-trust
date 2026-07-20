@@ -21,11 +21,11 @@ runner execution, or authorize severance action.
 The authorization pins publication to the accepted release candidate:
 
 ```text
-candidate_code_commit: cdceab25292e7d4522865df09f9695468990b3f9
-release_candidate_review_commit: c3221efbebdedefac1c3b587820df83a0aeafd4b
+candidate_code_commit: e2f4af0a2e84abd04f789c4cc6ac1955f6f52c6b
+release_candidate_review_commit: 5eec489d8d03877441de3c443b1f8ab1eff3195a
 version: 0.7.0
 wheel: spira_trust-0.7.0-py3-none-any.whl
-wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+wheel_sha256: 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 ```
 
 Any changed source, changed wheel SHA, changed release notes, changed claim,
@@ -81,6 +81,7 @@ combined verdict unchanged
 runner/severance unchanged
 tag availability
 PyPI version availability
+recorded blocked-attempt tag state
 ```
 
 This correctly treats publication as an external-state action whose conditions
@@ -126,6 +127,17 @@ The review also notes a repository-specific automation hazard: a production
 workflow that publishes to real PyPI on `v*` tag push makes tag push a GO #2
 surface, not a reversible GO #1 surface, unless that workflow is revised or
 externally disabled before staging.
+
+The authorization now also records the blocked production attempt tag state:
+
+```text
+v0.7.0 currently points at e75b0960ece18c41ebdf73008671043f7b0108c1
+production run 29694289448 blocked before PyPI upload and before GitHub release
+```
+
+Moving or replacing that tag is authorized only as a GO #2 action and only if
+PyPI 0.7.0 and GitHub release v0.7.0 are still absent immediately before the
+action.
 
 Review finding: PASS.
 

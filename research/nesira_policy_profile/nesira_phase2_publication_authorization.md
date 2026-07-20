@@ -35,10 +35,10 @@ checks pass immediately before publication.
 
 ```text
 release_candidate_review_commit:
-c3221efbebdedefac1c3b587820df83a0aeafd4b
+5eec489d8d03877441de3c443b1f8ab1eff3195a
 
 candidate_code_commit:
-cdceab25292e7d4522865df09f9695468990b3f9
+e2f4af0a2e84abd04f789c4cc6ac1955f6f52c6b
 
 version:
 0.7.0
@@ -47,7 +47,7 @@ wheel:
 spira_trust-0.7.0-py3-none-any.whl
 
 wheel_sha256:
-956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 
 accepted_verdict:
 NESIRA_PHASE2_RELEASE_CANDIDATE_ACCEPTED
@@ -114,7 +114,7 @@ publisher must verify:
 HEAD or publication source is the accepted candidate/review state
 candidate version is 0.7.0
 candidate wheel filename is spira_trust-0.7.0-py3-none-any.whl
-candidate wheel SHA256 equals 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+candidate wheel SHA256 equals 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 full pytest passes
 V1 SHA256SUMS self-check remains 622/622
 V1 claims/inventory/expected-results still have 0 Phase2 scope hits
@@ -125,11 +125,26 @@ production workflow release notes generation includes the approved Nesira public
 rollback plan hash matches accepted RC evidence
 no combined verdict integration change
 no runner/severance action change
-no existing v0.7.0 tag already points elsewhere
+existing v0.7.0 tag state is either absent, already points at the accepted
+  publication source, or is the recorded blocked-attempt tag that points at
+  e75b0960ece18c41ebdf73008671043f7b0108c1 with no PyPI/GitHub publication
 no existing PyPI 0.7.0 release already exists
 ```
 
 If any check fails, publication must stop.
+
+The current repository state includes a recorded blocked production attempt:
+
+```text
+tag: v0.7.0
+current_remote_target: e75b0960ece18c41ebdf73008671043f7b0108c1
+production_run: 29694289448
+result: blocked before PyPI upload and before GitHub release publication
+```
+
+This tag must not be moved as a preview action. Moving or replacing the remote
+`v0.7.0` tag is a GO #2 action because tag push triggers production
+publication automation in this repository.
 
 ## Publication Staging
 
@@ -185,6 +200,8 @@ attach the exact accepted wheel artifact to the GitHub draft
 Only after GO #2 is given, this gate authorizes:
 
 ```text
+move or replace the recorded blocked-attempt v0.7.0 tag only if PyPI 0.7.0 and
+  GitHub release v0.7.0 are still absent
 push tag v0.7.0 if that push triggers real publication automation
 upload the exact accepted wheel artifact to real PyPI
 publish or finalize the GitHub release
