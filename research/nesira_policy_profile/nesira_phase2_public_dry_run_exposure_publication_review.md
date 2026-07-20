@@ -3,7 +3,7 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_0_7_3_READINESS_ACCEPTED_PENDING_GO_1
+NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_0_7_3_TESTPYPI_STAGING_ACCEPTED_PENDING_GO_2
 ```
 
 ## Candidate
@@ -93,9 +93,37 @@ That 0.7.2 candidate was not published to PyPI and is now superseded by the
 
 ## Next Boundary
 
-The next step is GO #1 for 0.7.3 TestPyPI staging. Real PyPI publication
-remains blocked until that staging passes, final checks pass, and Snir issues
-explicit GO #2.
+## TestPyPI Staging For 0.7.3
+
+GO #1 was issued by Snir for 0.7.3 TestPyPI staging only.
+
+Staging workflow:
+
+```text
+run_id: 29775825385
+head_sha: 4ccad2138c4afa5825022a5eaec79843288340a2
+conclusion: success
+```
+
+Installed-package verification from TestPyPI passed:
+
+```text
+base install version: 0.7.3
+base install cryptography present: false
+strongest dry-run verdict: DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION
+action_not_performed: true
+ACTION_NOT_PERFORMED marker: true
+combined NOT_EVALUATED hardening verdict: DRY_RUN_NOT_EVALUATED
+extra install cryptography: 49.0.0
+downloaded TestPyPI wheel SHA: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
+```
+
+The TestPyPI wheel matches the accepted 0.7.3 RC candidate exactly.
+
+## Next Boundary
+
+The next step is final pre-publication checks for 0.7.3. Real PyPI publication
+remains blocked until final checks pass and Snir issues explicit GO #2.
 
 ## Cold Verification For 0.7.3
 
