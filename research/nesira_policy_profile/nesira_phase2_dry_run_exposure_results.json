@@ -1,0 +1,35 @@
+{
+  "status": "NESIRA_PHASE2_DRY_RUN_EXPOSURE_ACCEPTED",
+  "scope": "INTERNAL_READ_ONLY_DRY_RUN_EXPOSURE_ONLY",
+  "implemented_files": [
+    "tools/run_nesira_phase2_dry_run_review.py",
+    "tests/test_nesira_phase2_dry_run_exposure.py"
+  ],
+  "verification": {
+    "targeted_exposure_pytest": "9 passed",
+    "full_pytest": "387 passed",
+    "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+    "public_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "dry_run_module_present_in_public_wheel": false,
+    "dry_run_tool_present_in_public_wheel": false,
+    "metadata_dry_run_mentions": false,
+    "pyproject_entry_points_unchanged": true,
+    "exit_code_tool_success_only": true,
+    "clean_json_error": true,
+    "mandatory_markers_preserved": true,
+    "forbidden_output_key_scan": "passed"
+  },
+  "forbidden_surfaces_still_blocked": [
+    "public_wheel",
+    "public_cli",
+    "pyproject_entry_point",
+    "release",
+    "public_claim",
+    "runner_execution",
+    "subprocess_execution_by_dry_run",
+    "filesystem_mutation",
+    "network_execution",
+    "severance_action",
+    "automatic_remediation"
+  ]
+}
