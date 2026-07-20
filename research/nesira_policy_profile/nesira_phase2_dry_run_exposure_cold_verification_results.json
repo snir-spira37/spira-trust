@@ -1,0 +1,35 @@
+{
+  "verdict": "NESIRA_PHASE2_DRY_RUN_EXPOSURE_COLD_VERIFICATION_ACCEPTED",
+  "commit": "797c825dfeba16687918f58df63c359df275cf3c",
+  "fresh_clone": true,
+  "targeted_exposure_pytest": "9 passed",
+  "full_pytest": "387 passed",
+  "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+  "public_wheel": {
+    "filename": "spira_trust-0.7.1-py3-none-any.whl",
+    "sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "dry_run_module_present": false,
+    "dry_run_tool_present": false,
+    "metadata_dry_run_mentions": false
+  },
+  "accepted_scope": [
+    "internal_read_only_source_tree_dry_run_review_tool",
+    "json_in_json_out_local_review_surface",
+    "exit_code_tool_success_only",
+    "clean_json_error",
+    "public_wheel_non_exposure"
+  ],
+  "still_blocked": [
+    "public_wheel_exposure",
+    "public_cli_exposure",
+    "pyproject_entry_point",
+    "version_bump",
+    "release",
+    "public_claim_expansion",
+    "runner_execution",
+    "subprocess_filesystem_network_behavior",
+    "severance_action",
+    "automatic_remediation"
+  ],
+  "next_safe_gate": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_READINESS"
+}
