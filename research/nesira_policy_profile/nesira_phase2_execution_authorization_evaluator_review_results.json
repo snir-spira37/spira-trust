@@ -1,0 +1,30 @@
+{
+  "schema": "NESIRA_PHASE2_EXECUTION_AUTHORIZATION_EVALUATOR_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_EXECUTION_AUTHORIZATION_EVALUATOR_ACCEPTED",
+  "checks": {
+    "docs_and_authorization_scope": "PASS",
+    "pure_in_memory_evaluator": "PASS",
+    "side_effect_budget_zero": "PASS",
+    "conformance_22_cases": "PASS",
+    "case_14_confused_deputy_guard": "PASS",
+    "action_not_performed_every_output": "PASS",
+    "ea_tcb_03_every_assumption_set": "PASS",
+    "consistency_not_runner_truth": "PASS",
+    "public_wheel_exclusion": "PASS",
+    "full_pytest": "PASS_420",
+    "v1_sha256sums": "PASS_622"
+  },
+  "not_authorized": [
+    "runner implementation",
+    "subprocess execution",
+    "filesystem mutation",
+    "network execution",
+    "severance action",
+    "automatic remediation",
+    "CLI exposure",
+    "public wheel exposure",
+    "version bump",
+    "release",
+    "public claim expansion"
+  ]
+}
