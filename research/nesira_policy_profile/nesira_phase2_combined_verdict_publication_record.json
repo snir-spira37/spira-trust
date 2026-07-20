@@ -1,0 +1,93 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_PUBLICATION_RECORD_V1",
+  "status": "NESIRA_PHASE2_COMBINED_VERDICT_PUBLICATION_COMPLETED",
+  "publication_time_utc": "2026-07-20T14:46:59Z",
+  "human_authorization": {
+    "go_no_go_owner": "Snir",
+    "go_2_text": "GO #2: publish v0.7.1",
+    "operator": "Codex under explicit Snir GO #2"
+  },
+  "tag": {
+    "name": "v0.7.1",
+    "target": "a1ddde7f157e9ede03130cfbc99d9ae0442145f5"
+  },
+  "production_workflow": {
+    "workflow": "pypi-production-publish.yml",
+    "run_id": 29751805181,
+    "run_number": 12,
+    "event": "push",
+    "branch": "v0.7.1",
+    "head_sha": "a1ddde7f157e9ede03130cfbc99d9ae0442145f5",
+    "conclusion": "success",
+    "url": "https://github.com/snir-spira37/spira-trust/actions/runs/29751805181"
+  },
+  "pypi": {
+    "project_url": "https://pypi.org/project/spira-trust/0.7.1/",
+    "version": "0.7.1",
+    "file": "spira_trust-0.7.1-py3-none-any.whl",
+    "sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "size": 751670,
+    "file_url": "https://files.pythonhosted.org/packages/e2/23/844d6fcff608ca6ee0c49affb990271209241c966ef1ede20ecb1532fcdd/spira_trust-0.7.1-py3-none-any.whl"
+  },
+  "github_release": {
+    "url": "https://github.com/snir-spira37/spira-trust/releases/tag/v0.7.1",
+    "draft": false,
+    "prerelease": false,
+    "release_notes_sha256": "cd765a27a2049bb946881ee70efa8f53fc4c6b543fc4579d96edd3945ddcd52b",
+    "asset_count": 6,
+    "assets": [
+      {"name": "agent_summary.json", "size": 3017},
+      {"name": "previous-version-gate.zip", "size": 11207020},
+      {"name": "previous_version_gate.json", "size": 2692},
+      {"name": "release_self_evidence_manifest.json", "size": 1972},
+      {"name": "SHA256SUMS.txt", "size": 481},
+      {"name": "spira-release-evidence.zip", "size": 34012}
+    ]
+  },
+  "final_pre_publication_checks": {
+    "head": "a1ddde7f157e9ede03130cfbc99d9ae0442145f5",
+    "remote_branch_tip": "a1ddde7f157e9ede03130cfbc99d9ae0442145f5",
+    "working_tree_clean": true,
+    "remote_tag_v0_7_1_absent_before_push": true,
+    "real_pypi_0_7_1_absent_before_push": true,
+    "github_release_v0_7_1_absent_before_push": true,
+    "rebuilt_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "full_pytest": "361 passed",
+    "v1_sha256sums": "622/622",
+    "v1_phase2_nesira_scope_hits": 0,
+    "dependencies": [],
+    "cryptography_optional_extra": "cryptography==49.0.0"
+  },
+  "post_public_verification": {
+    "pypi_json_present": true,
+    "pypi_wheel_sha256_matches_candidate": true,
+    "github_release_present": true,
+    "base_pip_install": "PASS",
+    "base_installed_version": "spira-trust 0.7.1",
+    "base_cryptography_present": false,
+    "extra_pip_install": "PASS",
+    "extra_installed_version": "spira-trust 0.7.1",
+    "extra_cryptography_version": "49.0.0",
+    "simple_index_propagation_delay_observed": true,
+    "simple_index_retry_succeeded": true
+  },
+  "blocked_surfaces_still_blocked": [
+    "execution",
+    "severance_authorization",
+    "permission_to_proceed",
+    "runner_behavior",
+    "automatic_remediation",
+    "proof_isolation_happened",
+    "proof_trust_roots_absolutely_legitimate",
+    "independent_certification",
+    "audit",
+    "endorsement",
+    "third_party_validation",
+    "security_guarantee",
+    "trust_guarantee"
+  ],
+  "rollback": {
+    "plan": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_rollback_plan.md",
+    "action_executed": false
+  }
+}
