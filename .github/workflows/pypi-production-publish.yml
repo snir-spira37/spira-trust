@@ -158,20 +158,24 @@ jobs:
           {
             echo "SPIRA Trust ${GITHUB_REF_NAME#v}"
             echo
-            echo "## Nesira Phase 2 Read-Only Assessment Surface"
+            echo "## Nesira Phase 2 Combined Verdict Integration"
             echo
-            echo "This release includes an opt-in Nesira Phase 2 read-only assessment"
-            echo "surface in the public wheel."
+            echo "This release includes the accepted Nesira Phase 2 combined verdict"
+            echo "integration as an explicit opt-in conservative policy layer."
             echo
-            echo "Existing spira-trust functionality is unchanged. This release adds only"
-            echo "the opt-in assessment surface described here."
+            echo "Existing default spira-trust behavior is unchanged. Nesira is not required"
+            echo "by default. When a caller supplies or requires a Nesira Phase 2 assessment"
+            echo "artifact, the combined verdict can use that artifact only as a conservative"
+            echo "layer."
             echo
-            echo "The surface checks declared trust evidence against declared trust roots and"
-            echo "composes the result through a verified fail-closed composition core,"
-            echo "conditional on the declared trust roots and recorded NOT_PROVEN assumptions."
-            echo "It emits an assessment artifact only."
+            echo "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS contributes only OK and cannot"
+            echo "upgrade another layer's BLOCK, WARN, NOTE, or NOT_EVALUATED result."
+            echo "TRUST_INSUFFICIENT contributes BLOCK. TRUST_NOT_EVALUATED remains not"
+            echo "sufficient. Malformed, action-looking, marker-mismatched, or"
+            echo "caveat-missing Nesira artifacts fail closed."
             echo
-            echo "Included surface:"
+            echo
+            echo "The 0.7.0 opt-in read-only assessment surface remains available:"
             echo
             echo "- spira_core/nesira_phase2_assessment_wiring.py"
             echo "- spira_core/nesira_phase2_authority_adapter.py"
@@ -188,11 +192,11 @@ jobs:
             echo
             echo "Boundary:"
             echo
-            echo "This is assessment-only."
+            echo "This is assessment composition inside the combined verdict, not execution."
             echo
             echo "It is not execution, not severance authorization, not permission to proceed,"
             echo "not proof that isolation happened, not proof that trust roots are absolutely"
-            echo "legitimate, not combined verdict integration, and not runner behavior."
+            echo "legitimate, not runner behavior, and not automatic remediation."
             echo
             echo "External reproduction means the recorded checks were reproduced from a fresh"
             echo "clone. It does not mean independent certification, audit, endorsement,"
