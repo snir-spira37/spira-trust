@@ -6,6 +6,9 @@
 DOCUMENT_TYPE: RESEARCH -- EXECUTION AUTHORIZATION ASSUMPTIONS LEDGER
 PHASE: PHASE_2_EXECUTION_AUTHORIZATION_LEDGER_GATE
 SCOPE: LEDGER_ONLY
+LEDGER_ID: SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_V2
+LEDGER_VERSION: 2
+REVISION: EA-TCB-03 promoted to the unconditional assumption floor
 
 AUTHORIZES:
 execution-authorization assumption IDs
@@ -51,6 +54,7 @@ The unconditional assumption floor is always present:
 ```text
 EA-HUMAN-01
 EA-TCB-01
+EA-TCB-03
 EA-CLOCK-01
 EA-META-01
 EA-META-02
@@ -226,8 +230,8 @@ EA-TCB-02:
 
 EA-TCB-03:
   statement: the trusted verifier observes the same action context that a future runner would receive.
-  universality: CONDITIONAL
-  mandatory_when: verifier compares runner-intended action context
+  universality: UNCONDITIONAL
+  applies_to: all execution-authorization results
   forbidden_reading: checking a prepared bundle proves the later runner input is identical.
 ```
 
@@ -309,6 +313,7 @@ result:
 ```text
 EA-HUMAN-01
 EA-TCB-01
+EA-TCB-03
 EA-CLOCK-01
 EA-META-01
 EA-META-02
@@ -445,6 +450,7 @@ NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_SPECIFIED
 EA_ASSUMPTION_FLOOR_SPECIFIED
 HUMAN_GO_NEVER_ASSUMPTION_FREE
 EA_TCB_01_TRUSTED_VERIFIER_REQUIRED
+EA_TCB_03_RUNNER_INTENDED_CONTEXT_IN_FLOOR
 EA_HUMAN_TEXT_01_HUMAN_READABLE_APPROVAL_REQUIRED
 EA_NONCE_01_REPLAY_PREVENTION_REQUIRED
 EA_MISAPPLICATION_01_CONFUSED_DEPUTY_GUARD_SPECIFIED

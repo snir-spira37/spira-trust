@@ -25,6 +25,7 @@ result:
 ```text
 EA-HUMAN-01
 EA-TCB-01
+EA-TCB-03
 EA-CLOCK-01
 EA-META-01
 EA-META-02
@@ -32,6 +33,10 @@ EA-META-02
 
 This prevents `EXECUTION_AUTHORIZATION_SUFFICIENT_FOR_FUTURE_RUNNER_GATE` from
 being read as assumption-free.
+
+`EA-TCB-03` is correctly included in the floor because execution authorization
+is incomplete unless the trusted verifier checks the runner-intended context
+itself, not only a prepared approval bundle.
 
 ## TCB / Trusted Verifier
 

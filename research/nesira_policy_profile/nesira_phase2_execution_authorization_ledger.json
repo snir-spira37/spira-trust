@@ -1,10 +1,12 @@
 {
   "schema": "SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_JSON_V1",
-  "ledger_id": "SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_V1",
-  "ledger_version": 1,
+  "ledger_id": "SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_V2",
+  "ledger_version": 2,
+  "revision": "EA-TCB-03 promoted to the unconditional assumption floor.",
   "assumption_floor": [
     "EA-HUMAN-01",
     "EA-TCB-01",
+    "EA-TCB-03",
     "EA-CLOCK-01",
     "EA-META-01",
     "EA-META-02"
@@ -198,9 +200,9 @@
       "version": 1,
       "category": "EA-TCB",
       "statement": "The trusted verifier observes the same action context that a future runner would receive.",
-      "applies_to": ["runner_intended_action_context"],
-      "universality": "CONDITIONAL",
-      "mandatory_when": ["verifier_compares_runner_intended_action_context"],
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
       "forbidden_reading": "checking a prepared bundle proves the later runner input is identical",
       "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
     },
