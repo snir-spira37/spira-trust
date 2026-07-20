@@ -4,7 +4,7 @@
   "version": "0.7.3",
   "candidate": {
     "rc_source_commit": "7f3ceff",
-    "rc_record_commit": "PENDING_THIS_RECORD_COMMIT",
+    "rc_record_commit": "0ac5281",
     "wheel": "spira_trust-0.7.3-py3-none-any.whl",
     "sha256": "308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5"
   },
