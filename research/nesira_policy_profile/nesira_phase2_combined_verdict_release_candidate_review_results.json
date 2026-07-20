@@ -1,0 +1,44 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_RELEASE_CANDIDATE_REVIEW_RESULTS_V1",
+  "status": "NESIRA_PHASE2_COMBINED_VERDICT_RELEASE_CANDIDATE_ACCEPTED",
+  "publication_authorized": false,
+  "candidate": {
+    "version": "0.7.1",
+    "candidate_code_commit": "954c400",
+    "candidate_wheel_name": "spira_trust-0.7.1-py3-none-any.whl",
+    "candidate_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664"
+  },
+  "local_checks": {
+    "full_pytest": "361 passed",
+    "v1_sha256sums_self_check": "622/622",
+    "v1_scope_scan_hits": 0,
+    "wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "installed_base_wheel_version": "spira-trust 0.7.1",
+    "installed_base_wheel_cryptography_present": false,
+    "release_self_evidence": "PASS",
+    "release_self_check_agent_summary_bytes": 3017,
+    "release_self_check_agent_summary_limit_bytes": 3072
+  },
+  "cold_reproduction": {
+    "fresh_clone_commit": "954c400",
+    "full_pytest": "361 passed",
+    "v1_sha256sums_self_check": "622/622",
+    "v1_scope_scan_hits": 0,
+    "candidate_wheel_build": "PASS",
+    "candidate_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "installed_base_wheel": "PASS",
+    "installed_base_wheel_version": "spira-trust 0.7.1",
+    "installed_base_wheel_cryptography_present": false,
+    "release_self_evidence": "PASS",
+    "release_self_check_agent_summary_bytes": 3017,
+    "release_self_check_agent_summary_limit_bytes": 3072
+  },
+  "blocked_surfaces": [
+    "publication",
+    "pypi_upload",
+    "github_release",
+    "git_tag",
+    "runner",
+    "severance_action"
+  ]
+}

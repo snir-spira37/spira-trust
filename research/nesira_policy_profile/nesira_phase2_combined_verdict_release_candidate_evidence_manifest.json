@@ -1,0 +1,69 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_RELEASE_CANDIDATE_EVIDENCE_MANIFEST_V1",
+  "status": "RELEASE_CANDIDATE_EVIDENCE_ASSEMBLED",
+  "publication_authorized": false,
+  "candidate": {
+    "version": "0.7.1",
+    "candidate_code_commit": "954c400",
+    "candidate_wheel_name": "spira_trust-0.7.1-py3-none-any.whl",
+    "candidate_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "candidate_wheel_filename_source": "derived_from_built_artifact"
+  },
+  "source_changes": {
+    "pyproject_change": "project.version only",
+    "builder_change": "VERSION only",
+    "dependencies_empty": true,
+    "cryptography_optional_extra": "cryptography==49.0.0",
+    "unconditional_cryptography_dependency": false,
+    "console_entry_point_added": false,
+    "runner_or_severance_behavior_change": false,
+    "combined_verdict_integration": "accepted conservative opt-in layer from prior gate"
+  },
+  "v1_boundary": {
+    "sha256sums_self_check": "622/622",
+    "artifact_manifest_refresh": "pyproject.toml entry only",
+    "sha256sums_refresh": [
+      "pyproject.toml",
+      "research/formal_core/external_reproduction_package/artifact_manifest.json"
+    ],
+    "proof_and_axiom_inventory_phase2_or_nesira_hits": 0,
+    "expected_results_phase2_or_nesira_hits": 0,
+    "formal_claims_and_boundaries_phase2_or_nesira_hits": 0
+  },
+  "cold_reproduction": {
+    "fresh_clone_commit": "954c400",
+    "full_pytest": "361 passed",
+    "v1_sha256sums_self_check": "622/622",
+    "candidate_wheel_build": "PASS",
+    "candidate_wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "candidate_wheel_name": "spira_trust-0.7.1-py3-none-any.whl",
+    "v1_scope_scan_hits": 0,
+    "installed_base_wheel": "PASS",
+    "installed_base_wheel_version": "spira-trust 0.7.1",
+    "installed_base_wheel_cryptography_present": false,
+    "release_self_evidence_from_installed_wheel": "PASS",
+    "release_self_check_agent_summary_bytes": 3017,
+    "release_self_check_agent_summary_limit_bytes": 3072,
+    "release_self_evidence_decision": "GRAPH_OK_WITH_UNVERIFIED / GRAPH_OK_WITH_NOTES"
+  },
+  "release_text": {
+    "release_notes_path": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_release_notes.md",
+    "release_notes_sha256": "d7055f63c3dd9cfdceaf20958a5ab040839791f10aeafe3eeadbc03318f4a9d0",
+    "rollback_plan_path": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_rollback_plan.md",
+    "rollback_plan_sha256": "221610c48b45523314480fa5dc3f378d16724fe498f3738b9ed01f6e7f2e1555",
+    "plan_path": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_plan.md",
+    "plan_sha256": "dc60046eab3d1807d3c21451d626a8779399100ef30a6f3e88cb2b66e46f9f5a",
+    "review_path": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_review.md",
+    "review_sha256": "fe4da290b11c1bf4fca189928c1835b93c63ce68c6a7f0f0fe48beef65d80fa7",
+    "review_results_path": "research/nesira_policy_profile/nesira_phase2_combined_verdict_release_candidate_review_results.json",
+    "review_results_sha256": "04a1c15e29b87c6e200d6333320ff082dda3c9f232f8327e30362f828902f579"
+  },
+  "blocked_surfaces": [
+    "publication",
+    "pypi_upload",
+    "github_release",
+    "git_tag",
+    "runner",
+    "severance_action"
+  ]
+}
