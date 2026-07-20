@@ -1,0 +1,25 @@
+{
+  "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_073_COLD_VERIFICATION_RESULTS_V1",
+  "verdict": "ACCEPTED",
+  "source_commit": "1dfe269",
+  "version": "0.7.3",
+  "fresh_clone": true,
+  "checks": {
+    "checkout_commit": "1dfe269",
+    "full_pytest": {
+      "status": "PASS",
+      "passed": 392
+    },
+    "candidate_wheel": {
+      "name": "spira_trust-0.7.3-py3-none-any.whl",
+      "sha256": "308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5",
+      "status": "PASS"
+    },
+    "v1_sha256sums": {
+      "status": "PASS",
+      "ok": 622,
+      "failed": 0
+    },
+    "publication_performed": false
+  }
+}

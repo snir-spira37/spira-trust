@@ -12,6 +12,7 @@
     "public_claim_boundary": "PASS",
     "testpypi_staging": "PENDING_GO_1",
     "superseded_testpypi_staging_0_7_2": "PASS_SUPERSEDED_BY_0_7_3_HARDENING",
+    "cold_reproduction_0_7_3": "PASS",
     "real_publication": "NOT_PERFORMED"
   }
 }

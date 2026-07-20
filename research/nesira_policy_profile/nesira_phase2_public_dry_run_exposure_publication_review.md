@@ -96,3 +96,13 @@ That 0.7.2 candidate was not published to PyPI and is now superseded by the
 The next step is GO #1 for 0.7.3 TestPyPI staging. Real PyPI publication
 remains blocked until that staging passes, final checks pass, and Snir issues
 explicit GO #2.
+
+## Cold Verification For 0.7.3
+
+Fresh clone verification for `1dfe269` passed:
+
+```text
+full pytest: 392 passed
+V1 SHA256SUMS: 622/622
+wheel SHA: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
+```
