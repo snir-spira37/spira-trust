@@ -1,0 +1,54 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_INTEGRATION_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_COMBINED_VERDICT_INTEGRATION_IMPLEMENTED",
+  "changed_source": [
+    "source/spira_core/combined_verdict.py"
+  ],
+  "added_tests": [
+    "tests/test_nesira_phase2_combined_verdict_integration.py"
+  ],
+  "mapping": {
+    "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS": "OK",
+    "TRUST_INSUFFICIENT": "BLOCK",
+    "TRUST_NOT_EVALUATED": "NOT_EVALUATED",
+    "missing_required_nesira_assessment": "NOT_EVALUATED",
+    "malformed_nesira_assessment": "NOT_EVALUATED",
+    "forbidden_execution_like_field": "BLOCK",
+    "execution_marker_mismatch": "BLOCK",
+    "missing_assumptions_on_sufficient": "BLOCK",
+    "missing_pt_isolation_01_on_sufficient_isolation_path": "BLOCK"
+  },
+  "invariants": {
+    "no_default_nesira_requirement": "PASS",
+    "no_nesira_upgrade_block": "PASS",
+    "no_nesira_upgrade_warn": "PASS",
+    "fail_closed_malformed_nesira": "PASS",
+    "not_evaluated_is_not_pass": "PASS",
+    "conditionality_visible": "PASS",
+    "assessment_not_execution": "PASS"
+  },
+  "focused_tests": {
+    "command": "python -m pytest tests/test_nesira_phase2_combined_verdict_integration.py tests/test_agent_memory_v0.py tests/test_unification_proof.py",
+    "result": "49 passed"
+  },
+  "full_tests": {
+    "command": "python -m pytest",
+    "result": "361 passed"
+  },
+  "v1_boundary": {
+    "sha256sums_self_check": "622/622",
+    "phase2_nesira_scope_hits": 0,
+    "manifest_refresh": [
+      "source/spira_core/combined_verdict.py",
+      "research/formal_core/external_reproduction_package/artifact_manifest.json"
+    ],
+    "protected_surface_hash_inventory_refreshed": false
+  },
+  "blocked_surfaces": [
+    "RUNNER",
+    "SEVERANCE_ACTION",
+    "VERSION_BUMP",
+    "RELEASE",
+    "PUBLIC_CLAIM_EXPANSION"
+  ]
+}

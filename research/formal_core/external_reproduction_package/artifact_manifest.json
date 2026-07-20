@@ -2447,9 +2447,9 @@
       "sha256": "c87b4a615afdf0ca6c81fbfe0eca0658b7c97736e9d0db5e7889c7f270d486f4"
     },
     {
-      "bytes": 11568,
+      "bytes": 17812,
       "path": "source/spira_core/combined_verdict.py",
-      "sha256": "b19718ef59cfde37b0fd83464920c5659cd01ac944b124c3024363327e0e2c88"
+      "sha256": "11310087e8e11b52c28e1d5a2fbe467eb291f921b98f3a7487829e3367c0fb92"
     },
     {
       "bytes": 785,

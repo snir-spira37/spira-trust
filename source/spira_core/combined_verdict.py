@@ -21,6 +21,21 @@ AGENT_ACTIONS = {
 }
 
 DECISION_SEMANTICS_VERSION = "SPIRA_DECISION_SEMANTICS_V2"
+NESIRA_LAYER = "nesira_phase2_assessment"
+NESIRA_EXECUTION_MARKER = "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION"
+NESIRA_VERDICT_SUFFICIENT = "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS"
+NESIRA_VERDICT_INSUFFICIENT = "TRUST_INSUFFICIENT"
+NESIRA_VERDICT_NOT_EVALUATED = "TRUST_NOT_EVALUATED"
+NESIRA_FORBIDDEN_OUTPUT_KEYS = {
+    "automatic_remediation",
+    "combined_action",
+    "execute",
+    "permission_to_sever",
+    "run_isolation",
+    "safe_to_sever",
+    "sever",
+    "severance_authorized",
+}
 
 
 def agent_default_decision(
@@ -83,6 +98,9 @@ def build_combined_policy_verdict(report: Mapping[str, Any], bom: Mapping[str, A
         _target_environment_layer(bom),
         _lockfile_layer(bom),
     ]
+    nesira_layer = _nesira_phase2_layer(report, bom)
+    if nesira_layer is not None:
+        per_layer.append(nesira_layer)
     evaluated = [layer for layer in per_layer if layer["status"] != "NOT_EVALUATED"]
     not_evaluated = [layer for layer in per_layer if layer["status"] == "NOT_EVALUATED"]
     winning_status = "OK"
@@ -256,6 +274,94 @@ def _lockfile_layer(bom: Mapping[str, Any]) -> dict[str, Any]:
     )
 
 
+def _nesira_phase2_layer(report: Mapping[str, Any], bom: Mapping[str, Any]) -> dict[str, Any] | None:
+    assessment = report.get(NESIRA_LAYER) or bom.get(NESIRA_LAYER)
+    required = bool(
+        report.get("nesira_phase2_assessment_required")
+        or bom.get("nesira_phase2_assessment_required")
+        or (report.get("nesira_phase2_policy") or {}).get("required")
+        or (bom.get("nesira_phase2_policy") or {}).get("required")
+    )
+    if assessment is None:
+        if not required:
+            return None
+        return _nesira_not_evaluated("NESIRA_PHASE2_ASSESSMENT_MISSING", "Nesira Phase 2 assessment was required but not supplied")
+    if not isinstance(assessment, Mapping):
+        return _nesira_not_evaluated("NESIRA_PHASE2_ASSESSMENT_MALFORMED", "Nesira Phase 2 assessment was malformed")
+    if _contains_forbidden_output_key(assessment):
+        return _nesira_block("NESIRA_PHASE2_FORBIDDEN_ACTION_FIELD", assessment, "Nesira assessment contained an action-like field")
+
+    verdict = assessment.get("verdict")
+    execution_marker = assessment.get("execution_marker")
+    assumptions = _string_list(assessment.get("assumptions"))
+    trust_roots = _string_list(assessment.get("trust_roots_used"))
+    reason_codes = _string_list(assessment.get("reason_codes"))
+
+    if execution_marker != NESIRA_EXECUTION_MARKER:
+        return _nesira_block("NESIRA_PHASE2_EXECUTION_MARKER_MISMATCH", assessment, "Nesira assessment marker did not match assessment-only contract")
+    if verdict == NESIRA_VERDICT_SUFFICIENT:
+        if not assumptions:
+            return _nesira_block("NESIRA_PHASE2_ASSUMPTIONS_MISSING", assessment, "Sufficient Nesira assessment did not carry assumptions")
+        if _nesira_isolation_present(assessment) and "PT-ISOLATION-01" not in assumptions:
+            return _nesira_block("NESIRA_PHASE2_ISOLATION_CAVEAT_MISSING", assessment, "Sufficient isolation assessment did not carry PT-ISOLATION-01")
+        return {
+            "layer": NESIRA_LAYER,
+            "status": "OK",
+            "evaluated": True,
+            "source_verdict": NESIRA_VERDICT_SUFFICIENT,
+            "evidence_ref": "nesira_phase2_assessment",
+            "finding_count": 0,
+            "notes": "evaluated read-only Nesira Phase 2 assessment under declared roots and recorded NOT_PROVEN assumptions",
+            "nesira_verdict": NESIRA_VERDICT_SUFFICIENT,
+            "nesira_assumptions": assumptions,
+            "nesira_trust_roots_used": trust_roots,
+            "nesira_execution_marker": NESIRA_EXECUTION_MARKER,
+            "nesira_reason_codes": reason_codes,
+        }
+    if verdict == NESIRA_VERDICT_INSUFFICIENT:
+        return _nesira_block("NESIRA_PHASE2_TRUST_INSUFFICIENT", assessment, "Nesira Phase 2 assessment was insufficient")
+    if verdict == NESIRA_VERDICT_NOT_EVALUATED:
+        return _nesira_not_evaluated("NESIRA_PHASE2_TRUST_NOT_EVALUATED", "Nesira Phase 2 assessment was not evaluated", assessment)
+    return _nesira_not_evaluated("NESIRA_PHASE2_ASSESSMENT_MALFORMED", "Nesira Phase 2 assessment verdict was not recognized", assessment)
+
+
+def _nesira_block(reason: str, assessment: Mapping[str, Any], notes: str) -> dict[str, Any]:
+    return {
+        "layer": NESIRA_LAYER,
+        "status": "BLOCK",
+        "evaluated": True,
+        "source_verdict": str(assessment.get("verdict") or reason),
+        "evidence_ref": "nesira_phase2_assessment",
+        "finding_count": 1,
+        "notes": notes,
+        "reason_codes": [reason],
+        "nesira_verdict": assessment.get("verdict"),
+        "nesira_assumptions": _string_list(assessment.get("assumptions")),
+        "nesira_trust_roots_used": _string_list(assessment.get("trust_roots_used")),
+        "nesira_execution_marker": assessment.get("execution_marker"),
+        "nesira_reason_codes": _string_list(assessment.get("reason_codes")),
+    }
+
+
+def _nesira_not_evaluated(reason: str, notes: str, assessment: Mapping[str, Any] | None = None) -> dict[str, Any]:
+    payload = assessment or {}
+    return {
+        "layer": NESIRA_LAYER,
+        "status": "NOT_EVALUATED",
+        "evaluated": False,
+        "source_verdict": str(payload.get("verdict") or reason),
+        "evidence_ref": "nesira_phase2_assessment",
+        "finding_count": 0,
+        "notes": notes,
+        "reason_codes": [reason],
+        "nesira_verdict": payload.get("verdict"),
+        "nesira_assumptions": _string_list(payload.get("assumptions")),
+        "nesira_trust_roots_used": _string_list(payload.get("trust_roots_used")),
+        "nesira_execution_marker": payload.get("execution_marker"),
+        "nesira_reason_codes": _string_list(payload.get("reason_codes")),
+    }
+
+
 def _policy_layer(layer: str, screening: Mapping[str, Any], verdict_map: Mapping[str, str]) -> dict[str, Any]:
     if not screening.get("evaluated"):
         return {
@@ -305,3 +411,29 @@ def _summary(
         f"{_combined_verdict(winning_status)} decided by {', '.join(decided_by)}; "
         f"{len(evaluated)} evaluated layer(s), {len(not_evaluated)} not evaluated."
     )
+
+
+def _contains_forbidden_output_key(value: Any) -> bool:
+    if isinstance(value, Mapping):
+        for key, item in value.items():
+            if str(key) in NESIRA_FORBIDDEN_OUTPUT_KEYS:
+                return True
+            if _contains_forbidden_output_key(item):
+                return True
+    if isinstance(value, list):
+        return any(_contains_forbidden_output_key(item) for item in value)
+    return False
+
+
+def _nesira_isolation_present(assessment: Mapping[str, Any]) -> bool:
+    sub_assessments = assessment.get("sub_assessments")
+    if isinstance(sub_assessments, Mapping) and "isolation" in sub_assessments:
+        return True
+    breakdown = assessment.get("per_domain_breakdown")
+    return isinstance(breakdown, Mapping) and "isolation" in breakdown
+
+
+def _string_list(value: Any) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return sorted(dict.fromkeys(str(item) for item in value))
