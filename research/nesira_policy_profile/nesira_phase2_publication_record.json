@@ -1,90 +1,103 @@
 {
   "schema": "SPIRA_NESIRA_PHASE2_PUBLICATION_RECORD_V1",
-  "verdict": "NESIRA_PHASE2_PUBLICATION_BLOCKED",
-  "staging_verdict": "NESIRA_PHASE2_TESTPYPI_DRY_RUN_ACCEPTED",
-  "publication_performed": false,
-  "production_attempt_verdict": "NESIRA_PHASE2_PRODUCTION_TAG_PUSH_PRE_UPLOAD_GUARD_FAILED",
+  "verdict": "NESIRA_PHASE2_PUBLICATION_COMPLETED",
+  "publication_performed": true,
   "candidate": {
     "version": "0.7.0",
-    "publication_authorization_commit": "3559bcf20e89130bafefa7d7cb29f41f712d533e",
-    "candidate_code_commit": "cdceab25292e7d4522865df09f9695468990b3f9",
+    "publication_authorization_commit": "72937cc97c8ae79492928fbec6798eed6088f456",
+    "release_candidate_review_commit": "5eec489d8d03877441de3c443b1f8ab1eff3195a",
+    "candidate_code_commit": "e2f4af0a2e84abd04f789c4cc6ac1955f6f52c6b",
+    "tag_target": "72937cc97c8ae79492928fbec6798eed6088f456",
     "wheel": "spira_trust-0.7.0-py3-none-any.whl",
-    "wheel_sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5"
+    "wheel_sha256": "0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7"
   },
-  "go_1": {
+  "prior_blocked_attempt": {
+    "tag": "v0.7.0",
+    "target": "e75b0960ece18c41ebdf73008671043f7b0108c1",
+    "workflow_run_id": "29694289448",
+    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29694289448",
+    "result": "blocked_before_pypi_upload_and_before_github_release_publication",
+    "failed_step": "Guard release agent summary size",
+    "failure": "agent_summary.json was 3141 bytes; limit was 3072 bytes"
+  },
+  "go_2": {
     "received_from": "Snir",
-    "authorized_surfaces": [
-      "TestPyPI dry-run via workflow_dispatch"
-    ],
-    "explicitly_not_authorized": [
-      "git tag",
-      "GitHub release",
-      "real PyPI"
-    ],
-    "result": "TESTPYPI_DRY_RUN_ACCEPTED"
+    "authorized_action": "retag v0.7.0 to 72937cc and push to origin for production publication",
+    "tag": "v0.7.0",
+    "target": "72937cc97c8ae79492928fbec6798eed6088f456"
   },
-  "testpypi_workflow": {
-    "workflow": "testpypi-trusted-publishing.yml",
-    "run_id": "29692127879",
-    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29692127879",
-    "head_sha": "3559bcf20e89130bafefa7d7cb29f41f712d533e",
+  "production_workflow": {
+    "workflow": "pypi-production-publish.yml",
+    "run_id": "29737614662",
+    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29737614662",
+    "head_sha": "72937cc97c8ae79492928fbec6798eed6088f456",
     "status": "completed",
     "conclusion": "success"
   },
-  "testpypi_artifact": {
-    "version": "0.7.0",
-    "filename": "spira_trust-0.7.0-py3-none-any.whl",
-    "sha256": "956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5",
-    "packagetype": "bdist_wheel"
+  "published_surfaces": {
+    "pypi": {
+      "status": "PERFORMED",
+      "url": "https://pypi.org/project/spira-trust/0.7.0/",
+      "filename": "spira_trust-0.7.0-py3-none-any.whl",
+      "sha256": "0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7",
+      "upload_time": "2026-07-20T11:11:07.883902Z"
+    },
+    "github_release": {
+      "status": "PERFORMED",
+      "url": "https://github.com/snir-spira37/spira-trust/releases/tag/v0.7.0",
+      "published_at": "2026-07-20T11:11:10Z",
+      "release_notes_sha256": "f944df3b38bdfa43bbd9b91f120f12244e51e884f87704a61ce21cab16cb1db9",
+      "assets": [
+        "agent_summary.json",
+        "previous-version-gate.zip",
+        "previous_version_gate.json",
+        "release_self_evidence_manifest.json",
+        "SHA256SUMS.txt",
+        "spira-release-evidence.zip"
+      ]
+    }
   },
-  "install_checks": {
-    "base_install_from_testpypi": "PASS",
-    "base_spira_trust_version": "0.7.0",
-    "base_cryptography_present": false,
-    "extra_install_from_testpypi": "PASS",
-    "extra_cryptography_version": "49.0.0",
-    "read_only_assessment_exit": 0,
-    "read_only_assessment_verdict": "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS",
-    "execution_marker": "ASSESSMENT_ONLY_NOT_A_SEVERANCE_AUTHORIZATION",
-    "pt_isolation_01_carried": true,
-    "malformed_input_exit": 2,
-    "malformed_input_error_schema": "NESIRA_PHASE2_READ_ONLY_ASSESSMENT_TOOL_ERROR_V1",
-    "traceback_leaked": false,
-    "local_path_leaked": false
+  "final_pre_publication_checks": {
+    "head_publication_source": "72937cc97c8ae79492928fbec6798eed6088f456",
+    "candidate_version": "0.7.0",
+    "candidate_wheel_filename": "spira_trust-0.7.0-py3-none-any.whl",
+    "candidate_wheel_sha256": "0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7",
+    "full_pytest": "350 passed",
+    "v1_sha256sums": "622/622",
+    "v1_phase2_scope_hits": 0,
+    "dependencies": [],
+    "cryptography_posture": "optional extra nesira-assessment only",
+    "unconditional_cryptography_requires_dist": false,
+    "production_notes": "approved Nesira public snippet plus release-evidence ritual",
+    "rollback_plan_sha256": "9c8a7424a476aba8237fc3d25ccc079bec7b07862c9e35cf37208dacdf61a7f2",
+    "combined_verdict_integration_change": false,
+    "runner_or_severance_action_change": false,
+    "pre_existing_pypi_0_7_0_release": false,
+    "pre_existing_github_release_v0_7_0": false
   },
-  "external_actions": {
-    "testpypi_upload": "PERFORMED",
-    "git_tag_v0_7_0": "PERFORMED",
-    "git_push_tag_v0_7_0": "PERFORMED",
-    "github_release_draft": "NOT_PERFORMED",
-    "real_pypi_upload": "NOT_PERFORMED",
-    "github_release_publication": "NOT_PERFORMED",
-    "announcement": "NOT_PERFORMED"
-  },
-  "go_2_attempt": {
-    "received_from": "Snir",
-    "tag": "v0.7.0",
-    "target": "e75b0960ece18c41ebdf73008671043f7b0108c1",
-    "action": "tag push triggering production workflow",
-    "workflow": "pypi-production-publish.yml",
-    "run_id": "29694289448",
-    "run_url": "https://github.com/snir-spira37/spira-trust/actions/runs/29694289448",
-    "head_sha": "e75b0960ece18c41ebdf73008671043f7b0108c1",
-    "conclusion": "failure",
-    "failed_step": "Guard release agent summary size",
-    "failure": "dist/release-evidence/graph/agent_summary.json is 3141 bytes; limit is 3072 bytes",
-    "real_pypi_upload": "SKIPPED",
-    "github_release_publication": "SKIPPED"
+  "claim_boundary": {
+    "public_claim": "SPIRA includes an opt-in Nesira Phase 2 read-only assessment surface in the public wheel. The surface checks declared trust evidence against declared trust roots and composes the result through a verified fail-closed composition core, conditional on the declared trust roots and recorded NOT_PROVEN assumptions. It emits an assessment artifact only.",
+    "still_not_claimed": [
+      "execution",
+      "severance authorization",
+      "permission to proceed",
+      "proof that isolation happened",
+      "proof that trust roots are absolutely legitimate",
+      "combined verdict integration",
+      "runner behavior",
+      "independent certification",
+      "audit",
+      "endorsement",
+      "third-party validation",
+      "security guarantee",
+      "trust guarantee"
+    ]
   },
   "still_blocked": [
-    "REAL_PYPI_UPLOAD_NOT_PERFORMED",
-    "GITHUB_RELEASE_PUBLICATION_NOT_PERFORMED",
-    "GITHUB_RELEASE_DRAFT_NOT_PERFORMED",
-    "PRODUCTION_RELEASE_NOTES_WORKFLOW_MISMATCH_RESOLVED",
-    "PRODUCTION_AGENT_SUMMARY_SIZE_GUARD_FAILED_BEFORE_UPLOAD",
-    "TAG_V0_7_0_REMOTE_EXISTS",
     "COMBINED_VERDICT",
     "RUNNER",
-    "SEVERANCE_ACTION"
+    "SEVERANCE_ACTION",
+    "VERSION_CHANGE_AFTER_RELEASE",
+    "PUBLIC_CLAIM_EXPANSION"
   ]
 }
