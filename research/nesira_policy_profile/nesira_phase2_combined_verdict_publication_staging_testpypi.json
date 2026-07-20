@@ -1,0 +1,65 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_TESTPYPI_STAGING_RECORD_V1",
+  "status": "NESIRA_PHASE2_COMBINED_VERDICT_TESTPYPI_STAGING_ACCEPTED",
+  "publication_authorized": false,
+  "candidate": {
+    "publication_readiness_commit": "5293497",
+    "version": "0.7.1",
+    "wheel": "spira_trust-0.7.1-py3-none-any.whl",
+    "wheel_sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664"
+  },
+  "accepted_testpypi_run": {
+    "workflow": "testpypi-trusted-publishing.yml",
+    "run_id": 29750223929,
+    "run_number": 5,
+    "event": "workflow_dispatch",
+    "branch": "codex/formal-core-v1-lean",
+    "head_sha": "5293497cb99cf716241d22d2b65bdfbaf83e800e",
+    "conclusion": "success",
+    "url": "https://github.com/snir-spira37/spira-trust/actions/runs/29750223929"
+  },
+  "discarded_attempt": {
+    "run_id": 29749659900,
+    "run_number": 4,
+    "branch": "main",
+    "head_sha": "4656bc98d53b0e2803b823fe01a7d13a8bcea9e2",
+    "conclusion": "failure",
+    "real_pypi_upload": false,
+    "testpypi_0_7_1_upload": false
+  },
+  "testpypi_artifact": {
+    "version": "0.7.1",
+    "file": "spira_trust-0.7.1-py3-none-any.whl",
+    "sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "size": 751670
+  },
+  "install_checks": {
+    "base": {
+      "install": "PASS",
+      "version": "spira-trust 0.7.1",
+      "cryptography_present": false
+    },
+    "extra": {
+      "install": "PASS",
+      "version": "spira-trust 0.7.1",
+      "cryptography_version": "49.0.0"
+    },
+    "commands": {
+      "spira_trust_version": "PASS",
+      "spira_trust_graph_help": "PASS",
+      "python_module_help": "PASS"
+    }
+  },
+  "external_surfaces_after_staging": {
+    "real_pypi_0_7_1": "absent / 404",
+    "github_release_v0_7_1": "absent / 404",
+    "remote_tag_v0_7_1": "absent before staging checks"
+  },
+  "blocked_surfaces": [
+    "real_pypi_upload",
+    "github_release_publication",
+    "git_tag_push",
+    "runner",
+    "severance_action"
+  ]
+}
