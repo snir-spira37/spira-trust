@@ -1,0 +1,20 @@
+{
+  "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_RESULTS_V1",
+  "status": "PUBLICATION_READINESS_ACCEPTED_PENDING_GO_1",
+  "version": "0.7.2",
+  "candidate": {
+    "rc_source_commit": "58da644",
+    "rc_record_commit": "976e96e",
+    "wheel": "spira_trust-0.7.2-py3-none-any.whl",
+    "sha256": "3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea"
+  },
+  "checks": {
+    "production_workflow_notes_updated": "PASS",
+    "workflow_trigger_change": "PASS_FALSE",
+    "pypi_publish_logic_change": "PASS_FALSE",
+    "wheel_rebuild_sha_match": "PASS",
+    "public_notes_boundary": "PASS",
+    "testpypi_staging": "PENDING_GO_1",
+    "real_publication": "NOT_PERFORMED"
+  }
+}

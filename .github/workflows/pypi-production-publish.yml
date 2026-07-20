@@ -184,6 +184,33 @@ jobs:
             echo "- spira_core/nesira_phase2_read_only_assessment_cli.py"
             echo "- spira_core/nesira_phase2_signature_adapter.py"
             echo
+            echo "## Nesira Phase 2 Dry-Run Evaluator Library Module"
+            echo
+            echo "This release includes the accepted Nesira Phase 2 non-executing dry-run"
+            echo "evaluator as a public library module."
+            echo
+            echo "Existing spira-trust command behavior is unchanged. No dry-run command-line"
+            echo "entry point is added. The module can evaluate already-supplied assessment,"
+            echo "combined-verdict, and action-authority artifacts and emit a dry-run artifact"
+            echo "for later human review."
+            echo
+            echo "The strongest dry-run result is:"
+            echo
+            echo "- DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION"
+            echo
+            echo "Every dry-run artifact carries:"
+            echo
+            echo "- ACTION_NOT_PERFORMED"
+            echo "- DRY_RUN_ONLY_NOT_EXECUTION"
+            echo "- SEPARATE_EXECUTION_AUTHORIZATION_REQUIRED"
+            echo "- NESIRA_SUFFICIENT_NOT_ACTION_AUTHORIZATION"
+            echo "- ACTION_AUTHORITY_NOT_EXECUTION"
+            echo
+            echo "The dry-run evaluator is not action execution, not action authorization,"
+            echo "not an auto-remediation mechanism, and not a severance mechanism."
+            echo "Separate human-controlled authorization remains required before any later"
+            echo "action surface."
+            echo
             echo "The Nesira assessment surface is opt-in. The base package dependencies remain"
             echo "empty. The crypto dependency is available only through the nesira-assessment"
             echo "optional extra:"
@@ -196,7 +223,7 @@ jobs:
             echo
             echo "It is not execution, not severance authorization, not permission to proceed,"
             echo "not proof that isolation happened, not proof that trust roots are absolutely"
-            echo "legitimate, not runner behavior, and not automatic remediation."
+            echo "legitimate, not action-operation behavior, and not auto-remediation."
             echo
             echo "External reproduction means the recorded checks were reproduced from a fresh"
             echo "clone. It does not mean independent certification, audit, endorsement,"

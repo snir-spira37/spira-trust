@@ -1,0 +1,16 @@
+{
+  "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_REVIEW_RESULTS_V1",
+  "verdict": "READINESS_ACCEPTED_PENDING_GO_1",
+  "version": "0.7.2",
+  "wheel_sha256": "3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea",
+  "review": {
+    "workflow_notes_include_0_7_2_snippet": "PASS",
+    "release_evidence_ritual_preserved": "PASS",
+    "workflow_triggers_unchanged": "PASS",
+    "pypi_publish_logic_unchanged": "PASS",
+    "wheel_sha_stable": "PASS",
+    "public_claim_boundary": "PASS",
+    "testpypi_staging": "PENDING_GO_1",
+    "real_publication": "NOT_PERFORMED"
+  }
+}
