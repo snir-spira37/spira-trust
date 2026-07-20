@@ -184,7 +184,7 @@ def test_static_source_scan_finds_no_side_effect_imports_or_calls():
     assert calls == []
 
 
-def test_public_wheel_behavior_unchanged_dry_run_module_not_exposed(tmp_path):
+def test_public_wheel_exposes_dry_run_evaluator_as_library_only(tmp_path):
     import subprocess
     import sys
 
@@ -203,7 +203,7 @@ def test_public_wheel_behavior_unchanged_dry_run_module_not_exposed(tmp_path):
         entry_points_name = next(name for name in names if name.endswith(".dist-info/entry_points.txt"))
         entry_points = zf.read(entry_points_name).decode("utf-8")
 
-    assert "spira_core/nesira_phase2_dry_run_runner.py" not in names
+    assert "spira_core/nesira_phase2_dry_run_runner.py" in names
     assert "spira-trust = spira_core.trust_cli:main" in entry_points
     assert "spira = spira_core.trust_cli:main" in entry_points
     assert "dry-run" not in metadata.lower()

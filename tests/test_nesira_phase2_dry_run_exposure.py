@@ -83,7 +83,7 @@ def test_output_file_matches_stdout_when_requested(tmp_path):
     assert output.read_text(encoding="utf-8") == result.stdout
 
 
-def test_public_wheel_excludes_dry_run_evaluator_and_exposure_tool(tmp_path):
+def test_public_wheel_exposes_dry_run_evaluator_as_library_only(tmp_path):
     result = subprocess.run(
         [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
         cwd=ROOT,
@@ -97,7 +97,7 @@ def test_public_wheel_excludes_dry_run_evaluator_and_exposure_tool(tmp_path):
         metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
         metadata = zf.read(metadata_name).decode("utf-8")
 
-    assert "spira_core/nesira_phase2_dry_run_runner.py" not in names
+    assert "spira_core/nesira_phase2_dry_run_runner.py" in names
     assert all("run_nesira_phase2_dry_run_review" not in name for name in names)
     assert "dry-run" not in metadata.lower()
     assert "dry_run" not in metadata.lower()

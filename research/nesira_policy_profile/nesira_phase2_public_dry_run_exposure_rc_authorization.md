@@ -86,6 +86,8 @@ Implementation may touch only:
 ```text
 pyproject.toml
 tools/build_spira_trust_public.py
+tests/test_nesira_phase2_non_executing_dry_run_runner.py
+tests/test_nesira_phase2_dry_run_exposure.py
 tests/test_nesira_phase2_public_dry_run_exposure_rc.py
 research/nesira_policy_profile/nesira_phase2_public_dry_run_exposure_release_notes.md
 research/nesira_policy_profile/nesira_phase2_public_dry_run_exposure_rc_report.md
@@ -104,6 +106,17 @@ research/formal_core/external_reproduction_package/SHA256SUMS
 The V1 refresh must update only the `pyproject.toml` record. It must not add
 Phase 2, Nesira, dry-run, runner, or public-exposure files to V1 inventory,
 claims, expected-results, or FORMAL_CLAIMS.
+
+The two existing dry-run tests may be updated only to replace the previous
+public-wheel absence invariant with the new public-library-module-only
+invariant:
+
+```text
+spira_core/nesira_phase2_dry_run_runner.py is present as an importable library module
+tools/run_nesira_phase2_dry_run_review.py remains absent
+no dry-run console entry point is added
+no executable output fields are introduced
+```
 
 Any other file change must stop with:
 

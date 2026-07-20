@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.7.1"
+VERSION = "0.7.2"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
@@ -69,6 +69,7 @@ PUBLIC_FILES = [
     "spira_core/decision015/service.py",
     "spira_core/nesira_phase2_assessment_wiring.py",
     "spira_core/nesira_phase2_authority_adapter.py",
+    "spira_core/nesira_phase2_dry_run_runner.py",
     "spira_core/nesira_phase2_identity_adapter.py",
     "spira_core/nesira_phase2_isolation_attestation_adapter.py",
     "spira_core/nesira_phase2_read_only_assessment_cli.py",

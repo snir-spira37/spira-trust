@@ -17,6 +17,7 @@ Authorized:
 version bump to 0.7.2
 public wheel allowlist update for the dry-run evaluator module
 post-install wheel tests
+targeted update of prior dry-run wheel-boundary tests to the new library-only invariant
 release-candidate notes draft
 narrow V1 pyproject manifest refresh if required
 ```
@@ -61,6 +62,10 @@ no console entry point
 
 This avoids exit-code and help-text ambiguity. Users can import the evaluator
 from the installed wheel, but no command-line affordance suggests execution.
+The previous invariant that the dry-run evaluator is absent from the public
+wheel is intentionally replaced by a narrower invariant: the evaluator module is
+present as a library, while the internal review tool and every executable
+affordance remain absent.
 
 ## Claim Review
 

@@ -1,0 +1,19 @@
+{
+  "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_REVIEW_RESULTS_V1",
+  "verdict": "ACCEPTED",
+  "version": "0.7.2",
+  "candidate_wheel_sha256": "3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea",
+  "review": {
+    "library_module_only": "PASS",
+    "public_cli_added": "PASS_FALSE",
+    "pyproject_entry_point_added": "PASS_FALSE",
+    "installed_wheel_evaluation": "PASS",
+    "action_not_performed_always_carried_in_strongest_path": "PASS",
+    "executable_output_fields": "PASS_ZERO",
+    "publication_performed": "PASS_FALSE",
+    "full_pytest": "PASS_390",
+    "v1_sha256sums_622": "PASS",
+    "release_notes_boundary_review": "PASS",
+    "wheel_rebuild_determinism": "PASS"
+  }
+}
