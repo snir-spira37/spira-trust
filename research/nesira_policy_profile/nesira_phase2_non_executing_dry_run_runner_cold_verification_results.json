@@ -1,0 +1,33 @@
+{
+  "verdict": "NESIRA_PHASE2_NON_EXECUTING_DRY_RUN_RUNNER_COLD_VERIFICATION_ACCEPTED",
+  "commit": "e14c4e3142f694203f31cc8ca156d0c132213403",
+  "fresh_clone": true,
+  "targeted_pytest": "17 passed",
+  "full_pytest": "378 passed",
+  "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+  "source_side_effect_scan_hits": 0,
+  "public_wheel": {
+    "filename": "spira_trust-0.7.1-py3-none-any.whl",
+    "sha256": "297d9d8074dd1a6b95b70e74ef2f14ec1cf1b7af976a14c34411354492882664",
+    "dry_run_module_present": false,
+    "dry_run_mentions": [],
+    "metadata_dry_run_mentions": false
+  },
+  "crux_pair": {
+    "nesira_sufficient_without_action_authority": "DRY_RUN_BLOCKED",
+    "nesira_sufficient_with_sufficient_action_authority": "ACTION_NOT_PERFORMED"
+  },
+  "still_blocked": [
+    "runner_execution",
+    "subprocess_execution",
+    "filesystem_mutation",
+    "network_execution",
+    "severance_action",
+    "automatic_remediation",
+    "public_cli_flag",
+    "version_bump",
+    "release",
+    "public_claim_expansion"
+  ],
+  "next_safe_gate": "NESIRA_PHASE2_DRY_RUN_EXPOSURE_AUTHORIZATION"
+}
