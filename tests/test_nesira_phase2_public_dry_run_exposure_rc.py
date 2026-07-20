@@ -10,7 +10,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.7.2"
+VERSION = "0.7.3"
 DRY_RUN_MODULE = "spira_core/nesira_phase2_dry_run_runner.py"
 INTERNAL_TOOL = "tools/run_nesira_phase2_dry_run_review.py"
 

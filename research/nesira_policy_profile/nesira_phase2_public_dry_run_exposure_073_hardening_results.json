@@ -1,0 +1,21 @@
+{
+  "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_073_HARDENING_RESULTS_V1",
+  "verdict": "LOCAL_VERIFICATION_ACCEPTED",
+  "supersedes": {
+    "version": "0.7.2",
+    "reason": "combined verdict NOT_EVALUATED hardening before real PyPI publication"
+  },
+  "candidate": {
+    "version": "0.7.3",
+    "wheel": "spira_trust-0.7.3-py3-none-any.whl",
+    "sha256": "308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5"
+  },
+  "checks": {
+    "targeted_tests": "PASS_36",
+    "full_pytest": "PASS_392",
+    "v1_sha256sums": "PASS_622",
+    "wheel_rebuild_determinism": "PASS",
+    "combined_not_evaluated_maps_to_dry_run_not_evaluated": "PASS",
+    "publication_performed": false
+  }
+}

@@ -109,12 +109,17 @@ def _evaluate_combined(
 ) -> None:
     winning_status = str(combined_verdict.get("winning_status") or "")
     verdict = str(combined_verdict.get("combined_verdict") or "")
+    not_evaluated_layers = _string_list(combined_verdict.get("not_evaluated_layers"))
     evidence_refs.append("combined_verdict")
     if winning_status == "BLOCK" or verdict == "GRAPH_BLOCK":
         blocking_reasons.append("COMBINED_VERDICT_BLOCK")
     if winning_status in {"WARN", "NOTE"}:
         blocking_reasons.append("COMBINED_VERDICT_NOT_CLEAN")
-    if "nesira_phase2_assessment" in _string_list(combined_verdict.get("not_evaluated_layers")):
+    if winning_status == "NOT_EVALUATED" or verdict == "GRAPH_NOT_EVALUATED":
+        not_evaluated_reasons.append("COMBINED_VERDICT_NOT_EVALUATED")
+    if not_evaluated_layers:
+        not_evaluated_reasons.append("COMBINED_VERDICT_HAS_NOT_EVALUATED_LAYERS")
+    if "nesira_phase2_assessment" in not_evaluated_layers:
         not_evaluated_reasons.append("NESIRA_LAYER_NOT_EVALUATED_IN_COMBINED_VERDICT")
 
 

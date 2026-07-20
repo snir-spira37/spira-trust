@@ -47,6 +47,31 @@ def test_action_authority_sufficient_with_combined_block_is_blocked():
     assert dry_run.ACTION_NOT_PERFORMED in artifact["markers"]
 
 
+def test_combined_not_evaluated_prevents_satisfied_dry_run():
+    artifact = dry_run.evaluate_dry_run(
+        _context(),
+        _combined_not_evaluated(),
+        _nesira_sufficient(),
+        _authority_sufficient(),
+    )
+
+    assert artifact["dry_run_verdict"] == dry_run.DRY_RUN_VERDICT_NOT_EVALUATED
+    assert "COMBINED_VERDICT_NOT_EVALUATED" in artifact["not_evaluated_reasons"]
+    assert "COMBINED_VERDICT_HAS_NOT_EVALUATED_LAYERS" in artifact["not_evaluated_reasons"]
+    assert dry_run.ACTION_NOT_PERFORMED in artifact["markers"]
+
+
+def test_combined_other_layer_not_evaluated_prevents_satisfied_dry_run():
+    combined = _combined_ok()
+    combined["not_evaluated_layers"] = ["target_environment"]
+
+    artifact = dry_run.evaluate_dry_run(_context(), combined, _nesira_sufficient(), _authority_sufficient())
+
+    assert artifact["dry_run_verdict"] == dry_run.DRY_RUN_VERDICT_NOT_EVALUATED
+    assert "COMBINED_VERDICT_HAS_NOT_EVALUATED_LAYERS" in artifact["not_evaluated_reasons"]
+    assert dry_run.ACTION_NOT_PERFORMED in artifact["markers"]
+
+
 def test_action_authority_context_mismatch_is_blocked():
     authority = _authority_sufficient()
     authority["authorized_subject_context"] = "subject:other"
@@ -255,6 +280,14 @@ def _combined_block() -> dict[str, object]:
         "combined_verdict": "GRAPH_BLOCK",
         "winning_status": "BLOCK",
         "not_evaluated_layers": [],
+    }
+
+
+def _combined_not_evaluated() -> dict[str, object]:
+    return {
+        "combined_verdict": "GRAPH_NOT_EVALUATED",
+        "winning_status": "NOT_EVALUATED",
+        "not_evaluated_layers": ["target_environment"],
     }
 
 

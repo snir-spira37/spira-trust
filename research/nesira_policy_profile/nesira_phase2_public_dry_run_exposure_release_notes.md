@@ -1,4 +1,4 @@
-# spira-trust 0.7.2 Release Notes Draft
+# spira-trust 0.7.3 Release Notes Draft
 
 ## Summary
 
@@ -37,6 +37,11 @@ The strongest dry-run result is:
 ```text
 DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION
 ```
+
+The dry-run evaluator also treats an unavailable combined verdict, or any
+reported unevaluated combined-verdict layer, as not evaluated. That prevents a
+dry-run artifact from reporting satisfied preconditions when an upstream product
+verdict layer was not evaluated.
 
 Every dry-run artifact carries:
 

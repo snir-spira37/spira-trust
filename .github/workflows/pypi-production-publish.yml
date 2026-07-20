@@ -198,6 +198,11 @@ jobs:
             echo
             echo "- DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION"
             echo
+            echo "The dry-run evaluator treats an unavailable combined verdict, or any"
+            echo "reported unevaluated combined-verdict layer, as not evaluated. This"
+            echo "prevents a dry-run artifact from reporting satisfied preconditions when"
+            echo "an upstream product verdict layer was not evaluated."
+            echo
             echo "Every dry-run artifact carries:"
             echo
             echo "- ACTION_NOT_PERFORMED"

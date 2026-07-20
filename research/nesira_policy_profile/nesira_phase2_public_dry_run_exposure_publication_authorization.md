@@ -5,14 +5,14 @@
 ```text
 DOCUMENT_TYPE: AUTHORIZATION
 PHASE: PHASE_2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_GATE
-VERSION: 0.7.2
-RC_SOURCE_COMMIT: 58da644
-RC_RECORD_COMMIT: 976e96e
-WHEEL_SHA256: 3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea
+VERSION: 0.7.3
+RC_SOURCE_COMMIT: PENDING_COMMIT
+RC_RECORD_COMMIT: PENDING_COMMIT
+WHEEL_SHA256: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
 
 AUTHORIZES:
 publication-readiness preparation
-production workflow release-notes update for 0.7.2 public text
+production workflow release-notes update for 0.7.3 public text
 TestPyPI staging after explicit GO #1
 final pre-publication checks
 
@@ -23,7 +23,7 @@ GitHub release publication
 production workflow tag trigger
 ```
 
-This gate opens publication readiness for the accepted `0.7.2` release
+This gate opens publication readiness for the accepted `0.7.3` release
 candidate. It does not itself authorize real publication.
 
 ## Candidate Lock
@@ -31,9 +31,9 @@ candidate. It does not itself authorize real publication.
 The candidate is locked to:
 
 ```text
-version: 0.7.2
-wheel: spira_trust-0.7.2-py3-none-any.whl
-wheel_sha256: 3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea
+version: 0.7.3
+wheel: spira_trust-0.7.3-py3-none-any.whl
+wheel_sha256: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
 ```
 
 Any wheel-producing source change, version change, dependency change, public
@@ -61,11 +61,11 @@ The production workflow must generate public release notes that include:
 
 ```text
 the accepted 0.7.1 conservative combined-verdict text
-the accepted 0.7.2 dry-run library-module text
+the accepted 0.7.3 dry-run library-module text
 the release-evidence transparency ritual
 ```
 
-The 0.7.2 text must state:
+The 0.7.3 text must state:
 
 ```text
 public library module only
@@ -120,7 +120,7 @@ Snir explicitly issues GO #2
 ```
 
 Real publication is performed only by tag movement or tag creation for
-`v0.7.2`. That tag action triggers the production workflow and is irreversible
+`v0.7.3`. That tag action triggers the production workflow and is irreversible
 in the PyPI-version sense.
 
 ## Final Checks Before GO #2
@@ -130,15 +130,15 @@ Immediately before GO #2:
 ```text
 HEAD is the intended tag target
 wheel-producing source diff from RC source is empty
-rebuilt wheel SHA256 equals 3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea
-version is 0.7.2
+rebuilt wheel SHA256 equals 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
+version is 0.7.3
 dependencies=[] remains
 cryptography remains optional under nesira-assessment only
 V1 SHA256SUMS remains 622/622
-no existing PyPI 0.7.2 release
-no existing GitHub v0.7.2 release
-no existing v0.7.2 tag unless it is a known blocked attempt
-production workflow notes contain the approved 0.7.2 public snippet
+no existing PyPI 0.7.3 release
+no existing GitHub v0.7.3 release
+no existing v0.7.3 tag unless it is a known blocked attempt
+production workflow notes contain the approved 0.7.3 public snippet
 production workflow trigger and PyPI logic are unchanged
 ```
 

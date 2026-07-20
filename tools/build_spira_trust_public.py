@@ -19,7 +19,7 @@ from pathlib import Path
 
 
 PROJECT = "spira-trust"
-VERSION = "0.7.2"
+VERSION = "0.7.3"
 DIST_INFO = f"spira_trust-{VERSION}.dist-info"
 WHEEL_NAME = f"spira_trust-{VERSION}-py3-none-any.whl"
 DETERMINISTIC_ZIP_TIMESTAMP = (2026, 1, 1, 0, 0, 0)
