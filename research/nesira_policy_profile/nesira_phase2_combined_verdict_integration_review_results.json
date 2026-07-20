@@ -1,0 +1,50 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_COMBINED_VERDICT_INTEGRATION_REVIEW_RESULTS_V1",
+  "verdict": "NESIRA_PHASE2_COMBINED_VERDICT_INTEGRATION_ACCEPTED",
+  "implementation_commit": "167cce2",
+  "review_findings": {
+    "conservative_integration": "PASS",
+    "explicit_opt_in": "PASS",
+    "conditionality_visible": "PASS",
+    "fail_closed_guards": "PASS",
+    "v1_boundary": "PASS",
+    "cold_reproduction": "PASS"
+  },
+  "mapping": {
+    "TRUST_SUFFICIENT_UNDER_DECLARED_ROOTS": "OK",
+    "TRUST_INSUFFICIENT": "BLOCK",
+    "TRUST_NOT_EVALUATED": "NOT_EVALUATED"
+  },
+  "monotonicity": {
+    "sufficient_does_not_upgrade_block": true,
+    "sufficient_does_not_upgrade_warn": true,
+    "sufficient_can_only_contribute_ok_layer": true
+  },
+  "local_verification": {
+    "focused_tests": "49 passed",
+    "full_pytest": "361 passed",
+    "v1_sha256sums": "622/622",
+    "v1_phase2_nesira_scope_hits": 0
+  },
+  "cold_reproduction": {
+    "fresh_clone_commit": "167cce2",
+    "focused_tests": "49 passed",
+    "v1_sha256sums": "622/622",
+    "full_pytest": "361 passed"
+  },
+  "v1_manifest_refresh": {
+    "refreshed_entries": [
+      "source/spira_core/combined_verdict.py",
+      "research/formal_core/external_reproduction_package/artifact_manifest.json"
+    ],
+    "v1_claims_inventory_expected_results_phase2_expansion": false,
+    "protected_surface_hash_inventory_refreshed": false
+  },
+  "blocked_surfaces": [
+    "RUNNER",
+    "SEVERANCE_ACTION",
+    "VERSION_BUMP",
+    "RELEASE",
+    "PUBLIC_CLAIM_EXPANSION"
+  ]
+}
