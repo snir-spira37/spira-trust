@@ -3,7 +3,7 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_0_7_3_TESTPYPI_STAGING_ACCEPTED_PENDING_GO_2
+NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_0_7_3_PUBLICATION_ACCEPTED
 ```
 
 ## Candidate
@@ -124,6 +124,43 @@ The TestPyPI wheel matches the accepted 0.7.3 RC candidate exactly.
 
 The next step is final pre-publication checks for 0.7.3. Real PyPI publication
 remains blocked until final checks pass and Snir issues explicit GO #2.
+
+## Production Publication
+
+GO #2 was issued by Snir for `v0.7.3`.
+
+Production workflow:
+
+```text
+run_id: 29777010794
+tag: v0.7.3
+head_sha: ab1feeb3d7013921c12a423fb9c9ab3172d79995
+conclusion: success
+```
+
+Public PyPI verification passed:
+
+```text
+downloaded wheel SHA: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
+base install version: 0.7.3
+base install cryptography present: false
+strongest dry-run verdict: DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION
+action_not_performed: true
+ACTION_NOT_PERFORMED marker: true
+combined NOT_EVALUATED hardening verdict: DRY_RUN_NOT_EVALUATED
+extra install cryptography: 49.0.0
+```
+
+GitHub release verification passed:
+
+```text
+release: https://github.com/snir-spira37/spira-trust/releases/tag/v0.7.3
+draft: false
+notes include dry-run section: true
+notes include combined-not-evaluated hardening: true
+```
+
+The published PyPI wheel matches the accepted 0.7.3 RC candidate exactly.
 
 ## Cold Verification For 0.7.3
 
