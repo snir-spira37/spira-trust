@@ -1,0 +1,13 @@
+{
+  "verdict": "NESIRA_PHASE2_NON_EXECUTING_DRY_RUN_RUNNER_IMPLEMENTATION_ACCEPTED",
+  "crux_pair_passed": true,
+  "source_side_effect_scan_hits": 0,
+  "mandatory_markers_all_paths": true,
+  "forbidden_output_key_scan_passed": true,
+  "public_wheel_behavior_unchanged": true,
+  "targeted_pytest": "15 passed",
+  "full_pytest": "376 passed",
+  "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+  "actual_execution_authorized": false,
+  "release_authorized": false
+}

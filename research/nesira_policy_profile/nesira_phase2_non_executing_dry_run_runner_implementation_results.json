@@ -1,0 +1,39 @@
+{
+  "status": "NESIRA_PHASE2_NON_EXECUTING_DRY_RUN_RUNNER_IMPLEMENTATION_ACCEPTED",
+  "scope": "PURE_NON_EXECUTING_DRY_RUN_EVALUATOR_ONLY",
+  "implemented_files": [
+    "source/spira_core/nesira_phase2_dry_run_runner.py",
+    "tests/test_nesira_phase2_non_executing_dry_run_runner.py"
+  ],
+  "verification": {
+    "targeted_pytest": "15 passed",
+    "full_pytest": "376 passed",
+    "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+    "source_side_effect_scan_hits": 0,
+    "forbidden_output_key_scan": "passed",
+    "public_wheel_behavior_unchanged": true,
+    "dry_run_module_exposed_in_public_wheel": false
+  },
+  "crux_pair": {
+    "nesira_sufficient_without_action_authority": "DRY_RUN_BLOCKED",
+    "nesira_sufficient_with_sufficient_action_authority": "ACTION_NOT_PERFORMED"
+  },
+  "mandatory_markers_all_paths": [
+    "ACTION_NOT_PERFORMED",
+    "DRY_RUN_ONLY_NOT_EXECUTION",
+    "SEPARATE_EXECUTION_AUTHORIZATION_REQUIRED",
+    "NESIRA_SUFFICIENT_NOT_ACTION_AUTHORIZATION",
+    "ACTION_AUTHORITY_NOT_EXECUTION"
+  ],
+  "forbidden_surfaces_still_blocked": [
+    "runner_execution",
+    "subprocess_execution",
+    "filesystem_mutation",
+    "network_execution",
+    "severance_action",
+    "automatic_remediation",
+    "public_cli_flag",
+    "release",
+    "public_claim_expansion"
+  ]
+}
