@@ -5,9 +5,11 @@
   "mandatory_markers_all_paths": true,
   "forbidden_output_key_scan_passed": true,
   "public_wheel_behavior_unchanged": true,
-  "targeted_pytest": "15 passed",
-  "full_pytest": "376 passed",
+  "targeted_pytest": "17 passed",
+  "full_pytest": "378 passed",
   "v1_sha256sums_self_check": "622 OK / 0 FAILED",
+  "non_mapping_context_fails_closed": true,
+  "expected_context_digest_is_sha256": true,
   "actual_execution_authorized": false,
   "release_authorized": false
 }

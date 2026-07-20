@@ -26,6 +26,13 @@ It inspects only its arguments and returns JSON-serializable data. It does not
 open files, write files, access the network, spawn subprocesses, mutate target
 artifacts, or expose a public CLI.
 
+Post-review tightening:
+
+```text
+non-mapping expected_context fails closed without exception
+expected_context_digest is a sha256 digest, not raw action/subject context
+```
+
 ## Boundary
 
 Still not implemented:
@@ -62,8 +69,8 @@ authorization != execution
 ## Verification
 
 ```text
-targeted pytest: 15 passed
-full pytest: 376 passed
+targeted pytest: 17 passed
+full pytest: 378 passed
 V1 SHA256SUMS self-check: 622 OK / 0 FAILED
 source side-effect scan: 0 hits
 forbidden output-key scan: passed

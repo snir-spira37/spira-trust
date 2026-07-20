@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import json
 from typing import Any, Mapping
 
 
@@ -61,8 +63,9 @@ def evaluate_dry_run(
     not_evaluated_reasons: list[str] = []
     evidence_refs: list[str] = []
     assumptions = set()
+    context = expected_context if isinstance(expected_context, Mapping) else {}
 
-    if not isinstance(expected_context, Mapping) or not _expected_context_complete(expected_context):
+    if not isinstance(expected_context, Mapping) or not _expected_context_complete(context):
         blocking_reasons.append("EXPECTED_CONTEXT_MALFORMED_OR_INCOMPLETE")
 
     if not isinstance(combined_verdict, Mapping):
@@ -73,7 +76,7 @@ def evaluate_dry_run(
     _evaluate_nesira(nesira_assessment, blocking_reasons, not_evaluated_reasons, assumptions, evidence_refs)
     _evaluate_action_authority(
         action_authority_result,
-        expected_context,
+        context,
         blocking_reasons,
         not_evaluated_reasons,
         assumptions,
@@ -89,7 +92,7 @@ def evaluate_dry_run(
 
     return _artifact(
         verdict=verdict,
-        expected_context=expected_context,
+        expected_context=context,
         blocking_reasons=blocking_reasons,
         not_evaluated_reasons=not_evaluated_reasons,
         assumptions=assumptions,
@@ -270,10 +273,11 @@ def _string_list(value: Any) -> list[str]:
 
 
 def _context_digest(expected_context: Mapping[str, Any]) -> str:
-    parts = [
-        str(expected_context.get("action_class") or ""),
-        str(expected_context.get("subject_context") or ""),
-        str(expected_context.get("environment_context") or ""),
-        str(expected_context.get("action_authority_root_id") or ""),
-    ]
-    return "ctx:" + "|".join(parts)
+    payload = {
+        "action_authority_root_id": str(expected_context.get("action_authority_root_id") or ""),
+        "action_class": str(expected_context.get("action_class") or ""),
+        "environment_context": str(expected_context.get("environment_context") or ""),
+        "subject_context": str(expected_context.get("subject_context") or ""),
+    }
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    return "sha256:" + hashlib.sha256(encoded).hexdigest()

@@ -47,6 +47,10 @@ The only `subprocess` usage in the test file is the existing pattern for
 building the public wheel to confirm this new module is not exposed there. The
 evaluator source itself has no such import or call.
 
+The source imports `hashlib` and `json` only to compute a deterministic
+`expected_context_digest`. That digest is a real SHA-256 digest and does not
+expose raw action or subject context.
+
 ## Output Review
 
 Every tested output path carries:
@@ -82,8 +86,8 @@ release/version/public claim changes
 ## Verification
 
 ```text
-targeted pytest: 15 passed
-full pytest: 376 passed
+targeted pytest: 17 passed
+full pytest: 378 passed
 V1 SHA256SUMS self-check: 622 OK / 0 FAILED
 source side-effect scan: 0 hits
 forbidden output-key scan: passed

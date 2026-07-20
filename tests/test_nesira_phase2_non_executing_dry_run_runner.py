@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ast
+import re
 import zipfile
 from pathlib import Path
 from typing import Any
@@ -125,6 +126,7 @@ def test_all_output_paths_carry_mandatory_markers():
         dry_run.evaluate_dry_run(_context(), _combined_block(), _nesira_sufficient(), _authority_sufficient()),
         dry_run.evaluate_dry_run(_context(), _combined_ok(), _nesira_not_evaluated(), _authority_not_evaluated()),
         dry_run.evaluate_dry_run({}, {}, None, None),
+        dry_run.evaluate_dry_run("not a context", _combined_ok(), _nesira_sufficient(), _authority_sufficient()),
     ]
 
     for artifact in artifacts:
@@ -142,6 +144,24 @@ def test_output_contains_no_executable_key():
 
     for artifact in artifacts:
         assert _forbidden_output_hits(artifact) == []
+
+
+def test_expected_context_digest_is_hash_not_raw_context():
+    artifact = dry_run.evaluate_dry_run(_context(), _combined_ok(), _nesira_sufficient(), _authority_sufficient())
+
+    digest = artifact["expected_context_digest"]
+    assert re.fullmatch(r"sha256:[0-9a-f]{64}", digest)
+    assert "subject:artifact-set-1" not in digest
+    assert "review-only-transition" not in digest
+
+
+def test_non_mapping_context_fails_closed_without_exception():
+    artifact = dry_run.evaluate_dry_run("not a context", _combined_ok(), _nesira_sufficient(), _authority_sufficient())
+
+    assert artifact["dry_run_verdict"] == dry_run.DRY_RUN_VERDICT_BLOCKED
+    assert "EXPECTED_CONTEXT_MALFORMED_OR_INCOMPLETE" in artifact["blocking_reasons"]
+    assert "ACTION_AUTHORITY_CONTEXT_MISMATCH" in artifact["blocking_reasons"]
+    assert dry_run.ACTION_NOT_PERFORMED in artifact["markers"]
 
 
 def test_static_source_scan_finds_no_side_effect_imports_or_calls():

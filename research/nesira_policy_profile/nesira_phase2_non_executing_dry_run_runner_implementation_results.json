@@ -6,13 +6,15 @@
     "tests/test_nesira_phase2_non_executing_dry_run_runner.py"
   ],
   "verification": {
-    "targeted_pytest": "15 passed",
-    "full_pytest": "376 passed",
+    "targeted_pytest": "17 passed",
+    "full_pytest": "378 passed",
     "v1_sha256sums_self_check": "622 OK / 0 FAILED",
     "source_side_effect_scan_hits": 0,
     "forbidden_output_key_scan": "passed",
     "public_wheel_behavior_unchanged": true,
-    "dry_run_module_exposed_in_public_wheel": false
+    "dry_run_module_exposed_in_public_wheel": false,
+    "non_mapping_context_fails_closed": true,
+    "expected_context_digest_is_sha256": true
   },
   "crux_pair": {
     "nesira_sufficient_without_action_authority": "DRY_RUN_BLOCKED",
@@ -24,6 +26,10 @@
     "SEPARATE_EXECUTION_AUTHORIZATION_REQUIRED",
     "NESIRA_SUFFICIENT_NOT_ACTION_AUTHORIZATION",
     "ACTION_AUTHORITY_NOT_EXECUTION"
+  ],
+  "post_review_tightening": [
+    "non-mapping expected_context now fails closed without exception",
+    "expected_context_digest is a sha256 digest and does not expose raw action or subject context"
   ],
   "forbidden_surfaces_still_blocked": [
     "runner_execution",
