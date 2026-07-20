@@ -32,17 +32,27 @@ creation, combined verdict integration, runner behavior, or severance action.
 ```text
 version: 0.7.0
 wheel: spira_trust-0.7.0-py3-none-any.whl
-wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+wheel_sha256: 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 ```
 
 The wheel filename was derived from the built artifact, not copied from the
 previous release name.
 
-This refresh supersedes the historical `29a52445...` candidate after the
-TestPyPI staging dry-run exposed a public-wheel runtime packaging omission.
-The fix adds the transitive public CLI runtime module
-`spira_core/unification_proof.py` to the wheel allowlist and adds an installed
-wheel `graph` runtime test. It does not authorize publication.
+This refresh supersedes the historical `956f15e...` candidate, which superseded
+`29a52445...`.
+
+The `29a52445... -> 956f15e...` refresh fixed a public-wheel runtime packaging
+omission exposed by the TestPyPI staging dry-run. It added the transitive
+public CLI runtime module `spira_core/unification_proof.py` to the wheel
+allowlist and added an installed wheel `graph` runtime test.
+
+The `956f15e... -> 0ca716...` refresh fixes the release self-check
+`agent_summary.json <= 3KB` contract without relaxing the 3KB guard. It removes
+duplicated approval prose already carried by `not_claimed` and omits empty
+`blockers`, `warnings`, and `notes` arrays while preserving those fields when
+they contain evidence.
+
+This plan does not authorize publication.
 
 ## Required Source Changes
 
@@ -53,6 +63,10 @@ pyproject.toml:
 tools/build_spira_trust_public.py:
   VERSION: 0.6.1 -> 0.7.0
   public wheel allowlist includes spira_core/unification_proof.py
+
+source/spira_core/agent_summary.py:
+  release self-check summary remains below 3KB without changing the protected
+  schema
 ```
 
 No dependency, optional-extra, entry-point, runtime behavior, combined verdict,
@@ -66,10 +80,12 @@ The release candidate requires only a narrow refresh:
 
 ```text
 artifact_manifest.json:
-  pyproject.toml entry only
+  pyproject.toml entry
+  source/spira_core/agent_summary.py entry
 
 SHA256SUMS:
   pyproject.toml
+  source/spira_core/agent_summary.py
   research/formal_core/external_reproduction_package/artifact_manifest.json
 ```
 

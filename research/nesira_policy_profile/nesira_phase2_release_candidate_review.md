@@ -19,19 +19,28 @@ runner execution, or authorize severance action.
 
 ```text
 candidate_version: 0.7.0
-candidate_code_commit: cdceab25292e7d4522865df09f9695468990b3f9
+candidate_code_commit: e2f4af0a2e84abd04f789c4cc6ac1955f6f52c6b
 candidate_wheel: spira_trust-0.7.0-py3-none-any.whl
-candidate_wheel_sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+candidate_wheel_sha256: 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 ```
 
 The wheel filename was derived from the built artifact. It was not assumed from
 the previous 0.6.1 release filename.
 
-This refreshed candidate supersedes the historical `29a52445...` candidate
-after GO #1 TestPyPI staging exposed a public-wheel runtime packaging omission.
-The fix is limited to including `spira_core/unification_proof.py`, a transitive
-runtime dependency of the public `graph` command, in the explicit public wheel
-allowlist and adding an installed-wheel `graph` runtime test.
+This refreshed candidate supersedes the historical `956f15e...` candidate,
+which superseded `29a52445...`.
+
+The `29a52445... -> 956f15e...` refresh fixed the public-wheel runtime
+packaging omission exposed by GO #1 TestPyPI staging. The fix included
+`spira_core/unification_proof.py`, a transitive runtime dependency of the
+public `graph` command, in the explicit public wheel allowlist and added an
+installed-wheel `graph` runtime test.
+
+The `956f15e... -> 0ca716...` refresh fixes the production release self-check
+`agent_summary.json <= 3KB` contract without relaxing the 3KB guard.
+`approval.note` was removed because the same boundary is already carried in
+`not_claimed`, and empty `blockers`, `warnings`, and `notes` arrays are omitted
+only when empty. The protected `SPIRA_AGENT_SUMMARY_V1` schema was not changed.
 
 Review finding: PASS.
 
@@ -42,6 +51,7 @@ The source changes are limited as authorized:
 ```text
 pyproject.toml: project.version only
 tools/build_spira_trust_public.py: VERSION + public runtime allowlist fix
+source/spira_core/agent_summary.py: compact optional output only
 ```
 
 The versions match:
@@ -134,8 +144,8 @@ The Formal Core V1 external reproduction package remains V1-scoped.
 The manifest refresh is narrow:
 
 ```text
-artifact_manifest.json: pyproject.toml entry only
-SHA256SUMS: pyproject.toml + artifact_manifest.json only
+artifact_manifest.json: pyproject.toml + source/spira_core/agent_summary.py entries
+SHA256SUMS: pyproject.toml + source/spira_core/agent_summary.py + artifact_manifest.json only
 ```
 
 Self-check:
@@ -159,7 +169,7 @@ Review finding: PASS.
 The release candidate was reproduced from a fresh clone at:
 
 ```text
-cdceab25292e7d4522865df09f9695468990b3f9
+e2f4af0a2e84abd04f789c4cc6ac1955f6f52c6b
 ```
 
 Cold reproduction results:
@@ -168,10 +178,11 @@ Cold reproduction results:
 full pytest: 350 passed
 V1 SHA256SUMS: 622/622
 candidate wheel build: PASS
-candidate wheel SHA256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+candidate wheel SHA256: 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 candidate wheel name: spira_trust-0.7.0-py3-none-any.whl
 installed wheel graph runtime: PASS
 release self-evidence from installed wheel: PASS
+release self-check agent_summary bytes: 3017 (< 3072)
 ```
 
 Review finding: PASS.

@@ -60,7 +60,7 @@ third-party validation, or a security or trust guarantee.
 
 ```text
 wheel: spira_trust-0.7.0-py3-none-any.whl
-sha256: 956f15e0421d9ec3dabaf10e1ded75318af8834885b95d45620580119b3f57b5
+sha256: 0ca716776b54bd8850b1fed0e8ce5d502d17c9ee567c22a5643b2de3aa60b8d7
 ```
 
 This release candidate is local evidence only until a separate publication
