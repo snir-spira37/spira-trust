@@ -1,0 +1,331 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_JSON_V1",
+  "ledger_id": "SPIRA_NESIRA_PHASE2_EXECUTION_AUTHORIZATION_LEDGER_V1",
+  "ledger_version": 1,
+  "assumption_floor": [
+    "EA-HUMAN-01",
+    "EA-TCB-01",
+    "EA-CLOCK-01",
+    "EA-META-01",
+    "EA-META-02"
+  ],
+  "carrier_rule": {
+    "assumptions_array": "REQUIRED_NON_EMPTY",
+    "conditional_on_roots": "REQUIRED_WHEN_ROOTS_USED",
+    "trusted_verifier_ref": "REQUIRED",
+    "human_go_ref": "REQUIRED",
+    "empty_assumptions_allowed": false
+  },
+  "entries": [
+    {
+      "id": "EA-HUMAN-01",
+      "version": 1,
+      "category": "EA-HUMAN",
+      "statement": "Legitimacy of the declared human-go approver root is assumed, not proven.",
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
+      "forbidden_reading": "a declared approver root is absolutely legitimate",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-HUMAN-02",
+      "version": 1,
+      "category": "EA-HUMAN",
+      "statement": "The approver identity is assumed to be bound to the declared approver root and approval method.",
+      "applies_to": ["approver_identity"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["approver_identity_evaluated"],
+      "forbidden_reading": "identity binding proves the approver was authorized for every action",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-SIGN-01",
+      "version": 1,
+      "category": "EA-SIGN",
+      "statement": "Approval signature or approval-system verification depends on the correctness of the declared verification mechanism.",
+      "applies_to": ["signed_human_go", "approval_system_check"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["signed_or_system_mediated_human_go_evaluated"],
+      "forbidden_reading": "a valid signature or approval-system check proves the action should run",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-SIGN-02",
+      "version": 1,
+      "category": "EA-SIGN",
+      "statement": "Custody of approval credentials is assumed outside SPIRA.",
+      "applies_to": ["approval_credential"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["approval_credential_used"],
+      "forbidden_reading": "signature validity proves the credential was not compromised",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-CLOCK-01",
+      "version": 1,
+      "category": "EA-CLOCK",
+      "statement": "Validity windows, freshness windows, nonce expiry, and revocation freshness depend on declared clock trust.",
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
+      "forbidden_reading": "SPIRA proves real-world time correctness",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-CLOCK-02",
+      "version": 1,
+      "category": "EA-CLOCK",
+      "statement": "Clock-source identity and freshness are assumed according to the declared execution-authorization clock root.",
+      "applies_to": ["execution_authorization_clock_root"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["specific_clock_root_used"],
+      "forbidden_reading": "timestamp comparison proves the clock source is honest",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-REVOKE-01",
+      "version": 1,
+      "category": "EA-REVOKE",
+      "statement": "Honesty and correctness of the human-go revocation source are assumed from the declared root.",
+      "applies_to": ["human_go_revocation_status"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["revocation_status_used"],
+      "forbidden_reading": "revocation check proves the source is honest",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-REVOKE-02",
+      "version": 1,
+      "category": "EA-REVOKE",
+      "statement": "Unknown or stale revocation status is not evidence of non-revocation.",
+      "applies_to": ["human_go_revocation_status"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["revocation_unknown_or_unreachable"],
+      "forbidden_reading": "unknown revocation status can support execution authorization",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-ROLE-01",
+      "version": 1,
+      "category": "EA-ROLE",
+      "statement": "Correctness of the approver/operator role policy is assumed, not proven.",
+      "applies_to": ["approver_operator_role_policy"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["approver_and_operator_roles_evaluated"],
+      "forbidden_reading": "role policy correctness is proven by SPIRA",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-ROLE-02",
+      "version": 1,
+      "category": "EA-ROLE",
+      "statement": "Approver/operator coalescing is assumed valid only when explicitly declared by policy.",
+      "applies_to": ["approver_operator_coalescing"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["approver_and_operator_are_same_identity_or_role"],
+      "forbidden_reading": "silent role collapse is allowed",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-CONTEXT-01",
+      "version": 1,
+      "category": "EA-CONTEXT",
+      "statement": "Correctness of the caller-supplied execution context is assumed outside the artifact under action.",
+      "applies_to": ["execution_context_binding"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["execution_context_binding_evaluated"],
+      "forbidden_reading": "the target artifact may define its own execution context",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-CONTEXT-02",
+      "version": 1,
+      "category": "EA-CONTEXT",
+      "statement": "Digest binding correctly represents the intended action, subject, environment, target scope, and side-effect summary.",
+      "applies_to": ["action_context_digest"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["action_context_digest_compared"],
+      "forbidden_reading": "matching opaque digests alone prove the human understood the action",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-ROLLBACK-01",
+      "version": 1,
+      "category": "EA-ROLLBACK",
+      "statement": "Rollback or abort channel availability is assumed from the declared rollback/abort reference.",
+      "applies_to": ["rollback_or_abort_ref"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["rollback_or_abort_ref_required"],
+      "forbidden_reading": "rollback reference proves rollback will succeed",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-ROLLBACK-02",
+      "version": 1,
+      "category": "EA-ROLLBACK",
+      "statement": "Rollback or abort authority is distinct from execution authorization unless explicitly declared.",
+      "applies_to": ["rollback_or_abort_authority"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["rollback_or_abort_authority_evaluated"],
+      "forbidden_reading": "permission to execute automatically grants permission to rollback or abort",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-TCB-01",
+      "version": 1,
+      "category": "EA-TCB",
+      "statement": "A trusted verifier computes and compares execution-context digests independently of the runner or agent.",
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
+      "forbidden_reading": "the agent or runner may be trusted to validate its own authorization binding",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-TCB-02",
+      "version": 1,
+      "category": "EA-TCB",
+      "statement": "Correctness and independence of the trusted verifier / TCB are assumed, not proven.",
+      "applies_to": ["trusted_verifier"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["trusted_verifier_used"],
+      "forbidden_reading": "SPIRA proves the verifier cannot be compromised",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-TCB-03",
+      "version": 1,
+      "category": "EA-TCB",
+      "statement": "The trusted verifier observes the same action context that a future runner would receive.",
+      "applies_to": ["runner_intended_action_context"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["verifier_compares_runner_intended_action_context"],
+      "forbidden_reading": "checking a prepared bundle proves the later runner input is identical",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-HUMAN-TEXT-01",
+      "version": 1,
+      "category": "EA-HUMAN-TEXT",
+      "statement": "The human acknowledgement text is assumed to be readable and to describe the action, subject, target, side effects, and rollback/abort reference.",
+      "applies_to": ["human_acknowledgement_text"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["human_acknowledgement_text_digest_used"],
+      "forbidden_reading": "a human approved a meaningful action by seeing only an opaque hash",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-HUMAN-TEXT-02",
+      "version": 1,
+      "category": "EA-HUMAN-TEXT",
+      "statement": "The acknowledgement text digest is assumed to correspond to the exact text presented to the approver.",
+      "applies_to": ["human_acknowledgement_text"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["acknowledgement_text_compared"],
+      "forbidden_reading": "digest binding proves the UI presented the text honestly",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-NONCE-01",
+      "version": 1,
+      "category": "EA-NONCE",
+      "statement": "Human-go artifacts require one-time-use nonce or equivalent replay-prevention binding.",
+      "applies_to": ["human_go_artifact"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["human_go_artifact_may_be_replayed"],
+      "forbidden_reading": "a fresh approval may be reused for a different run",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-NONCE-02",
+      "version": 1,
+      "category": "EA-NONCE",
+      "statement": "Nonce registry correctness and single-use enforcement are assumed from the declared nonce authority.",
+      "applies_to": ["nonce_registry"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["nonce_registry_or_replay_prevention_service_used"],
+      "forbidden_reading": "SPIRA proves nonce storage cannot be bypassed",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-MISAPPLICATION-01",
+      "version": 1,
+      "category": "EA-MISAPPLICATION",
+      "statement": "An authentic human go must not be applied to a different action, subject, target, environment, side-effect set, or evidence bundle.",
+      "applies_to": ["human_go_context_matching"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["human_go_matched_to_requested_execution_context"],
+      "forbidden_reading": "a real approval is valid for any similar-looking action",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-MISAPPLICATION-02",
+      "version": 1,
+      "category": "EA-MISAPPLICATION",
+      "statement": "Confused-deputy prevention depends on the verifier comparing the human-approved context to the runner-intended context, not to a separately prepared bundle.",
+      "applies_to": ["confused_deputy_prevention"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["runner_intended_context_exists_or_will_exist"],
+      "forbidden_reading": "approval authenticity alone prevents misapplication",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md"]
+    },
+    {
+      "id": "EA-META-01",
+      "version": 1,
+      "category": "EA-META",
+      "statement": "Execution authorization is not execution.",
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
+      "forbidden_reading": "authorization evidence means the action was performed",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md", "nesira_phase2_execution_boundary.md"]
+    },
+    {
+      "id": "EA-META-02",
+      "version": 1,
+      "category": "EA-META",
+      "statement": "Execution-authorization sufficiency is conditional on declared roots, the trusted verifier, and this ledger.",
+      "applies_to": ["all_execution_authorization_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["always"],
+      "forbidden_reading": "sufficient means unconditional permission or safety",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md", "nesira_phase2_execution_boundary.md"]
+    },
+    {
+      "id": "EA-META-03",
+      "version": 1,
+      "category": "EA-META",
+      "statement": "An execution-authorization result can only open a later runner gate; it does not authorize current runner implementation.",
+      "applies_to": ["sufficient_execution_authorization_result"],
+      "universality": "CONDITIONAL",
+      "mandatory_when": ["sufficient_execution_authorization_result_produced"],
+      "forbidden_reading": "a sufficient authorization model permits immediate runner code",
+      "cross_ref": ["nesira_phase2_execution_authorization_model.md", "nesira_phase2_execution_boundary.md"]
+    }
+  ],
+  "trusted_verifier_rule": {
+    "required": true,
+    "forbidden_patterns": [
+      "runner verifies its own binding",
+      "agent chooses both approved bundle and runner-intended bundle",
+      "verifier compares only prepared evidence bundle",
+      "verifier trusts target-supplied context",
+      "verifier accepts copy-paste human text without digest binding"
+    ]
+  },
+  "not_authorized": [
+    "runner implementation",
+    "subprocess execution",
+    "filesystem mutation",
+    "network execution",
+    "severance action",
+    "automatic remediation",
+    "CLI flag change",
+    "combined verdict behavior change",
+    "version bump",
+    "release",
+    "public claim expansion"
+  ],
+  "stability_rule": "IDs are never deleted silently; removing or weakening an assumption requires a new ledger version and review."
+}
