@@ -6,6 +6,12 @@
 NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_LOCAL_VERIFICATION_ACCEPTED
 ```
 
+Cold verification is also accepted:
+
+```text
+NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
+```
+
 ## Candidate
 
 ```text
@@ -93,6 +99,7 @@ V1 SHA256SUMS: PASS (622/622)
 V1 Phase2/dry-run scope additions: PASS (0)
 release notes word-for-word review: PASS
 wheel rebuild determinism: PASS
+cold reproduction: PASS (390 passed, V1 622/622, wheel SHA match)
 ```
 
 This is a local RC acceptance record only. TestPyPI upload, PyPI upload, GitHub

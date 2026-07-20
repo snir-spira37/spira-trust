@@ -1,6 +1,6 @@
 {
   "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_RESULTS_V1",
-  "status": "LOCAL_RC_VERIFICATION_ACCEPTED",
+  "status": "RC_COLD_VERIFICATION_ACCEPTED",
   "version": "0.7.2",
   "candidate_wheel": {
     "name": "spira_trust-0.7.2-py3-none-any.whl",
@@ -19,6 +19,7 @@
     "v1_sha256sums_622": "PASS",
     "wheel_install_import_and_evaluate": "PASS",
     "release_notes_boundary_review": "PASS",
-    "wheel_rebuild_determinism": "PASS"
+    "wheel_rebuild_determinism": "PASS",
+    "cold_reproduction": "PASS"
   }
 }

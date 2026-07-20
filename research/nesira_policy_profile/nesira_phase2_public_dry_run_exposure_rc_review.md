@@ -6,6 +6,12 @@
 NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_REVIEW_ACCEPTED
 ```
 
+Cold verification verdict:
+
+```text
+NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
+```
+
 ## Review Findings
 
 The RC implements the authorized Option B surface:
@@ -45,6 +51,7 @@ full pytest: 390 passed
 V1 SHA256SUMS: 622/622
 word-for-word release notes review: PASS
 deterministic wheel rebuild: PASS
+cold reproduction: PASS
 ```
 
 ## Boundary Review
