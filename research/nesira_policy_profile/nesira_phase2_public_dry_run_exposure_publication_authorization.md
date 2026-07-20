@@ -6,8 +6,8 @@
 DOCUMENT_TYPE: AUTHORIZATION
 PHASE: PHASE_2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_GATE
 VERSION: 0.7.3
-RC_SOURCE_COMMIT: PENDING_COMMIT
-RC_RECORD_COMMIT: PENDING_COMMIT
+RC_SOURCE_COMMIT: 7f3ceff
+RC_RECORD_COMMIT: PENDING_COLD_RECORD
 WHEEL_SHA256: 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
 
 AUTHORIZES:
@@ -129,7 +129,7 @@ Immediately before GO #2:
 
 ```text
 HEAD is the intended tag target
-wheel-producing source diff from RC source is empty
+wheel-producing source diff from 7f3ceff is empty
 rebuilt wheel SHA256 equals 308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
 version is 0.7.3
 dependencies=[] remains
