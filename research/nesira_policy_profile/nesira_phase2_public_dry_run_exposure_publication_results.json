@@ -1,6 +1,6 @@
 {
   "schema": "NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_RESULTS_V1",
-  "status": "PUBLICATION_READINESS_ACCEPTED_PENDING_GO_1",
+  "status": "TESTPYPI_STAGING_ACCEPTED_PENDING_GO_2",
   "version": "0.7.2",
   "candidate": {
     "rc_source_commit": "58da644",
@@ -14,7 +14,13 @@
     "pypi_publish_logic_change": "PASS_FALSE",
     "wheel_rebuild_sha_match": "PASS",
     "public_notes_boundary": "PASS",
-    "testpypi_staging": "PENDING_GO_1",
+    "testpypi_staging": "PASS",
+    "testpypi_workflow_run": "29772208956",
+    "testpypi_head_sha": "d48c1b4d4d1d2bad83ae003121e4dd454be0041c",
+    "testpypi_downloaded_wheel_sha_match": "PASS",
+    "testpypi_base_install_crypto_free": "PASS",
+    "testpypi_extra_installs_cryptography_49_0_0": "PASS",
+    "testpypi_dry_run_module_execution": "PASS_ACTION_NOT_PERFORMED",
     "real_publication": "NOT_PERFORMED"
   }
 }

@@ -3,7 +3,7 @@
 ## Verdict
 
 ```text
-NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_PUBLICATION_READINESS_ACCEPTED_PENDING_GO_1
+NESIRA_PHASE2_PUBLIC_DRY_RUN_EXPOSURE_TESTPYPI_STAGING_ACCEPTED_PENDING_GO_2
 ```
 
 ## Candidate
@@ -59,6 +59,35 @@ The candidate wheel remains unchanged.
 ## Publication Boundary
 
 No tag, TestPyPI upload, PyPI upload, or GitHub release was performed by this
-review.
+readiness review.
 
-The next allowed step is GO #1 for TestPyPI staging only.
+## TestPyPI Staging
+
+GO #1 was issued by Snir for TestPyPI staging only.
+
+Staging workflow:
+
+```text
+run_id: 29772208956
+head_sha: d48c1b4d4d1d2bad83ae003121e4dd454be0041c
+conclusion: success
+```
+
+Installed-package verification from TestPyPI passed:
+
+```text
+base install version: 0.7.2
+base install cryptography present: false
+dry_run_verdict: DRY_RUN_PRECONDITIONS_SATISFIED_NOT_EXECUTION
+action_not_performed: true
+ACTION_NOT_PERFORMED marker: true
+extra install cryptography: 49.0.0
+downloaded TestPyPI wheel SHA: 3048960dd0a218121c41a749e19ac622bbc2a253cccb253aca078caaacdd2cea
+```
+
+The TestPyPI wheel matches the accepted RC candidate exactly.
+
+## Next Boundary
+
+The next step is final pre-publication checks. Real PyPI publication remains
+blocked until explicit GO #2 from Snir.
