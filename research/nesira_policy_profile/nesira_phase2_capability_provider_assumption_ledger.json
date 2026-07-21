@@ -1,0 +1,142 @@
+{
+  "schema": "SPIRA_NESIRA_PHASE2_CAPABILITY_PROVIDER_ASSUMPTION_LEDGER_JSON_V1",
+  "ledger_id": "SPIRA_NESIRA_PHASE2_CAPABILITY_PROVIDER_ASSUMPTION_LEDGER_V1",
+  "ledger_version": 1,
+  "assumption_floor": [
+    "CAP-PROVIDER-01",
+    "CAP-PROVIDER-02",
+    "CAP-PROVIDER-03",
+    "CAP-SINK-01",
+    "CAP-SINK-02",
+    "CAP-IDEMPOTENCY-01",
+    "CAP-IDEMPOTENCY-02",
+    "CAP-STATUS-01",
+    "CAP-TCB-01"
+  ],
+  "carrier_rule": {
+    "applied_provider_backed_runner_results": "MUST_CARRY_FULL_FLOOR",
+    "empty_assumptions_allowed": false
+  },
+  "entries": [
+    {
+      "id": "CAP-PROVIDER-01",
+      "version": 1,
+      "category": "CAP-PROVIDER",
+      "statement": "The provider object is assumed to match the approved capability descriptor.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "descriptor digest matching proves the live provider object is honest or correctly implemented",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-PROVIDER-02",
+      "version": 1,
+      "category": "CAP-PROVIDER",
+      "statement": "The provider implementation is assumed to enforce append-only behavior.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "APPEND_APPLIED proves no overwrite, truncate, delete, or mutation occurred",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-PROVIDER-03",
+      "version": 1,
+      "category": "CAP-PROVIDER",
+      "statement": "The provider is assumed not to expose arbitrary filesystem, network, or command power through the runner-facing capability.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "provider confinement is proven by the runner",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-SINK-01",
+      "version": 1,
+      "category": "CAP-SINK",
+      "statement": "Legitimacy of the declared audit sink root is assumed, not proven.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "a declared sink root is absolutely legitimate or safe",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-SINK-02",
+      "version": 1,
+      "category": "CAP-SINK",
+      "statement": "Sink durability and retention behavior are assumed outside SPIRA.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "APPEND_APPLIED proves durable persistence or future availability",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-IDEMPOTENCY-01",
+      "version": 1,
+      "category": "CAP-IDEMPOTENCY",
+      "statement": "The provider is assumed to enforce at most one record per idempotency key.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "SPIRA proves the provider cannot duplicate records",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-IDEMPOTENCY-02",
+      "version": 1,
+      "category": "CAP-IDEMPOTENCY",
+      "statement": "Idempotency storage durability and non-reset behavior are assumed outside SPIRA.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "repeated-key safety is proven across crashes, migrations, or storage loss",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-STATUS-01",
+      "version": 1,
+      "category": "CAP-STATUS",
+      "statement": "Provider status reports are assumed honest and correctly mapped.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "APPEND_APPLIED is an independent proof that the append happened",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    },
+    {
+      "id": "CAP-TCB-01",
+      "version": 1,
+      "category": "CAP-TCB",
+      "statement": "Provider code is outside the Lean-proven SPIRA composition core and outside the non-executing assessment proof boundary.",
+      "applies_to": ["applied_provider_backed_runner_results"],
+      "universality": "UNCONDITIONAL",
+      "mandatory_when": ["provider_reports_append_applied"],
+      "forbidden_reading": "provider behavior is proven by SPIRA's formal core",
+      "cross_ref": ["nesira_phase2_audit_append_capability_provider_model.md"]
+    }
+  ],
+  "stability_rule": {
+    "ids_are_stable": true,
+    "silent_delete_or_weaken": "FORBIDDEN",
+    "change_requires": [
+      "LEDGER_VERSION_BUMP",
+      "explicit_revision_note",
+      "md_json_consistency_review",
+      "adversarial_review",
+      "human_go_no_go_owner_approval"
+    ]
+  },
+  "forbidden_collapse": [
+    "provider correctness proven",
+    "append proven",
+    "filesystem safety proven",
+    "sink durability proven",
+    "idempotency proven",
+    "execution generally authorized",
+    "severance authorized",
+    "automatic remediation authorized"
+  ]
+}

@@ -10,6 +10,7 @@ SCOPE: PRIVATE_PROVIDER_IMPLEMENTATION_AUTHORIZATION
 AUTHORIZES:
 private audit append capability provider implementation for AUDIT_RECORD_APPEND_ONLY
 private provider conformance tests
+capability-provider assumption ledger definitions
 provider implementation report and results
 
 DOES_NOT_AUTHORIZE:
@@ -225,6 +226,13 @@ EA-META-01
 EA-META-02
 ```
 
+The `CAP-*` IDs are defined by:
+
+```text
+nesira_phase2_capability_provider_assumption_ledger.md
+nesira_phase2_capability_provider_assumption_ledger.json
+```
+
 If implementation adds provider-specific assumption IDs, they must be documented
 before acceptance. Assumption IDs must not be silently removed or weakened.
 
@@ -303,6 +311,15 @@ mkdir
 makedirs
 glob
 iterdir
+stat
+exists
+is_file
+read
+read_text
+read_bytes
+samefile
+resolve
+absolute
 ```
 
 Any broader filesystem authority must stop with:
@@ -320,6 +337,9 @@ source/spira_core/nesira_phase2_audit_append_provider.py
 tests/test_nesira_phase2_audit_append_provider.py
 research/nesira_policy_profile/nesira_phase2_audit_append_capability_provider_implementation_authorization.md
 research/nesira_policy_profile/nesira_phase2_audit_append_capability_provider_implementation_authorization_review.md
+research/nesira_policy_profile/nesira_phase2_capability_provider_assumption_ledger.md
+research/nesira_policy_profile/nesira_phase2_capability_provider_assumption_ledger.json
+research/nesira_policy_profile/nesira_phase2_capability_provider_assumption_ledger_review.md
 research/nesira_policy_profile/nesira_phase2_audit_append_capability_provider_implementation_report.md
 research/nesira_policy_profile/nesira_phase2_audit_append_capability_provider_implementation_results.json
 research/nesira_policy_profile/nesira_phase2_audit_append_capability_provider_implementation_review.md

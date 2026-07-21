@@ -19,6 +19,10 @@ It does not authorize runner API changes, public wheel exposure, CLI exposure,
 version bump, release, network sinks, generic filesystem adapters, severance, or
 automatic remediation.
 
+The authorization now also admits the CAP assumption ledger files as part of
+this docs hardening, so the provider may not emit opaque `CAP-*` tokens without
+a single-source definition.
+
 ## Rubicon Review
 
 This is the first gate that may allow repository code below the runner to hold
@@ -69,6 +73,20 @@ the declared sink binding.
 The provider must not create directories, delete, truncate, overwrite, rename,
 copy, move, list, read back, stat/probe before append, retry, write fallback
 diagnostics, or use network/subprocess behavior.
+
+The required source scan includes the probe family explicitly:
+
+```text
+stat
+exists
+is_file
+read
+read_text
+read_bytes
+samefile
+resolve
+absolute
+```
 
 ## Idempotency Review
 
