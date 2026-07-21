@@ -60,7 +60,9 @@ spira_core/nesira_phase2_audit_append_provider.py
 ## V1 Pin Review
 
 `pyproject.toml` is V1-pinned and will change for the version bump. The
-authorization permits a narrow V1 refresh of only the `pyproject.toml` record.
+authorization permits a narrow V1 refresh of only the `pyproject.toml` record,
+plus the corresponding `pyproject.toml` and `artifact_manifest.json` checksum
+lines in `SHA256SUMS`.
 
 The public wheel builder did not appear in the current V1 SHA256SUMS search for
 this gate, so no builder V1 refresh is authorized.
@@ -108,6 +110,10 @@ EA-TCB-03 survives on execution authorization output
 dependency posture remains unchanged
 V1 622/622 remains true
 ```
+
+The implementation may also update the existing public dry-run RC test version
+constant because the wheel filename changes from 0.7.3 to 0.7.4. That update is
+mechanical and does not widen the dry-run public surface.
 
 ## Finding
 

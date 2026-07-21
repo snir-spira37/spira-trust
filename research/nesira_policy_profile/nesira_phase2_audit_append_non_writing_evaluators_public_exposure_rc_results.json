@@ -1,0 +1,30 @@
+{
+  "schema": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_RESULTS",
+  "version": "0.7.4",
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_LOCAL_VERIFICATION_PASSED",
+  "selected_option": "Option C: public library exposure of non-writing evaluators only",
+  "public_wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
+  "public_wheel_rebuild_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
+  "public_modules_added": [
+    "spira_core/nesira_phase2_execution_authorization_evaluator.py",
+    "spira_core/nesira_phase2_audit_append_evaluator.py"
+  ],
+  "public_modules_still_excluded": [
+    "spira_core/nesira_phase2_audit_append_runner.py",
+    "spira_core/nesira_phase2_audit_append_provider.py"
+  ],
+  "tests": {
+    "targeted_pytest": "60 passed",
+    "full_pytest": "499 passed",
+    "v1_sha256sums": "622 OK / 0 FAILED",
+    "v1_scope_hits_in_claims_expected_proof": 0
+  },
+  "boundaries": {
+    "public_cli": "not authorized",
+    "runner_public_exposure": "not authorized",
+    "provider_public_exposure": "not authorized",
+    "filesystem_mutation_by_exposed_modules": "not authorized",
+    "release": "not authorized",
+    "publication": "not authorized"
+  }
+}

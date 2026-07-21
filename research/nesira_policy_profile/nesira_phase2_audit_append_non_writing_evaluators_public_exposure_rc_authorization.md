@@ -101,6 +101,7 @@ pyproject.toml
 tools/build_spira_trust_public.py
 tests/test_nesira_phase2_execution_authorization_evaluator.py
 tests/test_nesira_phase2_audit_append_evaluator.py
+tests/test_nesira_phase2_public_dry_run_exposure_rc.py
 tests/test_nesira_phase2_audit_append_non_writing_evaluators_public_exposure_rc.py
 research/nesira_policy_profile/nesira_phase2_audit_append_non_writing_evaluators_public_exposure_release_notes.md
 research/nesira_policy_profile/nesira_phase2_audit_append_non_writing_evaluators_public_exposure_rc_report.md
@@ -117,14 +118,20 @@ research/formal_core/external_reproduction_package/artifact_manifest.json
 research/formal_core/external_reproduction_package/SHA256SUMS
 ```
 
-The V1 refresh must update only the `pyproject.toml` record. It must not add
-Phase 2, Nesira, audit-append, runner, provider, public-exposure, or release
-files to V1 inventory, claims, expected-results, or FORMAL_CLAIMS.
+The V1 refresh must update only the `pyproject.toml` record in
+`artifact_manifest.json`, plus the corresponding `pyproject.toml` and
+`artifact_manifest.json` checksum lines in `SHA256SUMS`. It must not add Phase
+2, Nesira, audit-append, runner, provider, public-exposure, or release files to
+V1 inventory, claims, expected-results, or FORMAL_CLAIMS.
 
 The existing evaluator tests may be updated only to replace the previous public
 wheel absence invariant with the new public-library-module-only invariant for
 the two selected evaluator modules. They must continue to assert runner and
 provider absence.
+
+The existing public dry-run exposure RC test may be updated only for the
+candidate version constant and to tolerate the new non-writing evaluator module
+allowlist. It must not add CLI or runner/provider exposure.
 
 Any other file change must stop with:
 
@@ -247,7 +254,8 @@ runner or provider enters the public wheel
 the exposed modules import filesystem/network/subprocess primitives
 public output includes path, command, runbook, network target, or copy-paste fields
 release notes imply append behavior or execution permission
-V1 refresh touches anything other than the pyproject.toml record
+V1 refresh touches anything other than the pyproject.toml record and the
+corresponding SHA256SUMS lines
 README.md is changed
 ```
 

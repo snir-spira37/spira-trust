@@ -4,7 +4,7 @@ build-backend = "manual-public-wheel"
 
 [project]
 name = "spira-trust"
-version = "0.7.3"
+version = "0.7.4"
 description = "Offline verifier for Python wheel evidence before install."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -63,6 +63,8 @@ package_allowlist = [
   "spira_core.trust_graph",
   "spira_core.unification_proof",
   "spira_core.nesira_phase2_dry_run_runner",
+  "spira_core.nesira_phase2_execution_authorization_evaluator",
+  "spira_core.nesira_phase2_audit_append_evaluator",
   "spira_core.decision015",
   "spira_core.vendored_stone015",
 ]

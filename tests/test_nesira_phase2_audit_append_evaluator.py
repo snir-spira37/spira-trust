@@ -262,7 +262,7 @@ def test_two_run_equality():
     assert json.dumps(first, sort_keys=True) == json.dumps(second, sort_keys=True)
 
 
-def test_public_wheel_does_not_expose_audit_append_evaluator(tmp_path):
+def test_public_wheel_exposes_audit_append_evaluator_as_library_only(tmp_path):
     result = subprocess.run(
         [sys.executable, "tools/build_spira_trust_public.py", str(tmp_path / "wheel_build")],
         cwd=ROOT,
@@ -276,7 +276,9 @@ def test_public_wheel_does_not_expose_audit_append_evaluator(tmp_path):
         metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
         metadata = zf.read(metadata_name).decode("utf-8")
 
-    assert "spira_core/nesira_phase2_audit_append_evaluator.py" not in names
+    assert "spira_core/nesira_phase2_audit_append_evaluator.py" in names
+    assert "spira_core/nesira_phase2_audit_append_runner.py" not in names
+    assert "spira_core/nesira_phase2_audit_append_provider.py" not in names
     assert "audit append evaluator" not in metadata.lower()
 
 

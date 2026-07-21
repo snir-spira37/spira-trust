@@ -322,7 +322,7 @@ def test_two_run_equality():
     assert json.dumps(first, sort_keys=True) == json.dumps(second, sort_keys=True)
 
 
-def test_public_wheel_does_not_expose_execution_authorization_evaluator(tmp_path):
+def test_public_wheel_exposes_execution_authorization_evaluator_as_library_only(tmp_path):
     import subprocess
     import sys
     import zipfile
@@ -340,7 +340,9 @@ def test_public_wheel_does_not_expose_execution_authorization_evaluator(tmp_path
         metadata_name = next(name for name in names if name.endswith(".dist-info/METADATA"))
         metadata = zf.read(metadata_name).decode("utf-8")
 
-    assert "spira_core/nesira_phase2_execution_authorization_evaluator.py" not in names
+    assert "spira_core/nesira_phase2_execution_authorization_evaluator.py" in names
+    assert "spira_core/nesira_phase2_audit_append_runner.py" not in names
+    assert "spira_core/nesira_phase2_audit_append_provider.py" not in names
     assert "execution-authorization evaluator" not in metadata.lower()
 
 
