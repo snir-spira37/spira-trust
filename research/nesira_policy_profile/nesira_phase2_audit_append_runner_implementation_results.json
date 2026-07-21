@@ -1,0 +1,36 @@
+{
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_RUNNER_IMPLEMENTATION_READY_FOR_REVIEW",
+  "scope": "private AUDIT_RECORD_APPEND_ONLY runner implementation",
+  "public_exposure": "NOT_AUTHORIZED_AND_NOT_PERFORMED",
+  "release": "NOT_AUTHORIZED_AND_NOT_PERFORMED",
+  "implementation": {
+    "runner_source": "source/spira_core/nesira_phase2_audit_append_runner.py",
+    "runner_tests": "tests/test_nesira_phase2_audit_append_runner.py",
+    "authorized_class": "AUDIT_RECORD_APPEND_ONLY",
+    "effect_shape": "append_one(record_payload, idempotency_key)",
+    "positive_path_append_calls": 1,
+    "negative_path_append_calls": 0,
+    "capability_digest_binding": "REQUIRED_BEFORE_APPEND_CALL"
+  },
+  "verification": {
+    "targeted_pytest": "29 passed",
+    "full_pytest": "474 passed",
+    "v1_sha256sums": {
+      "ok": 622,
+      "failed": 0,
+      "missing": 0
+    },
+    "public_wheel_sha256": "308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5",
+    "public_wheel_runner_excluded": true
+  },
+  "boundary": {
+    "filesystem_path_handling_by_runner": "NOT_AUTHORIZED",
+    "subprocess": "NOT_AUTHORIZED",
+    "network": "NOT_AUTHORIZED",
+    "retry": "NOT_AUTHORIZED",
+    "fallback_failure_write": "NOT_AUTHORIZED",
+    "generic_runner": "NOT_AUTHORIZED",
+    "severance": "NOT_AUTHORIZED",
+    "automatic_remediation": "NOT_AUTHORIZED"
+  }
+}
