@@ -44,9 +44,15 @@ directory traversal by the provider. Missing parent or write failure maps to
 
 ## Idempotency
 
-The provider prevents duplicate writes for repeated idempotency keys within the
-same provider instance. Durability and non-reset behavior of idempotency storage
-remain `CAP-IDEMPOTENCY-02`.
+The provider reports `APPEND_APPLIED` only when the declared sink binding states
+`native_idempotency_enforced=true`. Without that declaration, it returns
+`APPEND_STATUS_UNKNOWN` before writing. This avoids reporting success when the
+reference provider cannot enforce durable idempotency inside the one-effect
+budget.
+
+Repeated idempotency keys within the same provider instance are still rejected.
+Durability and non-reset behavior of idempotency storage remain
+`CAP-IDEMPOTENCY-02`.
 
 ## Assumption Alignment
 
@@ -71,9 +77,9 @@ assumption alignment authorization.
 ## Verification Snapshot
 
 ```text
-provider targeted pytest:       19 passed
-provider + runner pytest:       48 passed
-full pytest:                    493 passed
+provider targeted pytest:       21 passed
+provider + runner pytest:       50 passed
+full pytest:                    495 passed
 V1 SHA256SUMS:                  622 OK / 0 FAILED / 0 MISSING
 public wheel SHA:               308b2bd94b96a3911fdce822c35642daa1bfd9452046a4d3e2d6f5092fce6cf5
 public wheel provider exposed:  false
@@ -82,6 +88,6 @@ public wheel runner exposed:    false
 
 ## Boundary
 
-`APPEND_APPLIED` is a provider status report. It is not proof of append
-durability, provider honesty, sink legitimacy, idempotency durability, or general
-execution safety.
+`APPEND_APPLIED` is a provider status report conditioned on declared native
+idempotency. It is not proof of append durability, provider honesty, sink
+legitimacy, idempotency durability, or general execution safety.

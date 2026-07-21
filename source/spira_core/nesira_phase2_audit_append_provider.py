@@ -73,6 +73,7 @@ def canonical_descriptor(sink_binding: Mapping[str, Any]) -> dict[str, Any]:
         "total_effect_count": 1,
         "retry_count": 0,
         "supporting_effects": "none",
+        "native_idempotency_enforced": sink_binding.get("native_idempotency_enforced") is True,
         "network_allowed": False,
         "arbitrary_path_allowed": False,
     }
@@ -95,6 +96,8 @@ def make_declared_audit_append_capability(sink_binding: Mapping[str, Any]) -> di
             return _response(APPEND_NOT_AUTHORIZED)
         if not _payload_allowed(record_payload, descriptor, idempotency_key):
             return _response(APPEND_NOT_AUTHORIZED)
+        if descriptor.get("native_idempotency_enforced") is not True:
+            return _response(APPEND_STATUS_UNKNOWN)
         if idempotency_key in seen_idempotency_keys:
             return _response(APPEND_NOT_AUTHORIZED)
         line = _record_line(record_payload)

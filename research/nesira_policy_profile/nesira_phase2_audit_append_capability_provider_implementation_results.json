@@ -19,7 +19,9 @@
     "filesystem_primitive": "open(sink_target, \"a\") plus sink.write(line)",
     "retry_count": 0,
     "fallback_sink": false,
-    "readback_probe": false
+    "readback_probe": false,
+    "append_applied_requires_native_idempotency": true,
+    "missing_native_idempotency_status": "APPEND_STATUS_UNKNOWN_BEFORE_WRITE"
   },
   "assumptions": {
     "canonical_cap_floor_carried_on_applied": true,
@@ -36,9 +38,9 @@
     ]
   },
   "verification": {
-    "provider_targeted_pytest": "19 passed",
-    "provider_runner_pytest": "48 passed",
-    "full_pytest": "493 passed",
+    "provider_targeted_pytest": "21 passed",
+    "provider_runner_pytest": "50 passed",
+    "full_pytest": "495 passed",
     "v1_sha256sums": {
       "ok": 622,
       "failed": 0,
@@ -53,7 +55,7 @@
     "append-only semantics beyond tested controlled sink behavior",
     "sink root legitimacy",
     "sink durability",
-    "idempotency durability across provider instance loss",
+    "idempotency durability across provider instance loss even when native idempotency is declared",
     "provider status honesty"
   ]
 }

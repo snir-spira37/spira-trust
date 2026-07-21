@@ -41,7 +41,9 @@ def test_03_runner_facing_provider_object_exposes_only_allowed_keys(tmp_path):
 
 
 def test_04_positive_path_calls_provider_once_and_writes_one_record(tmp_path):
-    capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+    capability = provider.make_declared_audit_append_capability(
+        _sink_binding(tmp_path, native_idempotency_enforced=True)
+    )
     context = _runner_context(tmp_path, capability)
 
     artifact = runner.run_audit_append(context, _audit_append(), _execution_authorization(), capability)
@@ -57,7 +59,9 @@ def test_04_positive_path_calls_provider_once_and_writes_one_record(tmp_path):
 
 
 def test_05_repeated_idempotency_key_does_not_create_duplicate_record(tmp_path):
-    capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+    capability = provider.make_declared_audit_append_capability(
+        _sink_binding(tmp_path, native_idempotency_enforced=True)
+    )
     context = _runner_context(tmp_path, capability)
 
     first = runner.run_audit_append(context, _audit_append(), _execution_authorization(), capability)
@@ -67,6 +71,40 @@ def test_05_repeated_idempotency_key_does_not_create_duplicate_record(tmp_path):
     assert second["verdict"] == runner.VERDICT_STATUS_UNKNOWN
     assert second["effect_count_applied"] == 0
     assert len(_sink_lines(tmp_path)) == 1
+
+
+def test_05b_without_native_durable_idempotency_provider_reports_unknown_and_writes_zero(tmp_path):
+    capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+    context = _runner_context(tmp_path, capability)
+
+    artifact = runner.run_audit_append(context, _audit_append(), _execution_authorization(), capability)
+
+    assert artifact["verdict"] == runner.VERDICT_STATUS_UNKNOWN
+    assert artifact["effect_count_attempted"] == 1
+    assert artifact["effect_count_applied"] == 0
+    assert _sink_text(tmp_path) == ""
+
+
+def test_05c_cross_instance_repeated_key_without_native_idempotency_writes_zero_records(tmp_path):
+    first_capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+    second_capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+
+    first = runner.run_audit_append(
+        _runner_context(tmp_path, first_capability),
+        _audit_append(),
+        _execution_authorization(),
+        first_capability,
+    )
+    second = runner.run_audit_append(
+        _runner_context(tmp_path, second_capability),
+        _audit_append(),
+        _execution_authorization(),
+        second_capability,
+    )
+
+    assert first["verdict"] == runner.VERDICT_STATUS_UNKNOWN
+    assert second["verdict"] == runner.VERDICT_STATUS_UNKNOWN
+    assert _sink_text(tmp_path) == ""
 
 
 def test_06_oversized_record_is_rejected_before_append(tmp_path):
@@ -104,7 +142,9 @@ def test_08_command_or_path_payload_is_rejected_before_append(tmp_path):
 
 
 def test_09_provider_status_unknown_maps_to_no_success(tmp_path):
-    capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path, max_record_size=1))
+    capability = provider.make_declared_audit_append_capability(
+        _sink_binding(tmp_path, max_record_size=1, native_idempotency_enforced=True)
+    )
     response = capability["append_one"](_payload(), "idem:1")
 
     assert response["effect_status"] == provider.APPEND_NOT_AUTHORIZED
@@ -190,7 +230,9 @@ def test_15_negative_cases_produce_zero_records(tmp_path):
 
 
 def test_16_provider_applied_response_carries_cap_assumptions(tmp_path):
-    capability = provider.make_declared_audit_append_capability(_sink_binding(tmp_path))
+    capability = provider.make_declared_audit_append_capability(
+        _sink_binding(tmp_path, native_idempotency_enforced=True)
+    )
     response = capability["append_one"](_payload(), "idem:1")
 
     assert response["effect_status"] == provider.APPEND_APPLIED
