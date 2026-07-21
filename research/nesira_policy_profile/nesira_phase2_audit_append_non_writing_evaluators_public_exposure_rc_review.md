@@ -10,7 +10,7 @@ nesira_phase2_audit_append_non_writing_evaluators_public_exposure_rc_results.jso
 nesira_phase2_audit_append_non_writing_evaluators_public_exposure_release_notes.md
 
 VERDICT:
-NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_ACCEPTED_PENDING_COLD_REPRODUCTION
+NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
 ```
 
 ## Scope Review
@@ -51,6 +51,16 @@ wheel rebuild SHA: 479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96f
 V1 Phase2/Nesira/audit-append hits in claims/expected/proof: 0
 ```
 
+Cold reproduction from a fresh clone also passed:
+
+```text
+commit: e95223ce453ec06c6912f5ebad686c3eabe4c6bb
+wheel SHA: 479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e
+targeted pytest: 60 passed
+full pytest: 499 passed
+V1 SHA256SUMS hash test: passed
+```
+
 The V1 refresh is narrow:
 
 ```text
@@ -82,15 +92,12 @@ security/trust guarantee.
 
 ## Finding
 
-No blocking finding in local RC verification.
-
-Cold reproduction from a fresh clone is still required before final RC
-acceptance because the public wheel content and version changed.
+No blocking finding.
 
 ## Acceptance
 
 ```text
-NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_ACCEPTED_PENDING_COLD_REPRODUCTION
+NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
 ```
 
 This review does not authorize TestPyPI, PyPI, GitHub release, tag creation, or

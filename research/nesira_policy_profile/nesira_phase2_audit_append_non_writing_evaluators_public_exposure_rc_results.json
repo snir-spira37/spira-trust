@@ -1,7 +1,7 @@
 {
   "schema": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_RESULTS",
   "version": "0.7.4",
-  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_LOCAL_VERIFICATION_PASSED",
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED",
   "selected_option": "Option C: public library exposure of non-writing evaluators only",
   "public_wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
   "public_wheel_rebuild_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
@@ -17,7 +17,15 @@
     "targeted_pytest": "60 passed",
     "full_pytest": "499 passed",
     "v1_sha256sums": "622 OK / 0 FAILED",
+    "cold_targeted_pytest": "60 passed",
+    "cold_full_pytest": "499 passed",
+    "cold_v1_sha256sums": "622 OK / 0 FAILED",
     "v1_scope_hits_in_claims_expected_proof": 0
+  },
+  "cold_reproduction": {
+    "commit": "e95223ce453ec06c6912f5ebad686c3eabe4c6bb",
+    "wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
+    "wheel_sha256_matches_rc": true
   },
   "boundaries": {
     "public_cli": "not authorized",

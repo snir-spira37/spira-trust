@@ -8,7 +8,7 @@ PHASE: PHASE_2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_GATE
 SCOPE: OPTION_C_PUBLIC_LIBRARY_EXPOSURE_OF_NON_WRITING_EVALUATORS_ONLY
 
 VERDICT:
-NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_LOCAL_VERIFICATION_PASSED
+NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
 ```
 
 ## Candidate
@@ -67,6 +67,13 @@ V1 claims/expected/proof scan for Phase2/Nesira/audit append:
 
 wheel rebuild:
   deterministic SHA match
+
+cold reproduction from fresh clone:
+  commit: e95223ce453ec06c6912f5ebad686c3eabe4c6bb
+  wheel sha256: 479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e
+  targeted pytest: 60 passed
+  full pytest: 499 passed
+  V1 SHA256SUMS hash test: passed
 ```
 
 The attempted full pytest before completing the V1 SHA256SUMS refresh produced
@@ -133,7 +140,7 @@ automatic remediation
 ## Decision
 
 ```text
-NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_LOCAL_VERIFICATION_PASSED
+NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLIC_EXPOSURE_RC_COLD_VERIFICATION_ACCEPTED
 ```
 
 Publication remains a separate gate.
