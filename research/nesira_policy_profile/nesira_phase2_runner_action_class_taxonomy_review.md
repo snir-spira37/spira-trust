@@ -5,6 +5,7 @@
 ```text
 NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_ACCEPTED
 NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2_ACCEPTED
+NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V3_ACCEPTED
 ```
 
 ## Scope Reviewed
@@ -24,24 +25,27 @@ No blocking findings.
 The taxonomy is now explicitly versioned:
 
 ```text
-TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2
-TAXONOMY_VERSION: 2
-REVISION: add ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION status for AUDIT_RECORD_APPEND_ONLY
+TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V3
+TAXONOMY_VERSION: 3
+REVISION: authorize AUDIT_RECORD_APPEND_ONLY for one private declared sink append implementation gate
 ```
 
-This closes the governance finding from the audit-append runner scope revision:
-the `ELIGIBLE` tier is now part of the canonical taxonomy, not a status created
-only by a downstream document.
+V2 closed the governance finding from the audit-append runner scope revision by
+making the `ELIGIBLE` tier canonical. V3 now records the separate
+implementation authorization for exactly one class without creating a side
+status outside the taxonomy.
 
-## Empty Authorized Set
+## Authorized Set Review
 
-The taxonomy correctly locks:
+The taxonomy now records exactly one authorized class:
 
 ```text
-AUTHORIZED_RUNNER_ACTION_CLASSES_NOW = []
+AUTHORIZED_RUNNER_ACTION_CLASSES_NOW = [AUDIT_RECORD_APPEND_ONLY]
 ```
 
-This prevents the taxonomy itself from becoming an implementation approval.
+This does not make the taxonomy itself an implementation approval. The class is
+authorized only by its separate implementation authorization and only inside
+that authorization's exact envelope.
 
 ## Generic Runner Rejection
 
@@ -124,14 +128,27 @@ It means only that a later gate may draft an implementation authorization for
 the exact class. It does not permit code and does not move the class to
 `AUTHORIZED_NOW`.
 
-The single eligible class is:
+There are no currently eligible-but-not-authorized classes:
+
+```text
+none
+```
+
+## Authorized Now Review
+
+The single authorized class is:
 
 ```text
 AUDIT_RECORD_APPEND_ONLY
 ```
 
-The taxonomy records the same maximum future envelope as the runner scope
-revision:
+It is authorized only for private implementation under:
+
+```text
+nesira_phase2_audit_append_runner_implementation_authorization.md
+```
+
+The taxonomy records the exact maximum implementation envelope:
 
 ```text
 effect_shape: APPEND_ONE_BOUNDED_RECORD
@@ -139,9 +156,11 @@ effect_count: 1
 total_effect_count: 1
 retry_count: 0
 supporting_effects: none
+sink_access: declared append capability only
 ```
 
-The status is now centralized in the taxonomy.
+This status does not authorize public wheel exposure, CLI exposure, release, or
+any other action class.
 
 ## Canonical Table Review
 
@@ -152,9 +171,9 @@ It records exactly:
 
 ```text
 16 INELIGIBLE_ALWAYS classes
-1 ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION class
+0 ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION classes
 3 CANDIDATE_FOR_FUTURE_MODEL_ONLY classes
-0 AUTHORIZED_NOW classes
+1 AUTHORIZED_NOW class
 ```
 
 Any status not listed in the table is invalid.

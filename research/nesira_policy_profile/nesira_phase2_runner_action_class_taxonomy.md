@@ -6,9 +6,9 @@
 DOCUMENT_TYPE: RESEARCH -- RUNNER ACTION CLASS TAXONOMY
 PHASE: PHASE_2_RUNNER_ACTION_CLASS_TAXONOMY_GATE
 SCOPE: TAXONOMY_ONLY
-TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2
-TAXONOMY_VERSION: 2
-REVISION: add ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION status for AUDIT_RECORD_APPEND_ONLY
+TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V3
+TAXONOMY_VERSION: 3
+REVISION: authorize AUDIT_RECORD_APPEND_ONLY for one private declared sink append implementation gate
 
 AUTHORIZES:
 runner action-class taxonomy
@@ -17,7 +17,8 @@ candidate future action-class vocabulary
 eligible future implementation-authorization vocabulary
 future side-effect-budget requirements
 
-RUNNER_IMPLEMENTATION: NOT_AUTHORIZED
+RUNNER_IMPLEMENTATION_BY_THIS_TAXONOMY: NOT_AUTHORIZED
+RUNNER_IMPLEMENTATION: AUTHORIZED_ONLY_BY_CLASS_IMPLEMENTATION_AUTHORIZATION
 SUBPROCESS_EXECUTION: NOT_AUTHORIZED
 FILESYSTEM_MUTATION: NOT_AUTHORIZED
 NETWORK_EXECUTION: NOT_AUTHORIZED
@@ -32,20 +33,24 @@ RELEASE: NOT_AUTHORIZED
 PUBLIC_CLAIM_EXPANSION: NOT_AUTHORIZED
 ```
 
-This taxonomy names which action classes are categorically ineligible and which
-classes may be considered by later docs-only gates. It does not authorize any
-runner implementation.
+This taxonomy names which action classes are categorically ineligible, which
+classes may be considered by later docs-only gates, and which classes have a
+separate implementation authorization. It does not itself implement runner
+code.
 
 ## Core Lock
 
 ```text
-AUTHORIZED_RUNNER_ACTION_CLASSES_NOW = []
+AUTHORIZED_RUNNER_ACTION_CLASSES_NOW = [AUDIT_RECORD_APPEND_ONLY]
 ```
 
-No action class is authorized for implementation by this document.
+No action class is authorized for implementation by this taxonomy alone.
+`AUDIT_RECORD_APPEND_ONLY` is authorized only by its separate implementation
+authorization and only inside that authorization's exact envelope.
 
-The purpose of this taxonomy is to prevent a future runner from becoming a
-generic execution surface.
+The purpose of this taxonomy is to prevent a runner from becoming a generic
+execution surface while keeping the source of truth for class status in one
+place.
 
 ## Classification Vocabulary
 
@@ -61,7 +66,7 @@ AUTHORIZED_NOW
 For this document:
 
 ```text
-AUTHORIZED_NOW is empty.
+AUTHORIZED_NOW contains only AUDIT_RECORD_APPEND_ONLY.
 ```
 
 `CANDIDATE_FOR_FUTURE_MODEL_ONLY` means only that a later gate may write a
@@ -74,7 +79,8 @@ authorization for that exact class. It does not permit code.
 
 `AUTHORIZED_NOW` means a class has received a separate implementation
 authorization and may be implemented within that later gate's exact envelope.
-For this document, the set remains empty.
+It does not mean public exposure, release, CLI invocation, generic runner
+behavior, or permission for any other class.
 
 No document other than this taxonomy may introduce a new runner action-class
 status. If a later gate needs a new status, this taxonomy must be revised first.
@@ -141,29 +147,36 @@ gate.
 ## Eligible For Separate Implementation Authorization
 
 The following action classes are eligible for a later implementation
-authorization discussion:
+authorization discussion but not yet authorized:
+
+```text
+none
+```
+
+Eligibility does not move a class to `AUTHORIZED_NOW`.
+
+## Authorized Now
+
+The following action classes are authorized for implementation only within
+their separate implementation gate envelope:
 
 ```text
 AUDIT_RECORD_APPEND_ONLY
-  status: ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
-  eligibility_source: nesira_phase2_audit_append_runner_scope_revision_authorization.md
-  implementation_authorization: still required
-  current implementation: NOT_AUTHORIZED
-  maximum future envelope:
+  status: AUTHORIZED_NOW
+  authorization_source: nesira_phase2_audit_append_runner_implementation_authorization.md
+  public_exposure: NOT_AUTHORIZED
+  release: NOT_AUTHORIZED
+  maximum implementation envelope:
     effect_shape: APPEND_ONE_BOUNDED_RECORD
     effect_count: 1
     total_effect_count: 1
     retry_count: 0
     supporting_effects: none
+    sink_access: declared append capability only
 ```
 
-Eligibility does not move the class to `AUTHORIZED_NOW`.
-
-The class must not be implemented until a later gate explicitly authorizes:
-
-```text
-nesira_phase2_audit_append_runner_implementation_authorization
-```
+`AUTHORIZED_NOW` for this class permits only private implementation under the
+authorization source. It does not authorize public wheel exposure or release.
 
 ## Candidate Classes For Future Models Only
 
@@ -209,7 +222,7 @@ SECRET_EXFILTRATION_PRONE_ACTION              INELIGIBLE_ALWAYS
 UNBOUNDED_CLEANUP_ACTION                      INELIGIBLE_ALWAYS
 SELF_MODIFYING_RUNNER                         INELIGIBLE_ALWAYS
 
-AUDIT_RECORD_APPEND_ONLY                      ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
+AUDIT_RECORD_APPEND_ONLY                      AUTHORIZED_NOW
 
 LOCAL_STATUS_MARKER_CREATE_ONLY               CANDIDATE_FOR_FUTURE_MODEL_ONLY
 MANUAL_REVIEW_PACKET_MATERIALIZE_ONLY         CANDIDATE_FOR_FUTURE_MODEL_ONLY
