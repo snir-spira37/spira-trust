@@ -216,6 +216,34 @@ jobs:
             echo "Separate human-controlled authorization remains required before any later"
             echo "action surface."
             echo
+            echo "## Nesira Phase 2 Non-Writing Execution Authorization And Audit Append Evaluators"
+            echo
+            echo "This release includes two non-writing Nesira Phase 2 evaluator modules"
+            echo "as public library modules:"
+            echo
+            echo "- spira_core.nesira_phase2_execution_authorization_evaluator"
+            echo "- spira_core.nesira_phase2_audit_append_evaluator"
+            echo
+            echo "They evaluate consistency of supplied execution-authorization and"
+            echo "AUDIT_RECORD_APPEND_ONLY precondition artifacts. They do not write,"
+            echo "append, run subprocesses, access the network, mutate files, authorize"
+            echo "severance, or perform remediation."
+            echo
+            echo "The public wheel does not include:"
+            echo
+            echo "- audit append runner"
+            echo "- audit append capability provider"
+            echo "- filesystem-capable provider binding"
+            echo "- public append CLI"
+            echo
+            echo "The exposed evaluator modules are in-memory consistency evaluators only."
+            echo "APPEND_APPLIED is not emitted by these modules. Where discussed, it"
+            echo "remains a provider status report, not proof that an append is durable,"
+            echo "that idempotency is truly enforced, that a sink root is legitimate, or"
+            echo "that provider behavior is covered by SPIRA's Lean-proven composition core."
+            echo
+            echo "EA-TCB-03 remains an assumption, not a proved runner-truth property."
+            echo
             echo "The Nesira assessment surface is opt-in. The base package dependencies remain"
             echo "empty. The crypto dependency is available only through the nesira-assessment"
             echo "optional extra:"

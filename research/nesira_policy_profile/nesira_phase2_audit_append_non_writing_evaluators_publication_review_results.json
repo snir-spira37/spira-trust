@@ -1,0 +1,11 @@
+{
+  "schema": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLICATION_REVIEW_RESULTS",
+  "version": "0.7.4",
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLICATION_READINESS_NOTES_FIX_ACCEPTED",
+  "publication_authorized": false,
+  "testpypi_authorized_without_go_1": false,
+  "pypi_authorized_without_go_2": false,
+  "notes_mismatch_closed": true,
+  "wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
+  "wheel_sha256_changed_by_notes_fix": false
+}

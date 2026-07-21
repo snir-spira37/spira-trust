@@ -1,0 +1,32 @@
+{
+  "schema": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLICATION_RESULTS",
+  "version": "0.7.4",
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_WRITING_EVALUATORS_PUBLICATION_READINESS_NOTES_FIX_ACCEPTED",
+  "candidate": {
+    "rc_source_commit": "e95223ce453ec06c6912f5ebad686c3eabe4c6bb",
+    "rc_record_commit": "8b2896ddf01182739b24661ac0638613da37e518",
+    "wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e"
+  },
+  "checks": {
+    "workflow_change_scope": "release-notes block only",
+    "workflow_triggers_changed": false,
+    "pypi_publish_logic_changed": false,
+    "github_release_publish_logic_changed": false,
+    "wheel_producing_diff_from_rc_source": "empty",
+    "rebuilt_wheel_sha256": "479ff28a91adf8bb51d55320d2f723ac563d7b92c2a7c80c4a15a861bb96fd7e",
+    "workflow_v1_pinned": false
+  },
+  "notes_boundary": {
+    "mentions_0_7_4_non_writing_evaluators": true,
+    "states_runner_provider_absent": true,
+    "states_evaluators_do_not_write": true,
+    "states_append_applied_not_emitted_by_exposed_modules": true,
+    "states_append_applied_status_not_proof": true,
+    "states_ea_tcb_03_assumed": true
+  },
+  "go_boundaries": {
+    "testpypi": "requires explicit GO #1",
+    "pypi": "requires explicit GO #2",
+    "github_release": "requires explicit GO #2"
+  }
+}
