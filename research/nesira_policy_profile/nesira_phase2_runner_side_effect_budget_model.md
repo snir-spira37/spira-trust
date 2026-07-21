@@ -79,6 +79,7 @@ Every future non-zero side-effect budget must use this vocabulary:
 ```text
 effect_class
 effect_count
+total_effect_count
 declared_root
 target_scope_digest
 payload_schema_id
@@ -131,6 +132,74 @@ SEND_ONE_TYPED_ABORT_OR_ROLLBACK_REQUEST
 ```
 
 These are modeling shapes only. They do not authorize implementation.
+
+## Total Budget Ceiling
+
+Every future class-specific budget must define a total side-effect ceiling, not
+only a primary effect ceiling.
+
+The total includes:
+
+```text
+primary effect
+pre-effect audit record
+post-effect audit record
+failure audit record
+status marker
+temporary file
+lock file
+cache write
+checkpoint write
+post-effect verification write
+rollback or abort request
+retry attempt
+```
+
+No supporting effect is exempt from the total.
+
+Initial maximum total ceilings for the current candidate classes are:
+
+```text
+AUDIT_RECORD_APPEND_ONLY
+  total_effect_count <= 1
+
+LOCAL_STATUS_MARKER_CREATE_ONLY
+  total_effect_count <= 4
+  maximum components: one marker + up to three audit records
+
+MANUAL_REVIEW_PACKET_MATERIALIZE_ONLY
+  total_effect_count <= 4
+  maximum components: one packet + up to three audit records
+
+ROLLBACK_ABORT_SIGNAL_REQUEST_ONLY
+  total_effect_count <= 4
+  maximum components: one rollback/abort request + up to three audit records
+```
+
+The three audit records are the closed set:
+
+```text
+pre_effect_audit_record
+post_effect_audit_record
+failure_audit_record
+```
+
+They are not examples. A later design must not add more audit, log,
+verification, checkpoint, or telemetry writes without:
+
+```text
+SCOPE_REVISION_REQUIRED
+new side-effect budget model version
+explicit rationale
+adversarial review
+human go/no-go owner approval
+```
+
+This rule is:
+
+```text
+NO_UNBOUNDED_TOTAL
+```
 
 ## Forbidden Budget Shapes
 
@@ -312,8 +381,13 @@ post_effect_audit_record
 failure_audit_record
 ```
 
-Each required record must be budgeted explicitly. If audit is mandatory and the
-budget does not include it, the model is incomplete.
+This list is closed for the initial candidate classes. Each required record
+must be budgeted explicitly and counted against `total_effect_count`. If audit
+is mandatory and the budget does not include it, the model is incomplete.
+
+The audit sink is the terminal accounting anchor. Audit records account for
+other effects and are themselves counted in the total side-effect budget, but
+they do not recursively require additional audit records for the audit write.
 
 Audit failure semantics must be defined before the action effect:
 
@@ -437,12 +511,13 @@ Every future side-effect budget implementation plan must require tests:
 10. secret-bearing payload -> not authorized.
 11. executable content in packet or audit -> not authorized.
 12. mandatory audit missing from budget -> not evaluated.
-13. mandatory pre-effect audit fails -> action not attempted.
-14. effect status unknown -> no follow-on action.
-15. human-readable text omits side-effect summary -> not evaluated.
-16. human-go digest binds different side-effect budget -> not authorized.
-17. trusted verifier compares prepared bundle only -> not authorized.
-18. strongest budget verdict still emits ACTION_NOT_PERFORMED without later
+13. total side-effect count exceeds class ceiling -> not authorized.
+14. mandatory pre-effect audit fails -> action not attempted.
+15. effect status unknown -> no follow-on action.
+16. human-readable text omits side-effect summary -> not evaluated.
+17. human-go digest binds different side-effect budget -> not authorized.
+18. trusted verifier compares prepared bundle only -> not authorized.
+19. strongest budget verdict still emits ACTION_NOT_PERFORMED without later
     runner gate.
 ```
 
@@ -455,6 +530,9 @@ authorizes any non-zero side-effect budget without per-class runner gate
 treats audit/log/temp/cache writes as free implementation details
 permits arbitrary command, path, URL, or payload
 permits unbounded cleanup or retry
+omits total side-effect ceiling
+adds supporting audit, log, verification, checkpoint, or telemetry writes beyond
+the class ceiling
 permits secret-bearing side effects without a new secret-specific gate
 omits human-readable side-effect acknowledgement
 omits EA-TCB-03 binding to the runner-intended side-effect budget

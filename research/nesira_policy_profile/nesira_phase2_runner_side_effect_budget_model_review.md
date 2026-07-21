@@ -146,6 +146,50 @@ retry_count = 0
 Any retry must be explicitly budgeted and idempotent. This prevents hidden
 amplification of an apparently small action.
 
+## Total Ceiling Review
+
+The model now requires:
+
+```text
+NO_UNBOUNDED_TOTAL
+```
+
+The side-effect ceiling applies to the total budget, not only to the primary
+effect. Supporting effects are counted too:
+
+```text
+audit records
+status markers
+temporary files
+lock files
+cache writes
+checkpoint writes
+post-effect verification writes
+rollback or abort requests
+retry attempts
+```
+
+The initial candidate ceilings are bounded:
+
+```text
+AUDIT_RECORD_APPEND_ONLY -> total_effect_count <= 1
+LOCAL_STATUS_MARKER_CREATE_ONLY -> total_effect_count <= 4
+MANUAL_REVIEW_PACKET_MATERIALIZE_ONLY -> total_effect_count <= 4
+ROLLBACK_ABORT_SIGNAL_REQUEST_ONLY -> total_effect_count <= 4
+```
+
+The three audit records are a closed set for the initial candidate classes:
+
+```text
+pre_effect_audit_record
+post_effect_audit_record
+failure_audit_record
+```
+
+A future design cannot create a broad write channel by adding more audit,
+logging, checkpoint, verification, or telemetry effects while claiming each one
+is individually budgeted.
+
 ## Partial Failure Review
 
 The model requires future runner designs to distinguish:
@@ -162,6 +206,12 @@ ROLLBACK_OR_ABORT_UNAVAILABLE
 
 Unknown effect status cannot be reported as success. This is the key
 fail-closed condition once real side effects exist.
+
+## Audit Terminal Anchor Review
+
+The audit sink is correctly defined as the terminal accounting anchor. Audit
+records are counted side effects, but they do not recursively require more
+audit records for the audit write itself.
 
 ## Human And TCB Binding Review
 
