@@ -4,6 +4,7 @@
 
 ```text
 NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_ACCEPTED
+NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2_ACCEPTED
 ```
 
 ## Scope Reviewed
@@ -17,6 +18,20 @@ exposure changes, version changes, release, or public claim expansion.
 ## Findings
 
 No blocking findings.
+
+## Version Review
+
+The taxonomy is now explicitly versioned:
+
+```text
+TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2
+TAXONOMY_VERSION: 2
+REVISION: add ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION status for AUDIT_RECORD_APPEND_ONLY
+```
+
+This closes the governance finding from the audit-append runner scope revision:
+the `ELIGIBLE` tier is now part of the canonical taxonomy, not a status created
+only by a downstream document.
 
 ## Empty Authorized Set
 
@@ -85,9 +100,64 @@ The candidate classes are correctly marked:
 CANDIDATE_FOR_FUTURE_MODEL_ONLY
 ```
 
+The remaining candidates are:
+
+```text
+LOCAL_STATUS_MARKER_CREATE_ONLY
+MANUAL_REVIEW_PACKET_MATERIALIZE_ONLY
+ROLLBACK_ABORT_SIGNAL_REQUEST_ONLY
+```
+
 They may be modeled later but are not authorized now. Each is constrained to a
 specific purpose and requires a future model for roots, side-effect budget,
 schema, idempotency, rollback/abort, audit, and public claim boundary.
+
+## Eligible Tier Review
+
+The new tier is correctly defined:
+
+```text
+ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
+```
+
+It means only that a later gate may draft an implementation authorization for
+the exact class. It does not permit code and does not move the class to
+`AUTHORIZED_NOW`.
+
+The single eligible class is:
+
+```text
+AUDIT_RECORD_APPEND_ONLY
+```
+
+The taxonomy records the same maximum future envelope as the runner scope
+revision:
+
+```text
+effect_shape: APPEND_ONE_BOUNDED_RECORD
+effect_count: 1
+total_effect_count: 1
+retry_count: 0
+supporting_effects: none
+```
+
+The status is now centralized in the taxonomy.
+
+## Canonical Table Review
+
+The canonical classification table is now the source of truth for Phase 2
+runner action-class status.
+
+It records exactly:
+
+```text
+16 INELIGIBLE_ALWAYS classes
+1 ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION class
+3 CANDIDATE_FOR_FUTURE_MODEL_ONLY classes
+0 AUTHORIZED_NOW classes
+```
+
+Any status not listed in the table is invalid.
 
 ## Path, Network, And Executable Content
 

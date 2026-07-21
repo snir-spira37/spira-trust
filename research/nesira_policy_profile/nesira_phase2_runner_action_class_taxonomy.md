@@ -6,11 +6,15 @@
 DOCUMENT_TYPE: RESEARCH -- RUNNER ACTION CLASS TAXONOMY
 PHASE: PHASE_2_RUNNER_ACTION_CLASS_TAXONOMY_GATE
 SCOPE: TAXONOMY_ONLY
+TAXONOMY_ID: SPIRA_NESIRA_PHASE2_RUNNER_ACTION_CLASS_TAXONOMY_V2
+TAXONOMY_VERSION: 2
+REVISION: add ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION status for AUDIT_RECORD_APPEND_ONLY
 
 AUTHORIZES:
 runner action-class taxonomy
 ineligible action-class list
 candidate future action-class vocabulary
+eligible future implementation-authorization vocabulary
 future side-effect-budget requirements
 
 RUNNER_IMPLEMENTATION: NOT_AUTHORIZED
@@ -50,6 +54,7 @@ Every proposed runner action class must be classified as exactly one:
 ```text
 INELIGIBLE_ALWAYS
 CANDIDATE_FOR_FUTURE_MODEL_ONLY
+ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
 AUTHORIZED_NOW
 ```
 
@@ -61,6 +66,18 @@ AUTHORIZED_NOW is empty.
 
 `CANDIDATE_FOR_FUTURE_MODEL_ONLY` means only that a later gate may write a
 model for that class. It does not permit code.
+
+`ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION` means only that the class
+has passed candidate modeling, side-effect budget modeling, and runner scope
+revision review. It permits a later gate to draft an implementation
+authorization for that exact class. It does not permit code.
+
+`AUTHORIZED_NOW` means a class has received a separate implementation
+authorization and may be implemented within that later gate's exact envelope.
+For this document, the set remains empty.
+
+No document other than this taxonomy may introduce a new runner action-class
+status. If a later gate needs a new status, this taxonomy must be revised first.
 
 ## Ineligible Always
 
@@ -96,7 +113,9 @@ RUNNER_ACTION_CLASS_INELIGIBLE
 `INELIGIBLE_ALWAYS` is a stability class, not a temporary label.
 
 Reclassifying any `INELIGIBLE_ALWAYS` action class to
-`CANDIDATE_FOR_FUTURE_MODEL_ONLY` or `AUTHORIZED_NOW` requires:
+`CANDIDATE_FOR_FUTURE_MODEL_ONLY`,
+`ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION`, or `AUTHORIZED_NOW`
+requires:
 
 ```text
 SCOPE_REVISION_REQUIRED
@@ -119,15 +138,38 @@ SELF_MODIFYING_RUNNER
 They must not be moved out of `INELIGIBLE_ALWAYS` by any later Phase 2 runner
 gate.
 
+## Eligible For Separate Implementation Authorization
+
+The following action classes are eligible for a later implementation
+authorization discussion:
+
+```text
+AUDIT_RECORD_APPEND_ONLY
+  status: ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
+  eligibility_source: nesira_phase2_audit_append_runner_scope_revision_authorization.md
+  implementation_authorization: still required
+  current implementation: NOT_AUTHORIZED
+  maximum future envelope:
+    effect_shape: APPEND_ONE_BOUNDED_RECORD
+    effect_count: 1
+    total_effect_count: 1
+    retry_count: 0
+    supporting_effects: none
+```
+
+Eligibility does not move the class to `AUTHORIZED_NOW`.
+
+The class must not be implemented until a later gate explicitly authorizes:
+
+```text
+nesira_phase2_audit_append_runner_implementation_authorization
+```
+
 ## Candidate Classes For Future Models Only
 
 These classes may be modeled later, but are not authorized now:
 
 ```text
-AUDIT_RECORD_APPEND_ONLY
-  purpose: append a bounded non-secret audit record to a declared audit sink
-  required future model: append-only sink, schema, max size, failure semantics
-
 LOCAL_STATUS_MARKER_CREATE_ONLY
   purpose: create a bounded non-secret status marker under a declared output root
   required future model: declared root, fixed filename policy, no overwrite, max size
@@ -144,6 +186,37 @@ ROLLBACK_ABORT_SIGNAL_REQUEST_ONLY
 These are candidates because they can be described without arbitrary command,
 arbitrary path, or arbitrary network parameters. They still require future
 per-class authorization before any implementation.
+
+## Canonical Classification Table
+
+This table is the source of truth for Phase 2 runner action-class status:
+
+```text
+GENERIC_SHELL_COMMAND                         INELIGIBLE_ALWAYS
+GENERIC_SUBPROCESS                            INELIGIBLE_ALWAYS
+GENERIC_SCRIPT_RUNNER                         INELIGIBLE_ALWAYS
+GENERIC_PYTHON_MODULE_RUNNER                  INELIGIBLE_ALWAYS
+GENERIC_FILESYSTEM_MUTATOR                    INELIGIBLE_ALWAYS
+GENERIC_NETWORK_CLIENT                        INELIGIBLE_ALWAYS
+ARBITRARY_COMMAND_EXECUTOR                    INELIGIBLE_ALWAYS
+ARBITRARY_PATH_WRITE                          INELIGIBLE_ALWAYS
+ARBITRARY_PATH_DELETE                         INELIGIBLE_ALWAYS
+ARBITRARY_NETWORK_TARGET                      INELIGIBLE_ALWAYS
+LIVE_ISOLATION_RUNNER                         INELIGIBLE_ALWAYS
+SEVERANCE_EXECUTOR                            INELIGIBLE_ALWAYS
+AUTOMATIC_REMEDIATOR                          INELIGIBLE_ALWAYS
+SECRET_EXFILTRATION_PRONE_ACTION              INELIGIBLE_ALWAYS
+UNBOUNDED_CLEANUP_ACTION                      INELIGIBLE_ALWAYS
+SELF_MODIFYING_RUNNER                         INELIGIBLE_ALWAYS
+
+AUDIT_RECORD_APPEND_ONLY                      ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION
+
+LOCAL_STATUS_MARKER_CREATE_ONLY               CANDIDATE_FOR_FUTURE_MODEL_ONLY
+MANUAL_REVIEW_PACKET_MATERIALIZE_ONLY         CANDIDATE_FOR_FUTURE_MODEL_ONLY
+ROLLBACK_ABORT_SIGNAL_REQUEST_ONLY            CANDIDATE_FOR_FUTURE_MODEL_ONLY
+```
+
+Any status not listed here is invalid.
 
 ## Candidate Class Requirements
 
@@ -303,6 +376,9 @@ Stop with `SCOPE_REVISION_REQUIRED` if a later design:
 
 ```text
 adds an AUTHORIZED_NOW class without separate authorization
+declares ELIGIBLE_FOR_SEPARATE_IMPLEMENTATION_AUTHORIZATION outside this taxonomy
+moves a class to ELIGIBLE without accepted candidate model, budget model,
+non-executing evaluator, and runner scope revision
 reclassifies an INELIGIBLE_ALWAYS class without taxonomy version and review
 reclassifies a permanently non-reclassifiable class
 adds a generic command abstraction
