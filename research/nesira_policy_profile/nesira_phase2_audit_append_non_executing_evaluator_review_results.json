@@ -1,0 +1,28 @@
+{
+  "verdict": "NESIRA_PHASE2_AUDIT_APPEND_NON_EXECUTING_EVALUATOR_ACCEPTED",
+  "scope_review": "PASS",
+  "purity_review": "PASS",
+  "output_review": "PASS",
+  "mapping_review": "PASS",
+  "wheel_exclusion": "PASS",
+  "verification": {
+    "targeted_tests": "24 passed",
+    "full_pytest": "445 passed",
+    "v1_sha256sums": "622/622 OK"
+  },
+  "accepted_boundary": [
+    "pure in-memory",
+    "non-executing",
+    "private / not wheel-exposed",
+    "model-consistency-not-append-truth"
+  ],
+  "still_blocked": [
+    "audit append",
+    "runner implementation",
+    "filesystem I/O",
+    "audit sink access",
+    "network execution",
+    "public exposure",
+    "release"
+  ]
+}
