@@ -24,6 +24,8 @@ def test_01_positive_path_calls_append_once_and_reports_applied():
     assert artifact["effect_status"] == runner.EFFECT_STATUS_APPLIED
     assert artifact["effect_count_attempted"] == 1
     assert artifact["effect_count_applied"] == 1
+    assert set(runner.APPLIED_ASSUMPTIONS).issubset(set(artifact["assumptions"]))
+    assert "CAP-TCB-01" in artifact["assumptions"]
     assert capability["call_count"] == 1
     assert capability["calls"] == [(_payload(), "idem:1")]
 
