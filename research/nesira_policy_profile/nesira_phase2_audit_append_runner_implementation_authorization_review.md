@@ -59,6 +59,16 @@ capability already bound by human go and trusted verifier evidence.
 The capability must not expose path, open, read, arbitrary write, delete,
 overwrite, list, stat, endpoint, or command operations.
 
+The authorization now also requires the runner to compare the supplied
+`append_capability_root_digest` against the human-go and trusted-verifier
+approved digest before the single append call. A missing or mismatched digest
+must return `AUDIT_APPEND_NOT_AUTHORIZED` with zero attempted and applied
+effects.
+
+This closes capability-substitution at the call site without claiming that the
+object behind the capability is proven honest; capability correctness remains an
+explicit assumption.
+
 This is the safest shape for the first real effect: the runner can request one
 typed append without becoming a filesystem adapter.
 
@@ -104,11 +114,12 @@ Unknown append status is not success.
 
 ## Conformance Review
 
-The required 23 cases cover:
+The required 24 cases cover:
 
 ```text
 all precondition failures -> zero append calls
 all path/network/command/secret attempts -> zero append calls
+append capability root digest mismatch -> zero append calls
 budget expansion -> zero append calls
 retry request -> zero append calls
 unbudgeted probe request -> zero append calls

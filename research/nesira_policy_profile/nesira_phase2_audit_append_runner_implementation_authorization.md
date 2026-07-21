@@ -98,6 +98,28 @@ append_capability_ref
 append_capability_root_digest
 ```
 
+Before the runner may call the capability, it must compare the supplied
+capability identity against the human-approved and trusted-verifier-approved
+identity:
+
+```text
+runner_supplied.append_capability_root_digest
+  == human_go_authorized.append_capability_root_digest
+  == trusted_verifier_approved.append_capability_root_digest
+```
+
+If any value is missing or mismatched, the runner must return:
+
+```text
+AUDIT_APPEND_NOT_AUTHORIZED
+effect_count_attempted=0
+effect_count_applied=0
+```
+
+This is an in-memory digest comparison. It does not prove the capability object
+is honest, append-only, durable, or backed by the declared root; those remain
+explicit assumptions.
+
 The runner may invoke exactly one method shape:
 
 ```text
@@ -139,9 +161,12 @@ operator initiation:
 
 trusted verifier:
   independent and matched to runner-intended append budget under EA-TCB-03
+  binds the append capability root digest that the runner must compare before
+  the append call
 
 human-go artifact:
   authenticated externally, non-self-authorized, fresh, not revoked, digest-bound
+  binds the same append capability root digest
 
 side-effect budget:
   effect_count=1
@@ -312,6 +337,7 @@ Implementation must prove:
 21. runner output contains no path, command, runbook, or network target field.
 22. public wheel exclusion remains true.
 23. two-run equality for negative cases.
+24. append capability root digest mismatch -> no append call.
 ```
 
 Positive tests may use a local test double append capability to observe exactly
@@ -404,9 +430,10 @@ manifest.
 Before acceptance:
 
 ```text
-23 conformance cases pass
+24 conformance cases pass
 positive path exactly one append capability call
 all negative paths zero append capability calls
+append capability root digest mismatch -> zero append capability calls
 source scan: no subprocess/socket/requests/urllib/http/pathlib/direct open
 source scan: no path resolution or existence checks
 output scan: no command/path/runbook/network fields
