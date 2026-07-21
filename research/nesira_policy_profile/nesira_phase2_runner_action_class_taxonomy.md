@@ -91,6 +91,34 @@ Any future proposal containing one of these must stop with:
 RUNNER_ACTION_CLASS_INELIGIBLE
 ```
 
+## Ineligible Stability Rule
+
+`INELIGIBLE_ALWAYS` is a stability class, not a temporary label.
+
+Reclassifying any `INELIGIBLE_ALWAYS` action class to
+`CANDIDATE_FOR_FUTURE_MODEL_ONLY` or `AUTHORIZED_NOW` requires:
+
+```text
+SCOPE_REVISION_REQUIRED
+new taxonomy version
+explicit rationale
+adversarial review
+human go/no-go owner approval
+```
+
+The following action classes are permanently non-reclassifiable:
+
+```text
+LIVE_ISOLATION_RUNNER
+SEVERANCE_EXECUTOR
+AUTOMATIC_REMEDIATOR
+SECRET_EXFILTRATION_PRONE_ACTION
+SELF_MODIFYING_RUNNER
+```
+
+They must not be moved out of `INELIGIBLE_ALWAYS` by any later Phase 2 runner
+gate.
+
 ## Candidate Classes For Future Models Only
 
 These classes may be modeled later, but are not authorized now:
@@ -275,6 +303,8 @@ Stop with `SCOPE_REVISION_REQUIRED` if a later design:
 
 ```text
 adds an AUTHORIZED_NOW class without separate authorization
+reclassifies an INELIGIBLE_ALWAYS class without taxonomy version and review
+reclassifies a permanently non-reclassifiable class
 adds a generic command abstraction
 permits arbitrary path or URL input
 permits executable content in output

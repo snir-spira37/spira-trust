@@ -49,6 +49,34 @@ automatic remediator
 This is the load-bearing boundary. A runner must never become a generic
 execution adapter.
 
+## Ineligible Stability Review
+
+The taxonomy now treats `INELIGIBLE_ALWAYS` as a stability class, not a
+temporary label.
+
+Reclassifying any ineligible action class requires:
+
+```text
+SCOPE_REVISION_REQUIRED
+new taxonomy version
+explicit rationale
+adversarial review
+human go/no-go owner approval
+```
+
+The most dangerous classes are permanently non-reclassifiable:
+
+```text
+LIVE_ISOLATION_RUNNER
+SEVERANCE_EXECUTOR
+AUTOMATIC_REMEDIATOR
+SECRET_EXFILTRATION_PRONE_ACTION
+SELF_MODIFYING_RUNNER
+```
+
+This prevents a later gate from silently turning "always ineligible" into
+"candidate for discussion."
+
 ## Candidate Classes
 
 The candidate classes are correctly marked:
